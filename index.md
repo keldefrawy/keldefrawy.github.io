@@ -11,7 +11,9 @@ My research interests lie in security and privacy in distributed systems. I focu
 
 
 # Projects and Publications
-More details about my research on my profiles on [Google Scholar](http://bit.ly/2KIZaWF) and [ResearchGate](http://bit.ly/37tOPHZ) 
+More details about my research on my profiles on:
+* [Google Scholar](http://bit.ly/2KIZaWF)
+* [ResearchGate](http://bit.ly/37tOPHZ) 
 
 # Contact
 * Work: {firstname_dot_lastname} + {magic_character} + {sri_dot_com}
