@@ -18,7 +18,7 @@ More details about my research on my profiles on:
 # Contact
 * Work: {firstname_dot_lastname} + {@} + {sri_dot_com}
 * Work: {firstname} + {@} + {csl_dot_sri_dot_com}
-* Personal: {lastname} + {@} + {email_system_of_most_famous_search_engine}
+* Personal: {lastname} + {@} + {email_of_most_famous_search_engine}
 
 
 
