@@ -3,14 +3,14 @@ My research interests lie in security and privacy in distributed systems. I focu
 
 
 
-# Summary of Accomplishments
+# Accomplishments
 * Over 60 peer-reviewed publications
 * 20 issued patents (10+ pending)
 * Over $15 million in extramural funding (DARPA, IARPA, DHS)
 
 
 
-# Details About Projects and Publications
+# Projects and Publications
 More details about my research on my profiles on [Google Scholar](http://bit.ly/2KIZaWF) and [ResearchGate](http://bit.ly/37tOPHZ).
 
 
