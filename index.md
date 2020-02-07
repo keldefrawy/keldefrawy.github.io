@@ -5,13 +5,13 @@ My research focuses on secure and privacy-preserving computation and cryptograph
 
 # Accomplishments
 * Over 60 peer-reviewed publications
-* 20 issued patents (10+ pending)
+* 20 issued patents (over 10 pending)
 * Over $15 million in extramural funding ([DARPA](https://www.darpa.mil/), [IARPA](https://www.iarpa.gov/), [DHS](https://www.dhs.gov/science-and-technology))   
 
 
 
 # Projects and Publications
-More details about my research on my profiles on:
+More details about my research here:
 * [Google Scholar](http://bit.ly/2KIZaWF)
 * [ResearchGate](http://bit.ly/37tOPHZ) 
 
