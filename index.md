@@ -12,8 +12,9 @@ My research focuses on secure and privacy-preserving computation and cryptograph
 
 # Projects and Publications
 More details about my research here:
+* [ResearchGate](http://bit.ly/37tOPHZ)  
 * [Google Scholar](http://bit.ly/2KIZaWF)
-* [ResearchGate](http://bit.ly/37tOPHZ) 
+
 
 # Contact
 * **Work:** {firstname_dot_lastname} + {@} + {sri_dot_com}
