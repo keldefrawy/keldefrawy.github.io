@@ -1,5 +1,5 @@
 # Research Interests
-Secure and privacy-preserving computation and cryptography, security of cyber-physical and embedded systems, and computer-aided formal verification for security services and cryptographic protocols and algorithms.  
+Secure and privacy-preserving computation and cryptography, security of cyber-physical and embedded systems, and computer-aided  verification of security services and cryptographic protocols.  
 
 
 # Accomplishments
