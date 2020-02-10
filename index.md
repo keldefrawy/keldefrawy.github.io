@@ -10,9 +10,7 @@ Secure and privacy-preserving computation and cryptography, security of cyber-ph
 
 
 # Projects and Publications
-More details about my research here:
-* [ResearchGate](http://bit.ly/37tOPHZ)  
-* [Google Scholar](http://bit.ly/2KIZaWF)
+More details about my research on [ResearchGate](http://bit.ly/37tOPHZ) and [Google Scholar.](http://bit.ly/2KIZaWF)
 
 # Contact
 * **Work:** {firstname_dot_lastname} + {@} + {sri_dot_com}
