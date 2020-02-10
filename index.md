@@ -21,7 +21,7 @@ More details about my research here:
 
 
 # Brief Bio for Talks
-Karim Eldefrawy, Ph.D., is a principal computer scientist at the Computer Science Laboratory at SRI International (formerly Stanford Research Institute). His research interests lie in cryptography and secure and privacy-preserving computation for distributed and cyber-physical systems, and recently computer-aided formal verification and synthesis of specifications and software for cryptographic primitives and protocols. His research has been funded by the Defense Advanced Research Project Agency (DARPA), the Department of Homeland Security (DHS), the Intelligence Advanced Research Projects Activity (IARPA), and Boeing and General Motors. He authored over 60 peer-reviewed publications, and taught several courses on security and cryptography at the University of California at Irvine 2012-2016, and at the University of San Francisco from 2018-2019.
+Karim Eldefrawy, Ph.D., is a principal computer scientist at the Computer Science Laboratory at SRI International (formerly Stanford Research Institute). His research interests lie in cryptography and secure and privacy-preserving computation for distributed and cyber-physical systems, and recently computer-aided formal verification and synthesis of specifications and software for cryptographic primitives and protocols. His research has been funded by the Defense Advanced Research Project Agency (DARPA), the Department of Homeland Security (DHS), the Intelligence Advanced Research Projects Activity (IARPA), and Boeing and General Motors. He authored over 60 peer-reviewed publications, and taught several courses on security and cryptography at the University of California at Irvine and at the University of San Francisco.
 
 
 
