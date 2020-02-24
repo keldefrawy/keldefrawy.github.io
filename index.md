@@ -6,7 +6,7 @@ Secure and privacy-preserving computation and cryptography, security of cyber-ph
 * 60+ peer-reviewed and under-review publications
 * 20+ issued patents and 15+ pending
 * Over $15 million in extramural funding ([DARPA](https://www.darpa.mil/), [IARPA](https://www.iarpa.gov/), [DHS](https://www.dhs.gov/science-and-technology))
-* More details in [resume](https://keldefrawy.github.io/keldefrawy_resume.pdf)
+* More details in [resume](https://keldefrawy.github.io/karim_resume.pdf)
 
 
 # Projects and Publications
