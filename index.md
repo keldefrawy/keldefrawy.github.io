@@ -9,9 +9,9 @@ Secure and privacy-preserving computation and cryptography, security of cyber-ph
 * More details in [resume](https://keldefrawy.github.io/karim_resume.pdf) (updated in December 2019)
 
 
-# Projects and Publications
+# Publications and Projects
 * My publications can be found [here](https://keldefrawy.github.io/) or on [Google Scholar](http://bit.ly/2KIZaWF).
-* More details about my projects and related publications on [ResearchGate](http://bit.ly/37tOPHZ).
+* More details about my projects and the related publications on [ResearchGate](http://bit.ly/37tOPHZ).
 
 
 # Contact
