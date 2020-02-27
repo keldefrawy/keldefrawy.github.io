@@ -10,8 +10,8 @@ Secure and privacy-preserving computation and cryptography, security of cyber-ph
 
 
 # Publications and Projects
-* My publications can be found [here](https://keldefrawy.github.io/) or on [Google Scholar](http://bit.ly/2KIZaWF).
-* More details about my projects and the related publications on [ResearchGate](http://bit.ly/37tOPHZ).
+* My publications can be found on [Google Scholar](http://bit.ly/2KIZaWF) or [here](https://keldefrawy.github.io/).
+* Details of projects and related publications are on [ResearchGate](http://bit.ly/37tOPHZ).
 
 
 # Contact
