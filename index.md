@@ -2,7 +2,7 @@
 Secure and privacy-preserving computation and cryptography, security of cyber-physical and embedded systems, and computer-aided  formal verification of security services and cryptographic protocols.  
 
 
-# Overview of Achievements
+# Highlights of Accomplishments
 * 60+ peer-reviewed and under-review publications
 * 20+ issued patents and 15+ pending
 * Over $15 million in extramural funding ([DARPA](https://www.darpa.mil/), [DHS](https://www.dhs.gov/science-and-technology),     [IARPA](https://www.iarpa.gov/))
