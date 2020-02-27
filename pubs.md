@@ -13,7 +13,7 @@
 * Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik, “PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems,” in proceedings of the IEEE/ACM International Conference On Computer Aided Design (ICCAD), 2019. [[PDF]](https://)
 
 # 2018
-* (Book Chapter) Karim Eldefrawy, Rafail Ostrovsky, Moti Yung, “Theoretical Foundations of Moving Target Defense: Proactive Secret Sharing and Secure Multiparty Computation,” From Database to Cyber Security, Springer International Publishing, 2018.[[PDF]](https://)
+* (Book Chapter) Karim Eldefrawy, Rafail Ostrovsky, Moti Yung, “Theoretical Foundations of Moving Target Defense: Proactive Secret Sharing and Secure Multiparty Computation,” From Database to Cyber Security, Springer International Publishing, 2018. [[PDF]](https://)
 * Karim Eldefrawy, Rafail Ostrovsky, Sunoo Park, Moti Yung, “Proactive Secure Computation with a Dishonest Majority,” in proceedings of the 11th Conference Security and Cryptography in Networks (SCN), 2018. [[PDF]](https://)
 * Ivan De Olivera Nunes, Karim Eldefrawy, Tancrede Lepoint, “Non-interactive User Re-enrollment in Cryptographically Secured Biometrics-based Identification and Authentication Systems,” in proceedings of the 2018 International Symposium on Cyber Security Cryptography and Machine Learning (CSCML), 2018. [[PDF]](https://)
 * Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, Ahmad-Reza Sadeghi, Gene Tsudik, “Invited Paper: Reconciling Remote Attestation and Safety-Critical Operation on Simple IoT Devices,” in proceedings of the Design Automation Conference (DAC), 2018. [[PDF]](https://)
