@@ -37,13 +37,13 @@
 * Karim Eldefrawy, Tyler Kazcmarek, “Byzantine Fault Tolerant Software-Defined Network (SDN) Con- trollers,” in proceedings of the 40th IEEE Computer Society International Conference on Computers, Software & Applications (COMPSAC’16), MidCCI: The 2nd IEEE International Workshop on Middleware for Cyber Security, Cloud Computing and Internetworking, 2016.
 
 # 2015
-Joshua Baron, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, “Communication-Optimal Mobile Proactive Secret Sharing” in proceedings of the International Conference on Applied Cryptography and Network Security (ACNS’15), 2015.
-24. Karim Eldefrawy, Gavin Holland, Gene Tsudik, “(Extended Abstract) Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case” presented at the Embedded Security in Cars USA (escar USA) Workshop, 2015.
+* Joshua Baron, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, “Communication-Optimal Mobile Proactive Secret Sharing” in proceedings of the International Conference on Applied Cryptography and Network Security (ACNS’15), 2015.
+* Karim Eldefrawy, Gavin Holland, Gene Tsudik, “(Extended Abstract) Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case” presented at the Embedded Security in Cars USA (escar USA) Workshop, 2015.
 
 # 2014
-Karim Eldefrawy, Joshua Lampkins, “Founding Digital Currency on Secure Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2014.
-26. Joshua Baron, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, “How to Withstand Mobile Virus Attacks, Revisited”, in proceedings of the ACM Symposium on Principles of Distributed Computing (PODC), 2014.
-27. Karim Eldefrawy, Joshua Lampkins, “Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet Via Privacy-preserving AppCoins” in proceedings of the Ninth Workshop on Secure Network Protocols (NPSec), 2014.
+* Karim Eldefrawy, Joshua Lampkins, “Founding Digital Currency on Secure Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2014.
+* Joshua Baron, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, “How to Withstand Mobile Virus Attacks, Revisited”, in proceedings of the ACM Symposium on Principles of Distributed Computing (PODC), 2014.
+* Karim Eldefrawy, Joshua Lampkins, “Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet Via Privacy-preserving AppCoins” in proceedings of the Ninth Workshop on Secure Network Protocols (NPSec), 2014.
 
 # 2013
 * Joshua Baron, Karim Eldefrawy, Aleksey Nogin, Rafail Ostrovsky, “An Architecture for Resilient Cloud Operations” in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2013.
