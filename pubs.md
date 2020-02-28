@@ -5,7 +5,7 @@
 * Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux “Communication Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities”, to be presented at the 18th International Con- ference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf)
 
 # 2019
-* Karim Eldefrawy, Vitor Pereira, “A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2019. [[PDF]](https://)
+* Karim Eldefrawy, Vitor Pereira, “A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/verif-mpc_ccs2019.pdf)
 * Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Michael Steiner, Gene Tsudik, “VRASED: A Verified Hardware/Software Co-Design for Remote Attestation,” in proceedings of the Usenix Security Symposium, 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/vrased_usenixsec2019.pdf)
 * Karim Eldefrawy, Ashish Gehani, Alexandre Matton, “Longitudinal Study of Misuse of Bitcoin,” in proceedings of the International Conference on Applied Cryptography and Network Security (ACNS’19), 2019. [[PDF]](https://)
 * Ivan De Olivera Nunes, Karim Eldefrawy, Tancrede Lepoint, “Non-interactive User Re-enrollment in Cryptographically Secured Biometrics-based Identification and Authentication Systems,” Elsevier Journal on Future Generation Computer Systems (FGCS), Volume 98, September 2019, Pages 259-273. [[PDF]](https://)
