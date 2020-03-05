@@ -5,7 +5,7 @@ Secure and privacy-preserving computation and cryptography, security of cyber-ph
 # Highlights of Accomplishments
 * 60+ peer-reviewed publications
 * 20+ issued patents and 15+ pending
-* Over $15 million in extramural funding ([DARPA](https://www.darpa.mil/), [DHS](https://www.dhs.gov/science-and-technology),     [IARPA](https://www.iarpa.gov/))
+* $15+ million in extramural funding ([DARPA](https://www.darpa.mil/), [DHS](https://www.dhs.gov/science-and-technology),     [IARPA](https://www.iarpa.gov/))
 * 2011-2015: Information Director of ACM Transactions on Privacy and Security (formerly ACM TISSEC)
 * More details in [resume](https://keldefrawy.github.io/karim_resume.pdf) (updated in December 2019)
 
