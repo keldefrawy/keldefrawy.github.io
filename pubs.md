@@ -1,4 +1,5 @@
 # (Last Updated: February 2020)
+(Please email me if you are having problems finidng a PDF of one of my papers)
 
 # 2020
 * Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”, to be presented at the 2020 Usenix Security Symposium. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
@@ -7,10 +8,10 @@
 # 2019
 * Karim Eldefrawy, Vitor Pereira, “A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/verif-mpc_ccs2019.pdf)
 * Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Michael Steiner, Gene Tsudik, “VRASED: A Verified Hardware/Software Co-Design for Remote Attestation,” in proceedings of the Usenix Security Symposium, 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/vrased_usenixsec2019.pdf)
-* Karim Eldefrawy, Ashish Gehani, Alexandre Matton, “Longitudinal Study of Misuse of Bitcoin,” in proceedings of the International Conference on Applied Cryptography and Network Security (ACNS’19), 2019. [[PDF]](https://)
+* Karim Eldefrawy, Ashish Gehani, Alexandre Matton, “Longitudinal Study of Misuse of Bitcoin,” in proceedings of the International Conference on Applied Cryptography and Network Security (ACNS’19), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/btc_acns2019.pdf)
 * Ivan De Olivera Nunes, Karim Eldefrawy, Tancrede Lepoint, “Non-interactive User Re-enrollment in Cryptographically Secured Biometrics-based Identification and Authentication Systems,” Elsevier Journal on Future Generation Computer Systems (FGCS), Volume 98, September 2019, Pages 259-273. [[PDF]](https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf)
-* Karim Eldefrawy, Gene Tsudik, “Opinion: Advancing Remote Attestation via Computer-aided Formal Verification,” in proceedings of the 12th ACM Conference on Security and Privacy in Wireless and Mobile Networks (Wisec), 2019. [[PDF]](https://)
-* Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik, “PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems,” in proceedings of the IEEE/ACM International Conference On Computer Aided Design (ICCAD), 2019. [[PDF]](https://)
+* Karim Eldefrawy, Gene Tsudik, “Opinion: Advancing Remote Attestation via Computer-aided Formal Verification,” in proceedings of the 12th ACM Conference on Security and Privacy in Wireless and Mobile Networks (Wisec), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/ra-opinion_wisec2019.pdf)
+* Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik, “PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems,” in proceedings of the IEEE/ACM International Conference On Computer Aided Design (ICCAD), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/pure_iccad2019.pdf)
 
 # 2018
 * (Book Chapter) Karim Eldefrawy, Rafail Ostrovsky, Moti Yung, “Theoretical Foundations of Moving Target Defense: Proactive Secret Sharing and Secure Multiparty Computation,” From Database to Cyber Security, Springer International Publishing, 2018. [[PDF]](https://)
