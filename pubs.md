@@ -1,5 +1,5 @@
 # (Last Updated: February 2020)
-(Please email me if you are having problems finidng a PDF of one of my papers)
+(Email me if you are having problems finidng a PDF of one of my papers)
 
 # 2020
 * Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”, to be presented at the 2020 Usenix Security Symposium. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
