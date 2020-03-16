@@ -3,7 +3,7 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 
 
 # Publications and Projects
-* My publications can be found [here](https://keldefrawy.github.io/pubs.html) or on [Google Scholar](http://bit.ly/2KIZaWF).
+* My publications can be found [here](https://keldefrawy.github.io/pubs.html) and on [Google Scholar](http://bit.ly/2KIZaWF).
 * Details about projects related to publications on [ResearchGate](http://bit.ly/37tOPHZ).
 
 
