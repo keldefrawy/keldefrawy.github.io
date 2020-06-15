@@ -3,7 +3,7 @@
 
 # 2020
 * Karim Eldefrawy, Seoyeon Hwang, Moti Yung, Rafail Ostrovsky, "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups", in proceedings of the 12th Conference Security and Cryptography in Networks (SCN), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/epmpcgas_scn2020.pdf)
-* Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”, in proceedings of the 2020 Usenix Security Symposium. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
+* Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”,  in proceedings of the  29th Usenix Security Symposium, 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
 * Karim Eldefrawy, Michael Locasto, Norrathep Rattanavipanon, Hassen Saidi, "Towards Automated-augmentation of Legacy and Insecure Cryptographic Executables", in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/alice_acns2020.pdf)
 * Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux “Communication Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities”, in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf)
 
