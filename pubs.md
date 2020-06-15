@@ -2,9 +2,10 @@
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 # 2020
-* Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”, to be presented at the 2020 Usenix Security Symposium. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
-* Karim Eldefrawy, Michael Locasto, Norrathep Rattanavipanon, Hassen Saidi, "Towards Automated-augmentation of Legacy and Insecure Cryptographic Executables", to be presented at the 2020 International Conference on Applied Cryptography and Network Security (ACNS). [[PDF]](https://keldefrawy.github.io/pubs/2020/alice_acns2020.pdf)
-* Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux “Communication Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities”, to be presented at the 18th International Con- ference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf)
+* Karim Eldefrawy, Seoyeon Hwang, Moti Yung, Rafail Ostrovsky, "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups", in proceedings of the 12th Conference Security and Cryptography in Networks (SCN), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/epmpcgas_scn2020.pdf)
+* Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”, in proceedings of the 2020 Usenix Security Symposium. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
+* Karim Eldefrawy, Michael Locasto, Norrathep Rattanavipanon, Hassen Saidi, "Towards Automated-augmentation of Legacy and Insecure Cryptographic Executables", in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/alice_acns2020.pdf)
+* Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux “Communication Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities”, in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf)
 
 # 2019
 * Karim Eldefrawy, Vitor Pereira, “A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/verif-mpc_ccs2019.pdf)
