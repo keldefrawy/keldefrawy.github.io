@@ -13,7 +13,7 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 # Contact
 * **Work:** {firstname_dot_lastname} + {@} + {sri_dot_com}
 * **Personal:** {lastname} + {@} + {email_of_most_famous_search_engine}
-**Personal Encrypted:** {lastname} + {@} + {positive_particle_in_atomic_nuclei_email_service}
+* **Personal Encrypted:** {lastname} + {@} + {positive_particle_in_atomic_nuclei_email_service}
 
 
 
