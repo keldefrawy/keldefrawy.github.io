@@ -1,7 +1,7 @@
 # (Last Updated: June 2020)
 24- “Creating software packages for performing secure computations“ United States Patent Number  US10867053.
 
-23- “STAGS: secure, tunable, and accountable generic search in databases” United States Patent Number US10691754.
+23- “Secure, tunable, and accountable generic search in databases” United States Patent Number US10691754.
 
 22- “Generic pattern matching system” United States Patent Number US10621364.
 
