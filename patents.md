@@ -1,13 +1,13 @@
 # (Last Updated: June 2020)
-24- “Creating software packages for performing secure computations“ United States Patent Number  US10867053.
+24- ``Creating software packages for performing secure computations“ United States Patent Number  US10867053.
 
-23- “Secure, tunable, and accountable generic search in databases” United States Patent Number US10691754.
+23- ``Secure, tunable, and accountable generic search in databases” United States Patent Number US10691754.
 
-22- “Generic pattern matching system” United States Patent Number US10621364.
+22- ``Generic pattern matching system” United States Patent Number US10621364.
 
-21- “System and method to integrate secure and privacy-preserving biometrics with identification, authentication, and online credential systems” United States Patent Number US10523654.
+21- ``System and method to integrate secure and privacy-preserving biometrics with identification, authentication, and online credential systems” United States Patent Number US10523654.
 
-20- “One-time obfuscation for polynomial-size ordered binary decision diagrams (POBDDs)” United States Patent Number US10509918.
+20- ``One-time obfuscation for polynomial-size ordered binary decision diagrams (POBDDs)” United States Patent Number US10509918.
 
 19- “System and method for operating a proactive digital currency ledger” United States Patent Number US10423961.
 
