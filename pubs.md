@@ -1,5 +1,16 @@
-# (Last Updated: June 2020)
+# (Last Updated: January 2021)
 (Email me if you are having problems finidng a PDF of one of my papers)
+
+# 2021
+
+59- Karim Eldefrawy, Julian Loss, Ben Terner, "Byzantine Agreement for Hybrid Network Settings with Optimal Tolerance to Byzantine and Crash Faults", under review.
+
+58- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in preparation.
+
+57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing", in preparation.
+
+56- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", in preparation.
+
 
 # 2020
 55- Karim Eldefrawy, Seoyeon Hwang, Moti Yung, Rafail Ostrovsky, "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups", in proceedings of the 12th Conference Security and Cryptography in Networks (SCN), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/epmpcgas_scn2020.pdf)
