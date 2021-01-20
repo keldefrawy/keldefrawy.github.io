@@ -3,10 +3,10 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 
 
 # Publications, Patents, and Projects
-* Publications can be found [here](https://keldefrawy.github.io/pubs.html) and on [Google Scholar](http://bit.ly/2KIZaWF).
-* Patents can be found [here](https://keldefrawy.github.io/patents.html). 
-* Extramurally funded projects can be found [here](https://keldefrawy.github.io/projects.html).
-* Long-term research threads and related publications on [ResearchGate](http://bit.ly/37tOPHZ).
+* Publications listed [here](https://keldefrawy.github.io/pubs.html) and on [Google Scholar](http://bit.ly/2KIZaWF).
+* Patents listed [here](https://keldefrawy.github.io/patents.html). 
+* Extramurally funded projects listed [here](https://keldefrawy.github.io/projects.html).
+* For long-term research threads see my projects on [ResearchGate](http://bit.ly/37tOPHZ).
 
 
 # Resume
