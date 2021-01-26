@@ -100,7 +100,7 @@
 # 2012
 19- Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, Eric Tressler, “5PM: Secure Pat- tern Matching”, in proceedings of the 8th conference on Security and Cryptography for Networks (SCN), 2012. [[PDF]](https://)
 
-18. Karim Eldefrawy, Gavin Holland, “Secure and Privcay-preserving Querying of Content in MANETs”, in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2012. [[PDF]](https://)
+18- Karim Eldefrawy, Gavin Holland, “Secure and Privcay-preserving Querying of Content in MANETs”, in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2012. [[PDF]](https://)
 
 17- Karim Eldefrawy, Aurelien Francillon, Daniele Perito, Gene Tsudik, “SMART: Secure and Minimal Architecture for (Establishing Dynamic) Root of Trust”, in proceedings of Network & Distributed System Security Symposium (NDSS), 2012. [[PDF]](https://)
 
