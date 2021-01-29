@@ -1,11 +1,11 @@
 # A Collection of Notes by [Karim Eldefrawy](https://keldefrawy.github.io/) 
 
-*On Research
+* On Research
 
-*On Computer Science
+* On Computer Science
 
-*On Mathematics
+* On Mathematics
 
-*On Science
+* On Science
 
-*On Entrepreneurship
+* On Entrepreneurship
