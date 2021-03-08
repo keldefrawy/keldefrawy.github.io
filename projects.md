@@ -1,5 +1,6 @@
 
 # Currenlty at [SRI](https://www.sri.com/):
+* 2021-2024: PI of “FARSIDE: Formally-verified Accelerator for Ring-based Secure Iterative-evaluation of Data under Encryption,” funded by DARPA under the ([DPRIVE](https://www.darpa.mil/news-events/2021-03-08)) program.
 * 2020-2024: CoPI of “EMPHASIZE: End-to-end Machinery for Proving Highly-sensitive Application-oriented Statements In ZEro-knowledge,” funded by DARPA under  the Securing  Information  for  Encrypted  Verification and Evaluation ([SIEVE](https://www.darpa.mil/program/securing-information-for-encrypted-verification-and-evaluation)) program.
 * 2019-2023: PI of “PRISM: PRivacy-preserving Intrusion-resilient Secure Multi-party-computation  (for  anonymous  messaging),”  funded  by  DARPA under the Resilient Anonymous Communication for Everyone ([RACE](https://www.darpa.mil/program/resilient-anonymous-communication-for-everyone)) program.
 * 2020: CoPI of “LOQI: Leveraging Optimization using Quantum-devicesfor Internet-security” in a team led by PI Prof. Wim van Dam from [QC Ware](https://qcware.com/team#team) funded by the [Air Force Quantum Collider](https://usafquantumcollider.com/) program.
