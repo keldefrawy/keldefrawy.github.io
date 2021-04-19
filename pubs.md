@@ -6,7 +6,7 @@
 
 62- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in preparation. [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
-61- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", in preparation.
+61- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", under review. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
 60- Karim Eldefrawy, Julian Loss, Ben Terner, "Byzantine Agreement for Hybrid Network Settings with Optimal Tolerance to Byzantine and Crash Faults", in preparation.
 
