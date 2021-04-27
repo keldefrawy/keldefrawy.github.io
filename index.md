@@ -10,9 +10,9 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 
 
 # Talks, News, and Articles
-* Online talks [here](https://keldefrawy.github.io/talks.html)
-* Featured profiles [here](https://keldefrawy.github.io/profiles.html)
-* News coverage [here](https://keldefrawy.github.io/news.html)
+* [Online talks](https://keldefrawy.github.io/talks.html)
+* [Featured profiles](https://keldefrawy.github.io/profiles.html)
+* [News coverage](https://keldefrawy.github.io/news.html)
 
 
 # Resume
