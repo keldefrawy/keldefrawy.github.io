@@ -2,6 +2,9 @@
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 # 2021
+
+63- Wim van Dam, Karim Eldefraw, Nick Genise, Natalie Parham, "Quantum Heuristics for Knapsack Problems", in preparation. [PDF]
+
 62- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in preparation. [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
 61- Karim Eldefrawy, Julian Loss, Ben Terner, "Byzantine Agreement for Hybrid Network Settings with Optimal Tolerance to Byzantine and Crash Faults", in preparation. [PDF]
