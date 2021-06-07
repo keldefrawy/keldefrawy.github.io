@@ -1,4 +1,7 @@
-# (Last Updated: June 2020)
+# (Last Updated: June 2021)
+
+25- "Secure re-enrollment of biometric templates using functional encryption" United States Patent Number US11023569
+
 24- “Creating software packages for performing secure computations“ United States Patent Number  US10867053
 
 23- “Secure, tunable, and accountable generic search in databases” United States Patent Number US10691754
