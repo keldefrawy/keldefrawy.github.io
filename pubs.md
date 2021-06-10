@@ -1,23 +1,24 @@
-# (Last Updated: April 2021)
+# (Last Updated: June 2021)
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 # 2021
+64- Karim Eldefrawy and Nick Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
 
-63- Wim van Dam, Karim Eldefraw, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with anApplication to Knapsack Problems", in preparation. [PDF]
+63- Wim van Dam, Karim Eldefrawy, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", under review. [PDF]
 
-62- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in preparation. [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
+62- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", under review. [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
-61- Karim Eldefrawy, Julian Loss, Ben Terner, "Byzantine Agreement for Hybrid Network Settings with Optimal Tolerance to Byzantine and Crash Faults", in preparation. [PDF]
+61- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", under review. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
-60- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in preparation. [PDF]
+60- Karim Eldefrawy, Julian Loss, Ben Terner, "Byzantine Agreement for Hybrid Network Settings with Optimal Tolerance to Byzantine and Crash Faults", under review. [PDF]
 
-59- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", in preparation. [PDF]
+59- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", ongoing work. [PDF]
 
-58- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", under review. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
+58- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
 
-57- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
+57- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
 
-56- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", under review. [PDF]
+56- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", ongoing work. [PDF]
 
 
 # 2020
