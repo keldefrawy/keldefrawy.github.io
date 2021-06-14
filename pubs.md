@@ -10,7 +10,7 @@
 
 61- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", under review. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
-60- Karim Eldefrawy, Julian Loss, Ben Terner, "Byzantine Agreement for Hybrid Network Settings with Optimal Tolerance to Byzantine and Crash Faults", under review. [PDF]
+60- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf).
 
 59- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", ongoing work. [PDF]
 
