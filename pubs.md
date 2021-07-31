@@ -9,7 +9,7 @@
 
 63- Karim Eldefrawy and Nick Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
 
-62- Wim van Dam, Karim Eldefrawy, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", under review. [PDF]
+62- Wim van Dam, Karim Eldefrawy, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE Intl. Conf. on Quantum Computing and Engineering. [PDF]
 
 61- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", under review. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
