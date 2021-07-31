@@ -3,13 +3,15 @@
 
 # 2021
 
-65- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ron Dreslinski, Chris Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", under review. [PDF]
 
-64- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", under review. [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
-63- Karim Eldefrawy and Nick Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
+65- Wim van Dam, Karim Eldefrawy, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE Intl. Conf. on Quantum Computing and Engineering. [PDF]
 
-62- Wim van Dam, Karim Eldefrawy, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE Intl. Conf. on Quantum Computing and Engineering. [PDF]
+64- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ron Dreslinski, Chris Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", under review. [PDF]
+
+63- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", under review. [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
+
+62- Karim Eldefrawy and Nick Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
 
 61- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", under review. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
