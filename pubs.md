@@ -5,7 +5,7 @@
 
 
 
-65- Wim van Dam, Karim Eldefrawy, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE Intl. Conf. on Quantum Computing and Engineering. [PDF]
+65- Wim van Dam, Karim Eldefrawy, Nick Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE International Conference on Quantum Computing and Engineering. [PDF]
 
 64- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ron Dreslinski, Chris Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", under review. [PDF]
 
