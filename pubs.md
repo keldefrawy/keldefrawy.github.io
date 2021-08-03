@@ -74,7 +74,7 @@
 
 35- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Jonathan Katz, “Efficient, Reusable Fuzzy Extractors from LWE,” in proceedings of the 2017 International Symposium on Cyber Security Cryptography and Machine Learning (CSCML), 2017. [[PDF]](https://)
 
-34- Karim Eldefrawy, Sky Faber, Tyler Kazcmarek, “Proactively Secure Cloud-enabled Storage,” in pro- ceedings of the 37th IEEE International Conference on Distributed Computing Systems (ICDCS), 2017. [[PDF]](https://)
+34- Karim Eldefrawy, Sky Faber, Tyler Kazcmarek, “Proactively Secure Cloud-enabled Storage,” in proceedings of the 37th IEEE International Conference on Distributed Computing Systems (ICDCS), 2017. [[PDF]](https://)
 
 33- Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik, “LIghtweight Swarm Attestation: a Tale of Two LISA-s,” in proceedings of ACM Asia Conference on Computer and Com- munications Security (ASIACCS), 2017. [[PDF]](https://)
 
@@ -86,7 +86,7 @@
 
 30- Karim Eldefrawy, Tiffany Kim, Pape Sylla, “Automated Identification of Network Service Dependencies via Transfer Entropy,” in proceedings of the 40th IEEE Computer Society International Conference on Computers, Software & Applications (COMPSAC’16), ADMNET: The 4th IEEE International Workshop on Architecture, Design, Deployment and Management of Networks and Applications, 2016. [[PDF]](https://)
 
-29- Karim Eldefrawy, Tyler Kazcmarek, “Byzantine Fault Tolerant Software-Defined Network (SDN) Con- trollers,” in proceedings of the 40th IEEE Computer Society International Conference on Computers, Software & Applications (COMPSAC’16), MidCCI: The 2nd IEEE International Workshop on Middleware for Cyber Security, Cloud Computing and Internetworking, 2016. [[PDF]](https://)
+29- Karim Eldefrawy, Tyler Kazcmarek, “Byzantine Fault Tolerant Software-Defined Network (SDN) Controllers,” in proceedings of the 40th IEEE Computer Society International Conference on Computers, Software & Applications (COMPSAC’16), MidCCI: The 2nd IEEE International Workshop on Middleware for Cyber Security, Cloud Computing and Internetworking, 2016. [[PDF]](https://)
 
 # 2015
 28- Joshua Baron, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, “Communication-Optimal Mobile Proactive Secret Sharing” in proceedings of the International Conference on Applied Cryptography and Network Security (ACNS’15), 2015. [[PDF]](https://)
@@ -105,24 +105,25 @@
 
 22- Martin Strohmeier, Ivan Martinovic, Utz Roedig, Karim Eldefrawy, Jens Schmitt “Neighborhood Watch: On Network Coding Throughput and Key Sharing”, in proceedings of the IEEE Global Communications Conference (GLOBECOM), 2013. [[PDF]](https://)
 
-21- Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, Eric Tressler, “5PM: Secure Pat- tern Matching”, Journal of Computer Security (JCS), Vol. 21 No. 5, September 2013. [[PDF]](https://)
+21- Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, Eric Tressler, “5PM: Secure Pattern Matching”, Journal of Computer Security (JCS), Vol. 21 No. 5, September 2013. [[PDF]](https://)
 
 20- Karim Eldefrawy, Sky Faber, “Blindfolded Searching of Data via Secure Pattern Matching”, in IEEE Computer Magazine, Vol. 46 No.12 , December 2013. [[PDF]](https://)
 
 
 # 2012
-19- Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, Eric Tressler, “5PM: Secure Pat- tern Matching”, in proceedings of the 8th conference on Security and Cryptography for Networks (SCN), 2012. [[PDF]](https://)
+19- Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, Eric Tressler, “5PM: Secure Pattern Matching”, in proceedings of the 8th conference on Security and Cryptography for Networks (SCN), 2012. [[PDF]](https://)
 
 18- Karim Eldefrawy, Gavin Holland, “Secure and Privcay-preserving Querying of Content in MANETs”, in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2012. [[PDF]](https://)
 
 17- Karim Eldefrawy, Aurelien Francillon, Daniele Perito, Gene Tsudik, “SMART: Secure and Minimal Architecture for (Establishing Dynamic) Root of Trust”, in proceedings of Network & Distributed System Security Symposium (NDSS), 2012. [[PDF]](https://)
 
-16- Mishari Al Mishari, Emiliano De Cristofaro, Karim Eldefrawy, Gene Tsudik, “Harvesting SSL Certifi- cate Data to Mitigate Web-Fraud”, International Journal of Network Security (IJNS), Vol. 14 No. 6, November 2012. [[PDF]](https://)
+16- Mishari Al Mishari, Emiliano De Cristofaro, Karim Eldefrawy, Gene Tsudik, “Harvesting SSL Certificate Data to Mitigate Web-Fraud”, International Journal of Network Security (IJNS), Vol. 14 No. 6, November 2012. [[PDF]](https://)
+
 
 # 2011
-15- Karim Eldefrawy, GeneTsudik,“Privacy-Preserving Location-Based On-Demand Routing in MANETs”, IEEE Journal of Selected Areas of Communication (IEEE JSAC), Vol. 29 No. 10, December 2011. [[PDF]](https://)
+15- Karim Eldefrawy, GeneTsudik, “Privacy-Preserving Location-Based On-Demand Routing in MANETs”, IEEE Journal of Selected Areas of Communication (IEEE JSAC), Vol. 29 No. 10, December 2011. [[PDF]](https://)
 
-14- Karim Eldefrawy, Gene Tsudik,“Anonymous Location Aided Routing in Suspicious MANETs”, IEEE Transactions on Mobile Computing (IEEE TMC), Vol. 10 No. 9, September 2011. [[PDF]](https://)
+14- Karim Eldefrawy, Gene Tsudik, “Anonymous Location Aided Routing in Suspicious MANETs”, IEEE Transactions on Mobile Computing (IEEE TMC), Vol. 10 No. 9, September 2011. [[PDF]](https://)
 
 13- Srdjan Capkun, Karim Eldefrawy, Gene Tsudik, “Group Distance Bounding Protocols”, in proceedings of the 4th International Conference on Trust and Trustworthy Computing (TRUST), 2011. [[PDF]](https://)
 
@@ -132,7 +133,7 @@
 
 11- Claude Catellucia, Karim Eldefrawy, Gene Tsudik, “Link-Layer Encryption Effect on the Capacity of Network Coding in Wireless Networks”, in proceedings of IEEE INFOCOM Work in Progress, 2010. [[PDF]](https://)
 
-10- Karim Eldefrawy, John Solis, Gene Tsudik, “Leveraging Social Contacts for Message Confidential- ity in Delay Tolerant Networks”, in proceedings of the IEEE International Computer Software and Applications Conference (COMPSAC), 2009. [[PDF]](https://)
+10- Karim Eldefrawy, John Solis, Gene Tsudik, “Leveraging Social Contacts for Message Confidentiality in Delay Tolerant Networks”, in proceedings of the IEEE International Computer Software and Applications Conference (COMPSAC), 2009. [[PDF]](https://)
 
 9- Karim Eldefrawy, Gene Tsudik, “PRISM: Privacy-friendly Routing In Suspicious MANETs (and VANETs)”, in proceedings of the IEEE International Conference of Network Protocols (ICNP), 2008. [[PDF]](https://)
 
@@ -148,6 +149,6 @@
 
 3- Karim Eldefrawy, Claudio Soriente, “PEUC-WiN: Privacy Enhancement by User Cooperation in Wireless Networks”, in proceedings of Second Workshop on Secure Network Protocols (NPSEC), 2006. [[PDF]](https://)
 
-2- Karim Eldefrawy, Magda El Zarki , Mohamed Khairy, “Proposal for a cross-layer coordination frame- work for next generation wireless systems”, in proceedings of the International Conference on Communications and Mobile Computing (IWCMC), 2006. [[PDF]](https://)
+2- Karim Eldefrawy, Magda El Zarki , Mohamed Khairy, “Proposal for a cross-layer coordination framework for next generation wireless systems”, in proceedings of the International Conference on Communications and Mobile Computing (IWCMC), 2006. [[PDF]](https://)
 
 1- Karim Eldefrawy, Mohamed Khairy, Amin Nassar, “Sub-Carrier Allocation using Channel Prediction for OFDMA systems based on IEEE 802.16 Standard”, in proceedings International Conference on Computer Engineering and Systems (ICCES), 2006. [[PDF]](https://)
