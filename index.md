@@ -17,6 +17,7 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 
 # Resume
 * More details in full [resume](https://keldefrawy.github.io/karim_resume.pdf) (last updated in July 2020)
+* LinkedIn profile [here](https://www.linkedin.com/pub/karim-eldefrawy/3/6b5/b70)
 
 
 # Contact
