@@ -23,7 +23,7 @@
 
 57- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
 
-56- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", [PDF]
+56- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
 
 # 2020
 55- Karim Eldefrawy, Seoyeon Hwang, Moti Yung, Rafail Ostrovsky, "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups", in proceedings of the 12th Conference Security and Cryptography in Networks (SCN), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/epmpcgas_scn2020.pdf)
