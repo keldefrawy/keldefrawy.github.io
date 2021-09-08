@@ -7,11 +7,11 @@
 
 65- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", ongoing journal version, preliminary version accepted for publication at the 54th IEEE/ACM International Symposium on Microarchitecture. [PDF]
 
-64- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", accepted for publication at the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
+64- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", accepted at the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
-63- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
+63- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", accepted at the 18th IMA International Conference on Cryptography and Coding. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
-62- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", under review. [[PDF]](https://eprint.iacr.org/2021/499.pdf)
+62- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
 
 61- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
 
