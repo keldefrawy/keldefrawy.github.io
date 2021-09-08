@@ -5,19 +5,19 @@
 
 66- Wim van Dam, Karim Eldefrawy, Nicholas Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE International Conference on Quantum Computing and Engineering. [[PDF]](https://arxiv.org/abs/2108.08805)
 
-65- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", ongoing journal version, preliminary version accepted for publication at the 54th IEEE/ACM International Symposium on Microarchitecture. [PDF]
+65- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", ongoing journal version, preliminary version accepted at the 54th IEEE/ACM International Symposium on Microarchitecture. [PDF]
 
 64- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", accepted at the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
 63- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", accepted at the 18th IMA International Conference on Cryptography and Coding (IMACC). [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
-62- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
+62- Karim Eldefrawy, Julian Loss, and Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
 
-61- Karim Eldefrawy, Julian Loss, and Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
+61- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", under review. [PDF]
 
-60- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", under review. [PDF]
+60- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", under review. [PDF]
 
-59- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", under review. [PDF]
+59- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
 
 58- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
