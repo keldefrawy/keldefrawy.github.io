@@ -10,14 +10,14 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 
 
 # Talks, News, and Articles
-* [Online talks](https://keldefrawy.github.io/talks.html)
-* [Featured profiles](https://keldefrawy.github.io/profiles.html)
-* [News coverage](https://keldefrawy.github.io/news.html)
+* [Online Talks](https://keldefrawy.github.io/talks.html)
+* [Featured Interviews and Profiles](https://keldefrawy.github.io/profiles.html)
+* [News Coverage](https://keldefrawy.github.io/news.html)
 
 
 # Resume
 * More details in full [resume](https://keldefrawy.github.io/karim_resume.pdf) (last updated in July 2020)
-* SRI prrrofile [here](https://www.sri.com/bios/karim-eldefrawy/)
+* SRI profile [here](https://www.sri.com/bios/karim-eldefrawy/)
 * LinkedIn profile [here](https://www.linkedin.com/pub/karim-eldefrawy/3/6b5/b70)
 
 
