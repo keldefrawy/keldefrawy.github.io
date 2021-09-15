@@ -5,11 +5,13 @@
 # Under Review and Ongoing Work
 
 
-66- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
+67- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
 
-65- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", ongoing work. [PDF]
+66- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", ongoing work. [PDF]
 
-64- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
+65- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
+
+64- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Modeling Anonymity in Mixnets for a General Class of Adversaries", under review.
 
 63- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", under review. [PDF]
 
