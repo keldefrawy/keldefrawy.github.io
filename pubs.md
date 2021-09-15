@@ -11,7 +11,7 @@
 
 65- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
 
-64- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Modeling Anonymity in Mixnets for a General Class of Adversaries", under review.
+64- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Modeling Anonymity in Mixnets for a General Class of Adversaries", under review. [PDF]
 
 63- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", under review. [PDF]
 
