@@ -9,7 +9,7 @@
 
 66- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", ongoing work. [PDF]
 
-65- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", under review. [PDF]
+65- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
 64- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
 
