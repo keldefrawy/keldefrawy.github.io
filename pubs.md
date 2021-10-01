@@ -11,11 +11,13 @@
 
 65- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
-64- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
+65- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
+
+64- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
 
 63- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Modeling Anonymity in Mixnets for a General Class of Adversaries", under review. [PDF]
 
-62- Karim Eldefrawy, Julian Loss, and Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
+62- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
 
 61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", under review. [PDF]
 
@@ -26,7 +28,7 @@
 
 59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", ongoing journal version, preliminary version accepted at the 54th IEEE/ACM International Symposium on Microarchitecture. [[PDF]](https://arxiv.org/pdf/2109.05371.pdf)
 
-58- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", accepted at the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
+58- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", accepted at the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
 57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", accepted at the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems. [PDF]
 
