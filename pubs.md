@@ -24,13 +24,13 @@
 
 # 2021
 
-60- Wim van Dam, Karim Eldefrawy, Nicholas Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE International Conference on Quantum Computing and Engineering. [[PDF]](https://arxiv.org/abs/2108.08805)
+60- Wim van Dam, Karim Eldefrawy, Nicholas Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", accepted at IEEE International Conference on Quantum Computing and Engineering (QCE). [[PDF]](https://arxiv.org/abs/2108.08805)
 
-59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", ongoing journal version, preliminary version accepted at the 54th IEEE/ACM International Symposium on Microarchitecture. [[PDF]](https://arxiv.org/pdf/2109.05371.pdf)
+59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", ongoing journal version, preliminary version accepted at the 54th IEEE/ACM International Symposium on Microarchitecture (Micro). [[PDF]](https://arxiv.org/pdf/2109.05371.pdf)
 
 58- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", accepted at the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
-57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", accepted at the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems. [PDF]
+57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", accepted at the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS). [PDF]
 
 56- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", accepted at the 18th IMA International Conference on Cryptography and Coding (IMACC). [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
