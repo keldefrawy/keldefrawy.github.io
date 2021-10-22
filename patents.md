@@ -1,6 +1,8 @@
 # (Last Updated: June 2021)
 
-25- "Secure re-enrollment of biometric templates using functional encryption" United States Patent Number US11023569
+26- "Secure re-enrollment of biometric templates using functional encryption" United States Patent Number US11023569
+
+25- “Semi-robust protocols for secure multiparty computation” United States Patent Number US10686597
 
 24- “Creating software packages for performing secure computations“ United States Patent Number  US10867053
 
