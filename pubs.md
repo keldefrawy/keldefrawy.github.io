@@ -5,11 +5,11 @@
 # Under Review and Ongoing Work
 
 
-67- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
+68- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
 
-66- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", ongoing work. [PDF]
+67- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
-65- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
+66- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
 
 65- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
 
