@@ -21,7 +21,12 @@
 
 62- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
 
-61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", under review. [PDF]
+
+
+
+# 2022
+
+61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", accepted at the 20th International Conference on Applied Cryptography and Network Security (ACNS). [PDF]
 
 
 # 2021
