@@ -61,7 +61,7 @@
 
 48- Ivan De Olivera Nunes, Karim Eldefrawy, Tancrede Lepoint, “Non-interactive User Re-enrollment in Cryptographically Secured Biometrics-based Identification and Authentication Systems,” Elsevier Journal on Future Generation Computer Systems (FGCS), Volume 98, September 2019, Pages 259-273. [[PDF]](https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf)
 
-47- Karim Eldefrawy, Gene Tsudik, “Opinion: Advancing Remote Attestation via Computer-aided Formal Verification,” in proceedings of the 12th ACM Conference on Security and Privacy in Wireless and Mobile Networks (Wisec), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/ra-opinion_wisec2019.pdf)
+47- Karim Eldefrawy, Gene Tsudik, “Opinion: Advancing Remote Attestation via Computer-aided Formal Verification of Designs and Synthesis of Executables,” in proceedings of the 12th ACM Conference on Security and Privacy in Wireless and Mobile Networks (Wisec), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/ra-opinion_wisec2019.pdf)
 
 46- Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik, “PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems,” in proceedings of the IEEE/ACM International Conference On Computer Aided Design (ICCAD), 2019. [[PDF]](https://keldefrawy.github.io/pubs/2019/pure_iccad2019.pdf)
 
