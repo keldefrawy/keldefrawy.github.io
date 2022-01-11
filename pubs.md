@@ -23,7 +23,7 @@
 
 # 2022
 
-61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in proceedings of the 20th International Conference on Applied Cryptography and Network Security (ACNS). [PDF]
+61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in proceedings of the 20th International Conference on Applied Cryptography and Network Security (ACNS). [PDF](https://eprint.iacr.org/2021/1564)
 
 
 # 2021
