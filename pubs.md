@@ -1,17 +1,14 @@
-# (Last Updated: September 2021)
+# (Last Updated: January 2022)
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 
 # Under Review and Ongoing Work
 
 
-69- Aysajan Abidin, Karim Eldefrawy, Dave Singlee, "Entanglement-based (Mutual) Quantum Distance Bounding", ongoing work. [PDF]
-
-68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
 67- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
 
-66- Karim Eldefrawy and Nicholas Genise, "Efficient Bounded-Collusion Qualified ABE from DDH", under review. [PDF]
+66- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
 65- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
 
