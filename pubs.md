@@ -4,9 +4,11 @@
 
 # Under Review and Ongoing Work
 
-67- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
+68- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
 
-66- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
+67- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
+
+66- Karim Eldefrawy, Tancrède Lepoint and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", under review. [[PDF]](https://keldefrawy.github.io/pubs/2022/msoffice_abe_cscml2022.pdf)
 
 65- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
 
@@ -42,7 +44,7 @@
 
 54- Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”,  in proceedings of the  29th Usenix Security Symposium, 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
 
-53- Karim Eldefrawy, Michael Locasto, Norrathep Rattanavipanon, Hassen Saidi, "Towards Automated-augmentation of Legacy and Insecure Cryptographic Executables", in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/alice_acns2020.pdf)
+53- Karim Eldefrawy, Michael Locasto, Norrathep Rattanavipanon, Hassen Saidi, "Towards Automated-augmentation of Legacy and Insecure Cryptographic Executables", in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](c)
 
 52- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux “Communication Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities”, in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf)
 
