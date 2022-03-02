@@ -4,9 +4,11 @@
 
 # Under Review and Ongoing Work
 
-69- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
+70- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
 
-68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
+69- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
+
+68- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "Concurrent Group Messaging with Forward Secrecy and Post Compromise Security", under review.
 
 67- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", under review. [[PDF]](https://keldefrawy.github.io/pubs/2022/msoffice_abe_cscml2022.pdf)
 
