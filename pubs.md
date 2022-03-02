@@ -4,24 +4,26 @@
 
 # Under Review and Ongoing Work
 
-68- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
+69- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
 
-67- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
+68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
-66- Karim Eldefrawy, Tancrède Lepoint and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", under review. [[PDF]](https://keldefrawy.github.io/pubs/2022/msoffice_abe_cscml2022.pdf)
+67- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", under review. [[PDF]](https://keldefrawy.github.io/pubs/2022/msoffice_abe_cscml2022.pdf)
 
-65- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
+66- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
 
-64- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
+65- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
 
-63- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Modeling Anonymity in Mixnets for a General Class of Adversaries", under review. [PDF]
+64- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Modeling Anonymity in Mixnets for a General Class of Adversaries", under review. [PDF]
 
-62- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
+63- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", under review. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
 
 
 
 
 # 2022
+
+62- Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, Daniel Sanchez, "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data", accepted at the 2022 International Symposium on Computer Architecture (ISCA).
 
 61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in proceedings of the 20th International Conference on Applied Cryptography and Network Security (ACNS). [[PDF]](https://eprint.iacr.org/2021/1564)
 
