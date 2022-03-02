@@ -32,7 +32,7 @@
 
 60- Wim van Dam, Karim Eldefrawy, Nicholas Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", in proceedings of the IEEE International Conference on Quantum Computing and Engineering (QCE). [[PDF]](https://arxiv.org/abs/2108.08805)
 
-59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", preliminary version in proceedings of the 54th IEEE/ACM International Symposium on Microarchitecture (Micro). [[PDF]](https://arxiv.org/pdf/2109.05371.pdf)
+59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", extended version of a preliminary paper in proceedings of the 54th IEEE/ACM International Symposium on Microarchitecture (Micro). [[PDF]](https://arxiv.org/pdf/2109.05371.pdf)
 
 58- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in proceedings of the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
