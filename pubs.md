@@ -10,7 +10,7 @@
 
 68- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "Concurrent Group Messaging with Forward Secrecy and Post Compromise Security", under review.
 
-67- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", under review. [[PDF]](https://keldefrawy.github.io/pubs/2022/msoffice_abe_cscml2022.pdf)
+67- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", under review. [PDF]
 
 66- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
 
