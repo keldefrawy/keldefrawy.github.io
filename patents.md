@@ -1,4 +1,4 @@
-# (Last Updated: June 2021)
+# (Last Updated: March 2022)
 
 27- "Biometric authentication with template privacy and non-interactive re-enrollment" United States Patent Number US11223478
 
