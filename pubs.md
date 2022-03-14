@@ -38,7 +38,7 @@
 
 58- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in proceedings of the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
-57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", in proceedings of the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS). [PDF]
+57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", in proceedings of the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS). [[PDF]](https://eprint.iacr.org/2022/096)
 
 56- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", in proceedings of the 18th IMA International Conference on Cryptography and Coding (IMACC). [[PDF]](https://eprint.iacr.org/2021/499.pdf)
 
