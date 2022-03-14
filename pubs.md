@@ -25,7 +25,7 @@
 
 63- Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, Daniel Sanchez, "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data", accepted at the 49th International Symposium on Computer Architecture (ISCA), 2022.[PDF]
 
-62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", accepted at the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2022. [PDF]
+62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", accepted at the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2022. [[PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf)
 
 61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", accepted at the 20th International Conference on Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/1564)
 
