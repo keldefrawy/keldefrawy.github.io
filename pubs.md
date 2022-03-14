@@ -8,7 +8,7 @@
 
 69- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
-68- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "Concurrent Group Messaging with Forward Secrecy and Post Compromise Security", under review. 
+68- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "Concurrent Group Messaging with Forward Secrecy and Post Compromise Security", under review. [PDF] 
 
 67- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
 
@@ -23,7 +23,7 @@
 
 # 2022
 
-63- Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, Daniel Sanchez, "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data", accepted at the 2022 International Symposium on Computer Architecture (ISCA'22).
+63- Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, Daniel Sanchez, "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data", accepted at the 2022 International Symposium on Computer Architecture (ISCA'22).[PDF]
 
 62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", accepted at the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML'22). [PDF]
 
