@@ -5,9 +5,9 @@
 Started: 05/01
 
 Trying to make things a bit more concrete. I think Web 3.0 will be about three things:
-*(1) data ownership, 
-*(2) privacy and confidentiality and integrity and authenticity come with it, 
-*(3) and distribution.
+**(1) data ownership, 
+**(2) privacy and confidentiality and integrity and authenticity come with it, 
+**(3) and distribution.
 
 Distribution will force independence of infrastructure (micorsevices for code).
 Programs and data will both start to live in microwaves and both travel to each other.
