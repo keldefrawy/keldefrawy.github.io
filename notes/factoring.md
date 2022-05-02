@@ -1,5 +1,5 @@
 
-# My Educated Guess on the Hardness of Factoring: Not as hard as commonly "believed"!
+# My Educated Guess on the Hardness of Factoring: Not as Hard!
 
 * **Reason 1:** Factoring is in the intersection of NP and coNP, which means that it is (extremely) unlikely to be NP-complete because otherwise NP=coNP which is (in my assessment) less likely to be true than factoring being hard.
 
