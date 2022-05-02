@@ -1,4 +1,6 @@
 
+Started Wrtiing it in notes on 05/01/2022:
+(had it scribbled a while ago in my Google Notes, Check date)
 
 ** Feynman's Cargo Cult Science: **
 Seemingly going through the motions and form, but with no subtance and rigour.
@@ -31,3 +33,14 @@ We are talking about opportunistic dishonest beings:
 - Entire broken schemes
 
 
+
+
+From Notes:
+
+What Feynman and Shannon missed
+
+
+People need something to do
+Universities are too large
+Garbage in garbage out
+Bandwagon at the institutional level
