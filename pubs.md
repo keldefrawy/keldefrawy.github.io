@@ -12,7 +12,7 @@
 
 68- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "Concurrent Group Messaging with Forward Secrecy and Post Compromise Security", under review. [PDF] 
 
-67- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "X Time-lock Puzzles and their Applications", under review. [PDF]
+67- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "A Puzzling Question about Time-Lock Puzzles: How to model & compose timed primitives in a non-idealized computational model", under review. [PDF]
 
 66- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
 
