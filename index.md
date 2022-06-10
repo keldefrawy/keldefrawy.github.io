@@ -10,7 +10,7 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 
 
 # Impact and Transitions
-* Co-founder and CTO [Confidencial, Inc](https://www.confidencial.io/)
+* Co-founder and CTO of [Confidencial, Inc](https://www.confidencial.io/)
 
 
 # Talks, News, and Articles
