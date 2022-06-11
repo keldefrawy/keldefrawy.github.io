@@ -1,4 +1,9 @@
-# 2017 - 2021 @ SRI
+# 2017 - 2022 @ SRI
+
+
+[2022: Confidencial's Spin-out Annoucement by SRI](https://www.sri.com/press/sri-ventures-announces-new-spin-out-confidencial-to-secure-sensitive-information-and-collaboration-for-distributed-enterprises/)
+
+[2022: Confidencial's Coverage by Global Security Mag](http://www.globalsecuritymag.com/SRI-Ventures-Announces-New-Spin,20220607,126312.html)
 
 [2021: ASIC Accelerators Get DARPA Funding](https://www.eetindia.co.in/asic-accelerators-get-darpa-funding/)
 
