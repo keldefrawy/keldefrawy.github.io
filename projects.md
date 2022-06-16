@@ -2,7 +2,11 @@
 # Extramurally Funded Projects
 
 
-## At [SRI](https://www.sri.com/) from 2017 to 2021:
+
+## At [Confidencial](https://www.confidencial.io/) from 2022 to 2023:
+* TBD
+
+## At [SRI](https://www.sri.com/) from 2017 to 2022:
 * 2021-2024: PI of “FARSIDE: Formally-verified Accelerator for Ring-based Secure Iterative-evaluation of Data under Encryption,” funded by DARPA under the Data Protection in Virtual Environments ([DPRIVE](https://www.darpa.mil/news-events/2021-03-08)) program.
 * 2020: CoPI of “LOQI: Leveraging Optimization using Quantum-devicesfor Internet-security” in a team led by PI Prof. Wim van Dam from [QC Ware](https://qcware.com/team#team) funded by the [Air Force Quantum Collider](https://usafquantumcollider.com/) program.
 * 2020-2024: CoPI of “EMPHASIZE: End-to-end Machinery for Proving Highly-sensitive Application-oriented Statements In ZEro-knowledge,” funded by DARPA under  the Securing  Information  for  Encrypted  Verification and Evaluation ([SIEVE](https://www.darpa.mil/program/securing-information-for-encrypted-verification-and-evaluation)) program.
