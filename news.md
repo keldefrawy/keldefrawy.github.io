@@ -1,5 +1,6 @@
 # 2017 - 2022 @ SRI
 
+[2022: SRI's Dish Blog Article on Confidencial](https://medium.com/dish/sri-spin-off-confidencial-delivers-innovations-in-data-privacy-b4965a05788d)
 
 [2022: Confidencial's Spin-out Annoucement by SRI](https://www.sri.com/press/sri-ventures-announces-new-spin-out-confidencial-to-secure-sensitive-information-and-collaboration-for-distributed-enterprises/)
 
