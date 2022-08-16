@@ -9,8 +9,9 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 * Open source software for selected projects [here](https://keldefrawy.github.io/software.html)
 
 
-# Impact and Transitions
+# Commercial Transitions 
 * Co-founder and CTO of [Confidencial, Inc](https://www.confidencial.io/)
+
 
 
 # Talks, News, and Articles
