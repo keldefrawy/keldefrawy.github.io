@@ -3,8 +3,8 @@
 
 
 
-## At [Confidencial](https://www.confidencial.io/) from 2022 to WXYZ:
-* TBD
+## At [Confidencial](https://www.confidencial.io/) from 2022 to Current:
+* 2022: Co-PI of "PICO: Protected Integrated Communication Overlay," funded by the NSF 5G Security Convergence Accelerator program.
 
 ## At [SRI](https://www.sri.com/) from 2017 to 2022:
 * 2021-2022: PI of “FARSIDE: Formally-verified Accelerator for Ring-based Secure Iterative-evaluation of Data under Encryption,” funded by DARPA under the Data Protection in Virtual Environments ([DPRIVE](https://www.darpa.mil/news-events/2021-03-08)) program.
