@@ -1,6 +1,6 @@
 # 2017 - 2022 @ SRI
 
-[2022: SRI's Annoucement of "PICO: Protected Integrated Communication Overlay" projectfunded by the NSF 5G Security Convergence Accelerator program.](https://www.sri.com/press/press-release/sri-international-spearheads-two-groundbreaking-efforts-to-secure-5g/)
+[2022: Annoucmeent of "PICO: Protected Integrated Communication Overlay" funding by the NSF 5G Security Convergence Accelerator program.](https://www.sri.com/press/press-release/sri-international-spearheads-two-groundbreaking-efforts-to-secure-5g/)
 
 [2022: SRI's Dish Blog Article on Confidencial](https://medium.com/dish/sri-spin-off-confidencial-delivers-innovations-in-data-privacy-b4965a05788d)
 
