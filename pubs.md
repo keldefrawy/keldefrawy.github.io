@@ -1,4 +1,4 @@
-# (Last Updated: June 2022)
+# (Last Updated: September 2022)
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 
@@ -8,7 +8,7 @@
 
 71- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", ongoing work. [PDF]
 
-70- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", ngoing work. [PDF] 
+70- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", ongoing work. [PDF] 
 
 69- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
 
