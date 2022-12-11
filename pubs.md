@@ -27,14 +27,14 @@
 
 # 2022
 
-64- Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, Daniel Sanchez, "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data", accepted at the 49th International Symposium on Computer Architecture (ISCA), 2022. [[PDF]](https://dl.acm.org/doi/abs/10.1145/3470496.3527393)
+64- Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, Daniel Sanchez, "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data", in proceedings of the 49th International Symposium on Computer Architecture (ISCA), 2022. [[PDF]](https://dl.acm.org/doi/abs/10.1145/3470496.3527393)
 
-63- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", accepted at 20th International Conference on
+63- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", in proceedings of the 20th International Conference on
 Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
 
-62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", accepted at the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2022. [[PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf) [[Extended Version PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf)
+62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", in proceedings of the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2022. [[PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf) [[Extended Version PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf)
 
-61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", accepted at the 20th International Conference on Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/1564)
+61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in proceedings of the 20th International Conference on Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/1564)
 
 
 # 2021
