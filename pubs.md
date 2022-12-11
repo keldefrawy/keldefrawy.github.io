@@ -32,7 +32,7 @@
 63- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", in proceedings of the 20th International Conference on
 Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
 
-62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", in proceedings of the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2022. [[PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf) [[Extended Version PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf)
+62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", in proceedings of the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2022. [[PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf) [[Extended Version]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf)
 
 61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in proceedings of the 20th International Conference on Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/1564)
 
@@ -55,7 +55,7 @@ Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.i
 
 54- Ivan De Olivera Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik “APEX: Architecture for Provable EXecution”,  in proceedings of the  29th Usenix Security Symposium, 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf)
 
-53- Karim Eldefrawy, Michael Locasto, Norrathep Rattanavipanon, Hassen Saidi, "Towards Automated-augmentation of Legacy and Insecure Cryptographic Executables", in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](c)
+53- Karim Eldefrawy, Michael Locasto, Norrathep Rattanavipanon, Hassen Saidi, "Towards Automated-augmentation of Legacy and Insecure Cryptographic Executables", in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]]()
 
 52- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux “Communication Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities”, in proceedings of the 18th International Conference on Applied Cryptography and Network Security (ACNS), 2020. [[PDF]](https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf)
 
