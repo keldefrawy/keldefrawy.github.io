@@ -1,4 +1,6 @@
-# (Last Updated: March 2022)
+# (Last Updated: January 2023)
+
+28- "Selectively sharing data in unstructured data containers" United States Patent Number US11507676
 
 27- "Biometric authentication with template privacy and non-interactive re-enrollment" United States Patent Number US11223478
 
