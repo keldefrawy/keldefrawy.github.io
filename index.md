@@ -3,7 +3,7 @@ Karim Eldefrawy, Ph.D., is a Principal Computer Scientist at the Computer Scienc
 
 
 # Publications, Writings, and Patents
-* Publications (75) listed [here](https://keldefrawy.github.io/pubs.html) and on [Google Scholar](http://bit.ly/2KIZaWF) and [Academia.edu](https://karimeldefrawy.academia.edu/)
+* Publications (75) listed [here](https://keldefrawy.github.io/pubs.html) on [Google Scholar](http://bit.ly/2KIZaWF) & [Academia.edu](https://karimeldefrawy.academia.edu/)
 * Short informal articles listed [here](https://keldefrawy.github.io/thoughts.html)
 * Patents (28) listed [here](https://keldefrawy.github.io/patents.html)
 
