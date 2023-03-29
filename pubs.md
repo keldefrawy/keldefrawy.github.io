@@ -16,7 +16,7 @@
 
 68- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", under review. [[PDF]](https://eprint.iacr.org/2022/1531.pdf) 
 
-67- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Output-Guaranteed Time-Locked Puzzles in a Standard Computational Model: Defining, Constructing, and Composing", under review. [PDF]
+67- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
 
 66- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
 
