@@ -27,7 +27,7 @@ Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
 
 # 2023
 
-65- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", under review. [PDF]
+65- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", to appear in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS). [PDF]
 
 
 
