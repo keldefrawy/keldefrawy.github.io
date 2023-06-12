@@ -1,5 +1,7 @@
 # 2022 - 202X @ Confidencial: 
 
+[2023: Confidencial wins the 2023 "Cybersecurity Solution of the Year" award at PWC Luxembourg Cybersecurity and Privacy Day](https://www.pwc.lu/en/press/press-releases-2023/cybersecurity-day-2023-winner.html)
+
 [2022: Annoucement of "PICO: Protected Integrated Communication Overlay" funding by the NSF 5G Security Convergence Accelerator](https://www.sri.com/press/press-release/sri-international-spearheads-two-groundbreaking-efforts-to-secure-5g/)
 
 # 2017 - 2022 @ SRI
