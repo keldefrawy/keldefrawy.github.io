@@ -27,11 +27,11 @@
 
 # 2023
 
-67- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", accepted at the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
+67- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", in proceedings of the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
 
-66- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", to appear in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [[PDF]](https://eprint.iacr.org/2023/988) 
+66- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [[PDF]](https://eprint.iacr.org/2023/988) 
 
-65- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", to appear in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS). [PDF]
+65- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS). [PDF]
 
 
 
