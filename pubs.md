@@ -31,7 +31,7 @@
 
 66- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [[PDF]](https://eprint.iacr.org/2023/988) 
 
-65- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS). [PDF]
+65- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS), 2023. [PDF]
 
 
 
