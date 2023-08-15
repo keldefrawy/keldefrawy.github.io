@@ -21,11 +21,13 @@
 
 68- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
 
-67- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", under review. [PDF]
+
 
 
 
 # 2023
+
+67- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", accepted at the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
 
 66- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", to appear in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [[PDF]](https://eprint.iacr.org/2023/988) 
 
