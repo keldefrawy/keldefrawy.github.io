@@ -9,23 +9,22 @@
 
 74- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", under review. [[PDF]](https://arxiv.org/abs/2305.09905)
 
-73- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
+73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
 
-72- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", under review. [PDF]
+72- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
 
-71- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
+71- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
 
-70- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", under review. [[PDF]](https://eprint.iacr.org/2022/1531.pdf) 
+70- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
 
-69- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
-
-68- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
-
+69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", under review. [[PDF]](https://eprint.iacr.org/2022/1531.pdf) 
 
 
 
 
 # 2023
+
+68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", under review. [PDF]
 
 67- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", in proceedings of the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
 
