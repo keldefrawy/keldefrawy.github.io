@@ -24,7 +24,7 @@
 
 # 2023
 
-68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", under review. [PDF]
+68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", accepted at the 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (Asiacrypt), 2023. [PDF]
 
 67- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", in proceedings of the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
 
