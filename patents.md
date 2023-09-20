@@ -1,4 +1,6 @@
-# (Last Updated: January 2023)
+# (Last Updated: September 2023)
+
+29- "Smart privacy and controlled exposure on blockchains" United States Patent Number US11741247
 
 28- "Selectively sharing data in unstructured data containers" United States Patent Number US11507676
 
