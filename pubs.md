@@ -17,8 +17,12 @@
 
 70- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
 
-69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", under review. [[PDF]](https://eprint.iacr.org/2022/1531.pdf) 
 
+
+# 2024
+
+69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", accepted at the 21th International Conference on
+Applied Cryptography and Network Security (ACNS), 2024.  [[PDF]](https://eprint.iacr.org/2022/1531.pdf) 
 
 
 
