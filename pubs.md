@@ -28,13 +28,15 @@ Applied Cryptography and Network Security (ACNS), 2024.  [[PDF]](https://eprint.
 
 # 2023
 
-68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", accepted at the 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (Asiacrypt), 2023. [PDF]
+68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", accepted at the 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (Asiacrypt), 2023. [[PDF]](https://eprint.iacr.org/2023/1418)
 
-67- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", in proceedings of the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
+67- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS), 2023. [[PDF]](https://eprint.iacr.org/2023/1322)
 
-66- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [[PDF]](https://eprint.iacr.org/2023/988) 
+66- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", in proceedings of the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
 
-65- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS), 2023. [[PDF]](https://eprint.iacr.org/2023/1322)
+65- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [[PDF]](https://eprint.iacr.org/2023/988) 
+
+
 
 
 
