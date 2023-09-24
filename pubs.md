@@ -22,7 +22,7 @@
 # 2024
 
 69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", accepted at the 21th International Conference on
-Applied Cryptography and Network Security (ACNS), 2024.  [[PDF]](https://eprint.iacr.org/2022/1531.pdf) 
+Applied Cryptography and Network Security (ACNS), 2024.  [[PDF]](https://eprint.iacr.org/2022/1531) 
 
 
 
