@@ -9,13 +9,13 @@
 
 74- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", under review. [[PDF]](https://arxiv.org/abs/2305.09905)
 
-73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
+73- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
 
-72- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", under review. [PDF]
+72- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
 
 71- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
 
-70- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
+70- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
 
 
 
