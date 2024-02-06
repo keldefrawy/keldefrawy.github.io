@@ -2,11 +2,13 @@
 Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to that he was a Principal Computer Scientist at the Computer Science Laboratory ([CSL](http://www.csl.sri.com/)) at [SRI International](https://www.sri.com/). His research and development interests lie in secure and privacy-preserving computation for distributed systems, security in cyber-physical and embedded systems, and computer-aided formal verification of cryptographic algorithms and protocols. His research has been funded by the Defense Advanced Research Project Agency ([DARPA](https://www.darpa.mil/)), the Department of Homeland Security ([DHS](https://www.dhs.gov/science-and-technology)), the Intelligence Advanced Research Projects Activity ([IARPA](https://www.iarpa.gov/)), the National Science Foundation ([NSF](https://www.nsf.gov)), the US AirForce ([AFWERX](https://www.afwerx.af.mil)), and Boeing and General Motors. He authored over 100 scientific works (75+ peer-reviewed papers and book chapters, 29 granted and 10+ pending patents). Karim served on technical program committees of top academic conferences on security and cryptography and was the information director of ACM Transactions on Privacy and Security (formerly ACM TISSEC) from 2011 to 2015. He taught security and cryptography courses at the University of California at Irvine ([UCI](https://www.ics.uci.edu/)) and the University of San Francisco ([USF](https://www.usfca.edu/)).
 
 
+# Awards and Recognitions
+* Awards and recognitions listed [here](https://keldefrawy.github.io/awards.html)
+
 # Publications, Patents, and Writings
 * Publications (75) listed [here](https://keldefrawy.github.io/pubs.html), and [Google Scholar](http://bit.ly/2KIZaWF) & [Academia.edu](https://karimeldefrawy.academia.edu/)
 * Patents (29) listed [here](https://keldefrawy.github.io/patents.html)
 * Short informal articles listed [here](https://keldefrawy.github.io/thoughts.html)
-
 
 # Projects and Software
 * Extramurally funded research projects listed [here](https://keldefrawy.github.io/projects.html)
