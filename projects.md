@@ -3,7 +3,7 @@
 
 
 
-## At [Confidencial](https://www.confidencial.io/) from 2022 to 202X:
+## At [Confidencial.io](https://www.confidencial.io/) from 2022 to 202X:
 * 2024-2025: PI of Phase 2 STTR project on "Securing Controlled Unclassified Information (CUI) in Document Storage, Sharing, and Request", funded by the US Air Force [AFWERX program.](https://afwerx.com/)
 * 2023-2024: PI of Confidencial.io's work in SRI's project "CHALO: Cognitive Health Assistant that Learns and Organizes", funded by [ARPA-H DIGIHEALS program.](https://arpa-h.gov/research-and-funding/programs/digiheals/awardees) 
 * 2023: PI of Phase 1 Small Business Technology Transfer (STTR)  project on "Securing Controlled Unclassified Information (CUI) in Document Storage, Sharing, and Request", funded by the US Air Force [AFWERX program.](https://afwerx.com/)
