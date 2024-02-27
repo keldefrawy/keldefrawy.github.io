@@ -1,5 +1,5 @@
 
-[2024: Test of Time Award by the [Internet Society](https://www.internetsociety.org/)'s Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/ndss-test-of-time-award/)
+[2024: Test of Time Award by the [Internet Society](https://www.internetsociety.org/)'s [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/ndss-test-of-time-award/)
 An award that recognizes the most influential papers that have been published in past NDSS Symposia.
 
 [2023: "Cybersecurity Solution of the Year" award at PWC Luxembourg Cybersecurity and Privacy Day](https://www.pwc.lu/en/press/press-releases-2023/cybersecurity-day-2023-winner.html)
