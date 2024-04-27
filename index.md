@@ -6,7 +6,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 * Awards and recognitions listed [here](https://keldefrawy.github.io/awards.html)
 
 # ChatGPT's Opinion about Karim
-* [In 2024](https://chat.openai.com/share/659b6a18-5ac2-46b1-aef5-98fcb077ed1d)
+* [April 2024](https://chat.openai.com/share/659b6a18-5ac2-46b1-aef5-98fcb077ed1d)
 
 # Publications, Patents, and Writings
 * Publications (75) listed [here](https://keldefrawy.github.io/pubs.html), and [Google Scholar](http://bit.ly/2KIZaWF) & [Academia.edu](https://karimeldefrawy.academia.edu/)
