@@ -1,9 +1,6 @@
 # Brief Bio
 Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to that he was a Principal Computer Scientist at the Computer Science Laboratory ([CSL](http://www.csl.sri.com/)) at [SRI (previously Stanford Research Institute)](https://www.sri.com/). His R&D interests focus on secure and privacy-preserving computation for distributed systems, computer-aided formal verification of cryptographic algorithms and protocols, and security in cyber-physical and embedded system. His research has been funded by the Defense Advanced Research Project Agency ([DARPA](https://www.darpa.mil/)), the Department of Homeland Security ([DHS](https://www.dhs.gov/science-and-technology)), the Intelligence Advanced Research Projects Activity ([IARPA](https://www.iarpa.gov/)), the National Science Foundation ([NSF](https://www.nsf.gov)), the US AirForce ([AFWERX](https://www.afwerx.af.mil)), and Boeing and General Motors. His work has received the 2024 [Test of Time Award](https://www.ndss-symposium.org/ndss-test-of-time-award/) by the [Internet Society's](https://www.internetsociety.org/) [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/). Karim authored over 100 scientific works ([75+ peer-reviewed papers and book chapters](https://keldefrawy.github.io/pubs.html), and [29 granted and 10+ pending patents](https://keldefrawy.github.io/patents.html)). His opinions and writing on various cybersecurity topics have been featured on [Forbes](https://councils.forbes.com/profile/Karim-Eldefrawy-CTO-Founder-Confidencial-io/35ea9cb7-7f3c-4fe9-a7d3-780eee7da954) and other venues. Karim served on technical program committees of top academic conferences on security and cryptography and was the information director of ACM Transactions on Privacy and Security (formerly ACM TISSEC) from 2011 to 2015. Karim taught security and cryptography courses at the University of California at Irvine ([UCI](https://www.ics.uci.edu/)) and the University of San Francisco ([USF](https://www.usfca.edu/)). 
 
-# ChatGPT's Opinion about Karim (Because, Why Not?)
-* [April 2024](https://chat.openai.com/share/659b6a18-5ac2-46b1-aef5-98fcb077ed1d)
-
 # Awards and Recognitions
 * Awards and recognitions listed [here](https://keldefrawy.github.io/awards.html)
 
@@ -28,7 +25,8 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 * [Online Talks](https://keldefrawy.github.io/talks.html)
 
 
-
+# ChatGPT's Opinion about Karim (Because, Why Not?)
+* [April 2024](https://chat.openai.com/share/659b6a18-5ac2-46b1-aef5-98fcb077ed1d)
 
 # Resume
 * More details in full [resume](https://keldefrawy.github.io/karim_resume.pdf) (last updated in July 2020)
