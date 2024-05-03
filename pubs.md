@@ -4,6 +4,8 @@
 
 # Pre-prints, Under Review, and Ongoing Work
 
+77- Karim Eldefrawy, Ben Terner, Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. [PDF](https://eprint.iacr.org/2024/676)
+
 76- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
 
 75- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
