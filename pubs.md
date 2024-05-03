@@ -12,7 +12,7 @@
 
 74- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
 
-73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-party Time-Lock Puzzles", ongoing work. [PDF]
+73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-party Time-Lock Puzzles", under review. [PDF]
 
 72- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", under review. [[PDF]](https://arxiv.org/abs/2305.09905)
 
