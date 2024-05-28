@@ -1,4 +1,8 @@
-# (Last Updated: September 2023)
+# (Last Updated: May 2024)
+
+31- "Augmenting executables having cryptographic primitives" United States Patent Number US11934538
+
+30- "Checkpointable secure multi-party computation" United States Patent Number US11775390
 
 29- "Smart privacy and controlled exposure on blockchains" United States Patent Number US11741247
 
