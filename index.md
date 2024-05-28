@@ -6,7 +6,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 
 # Publications, Patents, and Writings
 * Publications (75) listed [here](https://keldefrawy.github.io/pubs.html), and [Google Scholar](http://bit.ly/2KIZaWF) & [Academia.edu](https://karimeldefrawy.academia.edu/)
-* Patents (29) listed [here](https://keldefrawy.github.io/patents.html)
+* Patents (31) listed [here](https://keldefrawy.github.io/patents.html)
 * Short informal articles listed [here](https://keldefrawy.github.io/thoughts.html)
 
 # Projects and Software
