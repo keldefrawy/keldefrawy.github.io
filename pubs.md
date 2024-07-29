@@ -1,10 +1,12 @@
-# (Last Updated: January 2024)
+# (Last Updated: June 2024)
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 
 # Pre-prints, Under Review, and Ongoing Work
 
-77- Karim Eldefrawy, Ben Terner, Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. [PDF](https://eprint.iacr.org/2024/676)
+78- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Short Paper)", under review. [PDF] 
+
+77- Karim Eldefrawy, Ben Terner, and Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. [PDF](https://eprint.iacr.org/2024/676)
 
 76- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
 
