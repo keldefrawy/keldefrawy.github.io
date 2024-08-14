@@ -1,10 +1,9 @@
-# (Last Updated: June 2024)
+# (Last Updated: August 2024)
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 
 # Pre-prints, Under Review, and Ongoing Work
 
-78- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Short Paper)", under review. [PDF] 
 
 77- Karim Eldefrawy, Ben Terner, and Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. [PDF](https://eprint.iacr.org/2024/676)
 
@@ -14,17 +13,17 @@
 
 74- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
 
-73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-party Time-Lock Puzzles", under review. [PDF]
+73- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
 
-72- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", under review. [[PDF]](https://arxiv.org/abs/2305.09905)
-
-71- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
-
-70- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
+72- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
 
 
 
 # 2024
+
+71- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Short Paper)", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] 
+
+70- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [[PDF]](https://arxiv.org/abs/2305.09905)
 
 69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", in proceedings of the 21th International Conference on
 Applied Cryptography and Network Security (ACNS), 2024.  [[PDF]](https://eprint.iacr.org/2022/1531) 
