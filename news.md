@@ -1,5 +1,7 @@
 # 2022 - 202X @ Confidencial: 
 
+[2024: Early-Stage Companies to Deliver Novel Technology Solutions to Pacific Air Forces] (https://nsin.mil/news/2024-08-06-propel-hi-cohortannouncement/)
+
 [2024: UC Irvine Coverage of Test of Time Award by the Internet Society’s Network and Distributed System Security Symposium (NDSS)](https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/)
 
 [2023: Confidencial Accepted into the 2023 Air Force Labs MassChallenge](https://www.confidencial.io/news-1/confidencial-accepted-into-the-2023-masschallenge's-air-force-labs)
