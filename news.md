@@ -4,7 +4,7 @@
 
 [2024: UC Irvine Coverage of Test of Time Award by the Internet Society’s Network and Distributed System Security Symposium (NDSS)](https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/)
 
-[2023: Confidencial Accepted into the 2023 Air Force Labs MassChallenge]([https://www.confidencial.io/news/confidencial-accepted-into-the-2023-masschallenge's-air-force-labs](https://www.confidencial.io/news/confidencial-accepted-into-the-2023-masschallenge's-air-force-labs.))
+[2023: Confidencial Accepted into the 2023 Air Force Labs MassChallenge](https://www.confidencial.io/news/confidencial-accepted-into-the-2023-masschallenge's-air-force-labs.)
 
 [2023: Confidencial wins the 2023 "Cybersecurity Solution of the Year" award at PWC Luxembourg Cybersecurity and Privacy Day](https://www.pwc.lu/en/press/press-releases-2023/cybersecurity-day-2023-winner.html)
 
