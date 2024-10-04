@@ -23,10 +23,10 @@
 
 71- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Short Paper)", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [[eprint]](https://eprint.iacr.org/2024/1529) 
 
-70- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [[PDF]](https://arxiv.org/abs/2305.09905)
+70- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [arxiv](https://arxiv.org/abs/2305.09905)
 
 69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", in proceedings of the 21th International Conference on
-Applied Cryptography and Network Security (ACNS), 2024.  [[PDF]](https://eprint.iacr.org/2022/1531) 
+Applied Cryptography and Network Security (ACNS), 2024.  [PDF]  [[eprint]](https://eprint.iacr.org/2022/1531) 
 
 
 
