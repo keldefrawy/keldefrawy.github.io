@@ -15,7 +15,7 @@
 
 73- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
 
-72- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [[PDF]](https://eprint.iacr.org/2023/439)
+72- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [PDF] [[eprint]](https://eprint.iacr.org/2023/439)
 
 
 
@@ -23,7 +23,7 @@
 
 71- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Short Paper)", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [[eprint]](https://eprint.iacr.org/2024/1529) 
 
-70- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [arxiv](https://arxiv.org/abs/2305.09905)
+70- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [[arxiv]](https://arxiv.org/abs/2305.09905)
 
 69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", in proceedings of the 21th International Conference on
 Applied Cryptography and Network Security (ACNS), 2024.  [PDF]  [[eprint]](https://eprint.iacr.org/2022/1531) 
@@ -32,13 +32,13 @@ Applied Cryptography and Network Security (ACNS), 2024.  [PDF]  [[eprint]](https
 
 # 2023
 
-68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", in proceedings of the 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (Asiacrypt), 2023. [[PDF]](https://eprint.iacr.org/2023/1418)
+68- Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki, "Short Covert Authenticated Key Exchange", in proceedings of the 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (Asiacrypt), 2023. [PDF]   [[eprint]](https://eprint.iacr.org/2023/1418)
 
-67- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS), 2023. [[PDF]](https://eprint.iacr.org/2023/1322)
+67- Sam Dittmer, Karim Eldefrawy, Stephane Graham-Lengrand, Steve Lu, Vitor Pereira, Rafail Ostrovsky "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally-Verified Line-Point Zero-Knowledge", in proceedings of the 30th ACM Conference on Computer and Communications Security (CCS), 2023. [PDF] [[eprint]](https://eprint.iacr.org/2023/1322)
 
 66- Iness Ben Guirat, Claudia Diaz, Karim Eldefrawy, Hadas Zeilberger, "Traffic Analysis by Adversaries with Partial Visibility", in proceedings of the 28th European Symposium on Research in Computer Security (ESORICS), 2023. [PDF]
 
-65- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [[PDF]](https://eprint.iacr.org/2023/988) 
+65- Karim Eldefrawy, Nicholas Genise, and Nathan Manohar, "On the Hardness of Scheme-Switching Between SIMD FHE Schemes", in proceedings of the 14th International Conference on Post-Quantum Cryptography (PQCrypto), 2023.  [PDF] [[eprint]](https://eprint.iacr.org/2023/988) 
 
 
 
@@ -49,24 +49,24 @@ Applied Cryptography and Network Security (ACNS), 2024.  [PDF]  [[eprint]](https
 64- Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, Daniel Sanchez, "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data", in proceedings of the 49th International Symposium on Computer Architecture (ISCA), 2022. [[PDF]](https://dl.acm.org/doi/abs/10.1145/3470496.3527393)
 
 63- Karim Eldefrawy, Julian Loss, Ben Terner, "How Byzantine is a Send Corruption?", in proceedings of the 20th International Conference on
-Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/796.pdf)
+Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https://eprint.iacr.org/2021/796.pdf)
 
 62- Karim Eldefrawy, Tancrède Lepoint, and Laura Tam, "In-app Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms", in proceedings of the 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2022. [[PDF]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf) [[Extended Version]](https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf)
 
-61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in proceedings of the 20th International Conference on Applied Cryptography and Network Security (ACNS), 2022. [[PDF]](https://eprint.iacr.org/2021/1564)
+61- Karim Eldefrawy, Tancrede Lepoint, Antonin Leroux, "Communication Efficient Proactive Secure Multi-party Computation for Dynamic Groups with Dishonest Majorities", in proceedings of the 20th International Conference on Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https://eprint.iacr.org/2021/1564)
 
 
 # 2021
 
-60- Wim van Dam, Karim Eldefrawy, Nicholas Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", in proceedings of the IEEE International Conference on Quantum Computing and Engineering (QCE). [[PDF]](https://arxiv.org/abs/2108.08805)
+60- Wim van Dam, Karim Eldefrawy, Nicholas Genise, Natalie Parham, "Quantum Optimization Heuristics with an Application to Knapsack Problems", in proceedings of the IEEE International Conference on Quantum Computing and Engineering (QCE). [PDF] [[arxiv]](https://arxiv.org/abs/2108.08805)
 
-59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", extended version of a preliminary paper in proceedings of the 54th IEEE/ACM International Symposium on Microarchitecture (Micro). [[PDF]](https://arxiv.org/pdf/2109.05371.pdf)
+59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", extended version of a preliminary paper in proceedings of the 54th IEEE/ACM International Symposium on Microarchitecture (Micro). [PDF] [[arxiv]](https://arxiv.org/pdf/2109.05371.pdf)
 
 58- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in proceedings of the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
-57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", in proceedings of the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS). [[PDF]](https://eprint.iacr.org/2022/096)
+57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", in proceedings of the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS). [PDF] [[eprint]](https://eprint.iacr.org/2022/096)
 
-56- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", in proceedings of the 18th IMA International Conference on Cryptography and Coding (IMACC). [[PDF]](https://eprint.iacr.org/2021/499.pdf)
+56- Kelong Cong, Karim Eldefrawy, Nigel Smart, "Optimizing Registration Based Encryption", in proceedings of the 18th IMA International Conference on Cryptography and Coding (IMACC). [PDF] [[eprint]](https://eprint.iacr.org/2021/499.pdf)
 
 
 # 2020
