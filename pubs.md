@@ -5,25 +5,29 @@
 # Pre-prints, Under Review, and Ongoing Work
 
 
-77- Karim Eldefrawy, Ben Terner, and Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. [PDF] [[eprint]](https://eprint.iacr.org/2024/676)
+78- Karim Eldefrawy, Ben Terner, and Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. [PDF] [[eprint]](https://eprint.iacr.org/2024/676)
 
-76- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
+77- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
 
-75- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
+76- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
 
-74- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
+75- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
 
-73- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
+74- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
 
-72- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [PDF] [[eprint]](https://eprint.iacr.org/2023/439)
+73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [PDF] [[eprint]](https://eprint.iacr.org/2023/439)
 
+
+# 2025
+
+72- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Full Paper)", under review. [PDF] 
 
 
 # 2024
 
-71- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Short Paper)", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [[eprint]](https://eprint.iacr.org/2024/1529) 
+71- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Short Paper)", in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [[eprint]](https://eprint.iacr.org/2024/1529) 
 
-70- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", to appear in proceedings of the 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [[arxiv]](https://arxiv.org/abs/2305.09905)
+70- Aysajan Abidin, Karim Eldefrawy, Dave Singelee, "Entanglement-based Mutual Quantum Distance Bounding", in proceedings of the  8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2024. [PDF] [[arxiv]](https://arxiv.org/abs/2305.09905)
 
 69- Ben Terner, Kelong Cong, Nigel P. Smart, Karim Eldefrawy, "The Key Lattice Framework for Concurrent Group Messaging", in proceedings of the 21th International Conference on
 Applied Cryptography and Network Security (ACNS), 2024.  [PDF]  [[eprint]](https://eprint.iacr.org/2022/1531) 
