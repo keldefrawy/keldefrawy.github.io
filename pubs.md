@@ -15,10 +15,10 @@
 
 74- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
 
-73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition", under review. [PDF] [[eprint]](https://eprint.iacr.org/2023/439)
-
 
 # 2025
+
+73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-party Time-lock Puzzles: Quorum Controlled Delays without a Single Point of Failure", under review. [PDF] [[eprint]](https://eprint.iacr.org/2023/439)
 
 72- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Full Paper)", under review. [PDF] 
 
