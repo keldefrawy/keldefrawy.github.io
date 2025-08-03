@@ -18,9 +18,9 @@
 
 # 2025
 
-73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-party Time-lock Puzzles: Quorum Controlled Delays without a Single Point of Failure", under review. [PDF] [[eprint]](https://eprint.iacr.org/2023/439)
+73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-party Time-lock Puzzles: Quorum Controlled Delays without a Single Point of Failure", to appear in proceedings of the 9th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2025. [PDF] [[eprint]](https://eprint.iacr.org/2023/439)
 
-72- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Full Paper)", under review. [PDF] 
+72- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Full Paper)", under review at  the Springer journal specisl issue in Cryptography and Communications of CSCML'24. [PDF] 
 
 
 # 2024
