@@ -1,5 +1,4 @@
-2025: [Encryption Innovation Award](https://cybersecuritybreakthrough.com/2025-winners/) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/):
-An organization dedicated to recognizing the world's most innovative information security companies, products, and people.
+2025: [Encryption Innovation Award](https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/): The winning CyberSecurity Breakthrough selections showcase information security technologies and companies that push ingenuity and exemplify the best in cybersecurity and risk management technology solutions across the globe.
 
 2024: [Test of Time Award](https://www.ndss-symposium.org/ndss-test-of-time-award/) by the [Internet Society's](https://www.internetsociety.org/) [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/):
 An award that recognizes the most influential papers that have been published in past NDSS Symposia.
