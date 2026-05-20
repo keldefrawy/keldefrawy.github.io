@@ -1,4 +1,4 @@
-**2026:** [Data Solution of the Year for Legal](https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/).
+**2026:** [Data Solution of the Year for Legal](https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards) in the [7th Annual Data Breakthrough Awards](https://databreakthroughawards.com/2026-winners/) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/).
 
 **2025:** [Encryption Innovation Award](https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/). The winning CyberSecurity Breakthrough selections showcase information security technologies and companies that push ingenuity and exemplify the best in cybersecurity and risk management technology solutions across the globe.
 
