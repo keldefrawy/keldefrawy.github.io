@@ -1,0 +1,209 @@
+schema_version: "0.1"
+map_id: paper-16-map
+publication_id: 16
+publication_anchor: paper-16
+slug: paper-16
+canonical_path: /knowledge/papers/paper-16/
+machine_path: /knowledge/papers/paper-16.json
+root_node_id: paper-16
+stage: mapped_draft
+
+title: "Harvesting SSL Certificate Data to Identify Web-Fraud"
+year: 2012
+venue: "International Journal of Network Security, Volume 14, Number 6"
+authors: ["Mishari Al Mishari", "Emiliano De Cristofaro", "Karim Eldefrawy", "Gene Tsudik"]
+keywords: ["web fraud", "TLS certificates", "measurement"]
+
+research_question: "Can fields in SSL certificates distinguish popular legitimate domains from HTTPS phishing and typosquatting sites without using user data?"
+central_answer: "The paper builds a certificate-only classifier from differences in certificate fields and reports high fraud-detection accuracy as a complement to other defenses."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-16-site-record
+    type: curated_record
+    title: "Curated publication record for paper #16"
+    url: /publications/#paper-16
+  - id: source-paper-16-official-1
+    type: scholarly_article
+    title: "Journal PDF"
+    url: "http://ijns.jalaxy.com.tw/contents/ijns-v14-n6/ijns-2012-v14-n6-p324-338.pdf"
+  - id: source-paper-16-archive-1
+    type: manuscript_archive
+    title: "arXiv"
+    url: "https://arxiv.org/abs/0909.3688"
+  - id: source-paper-16-author-1
+    type: author_copy
+    title: "Author-hosted PDF"
+    url: "https://emilianodc.com/PAPERS/IJSN12.pdf"
+
+source_anchors:
+  - id: anchor-paper-16-site-record
+    source_id: source-paper-16-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-16
+  - id: anchor-paper-16-official-1
+    source_id: source-paper-16-official-1
+    label: "Journal PDF"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "http://ijns.jalaxy.com.tw/contents/ijns-v14-n6/ijns-2012-v14-n6-p324-338.pdf"
+  - id: anchor-paper-16-archive-1
+    source_id: source-paper-16-archive-1
+    label: "arXiv"
+    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://arxiv.org/abs/0909.3688"
+  - id: anchor-paper-16-author-1
+    source_id: source-paper-16-author-1
+    label: "Author-hosted PDF"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://emilianodc.com/PAPERS/IJSN12.pdf"
+
+nodes:
+  - id: paper-16
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Harvesting SSL Certificate Data to Identify Web-Fraud"
+    summary: "The paper studies how SSL certificate fields differ between popular legitimate domains and HTTPS-enabled phishing or typosquatting sites. It builds and validates a certificate-only classifier that detects fraudulent domains with high accuracy without relying on user data, making it complementary to other anti-fraud tools."
+    source_anchor_ids: [anchor-paper-16-site-record]
+
+  - id: paper-16-question
+    kind: question
+    parent_id: paper-16
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can fields in SSL certificates distinguish popular legitimate domains from HTTPS phishing and typosquatting sites without using user data?"
+    source_anchor_ids: [anchor-paper-16-site-record]
+
+  - id: paper-16-answer
+    kind: contribution
+    parent_id: paper-16
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The paper builds a certificate-only classifier from differences in certificate fields and reports high fraud-detection accuracy as a complement to other defenses."
+    source_anchor_ids: [anchor-paper-16-site-record]
+
+  - id: paper-16-method
+    kind: method
+    parent_id: paper-16
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Collect certificate data for legitimate and fraudulent domains, derive certificate-field features, train a classifier, and validate its ability to separate the classes."
+    source_anchor_ids: [anchor-paper-16-site-record]
+
+  - id: paper-16-claims
+    kind: claim_group
+    parent_id: paper-16
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The reported classifier detects fraudulent HTTPS domains with high accuracy using certificate information alone and without relying on user data."
+    source_anchor_ids: [anchor-paper-16-site-record]
+
+  - id: paper-16-evidence
+    kind: evidence_group
+    parent_id: paper-16
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports a built and validated classifier; dataset composition, sampling dates, feature engineering, splits, metrics, uncertainty, and external validation have not been inspected."
+    source_anchor_ids: [anchor-paper-16-site-record]
+
+  - id: paper-16-limitations
+    kind: limitation_group
+    parent_id: paper-16
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The draft does not establish robustness to certificate-issuance changes, adaptive attackers, class imbalance, concept drift, deployment thresholds, or fraud types outside the collected data."
+    source_anchor_ids: [anchor-paper-16-site-record]
+
+  - id: paper-16-resources
+    kind: artifact_group
+    parent_id: paper-16
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 3 linked resources: Journal PDF; arXiv; Author-hosted PDF. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-16-official-1, anchor-paper-16-archive-1, anchor-paper-16-author-1]
+
+  - id: paper-16-scrutiny
+    kind: scrutiny
+    parent_id: paper-16
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · journal article at International Journal of Network Security, Volume 14, Number 6. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-16-site-record, anchor-paper-16-official-1]
+
+relations:
+  - id: paper-16-relation-method-supports-answer
+    type: supports
+    from_id: paper-16-method
+    to_id: paper-16-answer
+  - id: paper-16-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-16-evidence
+    to_id: paper-16-claims
+  - id: paper-16-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-16-limitations
+    to_id: paper-16-claims
+  - id: paper-16-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-16-scrutiny
+    to_id: paper-16
+
+assessment:
+  id: paper-16-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports a built and validated classifier; dataset composition, sampling dates, feature engineering, splits, metrics, uncertainty, and external validation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-16-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Journal PDF; arXiv; Author-hosted PDF). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-16-official-1, anchor-paper-16-archive-1, anchor-paper-16-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-16-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in International Journal of Network Security, Volume 14, Number 6, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-16-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-16-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The reported classifier detects fraudulent HTTPS domains with high accuracy using certificate information alone and without relying on user data. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-16-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

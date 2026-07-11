@@ -1,0 +1,219 @@
+schema_version: "0.1"
+map_id: paper-55-map
+publication_id: 55
+publication_anchor: paper-55
+slug: paper-55
+canonical_path: /knowledge/papers/paper-55/
+machine_path: /knowledge/papers/paper-55.json
+root_node_id: paper-55
+stage: mapped_draft
+
+title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
+short_title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
+year: 2020
+venue: "12th Conference on Security and Cryptography for Networks (SCN)"
+publication_status: "Published"
+topic: secure-encrypted-computation
+labels:
+  - "Theory"
+authors:
+  - "Karim Eldefrawy"
+  - "Seoyeon Hwang"
+  - "Rafail Ostrovsky"
+  - "Moti Yung"
+keywords:
+  - "proactive MPC"
+  - "general adversary structures"
+  - "dynamic groups"
+
+research_question: "Can proactive secure multiparty computation efficiently support changing memberships and non-threshold corruption patterns that themselves vary over time?"
+central_answer: "The curated editorial summary reports conversions between additive sharing and monotone-span-program sharing that support refresh, recovery, membership changes, and adaptation to dynamic general adversary structures."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-55-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #55"
+    url: /publications/#paper-55
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-55-official-1
+    type: official_publication_resource
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1007/978-3-030-57990-6_6"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-55-archive-1
+    type: archive_resource
+    title: "IACR ePrint"
+    url: "https://eprint.iacr.org/2020/747"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-55-curated
+    source_id: source-paper-55-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-55
+  - id: anchor-paper-55-official-1
+    source_id: source-paper-55-official-1
+    label: "Publisher / DOI"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1007/978-3-030-57990-6_6"
+  - id: anchor-paper-55-archive-1
+    source_id: source-paper-55-archive-1
+    label: "IACR ePrint"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://eprint.iacr.org/2020/747"
+
+nodes:
+  - id: paper-55
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
+    summary: "This paper designs proactive MPC for changing groups and non-threshold corruption patterns described by dynamic general adversary structures. Efficient conversions between additive sharing and monotone-span-program sharing support refreshing, recovery, membership changes, and adaptation to the current threat structure."
+    source_anchor_ids: [anchor-paper-55-curated]
+  - id: paper-55-question
+    kind: question
+    parent_id: paper-55
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can proactive secure multiparty computation efficiently support changing memberships and non-threshold corruption patterns that themselves vary over time?"
+    source_anchor_ids: [anchor-paper-55-curated]
+  - id: paper-55-contribution
+    kind: contribution
+    parent_id: paper-55
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports conversions between additive sharing and monotone-span-program sharing that support refresh, recovery, membership changes, and adaptation to dynamic general adversary structures."
+    source_anchor_ids: [anchor-paper-55-curated]
+  - id: paper-55-method
+    kind: method
+    parent_id: paper-55
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described construction uses multiple secret-sharing representations and conversion procedures to implement proactive maintenance and computation for dynamic parties and adversary structures."
+    source_anchor_ids: [anchor-paper-55-curated]
+  - id: paper-55-claims
+    kind: claim_group
+    parent_id: paper-55
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports communication-efficient proactive MPC capabilities for refreshing, recovering, joining, leaving, and adapting sharing to the current general adversary structure."
+    source_anchor_ids: [anchor-paper-55-curated]
+  - id: paper-55-evidence
+    kind: evidence_group
+    parent_id: paper-55
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The record describes theoretical constructions and efficiency results; definitions, feasibility conditions, security theorems, reductions, and complexity bounds were not checked against the paper."
+    source_anchor_ids: [anchor-paper-55-curated]
+  - id: paper-55-scope
+    kind: limitation_group
+    parent_id: paper-55
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft has not audited corruption timing, erasure assumptions, synchrony, admissibility conditions for adversary structures, liveness, or the exact communication and computation measures."
+    source_anchor_ids: [anchor-paper-55-curated]
+  - id: paper-55-artifacts
+    kind: artifact_group
+    parent_id: paper-55
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-55-curated, anchor-paper-55-official-1, anchor-paper-55-archive-1]
+  - id: paper-55-scrutiny
+    kind: scrutiny
+    parent_id: paper-55
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 12th Conference on Security and Cryptography for Networks (SCN). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-55-official-1]
+
+relations:
+  - id: paper-55-relation-question-contribution
+    type: motivates
+    from_id: paper-55-question
+    to_id: paper-55-contribution
+  - id: paper-55-relation-method-contribution
+    type: realizes
+    from_id: paper-55-method
+    to_id: paper-55-contribution
+  - id: paper-55-relation-contribution-claims
+    type: grounds
+    from_id: paper-55-contribution
+    to_id: paper-55-claims
+  - id: paper-55-relation-evidence-claims
+    type: supports
+    from_id: paper-55-evidence
+    to_id: paper-55-claims
+  - id: paper-55-relation-scope-claims
+    type: qualifies
+    from_id: paper-55-scope
+    to_id: paper-55-claims
+  - id: paper-55-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-55-artifacts
+    to_id: paper-55-evidence
+  - id: paper-55-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-55-scrutiny
+    to_id: paper-55-claims
+
+assessment:
+  id: paper-55-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-55-curated, anchor-paper-55-official-1, anchor-paper-55-archive-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-55-curated, anchor-paper-55-official-1, anchor-paper-55-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-55-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-55-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-55-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-55-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

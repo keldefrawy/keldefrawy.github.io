@@ -1,0 +1,230 @@
+schema_version: "0.1"
+map_id: paper-54-map
+publication_id: 54
+publication_anchor: paper-54
+slug: paper-54
+canonical_path: /knowledge/papers/paper-54/
+machine_path: /knowledge/papers/paper-54.json
+root_node_id: paper-54
+stage: mapped_draft
+
+title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+short_title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+year: 2020
+venue: "29th USENIX Security Symposium"
+publication_status: "Published"
+topic: secure-systems-networks
+labels:
+  - "Theory"
+  - "Applied"
+authors:
+  - "Ivan De Oliveira Nunes"
+  - "Karim Eldefrawy"
+  - "Norrathep Rattanavipanon"
+  - "Gene Tsudik"
+keywords:
+  - "proofs of execution"
+  - "remote attestation"
+  - "embedded systems"
+
+research_question: "Can a low-end remote device under full software compromise prove that specified code executed successfully and, when required, produced a particular authenticated output?"
+central_answer: "The curated editorial summary reports that APEX combines a low-overhead hardware/software architecture with formal verification to produce unforgeable proofs of execution on constrained devices."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-54-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #54"
+    url: /publications/#paper-54
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-54-official-1
+    type: official_publication_resource
+    title: "USENIX paper page"
+    url: "https://www.usenix.org/conference/usenixsecurity20/presentation/nunes"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-54-archive-1
+    type: archive_resource
+    title: "USENIX prepublication"
+    url: "https://www.usenix.org/system/files/sec20fall_nunes_prepub.pdf"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-54-author-1
+    type: author_resource
+    title: "Author-hosted PDF"
+    url: "https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-54-curated
+    source_id: source-paper-54-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-54
+  - id: anchor-paper-54-official-1
+    source_id: source-paper-54-official-1
+    label: "USENIX paper page"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://www.usenix.org/conference/usenixsecurity20/presentation/nunes"
+  - id: anchor-paper-54-archive-1
+    source_id: source-paper-54-archive-1
+    label: "USENIX prepublication"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://www.usenix.org/system/files/sec20fall_nunes_prepub.pdf"
+  - id: anchor-paper-54-author-1
+    source_id: source-paper-54-author-1
+    label: "Author-hosted PDF"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf"
+
+nodes:
+  - id: paper-54
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+    summary: "APEX lets a low-end remote device produce an unforgeable proof that specified software executed successfully and optionally generated a particular authenticated output. Its security architecture is formally verified and incurs low overhead even on MSP430- and AVR-class devices."
+    source_anchor_ids: [anchor-paper-54-curated]
+  - id: paper-54-question
+    kind: question
+    parent_id: paper-54
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can a low-end remote device under full software compromise prove that specified code executed successfully and, when required, produced a particular authenticated output?"
+    source_anchor_ids: [anchor-paper-54-curated]
+  - id: paper-54-contribution
+    kind: contribution
+    parent_id: paper-54
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports that APEX combines a low-overhead hardware/software architecture with formal verification to produce unforgeable proofs of execution on constrained devices."
+    source_anchor_ids: [anchor-paper-54-curated]
+  - id: paper-54-method
+    kind: method
+    parent_id: paper-54
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described method augments remote-attestation mechanisms with execution and output binding, then analyzes the architecture formally and instantiates it for MSP430- and AVR-class devices."
+    source_anchor_ids: [anchor-paper-54-curated]
+  - id: paper-54-claims
+    kind: claim_group
+    parent_id: paper-54
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports unforgeable proofs of successful execution under full software compromise, optional authentication of execution output, and low overhead on two classes of constrained devices."
+    source_anchor_ids: [anchor-paper-54-curated]
+  - id: paper-54-evidence
+    kind: evidence_group
+    parent_id: paper-54
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Formal verification and implementation overhead are reported in the editorial summary, but the threat model, formal statements, proof chain, tool outputs, hardware boundary, and measurements were not audited here."
+    source_anchor_ids: [anchor-paper-54-curated]
+  - id: paper-54-scope
+    kind: limitation_group
+    parent_id: paper-54
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "The guarantees remain conditional on an unaudited adversary model, trusted hardware and compilation boundaries, proof-to-implementation correspondence, and the exact meaning of successful execution."
+    source_anchor_ids: [anchor-paper-54-curated]
+  - id: paper-54-artifacts
+    kind: artifact_group
+    parent_id: paper-54
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 3 resources (1 official, 1 archive, 1 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-54-curated, anchor-paper-54-official-1, anchor-paper-54-archive-1, anchor-paper-54-author-1]
+  - id: paper-54-scrutiny
+    kind: scrutiny
+    parent_id: paper-54
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 29th USENIX Security Symposium. That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-54-official-1]
+
+relations:
+  - id: paper-54-relation-question-contribution
+    type: motivates
+    from_id: paper-54-question
+    to_id: paper-54-contribution
+  - id: paper-54-relation-method-contribution
+    type: realizes
+    from_id: paper-54-method
+    to_id: paper-54-contribution
+  - id: paper-54-relation-contribution-claims
+    type: grounds
+    from_id: paper-54-contribution
+    to_id: paper-54-claims
+  - id: paper-54-relation-evidence-claims
+    type: supports
+    from_id: paper-54-evidence
+    to_id: paper-54-claims
+  - id: paper-54-relation-scope-claims
+    type: qualifies
+    from_id: paper-54-scope
+    to_id: paper-54-claims
+  - id: paper-54-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-54-artifacts
+    to_id: paper-54-evidence
+  - id: paper-54-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-54-scrutiny
+    to_id: paper-54-claims
+
+assessment:
+  id: paper-54-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-54-curated, anchor-paper-54-official-1, anchor-paper-54-archive-1, anchor-paper-54-author-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 3 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-54-curated, anchor-paper-54-official-1, anchor-paper-54-archive-1, anchor-paper-54-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-54-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-54-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-54-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-54-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

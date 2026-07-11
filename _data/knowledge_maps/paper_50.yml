@@ -1,0 +1,463 @@
+schema_version: "0.1"
+map_id: paper-50-map
+publication_id: 50
+publication_anchor: paper-50
+slug: vrased
+canonical_path: /knowledge/papers/paper-50/
+machine_path: /knowledge/papers/paper-50.json
+root_node_id: paper-50
+stage: mapped_draft
+
+title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+short_title: VRASED
+year: 2019
+venue: 28th USENIX Security Symposium
+authors:
+  - Ivan De Oliveira Nunes
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Michael Steiner
+  - Gene Tsudik
+keywords:
+  - remote attestation
+  - formal verification
+  - embedded systems
+  - model checking
+  - hardware/software co-design
+
+research_question: >-
+  Can a low-end embedded device obtain strong, formally stated remote-attestation guarantees with only a small amount of additional hardware?
+central_answer: >-
+  VRASED combines verified HMAC software with a small hardware monitor, then connects component properties to end-to-end soundness and security under explicit MCU, compiler, cryptographic, and physical-attack assumptions.
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: source extraction, evidence linking, and initial assessment
+  method: Source-grounded review of the checked-in paper, its public artifact repository, the official publication record, and a later independent adversarial analysis.
+  source_scope: full_source_audit
+  approval:
+    status: pending
+    note: AI-authored draft awaiting author review. Ratings and summaries may change after review.
+
+sources:
+  - id: source-vrased-paper
+    type: scholarly_article
+    title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+    url: /pubs/2019/vrased_usenixsec2019.pdf
+    media_type: application/pdf
+    sha256: de6f64b83ff5f4397a8b2d9ad58f72ec33f6760860c66e95ef487390e16c5cc2
+    page_count: 18
+  - id: source-usenix-record
+    type: publication_record
+    title: USENIX Security 2019 paper page
+    url: https://www.usenix.org/conference/usenixsecurity19/presentation/de-oliveira-nunes
+  - id: source-vrased-repository
+    type: code_repository
+    title: VRASED source code, verification specifications, and proofs
+    url: https://github.com/sprout-uci/vrased
+    version_note: Public repository cited by the paper; no immutable revision has yet been pinned in this map.
+  - id: source-mind-the-gap
+    type: independent_analysis
+    title: "Mind the Gap: Studying the Insecurity of Provably Secure Embedded Trusted Execution Architectures"
+    url: https://jovanbulck.github.io/files/oakland22-gap.pdf
+    year: 2022
+
+source_anchors:
+  - id: anchor-paper-problem-novelty
+    source_id: source-vrased-paper
+    label: Problem, contribution, and priority claims
+    locator: "Abstract and Section 1, PDF page 1"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=1
+  - id: anchor-paper-threat-model
+    source_id: source-vrased-paper
+    label: Adversarial capabilities, axioms A1-A7, and exclusions
+    locator: "Section 3.1, PDF pages 4-5"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=4
+  - id: anchor-paper-properties
+    source_id: source-vrased-paper
+    label: Secure-attestation properties P1-P7
+    locator: "Section 3.2 and Figure 2, PDF page 5"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=5
+  - id: anchor-paper-verification-method
+    source_id: source-vrased-paper
+    label: LTL, NuSMV, Verilog2SMV, and composition workflow
+    locator: "Sections 3.3-3.4 and Figures 4-5, PDF page 6"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=6
+  - id: anchor-paper-soundness
+    source_id: source-vrased-paper
+    label: End-to-end soundness definition
+    locator: "Section 4.2, Definition 1, PDF page 7"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=7
+  - id: anchor-paper-security
+    source_id: source-vrased-paper
+    label: RA security game and SW-Att boundary
+    locator: "Section 4.2, Definition 2 and Figure 6, PDF page 8"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=8
+  - id: anchor-paper-ltl-enforcement
+    source_id: source-vrased-paper
+    label: LTL enforcement for access control, atomicity, confidentiality, DMA, and reset
+    locator: "Sections 4.4-4.9, PDF pages 9-11"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=9
+  - id: anchor-paper-implementation
+    source_id: source-vrased-paper
+    label: OpenMSP430 and FPGA implementation
+    locator: "Section 6.1, PDF page 12"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=12
+  - id: anchor-paper-evaluation
+    source_id: source-vrased-paper
+    label: Verification results, overhead, and performance
+    locator: "Sections 6.2-6.4 and Tables 2-4, PDF page 13"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=13
+  - id: anchor-paper-conclusion
+    source_id: source-vrased-paper
+    label: Claimed significance, portability, and future directions
+    locator: "Sections 7-8, PDF pages 14-15"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=14
+  - id: anchor-paper-formal-proofs
+    source_id: source-vrased-paper
+    label: Soundness and security proof chain
+    locator: "Appendix A, Theorems 1-2, PDF pages 16-18"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=16
+  - id: anchor-usenix-publication
+    source_id: source-usenix-record
+    label: Official peer-reviewed publication record
+    locator: "USENIX Security 2019"
+    url: https://www.usenix.org/conference/usenixsecurity19/presentation/de-oliveira-nunes
+  - id: anchor-repository-artifacts
+    source_id: source-vrased-repository
+    label: Public implementation, build instructions, verification specifications, and proof artifacts
+    locator: "Repository README, accessed 2026-07-11"
+    url: https://github.com/sprout-uci/vrased
+  - id: anchor-repository-boundary-response
+    source_id: source-vrased-repository
+    label: Author response clarifying the verified module, integration assumptions, and prototype changes
+    locator: "Repository README: A Note on the Extent of VRASED Verification, accessed 2026-07-11"
+    url: https://github.com/sprout-uci/vrased#a-note-on-the-extent-of-vrased-verification
+  - id: anchor-mind-gap-context
+    source_id: source-mind-the-gap
+    label: Independent description of VRASED's formal model, trusted boundaries, and research lineage
+    locator: "Sections I-II, PDF pages 2-4"
+    url: https://jovanbulck.github.io/files/oakland22-gap.pdf#page=2
+  - id: anchor-mind-gap-attacks
+    source_id: source-mind-the-gap
+    label: Independent adversarial analysis of gaps between formal models and concrete implementations
+    locator: "Abstract and contributions, PDF pages 1-2"
+    url: https://jovanbulck.github.io/files/oakland22-gap.pdf#page=1
+
+nodes:
+  - id: paper-50
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: published
+    title: VRASED
+    summary: A formally specified hardware/software architecture for remote attestation on low-end embedded devices, accompanied by proofs, model checking, a public implementation, and FPGA evaluation.
+    source_anchor_ids: [anchor-paper-problem-novelty]
+
+  - id: paper-50-question
+    kind: question
+    parent_id: paper-50
+    order: 1
+    epistemic_status: research_question
+    title: Research question
+    summary: Can remote attestation for a constrained MCU be both practical and connected to explicit end-to-end soundness and security definitions?
+    source_anchor_ids: [anchor-paper-problem-novelty]
+
+  - id: paper-50-answer
+    kind: contribution
+    parent_id: paper-50
+    order: 2
+    epistemic_status: source_asserted
+    title: Central answer
+    summary: Use verified HMAC software for the attestation computation and a small verified hardware monitor to enforce key protection, safe execution, and reset policies.
+    source_anchor_ids: [anchor-paper-problem-novelty, anchor-paper-verification-method]
+
+  - id: paper-50-scope
+    kind: scope
+    parent_id: paper-50
+    order: 3
+    epistemic_status: explicitly_scoped
+    title: Scope, adversary, and assumptions
+    summary: The guarantees concern software-controlled attacks on a low-end MCU and hold only when the stated machine, compiler, cryptographic, and hardware boundaries are satisfied.
+    source_anchor_ids: [anchor-paper-threat-model, anchor-paper-security]
+
+  - id: paper-50-scope-adversary
+    kind: threat_model
+    parent_id: paper-50-scope
+    order: 1
+    epistemic_status: defined
+    title: Software adversary
+    summary: The adversary controls all untrusted software and writable data, can relocate malware, and can control DMA, but cannot modify protected ROM or directly bypass HW-Mod.
+    source_anchor_ids: [anchor-paper-threat-model, anchor-paper-security]
+
+  - id: paper-50-scope-axioms
+    kind: assumption
+    parent_id: paper-50-scope
+    order: 2
+    epistemic_status: assumed
+    title: Axioms A1-A7
+    summary: The proof trusts accurate PC, memory, DMA, reset, and interrupt signals, plus compiler register cleanup and semantic preservation from verified C to assembly.
+    source_anchor_ids: [anchor-paper-threat-model, anchor-paper-formal-proofs]
+
+  - id: paper-50-scope-exclusions
+    kind: limitation
+    parent_id: paper-50-scope
+    order: 3
+    epistemic_status: explicitly_excluded
+    title: Excluded attacks and components
+    summary: Physical attacks, induced hardware faults, physical side channels, and verification of the complete MCU implementation are outside the proved model.
+    source_anchor_ids: [anchor-paper-threat-model]
+
+  - id: paper-50-architecture
+    kind: method
+    parent_id: paper-50
+    order: 4
+    epistemic_status: implemented
+    title: Architecture and enforcement path
+    summary: The design composes a trusted software attestation routine with hardware state machines that watch execution and force reset on policy violations.
+    source_anchor_ids: [anchor-paper-properties, anchor-paper-verification-method]
+
+  - id: paper-50-architecture-sw-att
+    kind: component
+    parent_id: paper-50-architecture
+    order: 1
+    epistemic_status: partially_machine_checked
+    title: SW-Att
+    summary: HACL* HMAC-SHA256 derives a challenge-specific key and authenticates the requested memory region; HACL* supplies inherited F* proofs, while mapping those guarantees into VRASED's model is manual.
+    source_anchor_ids: [anchor-paper-security]
+
+  - id: paper-50-architecture-hw-mod
+    kind: component
+    parent_id: paper-50-architecture
+    order: 2
+    epistemic_status: model_checked
+    title: HW-Mod
+    summary: Hardware monitors observe program-counter, memory, interrupt, DMA, and reset signals; FSMs enforce LTL policies and reset the MCU when a policy is violated.
+    source_anchor_ids: [anchor-paper-verification-method, anchor-paper-ltl-enforcement]
+
+  - id: paper-50-architecture-properties
+    kind: definition
+    parent_id: paper-50-architecture
+    order: 3
+    epistemic_status: defined
+    title: Required properties P1-P7
+    summary: Key access control, no leakage, secure reset, functional correctness, immutability, atomicity, and controlled invocation are the bridge from components to remote-attestation guarantees.
+    source_anchor_ids: [anchor-paper-properties]
+
+  - id: paper-50-claims
+    kind: claim_group
+    parent_id: paper-50
+    order: 5
+    epistemic_status: mixed
+    title: Principal claims
+    summary: The paper makes formal claims about a stated model, an empirical claim about concrete overhead, and a priority claim about first-of-kind verification.
+    source_anchor_ids: [anchor-paper-soundness, anchor-paper-security, anchor-paper-evaluation]
+
+  - id: paper-50-claim-soundness
+    kind: claim
+    parent_id: paper-50-claims
+    order: 1
+    epistemic_status: machine_checked_within_model
+    title: End-to-end soundness
+    summary: SW-Att returns a temporally consistent HMAC of the attested memory as it existed when attestation began, conditional on the stated model and trusted boundaries.
+    source_anchor_ids: [anchor-paper-soundness, anchor-paper-formal-proofs]
+
+  - id: paper-50-claim-security
+    kind: claim
+    parent_id: paper-50-claims
+    order: 2
+    epistemic_status: proved_conditional
+    title: End-to-end security
+    summary: A polynomial-time software adversary cannot forge a valid report for a different memory state except with negligible probability, assuming a secure HMAC and the machine/compiler axioms.
+    source_anchor_ids: [anchor-paper-security, anchor-paper-formal-proofs]
+
+  - id: paper-50-claim-overhead
+    kind: claim
+    parent_id: paper-50-claims
+    order: 3
+    epistemic_status: experimentally_supported
+    title: Practical overhead
+    summary: The standard FPGA design adds 6.3% logic cells and reports approximately 3.6 million cycles, or 450 ms at 8 MHz, to attest 4 KB.
+    source_anchor_ids: [anchor-paper-evaluation]
+
+  - id: paper-50-evidence
+    kind: evidence_group
+    parent_id: paper-50
+    order: 6
+    epistemic_status: documented
+    title: Evidence chain
+    summary: The evidence combines inherited software proofs, model-checked hardware properties, compositional reasoning, public artifacts, and FPGA measurements.
+    source_anchor_ids: [anchor-paper-verification-method, anchor-paper-evaluation, anchor-paper-formal-proofs]
+
+  - id: paper-50-evidence-formal
+    kind: evidence
+    parent_id: paper-50-evidence
+    order: 1
+    epistemic_status: machine_checked_and_proved
+    title: Formal verification path
+    summary: NuSMV checks the hardware LTL properties and composition; Spot checks stated LTL implications; the final HMAC security reduction is a conditional paper proof rather than a wholly machine-checked proof.
+    source_anchor_ids: [anchor-paper-verification-method, anchor-paper-formal-proofs]
+
+  - id: paper-50-evidence-implementation
+    kind: evidence
+    parent_id: paper-50-evidence
+    order: 2
+    epistemic_status: implemented_and_measured
+    title: Prototype and measurements
+    summary: The authors synthesize an OpenMSP430-based implementation for a Basys3 Artix-7 FPGA and report model-checker resources, hardware cost, memory, and attestation time.
+    source_anchor_ids: [anchor-paper-implementation, anchor-paper-evaluation]
+
+  - id: paper-50-evidence-artifacts
+    kind: artifact
+    parent_id: paper-50-evidence
+    order: 3
+    epistemic_status: publicly_available
+    title: Public code and proof artifacts
+    summary: The public repository includes source, build instructions, Verilog modules, verification specifications, scripts, and soundness/security proof material; this map has not pinned a commit or independently reproduced it.
+    source_anchor_ids: [anchor-repository-artifacts]
+
+  - id: paper-50-boundaries
+    kind: limitation_group
+    parent_id: paper-50
+    order: 7
+    epistemic_status: material
+    title: Trusted boundary and limitations
+    summary: The strongest guarantees apply to the formalized module and model; moving from verified source and FSMs to a concrete MCU/FPGA system introduces trusted steps.
+    source_anchor_ids: [anchor-paper-threat-model, anchor-paper-formal-proofs]
+
+  - id: paper-50-boundary-compiler
+    kind: limitation
+    parent_id: paper-50-boundaries
+    order: 1
+    epistemic_status: assumed
+    title: Compiler and timing preservation
+    summary: msp430-gcc is trusted to preserve functional semantics and register cleanup; preservation of HACL* timing properties by the compiler and MCU is also assumed.
+    source_anchor_ids: [anchor-paper-threat-model, anchor-paper-formal-proofs]
+
+  - id: paper-50-boundary-core
+    kind: limitation
+    parent_id: paper-50-boundaries
+    order: 2
+    epistemic_status: unverified_integration
+    title: MCU core and integration
+    summary: The whole OpenMSP430 core and its concrete integration are not verified; implementers must establish that each target MCU satisfies the abstract signal and reset axioms.
+    source_anchor_ids: [anchor-paper-threat-model, anchor-repository-boundary-response]
+
+  - id: paper-50-boundary-physical
+    kind: limitation
+    parent_id: paper-50-boundaries
+    order: 3
+    epistemic_status: out_of_scope
+    title: Physical and availability attacks
+    summary: Physical hardware attacks are excluded, and the base design does not authenticate verifier requests; the paper discusses an optional authenticated variant to reduce request-flooding risk.
+    source_anchor_ids: [anchor-paper-threat-model, anchor-paper-formal-proofs]
+
+  - id: paper-50-scrutiny
+    kind: scrutiny
+    parent_id: paper-50
+    order: 8
+    epistemic_status: independently_examined
+    title: Independent scrutiny and correction context
+    summary: Later researchers examined the gap between VRASED's formal model and its concrete openMSP430 instantiation, and the VRASED repository records a scoped response and prototype changes.
+    source_anchor_ids: [anchor-mind-gap-attacks, anchor-repository-boundary-response]
+
+  - id: paper-50-scrutiny-analysis
+    kind: counterevidence
+    parent_id: paper-50-scrutiny
+    order: 1
+    epistemic_status: independently_reported
+    title: Mind the Gap analysis
+    summary: The 2022 study reports attacks against concrete implementations and argues that formal guarantees do not automatically transfer across unmodeled assumptions and integration steps.
+    source_anchor_ids: [anchor-mind-gap-context, anchor-mind-gap-attacks]
+
+  - id: paper-50-scrutiny-response
+    kind: response
+    parent_id: paper-50-scrutiny
+    order: 2
+    epistemic_status: author_response
+    title: VRASED repository response
+    summary: The maintainers state that reported issues do not falsify properties of the verified RA module; they distinguish integration violations, out-of-model hardware changes, and an unverified fork, and report changes to the sample instantiation.
+    source_anchor_ids: [anchor-repository-boundary-response]
+
+  - id: paper-50-lineage
+    kind: lineage
+    parent_id: paper-50
+    order: 9
+    epistemic_status: documented
+    title: Significance and research lineage
+    summary: VRASED presents a first-of-kind verified hybrid remote-attestation architecture and became a basis for follow-on architectures and independent examination of how proofs meet real systems.
+    source_anchor_ids: [anchor-paper-conclusion, anchor-mind-gap-context, anchor-repository-artifacts]
+
+relations:
+  - id: relation-formal-supports-soundness
+    type: supports
+    from_id: paper-50-evidence-formal
+    to_id: paper-50-claim-soundness
+  - id: relation-formal-supports-security
+    type: supports
+    from_id: paper-50-evidence-formal
+    to_id: paper-50-claim-security
+  - id: relation-measurements-support-overhead
+    type: supports
+    from_id: paper-50-evidence-implementation
+    to_id: paper-50-claim-overhead
+  - id: relation-axioms-qualify-soundness
+    type: qualifies
+    from_id: paper-50-scope-axioms
+    to_id: paper-50-claim-soundness
+  - id: relation-axioms-qualify-security
+    type: qualifies
+    from_id: paper-50-scope-axioms
+    to_id: paper-50-claim-security
+  - id: relation-analysis-challenges-transfer
+    type: challenges
+    from_id: paper-50-scrutiny-analysis
+    to_id: paper-50-answer
+  - id: relation-response-qualifies-analysis
+    type: qualifies
+    from_id: paper-50-scrutiny-response
+    to_id: paper-50-scrutiny-analysis
+
+assessment:
+  id: paper-50-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: Strong formal and empirical evidence supports the stated model, but crucial transfer steps to the concrete compiler, MCU, and integration are assumed; later adversarial work found implementation-level gaps.
+      basis_source_anchor_ids: [anchor-paper-verification-method, anchor-paper-formal-proofs, anchor-paper-evaluation, anchor-mind-gap-attacks]
+    - id: auditability
+      level: medium
+      rationale: The paper, implementation, verification specifications, scripts, and proof material are public and documented, but this map has not pinned an immutable revision or recorded an independent full reproduction.
+      basis_source_anchor_ids: [anchor-repository-artifacts, anchor-paper-evaluation]
+    - id: production_provenance
+      level: low
+      rationale: Conventional authorship, institutions, tools, and implementation details are visible, but no versioned production trace, contributor-role matrix, effort history, AI-use record, or explicit final-approval log is public.
+      basis_source_anchor_ids: [anchor-paper-problem-novelty, anchor-repository-artifacts]
+    - id: external_scrutiny
+      level: high
+      rationale: The work passed conference review, exposes public artifacts, received detailed independent adversarial examination, and has a public response that records scope distinctions and prototype changes.
+      basis_source_anchor_ids: [anchor-usenix-publication, anchor-mind-gap-attacks, anchor-repository-boundary-response]
+    - id: reception
+      level: medium
+      rationale: A dated qualitative snapshot shows multiple follow-on architectures, outside analysis, and an independent reimplementation, but this draft does not yet include a field-adjusted citation or adoption count.
+      basis_source_anchor_ids: [anchor-mind-gap-context, anchor-repository-artifacts]
+    - id: contribution_significance
+      level: high
+      rationale: The paper introduced a first-of-kind verified hybrid remote-attestation architecture and helped establish a research line around both verified low-end security architectures and the limits of transferring proofs to implementations.
+      basis_source_anchor_ids: [anchor-paper-problem-novelty, anchor-paper-conclusion, anchor-mind-gap-context]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: qualitative
+  citation_count:
+  signals:
+    - The public repository identifies PURE and APEX as follow-on architectures.
+    - The independent Mind the Gap study describes VRASED as part of a mature research project with several derived architectures and an outside reimplementation.
+  limitation: No field-adjusted citation, deployment, teaching, or standards snapshot has yet been curated.

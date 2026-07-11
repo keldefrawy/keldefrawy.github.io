@@ -1,0 +1,200 @@
+schema_version: "0.1"
+map_id: paper-10-map
+publication_id: 10
+publication_anchor: paper-10
+slug: paper-10
+canonical_path: /knowledge/papers/paper-10/
+machine_path: /knowledge/papers/paper-10.json
+root_node_id: paper-10
+stage: mapped_draft
+
+title: "Leveraging Social Contacts for Message Confidentiality in Delay Tolerant Networks"
+year: 2009
+venue: "IEEE Computer Software and Applications Conference (COMPSAC)"
+authors: ["Karim Eldefrawy", "John Solis", "Gene Tsudik"]
+keywords: ["delay-tolerant networks", "social trust", "confidential messaging"]
+
+research_question: "How can intermittently connected users establish confidential messaging relationships when credential lookup and multi-round handshakes are impractical?"
+central_answer: "The proposed schemes derive secure messaging relationships from social affiliations or shared contacts so communication can remain protected across long delays and sparse encounters."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-10-site-record
+    type: curated_record
+    title: "Curated publication record for paper #10"
+    url: /publications/#paper-10
+  - id: source-paper-10-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1109/COMPSAC.2009.43"
+  - id: source-paper-10-author-1
+    type: author_copy
+    title: "Author-hosted PDF"
+    url: "https://www.johnsolis.com/publications/dtn_compsac09.pdf"
+
+source_anchors:
+  - id: anchor-paper-10-site-record
+    source_id: source-paper-10-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-10
+  - id: anchor-paper-10-official-1
+    source_id: source-paper-10-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1109/COMPSAC.2009.43"
+  - id: anchor-paper-10-author-1
+    source_id: source-paper-10-author-1
+    label: "Author-hosted PDF"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://www.johnsolis.com/publications/dtn_compsac09.pdf"
+
+nodes:
+  - id: paper-10
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Leveraging Social Contacts for Message Confidentiality in Delay Tolerant Networks"
+    summary: "The paper addresses key establishment in delay-tolerant networks, where intermittent contact makes credential lookup and multi-round handshakes impractical. Its schemes derive secure messaging relationships from social affiliations or shared contacts so users can protect messages despite long delays and sparse connectivity."
+    source_anchor_ids: [anchor-paper-10-site-record]
+
+  - id: paper-10-question
+    kind: question
+    parent_id: paper-10
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How can intermittently connected users establish confidential messaging relationships when credential lookup and multi-round handshakes are impractical?"
+    source_anchor_ids: [anchor-paper-10-site-record]
+
+  - id: paper-10-answer
+    kind: contribution
+    parent_id: paper-10
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The proposed schemes derive secure messaging relationships from social affiliations or shared contacts so communication can remain protected across long delays and sparse encounters."
+    source_anchor_ids: [anchor-paper-10-site-record]
+
+  - id: paper-10-method
+    kind: method
+    parent_id: paper-10
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Use pre-existing social relationships and common contacts as inputs to key-establishment mechanisms suited to delay-tolerant communication."
+    source_anchor_ids: [anchor-paper-10-site-record]
+
+  - id: paper-10-claims
+    kind: claim_group
+    parent_id: paper-10
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The schemes are reported to enable confidential messaging despite intermittent connectivity and the absence of timely online credential services."
+    source_anchor_ids: [anchor-paper-10-site-record]
+
+  - id: paper-10-evidence
+    kind: evidence_group
+    parent_id: paper-10
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary describes the key-establishment objective and social-contact basis; formal security analysis, protocol details, and performance evidence have not been inspected."
+    source_anchor_ids: [anchor-paper-10-site-record]
+
+  - id: paper-10-limitations
+    kind: limitation_group
+    parent_id: paper-10
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The record does not establish resistance to malicious contacts, social-graph leakage, sparse or changing affiliations, revocation failures, or all delay-tolerant network conditions."
+    source_anchor_ids: [anchor-paper-10-site-record]
+
+  - id: paper-10-resources
+    kind: artifact_group
+    parent_id: paper-10
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Author-hosted PDF. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-10-official-1, anchor-paper-10-author-1]
+
+  - id: paper-10-scrutiny
+    kind: scrutiny
+    parent_id: paper-10
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published at IEEE Computer Software and Applications Conference (COMPSAC). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-10-site-record, anchor-paper-10-official-1]
+
+relations:
+  - id: paper-10-relation-method-supports-answer
+    type: supports
+    from_id: paper-10-method
+    to_id: paper-10-answer
+  - id: paper-10-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-10-evidence
+    to_id: paper-10-claims
+  - id: paper-10-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-10-limitations
+    to_id: paper-10-claims
+  - id: paper-10-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-10-scrutiny
+    to_id: paper-10
+
+assessment:
+  id: paper-10-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary describes the key-establishment objective and social-contact basis; formal security analysis, protocol details, and performance evidence have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-10-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; Author-hosted PDF). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-10-official-1, anchor-paper-10-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-10-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in IEEE Computer Software and Applications Conference (COMPSAC), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-10-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-10-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The schemes are reported to enable confidential messaging despite intermittent connectivity and the absence of timely online credential services. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-10-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

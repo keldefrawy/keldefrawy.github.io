@@ -1,0 +1,191 @@
+schema_version: "0.1"
+map_id: paper-26-map
+publication_id: 26
+publication_anchor: paper-26
+slug: paper-26
+canonical_path: /knowledge/papers/paper-26/
+machine_path: /knowledge/papers/paper-26.json
+root_node_id: paper-26
+stage: mapped_draft
+
+title: "Founding Digital Currency on Secure Computation"
+year: 2014
+venue: "ACM Conference on Computer and Communications Security (CCS)"
+authors: ["Karim Eldefrawy", "Joshua Lampkins"]
+keywords: ["digital currency", "secure computation", "distributed ledger"]
+
+research_question: "Can secure computation support a digital currency ledger that protects account and transaction data over time while retaining distributed accountability?"
+central_answer: "The paper designs a proactively secure ledger based on secret sharing and secure computation, positioned between a centralized bank and a fully decentralized currency."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-26-site-record
+    type: curated_record
+    title: "Curated publication record for paper #26"
+    url: /publications/#paper-26
+  - id: source-paper-26-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1145/2660267.2660293"
+
+source_anchors:
+  - id: anchor-paper-26-site-record
+    source_id: source-paper-26-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-26
+  - id: anchor-paper-26-official-1
+    source_id: source-paper-26-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1145/2660267.2660293"
+
+nodes:
+  - id: paper-26
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Founding Digital Currency on Secure Computation"
+    summary: "The paper designs a privacy-preserving, proactively secure distributed ledger for a digital currency that sits between a fully centralized bank and a fully decentralized system such as Bitcoin. Secret sharing and secure computation protect account and transaction data over time while still allowing a qualified group of servers to enforce accountability."
+    source_anchor_ids: [anchor-paper-26-site-record]
+
+  - id: paper-26-question
+    kind: question
+    parent_id: paper-26
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can secure computation support a digital currency ledger that protects account and transaction data over time while retaining distributed accountability?"
+    source_anchor_ids: [anchor-paper-26-site-record]
+
+  - id: paper-26-answer
+    kind: contribution
+    parent_id: paper-26
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The paper designs a proactively secure ledger based on secret sharing and secure computation, positioned between a centralized bank and a fully decentralized currency."
+    source_anchor_ids: [anchor-paper-26-site-record]
+
+  - id: paper-26-method
+    kind: method
+    parent_id: paper-26
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Distribute ledger state across a qualified server group, protect it through secret sharing, and evaluate authorized ledger operations through secure computation."
+    source_anchor_ids: [anchor-paper-26-site-record]
+
+  - id: paper-26-claims
+    kind: claim_group
+    parent_id: paper-26
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The proposed design is reported to preserve account and transaction privacy over time while allowing a qualified server group to enforce accountability."
+    source_anchor_ids: [anchor-paper-26-site-record]
+
+  - id: paper-26-evidence
+    kind: evidence_group
+    parent_id: paper-26
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports a cryptographic ledger design and intended privacy, proactive-security, and accountability properties; formal models, proofs, performance, and implementation have not been inspected."
+    source_anchor_ids: [anchor-paper-26-site-record]
+
+  - id: paper-26-limitations
+    kind: limitation_group
+    parent_id: paper-26
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The available record does not establish assumptions about server corruption, consensus and availability, membership changes, monetary policy, audit access, or performance at production scale."
+    source_anchor_ids: [anchor-paper-26-site-record]
+
+  - id: paper-26-resources
+    kind: artifact_group
+    parent_id: paper-26
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 1 linked resource: Publisher / DOI. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-26-official-1]
+
+  - id: paper-26-scrutiny
+    kind: scrutiny
+    parent_id: paper-26
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published at ACM Conference on Computer and Communications Security (CCS). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-26-site-record, anchor-paper-26-official-1]
+
+relations:
+  - id: paper-26-relation-method-supports-answer
+    type: supports
+    from_id: paper-26-method
+    to_id: paper-26-answer
+  - id: paper-26-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-26-evidence
+    to_id: paper-26-claims
+  - id: paper-26-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-26-limitations
+    to_id: paper-26-claims
+  - id: paper-26-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-26-scrutiny
+    to_id: paper-26
+
+assessment:
+  id: paper-26-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports a cryptographic ledger design and intended privacy, proactive-security, and accountability properties; formal models, proofs, performance, and implementation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-26-site-record]
+    - id: auditability
+      level: low
+      rationale: "Only an official publication resource is linked (Publisher / DOI), and this draft has not inspected its full text, supplementary artifacts, or reproduction path; claim-level auditability is therefore low."
+      basis_source_anchor_ids: [anchor-paper-26-official-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-26-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in ACM Conference on Computer and Communications Security (CCS), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-26-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-26-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The proposed design is reported to preserve account and transaction privacy over time while allowing a qualified server group to enforce accountability. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-26-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

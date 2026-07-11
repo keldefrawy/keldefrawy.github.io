@@ -1,0 +1,200 @@
+schema_version: "0.1"
+map_id: paper-25-map
+publication_id: 25
+publication_anchor: paper-25
+slug: paper-25
+canonical_path: /knowledge/papers/paper-25/
+machine_path: /knowledge/papers/paper-25.json
+root_node_id: paper-25
+stage: mapped_draft
+
+title: "How to Withstand Mobile Virus Attacks, Revisited"
+year: 2014
+venue: "ACM Symposium on Principles of Distributed Computing (PODC)"
+authors: ["Joshua Baron", "Karim Eldefrawy", "Joshua Lampkins", "Rafail Ostrovsky"]
+keywords: ["proactive MPC", "mobile adversaries", "packed secret sharing"]
+
+research_question: "Can proactive secure multiparty computation tolerate a mobile adversary with near-linear communication rather than incurring prohibitive resharing and precomputation costs?"
+central_answer: "The work introduces packed proactive secret sharing and UC-secure MPC protocols, reporting near-linear communication per step and mobile-corruption thresholds near one third or one half depending on the security regime."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-25-site-record
+    type: curated_record
+    title: "Curated publication record for paper #25"
+    url: /publications/#paper-25
+  - id: source-paper-25-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1145/2611462.2611474"
+  - id: source-paper-25-author-1
+    type: author_copy
+    title: "Author-hosted paper"
+    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/167.pdf"
+
+source_anchors:
+  - id: anchor-paper-25-site-record
+    source_id: source-paper-25-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-25
+  - id: anchor-paper-25-official-1
+    source_id: source-paper-25-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1145/2611462.2611474"
+  - id: anchor-paper-25-author-1
+    source_id: source-paper-25-author-1
+    label: "Author-hosted paper"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/167.pdf"
+
+nodes:
+  - id: paper-25
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "How to Withstand Mobile Virus Attacks, Revisited"
+    summary: "This work revisits proactive MPC, where different machines may be compromised over time, and identifies why standard precomputation and sharing techniques become too costly under mobile faults. It introduces packed proactive secret sharing and UC-secure MPC protocols with near-linear per-step communication while tolerating almost one-third perfect-security or one-half statistical-security moving corruptions."
+    source_anchor_ids: [anchor-paper-25-site-record]
+
+  - id: paper-25-question
+    kind: question
+    parent_id: paper-25
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can proactive secure multiparty computation tolerate a mobile adversary with near-linear communication rather than incurring prohibitive resharing and precomputation costs?"
+    source_anchor_ids: [anchor-paper-25-site-record]
+
+  - id: paper-25-answer
+    kind: contribution
+    parent_id: paper-25
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The work introduces packed proactive secret sharing and UC-secure MPC protocols, reporting near-linear communication per step and mobile-corruption thresholds near one third or one half depending on the security regime."
+    source_anchor_ids: [anchor-paper-25-site-record]
+
+  - id: paper-25-method
+    kind: method
+    parent_id: paper-25
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Pack multiple secrets into proactive shares and refresh or compute on them through protocols designed for universally composable security under moving corruptions."
+    source_anchor_ids: [anchor-paper-25-site-record]
+
+  - id: paper-25-claims
+    kind: claim_group
+    parent_id: paper-25
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The paper reports near-linear per-step communication while tolerating almost one-third moving corruptions for perfect security or almost one-half for statistical security."
+    source_anchor_ids: [anchor-paper-25-site-record]
+
+  - id: paper-25-evidence
+    kind: evidence_group
+    parent_id: paper-25
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports packed sharing, UC-security, communication complexity, and corruption thresholds; models, quantifiers, proofs, constants, and implementations have not been source-audited."
+    source_anchor_ids: [anchor-paper-25-site-record]
+
+  - id: paper-25-limitations
+    kind: limitation_group
+    parent_id: paper-25
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The guarantees depend on the paper's mobile-adversary, network, setup, and corruption-timing models; concrete cost, active robustness, and edge cases have not been inspected."
+    source_anchor_ids: [anchor-paper-25-site-record]
+
+  - id: paper-25-resources
+    kind: artifact_group
+    parent_id: paper-25
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Author-hosted paper. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-25-official-1, anchor-paper-25-author-1]
+
+  - id: paper-25-scrutiny
+    kind: scrutiny
+    parent_id: paper-25
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published at ACM Symposium on Principles of Distributed Computing (PODC). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-25-site-record, anchor-paper-25-official-1]
+
+relations:
+  - id: paper-25-relation-method-supports-answer
+    type: supports
+    from_id: paper-25-method
+    to_id: paper-25-answer
+  - id: paper-25-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-25-evidence
+    to_id: paper-25-claims
+  - id: paper-25-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-25-limitations
+    to_id: paper-25-claims
+  - id: paper-25-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-25-scrutiny
+    to_id: paper-25
+
+assessment:
+  id: paper-25-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports packed sharing, UC-security, communication complexity, and corruption thresholds; models, quantifiers, proofs, constants, and implementations have not been source-audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-25-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; Author-hosted paper). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-25-official-1, anchor-paper-25-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-25-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in ACM Symposium on Principles of Distributed Computing (PODC), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-25-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-25-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The paper reports near-linear per-step communication while tolerating almost one-third moving corruptions for perfect security or almost one-half for statistical security. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-25-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

@@ -1,3 +1,13 @@
+{% if page.knowledge_map %}
+  {% assign knowledge_record = site.data.knowledge_maps[page.knowledge_map] %}
+{% elsif page.paper_id %}
+  {% capture page_knowledge_key %}paper_{{ page.paper_id }}{% endcapture %}
+  {% assign knowledge_record = site.data.knowledge_maps[page_knowledge_key] %}
+{% endif %}
+{% if page.paper_id %}
+  {% assign landing_publication_matches = site.data.publications | where: "id", page.paper_id %}
+  {% assign landing_publication = landing_publication_matches | first %}
+{% endif %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -5,13 +15,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+{% if landing_publication %}
+    <title>{{ landing_publication.title | escape }} | {{ site.title | escape }}</title>
+    <meta name="description" content="{{ landing_publication.summary | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{{ landing_publication.title | escape }}">
+    <meta property="og:description" content="{{ landing_publication.summary | escape }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ landing_publication.title | escape }}">
+    <meta name="twitter:description" content="{{ landing_publication.summary | escape }}">
+{% else %}
 {% seo %}
+{% endif %}
+    {% if knowledge_record %}
+    <link rel="alternate" type="application/json" href="{{ knowledge_record.machine_path | absolute_url }}" title="Machine-readable scientific knowledge map">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "@id": {{ knowledge_record.canonical_path | append: "#paper" | absolute_url | jsonify }},
+      "identifier": {{ knowledge_record.publication_id | prepend: "paper-" | jsonify }},
+      "url": {{ knowledge_record.canonical_path | absolute_url | jsonify }},
+      "name": {{ knowledge_record.title | jsonify }},
+      "description": {{ landing_publication.summary | default: knowledge_record.central_answer | jsonify }},
+      {% if knowledge_record.year %}
+      "datePublished": {{ knowledge_record.year | append: "" | jsonify }},
+      {% endif %}
+      {% if knowledge_record.venue %}
+      "isPartOf": {"@type": "CreativeWork", "name": {{ knowledge_record.venue | jsonify }}},
+      {% endif %}
+      "author": [
+        {% for author in knowledge_record.authors %}{"@type": "Person", "name": {{ author | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+      ],
+      "keywords": {{ knowledge_record.keywords | jsonify }},
+      "creativeWorkStatus": {{ landing_publication.status | default: knowledge_record.stage | jsonify }},
+      "mainEntityOfPage": {{ knowledge_record.canonical_path | absolute_url | jsonify }},
+      "encoding": {
+        "@type": "MediaObject",
+        "encodingFormat": "application/json",
+        "contentUrl": {{ knowledge_record.machine_path | absolute_url | jsonify }}
+      }
+    }
+    </script>
+    {% elsif landing_publication %}
+    <link rel="alternate" type="application/json" href="{{ '/knowledge/papers/index.json' | absolute_url }}" title="Machine-readable paper index">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "@id": {{ page.url | append: "#paper" | absolute_url | jsonify }},
+      "identifier": {{ landing_publication.id | prepend: "paper-" | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "name": {{ landing_publication.title | jsonify }},
+      "author": {{ landing_publication.authors | jsonify }},
+      {% if landing_publication.year %}
+      "datePublished": {{ landing_publication.year | append: "" | jsonify }},
+      {% endif %}
+      {% if landing_publication.venue %}
+      "isPartOf": {"@type": "CreativeWork", "name": {{ landing_publication.venue | jsonify }}},
+      {% endif %}
+      "description": {{ landing_publication.summary | jsonify }},
+      "creativeWorkStatus": {{ landing_publication.status | jsonify }},
+      "keywords": {{ landing_publication.tags | jsonify }}
+    }
+    </script>
+    {% elsif page.knowledge_hub %}
+    <link rel="alternate" type="application/json" href="{{ '/knowledge/index.json' | absolute_url }}" title="Machine-readable scientific knowledge-map corpus">
+    <link rel="alternate" type="application/json" href="{{ '/knowledge/papers/index.json' | absolute_url }}" title="Machine-readable publication and knowledge-map index">
+    {% elsif page.publications_browser %}
+    <link rel="alternate" type="application/json" href="{{ '/knowledge/papers/index.json' | absolute_url }}" title="Machine-readable publication and knowledge-map index">
+    {% endif %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
   </head>
-  <body{% if page.publications_browser %} class="publications-page"{% endif %}>
+  <body{% if page.publications_browser %} class="publications-page"{% elsif page.knowledge_map or page.knowledge_hub or page.paper_id %} class="knowledge-map-page"{% endif %}>
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
@@ -51,6 +133,9 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    {% if knowledge_record %}
+    <script src="{{ "/assets/js/knowledge-map.js" | relative_url }}" defer></script>
+    {% endif %}
     {% if site.google_analytics %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

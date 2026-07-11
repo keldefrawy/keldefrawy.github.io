@@ -1,0 +1,223 @@
+schema_version: "0.1"
+map_id: paper-58-map
+publication_id: 58
+publication_anchor: paper-58
+slug: paper-58
+canonical_path: /knowledge/papers/paper-58/
+machine_path: /knowledge/papers/paper-58.json
+root_node_id: paper-58
+stage: mapped_draft
+
+title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+short_title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+year: 2021
+venue: "28th ACM Conference on Computer and Communications Security (CCS)"
+publication_status: "Published"
+topic: secure-encrypted-computation
+labels:
+  - "Theory"
+  - "Applied"
+authors:
+  - "José Bacelar Almeida"
+  - "Manuel Barbosa"
+  - "Manuel L. Correia"
+  - "Karim Eldefrawy"
+  - "Stéphane Graham-Lengrand"
+  - "Hugo Pacheco"
+  - "Vitor Pereira"
+keywords:
+  - "zero knowledge"
+  - "MPC-in-the-head"
+  - "formal verification"
+
+research_question: "Can the general MPC-in-the-Head transformation for NP zero-knowledge relations be machine checked modularly and yield an executable verified implementation?"
+central_answer: "The curated editorial summary reports an EasyCrypt development that accepts suitable MPC protocols as components, verifies the transformation, and supports executable extraction for benchmarking."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-58-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #58"
+    url: /publications/#paper-58
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-58-official-1
+    type: official_publication_resource
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1145/3460120.3484771"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-58-archive-1
+    type: archive_resource
+    title: "IACR ePrint"
+    url: "https://eprint.iacr.org/2021/1149"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-58-curated
+    source_id: source-paper-58-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-58
+  - id: anchor-paper-58-official-1
+    source_id: source-paper-58-official-1
+    label: "Publisher / DOI"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1145/3460120.3484771"
+  - id: anchor-paper-58-archive-1
+    source_id: source-paper-58-archive-1
+    label: "IACR ePrint"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://eprint.iacr.org/2021/1149"
+
+nodes:
+  - id: paper-58
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+    summary: "This paper gives the first machine-checked implementation of the general MPC-in-the-Head transformation from secure computation to zero-knowledge proofs. Its modular EasyCrypt proof accepts suitable MPC protocols as components and supports extracting a verified executable implementation for benchmarking."
+    source_anchor_ids: [anchor-paper-58-curated]
+  - id: paper-58-question
+    kind: question
+    parent_id: paper-58
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can the general MPC-in-the-Head transformation for NP zero-knowledge relations be machine checked modularly and yield an executable verified implementation?"
+    source_anchor_ids: [anchor-paper-58-curated]
+  - id: paper-58-contribution
+    kind: contribution
+    parent_id: paper-58
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports an EasyCrypt development that accepts suitable MPC protocols as components, verifies the transformation, and supports executable extraction for benchmarking."
+    source_anchor_ids: [anchor-paper-58-curated]
+  - id: paper-58-method
+    kind: method
+    parent_id: paper-58
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described method formalizes the generic transformation and its component interfaces in EasyCrypt, proves security modularly, and extracts executable code."
+    source_anchor_ids: [anchor-paper-58-curated]
+  - id: paper-58-claims
+    kind: claim_group
+    parent_id: paper-58
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports a first machine-checked implementation of the general transformation together with a modular proof and benchmarkable extracted implementation."
+    source_anchor_ids: [anchor-paper-58-curated]
+  - id: paper-58-evidence
+    kind: evidence_group
+    parent_id: paper-58
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Machine-checked proofs, executable extraction, and benchmarking are reported; the EasyCrypt development, component obligations, trusted computing base, extraction path, and results were not independently inspected."
+    source_anchor_ids: [anchor-paper-58-curated]
+  - id: paper-58-scope
+    kind: limitation_group
+    parent_id: paper-58
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft has not audited which NP relations and MPC protocols satisfy the interfaces, the exact security definitions and assumptions, extraction correctness, side channels, or benchmark representativeness."
+    source_anchor_ids: [anchor-paper-58-curated]
+  - id: paper-58-artifacts
+    kind: artifact_group
+    parent_id: paper-58
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-58-curated, anchor-paper-58-official-1, anchor-paper-58-archive-1]
+  - id: paper-58-scrutiny
+    kind: scrutiny
+    parent_id: paper-58
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 28th ACM Conference on Computer and Communications Security (CCS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-58-official-1]
+
+relations:
+  - id: paper-58-relation-question-contribution
+    type: motivates
+    from_id: paper-58-question
+    to_id: paper-58-contribution
+  - id: paper-58-relation-method-contribution
+    type: realizes
+    from_id: paper-58-method
+    to_id: paper-58-contribution
+  - id: paper-58-relation-contribution-claims
+    type: grounds
+    from_id: paper-58-contribution
+    to_id: paper-58-claims
+  - id: paper-58-relation-evidence-claims
+    type: supports
+    from_id: paper-58-evidence
+    to_id: paper-58-claims
+  - id: paper-58-relation-scope-claims
+    type: qualifies
+    from_id: paper-58-scope
+    to_id: paper-58-claims
+  - id: paper-58-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-58-artifacts
+    to_id: paper-58-evidence
+  - id: paper-58-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-58-scrutiny
+    to_id: paper-58-claims
+
+assessment:
+  id: paper-58-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-58-curated, anchor-paper-58-official-1, anchor-paper-58-archive-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-58-curated, anchor-paper-58-official-1, anchor-paper-58-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-58-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-58-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-58-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-58-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

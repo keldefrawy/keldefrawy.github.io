@@ -1,0 +1,200 @@
+schema_version: "0.1"
+map_id: paper-3-map
+publication_id: 3
+publication_anchor: paper-3
+slug: paper-3
+canonical_path: /knowledge/papers/paper-3/
+machine_path: /knowledge/papers/paper-3.json
+root_node_id: paper-3
+stage: mapped_draft
+
+title: "PEUC-WiN: Privacy Enhancement by User Cooperation in Wireless Networks"
+year: 2006
+venue: "Second IEEE Workshop on Secure Network Protocols (NPSec)"
+authors: ["Karim Eldefrawy", "Claudio Soriente"]
+keywords: ["location privacy", "wireless networks", "user cooperation"]
+
+research_question: "Can cooperating wireless users reduce location tracking from persistent interface identifiers without long silent periods or disrupted sessions?"
+central_answer: "PEUC-WiN has users associated with the same access point cooperate to reduce identifier-based tracking while seeking to preserve sessions and throughput."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-3-site-record
+    type: curated_record
+    title: "Curated publication record for paper #3"
+    url: /publications/#paper-3
+  - id: source-paper-3-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1109/NPSEC.2006.320345"
+  - id: source-paper-3-archive-1
+    type: manuscript_archive
+    title: "CiteSeerX archive"
+    url: "https://citeseerx.ist.psu.edu/document?doi=0f2ebd193c1a279f035d877c6c43c4cc43829b57&repid=rep1&type=pdf"
+
+source_anchors:
+  - id: anchor-paper-3-site-record
+    source_id: source-paper-3-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-3
+  - id: anchor-paper-3-official-1
+    source_id: source-paper-3-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1109/NPSEC.2006.320345"
+  - id: anchor-paper-3-archive-1
+    source_id: source-paper-3-archive-1
+    label: "CiteSeerX archive"
+    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://citeseerx.ist.psu.edu/document?doi=0f2ebd193c1a279f035d877c6c43c4cc43829b57&repid=rep1&type=pdf"
+
+nodes:
+  - id: paper-3
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "PEUC-WiN: Privacy Enhancement by User Cooperation in Wireless Networks"
+    summary: "PEUC-WiN combats location tracking caused by persistent wireless-interface identifiers by having users under the same access point cooperate. The design seeks to improve location privacy without the long silent periods, dropped sessions, and throughput disruption imposed by earlier identifier-changing approaches."
+    source_anchor_ids: [anchor-paper-3-site-record]
+
+  - id: paper-3-question
+    kind: question
+    parent_id: paper-3
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can cooperating wireless users reduce location tracking from persistent interface identifiers without long silent periods or disrupted sessions?"
+    source_anchor_ids: [anchor-paper-3-site-record]
+
+  - id: paper-3-answer
+    kind: contribution
+    parent_id: paper-3
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "PEUC-WiN has users associated with the same access point cooperate to reduce identifier-based tracking while seeking to preserve sessions and throughput."
+    source_anchor_ids: [anchor-paper-3-site-record]
+
+  - id: paper-3-method
+    kind: method
+    parent_id: paper-3
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Coordinate privacy-enhancing behavior among users under a common access point instead of requiring each user to rely on prolonged radio silence."
+    source_anchor_ids: [anchor-paper-3-site-record]
+
+  - id: paper-3-claims
+    kind: claim_group
+    parent_id: paper-3
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The paper reports that cooperation can improve location privacy while avoiding the session loss and throughput disruption associated with earlier identifier-changing approaches."
+    source_anchor_ids: [anchor-paper-3-site-record]
+
+  - id: paper-3-evidence
+    kind: evidence_group
+    parent_id: paper-3
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports the design goal and comparison with earlier approaches; the protocol, threat model, and any evaluation have not been inspected."
+    source_anchor_ids: [anchor-paper-3-site-record]
+
+  - id: paper-3-limitations
+    kind: limitation_group
+    parent_id: paper-3
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The summary does not establish the required number or trustworthiness of cooperating users, resistance to traffic analysis, deployment assumptions, or measured privacy gain."
+    source_anchor_ids: [anchor-paper-3-site-record]
+
+  - id: paper-3-resources
+    kind: artifact_group
+    parent_id: paper-3
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 2 linked resources: Publisher / DOI; CiteSeerX archive. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-3-official-1, anchor-paper-3-archive-1]
+
+  - id: paper-3-scrutiny
+    kind: scrutiny
+    parent_id: paper-3
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · workshop paper at Second IEEE Workshop on Secure Network Protocols (NPSec). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-3-site-record, anchor-paper-3-official-1]
+
+relations:
+  - id: paper-3-relation-method-supports-answer
+    type: supports
+    from_id: paper-3-method
+    to_id: paper-3-answer
+  - id: paper-3-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-3-evidence
+    to_id: paper-3-claims
+  - id: paper-3-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-3-limitations
+    to_id: paper-3-claims
+  - id: paper-3-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-3-scrutiny
+    to_id: paper-3
+
+assessment:
+  id: paper-3-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports the design goal and comparison with earlier approaches; the protocol, threat model, and any evaluation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-3-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; CiteSeerX archive). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-3-official-1, anchor-paper-3-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-3-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in Second IEEE Workshop on Secure Network Protocols (NPSec), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-3-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-3-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The paper reports that cooperation can improve location privacy while avoiding the session loss and throughput disruption associated with earlier identifier-changing approaches. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-3-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

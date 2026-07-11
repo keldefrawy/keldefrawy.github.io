@@ -1,0 +1,246 @@
+schema_version: "0.1"
+map_id: paper-39-map
+publication_id: 39
+publication_anchor: paper-39
+slug: paper-39
+canonical_path: /knowledge/papers/paper-39/
+machine_path: /knowledge/papers/paper-39.json
+root_node_id: paper-39
+stage: mapped_draft
+
+title: "Security Threats, Defenses, and Recommended Practices for Enterprise Mobility"
+year: 2018
+status: "Published · public full text not located"
+venue: "Information Systems Security Association (ISSA) Journal, Volume 16, Number 5"
+topic: "secure-systems-networks"
+labels: ["Applied"]
+authors:
+  - "Karim Eldefrawy"
+  - "Vincent Sritapan"
+keywords:
+  - "enterprise mobility"
+  - "security guidance"
+availability: "Public full text not located; the link is a publisher bibliographic listing."
+editorial_summary: "Based on the title and bibliographic context, this article appears to survey risks created by enterprise use of mobile devices and map them to available defenses. No public full text was available to verify a more detailed description of its recommendations."
+
+research_question: "What security threats arise from enterprise mobility, and which defenses or practices should organizations consider?"
+central_answer: "The local record cautiously infers that the article surveys enterprise-mobile risks and maps them to defenses; no detailed answer can be verified without the full text."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: "metadata synthesis, conservative claim mapping, and initial assessment"
+  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+
+sources:
+  - id: source-paper-39-site-record
+    type: curated_site_record
+    title: "Publication #39 metadata and editorial summary"
+    url: /publications/#paper-39
+    scope_note: "Local editorial record; not a substitute for the paper full text."
+  - id: source-paper-39-resource-1
+    type: official_publication_record
+    title: "Publisher bibliography"
+    url: "https://www.members.issa.org/page/journal-authors-2018"
+    provenance_category: official
+
+source_anchors:
+  - id: anchor-paper-39-editorial
+    source_id: source-paper-39-site-record
+    label: "Curated publication metadata and editorial summary"
+    locator: "Local site record; the summary is editorial and has not been checked against full text."
+    url: /publications/#paper-39
+  - id: anchor-paper-39-resource-1
+    source_id: source-paper-39-resource-1
+    label: "Official resource: Publisher bibliography"
+    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://www.members.issa.org/page/journal-authors-2018"
+
+nodes:
+  - id: paper-39
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: published_metadata_with_editorial_synthesis
+    title: "Security Threats, Defenses, and Recommended Practices for Enterprise Mobility"
+    summary: "Based on the title and bibliographic context, this article appears to survey risks created by enterprise use of mobile devices and map them to available defenses. No public full text was available to verify a more detailed description of its recommendations."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-question
+    kind: question
+    parent_id: paper-39
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "What security threats arise from enterprise mobility, and which defenses or practices should organizations consider?"
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-contribution
+    kind: contribution
+    parent_id: paper-39
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Central contribution"
+    summary: "The local record cautiously infers that the article surveys enterprise-mobile risks and maps them to defenses; no detailed answer can be verified without the full text."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-method
+    kind: method
+    parent_id: paper-39
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Reported method"
+    summary: "The apparent method is a practitioner-oriented survey or guidance synthesis, but this characterization is inferred only from title and bibliographic context."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-claims
+    kind: claim_group
+    parent_id: paper-39
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Main claims"
+    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-claim-primary
+    kind: claim
+    parent_id: paper-39-claims
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Primary reported claim"
+    summary: "No substantive technical claim is represented beyond the cautious editorial inference that the article surveys threats, defenses, and recommended practices."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-evidence
+    kind: evidence_group
+    parent_id: paper-39
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-evidence-reported
+    kind: evidence
+    parent_id: paper-39-evidence
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Evidence represented in the site summary"
+    summary: "Only a publisher bibliographic listing and a title-based editorial summary are available in the current record."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-scope
+    kind: limitation_group
+    parent_id: paper-39
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-scope-boundary
+    kind: limitation
+    parent_id: paper-39-scope
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Unverified boundaries"
+    summary: "The full text was not located. Specific threats, recommendations, evidence standards, platform assumptions, and publication review process are unknown."
+    source_anchor_ids: ["anchor-paper-39-editorial"]
+
+  - id: paper-39-resources
+    kind: artifact_group
+    parent_id: paper-39
+    order: 7
+    epistemic_status: resource_metadata_recorded
+    title: "Artifacts and resources"
+    summary: "1 linked resource is recorded by provenance category; its content, persistence, and relation to the final publication were not audited."
+    source_anchor_ids: ["anchor-paper-39-resource-1"]
+
+  - id: paper-39-resources-available
+    kind: artifact
+    parent_id: paper-39-resources
+    order: 1
+    epistemic_status: linked_not_content_audited
+    title: "Available links"
+    summary: "Official: Publisher bibliography."
+    source_anchor_ids: ["anchor-paper-39-resource-1"]
+
+  - id: paper-39-scrutiny
+    kind: scrutiny
+    parent_id: paper-39
+    order: 8
+    epistemic_status: publication_status_recorded_not_audited
+    title: "Scrutiny and status"
+    summary: "The local record lists this work as Published · public full text not located at Information Systems Security Association (ISSA) Journal, Volume 16, Number 5. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
+    source_anchor_ids: ["anchor-paper-39-resource-1"]
+
+relations:
+  - id: relation-paper-39-contribution-addresses-question
+    type: addresses
+    from_id: paper-39-contribution
+    to_id: paper-39-question
+  - id: relation-paper-39-method-describes-contribution
+    type: describes_approach_to
+    from_id: paper-39-method
+    to_id: paper-39-contribution
+  - id: relation-paper-39-evidence-supports-claim
+    type: supports
+    from_id: paper-39-evidence-reported
+    to_id: paper-39-claim-primary
+  - id: relation-paper-39-scope-qualifies-claim
+    type: qualifies
+    from_id: paper-39-scope-boundary
+    to_id: paper-39-claim-primary
+  - id: relation-paper-39-resources-enable-evidence-audit
+    type: provides_access_for_audit_of
+    from_id: paper-39-resources-available
+    to_id: paper-39-evidence-reported
+  - id: relation-paper-39-status-qualifies-claim
+    type: qualifies
+    from_id: paper-39-scrutiny
+    to_id: paper-39-claim-primary
+
+assessment:
+  id: paper-39-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: low
+      rationale: "Only a title-based editorial inference and bibliographic record are represented; no full text or substantive evidence was available for audit, so epistemic support is limited."
+      basis_source_anchor_ids: ["anchor-paper-39-editorial", "anchor-paper-39-resource-1"]
+    - id: auditability
+      level: low
+      rationale: "The record provides only an official publisher or bibliographic link and no archive or author-hosted copy; access to substantive evidence and reproducibility materials was not verified."
+      basis_source_anchor_ids: ["anchor-paper-39-resource-1"]
+    - id: production_provenance
+      level: low
+      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      basis_source_anchor_ids: ["anchor-paper-39-editorial"]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
+      basis_source_anchor_ids: ["anchor-paper-39-resource-1"]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
+      basis_source_anchor_ids: ["anchor-paper-39-editorial"]
+    - id: contribution_significance
+      level: not_assessed
+      rationale: "Only a title, bibliographic listing, and editorially inferred research aim are available; the article's contribution, novelty, priority, and impact cannot yet be assessed."
+      basis_source_anchor_ids: ["anchor-paper-39-editorial"]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."

@@ -1,0 +1,222 @@
+schema_version: "0.1"
+map_id: paper-66-map
+publication_id: 66
+publication_anchor: paper-66
+slug: paper-66
+canonical_path: /knowledge/papers/paper-66/
+machine_path: /knowledge/papers/paper-66.json
+root_node_id: paper-66
+stage: mapped_draft
+
+title: "Traffic Analysis by Adversaries with Partial Visibility"
+short_title: "Traffic Analysis by Adversaries with Partial Visibility"
+year: 2023
+venue: "28th European Symposium on Research in Computer Security (ESORICS 2023)"
+publication_status: "Published · proceedings issued in 2024"
+topic: ai-machine-learning
+labels:
+  - "Theory"
+  - "Applied"
+ai_ml_labels:
+  - "AI for security"
+authors:
+  - "Iness Ben Guirat"
+  - "Claudia Díaz"
+  - "Karim Eldefrawy"
+  - "Hadas Zeilberger"
+keywords:
+  - "traffic analysis"
+  - "mix networks"
+  - "Bayesian inference"
+
+research_question: "What can traffic-analysis adversaries infer when each adversary observes only part of a mix network rather than the entire communication graph?"
+central_answer: "The curated editorial summary reports a model of partial visibility that combines Bayesian inference with Metropolis-Hastings sampling to study the information available to differently situated adversaries."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-66-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #66"
+    url: /publications/#paper-66
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-66-official-1
+    type: official_publication_resource
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1007/978-3-031-51476-0_17"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-66-author-1
+    type: author_resource
+    title: "Author-hosted paper"
+    url: "https://www.esat.kuleuven.be/cosic/publications/article-3637.pdf"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-66-curated
+    source_id: source-paper-66-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-66
+  - id: anchor-paper-66-official-1
+    source_id: source-paper-66-official-1
+    label: "Publisher / DOI"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1007/978-3-031-51476-0_17"
+  - id: anchor-paper-66-author-1
+    source_id: source-paper-66-author-1
+    label: "Author-hosted paper"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://www.esat.kuleuven.be/cosic/publications/article-3637.pdf"
+
+nodes:
+  - id: paper-66
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Traffic Analysis by Adversaries with Partial Visibility"
+    summary: "This paper models traffic-analysis attackers who can observe only part of a mix network, rather than assuming an unrealistic view of every communication. It combines Bayesian inference with Metropolis-Hastings sampling to study what different partially informed adversaries can still learn."
+    source_anchor_ids: [anchor-paper-66-curated]
+  - id: paper-66-question
+    kind: question
+    parent_id: paper-66
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "What can traffic-analysis adversaries infer when each adversary observes only part of a mix network rather than the entire communication graph?"
+    source_anchor_ids: [anchor-paper-66-curated]
+  - id: paper-66-contribution
+    kind: contribution
+    parent_id: paper-66
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports a model of partial visibility that combines Bayesian inference with Metropolis-Hastings sampling to study the information available to differently situated adversaries."
+    source_anchor_ids: [anchor-paper-66-curated]
+  - id: paper-66-method
+    kind: method
+    parent_id: paper-66
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described analysis defines partial-observation adversaries, forms posterior inferences about communication, and uses Metropolis-Hastings sampling to approximate those inferences."
+    source_anchor_ids: [anchor-paper-66-curated]
+  - id: paper-66-claims
+    kind: claim_group
+    parent_id: paper-66
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports a framework for comparing what adversaries with different partial views can still learn from mix-network traffic."
+    source_anchor_ids: [anchor-paper-66-curated]
+  - id: paper-66-evidence
+    kind: evidence_group
+    parent_id: paper-66
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Model-based and sampling-based results are reported, but priors, likelihoods, convergence diagnostics, datasets or simulations, metrics, and validation were not audited."
+    source_anchor_ids: [anchor-paper-66-curated]
+  - id: paper-66-scope
+    kind: limitation_group
+    parent_id: paper-66
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft has not checked the network and traffic model, observation process, prior knowledge, sampler mixing, adversarial adaptivity, ground truth, or how results transfer to deployed mix networks."
+    source_anchor_ids: [anchor-paper-66-curated]
+  - id: paper-66-artifacts
+    kind: artifact_group
+    parent_id: paper-66
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 2 resources (1 official, 0 archive, 1 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-66-curated, anchor-paper-66-official-1, anchor-paper-66-author-1]
+  - id: paper-66-scrutiny
+    kind: scrutiny
+    parent_id: paper-66
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 28th European Symposium on Research in Computer Security (ESORICS 2023). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-66-official-1]
+
+relations:
+  - id: paper-66-relation-question-contribution
+    type: motivates
+    from_id: paper-66-question
+    to_id: paper-66-contribution
+  - id: paper-66-relation-method-contribution
+    type: realizes
+    from_id: paper-66-method
+    to_id: paper-66-contribution
+  - id: paper-66-relation-contribution-claims
+    type: grounds
+    from_id: paper-66-contribution
+    to_id: paper-66-claims
+  - id: paper-66-relation-evidence-claims
+    type: supports
+    from_id: paper-66-evidence
+    to_id: paper-66-claims
+  - id: paper-66-relation-scope-claims
+    type: qualifies
+    from_id: paper-66-scope
+    to_id: paper-66-claims
+  - id: paper-66-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-66-artifacts
+    to_id: paper-66-evidence
+  - id: paper-66-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-66-scrutiny
+    to_id: paper-66-claims
+
+assessment:
+  id: paper-66-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-66-curated, anchor-paper-66-official-1, anchor-paper-66-author-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-66-curated, anchor-paper-66-official-1, anchor-paper-66-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-66-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-66-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-66-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-66-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

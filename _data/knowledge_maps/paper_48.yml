@@ -1,0 +1,257 @@
+schema_version: "0.1"
+map_id: paper-48-map
+publication_id: 48
+publication_anchor: paper-48
+slug: paper-48
+canonical_path: /knowledge/papers/paper-48/
+machine_path: /knowledge/papers/paper-48.json
+root_node_id: paper-48
+stage: mapped_draft
+
+title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
+year: 2019
+status: "Published · journal article"
+venue: "Future Generation Computer Systems, Volume 98"
+topic: "privacy-identity"
+labels: ["Theory", "Applied"]
+authors:
+  - "Ivan De Oliveira Nunes"
+  - "Karim Eldefrawy"
+  - "Tancrède Lepoint"
+keywords:
+  - "biometrics"
+  - "secure computation"
+  - "re-enrollment"
+editorial_summary: "SNUSE distributes biometric templates across re-enrollment servers and uses secure computation to refresh authentication material without storing a complete template at any one server. Its fingerprint and iris prototypes re-enroll thousands of users in seconds without materially reducing matching accuracy."
+
+research_question: "Can biometric authentication material be refreshed for thousands of users without centralizing complete biometric templates or requiring users to enroll again?"
+central_answer: "SNUSE reportedly distributes templates across servers and uses secure computation to refresh authentication material, with fingerprint and iris prototypes."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: "metadata synthesis, conservative claim mapping, and initial assessment"
+  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+
+sources:
+  - id: source-paper-48-site-record
+    type: curated_site_record
+    title: "Publication #48 metadata and editorial summary"
+    url: /publications/#paper-48
+    scope_note: "Local editorial record; not a substitute for the paper full text."
+  - id: source-paper-48-resource-1
+    type: official_publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1016/j.future.2019.03.051"
+    provenance_category: official
+  - id: source-paper-48-resource-2
+    type: author_hosted_copy
+    title: "Author-hosted PDF"
+    url: "https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf"
+    provenance_category: author
+
+source_anchors:
+  - id: anchor-paper-48-editorial
+    source_id: source-paper-48-site-record
+    label: "Curated publication metadata and editorial summary"
+    locator: "Local site record; the summary is editorial and has not been checked against full text."
+    url: /publications/#paper-48
+  - id: anchor-paper-48-resource-1
+    source_id: source-paper-48-resource-1
+    label: "Official resource: Publisher / DOI"
+    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://doi.org/10.1016/j.future.2019.03.051"
+  - id: anchor-paper-48-resource-2
+    source_id: source-paper-48-resource-2
+    label: "Author-hosted resource: Author-hosted PDF"
+    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf"
+
+nodes:
+  - id: paper-48
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: published_metadata_with_editorial_synthesis
+    title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
+    summary: "SNUSE distributes biometric templates across re-enrollment servers and uses secure computation to refresh authentication material without storing a complete template at any one server. Its fingerprint and iris prototypes re-enroll thousands of users in seconds without materially reducing matching accuracy."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-question
+    kind: question
+    parent_id: paper-48
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can biometric authentication material be refreshed for thousands of users without centralizing complete biometric templates or requiring users to enroll again?"
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-contribution
+    kind: contribution
+    parent_id: paper-48
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Central contribution"
+    summary: "SNUSE reportedly distributes templates across servers and uses secure computation to refresh authentication material, with fingerprint and iris prototypes."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-method
+    kind: method
+    parent_id: paper-48
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Reported method"
+    summary: "The reported design combines distributed template shares, secure re-enrollment computation, and experiments measuring batch throughput and matching accuracy."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-claims
+    kind: claim_group
+    parent_id: paper-48
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Main claims"
+    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-claim-primary
+    kind: claim
+    parent_id: paper-48-claims
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Primary reported claim"
+    summary: "The summary reports re-enrollment of thousands of users in seconds without materially reducing fingerprint or iris matching accuracy."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-evidence
+    kind: evidence_group
+    parent_id: paper-48
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-evidence-reported
+    kind: evidence
+    parent_id: paper-48-evidence
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Evidence represented in the site summary"
+    summary: "The editorial record identifies two prototypes and performance/accuracy results, but datasets, threat model, protocol, implementation, metrics, and statistical analyses were not audited."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-scope
+    kind: limitation_group
+    parent_id: paper-48
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-scope-boundary
+    kind: limitation
+    parent_id: paper-48-scope
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Unverified boundaries"
+    summary: "Privacy depends on server-collusion assumptions and the biometric representation. Results may vary by modality, dataset, matcher, deployment, and security parameters."
+    source_anchor_ids: ["anchor-paper-48-editorial"]
+
+  - id: paper-48-resources
+    kind: artifact_group
+    parent_id: paper-48
+    order: 7
+    epistemic_status: resource_metadata_recorded
+    title: "Artifacts and resources"
+    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
+    source_anchor_ids: ["anchor-paper-48-resource-1", "anchor-paper-48-resource-2"]
+
+  - id: paper-48-resources-available
+    kind: artifact
+    parent_id: paper-48-resources
+    order: 1
+    epistemic_status: linked_not_content_audited
+    title: "Available links"
+    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted PDF."
+    source_anchor_ids: ["anchor-paper-48-resource-1", "anchor-paper-48-resource-2"]
+
+  - id: paper-48-scrutiny
+    kind: scrutiny
+    parent_id: paper-48
+    order: 8
+    epistemic_status: publication_status_recorded_not_audited
+    title: "Scrutiny and status"
+    summary: "The local record lists this work as Published · journal article at Future Generation Computer Systems, Volume 98. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
+    source_anchor_ids: ["anchor-paper-48-resource-1"]
+
+relations:
+  - id: relation-paper-48-contribution-addresses-question
+    type: addresses
+    from_id: paper-48-contribution
+    to_id: paper-48-question
+  - id: relation-paper-48-method-describes-contribution
+    type: describes_approach_to
+    from_id: paper-48-method
+    to_id: paper-48-contribution
+  - id: relation-paper-48-evidence-supports-claim
+    type: supports
+    from_id: paper-48-evidence-reported
+    to_id: paper-48-claim-primary
+  - id: relation-paper-48-scope-qualifies-claim
+    type: qualifies
+    from_id: paper-48-scope-boundary
+    to_id: paper-48-claim-primary
+  - id: relation-paper-48-resources-enable-evidence-audit
+    type: provides_access_for_audit_of
+    from_id: paper-48-resources-available
+    to_id: paper-48-evidence-reported
+  - id: relation-paper-48-status-qualifies-claim
+    type: qualifies
+    from_id: paper-48-scrutiny
+    to_id: paper-48-claim-primary
+
+assessment:
+  id: paper-48-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
+      basis_source_anchor_ids: ["anchor-paper-48-editorial", "anchor-paper-48-resource-1"]
+    - id: auditability
+      level: medium
+      rationale: "At least one archive or author-hosted copy is linked, improving inspectability, but file identity, completeness, version alignment, artifact availability, and reproducibility were not checked."
+      basis_source_anchor_ids: ["anchor-paper-48-resource-1", "anchor-paper-48-resource-2"]
+    - id: production_provenance
+      level: low
+      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      basis_source_anchor_ids: ["anchor-paper-48-editorial"]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
+      basis_source_anchor_ids: ["anchor-paper-48-resource-1"]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
+      basis_source_anchor_ids: ["anchor-paper-48-editorial"]
+    - id: contribution_significance
+      level: medium
+      rationale: "The curated summary indicates a substantive contribution: a large-scale secure-computation design for refreshing biometric authentication material without reconstructing a full template at one server. Novelty priority, comparative importance, and downstream impact were not independently audited."
+      basis_source_anchor_ids: ["anchor-paper-48-editorial"]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."

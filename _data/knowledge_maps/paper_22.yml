@@ -1,0 +1,200 @@
+schema_version: "0.1"
+map_id: paper-22-map
+publication_id: 22
+publication_anchor: paper-22
+slug: paper-22
+canonical_path: /knowledge/papers/paper-22/
+machine_path: /knowledge/papers/paper-22.json
+root_node_id: paper-22
+stage: mapped_draft
+
+title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
+year: 2013
+venue: "IEEE Global Communications Conference (GLOBECOM)"
+authors: ["Martin Strohmeier", "Ivan Martinovic", "Utz Roedig", "Karim Eldefrawy", "Jens Schmitt"]
+keywords: ["network coding", "key sharing", "wireless networks"]
+
+research_question: "How should wireless network-coding keys be shared when larger key groups improve overhearing and throughput but magnify the damage of key compromise?"
+central_answer: "The paper formulates key assignment as an optimization problem and reports measured coding-gain improvements when an additional member joins a key-sharing group."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-22-site-record
+    type: curated_record
+    title: "Curated publication record for paper #22"
+    url: /publications/#paper-22
+  - id: source-paper-22-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1109/GLOCOM.2013.6831179"
+  - id: source-paper-22-author-1
+    type: author_copy
+    title: "Oxford author copy"
+    url: "https://www.cs.ox.ac.uk/files/7240/globecom_camera.pdf"
+
+source_anchors:
+  - id: anchor-paper-22-site-record
+    source_id: source-paper-22-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-22
+  - id: anchor-paper-22-official-1
+    source_id: source-paper-22-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1109/GLOCOM.2013.6831179"
+  - id: anchor-paper-22-author-1
+    source_id: source-paper-22-author-1
+    label: "Oxford author copy"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://www.cs.ox.ac.uk/files/7240/globecom_camera.pdf"
+
+nodes:
+  - id: paper-22
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
+    summary: "The paper exposes a practical tradeoff in wireless network coding: larger link-key groups enable more packet overhearing and throughput, but make each key compromise more damaging. It formulates key assignment as an optimization problem and finds that adding one member to a key-sharing group can improve coding gain by 1.3 to 13.7 percent across tested topologies."
+    source_anchor_ids: [anchor-paper-22-site-record]
+
+  - id: paper-22-question
+    kind: question
+    parent_id: paper-22
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How should wireless network-coding keys be shared when larger key groups improve overhearing and throughput but magnify the damage of key compromise?"
+    source_anchor_ids: [anchor-paper-22-site-record]
+
+  - id: paper-22-answer
+    kind: contribution
+    parent_id: paper-22
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The paper formulates key assignment as an optimization problem and reports measured coding-gain improvements when an additional member joins a key-sharing group."
+    source_anchor_ids: [anchor-paper-22-site-record]
+
+  - id: paper-22-method
+    kind: method
+    parent_id: paper-22
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Model the security-throughput tradeoff created by key-sharing groups, optimize assignments, and evaluate coding gain across tested wireless topologies."
+    source_anchor_ids: [anchor-paper-22-site-record]
+
+  - id: paper-22-claims
+    kind: claim_group
+    parent_id: paper-22
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The reported evaluation finds that adding one member to a key-sharing group improves coding gain by 1.3 to 13.7 percent across the tested topologies, at the cost of greater compromise exposure."
+    source_anchor_ids: [anchor-paper-22-site-record]
+
+  - id: paper-22-evidence
+    kind: evidence_group
+    parent_id: paper-22
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports an optimization formulation and quantitative topology experiments; threat assumptions, objective function, algorithms, datasets, and statistical variation have not been inspected."
+    source_anchor_ids: [anchor-paper-22-site-record]
+
+  - id: paper-22-limitations
+    kind: limitation_group
+    parent_id: paper-22
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The result is limited to the tested topologies and key-compromise model; mobility, adaptive compromise, rekeying cost, larger groups, and operational traffic have not been audited."
+    source_anchor_ids: [anchor-paper-22-site-record]
+
+  - id: paper-22-resources
+    kind: artifact_group
+    parent_id: paper-22
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Oxford author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-22-official-1, anchor-paper-22-author-1]
+
+  - id: paper-22-scrutiny
+    kind: scrutiny
+    parent_id: paper-22
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published at IEEE Global Communications Conference (GLOBECOM). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-22-site-record, anchor-paper-22-official-1]
+
+relations:
+  - id: paper-22-relation-method-supports-answer
+    type: supports
+    from_id: paper-22-method
+    to_id: paper-22-answer
+  - id: paper-22-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-22-evidence
+    to_id: paper-22-claims
+  - id: paper-22-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-22-limitations
+    to_id: paper-22-claims
+  - id: paper-22-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-22-scrutiny
+    to_id: paper-22
+
+assessment:
+  id: paper-22-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports an optimization formulation and quantitative topology experiments; threat assumptions, objective function, algorithms, datasets, and statistical variation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-22-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; Oxford author copy). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-22-official-1, anchor-paper-22-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-22-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in IEEE Global Communications Conference (GLOBECOM), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-22-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-22-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The reported evaluation finds that adding one member to a key-sharing group improves coding gain by 1.3 to 13.7 percent across the tested topologies, at the cost of greater compromise exposure. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-22-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

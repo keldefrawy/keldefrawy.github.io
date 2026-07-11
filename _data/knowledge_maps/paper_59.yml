@@ -1,0 +1,223 @@
+schema_version: "0.1"
+map_id: paper-59-map
+publication_id: 59
+publication_anchor: paper-59
+slug: paper-59
+canonical_path: /knowledge/papers/paper-59/
+machine_path: /knowledge/papers/paper-59.json
+root_node_id: paper-59
+stage: mapped_draft
+
+title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+short_title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+year: 2021
+venue: "54th IEEE/ACM International Symposium on Microarchitecture (MICRO)"
+publication_status: "Extended version of the MICRO 2021 paper"
+topic: secure-encrypted-computation
+labels:
+  - "Applied"
+authors:
+  - "Axel Feldmann"
+  - "Nikola Samardzic"
+  - "Aleksandar Krastev"
+  - "Srini Devadas"
+  - "Ronald G. Dreslinski"
+  - "Karim Eldefrawy"
+  - "Nicholas Genise"
+  - "Chris Peikert"
+  - "Daniel Sánchez"
+keywords:
+  - "fully homomorphic encryption"
+  - "hardware acceleration"
+
+research_question: "Can a programmable hardware accelerator execute complete fully homomorphic encryption programs efficiently instead of accelerating only isolated kernels?"
+central_answer: "The curated editorial summary reports that F1 combines specialized vector units, an explicitly managed memory hierarchy, and a scheduling compiler to accelerate complete FHE workloads."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-59-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #59"
+    url: /publications/#paper-59
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-59-official-1
+    type: official_publication_resource
+    title: "Related conference version"
+    url: "https://doi.org/10.1145/3466752.3480070"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-59-archive-1
+    type: archive_resource
+    title: "arXiv"
+    url: "https://arxiv.org/abs/2109.05371"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-59-curated
+    source_id: source-paper-59-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-59
+  - id: anchor-paper-59-official-1
+    source_id: source-paper-59-official-1
+    label: "Related conference version"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1145/3466752.3480070"
+  - id: anchor-paper-59-archive-1
+    source_id: source-paper-59-archive-1
+    label: "arXiv"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://arxiv.org/abs/2109.05371"
+
+nodes:
+  - id: paper-59
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+    summary: "F1 is a programmable hardware accelerator designed to execute complete fully homomorphic encryption programs rather than isolated kernels. Specialized vector units, an explicitly managed memory hierarchy, and a scheduling compiler yield several-thousand-fold average speedups over software."
+    source_anchor_ids: [anchor-paper-59-curated]
+  - id: paper-59-question
+    kind: question
+    parent_id: paper-59
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can a programmable hardware accelerator execute complete fully homomorphic encryption programs efficiently instead of accelerating only isolated kernels?"
+    source_anchor_ids: [anchor-paper-59-curated]
+  - id: paper-59-contribution
+    kind: contribution
+    parent_id: paper-59
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports that F1 combines specialized vector units, an explicitly managed memory hierarchy, and a scheduling compiler to accelerate complete FHE workloads."
+    source_anchor_ids: [anchor-paper-59-curated]
+  - id: paper-59-method
+    kind: method
+    parent_id: paper-59
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described architecture co-designs vector computation, data movement, and compile-time scheduling around the operations and memory behavior of FHE programs."
+    source_anchor_ids: [anchor-paper-59-curated]
+  - id: paper-59-claims
+    kind: claim_group
+    parent_id: paper-59
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports several-thousand-fold average speedups over software across the evaluated workloads."
+    source_anchor_ids: [anchor-paper-59-curated]
+  - id: paper-59-evidence
+    kind: evidence_group
+    parent_id: paper-59
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Architecture simulation or implementation evaluation and comparative performance are implied by the summary, but workloads, baselines, parameters, methodology, area, power, and raw results were not audited."
+    source_anchor_ids: [anchor-paper-59-curated]
+  - id: paper-59-scope
+    kind: limitation_group
+    parent_id: paper-59
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "The draft does not establish how the extended version differs from the conference paper, which FHE schemes and security parameters are supported, or how performance changes with memory, bandwidth, area, and workload structure."
+    source_anchor_ids: [anchor-paper-59-curated]
+  - id: paper-59-artifacts
+    kind: artifact_group
+    parent_id: paper-59
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-59-curated, anchor-paper-59-official-1, anchor-paper-59-archive-1]
+  - id: paper-59-scrutiny
+    kind: scrutiny
+    parent_id: paper-59
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The extended version is linked through arXiv, while the official DOI identifies a related MICRO conference version. This documents venue exposure for the related conference paper, but review or equivalence of the extended version was not audited."
+    source_anchor_ids: [anchor-paper-59-official-1]
+
+relations:
+  - id: paper-59-relation-question-contribution
+    type: motivates
+    from_id: paper-59-question
+    to_id: paper-59-contribution
+  - id: paper-59-relation-method-contribution
+    type: realizes
+    from_id: paper-59-method
+    to_id: paper-59-contribution
+  - id: paper-59-relation-contribution-claims
+    type: grounds
+    from_id: paper-59-contribution
+    to_id: paper-59-claims
+  - id: paper-59-relation-evidence-claims
+    type: supports
+    from_id: paper-59-evidence
+    to_id: paper-59-claims
+  - id: paper-59-relation-scope-claims
+    type: qualifies
+    from_id: paper-59-scope
+    to_id: paper-59-claims
+  - id: paper-59-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-59-artifacts
+    to_id: paper-59-evidence
+  - id: paper-59-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-59-scrutiny
+    to_id: paper-59-claims
+
+assessment:
+  id: paper-59-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-59-curated, anchor-paper-59-official-1, anchor-paper-59-archive-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-59-curated, anchor-paper-59-official-1, anchor-paper-59-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-59-curated]
+    - id: external_scrutiny
+      level: low
+      rationale: "The extended version is linked through arXiv; the official DOI identifies the related MICRO conference version. This documents scrutiny of the related conference paper, but review or equivalence of the extended version was not audited."
+      basis_source_anchor_ids: [anchor-paper-59-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-59-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-59-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

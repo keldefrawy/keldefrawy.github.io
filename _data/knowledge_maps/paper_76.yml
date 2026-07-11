@@ -1,0 +1,201 @@
+schema_version: "0.1"
+map_id: paper-76-map
+publication_id: 76
+publication_anchor: paper-76
+slug: paper-76
+canonical_path: /knowledge/papers/paper-76/
+machine_path: /knowledge/papers/paper-76.json
+root_node_id: paper-76
+stage: mapped_draft
+
+title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+short_title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+year: null
+venue: null
+publication_status: "Ongoing work"
+topic: privacy-identity
+labels:
+  - "Applied"
+availability: "Public manuscript not found; this work is listed as ongoing."
+authors:
+  - "Linda Briesemeister"
+  - "Karim Eldefrawy"
+  - "Bob Haley"
+  - "Tim McCarthy"
+  - "Ben Terner"
+keywords:
+  - "anonymous messaging"
+  - "intrusion resilience"
+  - "MPC"
+
+research_question: "Can an anonymous messaging overlay use secure multiparty computation to preserve privacy and service resilience even when some infrastructure components are compromised?"
+central_answer: "Based only on the working title and editorial listing, PRISM is intended to combine MPC with an intrusion-resilient anonymous messaging overlay."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-76-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #76"
+    url: /publications/#paper-76
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+
+source_anchors:
+  - id: anchor-paper-76-curated
+    source_id: source-paper-76-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-76
+
+nodes:
+  - id: paper-76
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+    summary: "Based on its working title, PRISM combines secure multiparty computation with an anonymous messaging overlay designed to tolerate compromised infrastructure. Its goal is to protect communication privacy and keep the service resilient even when some participating components are penetrated."
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-question
+    kind: question
+    parent_id: paper-76
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can an anonymous messaging overlay use secure multiparty computation to preserve privacy and service resilience even when some infrastructure components are compromised?"
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-contribution
+    kind: contribution
+    parent_id: paper-76
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "Based only on the working title and editorial listing, PRISM is intended to combine MPC with an intrusion-resilient anonymous messaging overlay."
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-method
+    kind: method
+    parent_id: paper-76
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "No public manuscript is represented. The allocation of MPC tasks, overlay architecture, intrusion-recovery mechanism, and messaging protocol are not specified by the available record."
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-claims
+    kind: claim_group
+    parent_id: paper-76
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The listing supports only a system objective: communication privacy and resilience under some infrastructure compromise. It does not establish a concrete threat threshold or guarantee."
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-evidence
+    kind: evidence_group
+    parent_id: paper-76
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "No public manuscript, venue record, security proof, architecture specification, implementation, experiment, or artifact is represented in the resource data."
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-scope
+    kind: limitation_group
+    parent_id: paper-76
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "Compromise thresholds, anonymity definition, traffic-analysis resistance, availability, recovery, membership, key management, network assumptions, MPC protocol, performance, and deployment model remain unknown."
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-artifacts
+    kind: artifact_group
+    parent_id: paper-76
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
+    source_anchor_ids: [anchor-paper-76-curated]
+  - id: paper-76-scrutiny
+    kind: scrutiny
+    parent_id: paper-76
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this item as ongoing work. No completed venue review, public review report, independent reproduction, correction, or adversarial analysis is represented."
+    source_anchor_ids: [anchor-paper-76-curated]
+
+relations:
+  - id: paper-76-relation-question-contribution
+    type: motivates
+    from_id: paper-76-question
+    to_id: paper-76-contribution
+  - id: paper-76-relation-method-contribution
+    type: realizes
+    from_id: paper-76-method
+    to_id: paper-76-contribution
+  - id: paper-76-relation-contribution-claims
+    type: grounds
+    from_id: paper-76-contribution
+    to_id: paper-76-claims
+  - id: paper-76-relation-evidence-claims
+    type: supports
+    from_id: paper-76-evidence
+    to_id: paper-76-claims
+  - id: paper-76-relation-scope-claims
+    type: qualifies
+    from_id: paper-76-scope
+    to_id: paper-76-claims
+  - id: paper-76-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-76-artifacts
+    to_id: paper-76-evidence
+  - id: paper-76-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-76-scrutiny
+    to_id: paper-76-claims
+
+assessment:
+  id: paper-76-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: low
+      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
+      basis_source_anchor_ids: [anchor-paper-76-curated]
+    - id: auditability
+      level: low
+      rationale: "No official, archive, or author-hosted resource is represented, so assumptions, evidence, artifacts, and version identity cannot presently be audited from this map."
+      basis_source_anchor_ids: [anchor-paper-76-curated]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-76-curated]
+    - id: external_scrutiny
+      level: not_assessed
+      rationale: "The item is listed as ongoing work, with no completed external-review record or independent scrutiny evidence represented."
+      basis_source_anchor_ids: [anchor-paper-76-curated]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-76-curated]
+    - id: contribution_significance
+      level: not_assessed
+      rationale: "Only a working title, bibliographic listing, and editorially inferred research aim are available; contribution, novelty, priority, and impact cannot yet be assessed."
+      basis_source_anchor_ids: [anchor-paper-76-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

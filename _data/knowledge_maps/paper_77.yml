@@ -1,0 +1,200 @@
+schema_version: "0.1"
+map_id: paper-77-map
+publication_id: 77
+publication_anchor: paper-77
+slug: paper-77
+canonical_path: /knowledge/papers/paper-77/
+machine_path: /knowledge/papers/paper-77.json
+root_node_id: paper-77
+stage: mapped_draft
+
+title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+short_title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+year: null
+venue: null
+publication_status: "Ongoing work"
+topic: algorithms-foundations
+labels:
+  - "Theory"
+availability: "Public manuscript not found; this work is listed as ongoing."
+authors:
+  - "Daniel Apon"
+  - "Chongwon Cho"
+  - "Karim Eldefrawy"
+  - "Feng-Hao Liu"
+  - "Rafail Ostrovsky"
+keywords:
+  - "post-quantum cryptography"
+  - "obfuscation"
+
+research_question: "Can post-quantum point-function obfuscation prevent adversarial malleation while realizing useful random-oracle-like behavior?"
+central_answer: "Based only on the working title and editorial listing, the project seeks a post-quantum non-malleable point-obfuscation construction that blocks transformations into related obfuscated programs."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-77-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #77"
+    url: /publications/#paper-77
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+
+source_anchors:
+  - id: anchor-paper-77-curated
+    source_id: source-paper-77-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-77
+
+nodes:
+  - id: paper-77
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+    summary: "Based on its working title, this project studies point-function obfuscation that remains non-malleable against quantum-capable attackers. It asks how a concrete post-quantum construction can reproduce useful random-oracle behavior without letting an adversary transform an obfuscated program into a related one."
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-question
+    kind: question
+    parent_id: paper-77
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can post-quantum point-function obfuscation prevent adversarial malleation while realizing useful random-oracle-like behavior?"
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-contribution
+    kind: contribution
+    parent_id: paper-77
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "Based only on the working title and editorial listing, the project seeks a post-quantum non-malleable point-obfuscation construction that blocks transformations into related obfuscated programs."
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-method
+    kind: method
+    parent_id: paper-77
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "No public manuscript is represented. The candidate construction, post-quantum assumption, non-malleability game, and sense of random-oracle realization are not available for audit."
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-claims
+    kind: claim_group
+    parent_id: paper-77
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The listing supports only a research objective concerning post-quantum non-malleable point obfuscation; it does not establish existence, security, efficiency, or a realization theorem."
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-evidence
+    kind: evidence_group
+    parent_id: paper-77
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "No public manuscript, venue record, formal proof, implementation, experiment, or artifact is represented in the resource data."
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-scope
+    kind: limitation_group
+    parent_id: paper-77
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "The adversary class, quantum-access model, point-function domain, auxiliary input, malleation relation, simulation or indistinguishability target, assumptions, and efficiency remain unknown."
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-artifacts
+    kind: artifact_group
+    parent_id: paper-77
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
+    source_anchor_ids: [anchor-paper-77-curated]
+  - id: paper-77-scrutiny
+    kind: scrutiny
+    parent_id: paper-77
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this item as ongoing work. No completed venue review, public review report, independent reproduction, correction, or adversarial analysis is represented."
+    source_anchor_ids: [anchor-paper-77-curated]
+
+relations:
+  - id: paper-77-relation-question-contribution
+    type: motivates
+    from_id: paper-77-question
+    to_id: paper-77-contribution
+  - id: paper-77-relation-method-contribution
+    type: realizes
+    from_id: paper-77-method
+    to_id: paper-77-contribution
+  - id: paper-77-relation-contribution-claims
+    type: grounds
+    from_id: paper-77-contribution
+    to_id: paper-77-claims
+  - id: paper-77-relation-evidence-claims
+    type: supports
+    from_id: paper-77-evidence
+    to_id: paper-77-claims
+  - id: paper-77-relation-scope-claims
+    type: qualifies
+    from_id: paper-77-scope
+    to_id: paper-77-claims
+  - id: paper-77-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-77-artifacts
+    to_id: paper-77-evidence
+  - id: paper-77-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-77-scrutiny
+    to_id: paper-77-claims
+
+assessment:
+  id: paper-77-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: low
+      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
+      basis_source_anchor_ids: [anchor-paper-77-curated]
+    - id: auditability
+      level: low
+      rationale: "No official, archive, or author-hosted resource is represented, so assumptions, evidence, artifacts, and version identity cannot presently be audited from this map."
+      basis_source_anchor_ids: [anchor-paper-77-curated]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-77-curated]
+    - id: external_scrutiny
+      level: not_assessed
+      rationale: "The item is listed as ongoing work, with no completed external-review record or independent scrutiny evidence represented."
+      basis_source_anchor_ids: [anchor-paper-77-curated]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-77-curated]
+    - id: contribution_significance
+      level: not_assessed
+      rationale: "Only a working title, bibliographic listing, and editorially inferred research aim are available; contribution, novelty, priority, and impact cannot yet be assessed."
+      basis_source_anchor_ids: [anchor-paper-77-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

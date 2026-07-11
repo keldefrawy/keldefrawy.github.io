@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Publications by Research Area
+description: Browse 78 publications by research area, with stable paper identifiers, resource links, plain-language summaries, and human- and machine-readable scientific knowledge maps.
 permalink: /publications/
 publications_browser: true
 ---
@@ -131,6 +132,20 @@ publications_browser: true
                     </div>
                   {% endfor %}
                 </div>
+
+                {% assign landing_matches = site.papers | where: "paper_id", paper.id %}
+                {% assign landing = landing_matches | first %}
+                {% capture map_key %}paper_{{ paper.id }}{% endcapture %}
+                {% assign mapped_record = site.data.knowledge_maps[map_key] %}
+                {% if landing %}
+                  <p class="publication-knowledge-link">
+                    <a href="{{ landing.url | relative_url }}">
+                      Scientific knowledge map
+                      <span>{% if mapped_record.curation.source_scope == "full_source_audit" %}claims, evidence, limits, and profile{% else %}AI draft · full-text audit pending{% endif %}</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </p>
+                {% endif %}
 
                 {% if paper.availability %}
                   <p class="publication-unavailable" role="note">{{ paper.availability | escape }}</p>

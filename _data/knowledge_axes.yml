@@ -1,0 +1,41 @@
+schema_version: "0.1"
+
+levels:
+  low:
+    label: Low
+    description: Limited documented support for this dimension.
+  medium:
+    label: Medium
+    description: Meaningful documented support with important gaps or boundaries.
+  high:
+    label: High
+    description: Strong, multi-part documented support for this dimension.
+  not_assessed:
+    label: Not assessed
+    description: The available evidence has not yet been evaluated for this dimension.
+
+axes:
+  - id: epistemic_evidence
+    label: Epistemic evidence
+    short_label: Evidence
+    description: How directly and rigorously the work's important claims are supported, including the scope and limits of that support.
+  - id: auditability
+    label: Auditability
+    short_label: Auditability
+    description: Whether readers can inspect the paper's evidence, artifacts, assumptions, and validation path.
+  - id: production_provenance
+    label: Production provenance
+    short_label: Provenance
+    description: How clearly the human, AI, tool, revision, and approval process that produced the work is documented.
+  - id: external_scrutiny
+    label: External scrutiny
+    short_label: Scrutiny
+    description: The breadth and independence of review, reproduction, criticism, correction, or adversarial examination.
+  - id: reception
+    label: Reception
+    short_label: Reception
+    description: Dated evidence of independent use, extension, discussion, replication, teaching, or research lineage.
+  - id: contribution_significance
+    label: Contribution significance
+    short_label: Significance
+    description: The degree to which the work adds a first-of-kind capability, resolves an important problem, changes a belief, or opens a research direction.

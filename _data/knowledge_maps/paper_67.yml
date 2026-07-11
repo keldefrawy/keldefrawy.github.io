@@ -1,0 +1,222 @@
+schema_version: "0.1"
+map_id: paper-67-map
+publication_id: 67
+publication_anchor: paper-67
+slug: paper-67
+canonical_path: /knowledge/papers/paper-67/
+machine_path: /knowledge/papers/paper-67.json
+root_node_id: paper-67
+stage: mapped_draft
+
+title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+short_title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+year: 2023
+venue: "30th ACM Conference on Computer and Communications Security (CCS)"
+publication_status: "Published"
+topic: algorithms-foundations
+labels:
+  - "Theory"
+  - "Applied"
+authors:
+  - "Samuel Dittmer"
+  - "Karim Eldefrawy"
+  - "Stéphane Graham-Lengrand"
+  - "Steve Lu"
+  - "Rafail Ostrovsky"
+  - "Vitor Pereira"
+keywords:
+  - "zero knowledge"
+  - "formal verification"
+  - "performance"
+
+research_question: "Can formally verified parallel execution and memory-access optimization make extracted Line-Point Zero-Knowledge code practical without abandoning its high-assurance proof path?"
+central_answer: "The curated editorial summary reports EasyCrypt-verified optimizations that yield roughly a 3,000-fold speedup and bring extracted code close to a manual implementation."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-67-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #67"
+    url: /publications/#paper-67
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-67-official-1
+    type: official_publication_resource
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1145/3576915.3616583"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-67-archive-1
+    type: archive_resource
+    title: "IACR ePrint"
+    url: "https://eprint.iacr.org/2023/1322"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-67-curated
+    source_id: source-paper-67-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-67
+  - id: anchor-paper-67-official-1
+    source_id: source-paper-67-official-1
+    label: "Publisher / DOI"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1145/3576915.3616583"
+  - id: anchor-paper-67-archive-1
+    source_id: source-paper-67-archive-1
+    label: "IACR ePrint"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://eprint.iacr.org/2023/1322"
+
+nodes:
+  - id: paper-67
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+    summary: "This paper formally verifies parallel-execution and memory-access optimizations for an EasyCrypt implementation of Line-Point Zero-Knowledge. The verified optimizations produce roughly a 3,000-fold speedup and bring automatically extracted code close to the manually implemented version."
+    source_anchor_ids: [anchor-paper-67-curated]
+  - id: paper-67-question
+    kind: question
+    parent_id: paper-67
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can formally verified parallel execution and memory-access optimization make extracted Line-Point Zero-Knowledge code practical without abandoning its high-assurance proof path?"
+    source_anchor_ids: [anchor-paper-67-curated]
+  - id: paper-67-contribution
+    kind: contribution
+    parent_id: paper-67
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports EasyCrypt-verified optimizations that yield roughly a 3,000-fold speedup and bring extracted code close to a manual implementation."
+    source_anchor_ids: [anchor-paper-67-curated]
+  - id: paper-67-method
+    kind: method
+    parent_id: paper-67
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described work formalizes parallel-execution and memory-access transformations for a verified Line-Point Zero-Knowledge implementation and then extracts optimized executable code."
+    source_anchor_ids: [anchor-paper-67-curated]
+  - id: paper-67-claims
+    kind: claim_group
+    parent_id: paper-67
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports preservation of formal assurance for the optimizations together with an approximately 3,000-fold performance improvement."
+    source_anchor_ids: [anchor-paper-67-curated]
+  - id: paper-67-evidence
+    kind: evidence_group
+    parent_id: paper-67
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Machine-checked optimization proofs and comparative benchmarks are reported, but the EasyCrypt development, trusted extraction and runtime stack, hardware, workloads, baselines, and raw data were not audited."
+    source_anchor_ids: [anchor-paper-67-curated]
+  - id: paper-67-scope
+    kind: limitation_group
+    parent_id: paper-67
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft has not checked the exact security and functional properties preserved, concurrency assumptions, memory model, constant-time behavior, proof-to-code correspondence, or benchmark generality."
+    source_anchor_ids: [anchor-paper-67-curated]
+  - id: paper-67-artifacts
+    kind: artifact_group
+    parent_id: paper-67
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-67-curated, anchor-paper-67-official-1, anchor-paper-67-archive-1]
+  - id: paper-67-scrutiny
+    kind: scrutiny
+    parent_id: paper-67
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 30th ACM Conference on Computer and Communications Security (CCS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-67-official-1]
+
+relations:
+  - id: paper-67-relation-question-contribution
+    type: motivates
+    from_id: paper-67-question
+    to_id: paper-67-contribution
+  - id: paper-67-relation-method-contribution
+    type: realizes
+    from_id: paper-67-method
+    to_id: paper-67-contribution
+  - id: paper-67-relation-contribution-claims
+    type: grounds
+    from_id: paper-67-contribution
+    to_id: paper-67-claims
+  - id: paper-67-relation-evidence-claims
+    type: supports
+    from_id: paper-67-evidence
+    to_id: paper-67-claims
+  - id: paper-67-relation-scope-claims
+    type: qualifies
+    from_id: paper-67-scope
+    to_id: paper-67-claims
+  - id: paper-67-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-67-artifacts
+    to_id: paper-67-evidence
+  - id: paper-67-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-67-scrutiny
+    to_id: paper-67-claims
+
+assessment:
+  id: paper-67-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-67-curated, anchor-paper-67-official-1, anchor-paper-67-archive-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-67-curated, anchor-paper-67-official-1, anchor-paper-67-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-67-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-67-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-67-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-67-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

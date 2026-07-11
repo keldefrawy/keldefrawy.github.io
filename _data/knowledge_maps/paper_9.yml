@@ -1,0 +1,209 @@
+schema_version: "0.1"
+map_id: paper-9-map
+publication_id: 9
+publication_anchor: paper-9
+slug: paper-9
+canonical_path: /knowledge/papers/paper-9/
+machine_path: /knowledge/papers/paper-9.json
+root_node_id: paper-9
+stage: mapped_draft
+
+title: "PRISM: Privacy-Friendly Routing in Suspicious MANETs (and VANETs)"
+year: 2008
+venue: "IEEE International Conference on Network Protocols (ICNP)"
+authors: ["Karim Eldefrawy", "Gene Tsudik"]
+keywords: ["anonymous routing", "location privacy", "MANETs"]
+
+research_question: "Can on-demand routing in suspicious MANETs protect long-term identities and movement histories while remaining efficient under insider and outsider threats?"
+central_answer: "PRISM addresses routes to current locations rather than persistent identities and is reported to improve privacy and overhead relative to prior approaches."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-9-site-record
+    type: curated_record
+    title: "Curated publication record for paper #9"
+    url: /publications/#paper-9
+  - id: source-paper-9-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1109/ICNP.2008.4697044"
+  - id: source-paper-9-archive-1
+    type: manuscript_archive
+    title: "CiteSeerX archive"
+    url: "https://citeseerx.ist.psu.edu/document?doi=3fb81a9dd24b091c455549a3b04b8344f7e55290&repid=rep1&type=pdf"
+  - id: source-paper-9-author-1
+    type: author_copy
+    title: "UCI author copy"
+    url: "https://sprout.ics.uci.edu/pubs/04697044.pdf"
+
+source_anchors:
+  - id: anchor-paper-9-site-record
+    source_id: source-paper-9-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-9
+  - id: anchor-paper-9-official-1
+    source_id: source-paper-9-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1109/ICNP.2008.4697044"
+  - id: anchor-paper-9-archive-1
+    source_id: source-paper-9-archive-1
+    label: "CiteSeerX archive"
+    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://citeseerx.ist.psu.edu/document?doi=3fb81a9dd24b091c455549a3b04b8344f7e55290&repid=rep1&type=pdf"
+  - id: anchor-paper-9-author-1
+    source_id: source-paper-9-author-1
+    label: "UCI author copy"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://sprout.ics.uci.edu/pubs/04697044.pdf"
+
+nodes:
+  - id: paper-9
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "PRISM: Privacy-Friendly Routing in Suspicious MANETs (and VANETs)"
+    summary: "PRISM is an on-demand, location-based routing protocol for suspicious MANETs in which nodes can communicate without exposing long-term identities or movement histories. Its design is analyzed against insider and outsider adversaries and is reported to provide stronger privacy with lower overhead than prior approaches."
+    source_anchor_ids: [anchor-paper-9-site-record]
+
+  - id: paper-9-question
+    kind: question
+    parent_id: paper-9
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can on-demand routing in suspicious MANETs protect long-term identities and movement histories while remaining efficient under insider and outsider threats?"
+    source_anchor_ids: [anchor-paper-9-site-record]
+
+  - id: paper-9-answer
+    kind: contribution
+    parent_id: paper-9
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "PRISM addresses routes to current locations rather than persistent identities and is reported to improve privacy and overhead relative to prior approaches."
+    source_anchor_ids: [anchor-paper-9-site-record]
+
+  - id: paper-9-method
+    kind: method
+    parent_id: paper-9
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Use on-demand, location-based route discovery so participants communicate without exposing stable identities or complete movement histories."
+    source_anchor_ids: [anchor-paper-9-site-record]
+
+  - id: paper-9-claims
+    kind: claim_group
+    parent_id: paper-9
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The paper reports stronger privacy with lower overhead than prior routing approaches under its analyzed insider and outsider adversaries."
+    source_anchor_ids: [anchor-paper-9-site-record]
+
+  - id: paper-9-evidence
+    kind: evidence_group
+    parent_id: paper-9
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports security analysis and comparative overhead results; adversary definitions, proofs, workloads, and numerical results have not been audited."
+    source_anchor_ids: [anchor-paper-9-site-record]
+
+  - id: paper-9-limitations
+    kind: limitation_group
+    parent_id: paper-9
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The draft does not establish guarantees under arbitrary collusion, pervasive observation, inaccurate locations, mobility extremes, or key-management failures."
+    source_anchor_ids: [anchor-paper-9-site-record]
+
+  - id: paper-9-resources
+    kind: artifact_group
+    parent_id: paper-9
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 3 linked resources: Publisher / DOI; CiteSeerX archive; UCI author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-9-official-1, anchor-paper-9-archive-1, anchor-paper-9-author-1]
+
+  - id: paper-9-scrutiny
+    kind: scrutiny
+    parent_id: paper-9
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published at IEEE International Conference on Network Protocols (ICNP). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-9-site-record, anchor-paper-9-official-1]
+
+relations:
+  - id: paper-9-relation-method-supports-answer
+    type: supports
+    from_id: paper-9-method
+    to_id: paper-9-answer
+  - id: paper-9-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-9-evidence
+    to_id: paper-9-claims
+  - id: paper-9-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-9-limitations
+    to_id: paper-9-claims
+  - id: paper-9-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-9-scrutiny
+    to_id: paper-9
+
+assessment:
+  id: paper-9-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports security analysis and comparative overhead results; adversary definitions, proofs, workloads, and numerical results have not been audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-9-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; CiteSeerX archive; UCI author copy). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-9-official-1, anchor-paper-9-archive-1, anchor-paper-9-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-9-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in IEEE International Conference on Network Protocols (ICNP), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-9-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-9-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The paper reports stronger privacy with lower overhead than prior routing approaches under its analyzed insider and outsider adversaries. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-9-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

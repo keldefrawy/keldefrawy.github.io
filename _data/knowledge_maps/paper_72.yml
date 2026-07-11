@@ -1,0 +1,197 @@
+schema_version: "0.1"
+map_id: paper-72-map
+publication_id: 72
+publication_anchor: paper-72
+slug: paper-72
+canonical_path: /knowledge/papers/paper-72/
+machine_path: /knowledge/papers/paper-72.json
+root_node_id: paper-72
+stage: mapped_draft
+
+title: "Challenges in Timed Cryptography: A Position Paper (Full Paper)"
+short_title: "Challenges in Timed Cryptography: A Position Paper (Full Paper)"
+year: 2025
+venue: "Cryptography and Communications special issue"
+publication_status: "Full version · under review"
+topic: secure-encrypted-computation
+labels:
+  - "Perspective"
+authors:
+  - "Karim Eldefrawy"
+  - "Ben Terner"
+  - "Moti Yung"
+keywords:
+  - "timed cryptography"
+  - "research agenda"
+
+research_question: "How should a full treatment of timed cryptography replace idealized time-lock analyses with realistic models of computation time, leakage, simulators, and composition?"
+central_answer: "The curated editorial summary cautiously states that the listed full version appears to expand the earlier position paper's critique, while also warning that no distinct public full-paper record was found."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-72-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #72"
+    url: /publications/#paper-72
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+
+source_anchors:
+  - id: anchor-paper-72-curated
+    source_id: source-paper-72-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-72
+
+nodes:
+  - id: paper-72
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Challenges in Timed Cryptography: A Position Paper (Full Paper)"
+    summary: "The listed full version appears to expand the position paper's critique of idealized time-lock analyses, unbounded simulators, and missing composition guarantees. No distinct public full-paper record was found, and the linked ePrint may instead correspond to the shorter published version."
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-question
+    kind: question
+    parent_id: paper-72
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How should a full treatment of timed cryptography replace idealized time-lock analyses with realistic models of computation time, leakage, simulators, and composition?"
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-contribution
+    kind: contribution
+    parent_id: paper-72
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary cautiously states that the listed full version appears to expand the earlier position paper's critique, while also warning that no distinct public full-paper record was found."
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-method
+    kind: method
+    parent_id: paper-72
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The represented method is an editorially inferred expansion of a position-paper analysis; no distinct manuscript is linked, so its actual definitions, arguments, and organization are unknown."
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-claims
+    kind: claim_group
+    parent_id: paper-72
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The only supported claim at this stage is bibliographic and provisional: a full version is listed as under review and is described as extending the critique of idealized timed-cryptography models."
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-evidence
+    kind: evidence_group
+    parent_id: paper-72
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "No distinct public full paper or resource is represented. The draft relies solely on the local metadata and editorial summary, which explicitly records uncertainty about the work's public identity."
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-scope
+    kind: limitation_group
+    parent_id: paper-72
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "The manuscript identity, relationship to the published short paper, submission status, formal content, examples, results, and any previously linked ePrint correspondence all require author verification."
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-artifacts
+    kind: artifact_group
+    parent_id: paper-72
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
+    source_anchor_ids: [anchor-paper-72-curated]
+  - id: paper-72-scrutiny
+    kind: scrutiny
+    parent_id: paper-72
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record gives the status Full version · under review. No completed external review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
+    source_anchor_ids: [anchor-paper-72-curated]
+
+relations:
+  - id: paper-72-relation-question-contribution
+    type: motivates
+    from_id: paper-72-question
+    to_id: paper-72-contribution
+  - id: paper-72-relation-method-contribution
+    type: realizes
+    from_id: paper-72-method
+    to_id: paper-72-contribution
+  - id: paper-72-relation-contribution-claims
+    type: grounds
+    from_id: paper-72-contribution
+    to_id: paper-72-claims
+  - id: paper-72-relation-evidence-claims
+    type: supports
+    from_id: paper-72-evidence
+    to_id: paper-72-claims
+  - id: paper-72-relation-scope-claims
+    type: qualifies
+    from_id: paper-72-scope
+    to_id: paper-72-claims
+  - id: paper-72-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-72-artifacts
+    to_id: paper-72-evidence
+  - id: paper-72-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-72-scrutiny
+    to_id: paper-72-claims
+
+assessment:
+  id: paper-72-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: low
+      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
+      basis_source_anchor_ids: [anchor-paper-72-curated]
+    - id: auditability
+      level: low
+      rationale: "No official, archive, or author-hosted resource is represented, so assumptions, evidence, artifacts, and version identity cannot presently be audited from this map."
+      basis_source_anchor_ids: [anchor-paper-72-curated]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-72-curated]
+    - id: external_scrutiny
+      level: low
+      rationale: "The item is listed as under review or otherwise lacks a represented completed review outcome; no independent scrutiny evidence was audited."
+      basis_source_anchor_ids: [anchor-paper-72-curated]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-72-curated]
+    - id: contribution_significance
+      level: not_assessed
+      rationale: "Only a bibliographic listing and editorially inferred relationship to an earlier position paper are available; this full version's distinct contribution, novelty, priority, and impact cannot yet be assessed."
+      basis_source_anchor_ids: [anchor-paper-72-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

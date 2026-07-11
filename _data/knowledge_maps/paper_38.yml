@@ -1,0 +1,257 @@
+schema_version: "0.1"
+map_id: paper-38-map
+publication_id: 38
+publication_anchor: paper-38
+slug: paper-38
+canonical_path: /knowledge/papers/paper-38/
+machine_path: /knowledge/papers/paper-38.json
+root_node_id: paper-38
+stage: mapped_draft
+
+title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
+year: 2017
+status: "Published · experience paper"
+venue: "47th IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W)"
+topic: "secure-systems-networks"
+labels: ["Applied"]
+authors:
+  - "Karim Eldefrawy"
+  - "Norrathep Rattanavipanon"
+  - "Gene Tsudik"
+keywords:
+  - "remote attestation"
+  - "seL4"
+  - "lessons learned"
+editorial_summary: "This experience paper presents the HYDRA design and reports the engineering lessons involved in combining remote attestation with the formally verified seL4 microkernel. Its commodity-board prototype attests 10 MB in under 500 ms and highlights practical issues such as secure boot, trustworthy time, and cryptographic checksum selection."
+
+research_question: "What engineering constraints arise when remote attestation is integrated with the formally verified seL4 microkernel on commodity embedded boards?"
+central_answer: "The experience report presents HYDRA, reports a commodity-board prototype, and identifies secure boot, trustworthy time, and checksum selection as practical integration issues."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: "metadata synthesis, conservative claim mapping, and initial assessment"
+  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+
+sources:
+  - id: source-paper-38-site-record
+    type: curated_site_record
+    title: "Publication #38 metadata and editorial summary"
+    url: /publications/#paper-38
+    scope_note: "Local editorial record; not a substitute for the paper full text."
+  - id: source-paper-38-resource-1
+    type: official_publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1109/DSN-W.2017.31"
+    provenance_category: official
+  - id: source-paper-38-resource-2
+    type: author_hosted_copy
+    title: "UCI author copy"
+    url: "https://ics.uci.edu/~gts/paps/hydra-dsn17.pdf"
+    provenance_category: author
+
+source_anchors:
+  - id: anchor-paper-38-editorial
+    source_id: source-paper-38-site-record
+    label: "Curated publication metadata and editorial summary"
+    locator: "Local site record; the summary is editorial and has not been checked against full text."
+    url: /publications/#paper-38
+  - id: anchor-paper-38-resource-1
+    source_id: source-paper-38-resource-1
+    label: "Official resource: Publisher / DOI"
+    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://doi.org/10.1109/DSN-W.2017.31"
+  - id: anchor-paper-38-resource-2
+    source_id: source-paper-38-resource-2
+    label: "Author-hosted resource: UCI author copy"
+    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://ics.uci.edu/~gts/paps/hydra-dsn17.pdf"
+
+nodes:
+  - id: paper-38
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: published_metadata_with_editorial_synthesis
+    title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
+    summary: "This experience paper presents the HYDRA design and reports the engineering lessons involved in combining remote attestation with the formally verified seL4 microkernel. Its commodity-board prototype attests 10 MB in under 500 ms and highlights practical issues such as secure boot, trustworthy time, and cryptographic checksum selection."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-question
+    kind: question
+    parent_id: paper-38
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "What engineering constraints arise when remote attestation is integrated with the formally verified seL4 microkernel on commodity embedded boards?"
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-contribution
+    kind: contribution
+    parent_id: paper-38
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Central contribution"
+    summary: "The experience report presents HYDRA, reports a commodity-board prototype, and identifies secure boot, trustworthy time, and checksum selection as practical integration issues."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-method
+    kind: method
+    parent_id: paper-38
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Reported method"
+    summary: "The reported method is an engineering case study of implementing and measuring HYDRA while documenting design and integration lessons."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-claims
+    kind: claim_group
+    parent_id: paper-38
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Main claims"
+    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-claim-primary
+    kind: claim
+    parent_id: paper-38-claims
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Primary reported claim"
+    summary: "The summary reports attestation of 10 MB in under 500 ms and identifies several trusted-system choices that materially affect deployment."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-evidence
+    kind: evidence_group
+    parent_id: paper-38
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-evidence-reported
+    kind: evidence
+    parent_id: paper-38-evidence
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Evidence represented in the site summary"
+    summary: "The current record identifies a prototype timing result and qualitative lessons, but hardware configurations, measurement procedures, code, and the relation to seL4's proof boundary were not audited."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-scope
+    kind: limitation_group
+    parent_id: paper-38
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-scope-boundary
+    kind: limitation
+    parent_id: paper-38-scope
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Unverified boundaries"
+    summary: "As an experience paper, the represented conclusions may be deployment-specific. The complete threat model, checksum variants, secure-boot chain, and trusted-time mechanism need source review."
+    source_anchor_ids: ["anchor-paper-38-editorial"]
+
+  - id: paper-38-resources
+    kind: artifact_group
+    parent_id: paper-38
+    order: 7
+    epistemic_status: resource_metadata_recorded
+    title: "Artifacts and resources"
+    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
+    source_anchor_ids: ["anchor-paper-38-resource-1", "anchor-paper-38-resource-2"]
+
+  - id: paper-38-resources-available
+    kind: artifact
+    parent_id: paper-38-resources
+    order: 1
+    epistemic_status: linked_not_content_audited
+    title: "Available links"
+    summary: "Official: Publisher / DOI; Author-hosted: UCI author copy."
+    source_anchor_ids: ["anchor-paper-38-resource-1", "anchor-paper-38-resource-2"]
+
+  - id: paper-38-scrutiny
+    kind: scrutiny
+    parent_id: paper-38
+    order: 8
+    epistemic_status: publication_status_recorded_not_audited
+    title: "Scrutiny and status"
+    summary: "The local record lists this work as Published · experience paper at 47th IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
+    source_anchor_ids: ["anchor-paper-38-resource-1"]
+
+relations:
+  - id: relation-paper-38-contribution-addresses-question
+    type: addresses
+    from_id: paper-38-contribution
+    to_id: paper-38-question
+  - id: relation-paper-38-method-describes-contribution
+    type: describes_approach_to
+    from_id: paper-38-method
+    to_id: paper-38-contribution
+  - id: relation-paper-38-evidence-supports-claim
+    type: supports
+    from_id: paper-38-evidence-reported
+    to_id: paper-38-claim-primary
+  - id: relation-paper-38-scope-qualifies-claim
+    type: qualifies
+    from_id: paper-38-scope-boundary
+    to_id: paper-38-claim-primary
+  - id: relation-paper-38-resources-enable-evidence-audit
+    type: provides_access_for_audit_of
+    from_id: paper-38-resources-available
+    to_id: paper-38-evidence-reported
+  - id: relation-paper-38-status-qualifies-claim
+    type: qualifies
+    from_id: paper-38-scrutiny
+    to_id: paper-38-claim-primary
+
+assessment:
+  id: paper-38-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
+      basis_source_anchor_ids: ["anchor-paper-38-editorial", "anchor-paper-38-resource-1"]
+    - id: auditability
+      level: medium
+      rationale: "At least one archive or author-hosted copy is linked, improving inspectability, but file identity, completeness, version alignment, artifact availability, and reproducibility were not checked."
+      basis_source_anchor_ids: ["anchor-paper-38-resource-1", "anchor-paper-38-resource-2"]
+    - id: production_provenance
+      level: low
+      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      basis_source_anchor_ids: ["anchor-paper-38-editorial"]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
+      basis_source_anchor_ids: ["anchor-paper-38-resource-1"]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
+      basis_source_anchor_ids: ["anchor-paper-38-editorial"]
+    - id: contribution_significance
+      level: medium
+      rationale: "The curated summary indicates a substantive contribution: an explicit engineering account of connecting verified-microkernel guarantees to a working remote-attestation prototype. Novelty priority, comparative importance, and downstream impact were not independently audited."
+      basis_source_anchor_ids: ["anchor-paper-38-editorial"]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."

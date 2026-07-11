@@ -1,0 +1,202 @@
+---
+layout: default
+---
+{% if page.knowledge_map %}
+  {% assign record = site.data.knowledge_maps[page.knowledge_map] %}
+{% else %}
+  {% capture page_map_key %}paper_{{ page.paper_id }}{% endcapture %}
+  {% assign record = site.data.knowledge_maps[page_map_key] %}
+{% endif %}
+{% assign publication_matches = site.data.publications | where: "id", record.publication_id %}
+{% assign publication = publication_matches | first %}
+{% assign root_matches = record.nodes | where: "id", record.root_node_id %}
+{% assign root_node = root_matches | first %}
+
+<article class="knowledge-map" data-paper-id="{{ record.publication_id }}" data-map-id="{{ record.map_id | escape }}">
+  <nav class="knowledge-breadcrumbs" aria-label="Breadcrumb">
+    <a href="{{ '/knowledge/' | relative_url }}">Scientific knowledge maps</a>
+    <span aria-hidden="true">/</span>
+    <a href="{{ '/publications/#' | append: record.publication_anchor | relative_url }}">Paper #{{ record.publication_id }}</a>
+  </nav>
+
+  <p class="knowledge-eyebrow">Scientific knowledge map · Paper #{{ record.publication_id }}</p>
+  <h1>{{ record.title | escape }}</h1>
+  <p class="knowledge-authors">{% if publication.authors %}{{ publication.authors | escape }}{% else %}{{ record.authors | join: ", " | escape }}{% endif %}</p>
+  <p class="knowledge-venue">{{ record.year }} · {{ record.venue | escape }}</p>
+
+  <aside class="knowledge-review-status" role="note">
+    <strong>AI-drafted map; author review pending.</strong>
+    {% if record.curation.source_scope == "full_source_audit" %}
+      <span>This source-linked draft is not yet author-approved. It separates formal-model guarantees from concrete-system evidence and can be revised without changing the paper.</span>
+    {% else %}
+      <span>This first pass is derived from the existing editorial summary and resource record. Full-text claim, evidence, assumption, and limitation auditing is still pending; the map does not present those editorial inferences as verified paper claims.</span>
+    {% endif %}
+  </aside>
+
+  <div class="knowledge-question-answer">
+    <section aria-labelledby="knowledge-question-heading">
+      <p class="knowledge-section-label">Research question</p>
+      <h2 id="knowledge-question-heading">What does the paper try to establish?</h2>
+      <p>{{ record.research_question | escape }}</p>
+    </section>
+    <section aria-labelledby="knowledge-answer-heading">
+      <p class="knowledge-section-label">Central answer</p>
+      <h2 id="knowledge-answer-heading">What is the proposed answer?</h2>
+      <p>{{ record.central_answer | escape }}</p>
+    </section>
+  </div>
+
+  <nav class="knowledge-page-index" aria-label="On this page">
+    <a href="#evidence-profile">Six-axis profile</a>
+    <a href="#paper-map">Hierarchical map</a>
+    <a href="#source-index">Source index</a>
+    <a href="{{ record.machine_path | relative_url }}">Machine-readable JSON</a>
+  </nav>
+
+  <section class="knowledge-profile" id="evidence-profile" aria-labelledby="evidence-profile-heading">
+    <div class="knowledge-section-heading">
+      <p class="knowledge-section-label">Evidence profile</p>
+      <h2 id="evidence-profile-heading">Six dimensions, kept separate</h2>
+      <p>The chart summarizes documented evidence and process. It is not a correctness probability, confidence score, or ranking, and no composite score is calculated.</p>
+    </div>
+
+    <div class="knowledge-profile-grid">
+      <div class="knowledge-radar-panel">
+        <canvas class="knowledge-radar" aria-label="Six-axis spider chart for this paper. Exact values and rationales are provided in the adjacent profile table.">
+          The visual spider chart requires JavaScript. The complete values and rationales follow in text.
+        </canvas>
+        <p class="knowledge-radar-legend"><span>Low</span><span>Medium</span><span>High</span><span class="knowledge-radar-legend-na">N/A = not assessed</span></p>
+        <p class="knowledge-radar-note">A smaller value means less documented support for that dimension, not that the paper is false or unimportant.</p>
+      </div>
+
+      <dl class="knowledge-axis-list">
+        {% for axis in record.assessment.axes %}
+          {% assign axis_def_matches = site.data.knowledge_axes.axes | where: "id", axis.id %}
+          {% assign axis_def = axis_def_matches | first %}
+          <div class="knowledge-axis-row" data-axis-label="{{ axis_def.short_label | escape }}" data-axis-level="{{ axis.level | escape }}">
+            <dt>
+              <span>{{ axis_def.label | escape }}</span>
+              <span class="knowledge-level knowledge-level-{{ axis.level | replace: '_', '-' }}">{{ site.data.knowledge_axes.levels[axis.level].label | escape }}</span>
+            </dt>
+            <dd>
+              <p>{{ axis.rationale | escape }}</p>
+              {% include knowledge-source-links.html record=record ref_ids=axis.basis_source_anchor_ids %}
+            </dd>
+          </div>
+        {% endfor %}
+      </dl>
+    </div>
+
+    <p class="knowledge-assessment-provenance">
+      <strong>Assessment:</strong> {{ record.assessment.status | replace: '_', ' ' | capitalize }} · {{ record.assessment.assessed_at }} · rubric {{ record.assessment.rubric_version }}.
+      {{ record.assessment.note | escape }}
+    </p>
+  </section>
+
+  <section id="paper-map" aria-labelledby="paper-map-heading">
+    <div class="knowledge-section-heading">
+      <p class="knowledge-section-label">Top-down and bottom-up view</p>
+      <h2 id="paper-map-heading">Hierarchical knowledge map</h2>
+      <p>Collapse a branch for a top-level reading, or follow its source links and child nodes to audit the evidence and boundaries underneath it.</p>
+    </div>
+
+    <div class="knowledge-root-node" id="{{ root_node.id | escape }}" data-node-kind="{{ root_node.kind | escape }}">
+      <span class="knowledge-node-kind">{{ root_node.kind | replace: '_', ' ' | escape }}</span>
+      <h3>{{ root_node.title | escape }}</h3>
+      <p>{{ root_node.summary | escape }}</p>
+      {% include knowledge-source-links.html record=record ref_ids=root_node.source_anchor_ids %}
+    </div>
+
+    {% assign branch_nodes = record.nodes | where: "parent_id", root_node.id | sort: "order" %}
+    <ol class="knowledge-tree">
+      {% for node in branch_nodes %}
+        {% assign child_nodes = record.nodes | where: "parent_id", node.id | sort: "order" %}
+        <li class="knowledge-node" id="{{ node.id | escape }}" data-node-id="{{ node.id | escape }}" data-node-kind="{{ node.kind | escape }}">
+          {% if child_nodes != empty %}
+            <details class="knowledge-branch" open>
+              <summary>
+                <span class="knowledge-node-kind">{{ node.kind | replace: '_', ' ' | escape }}</span>
+                <span class="knowledge-node-title">{{ node.title | escape }}</span>
+                <span class="knowledge-node-status">{{ node.epistemic_status | replace: '_', ' ' | escape }}</span>
+              </summary>
+              <p class="knowledge-node-summary">{{ node.summary | escape }}</p>
+              {% include knowledge-source-links.html record=record ref_ids=node.source_anchor_ids %}
+              <ol>
+                {% for child in child_nodes %}
+                  {% assign grandchild_nodes = record.nodes | where: "parent_id", child.id | sort: "order" %}
+                  <li class="knowledge-node" id="{{ child.id | escape }}" data-node-id="{{ child.id | escape }}" data-node-kind="{{ child.kind | escape }}">
+                    {% if grandchild_nodes != empty %}
+                      <details class="knowledge-branch" open>
+                        <summary>
+                          <span class="knowledge-node-kind">{{ child.kind | replace: '_', ' ' | escape }}</span>
+                          <span class="knowledge-node-title">{{ child.title | escape }}</span>
+                          <span class="knowledge-node-status">{{ child.epistemic_status | replace: '_', ' ' | escape }}</span>
+                        </summary>
+                        <p class="knowledge-node-summary">{{ child.summary | escape }}</p>
+                        {% include knowledge-source-links.html record=record ref_ids=child.source_anchor_ids %}
+                        <ol>
+                          {% for grandchild in grandchild_nodes %}
+                            <li class="knowledge-node knowledge-leaf" id="{{ grandchild.id | escape }}" data-node-id="{{ grandchild.id | escape }}" data-node-kind="{{ grandchild.kind | escape }}">
+                              <span class="knowledge-node-kind">{{ grandchild.kind | replace: '_', ' ' | escape }}</span>
+                              <h4>{{ grandchild.title | escape }}</h4>
+                              <span class="knowledge-node-status">{{ grandchild.epistemic_status | replace: '_', ' ' | escape }}</span>
+                              <p>{{ grandchild.summary | escape }}</p>
+                              {% include knowledge-source-links.html record=record ref_ids=grandchild.source_anchor_ids %}
+                            </li>
+                          {% endfor %}
+                        </ol>
+                      </details>
+                    {% else %}
+                      <article class="knowledge-leaf">
+                        <span class="knowledge-node-kind">{{ child.kind | replace: '_', ' ' | escape }}</span>
+                        <h4>{{ child.title | escape }}</h4>
+                        <span class="knowledge-node-status">{{ child.epistemic_status | replace: '_', ' ' | escape }}</span>
+                        <p>{{ child.summary | escape }}</p>
+                        {% include knowledge-source-links.html record=record ref_ids=child.source_anchor_ids %}
+                      </article>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ol>
+            </details>
+          {% else %}
+            <article class="knowledge-leaf">
+              <span class="knowledge-node-kind">{{ node.kind | replace: '_', ' ' | escape }}</span>
+              <h3>{{ node.title | escape }}</h3>
+              <span class="knowledge-node-status">{{ node.epistemic_status | replace: '_', ' ' | escape }}</span>
+              <p>{{ node.summary | escape }}</p>
+              {% include knowledge-source-links.html record=record ref_ids=node.source_anchor_ids %}
+            </article>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="knowledge-source-index" id="source-index" aria-labelledby="source-index-heading">
+    <div class="knowledge-section-heading">
+      <p class="knowledge-section-label">Audit trail</p>
+      <h2 id="source-index-heading">Source index</h2>
+      <p>Locators state the depth of the current audit. PDF page numbers, where present, are one-based file pages; summary-only records explicitly identify that limitation.</p>
+    </div>
+    <ol>
+      {% for source_anchor in record.source_anchors %}
+        <li id="{{ source_anchor.id | escape }}">
+          <a href="{{ source_anchor.url | escape }}">{{ source_anchor.label | escape }}</a>
+          <span>{{ source_anchor.locator | escape }}</span>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <aside class="knowledge-machine-access">
+    <p class="knowledge-section-label">For agents and crawlers</p>
+    <h2>Same record, structured as JSON</h2>
+    {% if record.curation.source_scope == "full_source_audit" %}
+      <p>The machine view contains the profile, map nodes, typed relations, source anchors, curation status, and the exact PDF hash represented on this page.</p>
+    {% else %}
+      <p>The machine view contains the AI-drafted profile, map nodes, typed relations, current resource anchors, and an explicit marker that full-text source auditing remains pending.</p>
+    {% endif %}
+    <p><a href="{{ record.machine_path | relative_url }}">Open this paper's JSON record</a> · <a href="{{ '/knowledge/index.json' | relative_url }}">Open the knowledge-map index</a></p>
+  </aside>
+</article>

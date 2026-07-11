@@ -1,0 +1,209 @@
+schema_version: "0.1"
+map_id: paper-21-map
+publication_id: 21
+publication_anchor: paper-21
+slug: paper-21
+canonical_path: /knowledge/papers/paper-21/
+machine_path: /knowledge/papers/paper-21.json
+root_node_id: paper-21
+stage: mapped_draft
+
+title: "5PM: Secure Pattern Matching"
+year: 2013
+venue: "Journal of Computer Security, Volume 21, Number 5"
+authors: ["Joshua Baron", "Karim Eldefrawy", "Kirill Minkovich", "Rafail Ostrovsky", "Eric Tressler"]
+keywords: ["secure pattern matching", "privacy-preserving search"]
+
+research_question: "Can a client test rich private patterns against a server's private text with malicious security, bounded rounds, and no need to reveal pattern length?"
+central_answer: "The journal version of 5PM stages a secure protocol supporting wildcards, substrings, nonbinary alphabets, and richer distance measures, reporting eight rounds and hidden pattern length without asymptotic overhead."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-21-site-record
+    type: curated_record
+    title: "Curated publication record for paper #21"
+    url: /publications/#paper-21
+  - id: source-paper-21-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.3233/JCS-130481"
+  - id: source-paper-21-archive-1
+    type: manuscript_archive
+    title: "IACR ePrint"
+    url: "https://eprint.iacr.org/2012/698"
+  - id: source-paper-21-author-1
+    type: author_copy
+    title: "UCLA author copy"
+    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/129.pdf"
+
+source_anchors:
+  - id: anchor-paper-21-site-record
+    source_id: source-paper-21-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-21
+  - id: anchor-paper-21-official-1
+    source_id: source-paper-21-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.3233/JCS-130481"
+  - id: anchor-paper-21-archive-1
+    source_id: source-paper-21-archive-1
+    label: "IACR ePrint"
+    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://eprint.iacr.org/2012/698"
+  - id: anchor-paper-21-author-1
+    source_id: source-paper-21-author-1
+    label: "UCLA author copy"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/129.pdf"
+
+nodes:
+  - id: paper-21
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "5PM: Secure Pattern Matching"
+    summary: "5PM lets a client privately test a pattern against a server's private text while supporting wildcards, substring matching, nonbinary alphabets, and richer distance measures even when one party is malicious. Its carefully staged protocol uses eight rounds and can hide the pattern length without increasing asymptotic computation or communication."
+    source_anchor_ids: [anchor-paper-21-site-record]
+
+  - id: paper-21-question
+    kind: question
+    parent_id: paper-21
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can a client test rich private patterns against a server's private text with malicious security, bounded rounds, and no need to reveal pattern length?"
+    source_anchor_ids: [anchor-paper-21-site-record]
+
+  - id: paper-21-answer
+    kind: contribution
+    parent_id: paper-21
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The journal version of 5PM stages a secure protocol supporting wildcards, substrings, nonbinary alphabets, and richer distance measures, reporting eight rounds and hidden pattern length without asymptotic overhead."
+    source_anchor_ids: [anchor-paper-21-site-record]
+
+  - id: paper-21-method
+    kind: method
+    parent_id: paper-21
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Use staged secure pattern-matching subprotocols to evaluate exact and generalized matching functions while protecting the client's pattern and the server's unrelated text."
+    source_anchor_ids: [anchor-paper-21-site-record]
+
+  - id: paper-21-claims
+    kind: claim_group
+    parent_id: paper-21
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The paper reports malicious security, eight-round execution, and pattern-length hiding without increasing asymptotic computation or communication."
+    source_anchor_ids: [anchor-paper-21-site-record]
+
+  - id: paper-21-evidence
+    kind: evidence_group
+    parent_id: paper-21
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports protocol features and asymptotic claims; formal definitions, proofs, constants, cryptographic parameters, implementation, and benchmarks have not been audited."
+    source_anchor_ids: [anchor-paper-21-site-record]
+
+  - id: paper-21-limitations
+    kind: limitation_group
+    parent_id: paper-21
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The draft does not establish concrete performance, leakage under composition or repeated searches, implementation side channels, or applicability to pattern functions outside the stated family."
+    source_anchor_ids: [anchor-paper-21-site-record]
+
+  - id: paper-21-resources
+    kind: artifact_group
+    parent_id: paper-21
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 3 linked resources: Publisher / DOI; IACR ePrint; UCLA author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-21-official-1, anchor-paper-21-archive-1, anchor-paper-21-author-1]
+
+  - id: paper-21-scrutiny
+    kind: scrutiny
+    parent_id: paper-21
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · journal article at Journal of Computer Security, Volume 21, Number 5. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-21-site-record, anchor-paper-21-official-1]
+
+relations:
+  - id: paper-21-relation-method-supports-answer
+    type: supports
+    from_id: paper-21-method
+    to_id: paper-21-answer
+  - id: paper-21-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-21-evidence
+    to_id: paper-21-claims
+  - id: paper-21-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-21-limitations
+    to_id: paper-21-claims
+  - id: paper-21-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-21-scrutiny
+    to_id: paper-21
+
+assessment:
+  id: paper-21-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports protocol features and asymptotic claims; formal definitions, proofs, constants, cryptographic parameters, implementation, and benchmarks have not been audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-21-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; IACR ePrint; UCLA author copy). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-21-official-1, anchor-paper-21-archive-1, anchor-paper-21-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-21-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in Journal of Computer Security, Volume 21, Number 5, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-21-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-21-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The paper reports malicious security, eight-round execution, and pattern-length hiding without increasing asymptotic computation or communication. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-21-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

@@ -1,0 +1,191 @@
+schema_version: "0.1"
+map_id: paper-6-map
+publication_id: 6
+publication_anchor: paper-6
+slug: paper-6
+canonical_path: /knowledge/papers/paper-6/
+machine_path: /knowledge/papers/paper-6.json
+root_node_id: paper-6
+stage: mapped_draft
+
+title: "Optimal Filtering for DDoS Attacks"
+year: 2007
+venue: "Information Theory and Applications Workshop (ITA)"
+authors: ["Karim Eldefrawy", "Athina Markopoulou", "Katerina Argyraki"]
+keywords: ["DDoS", "filter allocation", "dynamic programming"]
+
+research_question: "How should a DDoS victim allocate too few packet filters between individual attackers and coarser source domains while limiting collateral damage?"
+central_answer: "The paper formulates the allocation problem and gives optimal dynamic-programming solutions for one- and two-tier filtering, alongside evaluated heuristics."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-6-site-record
+    type: curated_record
+    title: "Curated publication record for paper #6"
+    url: /publications/#paper-6
+  - id: source-paper-6-archive-1
+    type: manuscript_archive
+    title: "arXiv"
+    url: "https://arxiv.org/abs/cs/0612066"
+
+source_anchors:
+  - id: anchor-paper-6-site-record
+    source_id: source-paper-6-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-6
+  - id: anchor-paper-6-archive-1
+    source_id: source-paper-6-archive-1
+    label: "arXiv"
+    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://arxiv.org/abs/cs/0612066"
+
+nodes:
+  - id: paper-6
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Optimal Filtering for DDoS Attacks"
+    summary: "The paper formulates how a victim gateway with too few packet filters should choose between blocking individual attackers and coarser source domains. It gives optimal dynamic-programming solutions for one- and two-tier filtering and evaluates heuristics that preserve more legitimate traffic under realistic DDoS scenarios."
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+  - id: paper-6-question
+    kind: question
+    parent_id: paper-6
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How should a DDoS victim allocate too few packet filters between individual attackers and coarser source domains while limiting collateral damage?"
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+  - id: paper-6-answer
+    kind: contribution
+    parent_id: paper-6
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The paper formulates the allocation problem and gives optimal dynamic-programming solutions for one- and two-tier filtering, alongside evaluated heuristics."
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+  - id: paper-6-method
+    kind: method
+    parent_id: paper-6
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Model filtering as an optimization over individual sources and aggregated domains, solve bounded tier cases by dynamic programming, and compare practical heuristics."
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+  - id: paper-6-claims
+    kind: claim_group
+    parent_id: paper-6
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The reported algorithms optimize filter placement for the stated one- and two-tier models, while the evaluated heuristics preserve more legitimate traffic in the studied DDoS scenarios."
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+  - id: paper-6-evidence
+    kind: evidence_group
+    parent_id: paper-6
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports optimality results and heuristic evaluation under realistic scenarios; objectives, proofs, datasets, and experimental details have not been source-audited."
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+  - id: paper-6-limitations
+    kind: limitation_group
+    parent_id: paper-6
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The available record does not establish behavior for deeper routing hierarchies, changing attackers, uncertain traffic estimates, operational filter costs, or objectives outside the stated model."
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+  - id: paper-6-resources
+    kind: artifact_group
+    parent_id: paper-6
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 1 linked resource: arXiv. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-6-archive-1]
+
+  - id: paper-6-scrutiny
+    kind: scrutiny
+    parent_id: paper-6
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · workshop paper at Information Theory and Applications Workshop (ITA). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-6-site-record]
+
+relations:
+  - id: paper-6-relation-method-supports-answer
+    type: supports
+    from_id: paper-6-method
+    to_id: paper-6-answer
+  - id: paper-6-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-6-evidence
+    to_id: paper-6-claims
+  - id: paper-6-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-6-limitations
+    to_id: paper-6-claims
+  - id: paper-6-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-6-scrutiny
+    to_id: paper-6
+
+assessment:
+  id: paper-6-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports optimality results and heuristic evaluation under realistic scenarios; objectives, proofs, datasets, and experimental details have not been source-audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-6-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (arXiv). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-6-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-6-site-record]
+    - id: external_scrutiny
+      level: low
+      rationale: "A workshop publication status is listed, but no official publication record or review documentation is linked; the review process and any independent reproduction, correction, criticism, or adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-6-site-record]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-6-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The current title or editorial summary reports an optimal algorithmic result for the stated problem. This is a potentially significant signal, but the optimality proof, priority, and field-level impact have not been source-audited; the rating therefore remains medium."
+      basis_source_anchor_ids: [anchor-paper-6-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

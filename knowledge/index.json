@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /knowledge/index.json
+---
+{{ site.data.knowledge_maps | jsonify }}

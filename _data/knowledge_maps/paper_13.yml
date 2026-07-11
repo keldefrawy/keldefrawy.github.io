@@ -1,0 +1,191 @@
+schema_version: "0.1"
+map_id: paper-13-map
+publication_id: 13
+publication_anchor: paper-13
+slug: paper-13
+canonical_path: /knowledge/papers/paper-13/
+machine_path: /knowledge/papers/paper-13.json
+root_node_id: paper-13
+stage: mapped_draft
+
+title: "Group Distance Bounding Protocols (Short Paper)"
+year: 2011
+venue: "4th International Conference on Trust and Trustworthy Computing (TRUST)"
+authors: ["Srdjan Čapkun", "Karim Eldefrawy", "Gene Tsudik"]
+keywords: ["distance bounding", "proximity", "authentication"]
+
+research_question: "How can distance-bounding security and proximity checks be extended from one prover-verifier pair to groups of devices?"
+central_answer: "The work introduces passive distance bounding and multiparty protocols intended to reduce cost and improve security relative to running every pairwise exchange."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-13-site-record
+    type: curated_record
+    title: "Curated publication record for paper #13"
+    url: /publications/#paper-13
+  - id: source-paper-13-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1007/978-3-642-21599-5_23"
+
+source_anchors:
+  - id: anchor-paper-13-site-record
+    source_id: source-paper-13-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-13
+  - id: anchor-paper-13-official-1
+    source_id: source-paper-13-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1007/978-3-642-21599-5_23"
+
+nodes:
+  - id: paper-13
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Group Distance Bounding Protocols (Short Paper)"
+    summary: "This work extends distance bounding from one prover and one verifier to groups of devices, motivated by pairing, access control, and secure localization. It introduces passive distance bounding and multi-party protocols that reduce cost and improve security compared with simply running every pairwise distance-bounding exchange."
+    source_anchor_ids: [anchor-paper-13-site-record]
+
+  - id: paper-13-question
+    kind: question
+    parent_id: paper-13
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How can distance-bounding security and proximity checks be extended from one prover-verifier pair to groups of devices?"
+    source_anchor_ids: [anchor-paper-13-site-record]
+
+  - id: paper-13-answer
+    kind: contribution
+    parent_id: paper-13
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The work introduces passive distance bounding and multiparty protocols intended to reduce cost and improve security relative to running every pairwise exchange."
+    source_anchor_ids: [anchor-paper-13-site-record]
+
+  - id: paper-13-method
+    kind: method
+    parent_id: paper-13
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Generalize distance-bounding interactions to group settings, including passive observations and coordinated multiparty exchanges."
+    source_anchor_ids: [anchor-paper-13-site-record]
+
+  - id: paper-13-claims
+    kind: claim_group
+    parent_id: paper-13
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The proposed group protocols are reported to reduce cost and strengthen security compared with a naive collection of pairwise distance-bounding sessions."
+    source_anchor_ids: [anchor-paper-13-site-record]
+
+  - id: paper-13-evidence
+    kind: evidence_group
+    parent_id: paper-13
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports protocol contributions and comparative benefits; security models, timing assumptions, proofs, and implementation evidence have not been inspected."
+    source_anchor_ids: [anchor-paper-13-site-record]
+
+  - id: paper-13-limitations
+    kind: limitation_group
+    parent_id: paper-13
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The short-paper record does not establish all collusion cases, physical-layer timing errors, group-size scaling, deployment constraints, or completeness of the security analysis."
+    source_anchor_ids: [anchor-paper-13-site-record]
+
+  - id: paper-13-resources
+    kind: artifact_group
+    parent_id: paper-13
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 1 linked resource: Publisher / DOI. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-13-official-1]
+
+  - id: paper-13-scrutiny
+    kind: scrutiny
+    parent_id: paper-13
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · short paper at 4th International Conference on Trust and Trustworthy Computing (TRUST). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-13-site-record, anchor-paper-13-official-1]
+
+relations:
+  - id: paper-13-relation-method-supports-answer
+    type: supports
+    from_id: paper-13-method
+    to_id: paper-13-answer
+  - id: paper-13-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-13-evidence
+    to_id: paper-13-claims
+  - id: paper-13-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-13-limitations
+    to_id: paper-13-claims
+  - id: paper-13-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-13-scrutiny
+    to_id: paper-13
+
+assessment:
+  id: paper-13-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports protocol contributions and comparative benefits; security models, timing assumptions, proofs, and implementation evidence have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-13-site-record]
+    - id: auditability
+      level: low
+      rationale: "Only an official publication resource is linked (Publisher / DOI), and this draft has not inspected its full text, supplementary artifacts, or reproduction path; claim-level auditability is therefore low."
+      basis_source_anchor_ids: [anchor-paper-13-official-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-13-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in 4th International Conference on Trust and Trustworthy Computing (TRUST), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-13-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-13-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The proposed group protocols are reported to reduce cost and strengthen security compared with a naive collection of pairwise distance-bounding sessions. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-13-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

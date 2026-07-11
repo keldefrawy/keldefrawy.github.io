@@ -1,0 +1,209 @@
+schema_version: "0.1"
+map_id: paper-4-map
+publication_id: 4
+publication_anchor: paper-4
+slug: paper-4
+canonical_path: /knowledge/papers/paper-4/
+machine_path: /knowledge/papers/paper-4.json
+root_node_id: paper-4
+stage: mapped_draft
+
+title: "Incentive-Based Cooperative and Secure Inter-Personal Networking"
+year: 2007
+venue: "ACM MobiOpp"
+authors: ["Karim Eldefrawy", "Magda El Zarki", "Gene Tsudik"]
+keywords: ["cooperative networking", "micropayments", "anonymity"]
+
+research_question: "How can nearby personal-area networks share connectivity securely while giving resource owners an incentive to participate?"
+central_answer: "The proposed framework combines short-term service contracts, policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments for purchased or bartered connectivity."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-4-site-record
+    type: curated_record
+    title: "Curated publication record for paper #4"
+    url: /publications/#paper-4
+  - id: source-paper-4-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1145/1247694.1247706"
+  - id: source-paper-4-archive-1
+    type: manuscript_archive
+    title: "CiteSeerX archive"
+    url: "https://citeseerx.ist.psu.edu/document?doi=6d922a7deb8b99f108b5f1a4ccda0f94e7172db2&repid=rep1&type=pdf"
+  - id: source-paper-4-author-1
+    type: author_copy
+    title: "UCI author copy"
+    url: "https://ics.uci.edu/~gts/paps/ezt07.pdf"
+
+source_anchors:
+  - id: anchor-paper-4-site-record
+    source_id: source-paper-4-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-4
+  - id: anchor-paper-4-official-1
+    source_id: source-paper-4-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1145/1247694.1247706"
+  - id: anchor-paper-4-archive-1
+    source_id: source-paper-4-archive-1
+    label: "CiteSeerX archive"
+    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://citeseerx.ist.psu.edu/document?doi=6d922a7deb8b99f108b5f1a4ccda0f94e7172db2&repid=rep1&type=pdf"
+  - id: anchor-paper-4-author-1
+    source_id: source-paper-4-author-1
+    label: "UCI author copy"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://ics.uci.edu/~gts/paps/ezt07.pdf"
+
+nodes:
+  - id: paper-4
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Incentive-Based Cooperative and Secure Inter-Personal Networking"
+    summary: "This paper outlines a framework in which a stranded user's personal-area network buys or barters connectivity through a nearby user's devices under short-term service contracts. It combines policy-based gateway selection with mutual authentication, escrowed anonymity, and micropayments to make resource sharing secure and worthwhile."
+    source_anchor_ids: [anchor-paper-4-site-record]
+
+  - id: paper-4-question
+    kind: question
+    parent_id: paper-4
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How can nearby personal-area networks share connectivity securely while giving resource owners an incentive to participate?"
+    source_anchor_ids: [anchor-paper-4-site-record]
+
+  - id: paper-4-answer
+    kind: contribution
+    parent_id: paper-4
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The proposed framework combines short-term service contracts, policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments for purchased or bartered connectivity."
+    source_anchor_ids: [anchor-paper-4-site-record]
+
+  - id: paper-4-method
+    kind: method
+    parent_id: paper-4
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Broker connectivity through selected nearby gateways under explicit short-term policies and payment arrangements, with authentication and conditional identity protection."
+    source_anchor_ids: [anchor-paper-4-site-record]
+
+  - id: paper-4-claims
+    kind: claim_group
+    parent_id: paper-4
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The framework is intended to make interpersonal resource sharing both secure and economically worthwhile for the parties."
+    source_anchor_ids: [anchor-paper-4-site-record]
+
+  - id: paper-4-evidence
+    kind: evidence_group
+    parent_id: paper-4
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary describes the proposed components and intended security and incentive properties; no protocol proof, deployment, or economic evaluation has been audited."
+    source_anchor_ids: [anchor-paper-4-site-record]
+
+  - id: paper-4-limitations
+    kind: limitation_group
+    parent_id: paper-4
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The record does not establish the trust model for escrow, payment disputes, collusion, service quality, privacy leakage, or real-world incentive compatibility."
+    source_anchor_ids: [anchor-paper-4-site-record]
+
+  - id: paper-4-resources
+    kind: artifact_group
+    parent_id: paper-4
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 3 linked resources: Publisher / DOI; CiteSeerX archive; UCI author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-4-official-1, anchor-paper-4-archive-1, anchor-paper-4-author-1]
+
+  - id: paper-4-scrutiny
+    kind: scrutiny
+    parent_id: paper-4
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · workshop paper at ACM MobiOpp. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-4-site-record, anchor-paper-4-official-1]
+
+relations:
+  - id: paper-4-relation-method-supports-answer
+    type: supports
+    from_id: paper-4-method
+    to_id: paper-4-answer
+  - id: paper-4-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-4-evidence
+    to_id: paper-4-claims
+  - id: paper-4-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-4-limitations
+    to_id: paper-4-claims
+  - id: paper-4-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-4-scrutiny
+    to_id: paper-4
+
+assessment:
+  id: paper-4-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary describes the proposed components and intended security and incentive properties; no protocol proof, deployment, or economic evaluation has been audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-4-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; CiteSeerX archive; UCI author copy). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-4-official-1, anchor-paper-4-archive-1, anchor-paper-4-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-4-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in ACM MobiOpp, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-4-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-4-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The framework is intended to make interpersonal resource sharing both secure and economically worthwhile for the parties. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-4-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

@@ -1,0 +1,39 @@
+---
+layout: null
+permalink: /knowledge/papers/index.json
+---
+{
+  "schema_version": "0.1",
+  "count": {{ site.data.publications | size }},
+  "papers": [
+    {% assign ordered_papers = site.data.publications | sort: "id" %}
+    {% for paper in ordered_papers %}
+      {% assign landing_matches = site.papers | where: "paper_id", paper.id %}
+      {% assign landing = landing_matches | first %}
+      {% assign resource_matches = site.data.publication_resources | where: "id", paper.id %}
+      {% assign resources = resource_matches | first %}
+      {% capture map_key %}paper_{{ paper.id }}{% endcapture %}
+      {% assign mapped_record = site.data.knowledge_maps[map_key] %}
+      {
+        "id": {{ paper.id | jsonify }},
+        "stable_id": {{ paper.id | prepend: "paper-" | jsonify }},
+        "url": {{ landing.url | absolute_url | jsonify }},
+        "title": {{ paper.title | jsonify }},
+        "authors": {{ paper.authors | jsonify }},
+        "year": {{ paper.year | jsonify }},
+        "status": {{ paper.status | jsonify }},
+        "venue": {{ paper.venue | jsonify }},
+        "topic": {{ paper.topic | jsonify }},
+        "labels": {{ paper.labels | jsonify }},
+        "ai_ml_labels": {{ paper.ai_ml_labels | jsonify }},
+        "tags": {{ paper.tags | jsonify }},
+        "summary": {{ paper.summary | jsonify }},
+        "availability": {{ paper.availability | jsonify }},
+        "resources": {{ resources | jsonify }},
+        "knowledge_stage": {% if mapped_record %}{{ mapped_record.stage | jsonify }}{% else %}"discovery"{% endif %},
+        "source_scope": {% if mapped_record %}{{ mapped_record.curation.source_scope | default: "unknown" | jsonify }}{% else %}null{% endif %},
+        "knowledge_map_url": {% if mapped_record %}{{ mapped_record.machine_path | absolute_url | jsonify }}{% else %}null{% endif %}
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

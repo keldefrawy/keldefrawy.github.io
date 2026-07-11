@@ -1,0 +1,218 @@
+schema_version: "0.1"
+map_id: paper-56-map
+publication_id: 56
+publication_anchor: paper-56
+slug: paper-56
+canonical_path: /knowledge/papers/paper-56/
+machine_path: /knowledge/papers/paper-56.json
+root_node_id: paper-56
+stage: mapped_draft
+
+title: "Optimizing Registration Based Encryption"
+short_title: "Optimizing Registration Based Encryption"
+year: 2021
+venue: "18th IMA International Conference on Cryptography and Coding (IMACC)"
+publication_status: "Published"
+topic: algorithms-foundations
+labels:
+  - "Theory"
+  - "Applied"
+authors:
+  - "Kelong Cong"
+  - "Karim Eldefrawy"
+  - "Nigel P. Smart"
+keywords:
+  - "registration-based encryption"
+  - "key escrow"
+
+research_question: "Can registration-based encryption retain its no-key-escrow goal while substantially reducing concrete ciphertext and decryption costs?"
+central_answer: "The curated editorial summary reports that replacing Merkle trees with crit-bit trees and adjusting public parameters reduces ciphertext size and decryption work."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-56-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #56"
+    url: /publications/#paper-56
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-56-official-1
+    type: official_publication_resource
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1007/978-3-030-92641-0_7"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-56-archive-1
+    type: archive_resource
+    title: "IACR ePrint"
+    url: "https://eprint.iacr.org/2021/499"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-56-curated
+    source_id: source-paper-56-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-56
+  - id: anchor-paper-56-official-1
+    source_id: source-paper-56-official-1
+    label: "Publisher / DOI"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1007/978-3-030-92641-0_7"
+  - id: anchor-paper-56-archive-1
+    source_id: source-paper-56-archive-1
+    label: "IACR ePrint"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://eprint.iacr.org/2021/499"
+
+nodes:
+  - id: paper-56
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Optimizing Registration Based Encryption"
+    summary: "Registration-based encryption removes identity-based encryption's key-escrow authority but originally had prohibitive concrete ciphertext costs. This work replaces Merkle trees with crit-bit trees and adjusts public parameters, reducing ciphertext size by 57.5 percent while also lowering decryption cost."
+    source_anchor_ids: [anchor-paper-56-curated]
+  - id: paper-56-question
+    kind: question
+    parent_id: paper-56
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can registration-based encryption retain its no-key-escrow goal while substantially reducing concrete ciphertext and decryption costs?"
+    source_anchor_ids: [anchor-paper-56-curated]
+  - id: paper-56-contribution
+    kind: contribution
+    parent_id: paper-56
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports that replacing Merkle trees with crit-bit trees and adjusting public parameters reduces ciphertext size and decryption work."
+    source_anchor_ids: [anchor-paper-56-curated]
+  - id: paper-56-method
+    kind: method
+    parent_id: paper-56
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described optimization changes the authenticated dictionary structure used by registration-based encryption and tunes public parameters for better concrete costs."
+    source_anchor_ids: [anchor-paper-56-curated]
+  - id: paper-56-claims
+    kind: claim_group
+    parent_id: paper-56
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports a 57.5 percent ciphertext-size reduction and lower decryption cost relative to the referenced earlier design."
+    source_anchor_ids: [anchor-paper-56-curated]
+  - id: paper-56-evidence
+    kind: evidence_group
+    parent_id: paper-56
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "A concrete efficiency comparison is reported, but the baseline configuration, parameter sets, implementation, benchmarks, and preservation of the original security proof were not audited."
+    source_anchor_ids: [anchor-paper-56-curated]
+  - id: paper-56-scope
+    kind: limitation_group
+    parent_id: paper-56
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft does not establish the operating assumptions, security reductions, registration dynamics, public-parameter tradeoffs, or whether the reported improvement generalizes beyond the evaluated settings."
+    source_anchor_ids: [anchor-paper-56-curated]
+  - id: paper-56-artifacts
+    kind: artifact_group
+    parent_id: paper-56
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-56-curated, anchor-paper-56-official-1, anchor-paper-56-archive-1]
+  - id: paper-56-scrutiny
+    kind: scrutiny
+    parent_id: paper-56
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 18th IMA International Conference on Cryptography and Coding (IMACC). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-56-official-1]
+
+relations:
+  - id: paper-56-relation-question-contribution
+    type: motivates
+    from_id: paper-56-question
+    to_id: paper-56-contribution
+  - id: paper-56-relation-method-contribution
+    type: realizes
+    from_id: paper-56-method
+    to_id: paper-56-contribution
+  - id: paper-56-relation-contribution-claims
+    type: grounds
+    from_id: paper-56-contribution
+    to_id: paper-56-claims
+  - id: paper-56-relation-evidence-claims
+    type: supports
+    from_id: paper-56-evidence
+    to_id: paper-56-claims
+  - id: paper-56-relation-scope-claims
+    type: qualifies
+    from_id: paper-56-scope
+    to_id: paper-56-claims
+  - id: paper-56-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-56-artifacts
+    to_id: paper-56-evidence
+  - id: paper-56-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-56-scrutiny
+    to_id: paper-56-claims
+
+assessment:
+  id: paper-56-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-56-curated, anchor-paper-56-official-1, anchor-paper-56-archive-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-56-curated, anchor-paper-56-official-1, anchor-paper-56-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-56-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-56-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-56-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-56-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

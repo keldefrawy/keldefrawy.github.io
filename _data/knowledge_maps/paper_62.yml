@@ -1,0 +1,228 @@
+schema_version: "0.1"
+map_id: paper-62-map
+publication_id: 62
+publication_anchor: paper-62
+slug: paper-62
+canonical_path: /knowledge/papers/paper-62/
+machine_path: /knowledge/papers/paper-62.json
+root_node_id: paper-62
+stage: mapped_draft
+
+title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+short_title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+year: 2022
+venue: "6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)"
+publication_status: "Published"
+topic: privacy-identity
+labels:
+  - "Applied"
+authors:
+  - "Karim Eldefrawy"
+  - "Tancrède Lepoint"
+  - "Laura Tam"
+keywords:
+  - "access control"
+  - "attribute-based encryption"
+  - "documents"
+
+research_question: "Can selected portions of documents remain cryptographically inaccessible inside familiar office applications unless a reader's attributes satisfy the embedded policy?"
+central_answer: "The curated editorial summary reports an in-application design that encrypts selected document regions under attribute-based access policies, reducing reliance on the surrounding platform for confidentiality enforcement."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-62-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #62"
+    url: /publications/#paper-62
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-62-official-1
+    type: official_publication_resource
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1007/978-3-031-07689-3_32"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-62-author-1
+    type: author_resource
+    title: "Author-hosted PDF"
+    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-62-author-2
+    type: author_resource
+    title: "Extended version"
+    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-62-curated
+    source_id: source-paper-62-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-62
+  - id: anchor-paper-62-official-1
+    source_id: source-paper-62-official-1
+    label: "Publisher / DOI"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1007/978-3-031-07689-3_32"
+  - id: anchor-paper-62-author-1
+    source_id: source-paper-62-author-1
+    label: "Author-hosted PDF"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf"
+  - id: anchor-paper-62-author-2
+    source_id: source-paper-62-author-2
+    label: "Extended version"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf"
+
+nodes:
+  - id: paper-62
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+    summary: "This work adds cryptographically enforced, fine-grained access control inside familiar document applications such as Microsoft Office. Selected portions of a document remain encrypted and become readable only to users whose attributes satisfy the embedded policy, reducing reliance on the surrounding platform to enforce permissions correctly."
+    source_anchor_ids: [anchor-paper-62-curated]
+  - id: paper-62-question
+    kind: question
+    parent_id: paper-62
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can selected portions of documents remain cryptographically inaccessible inside familiar office applications unless a reader's attributes satisfy the embedded policy?"
+    source_anchor_ids: [anchor-paper-62-curated]
+  - id: paper-62-contribution
+    kind: contribution
+    parent_id: paper-62
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports an in-application design that encrypts selected document regions under attribute-based access policies, reducing reliance on the surrounding platform for confidentiality enforcement."
+    source_anchor_ids: [anchor-paper-62-curated]
+  - id: paper-62-method
+    kind: method
+    parent_id: paper-62
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described approach integrates selective encryption and policy evaluation into document applications so that protected regions are decrypted only for qualifying users."
+    source_anchor_ids: [anchor-paper-62-curated]
+  - id: paper-62-claims
+    kind: claim_group
+    parent_id: paper-62
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports fine-grained, cryptographically enforced selective access control for Microsoft Office and similar platforms."
+    source_anchor_ids: [anchor-paper-62-curated]
+  - id: paper-62-evidence
+    kind: evidence_group
+    parent_id: paper-62
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The editorial summary describes the design goal and enforcement approach but gives no audited experimental, usability, interoperability, leakage, or deployment evidence in this map."
+    source_anchor_ids: [anchor-paper-62-curated]
+  - id: paper-62-scope
+    kind: limitation_group
+    parent_id: paper-62
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "Key issuance, revocation, policy privacy, metadata leakage, document-format transformations, application compromise, copy-and-paste behavior, usability, and supported platform versions were not audited."
+    source_anchor_ids: [anchor-paper-62-curated]
+  - id: paper-62-artifacts
+    kind: artifact_group
+    parent_id: paper-62
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 3 resources (1 official, 0 archive, 2 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-62-curated, anchor-paper-62-official-1, anchor-paper-62-author-1, anchor-paper-62-author-2]
+  - id: paper-62-scrutiny
+    kind: scrutiny
+    parent_id: paper-62
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-62-official-1]
+
+relations:
+  - id: paper-62-relation-question-contribution
+    type: motivates
+    from_id: paper-62-question
+    to_id: paper-62-contribution
+  - id: paper-62-relation-method-contribution
+    type: realizes
+    from_id: paper-62-method
+    to_id: paper-62-contribution
+  - id: paper-62-relation-contribution-claims
+    type: grounds
+    from_id: paper-62-contribution
+    to_id: paper-62-claims
+  - id: paper-62-relation-evidence-claims
+    type: supports
+    from_id: paper-62-evidence
+    to_id: paper-62-claims
+  - id: paper-62-relation-scope-claims
+    type: qualifies
+    from_id: paper-62-scope
+    to_id: paper-62-claims
+  - id: paper-62-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-62-artifacts
+    to_id: paper-62-evidence
+  - id: paper-62-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-62-scrutiny
+    to_id: paper-62-claims
+
+assessment:
+  id: paper-62-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-62-curated, anchor-paper-62-official-1, anchor-paper-62-author-1, anchor-paper-62-author-2]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 3 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-62-curated, anchor-paper-62-official-1, anchor-paper-62-author-1, anchor-paper-62-author-2]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-62-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-62-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-62-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-62-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

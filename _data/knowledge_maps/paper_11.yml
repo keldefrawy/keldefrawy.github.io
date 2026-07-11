@@ -1,0 +1,200 @@
+schema_version: "0.1"
+map_id: paper-11-map
+publication_id: 11
+publication_anchor: paper-11
+slug: paper-11
+canonical_path: /knowledge/papers/paper-11/
+machine_path: /knowledge/papers/paper-11.json
+root_node_id: paper-11
+stage: mapped_draft
+
+title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
+year: 2010
+venue: "IEEE INFOCOM Workshops"
+authors: ["Claude Castelluccia", "Karim Eldefrawy", "Gene Tsudik"]
+keywords: ["network coding", "link-layer encryption", "wireless capacity"]
+
+research_question: "How does link-layer encryption intended to hide wireless traffic patterns affect the multicast capacity obtainable from network coding?"
+central_answer: "The paper models the interaction and reports that link-layer encryption can sharply reduce achievable multicast capacity, exposing a security-throughput tradeoff."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-11-site-record
+    type: curated_record
+    title: "Curated publication record for paper #11"
+    url: /publications/#paper-11
+  - id: source-paper-11-official-1
+    type: publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1109/INFCOMW.2010.5466615"
+  - id: source-paper-11-author-1
+    type: author_copy
+    title: "Author-hosted paper"
+    url: "https://archimedes-12-vagrant.ics.uci.edu/pubs/karim-wireless-net-code-ll-enc.pdf"
+
+source_anchors:
+  - id: anchor-paper-11-site-record
+    source_id: source-paper-11-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-11
+  - id: anchor-paper-11-official-1
+    source_id: source-paper-11-official-1
+    label: "Publisher / DOI"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://doi.org/10.1109/INFCOMW.2010.5466615"
+  - id: anchor-paper-11-author-1
+    source_id: source-paper-11-author-1
+    label: "Author-hosted paper"
+    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://archimedes-12-vagrant.ics.uci.edu/pubs/karim-wireless-net-code-ll-enc.pdf"
+
+nodes:
+  - id: paper-11
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
+    summary: "This paper analyzes how link-layer encryption, used to hide traffic patterns even when end-to-end encryption is present, interacts with wireless network coding. Its model shows that link-layer encryption can sharply reduce achievable multicast capacity and exposes a security-throughput tradeoff for coded wireless networks."
+    source_anchor_ids: [anchor-paper-11-site-record]
+
+  - id: paper-11-question
+    kind: question
+    parent_id: paper-11
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How does link-layer encryption intended to hide wireless traffic patterns affect the multicast capacity obtainable from network coding?"
+    source_anchor_ids: [anchor-paper-11-site-record]
+
+  - id: paper-11-answer
+    kind: contribution
+    parent_id: paper-11
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "The paper models the interaction and reports that link-layer encryption can sharply reduce achievable multicast capacity, exposing a security-throughput tradeoff."
+    source_anchor_ids: [anchor-paper-11-site-record]
+
+  - id: paper-11-method
+    kind: method
+    parent_id: paper-11
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Analyze coded wireless multicast under link-layer encryption and compare achievable capacity with the unencrypted link-layer setting."
+    source_anchor_ids: [anchor-paper-11-site-record]
+
+  - id: paper-11-claims
+    kind: claim_group
+    parent_id: paper-11
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "Within the reported model, hiding link-level traffic through encryption can substantially reduce the throughput benefit of wireless network coding."
+    source_anchor_ids: [anchor-paper-11-site-record]
+
+  - id: paper-11-evidence
+    kind: evidence_group
+    parent_id: paper-11
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports a model-based capacity analysis; model assumptions, derivations, bounds, and any empirical validation have not been source-audited."
+    source_anchor_ids: [anchor-paper-11-site-record]
+
+  - id: paper-11-limitations
+    kind: limitation_group
+    parent_id: paper-11
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The available record does not establish the magnitude of the tradeoff for arbitrary topologies, coding strategies, traffic distributions, or concrete encryption deployments."
+    source_anchor_ids: [anchor-paper-11-site-record]
+
+  - id: paper-11-resources
+    kind: artifact_group
+    parent_id: paper-11
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Author-hosted paper. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-11-official-1, anchor-paper-11-author-1]
+
+  - id: paper-11-scrutiny
+    kind: scrutiny
+    parent_id: paper-11
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · workshop paper at IEEE INFOCOM Workshops. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-11-site-record, anchor-paper-11-official-1]
+
+relations:
+  - id: paper-11-relation-method-supports-answer
+    type: supports
+    from_id: paper-11-method
+    to_id: paper-11-answer
+  - id: paper-11-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-11-evidence
+    to_id: paper-11-claims
+  - id: paper-11-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-11-limitations
+    to_id: paper-11-claims
+  - id: paper-11-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-11-scrutiny
+    to_id: paper-11
+
+assessment:
+  id: paper-11-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports a model-based capacity analysis; model assumptions, derivations, bounds, and any empirical validation have not been source-audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-11-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; Author-hosted paper). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-11-official-1, anchor-paper-11-author-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-11-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in IEEE INFOCOM Workshops, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-11-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-11-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: Within the reported model, hiding link-level traffic through encryption can substantially reduce the throughput benefit of wireless network coding. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-11-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

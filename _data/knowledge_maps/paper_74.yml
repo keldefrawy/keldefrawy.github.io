@@ -1,0 +1,199 @@
+schema_version: "0.1"
+map_id: paper-74-map
+publication_id: 74
+publication_anchor: paper-74
+slug: paper-74
+canonical_path: /knowledge/papers/paper-74/
+machine_path: /knowledge/papers/paper-74.json
+root_node_id: paper-74
+stage: mapped_draft
+
+title: "Private Identity-Based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks"
+short_title: "Private Identity-Based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks"
+year: null
+venue: null
+publication_status: "Under review"
+topic: privacy-identity
+labels:
+  - "Theory"
+availability: "Public manuscript not found; this work is listed as under review."
+authors:
+  - "Karim Eldefrawy"
+  - "Stanislaw Jarecki"
+  - "Ben Terner"
+  - "Gene Tsudik"
+keywords:
+  - "anonymous messaging"
+  - "delay-tolerant networks"
+
+research_question: "Can an identity-based bulletin-board design support secure anonymous messaging when networks experience long delay, outages, or deliberate disruption?"
+central_answer: "Based only on the working title and editorial listing, the proposed direction is to use private identity-based bulletin boards so protected messages do not require simultaneous sender, recipient, or network availability."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-74-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #74"
+    url: /publications/#paper-74
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+
+source_anchors:
+  - id: anchor-paper-74-curated
+    source_id: source-paper-74-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-74
+
+nodes:
+  - id: paper-74
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Private Identity-Based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks"
+    summary: "Based on its working title, this paper develops identity-based bulletin boards for anonymous communication in networks with long delays, outages, or deliberate disruption. It aims to let users exchange protected messages without requiring both parties or the underlying network to be continuously available."
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-question
+    kind: question
+    parent_id: paper-74
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can an identity-based bulletin-board design support secure anonymous messaging when networks experience long delay, outages, or deliberate disruption?"
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-contribution
+    kind: contribution
+    parent_id: paper-74
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "Based only on the working title and editorial listing, the proposed direction is to use private identity-based bulletin boards so protected messages do not require simultaneous sender, recipient, or network availability."
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-method
+    kind: method
+    parent_id: paper-74
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "No public manuscript is represented. The apparent bulletin-board, identity-based, and delay-tolerant mechanism is an editorial inference from the working title, not an audited construction."
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-claims
+    kind: claim_group
+    parent_id: paper-74
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The listing supports only a research aim: anonymous, protected messaging over delay- and disruption-prone networks. It does not yet support a specific security or performance guarantee."
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-evidence
+    kind: evidence_group
+    parent_id: paper-74
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "No public manuscript, publication record, proof, implementation, experiment, or artifact is represented in the resource data."
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-scope
+    kind: limitation_group
+    parent_id: paper-74
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "Identity privacy, sender and receiver anonymity, metadata leakage, authentication, key management, disruption tolerance, delivery guarantees, adversary model, complexity, and all formal claims remain unknown pending author review."
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-artifacts
+    kind: artifact_group
+    parent_id: paper-74
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
+    source_anchor_ids: [anchor-paper-74-curated]
+  - id: paper-74-scrutiny
+    kind: scrutiny
+    parent_id: paper-74
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record gives the status Under review. No completed external review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
+    source_anchor_ids: [anchor-paper-74-curated]
+
+relations:
+  - id: paper-74-relation-question-contribution
+    type: motivates
+    from_id: paper-74-question
+    to_id: paper-74-contribution
+  - id: paper-74-relation-method-contribution
+    type: realizes
+    from_id: paper-74-method
+    to_id: paper-74-contribution
+  - id: paper-74-relation-contribution-claims
+    type: grounds
+    from_id: paper-74-contribution
+    to_id: paper-74-claims
+  - id: paper-74-relation-evidence-claims
+    type: supports
+    from_id: paper-74-evidence
+    to_id: paper-74-claims
+  - id: paper-74-relation-scope-claims
+    type: qualifies
+    from_id: paper-74-scope
+    to_id: paper-74-claims
+  - id: paper-74-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-74-artifacts
+    to_id: paper-74-evidence
+  - id: paper-74-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-74-scrutiny
+    to_id: paper-74-claims
+
+assessment:
+  id: paper-74-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: low
+      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
+      basis_source_anchor_ids: [anchor-paper-74-curated]
+    - id: auditability
+      level: low
+      rationale: "No official, archive, or author-hosted resource is represented, so assumptions, evidence, artifacts, and version identity cannot presently be audited from this map."
+      basis_source_anchor_ids: [anchor-paper-74-curated]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-74-curated]
+    - id: external_scrutiny
+      level: low
+      rationale: "The item is listed as under review or otherwise lacks a represented completed review outcome; no independent scrutiny evidence was audited."
+      basis_source_anchor_ids: [anchor-paper-74-curated]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-74-curated]
+    - id: contribution_significance
+      level: not_assessed
+      rationale: "Only a working title, bibliographic listing, and editorially inferred research aim are available; contribution, novelty, priority, and impact cannot yet be assessed."
+      basis_source_anchor_ids: [anchor-paper-74-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

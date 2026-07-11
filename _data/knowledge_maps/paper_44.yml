@@ -1,0 +1,247 @@
+schema_version: "0.1"
+map_id: paper-44-map
+publication_id: 44
+publication_anchor: paper-44
+slug: paper-44
+canonical_path: /knowledge/papers/paper-44/
+machine_path: /knowledge/papers/paper-44.json
+root_node_id: paper-44
+stage: mapped_draft
+
+title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
+year: 2018
+status: "Published"
+venue: "11th Conference on Security and Cryptography for Networks (SCN)"
+topic: "secure-encrypted-computation"
+labels: ["Theory"]
+authors:
+  - "Karim Eldefrawy"
+  - "Rafail Ostrovsky"
+  - "Sunoo Park"
+  - "Moti Yung"
+keywords:
+  - "proactive MPC"
+  - "dishonest majority"
+editorial_summary: "This paper gives the first feasibility result for proactive MPC when a mobile adversary can control a dishonest majority over the system's lifetime. The protocol provides strong passive-corruption resilience and identifiable aborts under active or mixed corruptions, rather than unconditional robustness in every case."
+
+research_question: "Is proactive secure multiparty computation feasible when a mobile adversary can accumulate a dishonest majority over the system's lifetime?"
+central_answer: "The paper reports a protocol with strong passive-corruption resilience and identifiable abort under active or mixed corruptions."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: "metadata synthesis, conservative claim mapping, and initial assessment"
+  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+
+sources:
+  - id: source-paper-44-site-record
+    type: curated_site_record
+    title: "Publication #44 metadata and editorial summary"
+    url: /publications/#paper-44
+    scope_note: "Local editorial record; not a substitute for the paper full text."
+  - id: source-paper-44-resource-1
+    type: official_publication_record
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1007/978-3-319-98113-0_11"
+    provenance_category: official
+
+source_anchors:
+  - id: anchor-paper-44-editorial
+    source_id: source-paper-44-site-record
+    label: "Curated publication metadata and editorial summary"
+    locator: "Local site record; the summary is editorial and has not been checked against full text."
+    url: /publications/#paper-44
+  - id: anchor-paper-44-resource-1
+    source_id: source-paper-44-resource-1
+    label: "Official resource: Publisher / DOI"
+    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://doi.org/10.1007/978-3-319-98113-0_11"
+
+nodes:
+  - id: paper-44
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: published_metadata_with_editorial_synthesis
+    title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
+    summary: "This paper gives the first feasibility result for proactive MPC when a mobile adversary can control a dishonest majority over the system's lifetime. The protocol provides strong passive-corruption resilience and identifiable aborts under active or mixed corruptions, rather than unconditional robustness in every case."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-question
+    kind: question
+    parent_id: paper-44
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Is proactive secure multiparty computation feasible when a mobile adversary can accumulate a dishonest majority over the system's lifetime?"
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-contribution
+    kind: contribution
+    parent_id: paper-44
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Central contribution"
+    summary: "The paper reports a protocol with strong passive-corruption resilience and identifiable abort under active or mixed corruptions."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-method
+    kind: method
+    parent_id: paper-44
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Reported method"
+    summary: "The represented construction applies proactive refresh to MPC under separate passive, active, and mixed mobile-corruption cases."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-claims
+    kind: claim_group
+    parent_id: paper-44
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Main claims"
+    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-claim-primary
+    kind: claim
+    parent_id: paper-44-claims
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Primary reported claim"
+    summary: "The summary characterizes the work as the first dishonest-majority proactive-MPC feasibility result and explicitly limits stronger active guarantees to identifiable abort rather than unconditional robustness."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-evidence
+    kind: evidence_group
+    parent_id: paper-44
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-evidence-reported
+    kind: evidence
+    parent_id: paper-44-evidence
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Evidence represented in the site summary"
+    summary: "The current record reports a protocol and differentiated security guarantees, but the ideal functionality, corruption timing, thresholds, proof, and complexity were not audited."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-scope
+    kind: limitation_group
+    parent_id: paper-44
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-scope-boundary
+    kind: limitation
+    parent_id: paper-44-scope
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Unverified boundaries"
+    summary: "The guarantee varies by corruption type. Active or mixed cases may abort, and network, setup, erasure, recovery, and liveness assumptions require source inspection."
+    source_anchor_ids: ["anchor-paper-44-editorial"]
+
+  - id: paper-44-resources
+    kind: artifact_group
+    parent_id: paper-44
+    order: 7
+    epistemic_status: resource_metadata_recorded
+    title: "Artifacts and resources"
+    summary: "1 linked resource is recorded by provenance category; its content, persistence, and relation to the final publication were not audited."
+    source_anchor_ids: ["anchor-paper-44-resource-1"]
+
+  - id: paper-44-resources-available
+    kind: artifact
+    parent_id: paper-44-resources
+    order: 1
+    epistemic_status: linked_not_content_audited
+    title: "Available links"
+    summary: "Official: Publisher / DOI."
+    source_anchor_ids: ["anchor-paper-44-resource-1"]
+
+  - id: paper-44-scrutiny
+    kind: scrutiny
+    parent_id: paper-44
+    order: 8
+    epistemic_status: publication_status_recorded_not_audited
+    title: "Scrutiny and status"
+    summary: "The local record lists this work as Published at 11th Conference on Security and Cryptography for Networks (SCN). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
+    source_anchor_ids: ["anchor-paper-44-resource-1"]
+
+relations:
+  - id: relation-paper-44-contribution-addresses-question
+    type: addresses
+    from_id: paper-44-contribution
+    to_id: paper-44-question
+  - id: relation-paper-44-method-describes-contribution
+    type: describes_approach_to
+    from_id: paper-44-method
+    to_id: paper-44-contribution
+  - id: relation-paper-44-evidence-supports-claim
+    type: supports
+    from_id: paper-44-evidence-reported
+    to_id: paper-44-claim-primary
+  - id: relation-paper-44-scope-qualifies-claim
+    type: qualifies
+    from_id: paper-44-scope-boundary
+    to_id: paper-44-claim-primary
+  - id: relation-paper-44-resources-enable-evidence-audit
+    type: provides_access_for_audit_of
+    from_id: paper-44-resources-available
+    to_id: paper-44-evidence-reported
+  - id: relation-paper-44-status-qualifies-claim
+    type: qualifies
+    from_id: paper-44-scrutiny
+    to_id: paper-44-claim-primary
+
+assessment:
+  id: paper-44-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
+      basis_source_anchor_ids: ["anchor-paper-44-editorial", "anchor-paper-44-resource-1"]
+    - id: auditability
+      level: low
+      rationale: "The record provides only an official publisher or bibliographic link and no archive or author-hosted copy; access to substantive evidence and reproducibility materials was not verified."
+      basis_source_anchor_ids: ["anchor-paper-44-resource-1"]
+    - id: production_provenance
+      level: low
+      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      basis_source_anchor_ids: ["anchor-paper-44-editorial"]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
+      basis_source_anchor_ids: ["anchor-paper-44-resource-1"]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
+      basis_source_anchor_ids: ["anchor-paper-44-editorial"]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary characterizes the contribution as a first feasibility result for proactive MPC under a mobile dishonest-majority setting. This is potentially significant, but the priority claim and its downstream impact were not independently audited; the rating therefore remains medium."
+      basis_source_anchor_ids: ["anchor-paper-44-editorial"]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."

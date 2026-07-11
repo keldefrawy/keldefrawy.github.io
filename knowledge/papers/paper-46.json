@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /knowledge/papers/paper-46.json
+---
+{{ site.data.knowledge_maps.paper_46 | jsonify }}

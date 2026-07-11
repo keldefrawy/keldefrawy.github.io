@@ -1,0 +1,11 @@
+{% if include.ref_ids and include.ref_ids != empty %}
+  <span class="knowledge-source-links" aria-label="Supporting sources">
+    {% for ref_id in include.ref_ids %}
+      {% assign source_matches = include.record.source_anchors | where: "id", ref_id %}
+      {% assign source_anchor = source_matches | first %}
+      {% if source_anchor %}
+        <a href="{{ source_anchor.url | escape }}" title="{{ source_anchor.locator | escape }}">{{ source_anchor.label | escape }}</a>{% unless forloop.last %}<span aria-hidden="true"> · </span>{% endunless %}
+      {% endif %}
+    {% endfor %}
+  </span>
+{% endif %}

@@ -1,0 +1,200 @@
+schema_version: "0.1"
+map_id: paper-5-map
+publication_id: 5
+publication_anchor: paper-5
+slug: paper-5
+canonical_path: /knowledge/papers/paper-5/
+machine_path: /knowledge/papers/paper-5.json
+root_node_id: paper-5
+stage: mapped_draft
+
+title: "BotTorrent: Misusing BitTorrent to Launch DDoS Attacks"
+year: 2007
+venue: "USENIX Steps to Reducing Unwanted Traffic on the Internet (SRUTI)"
+authors: ["Karim Eldefrawy", "Minas Gjoka", "Athina Markopoulou"]
+keywords: ["BitTorrent", "DDoS", "protocol abuse"]
+
+research_question: "Can BitTorrent metadata and tracker behavior be abused to redirect legitimate peer-to-peer clients into a denial-of-service attack?"
+central_answer: "BotTorrent manipulates metadata and trackers so legitimate clients send traffic to a chosen victim, and the paper reports real-world experiments plus motivating protocol checks."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata-grounded editorial synthesis and initial assessment
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+
+sources:
+  - id: source-paper-5-site-record
+    type: curated_record
+    title: "Curated publication record for paper #5"
+    url: /publications/#paper-5
+  - id: source-paper-5-official-1
+    type: publication_record
+    title: "USENIX paper page"
+    url: "https://www.usenix.org/conference/sruti-07/bottorrent-misusing-bittorrent-launch-ddos-attacks"
+  - id: source-paper-5-archive-1
+    type: manuscript_archive
+    title: "CiteSeerX archive"
+    url: "https://citeseerx.ist.psu.edu/document?doi=f6e27485882d0986e8e939dd7f1a3dcc897d33ac&repid=rep1&type=pdf"
+
+source_anchors:
+  - id: anchor-paper-5-site-record
+    source_id: source-paper-5-site-record
+    label: "Curated publication record and editorial summary"
+    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+    url: /publications/#paper-5
+  - id: anchor-paper-5-official-1
+    source_id: source-paper-5-official-1
+    label: "USENIX paper page"
+    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://www.usenix.org/conference/sruti-07/bottorrent-misusing-bittorrent-launch-ddos-attacks"
+  - id: anchor-paper-5-archive-1
+    source_id: source-paper-5-archive-1
+    label: "CiteSeerX archive"
+    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+    url: "https://citeseerx.ist.psu.edu/document?doi=f6e27485882d0986e8e939dd7f1a3dcc897d33ac&repid=rep1&type=pdf"
+
+nodes:
+  - id: paper-5
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "BotTorrent: Misusing BitTorrent to Launch DDoS Attacks"
+    summary: "BotTorrent shows how an attacker can manipulate BitTorrent metadata and trackers so large numbers of legitimate clients send traffic to an arbitrary victim. Real-world experiments characterize the resulting DDoS traffic and motivate protocol checks that limit this abuse, while noting the broader danger of redirecting legitimate peer-to-peer traffic."
+    source_anchor_ids: [anchor-paper-5-site-record]
+
+  - id: paper-5-question
+    kind: question
+    parent_id: paper-5
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can BitTorrent metadata and tracker behavior be abused to redirect legitimate peer-to-peer clients into a denial-of-service attack?"
+    source_anchor_ids: [anchor-paper-5-site-record]
+
+  - id: paper-5-answer
+    kind: contribution
+    parent_id: paper-5
+    order: 2
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Contribution and central answer"
+    summary: "BotTorrent manipulates metadata and trackers so legitimate clients send traffic to a chosen victim, and the paper reports real-world experiments plus motivating protocol checks."
+    source_anchor_ids: [anchor-paper-5-site-record]
+
+  - id: paper-5-method
+    kind: method
+    parent_id: paper-5
+    order: 3
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Reported method"
+    summary: "Construct malicious torrent metadata and tracker responses that substitute a victim as a peer destination, then characterize the redirected traffic experimentally."
+    source_anchor_ids: [anchor-paper-5-site-record]
+
+  - id: paper-5-claims
+    kind: claim_group
+    parent_id: paper-5
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claim"
+    summary: "The paper reports that legitimate BitTorrent traffic can be redirected at scale toward an arbitrary victim and that additional protocol validation can constrain the abuse."
+    source_anchor_ids: [anchor-paper-5-site-record]
+
+  - id: paper-5-evidence
+    kind: evidence_group
+    parent_id: paper-5
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "The curated summary reports real-world experiments characterizing attack traffic; experimental scale, client versions, controls, and mitigation measurements have not been inspected."
+    source_anchor_ids: [anchor-paper-5-site-record]
+
+  - id: paper-5-limitations
+    kind: limitation_group
+    parent_id: paper-5
+    order: 6
+    epistemic_status: source_scope_limitation
+    title: "Scope and limitations"
+    summary: "The draft does not establish how results transfer to current BitTorrent implementations, tracker ecosystems, network defenses, or attack scales beyond the reported experiments."
+    source_anchor_ids: [anchor-paper-5-site-record]
+
+  - id: paper-5-resources
+    kind: artifact_group
+    parent_id: paper-5
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The curated record exposes 2 linked resources: USENIX paper page; CiteSeerX archive. Their contents, version identities, and any supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-5-official-1, anchor-paper-5-archive-1]
+
+  - id: paper-5-scrutiny
+    kind: scrutiny
+    parent_id: paper-5
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The site record reports published · workshop paper at USENIX Steps to Reducing Unwanted Traffic on the Internet (SRUTI). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
+    source_anchor_ids: [anchor-paper-5-site-record, anchor-paper-5-official-1]
+
+relations:
+  - id: paper-5-relation-method-supports-answer
+    type: supports
+    from_id: paper-5-method
+    to_id: paper-5-answer
+  - id: paper-5-relation-evidence-supports-claim
+    type: supports
+    from_id: paper-5-evidence
+    to_id: paper-5-claims
+  - id: paper-5-relation-limitations-qualify-claim
+    type: qualifies
+    from_id: paper-5-limitations
+    to_id: paper-5-claims
+  - id: paper-5-relation-scrutiny-qualifies-status
+    type: qualifies
+    from_id: paper-5-scrutiny
+    to_id: paper-5
+
+assessment:
+  id: paper-5-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary reports real-world experiments characterizing attack traffic; experimental scale, client versions, controls, and mitigation measurements have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-5-site-record]
+    - id: auditability
+      level: medium
+      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (USENIX paper page; CiteSeerX archive). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      basis_source_anchor_ids: [anchor-paper-5-official-1, anchor-paper-5-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      basis_source_anchor_ids: [anchor-paper-5-site-record]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The record reports publication in USENIX Steps to Reducing Unwanted Traffic on the Internet (SRUTI), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
+      basis_source_anchor_ids: [anchor-paper-5-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
+      basis_source_anchor_ids: [anchor-paper-5-site-record]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete contribution: The paper reports that legitimate BitTorrent traffic can be redirected at scale toward an arbitrary victim and that additional protocol validation can constrain the abuse. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      basis_source_anchor_ids: [anchor-paper-5-site-record]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."

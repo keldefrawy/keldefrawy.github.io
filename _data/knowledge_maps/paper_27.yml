@@ -1,0 +1,247 @@
+schema_version: "0.1"
+map_id: paper-27-map
+publication_id: 27
+publication_anchor: paper-27
+slug: paper-27
+canonical_path: /knowledge/papers/paper-27/
+machine_path: /knowledge/papers/paper-27.json
+root_node_id: paper-27
+stage: mapped_draft
+
+title: "Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case"
+year: 2015
+status: "Published · extended abstract"
+venue: "Embedded Security in Cars USA (escar USA) Workshop"
+topic: "secure-systems-networks"
+labels: ["Applied"]
+authors:
+  - "Karim Eldefrawy"
+  - "Gavin Holland"
+  - "Gene Tsudik"
+keywords:
+  - "remote attestation"
+  - "automotive security"
+  - "cyber-physical systems"
+editorial_summary: "This extended abstract argues that remote attestation should move from checking one embedded device to checking the many heterogeneous components of a cyber-physical system, using a modern vehicle as the motivating case. It outlines how multiple device attestations could be combined efficiently and identifies open problems for automotive and broader CPS deployments."
+
+research_question: "How can remote attestation assess a heterogeneous cyber-physical system as a whole rather than only one embedded component at a time?"
+central_answer: "The extended abstract proposes combining attestations from multiple heterogeneous components and frames efficiency and deployment questions through the automotive use case."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: "metadata synthesis, conservative claim mapping, and initial assessment"
+  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+
+sources:
+  - id: source-paper-27-site-record
+    type: curated_site_record
+    title: "Publication #27 metadata and editorial summary"
+    url: /publications/#paper-27
+    scope_note: "Local editorial record; not a substitute for the paper full text."
+  - id: source-paper-27-resource-1
+    type: author_hosted_copy
+    title: "Author-hosted paper"
+    url: "https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf"
+    provenance_category: author
+
+source_anchors:
+  - id: anchor-paper-27-editorial
+    source_id: source-paper-27-site-record
+    label: "Curated publication metadata and editorial summary"
+    locator: "Local site record; the summary is editorial and has not been checked against full text."
+    url: /publications/#paper-27
+  - id: anchor-paper-27-resource-1
+    source_id: source-paper-27-resource-1
+    label: "Author-hosted resource: Author-hosted paper"
+    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf"
+
+nodes:
+  - id: paper-27
+    kind: paper
+    parent_id:
+    order: 1
+    epistemic_status: published_metadata_with_editorial_synthesis
+    title: "Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case"
+    summary: "This extended abstract argues that remote attestation should move from checking one embedded device to checking the many heterogeneous components of a cyber-physical system, using a modern vehicle as the motivating case. It outlines how multiple device attestations could be combined efficiently and identifies open problems for automotive and broader CPS deployments."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-question
+    kind: question
+    parent_id: paper-27
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "How can remote attestation assess a heterogeneous cyber-physical system as a whole rather than only one embedded component at a time?"
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-contribution
+    kind: contribution
+    parent_id: paper-27
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Central contribution"
+    summary: "The extended abstract proposes combining attestations from multiple heterogeneous components and frames efficiency and deployment questions through the automotive use case."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-method
+    kind: method
+    parent_id: paper-27
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Reported method"
+    summary: "The reported approach is a conceptual system framing: it uses a modern vehicle to organize a design space for composing multiple device attestations."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-claims
+    kind: claim_group
+    parent_id: paper-27
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Main claims"
+    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-claim-primary
+    kind: claim
+    parent_id: paper-27-claims
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Primary reported claim"
+    summary: "The reported contribution is a system-level attestation direction and a set of open problems for automotive and broader cyber-physical deployments."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-evidence
+    kind: evidence_group
+    parent_id: paper-27
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-evidence-reported
+    kind: evidence
+    parent_id: paper-27-evidence
+    order: 1
+    epistemic_status: reported_not_independently_audited
+    title: "Evidence represented in the site summary"
+    summary: "The local editorial summary reports an automotive motivating analysis and an outline of combined attestation; no implementation or experiment is asserted in the current record."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-scope
+    kind: limitation_group
+    parent_id: paper-27
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-scope-boundary
+    kind: limitation
+    parent_id: paper-27-scope
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Unverified boundaries"
+    summary: "This is an extended abstract and conceptual agenda. Concrete protocol definitions, threat assumptions, security proofs, and performance results were not audited."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+  - id: paper-27-resources
+    kind: artifact_group
+    parent_id: paper-27
+    order: 7
+    epistemic_status: resource_metadata_recorded
+    title: "Artifacts and resources"
+    summary: "1 linked resource is recorded by provenance category; its content, persistence, and relation to the final publication were not audited."
+    source_anchor_ids: ["anchor-paper-27-resource-1"]
+
+  - id: paper-27-resources-available
+    kind: artifact
+    parent_id: paper-27-resources
+    order: 1
+    epistemic_status: linked_not_content_audited
+    title: "Available links"
+    summary: "Author-hosted: Author-hosted paper."
+    source_anchor_ids: ["anchor-paper-27-resource-1"]
+
+  - id: paper-27-scrutiny
+    kind: scrutiny
+    parent_id: paper-27
+    order: 8
+    epistemic_status: publication_status_recorded_not_audited
+    title: "Scrutiny and status"
+    summary: "The local record lists this work as Published · extended abstract at Embedded Security in Cars USA (escar USA) Workshop. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
+    source_anchor_ids: ["anchor-paper-27-editorial"]
+
+relations:
+  - id: relation-paper-27-contribution-addresses-question
+    type: addresses
+    from_id: paper-27-contribution
+    to_id: paper-27-question
+  - id: relation-paper-27-method-describes-contribution
+    type: describes_approach_to
+    from_id: paper-27-method
+    to_id: paper-27-contribution
+  - id: relation-paper-27-evidence-supports-claim
+    type: supports
+    from_id: paper-27-evidence-reported
+    to_id: paper-27-claim-primary
+  - id: relation-paper-27-scope-qualifies-claim
+    type: qualifies
+    from_id: paper-27-scope-boundary
+    to_id: paper-27-claim-primary
+  - id: relation-paper-27-resources-enable-evidence-audit
+    type: provides_access_for_audit_of
+    from_id: paper-27-resources-available
+    to_id: paper-27-evidence-reported
+  - id: relation-paper-27-status-qualifies-claim
+    type: qualifies
+    from_id: paper-27-scrutiny
+    to_id: paper-27-claim-primary
+
+assessment:
+  id: paper-27-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
+      basis_source_anchor_ids: ["anchor-paper-27-editorial", "anchor-paper-27-resource-1"]
+    - id: auditability
+      level: medium
+      rationale: "At least one archive or author-hosted copy is linked, improving inspectability, but file identity, completeness, version alignment, artifact availability, and reproducibility were not checked."
+      basis_source_anchor_ids: ["anchor-paper-27-resource-1"]
+    - id: production_provenance
+      level: low
+      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+    - id: external_scrutiny
+      level: low
+      rationale: "A workshop publication status is listed, but no official publication record or review documentation is linked; the review process and any independent reproduction or criticism were not audited."
+      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
+      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+    - id: contribution_significance
+      level: medium
+      rationale: "The curated summary indicates a substantive contribution: a system-level extension of remote-attestation thinking from one device to heterogeneous cyber-physical systems. Novelty priority, comparative importance, and downstream impact were not independently audited."
+      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count:
+  signals: []
+  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."

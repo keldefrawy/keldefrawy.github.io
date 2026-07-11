@@ -1,0 +1,219 @@
+schema_version: "0.1"
+map_id: paper-68-map
+publication_id: 68
+publication_anchor: paper-68
+slug: paper-68
+canonical_path: /knowledge/papers/paper-68/
+machine_path: /knowledge/papers/paper-68.json
+root_node_id: paper-68
+stage: mapped_draft
+
+title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+short_title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+year: 2023
+venue: "29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (ASIACRYPT)"
+publication_status: "Published"
+topic: privacy-identity
+labels:
+  - "Theory"
+  - "Applied"
+authors:
+  - "Karim Eldefrawy"
+  - "Nicholas Genise"
+  - "Stanislaw Jarecki"
+keywords:
+  - "authenticated key exchange"
+  - "covert communication"
+  - "concurrency"
+
+research_question: "Can authenticated key exchange remain covert under many concurrent sessions while using short messages and practical bandwidth?"
+central_answer: "The curated editorial summary reports a composable model and a minimal-message protocol whose traffic is intended to remain indistinguishable from random communication under concurrency, plus a proof-of-concept implementation."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: metadata synthesis, conservative claim mapping, and resource linking
+  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
+  source_scope: metadata_and_editorial_summary
+  approval:
+    status: pending
+    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+
+sources:
+  - id: source-paper-68-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #68"
+    url: /publications/#paper-68
+    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-68-official-1
+    type: official_publication_resource
+    title: "Publisher / DOI"
+    url: "https://doi.org/10.1007/978-981-99-8742-9_3"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-68-archive-1
+    type: archive_resource
+    title: "IACR ePrint"
+    url: "https://eprint.iacr.org/2023/1418"
+    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+
+source_anchors:
+  - id: anchor-paper-68-curated
+    source_id: source-paper-68-curated
+    label: "Curated metadata and editorial summary"
+    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    url: /publications/#paper-68
+  - id: anchor-paper-68-official-1
+    source_id: source-paper-68-official-1
+    label: "Publisher / DOI"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://doi.org/10.1007/978-981-99-8742-9_3"
+  - id: anchor-paper-68-archive-1
+    source_id: source-paper-68-archive-1
+    label: "IACR ePrint"
+    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    url: "https://eprint.iacr.org/2023/1418"
+
+nodes:
+  - id: paper-68
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+    summary: "This paper constructs authenticated key exchange whose protocol traffic remains indistinguishable from random communication even when many sessions run concurrently. It supplies a composable security model, minimal message complexity, substantially lower bandwidth than prior constructions, and a proof-of-concept implementation."
+    source_anchor_ids: [anchor-paper-68-curated]
+  - id: paper-68-question
+    kind: question
+    parent_id: paper-68
+    order: 1
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research question"
+    summary: "Can authenticated key exchange remain covert under many concurrent sessions while using short messages and practical bandwidth?"
+    source_anchor_ids: [anchor-paper-68-curated]
+  - id: paper-68-contribution
+    kind: contribution
+    parent_id: paper-68
+    order: 2
+    epistemic_status: reported_not_independently_audited
+    title: "Proposed contribution"
+    summary: "The curated editorial summary reports a composable model and a minimal-message protocol whose traffic is intended to remain indistinguishable from random communication under concurrency, plus a proof-of-concept implementation."
+    source_anchor_ids: [anchor-paper-68-curated]
+  - id: paper-68-method
+    kind: method
+    parent_id: paper-68
+    order: 3
+    epistemic_status: reported_not_independently_audited
+    title: "Method or construction"
+    summary: "The described work defines concurrent covert AKE security, constructs a short protocol, proves it in the stated model, and evaluates a prototype."
+    source_anchor_ids: [anchor-paper-68-curated]
+  - id: paper-68-claims
+    kind: claim_group
+    parent_id: paper-68
+    order: 4
+    epistemic_status: reported_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The summary reports concurrent covertness, authenticated key establishment, minimal message complexity, substantially lower bandwidth than prior constructions, and a proof-of-concept implementation."
+    source_anchor_ids: [anchor-paper-68-curated]
+  - id: paper-68-evidence
+    kind: evidence_group
+    parent_id: paper-68
+    order: 5
+    epistemic_status: reported_not_independently_audited
+    title: "Reported evidence"
+    summary: "A composable proof, communication comparison, and prototype are reported, but definitions, assumptions, reductions, traffic distributions, implementation, and measurements were not audited."
+    source_anchor_ids: [anchor-paper-68-curated]
+  - id: paper-68-scope
+    kind: limitation_group
+    parent_id: paper-68
+    order: 6
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scope and limitations"
+    summary: "This draft has not checked setup and credential assumptions, adversary scheduling, failure and replay behavior, the source of cover traffic or randomness, composability boundaries, side channels, or comparator configurations."
+    source_anchor_ids: [anchor-paper-68-curated]
+  - id: paper-68-artifacts
+    kind: artifact_group
+    parent_id: paper-68
+    order: 7
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Artifacts and resources"
+    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
+    source_anchor_ids: [anchor-paper-68-curated, anchor-paper-68-official-1, anchor-paper-68-archive-1]
+  - id: paper-68-scrutiny
+    kind: scrutiny
+    parent_id: paper-68
+    order: 8
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Scrutiny and status"
+    summary: "The curated record lists this work in 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (ASIACRYPT). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
+    source_anchor_ids: [anchor-paper-68-official-1]
+
+relations:
+  - id: paper-68-relation-question-contribution
+    type: motivates
+    from_id: paper-68-question
+    to_id: paper-68-contribution
+  - id: paper-68-relation-method-contribution
+    type: realizes
+    from_id: paper-68-method
+    to_id: paper-68-contribution
+  - id: paper-68-relation-contribution-claims
+    type: grounds
+    from_id: paper-68-contribution
+    to_id: paper-68-claims
+  - id: paper-68-relation-evidence-claims
+    type: supports
+    from_id: paper-68-evidence
+    to_id: paper-68-claims
+  - id: paper-68-relation-scope-claims
+    type: qualifies
+    from_id: paper-68-scope
+    to_id: paper-68-claims
+  - id: paper-68-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-68-artifacts
+    to_id: paper-68-evidence
+  - id: paper-68-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-68-scrutiny
+    to_id: paper-68-claims
+
+assessment:
+  id: paper-68-assessment-2026-07-11
+  rubric_version: "0.1"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-68-curated, anchor-paper-68-official-1, anchor-paper-68-archive-1]
+    - id: auditability
+      level: medium
+      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      basis_source_anchor_ids: [anchor-paper-68-curated, anchor-paper-68-official-1, anchor-paper-68-archive-1]
+    - id: production_provenance
+      level: low
+      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      basis_source_anchor_ids: [anchor-paper-68-curated]
+    - id: external_scrutiny
+      level: medium
+      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
+      basis_source_anchor_ids: [anchor-paper-68-official-1]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-68-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
+      basis_source_anchor_ids: [anchor-paper-68-curated]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
