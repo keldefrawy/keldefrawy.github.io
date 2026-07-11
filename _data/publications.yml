@@ -1,0 +1,943 @@
+- id: 78
+  year: 2024
+  status: Preprint · under review
+  venue: IACR Cryptology ePrint Archive
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
+  authors: "Karim Eldefrawy, Ben Terner, and Moti Yung"
+  tags: ["timed cryptography", "protocol composition"]
+  summary: >-
+    This work develops a fine-grained complexity framework for reasoning about cryptographic components whose security expires over time. It introduces residual complexity, proves composition results for timed multiparty protocols, and demonstrates the framework with an auction application.
+
+- id: 77
+  year:
+  status: Ongoing work
+  venue:
+  topic: algorithms-foundations
+  labels: [Theory]
+  title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+  authors: "Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, and Rafail Ostrovsky"
+  tags: ["post-quantum cryptography", "obfuscation"]
+  availability: Public manuscript not found; this work is listed as ongoing.
+  summary: >-
+    Based on its working title, this project studies point-function obfuscation that remains non-malleable against quantum-capable attackers. It asks how a concrete post-quantum construction can reproduce useful random-oracle behavior without letting an adversary transform an obfuscated program into a related one.
+
+- id: 76
+  year:
+  status: Ongoing work
+  venue:
+  topic: privacy-identity
+  labels: [Applied]
+  title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+  authors: "Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, and Ben Terner"
+  tags: ["anonymous messaging", "intrusion resilience", "MPC"]
+  availability: Public manuscript not found; this work is listed as ongoing.
+  summary: >-
+    Based on its working title, PRISM combines secure multiparty computation with an anonymous messaging overlay designed to tolerate compromised infrastructure. Its goal is to protect communication privacy and keep the service resilient even when some participating components are penetrated.
+
+- id: 75
+  year:
+  status: Under review
+  venue:
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Decomposable MPC with Security Against Malicious Adversaries"
+  authors: "Kelong Cong, Karim Eldefrawy, Ben Terner, and Titouan Tanguy"
+  tags: ["secure multiparty computation", "malicious security"]
+  availability: Public manuscript not found; this work is listed as under review.
+  summary: >-
+    Based on its working title, this paper studies how a secure multiparty computation can be split into reusable or independently handled pieces without losing security. The design targets malicious participants, who may deviate arbitrarily from the protocol rather than merely observe it.
+
+- id: 74
+  year:
+  status: Under review
+  venue:
+  topic: privacy-identity
+  labels: [Theory]
+  title: "Private Identity-Based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks"
+  authors: "Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, and Gene Tsudik"
+  tags: ["anonymous messaging", "delay-tolerant networks"]
+  availability: Public manuscript not found; this work is listed as under review.
+  summary: >-
+    Based on its working title, this paper develops identity-based bulletin boards for anonymous communication in networks with long delays, outages, or deliberate disruption. It aims to let users exchange protected messages without requiring both parties or the underlying network to be continuously available.
+
+- id: 73
+  year: 2025
+  status: Published
+  venue: 9th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
+  authors: "Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, and Moti Yung"
+  tags: ["time-lock puzzles", "threshold cryptography"]
+  summary: >-
+    This paper introduces time-lock puzzles whose secret is generated and controlled collectively, preventing any one participant from revealing it early. It gives a practical protocol and uses it to construct timed multiparty computation with a time-locked output.
+
+- id: 72
+  year: 2025
+  status: Full version · under review
+  venue: Cryptography and Communications special issue
+  topic: secure-encrypted-computation
+  labels: [Perspective]
+  title: "Challenges in Timed Cryptography: A Position Paper (Full Paper)"
+  authors: "Karim Eldefrawy, Ben Terner, and Moti Yung"
+  tags: ["timed cryptography", "research agenda"]
+  summary: >-
+    The listed full version appears to expand the position paper's critique of idealized time-lock analyses, unbounded simulators, and missing composition guarantees. No distinct public full-paper record was found, and the linked ePrint may instead correspond to the shorter published version.
+
+- id: 71
+  year: 2024
+  status: Published · short paper
+  venue: 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)
+  topic: secure-encrypted-computation
+  labels: [Perspective]
+  title: "Challenges in Timed-Cryptography: A Position Paper (Short Paper)"
+  authors: "Karim Eldefrawy, Ben Terner, and Moti Yung"
+  tags: ["timed cryptography", "research agenda"]
+  summary: >-
+    This position paper argues that common analyses of time-lock puzzles rely on idealizations or simulators that do not faithfully model computations whose security expires. It calls for realistic and falsifiable models that track running time, leakage, and security loss when timed components are composed.
+
+- id: 70
+  year: 2024
+  status: Published
+  venue: 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)
+  topic: privacy-identity
+  labels: [Theory]
+  title: "Entanglement-Based Mutual Quantum Distance Bounding"
+  authors: "Aysajan Abidin, Karim Eldefrawy, and Dave Singelée"
+  tags: ["quantum protocols", "distance bounding"]
+  summary: >-
+    This paper uses entangled qubits for distance bounding and presents a protocol that lets two parties bound their distance mutually in one execution. The constructions resist attacks affecting earlier one-way quantum protocols and remove a final prover-to-verifier communication step.
+
+- id: 69
+  year: 2024
+  status: Published
+  venue: 22nd International Conference on Applied Cryptography and Network Security (ACNS)
+  topic: privacy-identity
+  labels: [Theory]
+  title: "The Key Lattice Framework for Concurrent Group Messaging"
+  authors: "Kelong Cong, Karim Eldefrawy, Nigel P. Smart, and Ben Terner"
+  tags: ["group messaging", "key management"]
+  summary: >-
+    This paper represents concurrent group-key evolution as a lattice, making forward secrecy and post-compromise security directional versions of one abstraction without relying on global epochs. Its dynamic-group protocol supports concurrent updates with constant payload overhead and linear update cost.
+
+- id: 68
+  year: 2023
+  status: Published
+  venue: 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (ASIACRYPT)
+  topic: privacy-identity
+  labels: [Theory, Applied]
+  title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+  authors: "Karim Eldefrawy, Nicholas Genise, and Stanislaw Jarecki"
+  tags: ["authenticated key exchange", "covert communication", "concurrency"]
+  summary: >-
+    This paper constructs authenticated key exchange whose protocol traffic remains indistinguishable from random communication even when many sessions run concurrently. It supplies a composable security model, minimal message complexity, substantially lower bandwidth than prior constructions, and a proof-of-concept implementation.
+
+- id: 67
+  year: 2023
+  status: Published
+  venue: 30th ACM Conference on Computer and Communications Security (CCS)
+  topic: algorithms-foundations
+  labels: [Theory, Applied]
+  title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+  authors: "Samuel Dittmer, Karim Eldefrawy, Stéphane Graham-Lengrand, Steve Lu, Rafail Ostrovsky, and Vitor Pereira"
+  tags: ["zero knowledge", "formal verification", "performance"]
+  summary: >-
+    This paper formally verifies parallel-execution and memory-access optimizations for an EasyCrypt implementation of Line-Point Zero-Knowledge. The verified optimizations produce roughly a 3,000-fold speedup and bring automatically extracted code close to the manually implemented version.
+
+- id: 66
+  year: 2023
+  status: Published · proceedings issued in 2024
+  venue: 28th European Symposium on Research in Computer Security (ESORICS 2023)
+  topic: ai-machine-learning
+  labels: [Theory, Applied]
+  ai_ml_labels: [AI for security]
+  title: "Traffic Analysis by Adversaries with Partial Visibility"
+  authors: "Iness Ben Guirat, Claudia Díaz, Karim Eldefrawy, and Hadas Zeilberger"
+  tags: ["traffic analysis", "mix networks", "Bayesian inference"]
+  summary: >-
+    This paper models traffic-analysis attackers who can observe only part of a mix network, rather than assuming an unrealistic view of every communication. It combines Bayesian inference with Metropolis-Hastings sampling to study what different partially informed adversaries can still learn.
+
+- id: 65
+  year: 2023
+  status: Published
+  venue: 14th International Conference on Post-Quantum Cryptography (PQCrypto)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "On the Hardness of Scheme-Switching Between SIMD FHE Schemes"
+  authors: "Karim Eldefrawy, Nicholas Genise, and Nathan Manohar"
+  tags: ["fully homomorphic encryption", "scheme switching"]
+  summary: >-
+    This paper shows that efficiently switching between exact BGV/BFV ciphertexts and approximate CKKS ciphertexts would also yield an efficient bootstrapping method. It gives similar reductions for homomorphic comparison and related functions, providing evidence that substantially cheaper scheme switching is unlikely without better bootstrapping.
+
+- id: 64
+  year: 2022
+  status: Published
+  venue: 49th International Symposium on Computer Architecture (ISCA)
+  topic: secure-encrypted-computation
+  labels: [Applied]
+  title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
+  authors: "Nikola Samardzic, Axel Feldmann, Aleksandar Krastev, Nathan Manohar, Nicholas Genise, Srinivas Devadas, Karim Eldefrawy, Chris Peikert, and Daniel Sánchez"
+  tags: ["fully homomorphic encryption", "hardware acceleration"]
+  summary: >-
+    CraterLake is a hardware accelerator for fully homomorphic encryption that supports computations of unbounded depth by accelerating the expensive refresh operations that prevent ciphertext noise from growing without limit. Its architecture is designed to make long, general encrypted programs practical rather than restricting acceleration to a narrow fixed workload.
+
+- id: 63
+  year: 2022
+  status: Published
+  venue: 20th International Conference on Applied Cryptography and Network Security (ACNS)
+  topic: algorithms-foundations
+  labels: [Theory]
+  title: "How Byzantine Is a Send Corruption?"
+  authors: "Karim Eldefrawy, Julian Loss, and Ben Terner"
+  tags: ["consensus", "Byzantine faults", "corruption models"]
+  summary: >-
+    This paper asks how consensus changes when some parties behave honestly but an adversary can selectively drop the messages they send, alongside ordinary Byzantine and receive faults. It gives expected-constant-round protocols with improved fault thresholds and shows why send corruption can be surprisingly close to full Byzantine power.
+
+- id: 62
+  year: 2022
+  status: Published
+  venue: 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)
+  topic: privacy-identity
+  labels: [Applied]
+  title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+  authors: "Karim Eldefrawy, Tancrède Lepoint, and Laura Tam"
+  tags: ["access control", "attribute-based encryption", "documents"]
+  summary: >-
+    This work adds cryptographically enforced, fine-grained access control inside familiar document applications such as Microsoft Office. Selected portions of a document remain encrypted and become readable only to users whose attributes satisfy the embedded policy, reducing reliance on the surrounding platform to enforce permissions correctly.
+
+- id: 61
+  year: 2022
+  status: Published
+  venue: 20th International Conference on Applied Cryptography and Network Security (ACNS)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
+  authors: "Karim Eldefrawy, Tancrède Lepoint, and Antonin Leroux"
+  tags: ["secure multiparty computation", "proactive security", "dynamic groups"]
+  summary: >-
+    This paper constructs proactive multiparty computation for groups whose membership changes while a mobile adversary may control a dishonest majority in each period. It reduces amortized communication to quadratic per secret and introduces efficient bivariate multiplication and batched proactive sharing techniques.
+
+- id: 60
+  year: 2021
+  status: Published
+  venue: IEEE International Conference on Quantum Computing and Engineering (QCE)
+  topic: algorithms-foundations
+  labels: [Theory, Applied]
+  title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
+  authors: "Wim van Dam, Karim Eldefrawy, Nicholas Genise, and Natalie Parham"
+  tags: ["quantum optimization", "knapsack"]
+  summary: >-
+    This paper adapts QAOA to constrained optimization by starting near a classical greedy solution and using mixers that explore feasible nearby alternatives. Experiments on difficult knapsack instances show that the shallow quantum heuristics often outperform several classical heuristics.
+
+- id: 59
+  year: 2021
+  status: Extended version of the MICRO 2021 paper
+  venue: 54th IEEE/ACM International Symposium on Microarchitecture (MICRO)
+  topic: secure-encrypted-computation
+  labels: [Applied]
+  title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+  authors: "Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Srini Devadas, Ronald G. Dreslinski, Karim Eldefrawy, Nicholas Genise, Chris Peikert, and Daniel Sánchez"
+  tags: ["fully homomorphic encryption", "hardware acceleration"]
+  summary: >-
+    F1 is a programmable hardware accelerator designed to execute complete fully homomorphic encryption programs rather than isolated kernels. Specialized vector units, an explicitly managed memory hierarchy, and a scheduling compiler yield several-thousand-fold average speedups over software.
+
+- id: 58
+  year: 2021
+  status: Published
+  venue: 28th ACM Conference on Computer and Communications Security (CCS)
+  topic: secure-encrypted-computation
+  labels: [Theory, Applied]
+  title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+  authors: "José Bacelar Almeida, Manuel Barbosa, Manuel L. Correia, Karim Eldefrawy, Stéphane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira"
+  tags: ["zero knowledge", "MPC-in-the-head", "formal verification"]
+  summary: >-
+    This paper gives the first machine-checked implementation of the general MPC-in-the-Head transformation from secure computation to zero-knowledge proofs. Its modular EasyCrypt proof accepts suitable MPC protocols as components and supports extracting a verified executable implementation for benchmarking.
+
+- id: 57
+  year: 2021
+  status: Published
+  venue: 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
+  authors: "Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, and Moti Yung"
+  tags: ["proactive secret sharing", "regenerating codes"]
+  summary: >-
+    This paper systematically relates proactive secret sharing, which refreshes and repairs shares under mobile attacks, to regenerating codes, which repair distributed storage efficiently. It identifies partial-leakage weaknesses, proves conditional connections between the two notions, and introduces generalized-decoding regenerating codes.
+
+- id: 56
+  year: 2021
+  status: Published
+  venue: 18th IMA International Conference on Cryptography and Coding (IMACC)
+  topic: algorithms-foundations
+  labels: [Theory, Applied]
+  title: "Optimizing Registration Based Encryption"
+  authors: "Kelong Cong, Karim Eldefrawy, and Nigel P. Smart"
+  tags: ["registration-based encryption", "key escrow"]
+  summary: >-
+    Registration-based encryption removes identity-based encryption's key-escrow authority but originally had prohibitive concrete ciphertext costs. This work replaces Merkle trees with crit-bit trees and adjusts public parameters, reducing ciphertext size by 57.5 percent while also lowering decryption cost.
+
+- id: 55
+  year: 2020
+  status: Published
+  venue: 12th Conference on Security and Cryptography for Networks (SCN)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
+  authors: "Karim Eldefrawy, Seoyeon Hwang, Rafail Ostrovsky, and Moti Yung"
+  tags: ["proactive MPC", "general adversary structures", "dynamic groups"]
+  summary: >-
+    This paper designs proactive MPC for changing groups and non-threshold corruption patterns described by dynamic general adversary structures. Efficient conversions between additive sharing and monotone-span-program sharing support refreshing, recovery, membership changes, and adaptation to the current threat structure.
+
+- id: 54
+  year: 2020
+  status: Published
+  venue: 29th USENIX Security Symposium
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+  authors: "Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
+  tags: ["proofs of execution", "remote attestation", "embedded systems"]
+  summary: >-
+    APEX lets a low-end remote device produce an unforgeable proof that specified software executed successfully and optionally generated a particular authenticated output. Its security architecture is formally verified and incurs low overhead even on MSP430- and AVR-class devices.
+
+- id: 53
+  year: 2020
+  status: Published
+  venue: 18th International Conference on Applied Cryptography and Network Security (ACNS)
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
+  authors: "Karim Eldefrawy, Michael E. Locasto, Norrathep Rattanavipanon, and Hassen Saïdi"
+  tags: ["binary instrumentation", "legacy cryptography", "automation"]
+  summary: >-
+    This paper presents ALICE, a toolchain that locates weak cryptographic primitives in binaries and replaces them without requiring source code or debugging symbols. Experiments show that it can replace insecure hash functions in real programs while preserving behavior and adding little runtime overhead.
+
+- id: 52
+  year: 2020
+  status: Published
+  venue: 18th International Conference on Applied Cryptography and Network Security (ACNS)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
+  authors: "Karim Eldefrawy, Tancrède Lepoint, and Antonin Leroux"
+  tags: ["proactive secret sharing", "dynamic groups", "dishonest majority"]
+  summary: >-
+    This paper refreshes long-lived secret shares against a mobile adversary even when group membership changes and a majority may be dishonest. Its batching and bivariate-sharing techniques substantially reduce communication and provide building blocks for later proactive MPC protocols.
+
+- id: 51
+  year: 2019
+  status: Published
+  venue: 26th ACM Conference on Computer and Communications Security (CCS)
+  topic: secure-encrypted-computation
+  labels: [Theory, Applied]
+  title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
+  authors: "Karim Eldefrawy and Vitor Pereira"
+  tags: ["secure multiparty computation", "EasyCrypt", "code extraction"]
+  summary: >-
+    This paper formalizes reusable secret-sharing and proactive MPC constructions in EasyCrypt and proves concrete instantiations with machine assistance. A Why3-based extraction toolchain turns the verified specifications into executable code with modest overhead relative to manually written implementations.
+
+- id: 50
+  year: 2019
+  status: Published
+  venue: 28th USENIX Security Symposium
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+  authors: "Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Michael Steiner, and Gene Tsudik"
+  tags: ["remote attestation", "formal verification", "embedded systems"]
+  summary: >-
+    VRASED is a formally specified and verified remote-attestation architecture for resource-constrained embedded devices. Its hardware/software split provides strong protection with limited hardware cost, and the authors demonstrate it on an MSP430-based FPGA implementation.
+
+- id: 49
+  year: 2019
+  status: Published
+  venue: 17th International Conference on Applied Cryptography and Network Security (ACNS)
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "Longitudinal Analysis of Misuse of Bitcoin"
+  authors: "Karim Eldefrawy, Ashish Gehani, and Alexandre Matton"
+  tags: ["Bitcoin", "measurement", "dark web"]
+  summary: >-
+    This paper combines Bitcoin blockchain history with millions of candidate addresses collected from the dark web to quantify suspicious and malicious use over time. It develops mixing heuristics and finds that a small concentration of addresses accounts for most of the observed dark-web Bitcoin value.
+
+- id: 48
+  year: 2019
+  status: Published · journal article
+  venue: Future Generation Computer Systems, Volume 98
+  topic: privacy-identity
+  labels: [Theory, Applied]
+  title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
+  authors: "Ivan De Oliveira Nunes, Karim Eldefrawy, and Tancrède Lepoint"
+  tags: ["biometrics", "secure computation", "re-enrollment"]
+  summary: >-
+    SNUSE distributes biometric templates across re-enrollment servers and uses secure computation to refresh authentication material without storing a complete template at any one server. Its fingerprint and iris prototypes re-enroll thousands of users in seconds without materially reducing matching accuracy.
+
+- id: 47
+  year: 2019
+  status: Published · opinion paper
+  venue: 12th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec)
+  topic: secure-systems-networks
+  labels: [Perspective]
+  title: "Opinion: Advancing Remote Attestation via Computer-Aided Formal Verification of Designs and Synthesis of Executables"
+  authors: "Karim Eldefrawy and Gene Tsudik"
+  tags: ["remote attestation", "formal verification", "program synthesis"]
+  summary: >-
+    This position paper argues that remote-attestation designs and implementations need computer-aided verification and correct-by-construction synthesis. Examples from prior systems illustrate how manual reasoning can miss processor-level details that invalidate apparently simple security arguments.
+
+- id: 46
+  year: 2019
+  status: Published
+  venue: IEEE/ACM International Conference on Computer-Aided Design (ICCAD)
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems"
+  authors: "Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
+  tags: ["remote attestation", "secure updates", "embedded systems"]
+  summary: >-
+    PURE extends verified remote attestation so a verifier can obtain trustworthy proofs that a compromised embedded device was updated, erased, and reset correctly. The added services remain secure under full software compromise and require very little additional hardware.
+
+- id: 45
+  year: 2018
+  status: Published · book chapter
+  venue: From Database to Cyber Security
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Theoretical Foundations for Mobile Target Defense: Proactive Secret Sharing and Secure Multiparty Computation"
+  authors: "Karim Eldefrawy, Rafail Ostrovsky, and Moti Yung"
+  tags: ["moving-target defense", "proactive security", "MPC"]
+  summary: >-
+    This chapter explains how proactive secret sharing and proactive MPC realize moving-target defense by periodically replacing the information available to a mobile attacker. It surveys dishonest-majority constructions, their resilience guarantees, and open problems in communication, asynchrony, and dynamic participation.
+
+- id: 44
+  year: 2018
+  status: Published
+  venue: 11th Conference on Security and Cryptography for Networks (SCN)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
+  authors: "Karim Eldefrawy, Rafail Ostrovsky, Sunoo Park, and Moti Yung"
+  tags: ["proactive MPC", "dishonest majority"]
+  summary: >-
+    This paper gives the first feasibility result for proactive MPC when a mobile adversary can control a dishonest majority over the system's lifetime. The protocol provides strong passive-corruption resilience and identifiable aborts under active or mixed corruptions, rather than unconditional robustness in every case.
+
+- id: 43
+  year: 2018
+  status: Published · conference version
+  venue: 2nd International Symposium on Cyber Security, Cryptography and Machine Learning (CSCML)
+  topic: privacy-identity
+  labels: [Theory, Applied]
+  title: "Secure Non-Interactive User Re-Enrollment in Biometrics-Based Identification and Authentication Systems"
+  authors: "Ivan De Oliveira Nunes, Karim Eldefrawy, and Tancrède Lepoint"
+  tags: ["biometrics", "secure computation", "re-enrollment"]
+  summary: >-
+    This conference paper introduces SNUSE, which uses secret sharing and MPC to regenerate biometric helper data without requiring users to appear and enroll again. Fingerprint and iris experiments show that large batches can be re-enrolled quickly while preserving authentication accuracy.
+
+- id: 42
+  year: 2018
+  status: Published · invited paper
+  venue: 55th Design Automation Conference (DAC)
+  topic: secure-systems-networks
+  labels: [Theory]
+  title: "Reconciling Remote Attestation and Safety-Critical Operation on Simple IoT Devices"
+  authors: "Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, Ahmad-Reza Sadeghi, and Gene Tsudik"
+  tags: ["remote attestation", "safety-critical systems", "IoT"]
+  summary: >-
+    This paper examines the conflict between atomic remote-attestation scans and devices that must remain available for safety-critical work. It analyzes transient and relocating malware and explores periodic measurement, shuffled traversal, interruptible attestation, and memory-locking mitigations.
+
+- id: 41
+  year: 2018
+  status: Published
+  venue: ACM Asia Conference on Computer and Communications Security (AsiaCCS)
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "Temporal Consistency of Integrity-Ensuring Computations and Applications to Embedded Systems Security"
+  authors: "Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
+  tags: ["temporal consistency", "embedded systems", "integrity"]
+  summary: >-
+    This paper formalizes the requirement that an interruptible integrity computation correspond to an input state that actually existed at some point in time. It demonstrates attacks caused by inconsistent inputs and evaluates several enforcement mechanisms on commodity embedded platforms.
+
+- id: 40
+  year: 2018
+  status: Published
+  venue: IEEE International Conference on Cloud Engineering (IC2E), BAT workshop track
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
+  authors: "Tancrède Lepoint, Gabriela F. Ciocarlie, and Karim Eldefrawy"
+  tags: ["cyber insurance", "blockchain", "security monitoring"]
+  summary: >-
+    BlockCIS uses a permissioned blockchain to create an auditable feedback loop among insured organizations, insurers, third-party security services, and auditors. Its Hyperledger prototype supports continuous security monitoring, immutable evidence, and insurance terms that can respond to an organization's changing security posture.
+
+- id: 39
+  year: 2018
+  status: Published · public full text not located
+  venue: Information Systems Security Association (ISSA) Journal, Volume 16, Number 5
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "Security Threats, Defenses, and Recommended Practices for Enterprise Mobility"
+  authors: "Karim Eldefrawy and Vincent Sritapan"
+  tags: ["enterprise mobility", "security guidance"]
+  availability: Public full text not located; the link is a publisher bibliographic listing.
+  summary: >-
+    Based on the title and bibliographic context, this article appears to survey risks created by enterprise use of mobile devices and map them to available defenses. No public full text was available to verify a more detailed description of its recommendations.
+
+- id: 38
+  year: 2017
+  status: Published · experience paper
+  venue: 47th IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W)
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
+  authors: "Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
+  tags: ["remote attestation", "seL4", "lessons learned"]
+  summary: >-
+    This experience paper presents the HYDRA design and reports the engineering lessons involved in combining remote attestation with the formally verified seL4 microkernel. Its commodity-board prototype attests 10 MB in under 500 ms and highlights practical issues such as secure boot, trustworthy time, and cryptographic checksum selection.
+
+- id: 37
+  year: 2017
+  status: Published
+  venue: 10th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec)
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "HYDRA: Hybrid Design for Remote Attestation Using a Formally Verified Microkernel"
+  authors: "Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
+  tags: ["remote attestation", "seL4", "embedded systems"]
+  summary: >-
+    HYDRA is the first hybrid remote-attestation design to use the formally verified seL4 microkernel for memory isolation, protection, and access control instead of extensive custom hardware. Implementations on commodity boards show the approach is practical, attesting 10 MB of memory in under 250 ms with the fastest tested checksum.
+
+- id: 36
+  year: 2017
+  status: Published · brief announcement
+  venue: ACM Symposium on Principles of Distributed Computing (PODC)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Brief Announcement: Secure Self-Stabilizing Computation"
+  authors: "Shlomi Dolev, Karim Eldefrawy, Juan A. Garay, Muni Venkateswarlu Kumaramangalam, Rafail Ostrovsky, and Moti Yung"
+  tags: ["self-stabilization", "secure multiparty computation"]
+  summary: >-
+    The paper defines secure self-stabilizing computation, in which a distributed system recovers not only correct operation but also privacy and integrity after even a temporary compromise of every component. It demonstrates the idea with a jointly computed finite-state machine that autonomously restores secure MPC guarantees once enough parties recover and the Byzantine threshold is again satisfied.
+
+- id: 35
+  year: 2017
+  status: Published
+  venue: International Symposium on Cyber Security Cryptography and Machine Learning (CSCML)
+  topic: algorithms-foundations
+  labels: [Theory]
+  title: "Efficient, Reusable Fuzzy Extractors from LWE"
+  authors: "Daniel Apon, Chongwon Cho, Karim Eldefrawy, and Jonathan Katz"
+  tags: ["fuzzy extractors", "biometrics", "LWE"]
+  summary: >-
+    The paper studies fuzzy extractors that repeatedly derive stable cryptographic keys from noisy biometric readings without letting multiple public helper strings leak the biometric. It breaks the claimed reusability of an earlier LWE construction, repairs it for weak reuse, and gives both generic and direct strongly reusable constructions, including one without random oracles.
+
+- id: 34
+  year: 2017
+  status: Published
+  venue: 37th IEEE International Conference on Distributed Computing Systems (ICDCS)
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "Proactively Secure Cloud-Enabled Storage"
+  authors: "Karim Eldefrawy, Sky Faber, and Tyler Kaczmarek"
+  tags: ["cloud storage", "proactive secret sharing"]
+  summary: >-
+    The paper designs and implements PiSCES, a cloud-storage system that periodically refreshes secret shares so data can stay confidential even if an attacker compromises different servers over time. Its evaluation shows that proactive protection can scale beyond tiny cryptographic keys to larger files and tens of commodity cloud servers at practical cost.
+
+- id: 33
+  year: 2017
+  status: Published
+  venue: ACM Asia Conference on Computer and Communications Security (AsiaCCS)
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "Lightweight Swarm Attestation: A Tale of Two LISA-s"
+  authors: "Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
+  tags: ["swarm attestation", "IoT", "embedded systems"]
+  summary: >-
+    The paper brings remote attestation from one embedded device to a mobile swarm by defining Quality of Swarm Attestation, a metric for how much integrity information a protocol reveals. It then designs two lightweight LISA protocols with different assurance and cost tradeoffs, analyzes their security, and validates them with prototypes and experiments.
+
+- id: 32
+  year: 2016
+  status: Published
+  venue: 10th Conference on Security and Cryptography for Networks (SCN)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Proactive Secret Sharing with a Dishonest Majority"
+  authors: "Shlomi Dolev, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, and Moti Yung"
+  tags: ["proactive secret sharing", "dishonest majority"]
+  summary: >-
+    The full paper develops proactive secret sharing whose confidentiality can survive a dishonest majority, unlike earlier schemes that fail once half the parties are observed within a refresh period. It combines additive sharing with verifiable polynomial sharing to tolerate up to n−1 passive corruptions in the basic case, while also analyzing recovery, active corruption, and communication costs.
+
+- id: 31
+  year: 2016
+  status: Published · brief announcement
+  venue: ACM Symposium on Principles of Distributed Computing (PODC)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
+  authors: "Shlomi Dolev, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, and Moti Yung"
+  tags: ["proactive secret sharing", "dishonest majority"]
+  summary: >-
+    This brief announcement gives the first proactive secret-sharing feasibility result that remains confidential even when passive corruptions form a dishonest majority. It supports nearly all parties being passively compromised under stated fault conditions, allows mixed passive and active adversaries, and reduces batched communication to cubic in the number of parties.
+
+- id: 30
+  year: 2016
+  status: Published
+  venue: IEEE COMPSAC, ADMNET workshop
+  topic: ai-machine-learning
+  labels: [Applied]
+  ai_ml_labels: [AI for security]
+  title: "Automated Inference of Dependencies of Network Services and Applications via Transfer Entropy"
+  authors: "Karim Eldefrawy, Tiffany Kim, and Pape M. Sylla"
+  tags: ["network dependencies", "transfer entropy", "operations"]
+  summary: >-
+    The paper infers which network services and applications depend on one another by passively applying transfer entropy to time series derived from network interactions. Tests on production traffic show fewer false alarms and efficient runtime compared with correlation-based methods, helping operators diagnose failures, plan maintenance, and spot anomalies.
+
+- id: 29
+  year: 2016
+  status: Published
+  venue: IEEE COMPSAC, MidCCI workshop
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "Byzantine Fault Tolerant Software-Defined Networking (SDN) Controllers"
+  authors: "Karim Eldefrawy and Tyler Kaczmarek"
+  tags: ["software-defined networking", "Byzantine fault tolerance"]
+  summary: >-
+    The paper replaces the single vulnerable SDN controller with replicated controllers that use Byzantine fault-tolerant state-machine replication to survive malicious behavior in both the control and data planes. Its prototype tolerates one compromised component among four replicas and demonstrates feasibility with roughly a twofold slowdown in the best configuration.
+
+- id: 28
+  year: 2015
+  status: Published
+  venue: International Conference on Applied Cryptography and Network Security (ACNS)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Communication-Optimal Proactive Secret Sharing for Dynamic Groups"
+  authors: "Joshua Baron, Karim Eldefrawy, Joshua Lampkins, and Rafail Ostrovsky"
+  tags: ["proactive secret sharing", "dynamic groups", "communication complexity"]
+  summary: >-
+    This work protects long-lived secrets even as participants join, leave, or are eventually compromised by periodically refreshing shares and restoring parties. It gives the first dynamic proactive secret-sharing schemes with optimal amortized constant communication per secret, improving on polynomial or exponential prior costs, and extends them to dynamic proactive MPC.
+
+- id: 27
+  year: 2015
+  status: Published · extended abstract
+  venue: Embedded Security in Cars USA (escar USA) Workshop
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case"
+  authors: "Karim Eldefrawy, Gavin Holland, and Gene Tsudik"
+  tags: ["remote attestation", "automotive security", "cyber-physical systems"]
+  summary: >-
+    This extended abstract argues that remote attestation should move from checking one embedded device to checking the many heterogeneous components of a cyber-physical system, using a modern vehicle as the motivating case. It outlines how multiple device attestations could be combined efficiently and identifies open problems for automotive and broader CPS deployments.
+
+- id: 26
+  year: 2014
+  status: Published
+  venue: ACM Conference on Computer and Communications Security (CCS)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "Founding Digital Currency on Secure Computation"
+  authors: "Karim Eldefrawy and Joshua Lampkins"
+  tags: ["digital currency", "secure computation", "distributed ledger"]
+  summary: >-
+    The paper designs a privacy-preserving, proactively secure distributed ledger for a digital currency that sits between a fully centralized bank and a fully decentralized system such as Bitcoin. Secret sharing and secure computation protect account and transaction data over time while still allowing a qualified group of servers to enforce accountability.
+
+- id: 25
+  year: 2014
+  status: Published
+  venue: ACM Symposium on Principles of Distributed Computing (PODC)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "How to Withstand Mobile Virus Attacks, Revisited"
+  authors: "Joshua Baron, Karim Eldefrawy, Joshua Lampkins, and Rafail Ostrovsky"
+  tags: ["proactive MPC", "mobile adversaries", "packed secret sharing"]
+  summary: >-
+    This work revisits proactive MPC, where different machines may be compromised over time, and identifies why standard precomputation and sharing techniques become too costly under mobile faults. It introduces packed proactive secret sharing and UC-secure MPC protocols with near-linear per-step communication while tolerating almost one-third perfect-security or one-half statistical-security moving corruptions.
+
+- id: 24
+  year: 2014
+  status: Published
+  venue: Ninth Workshop on Secure Network Protocols (NPSec), co-located with IEEE ICNP
+  topic: privacy-identity
+  labels: [Theory, Applied]
+  title: "Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet via Privacy-Preserving AppCoins"
+  authors: "Karim Eldefrawy and Joshua Lampkins"
+  tags: ["micropayments", "incentives", "privacy"]
+  summary: >-
+    The paper proposes privacy-preserving digital AppCoins as low-overhead micropayments that make abusive online behavior more expensive and reward cooperative behavior. It gives non-malleable, double-spending-resistant protocols and shows how email and onion routing could use them with practical commodity-hardware costs.
+
+- id: 23
+  year: 2013
+  status: Published
+  venue: IEEE International Conference on Technologies for Homeland Security (HST)
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "An Architecture for a Resilient Cloud Computing Infrastructure"
+  authors: "Joshua Baron, Karim Eldefrawy, Aleksey Nogin, and Rafail Ostrovsky"
+  tags: ["cloud resilience", "self-healing systems", "secure computation"]
+  summary: >-
+    The paper proposes a self-healing control operations plane that separates cloud task supervision from user computations and uses cryptographic protocols plus hardware-assisted reinitialization to recover corrupted nodes. The design aims to keep the cloud operating despite a continuing stream of compromises, provided the corruption rate stays below a configurable threshold within each recovery window.
+
+- id: 22
+  year: 2013
+  status: Published
+  venue: IEEE Global Communications Conference (GLOBECOM)
+  topic: algorithms-foundations
+  labels: [Theory, Applied]
+  title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
+  authors: "Martin Strohmeier, Ivan Martinovic, Utz Roedig, Karim Eldefrawy, and Jens Schmitt"
+  tags: ["network coding", "key sharing", "wireless networks"]
+  summary: >-
+    The paper exposes a practical tradeoff in wireless network coding: larger link-key groups enable more packet overhearing and throughput, but make each key compromise more damaging. It formulates key assignment as an optimization problem and finds that adding one member to a key-sharing group can improve coding gain by 1.3 to 13.7 percent across tested topologies.
+
+- id: 21
+  year: 2013
+  status: Published · journal article
+  venue: Journal of Computer Security, Volume 21, Number 5
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "5PM: Secure Pattern Matching"
+  authors: "Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, and Eric Tressler"
+  tags: ["secure pattern matching", "privacy-preserving search"]
+  summary: >-
+    5PM lets a client privately test a pattern against a server's private text while supporting wildcards, substring matching, nonbinary alphabets, and richer distance measures even when one party is malicious. Its carefully staged protocol uses eight rounds and can hide the pattern length without increasing asymptotic computation or communication.
+
+- id: 20
+  year: 2013
+  status: Published · magazine article
+  venue: IEEE Computer, Volume 46, Number 12
+  topic: secure-encrypted-computation
+  labels: [Applied]
+  title: "Blindfolded Data Search via Secure Pattern Matching"
+  authors: "Karim Eldefrawy and Sky Faber"
+  tags: ["secure search", "pattern matching", "privacy"]
+  summary: >-
+    This article explains how secure pattern matching can support blindfolded searches in which a requester hides its query while a data holder reveals only matching records. It surveys practical constructions and illustrates privacy-preserving uses in law-enforcement and health-data sharing while retaining both input privacy and computational correctness.
+
+- id: 19
+  year: 2012
+  status: Published · conference version
+  venue: 8th Conference on Security and Cryptography for Networks (SCN)
+  topic: secure-encrypted-computation
+  labels: [Theory]
+  title: "5PM: Secure Pattern Matching"
+  authors: "Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, and Eric Tressler"
+  tags: ["secure pattern matching", "homomorphic encryption"]
+  summary: >-
+    5PM lets a client search a server's text for exact, wildcard, approximate, and substring matches without revealing the query or exposing unrelated text, even against malicious participants. A linear-algebra formulation with additive homomorphic encryption gives sublinear-in-circuit communication, supports arbitrary alphabets and hidden pattern length, and completes in eight rounds in the malicious model.
+
+- id: 18
+  year: 2012
+  status: Published
+  venue: IEEE International Conference on Technologies for Homeland Security (HST)
+  topic: privacy-identity
+  labels: [Theory]
+  title: "Secure and Privacy-Preserving Querying of Content in MANETs"
+  authors: "Karim Eldefrawy and Gavin Holland"
+  tags: ["private search", "MANETs", "access control"]
+  summary: >-
+    The paper protects content discovery in peer-to-peer MANET dissemination, where a compromised node could otherwise learn queries, access patterns, and content locations. It builds private PUSH and PULL protocols from secure pattern matching, homomorphic encryption, secret sharing, and query-policy enforcement so nodes learn only authorized search results.
+
+- id: 17
+  year: 2012
+  status: Published
+  venue: Network and Distributed System Security Symposium (NDSS)
+  topic: secure-systems-networks
+  labels: [Theory, Applied]
+  title: "SMART: Secure and Minimal Architecture for (Establishing a Dynamic) Root of Trust"
+  authors: "Karim Eldefrawy, Aurélien Francillon, Daniele Perito, and Gene Tsudik"
+  tags: ["root of trust", "remote attestation", "microcontrollers"]
+  summary: >-
+    SMART is a minimal hardware-software architecture that lets a remote party establish a dynamic root of trust and run isolated code on low-end microcontrollers. AVR and MSP430 implementations show that only small changes to memory-access logic are needed, avoiding the cost of a separate security coprocessor while providing concrete security guarantees.
+
+- id: 16
+  year: 2012
+  status: Published · journal article
+  venue: International Journal of Network Security, Volume 14, Number 6
+  topic: ai-machine-learning
+  labels: [Applied]
+  ai_ml_labels: [AI for security]
+  title: "Harvesting SSL Certificate Data to Identify Web-Fraud"
+  authors: "Mishari Al Mishari, Emiliano De Cristofaro, Karim Eldefrawy, and Gene Tsudik"
+  tags: ["web fraud", "TLS certificates", "measurement"]
+  summary: >-
+    The paper studies how SSL certificate fields differ between popular legitimate domains and HTTPS-enabled phishing or typosquatting sites. It builds and validates a certificate-only classifier that detects fraudulent domains with high accuracy without relying on user data, making it complementary to other anti-fraud tools.
+
+- id: 15
+  year: 2011
+  status: Published · journal article
+  venue: IEEE Journal on Selected Areas in Communications, Volume 29, Number 10
+  topic: privacy-identity
+  labels: [Theory, Applied]
+  title: "Privacy-Preserving Location-Based On-Demand Routing in MANETs"
+  authors: "Karim Eldefrawy and Gene Tsudik"
+  tags: ["location privacy", "MANET routing"]
+  summary: >-
+    PRISM replaces identity-centric route discovery with on-demand routing addressed to current locations, protecting participants in hostile or compromised MANETs. Its analysis and evaluation find that the protocol resists insider and outsider attacks while offering better privacy and efficiency than alternative techniques.
+
+- id: 14
+  year: 2011
+  status: Published · journal article
+  venue: IEEE Transactions on Mobile Computing, Volume 10, Number 9
+  topic: privacy-identity
+  labels: [Theory, Applied]
+  title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
+  authors: "Karim Eldefrawy and Gene Tsudik"
+  tags: ["anonymous routing", "location privacy", "MANETs"]
+  summary: >-
+    This journal version of ALARM gives a comprehensive security, privacy, and performance analysis of location-based link-state routing for suspicious MANETs. Nodes use signed location announcements and group signatures to authenticate topology information while remaining anonymous and difficult to track, even against specified insider and outsider attacks.
+
+- id: 13
+  year: 2011
+  status: Published · short paper
+  venue: 4th International Conference on Trust and Trustworthy Computing (TRUST)
+  topic: privacy-identity
+  labels: [Theory]
+  title: "Group Distance Bounding Protocols (Short Paper)"
+  authors: "Srdjan Čapkun, Karim Eldefrawy, and Gene Tsudik"
+  tags: ["distance bounding", "proximity", "authentication"]
+  summary: >-
+    This work extends distance bounding from one prover and one verifier to groups of devices, motivated by pairing, access control, and secure localization. It introduces passive distance bounding and multi-party protocols that reduce cost and improve security compared with simply running every pairwise distance-bounding exchange.
+
+- id: 12
+  year: 2010
+  status: Published
+  venue: ACM Conference on Wireless Network Security (WiSec)
+  topic: privacy-identity
+  labels: [Applied]
+  title: "Attacks on Physical-Layer Identification"
+  authors: "Boris Danev, Heinrich Luecken, Srdjan Čapkun, and Karim Eldefrawy"
+  tags: ["device fingerprinting", "physical-layer security", "impersonation"]
+  summary: >-
+    The authors demonstrate impersonation attacks against radio-frequency fingerprinting by replaying either selected signal features or entire captured waveforms. Experiments show modulation-based fingerprints can be forged very reliably, while transient-based fingerprints are harder to reproduce because recording depends on the channel and antenna.
+
+- id: 11
+  year: 2010
+  status: Published · workshop paper
+  venue: IEEE INFOCOM Workshops
+  topic: algorithms-foundations
+  labels: [Theory]
+  title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
+  authors: "Claude Castelluccia, Karim Eldefrawy, and Gene Tsudik"
+  tags: ["network coding", "link-layer encryption", "wireless capacity"]
+  summary: >-
+    This paper analyzes how link-layer encryption, used to hide traffic patterns even when end-to-end encryption is present, interacts with wireless network coding. Its model shows that link-layer encryption can sharply reduce achievable multicast capacity and exposes a security-throughput tradeoff for coded wireless networks.
+
+- id: 10
+  year: 2009
+  status: Published
+  venue: IEEE Computer Software and Applications Conference (COMPSAC)
+  topic: privacy-identity
+  labels: [Theory]
+  title: "Leveraging Social Contacts for Message Confidentiality in Delay Tolerant Networks"
+  authors: "Karim Eldefrawy, John Solis, and Gene Tsudik"
+  tags: ["delay-tolerant networks", "social trust", "confidential messaging"]
+  summary: >-
+    The paper addresses key establishment in delay-tolerant networks, where intermittent contact makes credential lookup and multi-round handshakes impractical. Its schemes derive secure messaging relationships from social affiliations or shared contacts so users can protect messages despite long delays and sparse connectivity.
+
+- id: 9
+  year: 2008
+  status: Published
+  venue: IEEE International Conference on Network Protocols (ICNP)
+  topic: privacy-identity
+  labels: [Theory, Applied]
+  title: "PRISM: Privacy-Friendly Routing in Suspicious MANETs (and VANETs)"
+  authors: "Karim Eldefrawy and Gene Tsudik"
+  tags: ["anonymous routing", "location privacy", "MANETs"]
+  summary: >-
+    PRISM is an on-demand, location-based routing protocol for suspicious MANETs in which nodes can communicate without exposing long-term identities or movement histories. Its design is analyzed against insider and outsider adversaries and is reported to provide stronger privacy with lower overhead than prior approaches.
+
+- id: 8
+  year: 2008
+  status: Published · workshop paper
+  venue: Information Theory and Applications Workshop (ITA)
+  topic: algorithms-foundations
+  labels: [Theory, Applied]
+  title: "Filtering Sources of Unwanted Traffic Based on Blacklists"
+  authors: "Fabio Soldo, Karim Eldefrawy, Athina Markopoulou, Bala Krishnamurthy, and Kobus van der Merwe"
+  tags: ["traffic filtering", "blacklists", "optimization"]
+  summary: >-
+    The paper turns a blacklist of malicious source addresses into a limited set of router filters while balancing attack blocking against collateral damage to legitimate hosts in aggregated prefixes. Its optimal, efficient algorithms cover static and changing blacklists and perform especially well when malicious addresses are clustered.
+
+- id: 7
+  year: 2007
+  status: Published
+  venue: IEEE International Conference on Network Protocols (ICNP)
+  topic: privacy-identity
+  labels: [Applied]
+  title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
+  authors: "Karim Eldefrawy and Gene Tsudik"
+  tags: ["anonymous routing", "location privacy", "group signatures"]
+  summary: >-
+    ALARM uses current locations rather than persistent node identities to build an authenticated map and route through a suspicious mobile ad hoc network. Group signatures and one-time pseudonyms provide origin authentication and location integrity while preserving node anonymity and resistance to tracking.
+
+- id: 6
+  year: 2007
+  status: Published · workshop paper
+  venue: Information Theory and Applications Workshop (ITA)
+  topic: algorithms-foundations
+  labels: [Theory, Applied]
+  title: "Optimal Filtering for DDoS Attacks"
+  authors: "Karim Eldefrawy, Athina Markopoulou, and Katerina Argyraki"
+  tags: ["DDoS", "filter allocation", "dynamic programming"]
+  summary: >-
+    The paper formulates how a victim gateway with too few packet filters should choose between blocking individual attackers and coarser source domains. It gives optimal dynamic-programming solutions for one- and two-tier filtering and evaluates heuristics that preserve more legitimate traffic under realistic DDoS scenarios.
+
+- id: 5
+  year: 2007
+  status: Published · workshop paper
+  venue: USENIX Steps to Reducing Unwanted Traffic on the Internet (SRUTI)
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "BotTorrent: Misusing BitTorrent to Launch DDoS Attacks"
+  authors: "Karim Eldefrawy, Minas Gjoka, and Athina Markopoulou"
+  tags: ["BitTorrent", "DDoS", "protocol abuse"]
+  summary: >-
+    BotTorrent shows how an attacker can manipulate BitTorrent metadata and trackers so large numbers of legitimate clients send traffic to an arbitrary victim. Real-world experiments characterize the resulting DDoS traffic and motivate protocol checks that limit this abuse, while noting the broader danger of redirecting legitimate peer-to-peer traffic.
+
+- id: 4
+  year: 2007
+  status: Published · workshop paper
+  venue: ACM MobiOpp
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "Incentive-Based Cooperative and Secure Inter-Personal Networking"
+  authors: "Karim Eldefrawy, Magda El Zarki, and Gene Tsudik"
+  tags: ["cooperative networking", "micropayments", "anonymity"]
+  summary: >-
+    This paper outlines a framework in which a stranded user's personal-area network buys or barters connectivity through a nearby user's devices under short-term service contracts. It combines policy-based gateway selection with mutual authentication, escrowed anonymity, and micropayments to make resource sharing secure and worthwhile.
+
+- id: 3
+  year: 2006
+  status: Published · workshop paper
+  venue: Second IEEE Workshop on Secure Network Protocols (NPSec)
+  topic: privacy-identity
+  labels: [Applied]
+  title: "PEUC-WiN: Privacy Enhancement by User Cooperation in Wireless Networks"
+  authors: "Karim Eldefrawy and Claudio Soriente"
+  tags: ["location privacy", "wireless networks", "user cooperation"]
+  summary: >-
+    PEUC-WiN combats location tracking caused by persistent wireless-interface identifiers by having users under the same access point cooperate. The design seeks to improve location privacy without the long silent periods, dropped sessions, and throughput disruption imposed by earlier identifier-changing approaches.
+
+- id: 2
+  year: 2006
+  status: Published
+  venue: International Conference on Wireless Communications and Mobile Computing (IWCMC)
+  topic: secure-systems-networks
+  labels: [Applied]
+  title: "Proposal for a Cross-Layer Coordination Framework for Next Generation Wireless Systems"
+  authors: "Karim Eldefrawy, Magda El Zarki, and Mohamed M. Khairy"
+  tags: ["cross-layer design", "wireless systems", "protocol architecture"]
+  summary: >-
+    The paper proposes a local coordination framework that lets non-adjacent layers of a wireless protocol stack exchange events and state through a cross-layer server while keeping each layer modular. It organizes adaptation logic, signaling, and shared parameters so new cross-layer schemes can be added systematically without redesigning the stack.
+
+- id: 1
+  year: 2006
+  status: Published
+  venue: International Conference on Computer Engineering and Systems (ICCES)
+  topic: algorithms-foundations
+  labels: [Theory, Applied]
+  title: "Sub-Carrier Allocation Using Channel Prediction for OFDMA Systems Based on IEEE 802.16 Standard"
+  authors: "Karim Eldefrawy, Mohamed M. Khairy, and Amin Nassar"
+  tags: ["OFDMA", "channel prediction", "resource allocation"]
+  summary: >-
+    This paper allocates OFDMA subcarriers using predicted channel states several frames ahead instead of only the next frame. Simulations show that the method meets users' rate requirements while distributing subcarriers more fairly than single-frame allocation.

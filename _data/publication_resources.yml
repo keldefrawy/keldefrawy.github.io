@@ -1,0 +1,605 @@
+---
+- id: 78
+  official: []
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2024/676
+  author: []
+- id: 77
+  official: []
+  archive: []
+  author: []
+- id: 76
+  official: []
+  archive: []
+  author: []
+- id: 75
+  official: []
+  archive: []
+  author: []
+- id: 74
+  official: []
+  archive: []
+  author: []
+- id: 73
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-032-10759-6_5
+  archive: []
+  author: []
+- id: 72
+  official: []
+  archive: []
+  author: []
+- id: 71
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-76934-4_22
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2024/1529
+  author: []
+- id: 70
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-76934-4_14
+  archive:
+  - label: arXiv
+    url: https://arxiv.org/abs/2305.09905
+  author: []
+- id: 69
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-54773-7_6
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2022/1531
+  author: []
+- id: 68
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-981-99-8742-9_3
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2023/1418
+  author: []
+- id: 67
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3576915.3616583
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2023/1322
+  author: []
+- id: 66
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-51476-0_17
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://www.esat.kuleuven.be/cosic/publications/article-3637.pdf
+- id: 65
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-40003-2_8
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2023/988
+  author:
+  - label: IBM author page
+    url: https://research.ibm.com/publications/on-the-hardness-of-scheme-switching-between-simd-fhe-schemes
+- id: 64
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3470496.3527393
+  archive:
+  - label: NSF Public Access
+    url: https://par.nsf.gov/servlets/purl/10350313
+  author:
+  - label: MIT author copy
+    url: https://people.csail.mit.edu/sanchez/papers/2022.craterlake.isca.pdf
+- id: 63
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-09234-3_34
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2021/796
+  author:
+  - label: CISPA author page
+    url: https://cispa.de/en/research/publications/66354-how-byzantine-is-a-send-corruption-
+- id: 62
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-07689-3_32
+  archive: []
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf
+- id: 61
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-031-09234-3_28
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2021/1564
+  author: []
+- id: 60
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/QCE52317.2021.00033
+  archive:
+  - label: arXiv
+    url: https://arxiv.org/abs/2108.08805
+  author: []
+- id: 59
+  official:
+  - label: Related conference version
+    url: https://doi.org/10.1145/3466752.3480070
+  archive:
+  - label: arXiv
+    url: https://arxiv.org/abs/2109.05371
+  author: []
+- id: 58
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3460120.3484771
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2021/1149
+  author: []
+- id: 57
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-030-91081-5_23
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2022/096
+  author: []
+- id: 56
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-030-92641-0_7
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2021/499
+  author: []
+- id: 55
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-030-57990-6_6
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2020/747
+  author: []
+- id: 54
+  official:
+  - label: USENIX paper page
+    url: https://www.usenix.org/conference/usenixsecurity20/presentation/nunes
+  archive:
+  - label: USENIX prepublication
+    url: https://www.usenix.org/system/files/sec20fall_nunes_prepub.pdf
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf
+- id: 53
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-030-57878-7_18
+  archive:
+  - label: arXiv extended version
+    url: https://arxiv.org/abs/2004.09713
+  author:
+  - label: UCI author copy
+    url: https://sprout.ics.uci.edu/pubs/augmented2020.pdf
+- id: 52
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-030-57808-4_1
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2019/1383
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf
+- id: 51
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3319535.3354205
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2019/922
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2019/verif-mpc_ccs2019.pdf
+- id: 50
+  official:
+  - label: USENIX paper page
+    url: https://www.usenix.org/conference/usenixsecurity19/presentation/de-oliveira-nunes
+  archive: []
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2019/vrased_usenixsec2019.pdf
+- id: 49
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-030-21568-2_13
+  archive: []
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2019/btc_acns2019.pdf
+- id: 48
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1016/j.future.2019.03.051
+  archive: []
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf
+- id: 47
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3317549.3323403
+  archive:
+  - label: NSF Public Access
+    url: https://par.nsf.gov/servlets/purl/10121392
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2019/ra-opinion_wisec2019.pdf
+- id: 46
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/ICCAD45719.2019.8942118
+  archive: []
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2019/pure_iccad2019.pdf
+- id: 45
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-030-04834-1_23
+  archive: []
+  author: []
+- id: 44
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-319-98113-0_11
+  archive: []
+  author: []
+- id: 43
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-319-94147-9_13
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://sprout.ics.uci.edu/people/ivan/pubs/2018_snuse.pdf
+- id: 42
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3195970.3199853
+  archive:
+  - label: NSF Public Access
+    url: https://par.nsf.gov/servlets/purl/10063867
+  author:
+  - label: UCI author copy
+    url: https://sprout.ics.uci.edu/projects/attestation/papers/reconcile-ra-safety.pdf
+- id: 41
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3196494.3196526
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://sprout.ics.uci.edu/projects/attestation/papers/consistency.pdf
+- id: 40
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/IC2E.2018.00072
+  archive: []
+  author: []
+- id: 39
+  official:
+  - label: Publisher bibliography
+    url: https://www.members.issa.org/page/journal-authors-2018
+  archive: []
+  author: []
+- id: 38
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/DSN-W.2017.31
+  archive: []
+  author:
+  - label: UCI author copy
+    url: https://ics.uci.edu/~gts/paps/hydra-dsn17.pdf
+- id: 37
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3098243.3098261
+  archive:
+  - label: arXiv
+    url: https://arxiv.org/abs/1703.02688
+  author:
+  - label: UCI author copy
+    url: https://sprout.ics.uci.edu/projects/attestation/papers/hydra.pdf
+- id: 36
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3087801.3087864
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/204.pdf
+- id: 35
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-319-60080-2_1
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2017/755
+  author:
+  - label: UMD author copy
+    url: https://www.cs.umd.edu/~jkatz/papers/reusable-FE.pdf
+- id: 34
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/ICDCS.2017.293
+  archive: []
+  author: []
+- id: 33
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/3052973.3053010
+  archive:
+  - label: NSF Public Access
+    url: https://par.nsf.gov/servlets/purl/10063091
+  author:
+  - label: UCI author copy
+    url: https://sprout.ics.uci.edu/projects/attestation/papers/lisa.pdf
+- id: 32
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-319-44618-9_28
+  archive: []
+  author:
+  - label: UCLA author copy
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/189.pdf
+- id: 31
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/2933057.2933059
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/193.pdf
+- id: 30
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/COMPSAC.2016.68
+  archive: []
+  author: []
+- id: 29
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/COMPSAC.2016.76
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://sprout.ics.uci.edu/pubs/resilient_sdn_controller.pdf
+- id: 28
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-319-28166-7_2
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2015/304
+  author:
+  - label: UCLA author copy
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/188.pdf
+- id: 27
+  official: []
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf
+- id: 26
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/2660267.2660293
+  archive: []
+  author: []
+- id: 25
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/2611462.2611474
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/167.pdf
+- id: 24
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/ICNP.2014.100
+  archive: []
+  author: []
+- id: 23
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/THS.2013.6699036
+  archive: []
+  author: []
+- id: 22
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/GLOCOM.2013.6831179
+  archive: []
+  author:
+  - label: Oxford author copy
+    url: https://www.cs.ox.ac.uk/files/7240/globecom_camera.pdf
+- id: 21
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.3233/JCS-130481
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2012/698
+  author:
+  - label: UCLA author copy
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/129.pdf
+- id: 20
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/MC.2013.73
+  archive: []
+  author: []
+- id: 19
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-642-32928-9_13
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2012/698
+  author: []
+- id: 18
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/THS.2012.6459917
+  archive: []
+  author: []
+- id: 17
+  official:
+  - label: NDSS paper page
+    url: https://www.ndss-symposium.org/ndss2012/ndss-2012-programme/smart-secure-and-minimal-architecture-establishing-dynamic-root-trust/
+  archive: []
+  author:
+  - label: UCI author copy
+    url: https://ics.uci.edu/~gts/paps/smart.pdf
+- id: 16
+  official:
+  - label: Journal PDF
+    url: http://ijns.jalaxy.com.tw/contents/ijns-v14-n6/ijns-2012-v14-n6-p324-338.pdf
+  archive:
+  - label: arXiv
+    url: https://arxiv.org/abs/0909.3688
+  author:
+  - label: Author-hosted PDF
+    url: https://emilianodc.com/PAPERS/IJSN12.pdf
+- id: 15
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/JSAC.2011.111203
+  archive: []
+  author: []
+- id: 14
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/TMC.2010.256
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf
+  author: []
+- id: 13
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1007/978-3-642-21599-5_23
+  archive: []
+  author: []
+- id: 12
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/1741866.1741882
+  archive: []
+  author: []
+- id: 11
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/INFCOMW.2010.5466615
+  archive: []
+  author:
+  - label: Author-hosted paper
+    url: https://archimedes-12-vagrant.ics.uci.edu/pubs/karim-wireless-net-code-ll-enc.pdf
+- id: 10
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/COMPSAC.2009.43
+  archive: []
+  author:
+  - label: Author-hosted PDF
+    url: https://www.johnsolis.com/publications/dtn_compsac09.pdf
+- id: 9
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/ICNP.2008.4697044
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=3fb81a9dd24b091c455549a3b04b8344f7e55290&repid=rep1&type=pdf
+  author:
+  - label: UCI author copy
+    url: https://sprout.ics.uci.edu/pubs/04697044.pdf
+- id: 8
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/ITA.2008.4601049
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=b1e1e721800aa7c604e8680b7b63e029b470c6c2&repid=rep1&type=pdf
+  author:
+  - label: Author-hosted paper
+    url: https://rfob.org/papers/ita08.pdf
+- id: 7
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/ICNP.2007.4375861
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=fc53c0247201ee1ebb23f5b7570d4bf4eb205f4b&repid=rep1&type=pdf
+  author:
+  - label: UCI author copy
+    url: https://ics.uci.edu/~gts/paps/alarm07.pdf
+- id: 6
+  official: []
+  archive:
+  - label: arXiv
+    url: https://arxiv.org/abs/cs/0612066
+  author: []
+- id: 5
+  official:
+  - label: USENIX paper page
+    url: https://www.usenix.org/conference/sruti-07/bottorrent-misusing-bittorrent-launch-ddos-attacks
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=f6e27485882d0986e8e939dd7f1a3dcc897d33ac&repid=rep1&type=pdf
+  author: []
+- id: 4
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/1247694.1247706
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=6d922a7deb8b99f108b5f1a4ccda0f94e7172db2&repid=rep1&type=pdf
+  author:
+  - label: UCI author copy
+    url: https://ics.uci.edu/~gts/paps/ezt07.pdf
+- id: 3
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/NPSEC.2006.320345
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=0f2ebd193c1a279f035d877c6c43c4cc43829b57&repid=rep1&type=pdf
+  author: []
+- id: 2
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1145/1143549.1143580
+  archive:
+  - label: CiteSeerX archive
+    url: https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf
+  author: []
+- id: 1
+  official:
+  - label: Publisher / DOI
+    url: https://doi.org/10.1109/ICCES.2006.320475
+  archive: []
+  author: []

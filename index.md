@@ -5,7 +5,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 * Awards and recognitions listed [here](https://keldefrawy.github.io/awards.html)
 
 # Publications, Patents, and Writings
-* Publications (75) listed [here](https://keldefrawy.github.io/pubs.html), and [Google Scholar](http://bit.ly/2KIZaWF) & [Academia.edu](https://karimeldefrawy.academia.edu/)
+* Publications (78): [browse by Research Area with plain-language summaries](https://keldefrawy.github.io/publications/) or use the [original chronological list](https://keldefrawy.github.io/pubs.html); also see [Google Scholar](http://bit.ly/2KIZaWF) & [Academia.edu](https://karimeldefrawy.academia.edu/)
 * Patents (31) listed [here](https://keldefrawy.github.io/patents.html)
 * Short informal articles listed [here](https://keldefrawy.github.io/thoughts.html)
 
@@ -40,9 +40,6 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 * **Research:** {firstname_dot_lastname} + {@} + {sri_dot_com}
 * **Personal:** {lastname} + {@} + {email_of_most_famous_search_engine}
 * **Personal Encrypted (if you use it too):** {lastname} + {@} + {positive_particle_in_atomic_nuclei_email_service}
-
-
-
 
 
 

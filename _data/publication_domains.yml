@@ -1,0 +1,37 @@
+- slug: methods-foundations
+  name: Methods & Foundations
+  description: Core computational and mathematical methods used to construct, analyze, and reason about secure and intelligent systems.
+  areas:
+    - slug: secure-encrypted-computation
+      name: Secure Computation, Secret Sharing & Encrypted Computation
+      short_name: Secure & encrypted computation
+      description: Multiparty computation, proactive secret sharing, computation over encrypted data, timed cryptography, and closely related protocol foundations.
+      subtopics: [Secure computation, Secret sharing, Encrypted computation, Timed cryptography, Protocol foundations]
+
+    - slug: ai-machine-learning
+      name: AI & Machine Learning
+      short_name: AI & machine learning
+      description: Foundations of AI and machine learning, AI for security, security for AI, and privacy of machine learning.
+      subtopics: [Foundations, AI for security, Security for AI, Privacy of ML]
+
+    - slug: algorithms-foundations
+      name: Algorithms & Foundations
+      short_name: Algorithms & foundations
+      description: Algorithms, optimization, complexity, distributed-computing foundations, information theory, and other theoretical computer science.
+      subtopics: [Algorithms, Optimization, Complexity, Distributed computing, Information theory]
+
+- slug: security-domains
+  name: Security Domains
+  description: Security and privacy objectives studied in identity, communication, devices, networks, cloud platforms, and distributed infrastructure.
+  areas:
+    - slug: privacy-identity
+      name: Privacy & Identity
+      short_name: Privacy & identity
+      description: Privacy-preserving search and communication, anonymity, secure messaging, biometrics, authentication, access control, and proximity protocols.
+      subtopics: [Anonymity, Secure messaging, Private search, Biometrics, Authentication, Access control]
+
+    - slug: secure-systems-networks
+      name: Secure Systems & Networks
+      short_name: Secure systems & networks
+      description: Trusted and embedded systems, remote attestation, cloud and distributed security, resilient networks, blockchain, wireless security, and DDoS defense.
+      subtopics: [Remote attestation, Trusted systems, Distributed systems, Cloud security, Network security, Embedded & IoT]
