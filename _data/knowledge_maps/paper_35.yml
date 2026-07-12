@@ -12,259 +12,464 @@ contribution_types: [primitive, scheme]
 
 title: "Efficient, Reusable Fuzzy Extractors from LWE"
 year: 2017
-status: "Published"
+status: Published
 venue: "International Symposium on Cyber Security Cryptography and Machine Learning (CSCML)"
-topic: "algorithms-foundations"
-labels: ["Theory"]
+topic: algorithms-foundations
+labels: [Theory]
 authors:
-  - "Daniel Apon"
-  - "Chongwon Cho"
-  - "Karim Eldefrawy"
-  - "Jonathan Katz"
+  - Daniel Apon
+  - Chongwon Cho
+  - Karim Eldefrawy
+  - Jonathan Katz
 keywords:
-  - "fuzzy extractors"
-  - "biometrics"
-  - "LWE"
-editorial_summary: "The paper studies fuzzy extractors that repeatedly derive stable cryptographic keys from noisy biometric readings without letting multiple public helper strings leak the biometric. It breaks the claimed reusability of an earlier LWE construction, repairs it for weak reuse, and gives both generic and direct strongly reusable constructions, including one without random oracles."
+  - fuzzy extractors
+  - reusability
+  - biometrics
+  - learning with errors
+  - random oracle
+  - helper data
 
-research_question: "Can fuzzy extractors safely reuse noisy biometric sources across repeated helper-data generations under lattice-based assumptions?"
-central_answer: "The paper reports an attack on an earlier LWE reusability claim, a repair for weak reuse, and generic and direct strongly reusable constructions, including one outside the random-oracle model."
+research_question: >-
+  How can a fuzzy extractor safely derive independent-looking keys from repeated, nearby biometric readings when an adversary sees multiple helper strings and may also learn keys from other enrollments?
+central_answer: >-
+  The paper defines weak and strong reusability, breaks the independently parameterized LWE-based FMR fuzzy extractor after only two related enrollments, repairs it to weak reusability using a common public matrix, gives a random-oracle transform from weak to strong reusability, and constructs a direct strongly reusable LWE-based fuzzy extractor without random oracles.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text theorem extraction, proof-obligation mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 13-page author-hosted manuscript, including visual inspection of its title/abstract and construction pages. Definitions, attacks, schemes, theorem statements, proof sketches, assumptions, and model boundaries are represented separately; no claim of independent proof verification is made.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Formal interpretations, theorem dependencies, and ratings should be checked by an author before approval.
 
 sources:
-  - id: source-paper-35-site-record
-    type: curated_site_record
-    title: "Publication #35 metadata and editorial summary"
-    url: /publications/#paper-35
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-35-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-319-60080-2_1"
-    provenance_category: official
-  - id: source-paper-35-resource-2
-    type: public_archive_record
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2017/755"
-    provenance_category: archive
-  - id: source-paper-35-resource-3
+  - id: source-paper-35-author-pdf
     type: author_hosted_copy
-    title: "UMD author copy"
-    url: "https://www.cs.umd.edu/~jkatz/papers/reusable-FE.pdf"
+    title: "Efficient, Reusable Fuzzy Extractors from LWE"
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf
     provenance_category: author
+    retrieved_from: https://www.cs.umd.edu/~jkatz/papers/reusable-FE.pdf
+    media_type: application/pdf
+    sha256: 059717e10e85633b949c83e4a3e5021e901b4d86aca21521c92c364b980a7167
+    page_count: 13
+  - id: source-paper-35-eprint
+    type: public_archive_record
+    title: IACR ePrint 2017/755
+    url: https://eprint.iacr.org/2017/755
+    provenance_category: archive
+  - id: source-paper-35-official
+    type: official_publication_record
+    title: Springer CSCML publication record
+    url: https://doi.org/10.1007/978-3-319-60080-2_1
+    provenance_category: official
+  - id: source-paper-35-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2620841627
+    url: https://openalex.org/W2620841627
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-35-editorial
-    source_id: source-paper-35-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-35
-  - id: anchor-paper-35-resource-1
-    source_id: source-paper-35-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1007/978-3-319-60080-2_1"
-  - id: anchor-paper-35-resource-2
-    source_id: source-paper-35-resource-2
-    label: "Archive resource: IACR ePrint"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://eprint.iacr.org/2017/755"
-  - id: anchor-paper-35-resource-3
-    source_id: source-paper-35-resource-3
-    label: "Author-hosted resource: UMD author copy"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://www.cs.umd.edu/~jkatz/papers/reusable-FE.pdf"
+  - id: anchor-paper-35-problem-contributions
+    source_id: source-paper-35-author-pdf
+    label: Repeated-biometric problem and contribution sequence
+    locator: Abstract and Sections 1-1.1, PDF pages 1-3
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=1
+  - id: anchor-paper-35-fe-definition
+    source_id: source-paper-35-author-pdf
+    label: Fuzzy-extractor correctness and indistinguishability security
+    locator: Definition 1 and surrounding discussion, PDF pages 4-5
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=4
+  - id: anchor-paper-35-reuse-definitions
+    source_id: source-paper-35-author-pdf
+    label: Weak and strong reusability experiments
+    locator: Definitions 2-3, PDF pages 5-6
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=5
+  - id: anchor-paper-35-lwe
+    source_id: source-paper-35-author-pdf
+    label: Decisional LWE assumption and simultaneous hardcore bits
+    locator: Definition 4 and Lemma 1, PDF pages 6-7
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=6
+  - id: anchor-paper-35-fmr
+    source_id: source-paper-35-author-pdf
+    label: Fuller-Meng-Reyzin extractor and decoder
+    locator: Section 3.1, PDF pages 7-8
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=7
+  - id: anchor-paper-35-attack
+    source_id: source-paper-35-author-pdf
+    label: Two-enrollment recovery attack on independently sampled matrices
+    locator: Section 3.2, PDF pages 8-9
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=8
+  - id: anchor-paper-35-weak-repair
+    source_id: source-paper-35-author-pdf
+    label: Common-matrix repair, Theorem 1, and strong-reuse separation
+    locator: Section 3.3, PDF pages 9-10
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=9
+  - id: anchor-paper-35-ro-transform
+    source_id: source-paper-35-author-pdf
+    label: Generic nonce-and-hash transformation and Theorem 2
+    locator: Section 4, PDF pages 10-11
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=10
+  - id: anchor-paper-35-direct
+    source_id: source-paper-35-author-pdf
+    label: Direct LWE construction without random oracles
+    locator: Section 5, PDF pages 11-12
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf#page=11
+  - id: anchor-paper-35-publication
+    source_id: source-paper-35-official
+    label: Official CSCML publication identity
+    locator: CSCML 2017, LNCS chapter 1, DOI 10.1007/978-3-319-60080-2_1
+    url: https://doi.org/10.1007/978-3-319-60080-2_1
+  - id: anchor-paper-35-citations
+    source_id: source-paper-35-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 42 citing works when accessed 2026-07-11
+    url: https://openalex.org/W2620841627
 
 nodes:
   - id: paper-35
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Efficient, Reusable Fuzzy Extractors from LWE"
-    summary: "The paper studies fuzzy extractors that repeatedly derive stable cryptographic keys from noisy biometric readings without letting multiple public helper strings leak the biometric. It breaks the claimed reusability of an earlier LWE construction, repairs it for weak reuse, and gives both generic and direct strongly reusable constructions, including one without random oracles."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    summary: >-
+      A foundations paper that identifies a concrete helper-data leakage failure, formalizes two levels of repeated-use security, and gives both repaired and new lattice-based fuzzy-extractor schemes.
+    source_anchor_ids: [anchor-paper-35-problem-contributions]
 
   - id: paper-35-question
     kind: question
     parent_id: paper-35
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can fuzzy extractors safely reuse noisy biometric sources across repeated helper-data generations under lattice-based assumptions?"
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      When multiple servers enroll noisy readings of the same biometric, can every target key remain indistinguishable from uniform despite the collection of correlated helper data and disclosure of other enrollment keys?
+    source_anchor_ids: [anchor-paper-35-problem-contributions, anchor-paper-35-reuse-definitions]
 
-  - id: paper-35-contribution
+  - id: paper-35-answer
     kind: contribution
     parent_id: paper-35
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports an attack on an earlier LWE reusability claim, a repair for weak reuse, and generic and direct strongly reusable constructions, including one outside the random-oracle model."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    epistemic_status: source_asserted
+    title: Attack, repair, transform, and direct scheme
+    summary: >-
+      Independent FMR public matrices enable complete recovery after two nearby enrollments; sharing one random matrix restores weak reusability, hashing nonce-bound extracted values gives strong reusability in the random-oracle model, and LWE encryption yields a direct standard-model construction.
+    source_anchor_ids: [anchor-paper-35-attack, anchor-paper-35-weak-repair, anchor-paper-35-ro-transform, anchor-paper-35-direct]
 
-  - id: paper-35-method
-    kind: method
+  - id: paper-35-model
+    kind: scope
     parent_id: paper-35
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented method combines cryptanalysis of a prior construction with repaired and new constructions based on learning with errors."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    epistemic_status: formally_defined
+    title: Fuzzy-extractor model
+    summary: >-
+      Gen maps a noisy source w to public helper data and an l-bit key; Rec reproduces that key from the helper data and any w-prime within distance t. Security asks whether the key is indistinguishable from uniform given helper data and sufficient source min-entropy.
+    source_anchor_ids: [anchor-paper-35-fe-definition]
+
+  - id: paper-35-model-weak
+    kind: definition
+    parent_id: paper-35-model
+    order: 1
+    epistemic_status: defined
+    title: Weak reusability
+    summary: >-
+      An adaptive adversary selects bounded-Hamming-weight shifts of one hidden source and receives every resulting helper string; the original enrollment key must remain indistinguishable from uniform.
+    source_anchor_ids: [anchor-paper-35-reuse-definitions]
+
+  - id: paper-35-model-strong
+    kind: definition
+    parent_id: paper-35-model
+    order: 2
+    epistemic_status: defined
+    title: Strong reusability
+    summary: >-
+      The same experiment additionally reveals the extracted key for every shifted enrollment. Strong security therefore protects one target key even after compromise or legitimate disclosure of the others.
+    source_anchor_ids: [anchor-paper-35-reuse-definitions]
+
+  - id: paper-35-model-boundary
+    kind: assumption
+    parent_id: paper-35-model
+    order: 3
+    epistemic_status: modeling_choice
+    title: Shift-correlated Hamming sources
+    summary: >-
+      The new definitions specialize to a Hamming metric and adversarially chosen shifts of weight at most t. They do not cover every possible joint distribution of repeated biometric readings allowed by stronger prior formulations.
+    source_anchor_ids: [anchor-paper-35-reuse-definitions]
+
+  - id: paper-35-analysis
+    kind: method
+    parent_id: paper-35
+    order: 4
+    epistemic_status: specified
+    title: Analysis of the FMR extractor
+    summary: >-
+      FMR publishes a random linear-code matrix A and As + w, extracts coordinates of s, and reconstructs s by decoding the difference between helper data and a nearby reading.
+    source_anchor_ids: [anchor-paper-35-fmr]
+
+  - id: paper-35-attack
+    kind: attack
+    parent_id: paper-35-analysis
+    order: 1
+    epistemic_status: demonstrated
+    title: Two-helper-string recovery attack
+    summary: >-
+      For nearby w1 and w2 under independent A1 and A2, subtracting helper strings yields a noisy linear system in s1 and s2. Decoding recovers both secrets and then both original biometrics; the paper calls this a complete break of weak reusability.
+    source_anchor_ids: [anchor-paper-35-attack]
+
+  - id: paper-35-attack-range
+    kind: limitation
+    parent_id: paper-35-attack
+    order: 1
+    epistemic_status: analyzed
+    title: Parameter range of the attack
+    summary: >-
+      The direct exposition uses m at least 6n, while the source argues the decoder also works with greater expected time for 3n through 6n and expects additional helper strings to strengthen attacks; this extension is argued rather than experimentally measured.
+    source_anchor_ids: [anchor-paper-35-attack]
+
+  - id: paper-35-schemes
+    kind: method
+    parent_id: paper-35
+    order: 5
+    epistemic_status: constructed
+    title: Reusable extractor constructions
+    summary: >-
+      The paper supplies three distinct positive results with different setup and idealization requirements; weak repair, random-oracle bootstrapping, and the direct LWE scheme should be evaluated separately.
+    source_anchor_ids: [anchor-paper-35-weak-repair, anchor-paper-35-ro-transform, anchor-paper-35-direct]
+
+  - id: paper-35-scheme-weak
+    kind: scheme
+    parent_id: paper-35-schemes
+    order: 1
+    epistemic_status: theorem_supported
+    title: Common-matrix weakly reusable FMR
+    summary: >-
+      Reusing one uniformly generated public A across enrollments makes helper differences expose only s1 minus s2. Theorem 1 reduces simulated shifted helpers to ordinary FMR security and concludes weak reusability with the same error bound.
+    source_anchor_ids: [anchor-paper-35-weak-repair]
+
+  - id: paper-35-scheme-separation
+    kind: claim
+    parent_id: paper-35-schemes
+    order: 2
+    epistemic_status: explicit_counterexample
+    title: Weak does not imply strong reusability
+    summary: >-
+      In the common-A FMR repair, helper differences reveal s1 minus s2; learning coordinates of one s through a disclosed extracted key reveals the corresponding coordinates, and hence the other key. This gives a natural separation between the definitions.
+    source_anchor_ids: [anchor-paper-35-weak-repair]
+
+  - id: paper-35-scheme-ro
+    kind: scheme
+    parent_id: paper-35-schemes
+    order: 3
+    epistemic_status: theorem_supported
+    title: Generic weak-to-strong transform
+    summary: >-
+      Append a fresh nonce to the helper data and replace extracted r with H(nonce, r). Theorem 2 bounds strong-reuse advantage by weak-reuse error, guessing, and nonce-collision terms when H is a random oracle.
+    source_anchor_ids: [anchor-paper-35-ro-transform]
+
+  - id: paper-35-scheme-direct
+    kind: scheme
+    parent_id: paper-35-schemes
+    order: 4
+    epistemic_status: construction_with_reduction_sketch
+    title: Direct standard-model LWE scheme
+    summary: >-
+      Encode a random s as As + w, use s to LWE-encrypt an independent random key r, publish the encoding and ciphertext, and recover s from a nearby reading before decrypting r. No random oracle is used.
+    source_anchor_ids: [anchor-paper-35-direct]
 
   - id: paper-35-claims
     kind: claim_group
     parent_id: paper-35
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    order: 6
+    epistemic_status: source_asserted
+    title: Formal claims
+    summary: >-
+      The claims range from an unconditional algebraic attack to reductions conditional on the base extractor, random-oracle idealization, or decisional LWE. Their premises are not interchangeable.
+    source_anchor_ids: [anchor-paper-35-attack, anchor-paper-35-weak-repair, anchor-paper-35-ro-transform, anchor-paper-35-direct]
 
-  - id: paper-35-claim-primary
+  - id: paper-35-claim-weak
     kind: claim
     parent_id: paper-35-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports that an earlier reusability claim fails and that the proposed weakly and strongly reusable constructions satisfy improved reuse goals."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    epistemic_status: theorem_1
+    title: Conditional weak reusability
+    summary: >-
+      If FMR is already an epsilon-secure fuzzy extractor for the stated source class and all executions share one uniformly random A, then it is epsilon-weakly reusable in the paper's shift model.
+    source_anchor_ids: [anchor-paper-35-weak-repair]
+
+  - id: paper-35-claim-ro
+    kind: claim
+    parent_id: paper-35-claims
+    order: 2
+    epistemic_status: theorem_2
+    title: Random-oracle strong reusability
+    summary: >-
+      For a bounded-time attacker, the nonce-and-hash transform is strongly reusable with a stated asymptotic advantage bound combining the weak extractor's epsilon, extracted-key length, and nonce length.
+    source_anchor_ids: [anchor-paper-35-ro-transform]
+
+  - id: paper-35-claim-direct
+    kind: claim
+    parent_id: paper-35-claims
+    order: 3
+    epistemic_status: reduction_claim
+    title: Standard-model strong reusability from LWE
+    summary: >-
+      For coordinate-independent source noise and matched encryption-error distribution, the direct construction's strong reusability reduces to decisional LWE with enough samples to cover the target, ciphertext, and adaptive reuse queries.
+    source_anchor_ids: [anchor-paper-35-lwe, anchor-paper-35-direct]
 
   - id: paper-35-evidence
     kind: evidence_group
     parent_id: paper-35
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    order: 7
+    epistemic_status: formal_analysis
+    title: Proof evidence
+    summary: >-
+      The source gives explicit experiments, algebraic attack derivations, theorem statements, construction algorithms, and reduction sketches. It contains no implementation, benchmark, biometric dataset, or concrete-parameter evaluation.
+    source_anchor_ids: [anchor-paper-35-reuse-definitions, anchor-paper-35-attack, anchor-paper-35-ro-transform, anchor-paper-35-direct]
 
-  - id: paper-35-evidence-reported
+  - id: paper-35-evidence-attack
     kind: evidence
     parent_id: paper-35-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies an attack and construction/proof results, but the attack conditions, entropy assumptions, LWE parameters, definitions, and reductions were not audited."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    epistemic_status: derivation_inspected
+    title: Attack derivation
+    summary: >-
+      Subtracting the two public values eliminates the nearby readings up to a sparse error, producing a decodable random-linear-code instance; recovering s1 and s2 makes each wi equal to its public vector minus Ai si.
+    source_anchor_ids: [anchor-paper-35-attack]
 
-  - id: paper-35-scope
+  - id: paper-35-evidence-reductions
+    kind: evidence
+    parent_id: paper-35-evidence
+    order: 2
+    epistemic_status: proof_sketches
+    title: Simulation and LWE reductions
+    summary: >-
+      The weak repair simulates shifted helpers from one challenge, the generic transform programs independent-looking hash outputs except on collision or guessed-key events, and the direct scheme replaces LWE samples with uniform vectors that perfectly hide the target key.
+    source_anchor_ids: [anchor-paper-35-weak-repair, anchor-paper-35-ro-transform, anchor-paper-35-direct]
+
+  - id: paper-35-boundaries
     kind: limitation_group
     parent_id: paper-35
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
+    order: 8
+    epistemic_status: material
+    title: Scope and limitations
+    summary: >-
+      Positive results depend respectively on a shared public matrix, a random oracle, or a specific LWE-based encryption construction and coordinate-independent source distribution. Error tolerance inherits the FMR decoder's small-Hamming-error regime, and the paper does not validate real biometric noise.
+    source_anchor_ids: [anchor-paper-35-fmr, anchor-paper-35-weak-repair, anchor-paper-35-ro-transform, anchor-paper-35-direct]
 
-  - id: paper-35-scope-boundary
-    kind: limitation
-    parent_id: paper-35-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Security depends on the precise fuzzy-extractor, leakage, reuse, biometric-noise, and LWE models; efficiency and standard-model qualifications also require full-source review."
-    source_anchor_ids: ["anchor-paper-35-editorial"]
-
-  - id: paper-35-resources
+  - id: paper-35-artifacts
     kind: artifact_group
     parent_id: paper-35
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-35-resource-1", "anchor-paper-35-resource-2", "anchor-paper-35-resource-3"]
-
-  - id: paper-35-resources-available
-    kind: artifact
-    parent_id: paper-35-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: IACR ePrint; Author-hosted: UMD author copy."
-    source_anchor_ids: ["anchor-paper-35-resource-1", "anchor-paper-35-resource-2", "anchor-paper-35-resource-3"]
+    order: 9
+    epistemic_status: source_available
+    title: Artifacts and resources
+    summary: >-
+      A checked-in author manuscript, an IACR ePrint record, and the official Springer record are available. The contribution is mathematical; no code, proof-assistant development, test vectors, or biometric corpus is claimed.
+    source_anchor_ids: [anchor-paper-35-problem-contributions, anchor-paper-35-publication]
 
   - id: paper-35-scrutiny
     kind: scrutiny
     parent_id: paper-35
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at International Symposium on Cyber Security Cryptography and Machine Learning (CSCML). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-35-resource-1"]
+    order: 10
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared at CSCML and is publicly archived. Venue review and later citations do not substitute for independent line-by-line verification of the attacks and reductions; no public review reports or formalization were located.
+    source_anchor_ids: [anchor-paper-35-publication, anchor-paper-35-citations]
 
 relations:
-  - id: relation-paper-35-contribution-addresses-question
+  - id: paper-35-relation-answer-question
     type: addresses
-    from_id: paper-35-contribution
+    from_id: paper-35-answer
     to_id: paper-35-question
-  - id: relation-paper-35-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-35-method
-    to_id: paper-35-contribution
-  - id: relation-paper-35-evidence-supports-claim
+  - id: paper-35-relation-weak-model
+    type: refines
+    from_id: paper-35-model-weak
+    to_id: paper-35-model
+  - id: paper-35-relation-strong-model
+    type: refines
+    from_id: paper-35-model-strong
+    to_id: paper-35-model
+  - id: paper-35-relation-attack-analysis
+    type: attacks
+    from_id: paper-35-attack
+    to_id: paper-35-analysis
+  - id: paper-35-relation-weak-claim
+    type: realizes
+    from_id: paper-35-scheme-weak
+    to_id: paper-35-claim-weak
+  - id: paper-35-relation-separation-weak
+    type: limits
+    from_id: paper-35-scheme-separation
+    to_id: paper-35-scheme-weak
+  - id: paper-35-relation-ro-claim
+    type: realizes
+    from_id: paper-35-scheme-ro
+    to_id: paper-35-claim-ro
+  - id: paper-35-relation-direct-claim
+    type: realizes
+    from_id: paper-35-scheme-direct
+    to_id: paper-35-claim-direct
+  - id: paper-35-relation-attack-evidence
     type: supports
-    from_id: paper-35-evidence-reported
-    to_id: paper-35-claim-primary
-  - id: relation-paper-35-scope-qualifies-claim
+    from_id: paper-35-evidence-attack
+    to_id: paper-35-attack
+  - id: paper-35-relation-reductions-claims
+    type: supports
+    from_id: paper-35-evidence-reductions
+    to_id: paper-35-claims
+  - id: paper-35-relation-boundaries-claims
     type: qualifies
-    from_id: paper-35-scope-boundary
-    to_id: paper-35-claim-primary
-  - id: relation-paper-35-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-35-resources-available
-    to_id: paper-35-evidence-reported
-  - id: relation-paper-35-status-qualifies-claim
-    type: qualifies
-    from_id: paper-35-scrutiny
-    to_id: paper-35-claim-primary
+    from_id: paper-35-boundaries
+    to_id: paper-35-claims
 
 assessment:
   id: paper-35-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-35-editorial", "anchor-paper-35-resource-1"]
+      level: high
+      rationale: >-
+        The complete paper supplies explicit security experiments, a concrete algebraic break, three positive constructions, theorem statements, and reduction sketches under identified assumptions. It does not provide machine-checked proofs, a concrete-security implementation, or empirical biometric validation.
+      basis_source_anchor_ids: [anchor-paper-35-reuse-definitions, anchor-paper-35-attack, anchor-paper-35-weak-repair, anchor-paper-35-ro-transform, anchor-paper-35-direct]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-35-resource-1", "anchor-paper-35-resource-2", "anchor-paper-35-resource-3"]
+      rationale: >-
+        A checked-in author copy with recorded SHA-256 and page count, an IACR ePrint route, the official DOI, and precise page anchors make definitions and derivations directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-35-problem-contributions, anchor-paper-35-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-35-editorial"]
+      rationale: >-
+        Named authorship, affiliations, acknowledgments, venue, DOI, author copy, and ePrint identity are documented. Contributor roles, revision history, tool use, and exact version correspondence have not been audited.
+      basis_source_anchor_ids: [anchor-paper-35-problem-contributions, anchor-paper-35-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-35-resource-1"]
+      rationale: >-
+        CSCML publication and an IACR record establish external and public exposure, but review reports, rebuttal, independent proof checking, formal verification, and correction history were not located.
+      basis_source_anchor_ids: [anchor-paper-35-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-35-editorial"]
+      level: high
+      rationale: >-
+        OpenAlex reported 42 citations on 2026-07-11. Under the author-defined corpus rule, more than 10 located citations is High. The count is index- and date-dependent and does not certify correctness.
+      basis_source_anchor_ids: [anchor-paper-35-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The curated summary indicates a substantive contribution: a correction of a prior reusability claim together with multiple replacement constructions for reusable fuzzy extraction. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-35-editorial"]
+      level: high
+      rationale: >-
+        The paper contributes new reusable-security definitions, a complete break of a natural prior construction, a weak/strong separation, and two routes to strong reusability; the dated citation record indicates sustained follow-on attention. Priority and adoption were not independently audited.
+      basis_source_anchor_ids: [anchor-paper-35-problem-contributions, anchor-paper-35-attack, anchor-paper-35-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 42
+  source_url: https://openalex.org/W2620841627
+  signals:
+    - OpenAlex reported 42 works citing the CSCML chapter.
+  limitation: Citation counts vary by index and date, may include self-citations, and do not establish that later work verified every attack or reduction.

@@ -12,248 +12,418 @@ contribution_types: [protocol]
 
 title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
 year: 2017
-status: "Published · experience paper"
+status: Published
 venue: "47th IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W)"
-topic: "secure-systems-networks"
-labels: ["Applied"]
+topic: secure-systems-networks
+labels: [Applied, System, Implementation, Formal Verification]
 authors:
-  - "Karim Eldefrawy"
-  - "Norrathep Rattanavipanon"
-  - "Gene Tsudik"
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Gene Tsudik
 keywords:
-  - "remote attestation"
-  - "seL4"
-  - "lessons learned"
-editorial_summary: "This experience paper presents the HYDRA design and reports the engineering lessons involved in combining remote attestation with the formally verified seL4 microkernel. Its commodity-board prototype attests 10 MB in under 500 ms and highlights practical issues such as secure boot, trustworthy time, and cryptographic checksum selection."
+  - remote attestation
+  - HYDRA
+  - seL4
+  - secure boot
+  - embedded systems
+  - lessons learned
 
-research_question: "What engineering constraints arise when remote attestation is integrated with the formally verified seL4 microkernel on commodity embedded boards?"
-central_answer: "The experience report presents HYDRA, reports a commodity-board prototype, and identifies secure boot, trustworthy time, and checksum selection as practical integration issues."
+research_question: >-
+  What engineering choices and platform obstacles arise when replacing custom hybrid-attestation hardware controls with a formally verified microkernel on a commodity embedded board?
+central_answer: >-
+  The DSN-W paper condenses HYDRA's design and reports five engineering lessons: use a MAC-based hybrid design with software-efficient checksums; map minimal RA properties to seL4 capabilities but retain ROM immutability; bridge seL4's initialization and hardware proof assumptions with secure boot and, eventually, verified processors; approximate a missing real-time clock with persisted timestamps and a counter; and select a board with configurable hardware-authenticated boot. Its Sabre Lite prototype reports linear scaling and sub-500-millisecond attestation of 10 MB.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, lessons-learned mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete four-page author-uploaded text exposed through the recorded ResearchGate route, cross-checked against the IEEE DOI and the authors' full HYDRA version. A currently listed coauthor PDF link redirected to a missing file, so no local PDF fixity or page rendering was possible; section and figure locators follow the author-uploaded text.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Companion-version differences, lesson interpretations, measurements, and ratings should be checked by an author before approval.
 
 sources:
-  - id: source-paper-38-site-record
-    type: curated_site_record
-    title: "Publication #38 metadata and editorial summary"
-    url: /publications/#paper-38
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-38-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/DSN-W.2017.31"
-    provenance_category: official
-  - id: source-paper-38-resource-2
+  - id: source-paper-38-author-full-text
     type: author_hosted_copy
-    title: "UCI author copy"
-    url: "https://ics.uci.edu/~gts/paps/hydra-dsn17.pdf"
+    title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
     provenance_category: author
+    media_type: application/pdf
+    availability_note: Public author-uploaded full text is readable through the landing page; a separate coauthor PDF link was listed but returned a missing-file response during this audit.
+  - id: source-paper-38-official
+    type: official_publication_record
+    title: IEEE DSN-W 2017 publication record
+    url: https://doi.org/10.1109/DSN-W.2017.31
+    provenance_category: official
+  - id: source-paper-38-full-version
+    type: related_publication
+    title: "HYDRA: Hybrid Design for Remote Attestation Using a Formally Verified Microkernel"
+    url: https://arxiv.org/abs/1703.02688
+    provenance_category: archive
+  - id: source-paper-38-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2750909795
+    url: https://openalex.org/W2750909795
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-38-editorial
-    source_id: source-paper-38-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-38
-  - id: anchor-paper-38-resource-1
-    source_id: source-paper-38-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1109/DSN-W.2017.31"
-  - id: anchor-paper-38-resource-2
-    source_id: source-paper-38-resource-2
-    label: "Author-hosted resource: UCI author copy"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://ics.uci.edu/~gts/paps/hydra-dsn17.pdf"
+  - id: anchor-paper-38-problem
+    source_id: source-paper-38-author-full-text
+    label: HYDRA motivation, contributions, and headline performance
+    locator: Abstract and Section I
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
+  - id: anchor-paper-38-properties
+    source_id: source-paper-38-author-full-text
+    label: Minimal security properties for hybrid remote attestation
+    locator: Section III
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
+  - id: anchor-paper-38-sel4
+    source_id: source-paper-38-author-full-text
+    label: seL4 proof and capability-enforcement basis
+    locator: Section IV-A
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
+  - id: anchor-paper-38-controls
+    source_id: source-paper-38-author-full-text
+    label: Mapping RA properties to access-control configuration C1-C3
+    locator: Section IV-B and Table I
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
+  - id: anchor-paper-38-protocol
+    source_id: source-paper-38-author-full-text
+    label: Boot, seL4 setup, and attestation sequence
+    locator: Section IV-C and Figure 2
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
+  - id: anchor-paper-38-evaluation
+    source_id: source-paper-38-author-full-text
+    label: Sabre Lite runtime breakdown, MAC comparison, and scaling
+    locator: Section V and Figure 3
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
+  - id: anchor-paper-38-lessons
+    source_id: source-paper-38-author-full-text
+    label: Five implementation challenges and lessons
+    locator: Section VI
+    url: https://www.researchgate.net/publication/316555338_FUsing_Hybrid_Remote_Attestation_with_a_Formally_Verified_Microkernel_Lessons_Learned
+  - id: anchor-paper-38-publication
+    source_id: source-paper-38-official
+    label: Official DSN-W publication identity
+    locator: DSN-W 2017, pages 141-144, DOI 10.1109/DSN-W.2017.31
+    url: https://doi.org/10.1109/DSN-W.2017.31
+  - id: anchor-paper-38-lineage
+    source_id: source-paper-38-full-version
+    label: Full HYDRA design and evaluation
+    locator: arXiv 1703.02688; mapped separately as publication #37
+    url: https://arxiv.org/abs/1703.02688
+  - id: anchor-paper-38-citations
+    source_id: source-paper-38-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 5 citing works when accessed 2026-07-11
+    url: https://openalex.org/W2750909795
 
 nodes:
   - id: paper-38
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
-    summary: "This experience paper presents the HYDRA design and reports the engineering lessons involved in combining remote attestation with the formally verified seL4 microkernel. Its commodity-board prototype attests 10 MB in under 500 ms and highlights practical issues such as secure boot, trustworthy time, and cryptographic checksum selection."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    summary: >-
+      A four-page companion paper that compresses HYDRA's seL4-based remote-attestation architecture, reports Sabre Lite feasibility data, and foregrounds the engineering gaps between a verified kernel and a trustworthy deployed attestation system.
+    source_anchor_ids: [anchor-paper-38-problem]
 
   - id: paper-38-question
     kind: question
     parent_id: paper-38
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "What engineering constraints arise when remote attestation is integrated with the formally verified seL4 microkernel on commodity embedded boards?"
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Which security properties can seL4 enforce for hybrid attestation, which properties still require hardware or platform support, and what practical obstacles appear in a commodity prototype?
+    source_anchor_ids: [anchor-paper-38-problem, anchor-paper-38-lessons]
 
-  - id: paper-38-contribution
+  - id: paper-38-answer
     kind: contribution
     parent_id: paper-38
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The experience report presents HYDRA, reports a commodity-board prototype, and identifies secure boot, trustworthy time, and checksum selection as practical integration issues."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    epistemic_status: source_asserted
+    title: Architecture plus implementation lessons
+    summary: >-
+      seL4 capabilities and scheduling can enforce most key, memory, isolation, and atomicity requirements, but secure initialization, immutable boot trust, hardware correctness, and reliable time remain outside the kernel proof and require explicit platform mechanisms.
+    source_anchor_ids: [anchor-paper-38-controls, anchor-paper-38-lessons]
 
-  - id: paper-38-method
-    kind: method
+  - id: paper-38-requirements
+    kind: requirement_group
     parent_id: paper-38
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported method is an engineering case study of implementing and measuring HYDRA while documenting design and integration lessons."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    epistemic_status: adopted_from_prior_analysis
+    title: Hybrid-attestation security requirements
+    summary: >-
+      The paper uses exclusive key access, no key-derived leakage, code immutability, uninterruptible execution, and controlled invocation as the minimal properties; it argues secure reset is unnecessary when atomic invocation is enforced.
+    source_anchor_ids: [anchor-paper-38-properties]
+
+  - id: paper-38-sel4
+    kind: verified_component
+    parent_id: paper-38
+    order: 4
+    epistemic_status: externally_machine_checked
+    title: seL4 guarantee base
+    summary: >-
+      The seL4 refinement proof and access-control work establish functional correctness, authority confinement, integrity, and confidentiality for the microkernel and a correctly specified capability configuration.
+    source_anchor_ids: [anchor-paper-38-sel4]
+
+  - id: paper-38-assumption-proof
+    kind: assumption
+    parent_id: paper-38-sel4
+    order: 1
+    epistemic_status: outside_proof
+    title: Initialization and hardware assumptions
+    summary: >-
+      The inherited proof assumes the kernel is loaded correctly into a consistent state and the processor behaves correctly. HYDRA uses hardware secure boot for the first premise; no commercially available formally verified processor closes the second premise.
+    source_anchor_ids: [anchor-paper-38-lessons]
+
+  - id: paper-38-design
+    kind: system
+    parent_id: paper-38
+    order: 5
+    epistemic_status: specified_and_implemented
+    title: HYDRA capability architecture
+    summary: >-
+      The attestation process is the initial and highest-priority user process, with exclusive access to its executable and embedded K, its thread-control block, and its virtual address space; it spawns lower-priority applications with non-conflicting capabilities.
+    source_anchor_ids: [anchor-paper-38-controls, anchor-paper-38-protocol]
+
+  - id: paper-38-protocol
+    kind: protocol
+    parent_id: paper-38
+    order: 6
+    epistemic_status: specified_and_implemented
+    title: Boot-to-attestation sequence
+    summary: >-
+      ROM verifies seL4, seL4 authenticates and starts the protected process, and that process rejects stale or unauthenticated requests before MACing a named memory interval of a target process and returning the checksum.
+    source_anchor_ids: [anchor-paper-38-protocol]
+
+  - id: paper-38-protocol-freshness
+    kind: protocol
+    parent_id: paper-38-protocol
+    order: 1
+    epistemic_status: workaround
+    title: Persisted pseudo-timestamp
+    summary: >-
+      Lacking a seL4 real-time-clock driver, the prototype loads a timestamp saved before reboot, validates the first new request's larger timestamp, starts a counter, and periodically persists their combination for later restarts.
+    source_anchor_ids: [anchor-paper-38-lessons]
+
+  - id: paper-38-lessons
+    kind: contribution_group
+    parent_id: paper-38
+    order: 7
+    epistemic_status: experience_report
+    title: Engineering lessons
+    summary: >-
+      The paper records decisions and unresolved platform dependencies that are easy to hide when a verified component is described as if it verified an entire system.
+    source_anchor_ids: [anchor-paper-38-lessons]
+
+  - id: paper-38-lesson-design
+    kind: contribution
+    parent_id: paper-38-lessons
+    order: 1
+    epistemic_status: experience_based
+    title: Choose hybrid MAC attestation deliberately
+    summary: >-
+      Software-only timing attestation depends on disputed optimal-checksum assumptions and complete hardware attestation is not easily emulated; a challenge-response MAC fits the hybrid model, with Speck and BLAKE2S performing best among the tested software implementations.
+    source_anchor_ids: [anchor-paper-38-lessons, anchor-paper-38-evaluation]
+
+  - id: paper-38-lesson-properties
+    kind: contribution
+    parent_id: paper-38-lessons
+    order: 2
+    epistemic_status: experience_based
+    title: Verified isolation does not eliminate all hardware
+    summary: >-
+      seL4 emulates most access-control properties previously supplied by processor logic, while immutable storage and authenticated boot are still required to ensure the intended kernel and attestation code start first.
+    source_anchor_ids: [anchor-paper-38-controls, anchor-paper-38-lessons]
+
+  - id: paper-38-lesson-platform
+    kind: contribution
+    parent_id: paper-38-lessons
+    order: 3
+    epistemic_status: experience_based
+    title: Board capabilities constrain assurance
+    summary: >-
+      A usable prototype needs configurable secure-boot ROM and drivers for security-critical devices. Sabre Lite's High Assurance Boot can authenticate a signed image, but the absent clock driver forced a weaker timestamp workaround.
+    source_anchor_ids: [anchor-paper-38-lessons]
 
   - id: paper-38-claims
     kind: claim_group
     parent_id: paper-38
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    order: 8
+    epistemic_status: source_asserted
+    title: Main claims
+    summary: >-
+      The source reports an implemented hybrid design, conditional enforcement of the adopted RA properties, and platform-scale feasibility; its compressed format refers readers to the full HYDRA paper for a broader threat and security analysis.
+    source_anchor_ids: [anchor-paper-38-controls, anchor-paper-38-evaluation, anchor-paper-38-lineage]
 
-  - id: paper-38-claim-primary
+  - id: paper-38-claim-security
     kind: claim
     parent_id: paper-38-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports attestation of 10 MB in under 500 ms and identifies several trusted-system choices that materially affect deployment."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    epistemic_status: configuration_argument
+    title: Capability realization of RA properties
+    summary: >-
+      Exclusive executable/key, TCB, and VSpace capabilities plus highest scheduling priority are argued to realize key secrecy, no leaks, immutability at runtime, uninterruptibility, and controlled invocation, conditional on correct secure boot and code.
+    source_anchor_ids: [anchor-paper-38-controls]
+
+  - id: paper-38-claim-performance
+    kind: claim
+    parent_id: paper-38-claims
+    order: 2
+    epistemic_status: measured
+    title: Sabre Lite feasibility
+    summary: >-
+      The paper reports under 500 milliseconds for a 10 MB region with Speck, at least a one-third speed advantage for Speck and BLAKE2S over other tested MACs, and approximately linear runtime in memory size and process count.
+    source_anchor_ids: [anchor-paper-38-evaluation]
 
   - id: paper-38-evidence
     kind: evidence_group
     parent_id: paper-38
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    order: 9
+    epistemic_status: compressed_mixed_evidence
+    title: Evidence
+    summary: >-
+      Evidence consists of inherited seL4 proof results, an explicit property-to-capability mapping, the boot and protocol design, a commodity Sabre Lite implementation, and microbenchmarks decomposed into request verification, memory mapping, and MAC work.
+    source_anchor_ids: [anchor-paper-38-sel4, anchor-paper-38-controls, anchor-paper-38-protocol, anchor-paper-38-evaluation]
 
-  - id: paper-38-evidence-reported
+  - id: paper-38-evidence-runtime
     kind: evidence
     parent_id: paper-38-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The current record identifies a prototype timing result and qualitative lessons, but hardware configurations, measurement procedures, code, and the relation to seL4's proof boundary were not audited."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    epistemic_status: reported_experiment
+    title: Runtime composition
+    summary: >-
+      MacMem consumes about 84 percent of time for a 1 MB region and about 90 percent for 10 KB in this version; request verification and memory mapping together remain below 20 percent.
+    source_anchor_ids: [anchor-paper-38-evaluation]
 
-  - id: paper-38-scope
+  - id: paper-38-boundaries
     kind: limitation_group
     parent_id: paper-38
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    order: 10
+    epistemic_status: material
+    title: Assurance boundaries
+    summary: >-
+      seL4's proof covers the kernel, not the processor, boot ROM, board initialization, attestation code, cryptographic implementation, timestamp persistence, drivers, or the full composition. The paper also does not reproduce a complete adversarial model or end-to-end proof in four pages.
+    source_anchor_ids: [anchor-paper-38-lessons, anchor-paper-38-lineage]
 
-  - id: paper-38-scope-boundary
+  - id: paper-38-boundary-version
     kind: limitation
-    parent_id: paper-38-scope
+    parent_id: paper-38-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "As an experience paper, the represented conclusions may be deployment-specific. The complete threat model, checksum variants, secure-boot chain, and trusted-time mechanism need source review."
-    source_anchor_ids: ["anchor-paper-38-editorial"]
+    epistemic_status: companion_version
+    title: Short companion, not the full HYDRA paper
+    summary: >-
+      This DSN-W article reports under 500 milliseconds and emphasizes lessons; the longer WiSec/arXiv version maps more assumptions, two platforms, and an expanded evaluation, including a later sub-250-millisecond Sabre Lite result. The records should not be conflated.
+    source_anchor_ids: [anchor-paper-38-evaluation, anchor-paper-38-lineage]
 
-  - id: paper-38-resources
+  - id: paper-38-artifacts
     kind: artifact_group
     parent_id: paper-38
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-38-resource-1", "anchor-paper-38-resource-2"]
-
-  - id: paper-38-resources-available
-    kind: artifact
-    parent_id: paper-38-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: UCI author copy."
-    source_anchor_ids: ["anchor-paper-38-resource-1", "anchor-paper-38-resource-2"]
+    order: 11
+    epistemic_status: partial
+    title: Artifacts and reproducibility
+    summary: >-
+      The author-uploaded paper, official DOI, public full HYDRA version, and public presentation material expose the design. No publication-specific code, exact build image, benchmark scripts, or raw measurements were located.
+    source_anchor_ids: [anchor-paper-38-problem, anchor-paper-38-lineage]
 
   - id: paper-38-scrutiny
     kind: scrutiny
     parent_id: paper-38
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · experience paper at 47th IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-38-resource-1"]
+    order: 12
+    epistemic_status: workshop_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared in the DSN Workshops/industry-track proceedings and cites the separately reviewed full WiSec paper. Public reviews, an independent end-to-end proof audit, and a reproduction were not located.
+    source_anchor_ids: [anchor-paper-38-publication, anchor-paper-38-lineage]
 
 relations:
-  - id: relation-paper-38-contribution-addresses-question
+  - id: paper-38-relation-answer-question
     type: addresses
-    from_id: paper-38-contribution
+    from_id: paper-38-answer
     to_id: paper-38-question
-  - id: relation-paper-38-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-38-method
-    to_id: paper-38-contribution
-  - id: relation-paper-38-evidence-supports-claim
+  - id: paper-38-relation-sel4-design
     type: supports
-    from_id: paper-38-evidence-reported
-    to_id: paper-38-claim-primary
-  - id: relation-paper-38-scope-qualifies-claim
+    from_id: paper-38-sel4
+    to_id: paper-38-design
+  - id: paper-38-relation-design-protocol
+    type: enables
+    from_id: paper-38-design
+    to_id: paper-38-protocol
+  - id: paper-38-relation-freshness-protocol
+    type: component_of
+    from_id: paper-38-protocol-freshness
+    to_id: paper-38-protocol
+  - id: paper-38-relation-design-security
+    type: supports
+    from_id: paper-38-design
+    to_id: paper-38-claim-security
+  - id: paper-38-relation-runtime-performance
+    type: supports
+    from_id: paper-38-evidence-runtime
+    to_id: paper-38-claim-performance
+  - id: paper-38-relation-proof-security
     type: qualifies
-    from_id: paper-38-scope-boundary
-    to_id: paper-38-claim-primary
-  - id: relation-paper-38-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-38-resources-available
-    to_id: paper-38-evidence-reported
-  - id: relation-paper-38-status-qualifies-claim
-    type: qualifies
-    from_id: paper-38-scrutiny
-    to_id: paper-38-claim-primary
+    from_id: paper-38-assumption-proof
+    to_id: paper-38-claim-security
+  - id: paper-38-relation-boundaries-security
+    type: limits
+    from_id: paper-38-boundaries
+    to_id: paper-38-claim-security
+  - id: paper-38-relation-lineage-paper
+    type: contextualizes
+    from_id: paper-38-boundary-version
+    to_id: paper-38
 
 assessment:
   id: paper-38-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-38-editorial", "anchor-paper-38-resource-1"]
+      rationale: >-
+        The complete short paper combines inherited seL4 proofs, a concrete property mapping, an implemented protocol, and Sabre Lite measurements, but it compresses the threat/security analysis, provides no end-to-end proof, and points to the full HYDRA paper for detail.
+      basis_source_anchor_ids: [anchor-paper-38-sel4, anchor-paper-38-controls, anchor-paper-38-evaluation, anchor-paper-38-lineage]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-38-resource-1", "anchor-paper-38-resource-2"]
+      rationale: >-
+        A public author-uploaded full-text route, official DOI, and public full-version archive make the represented short paper directly inspectable, satisfying the author-defined High rule. A stable direct PDF and local fixity could not be obtained.
+      basis_source_anchor_ids: [anchor-paper-38-problem, anchor-paper-38-publication, anchor-paper-38-lineage]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-38-editorial"]
+      rationale: >-
+        Named authors, affiliations, venue, DOI, author upload, companion-version identity, platform, and cited proof base are documented. Contributor roles, revision history, exact source commit, build image, and experiment lineage were not audited.
+      basis_source_anchor_ids: [anchor-paper-38-problem, anchor-paper-38-publication, anchor-paper-38-lineage]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-38-resource-1"]
+      rationale: >-
+        DSN-W publication and the separately reviewed full WiSec paper establish external exposure, while public reports, independent verification of the HYDRA composition, and reproduction remain unavailable.
+      basis_source_anchor_ids: [anchor-paper-38-publication, anchor-paper-38-lineage]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-38-editorial"]
+      level: low
+      rationale: >-
+        OpenAlex reported 5 citations on 2026-07-11. Under the author-defined corpus rule, 0 through 8 located citations is Low. Citations to the longer HYDRA paper are counted separately.
+      basis_source_anchor_ids: [anchor-paper-38-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: an explicit engineering account of connecting verified-microkernel guarantees to a working remote-attestation prototype. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-38-editorial"]
+      rationale: >-
+        The companion captures reusable engineering lessons about verified-component composition, secure boot, trusted hardware, and time sources, but its core design contribution and much of its evaluation are shared with the separately mapped full HYDRA paper.
+      basis_source_anchor_ids: [anchor-paper-38-lessons, anchor-paper-38-lineage]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 5
+  source_url: https://openalex.org/W2750909795
+  signals:
+    - OpenAlex reported 5 works citing this DSN-W record.
+  limitation: Citation counts vary by index and date; many readers may cite the longer WiSec/arXiv HYDRA paper instead, and those citations should not be merged into this record without an explicit version-level rule.

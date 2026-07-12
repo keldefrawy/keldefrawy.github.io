@@ -18,51 +18,85 @@ labels: ["Theory"]
 authors: ["Karim Eldefrawy", "Gavin Holland"]
 keywords: ["private search", "MANETs", "access control"]
 
-research_question: "How can nodes query distributed MANET content without revealing queries, access patterns, or content locations and without receiving unauthorized results?"
-central_answer: "The paper constructs private PUSH and PULL protocols from secure pattern matching, homomorphic encryption, secret sharing, and query-policy enforcement."
+research_question: >-
+  How can a node locate distributed MANET content through direct queries or subscriptions without revealing its search terms or access pattern to honest-but-curious peers, while ensuring it learns only fields authorized by policy?
+central_answer: >-
+  The paper composes secure pattern matching with a query-policy enforcement mechanism. Encrypted metadata queries support both PULL and PUSH discovery, while attribute keys and additive shares let a requester reconstruct an answer only when authorized for every selected field. The design is a protocol architecture under an honest-but-curious model; the audited paper does not supply a reduction-style security proof, implementation, or performance evaluation.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, protocol decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete public author-uploaded conference paper and its official DOI record, plus a dated ResearchGate citation snapshot. The author route exposes readable full text but no immutable local file identity was recorded."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-18-site-record
-    type: curated_record
-    title: "Curated publication record for paper #18"
-    url: /publications/#paper-18
-  - id: source-paper-18-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/THS.2012.6459917"
-  - id: source-paper-18-author-1
+  - id: source-paper-18-author
     type: author_hosted_copy
-    title: "ResearchGate author full text"
+    title: "Secure and Privacy-Preserving Querying of Content in MANETs"
     url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
     provenance_category: author
+    retrieved_at: "2026-07-11"
+  - id: source-paper-18-official
+    type: publication_record
+    title: "IEEE HST 2012 publisher record"
+    url: "https://doi.org/10.1109/THS.2012.6459917"
+  - id: source-paper-18-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-18-site-record
-    source_id: source-paper-18-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-18
-  - id: anchor-paper-18-official-1
-    source_id: source-paper-18-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-18-question
+    source_id: source-paper-18-author
+    label: "Problem and PUSH/PULL contribution"
+    locator: "Abstract and Section I, conference PDF pages 1-2 in the author-uploaded full text"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+  - id: anchor-paper-18-model
+    source_id: source-paper-18-author
+    label: "Content-centric MANET and honest-but-curious model"
+    locator: "Section II, especially Section II.B, conference PDF pages 2-3"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+  - id: anchor-paper-18-spm
+    source_id: source-paper-18-author
+    label: "Secure pattern-matching building block"
+    locator: "Section III.A, conference PDF page 3"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+  - id: anchor-paper-18-qpe
+    source_id: source-paper-18-author
+    label: "Query-policy enforcement construction"
+    locator: "Section III.B, conference PDF pages 3-4"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+  - id: anchor-paper-18-metadata
+    source_id: source-paper-18-author
+    label: "Encrypted content and metadata representation"
+    locator: "Section III.C, conference PDF page 4"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+  - id: anchor-paper-18-protocols
+    source_id: source-paper-18-author
+    label: "PULL query and PUSH subscription protocols"
+    locator: "Section III.D, conference PDF pages 4-5"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+  - id: anchor-paper-18-limitations
+    source_id: source-paper-18-author
+    label: "Security scope, dependencies, and conclusion"
+    locator: "Sections II-III and conclusion, author-uploaded conference full text"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+  - id: anchor-paper-18-publication
+    source_id: source-paper-18-official
+    label: "Official peer-reviewed publication record"
+    locator: "IEEE HST 2012, DOI record"
     url: "https://doi.org/10.1109/THS.2012.6459917"
-  - id: anchor-paper-18-author-1
-    source_id: source-paper-18-author-1
-    label: "Author-hosted resource: ResearchGate author full text"
-    locator: "Public author-uploaded full-text route recorded in the local resource data; local fixity, correspondence to the published version, and substantive content have not been audited for this draft."
+  - id: anchor-paper-18-citations
+    source_id: source-paper-18-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate reported that it had not resolved citations and displayed Citations (0), observed 2026-07-11; this is index-specific."
     url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
 
 nodes:
@@ -70,100 +104,175 @@ nodes:
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Secure and Privacy-Preserving Querying of Content in MANETs"
-    summary: "The paper protects content discovery in peer-to-peer MANET dissemination, where a compromised node could otherwise learn queries, access patterns, and content locations. It builds private PUSH and PULL protocols from secure pattern matching, homomorphic encryption, secret sharing, and query-policy enforcement so nodes learn only authorized search results."
-    source_anchor_ids: [anchor-paper-18-site-record]
+    epistemic_status: published
+    title: "Private MANET content discovery"
+    summary: "A protocol architecture for privately finding and selectively revealing peer-to-peer content in mobile ad hoc networks."
+    source_anchor_ids: [anchor-paper-18-question]
 
   - id: paper-18-question
     kind: question
     parent_id: paper-18
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How can nodes query distributed MANET content without revealing queries, access patterns, or content locations and without receiving unauthorized results?"
-    source_anchor_ids: [anchor-paper-18-site-record]
+    summary: "Can content be queried or subscribed to without exposing search terms, matches, locations, or unauthorized fields to intermediate and responding peers?"
+    source_anchor_ids: [anchor-paper-18-question]
 
   - id: paper-18-answer
     kind: contribution
     parent_id: paper-18
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper constructs private PUSH and PULL protocols from secure pattern matching, homomorphic encryption, secret sharing, and query-policy enforcement."
-    source_anchor_ids: [anchor-paper-18-site-record]
+    epistemic_status: construction_proposed
+    title: "Central answer"
+    summary: "Compose privacy-preserving pattern matching for discovery with cryptographic policy enforcement for field-level release, then use the composition in both request-driven PULL and subscription-driven PUSH flows."
+    source_anchor_ids: [anchor-paper-18-spm, anchor-paper-18-qpe, anchor-paper-18-protocols]
 
-  - id: paper-18-method
-    kind: method
+  - id: paper-18-scope
+    kind: scope
     parent_id: paper-18
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Combine cryptographic search primitives with policy checks so content holders disclose only authorized matches while hiding query and repository information."
-    source_anchor_ids: [anchor-paper-18-site-record]
+    epistemic_status: explicitly_scoped
+    title: "Content-centric MANET setting"
+    summary: "Content and metadata are replicated among cooperating peers without fixed infrastructure, and a compromised or curious node may observe searches and cached material."
+    source_anchor_ids: [anchor-paper-18-model]
 
-  - id: paper-18-claims
-    kind: claim_group
+  - id: paper-18-adversary
+    kind: threat_model
+    parent_id: paper-18-scope
+    order: 1
+    epistemic_status: defined
+    title: "Honest-but-curious participants"
+    summary: "Participants follow the specified protocol but try to infer queries, matches, content location, popularity, or unauthorized attributes from messages and local state. Malicious deviation is not addressed."
+    source_anchor_ids: [anchor-paper-18-model]
+
+  - id: paper-18-primitive-spm
+    kind: primitive
     parent_id: paper-18
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The protocols are reported to reveal only authorized search results while protecting query content, access patterns, and content locations from compromised peers."
-    source_anchor_ids: [anchor-paper-18-site-record]
+    epistemic_status: assumed_from_prior_work
+    title: "Secure pattern matching"
+    summary: "The construction assumes a secure pattern-matching primitive supporting exact, wildcard, substring, and range-style metadata queries while hiding the pattern from the holder."
+    source_anchor_ids: [anchor-paper-18-spm]
+
+  - id: paper-18-primitive-qpe
+    kind: scheme
+    parent_id: paper-18
+    order: 5
+    epistemic_status: proposed
+    title: "Query-policy enforcement"
+    summary: "The responder encrypts the answer under a one-time key, divides that key into additive shares for requested attributes, and encrypts each share under the corresponding attribute key; reconstruction succeeds only with all required authorizations."
+    source_anchor_ids: [anchor-paper-18-qpe]
+
+  - id: paper-18-metadata
+    kind: data_model
+    parent_id: paper-18
+    order: 6
+    epistemic_status: specified
+    title: "Protected content record"
+    summary: "Metadata carries description, tags, group, index, and a globally unique identifier; content is encrypted, a hash binds the ciphertext, and a signature authenticates the metadata record."
+    source_anchor_ids: [anchor-paper-18-metadata]
+
+  - id: paper-18-pull
+    kind: protocol
+    parent_id: paper-18
+    order: 7
+    epistemic_status: proposed
+    title: "Private PULL query"
+    summary: "A requester disseminates an encrypted query; peers securely match it against metadata and return encrypted match indicators or references that only an authorized requester can interpret."
+    source_anchor_ids: [anchor-paper-18-protocols]
+
+  - id: paper-18-push
+    kind: protocol
+    parent_id: paper-18
+    order: 8
+    epistemic_status: proposed
+    title: "Private PUSH subscription"
+    summary: "A node advertises an encrypted interest, and newly generated content is privately matched to that interest before an authorized result is returned."
+    source_anchor_ids: [anchor-paper-18-protocols]
+
+  - id: paper-18-security
+    kind: security_argument
+    parent_id: paper-18
+    order: 9
+    epistemic_status: compositional_informal_argument
+    title: "Security basis"
+    summary: "Privacy and authorization are argued by composition of assumed secure pattern matching, homomorphic encryption, secret sharing, symmetric encryption, hashing, signatures, and pre-distributed attribute keys."
+    source_anchor_ids: [anchor-paper-18-spm, anchor-paper-18-qpe, anchor-paper-18-protocols]
 
   - id: paper-18-evidence
     kind: evidence_group
     parent_id: paper-18
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports cryptographic protocol constructions and intended privacy properties; formal games, proofs, complexity, implementation, and measurements have not been inspected."
-    source_anchor_ids: [anchor-paper-18-site-record]
+    order: 10
+    epistemic_status: construction_only
+    title: "Evidence supplied"
+    summary: "The paper specifies data structures and message flows and explains how their primitives fit together; it does not report an implementation, benchmark, simulation, reduction-style proof, or machine-checked model."
+    source_anchor_ids: [anchor-paper-18-qpe, anchor-paper-18-protocols, anchor-paper-18-limitations]
 
   - id: paper-18-limitations
     kind: limitation_group
     parent_id: paper-18
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The draft does not establish leakage under repeated queries, collusion limits, policy expressiveness, revocation, denial of service, or performance under realistic MANET churn."
-    source_anchor_ids: [anchor-paper-18-site-record]
+    order: 11
+    epistemic_status: material
+    title: "Trusted and untested boundaries"
+    summary: "Security excludes malicious participants, depends on correct key and policy distribution and the assumed 5PM-style primitive, and leaves traffic cost, scalability, compromise recovery, metadata leakage, and concrete performance unevaluated."
+    source_anchor_ids: [anchor-paper-18-model, anchor-paper-18-limitations]
 
-  - id: paper-18-resources
+  - id: paper-18-artifacts
     kind: artifact_group
     parent_id: paper-18
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; ResearchGate author full text. Their contents, persistence, version correspondence, and any supplementary artifacts have not been substantively audited."
-    source_anchor_ids: [anchor-paper-18-official-1, anchor-paper-18-author-1]
+    order: 12
+    epistemic_status: paper_only
+    title: "Artifacts"
+    summary: "A complete author-uploaded full text is public. No implementation, policy dataset, benchmark, formal model, or immutable local paper copy is linked."
+    source_anchor_ids: [anchor-paper-18-question, anchor-paper-18-limitations]
 
   - id: paper-18-scrutiny
     kind: scrutiny
     parent_id: paper-18
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at IEEE International Conference on Technologies for Homeland Security (HST). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-18-site-record, anchor-paper-18-official-1]
+    order: 13
+    epistemic_status: venue_reviewed
+    title: "External scrutiny and reception"
+    summary: "The architecture appeared at IEEE HST 2012. ResearchGate resolved no citations for this record as of the snapshot, and this audit found no independent implementation or security analysis."
+    source_anchor_ids: [anchor-paper-18-publication, anchor-paper-18-citations]
+
+  - id: paper-18-lineage
+    kind: lineage
+    parent_id: paper-18
+    order: 14
+    epistemic_status: documented_in_source
+    title: "Research lineage"
+    summary: "The paper applies general secure-pattern-matching research to mobile content discovery and adds field-level access control, connecting cryptographic private search to MANET dissemination."
+    source_anchor_ids: [anchor-paper-18-question, anchor-paper-18-spm, anchor-paper-18-qpe]
 
 relations:
-  - id: paper-18-relation-method-supports-answer
+  - id: paper-18-relation-spm-enables-pull
+    type: enables
+    from_id: paper-18-primitive-spm
+    to_id: paper-18-pull
+  - id: paper-18-relation-spm-enables-push
+    type: enables
+    from_id: paper-18-primitive-spm
+    to_id: paper-18-push
+  - id: paper-18-relation-qpe-enforces-pull
+    type: constrains
+    from_id: paper-18-primitive-qpe
+    to_id: paper-18-pull
+  - id: paper-18-relation-qpe-enforces-push
+    type: constrains
+    from_id: paper-18-primitive-qpe
+    to_id: paper-18-push
+  - id: paper-18-relation-protocols-support-answer
     type: supports
-    from_id: paper-18-method
+    from_id: paper-18-pull
     to_id: paper-18-answer
-  - id: paper-18-relation-evidence-supports-claim
-    type: supports
+  - id: paper-18-relation-evidence-qualifies-answer
+    type: qualifies
     from_id: paper-18-evidence
-    to_id: paper-18-claims
-  - id: paper-18-relation-limitations-qualify-claim
+    to_id: paper-18-answer
+  - id: paper-18-relation-limitations-qualify-security
     type: qualifies
     from_id: paper-18-limitations
-    to_id: paper-18-claims
-  - id: paper-18-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-18-scrutiny
-    to_id: paper-18
+    to_id: paper-18-security
 
 assessment:
   id: paper-18-assessment-2026-07-11
@@ -173,33 +282,35 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary reports cryptographic protocol constructions and intended privacy properties; formal games, proofs, complexity, implementation, and measurements have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-18-site-record]
+      level: low
+      rationale: "The paper gives a concrete compositional protocol architecture and explicit honest-but-curious scope, but no formal reduction, implementation, simulation, benchmark, or independent validation is supplied."
+      basis_source_anchor_ids: [anchor-paper-18-model, anchor-paper-18-qpe, anchor-paper-18-protocols, anchor-paper-18-limitations]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable author-uploaded full-text route. This makes the paper's assumptions, evidence, and stated methods directly inspectable, so auditability is high; local fixity, correspondence to the published version, and a substantive content audit have not been verified."
-      basis_source_anchor_ids: [anchor-paper-18-official-1, anchor-paper-18-author-1]
+      rationale: "A complete author-uploaded full text makes the model, data structures, and protocol flows directly inspectable. No immutable local binary, code, test vectors, or proof artifact is recorded."
+      basis_source_anchor_ids: [anchor-paper-18-question, anchor-paper-18-protocols, anchor-paper-18-limitations]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-18-site-record]
+      rationale: "Named authorship, an author-uploaded paper, and the IEEE DOI establish baseline provenance. Contributor roles, revision history, key-policy artifacts, and tool use are not documented."
+      basis_source_anchor_ids: [anchor-paper-18-question, anchor-paper-18-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE International Conference on Technologies for Homeland Security (HST), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-18-official-1]
+      rationale: "Publication at IEEE HST indicates venue scrutiny, but review reports, corrections, formal follow-up, independent analysis, and implementation evidence were not located."
+      basis_source_anchor_ids: [anchor-paper-18-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-18-site-record]
+      level: low
+      rationale: "ResearchGate displayed zero resolved citations on 2026-07-11, which falls in the rubric's 0-8 low band. This index-specific result is not proof that no citation exists elsewhere."
+      basis_source_anchor_ids: [anchor-paper-18-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The protocols are reported to reveal only authorized search results while protecting query content, access patterns, and content locations from compromised peers. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-18-site-record]
+      rationale: "The paper connects private search and field-level authorization to both PUSH and PULL MANET workflows, but feasibility and security remain unvalidated beyond the construction-level argument."
+      basis_source_anchor_ids: [anchor-paper-18-question, anchor-paper-18-qpe, anchor-paper-18-protocols, anchor-paper-18-limitations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 0
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate stated that it had not resolved citations for this publication and displayed Citations (0)."
+  limitation: "This is an index-specific located count, not a claim of zero citations across all scholarly databases; title variants and proceedings metadata may prevent matching."

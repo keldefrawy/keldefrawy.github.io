@@ -11,220 +11,375 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: []
 
 title: "How Byzantine Is a Send Corruption?"
-short_title: "How Byzantine Is a Send Corruption?"
 year: 2022
 venue: "20th International Conference on Applied Cryptography and Network Security (ACNS)"
-publication_status: "Published"
+publication_status: Published
 topic: algorithms-foundations
-labels:
-  - "Theory"
+labels: [Theory]
 authors:
-  - "Karim Eldefrawy"
-  - "Julian Loss"
-  - "Ben Terner"
+  - Karim Eldefrawy
+  - Julian Loss
+  - Ben Terner
 keywords:
-  - "consensus"
-  - "Byzantine faults"
-  - "corruption models"
+  - Byzantine agreement
+  - consensus
+  - send corruption
+  - receive corruption
+  - strongly adaptive adversary
+  - expected constant rounds
 
-research_question: "How much power does selective corruption of a party's outgoing messages add to consensus adversaries that also have Byzantine and receive-fault capabilities?"
-central_answer: "The curated editorial summary reports expected-constant-round consensus protocols with improved fault thresholds and an analysis showing that send corruption can approach full Byzantine power."
+research_question: >-
+  In synchronous consensus with Byzantine, receive, and honest-but-faulty send corruptions, what fault thresholds are achievable in expected constant rounds, and how much weaker than Byzantine control is the ability to suppress an honest party's outgoing messages?
+central_answer: >-
+  The paper constructs expected-constant-round consensus from all-to-all repair, weak broadcast, weak consensus, graded consensus, and a common coin. It proves security for n greater than t_rcv + 2t_snd + 2t_byz under general send corruption, and for n greater than t_rcv + t_snd + 2t_byz under spotty all-or-none per-round send corruption; the latter threshold is proved optimal, while optimality in the general case remains open.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text theorem extraction, model mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 33-page IACR ePrint and the official and CISPA publication records. The map separates the general-send theorem from the stronger spotty-send theorem and its matching impossibility result.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification. Fault-model terminology, threshold notation, and the scope of the optimality theorem should be checked before approval.
 
 sources:
-  - id: source-paper-63-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #63"
-    url: /publications/#paper-63
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-63-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-031-09234-3_34"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-63-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2021/796"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-63-author-1
-    type: author_resource
-    title: "CISPA author page"
-    url: "https://cispa.de/en/research/publications/66354-how-byzantine-is-a-send-corruption-"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-63-eprint
+    type: public_archive_copy
+    title: "How Byzantine Is a Send Corruption?"
+    url: https://eprint.iacr.org/2021/796.pdf
+    provenance_category: archive
+    media_type: application/pdf
+    page_count: 33
+    version_note: IACR ePrint full version used for the technical audit.
+  - id: source-paper-63-official
+    type: official_publication_record
+    title: Springer ACNS 2022 chapter record
+    url: https://doi.org/10.1007/978-3-031-09234-3_34
+    provenance_category: official
+  - id: source-paper-63-author
+    type: author_affiliation_record
+    title: CISPA publication page
+    url: https://cispa.de/en/research/publications/66354-how-byzantine-is-a-send-corruption-
+    provenance_category: author
+  - id: source-paper-63-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W3186077535
+    url: https://api.openalex.org/works/W3186077535
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-63-curated
-    source_id: source-paper-63-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-63
-  - id: anchor-paper-63-official-1
-    source_id: source-paper-63-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-031-09234-3_34"
-  - id: anchor-paper-63-archive-1
-    source_id: source-paper-63-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2021/796"
-  - id: anchor-paper-63-author-1
-    source_id: source-paper-63-author-1
-    label: "CISPA author page"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://cispa.de/en/research/publications/66354-how-byzantine-is-a-send-corruption-"
+  - id: anchor-paper-63-results
+    source_id: source-paper-63-eprint
+    label: Research question, thresholds, pathology, and open general-case optimality
+    locator: "Abstract and Sections 1.1-1.5, PDF pages 1-7"
+    url: https://eprint.iacr.org/2021/796.pdf#page=1
+  - id: anchor-paper-63-model
+    source_id: source-paper-63-eprint
+    label: Synchronous network, corruption modes, strong rushing, PKI, and common coin
+    locator: "Sections 2.1-2.2, PDF pages 7-10"
+    url: https://eprint.iacr.org/2021/796.pdf#page=7
+  - id: anchor-paper-63-pathology
+    source_id: source-paper-63-eprint
+    label: Dolev-Strong lower bound, degradation, and failure of recent techniques
+    locator: "Section 3, PDF pages 11-14"
+    url: https://eprint.iacr.org/2021/796.pdf#page=11
+  - id: anchor-paper-63-fixreceive
+    source_id: source-paper-63-eprint
+    label: Two-round all-to-all FixReceive and zombie detection
+    locator: "Section 4.1 and Protocol 2, PDF pages 14-15"
+    url: https://eprint.iacr.org/2021/796.pdf#page=14
+  - id: anchor-paper-63-building-blocks
+    source_id: source-paper-63-eprint
+    label: Weak broadcast, weak consensus, and graded consensus
+    locator: "Sections 4.2-4.4 and Protocols 3-5, PDF pages 15-21"
+    url: https://eprint.iacr.org/2021/796.pdf#page=15
+  - id: anchor-paper-63-main-theorem
+    source_id: source-paper-63-eprint
+    label: Expected-constant-round protocol and general-send security theorem
+    locator: "Section 4.5, Theorem 3, Protocol 6, and Lemmas 7-11, PDF pages 22-26"
+    url: https://eprint.iacr.org/2021/796.pdf#page=22
+  - id: anchor-paper-63-spotty
+    source_id: source-paper-63-eprint
+    label: Improved spotty-send threshold and matching impossibility
+    locator: "Section 5, Theorems 4-5, PDF pages 26-28"
+    url: https://eprint.iacr.org/2021/796.pdf#page=26
+  - id: anchor-paper-63-publication
+    source_id: source-paper-63-official
+    label: Official peer-reviewed publication record
+    locator: "ACNS 2022, DOI 10.1007/978-3-031-09234-3_34"
+    url: https://doi.org/10.1007/978-3-031-09234-3_34
+  - id: anchor-paper-63-author-summary
+    source_id: source-paper-63-author
+    label: Author-affiliation summary and publication identity
+    locator: "CISPA publication page, accessed 2026-07-11"
+    url: https://cispa.de/en/research/publications/66354-how-byzantine-is-a-send-corruption-
+  - id: anchor-paper-63-citations
+    source_id: source-paper-63-openalex
+    label: Dated citation-count snapshot
+    locator: "OpenAlex cited_by_count = 5, queried by DOI on 2026-07-11"
+    url: https://api.openalex.org/works/W3186077535
 
 nodes:
   - id: paper-63
     kind: paper
-    parent_id: null
+    parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "How Byzantine Is a Send Corruption?"
-    summary: "This paper asks how consensus changes when some parties behave honestly but an adversary can selectively drop the messages they send, alongside ordinary Byzantine and receive faults. It gives expected-constant-round protocols with improved fault thresholds and shows why send corruption can be surprisingly close to full Byzantine power."
-    source_anchor_ids: [anchor-paper-63-curated]
+    epistemic_status: published
+    title: How Byzantine is send corruption?
+    summary: A theory of synchronous consensus under mixed Byzantine, send, and receive corruptions, with expected-constant-round constructions and a tight result for the spotty-send submodel.
+    source_anchor_ids: [anchor-paper-63-results]
+
   - id: paper-63-question
     kind: question
     parent_id: paper-63
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "How much power does selective corruption of a party's outgoing messages add to consensus adversaries that also have Byzantine and receive-fault capabilities?"
-    source_anchor_ids: [anchor-paper-63-curated]
-  - id: paper-63-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: How do achievable consensus thresholds change when faulty parties follow the protocol but an adaptive adversary suppresses messages they send or receive?
+    source_anchor_ids: [anchor-paper-63-results]
+
+  - id: paper-63-answer
     kind: contribution
     parent_id: paper-63
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports expected-constant-round consensus protocols with improved fault thresholds and an analysis showing that send corruption can approach full Byzantine power."
-    source_anchor_ids: [anchor-paper-63-curated]
-  - id: paper-63-method
-    kind: method
+    epistemic_status: proved_conditional
+    title: Central answer
+    summary: General send faults incur a coefficient of two in the proved threshold; restricting each corrupted sender's round to uniform delivery or uniform dropping removes that extra coefficient and yields a matching lower bound.
+    source_anchor_ids: [anchor-paper-63-main-theorem, anchor-paper-63-spotty]
+
+  - id: paper-63-model-node
+    kind: threat_model
     parent_id: paper-63
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described work defines a mixed corruption model, constructs consensus protocols for it, and compares achievable thresholds across send, receive, and Byzantine faults."
-    source_anchor_ids: [anchor-paper-63-curated]
+    epistemic_status: defined
+    title: Synchronous mixed-corruption model
+    summary: Parties communicate over authenticated point-to-point channels with known delay bound; a strongly rushing adaptive adversary may select Byzantine, receive-corrupt, and send-corrupt parties, with overlap counted in each applicable budget.
+    source_anchor_ids: [anchor-paper-63-model]
+
+  - id: paper-63-model-live
+    kind: definition
+    parent_id: paper-63-model-node
+    order: 1
+    epistemic_status: defined
+    title: Live parties and zombies
+    summary: Honest, send-corrupt, and undetected receive-corrupt parties are live and must produce consistent outputs; a receive-corrupt party that detects missing traffic becomes a zombie, stops participating, and outputs failure.
+    source_anchor_ids: [anchor-paper-63-model, anchor-paper-63-fixreceive]
+
+  - id: paper-63-model-spotty
+    kind: definition
+    parent_id: paper-63-model-node
+    order: 2
+    epistemic_status: defined
+    title: General versus spotty send corruption
+    summary: General send corruption permits recipient-selective suppression, whereas spotty corruption requires all of a sender's still-undelivered messages in a round to be delivered or dropped together.
+    source_anchor_ids: [anchor-paper-63-model]
+
+  - id: paper-63-pathology-node
+    kind: analysis
+    parent_id: paper-63
+    order: 4
+    epistemic_status: proved_and_demonstrated
+    title: Why send faults are unexpectedly strong
+    summary: Selective delivery can give honest and send-corrupt groups incompatible views while both groups' outputs remain constrained; threshold signatures, leader-election techniques, and time-lock-puzzle broadcast do not automatically repair this asymmetry.
+    source_anchor_ids: [anchor-paper-63-pathology]
+
+  - id: paper-63-construction
+    kind: method
+    parent_id: paper-63
+    order: 5
+    epistemic_status: formally_specified
+    title: Consensus construction
+    summary: The construction composes all-to-all FixReceive, weak broadcast, weak consensus, graded consensus, a common coin, and signed decision certificates in a repeated coin-loop.
+    source_anchor_ids: [anchor-paper-63-fixreceive, anchor-paper-63-building-blocks, anchor-paper-63-main-theorem]
+
+  - id: paper-63-construction-repair
+    kind: component
+    parent_id: paper-63-construction
+    order: 1
+    epistemic_status: specified_and_proved
+    title: All-to-all FixReceive
+    summary: Parties send signed inputs, relay unique first-round messages, and become zombies if too few messages arrive; the proofs ensure a non-zombie party receives honest-origin traffic and propagates honest messages across live views.
+    source_anchor_ids: [anchor-paper-63-fixreceive]
+
+  - id: paper-63-construction-graded
+    kind: component
+    parent_id: paper-63-construction
+    order: 2
+    epistemic_status: specified_and_proved
+    title: Graded-consensus bridge
+    summary: Weak-consensus outputs are weak-broadcast in parallel; a party chooses the majority bit and assigns grade one only after a large enough support threshold rules out a conflicting live grade-one output.
+    source_anchor_ids: [anchor-paper-63-building-blocks]
+
+  - id: paper-63-construction-coin
+    kind: component
+    parent_id: paper-63-construction
+    order: 3
+    epistemic_status: assumes_primitive
+    title: Common-coin loop and certificates
+    summary: Each iteration combines graded consensus with a common coin; signed decision certificates propagate termination while preserving a single decision value.
+    source_anchor_ids: [anchor-paper-63-main-theorem]
+
   - id: paper-63-claims
     kind: claim_group
     parent_id: paper-63
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports improved fault thresholds with expected constant rounds and a formal sense in which send corruption can be close to Byzantine corruption."
-    source_anchor_ids: [anchor-paper-63-curated]
+    order: 6
+    epistemic_status: proved_conditional
+    title: Main results
+    summary: The full version proves validity, consistency, and expected termination under explicit threshold, synchrony, PKI/signature, and common-coin assumptions.
+    source_anchor_ids: [anchor-paper-63-main-theorem, anchor-paper-63-spotty]
+
+  - id: paper-63-claim-general
+    kind: theorem
+    parent_id: paper-63-claims
+    order: 1
+    epistemic_status: proved_conditional
+    title: General-send threshold
+    summary: Theorem 3 proves expected-constant-round consensus when n is greater than t_rcv + 2t_snd + 2t_byz, assuming the specified common coin is available.
+    source_anchor_ids: [anchor-paper-63-main-theorem]
+
+  - id: paper-63-claim-spotty
+    kind: theorem
+    parent_id: paper-63-claims
+    order: 2
+    epistemic_status: proved_tight
+    title: Optimal spotty-send threshold
+    summary: Theorems 4 and 5 establish sufficiency above, and impossibility at or below, n = t_rcv + t_snd + 2t_byz in the spotty-send model with zombies.
+    source_anchor_ids: [anchor-paper-63-spotty]
+
+  - id: paper-63-claim-lowerbound
+    kind: theorem
+    parent_id: paper-63-claims
+    order: 3
+    epistemic_status: inherited_and_reproved
+    title: Deterministic-round lower bound
+    summary: The Dolev-Strong neighboring-execution argument transfers to send corruptions, so deterministic authenticated broadcast tolerating t_snd send faults cannot finish in fewer than t_snd + 1 rounds.
+    source_anchor_ids: [anchor-paper-63-pathology]
+
   - id: paper-63-evidence
     kind: evidence_group
     parent_id: paper-63
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Protocol and lower- or upper-bound results are reported, but theorem statements, proofs, thresholds, probability spaces, and model assumptions were not audited."
-    source_anchor_ids: [anchor-paper-63-curated]
-  - id: paper-63-scope
+    order: 7
+    epistemic_status: formal_paper_proofs
+    title: Evidence and proof chain
+    summary: Protocol pseudocode, definitions, quorum arguments, reductions among consensus primitives, termination bounds, and a partition-style impossibility proof support the results; no machine-checked proof or implementation artifact is claimed.
+    source_anchor_ids: [anchor-paper-63-building-blocks, anchor-paper-63-main-theorem, anchor-paper-63-spotty]
+
+  - id: paper-63-boundaries
     kind: limitation_group
     parent_id: paper-63
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked synchrony, authentication, channel semantics, adaptive corruption, adversary scheduling, termination conditions, threshold inequalities, or whether the comparisons are exact or conditional."
-    source_anchor_ids: [anchor-paper-63-curated]
-  - id: paper-63-artifacts
+    order: 8
+    epistemic_status: material
+    title: Limits and open questions
+    summary: The model is synchronous and uses authenticated channels, a PKI, signatures, and a common coin; optimal combined send/Byzantine tolerance for recipient-selective general send corruption remains unresolved.
+    source_anchor_ids: [anchor-paper-63-results, anchor-paper-63-model, anchor-paper-63-pathology]
+
+  - id: paper-63-resources
     kind: artifact_group
     parent_id: paper-63
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 3 resources (1 official, 1 archive, 1 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-63-curated, anchor-paper-63-official-1, anchor-paper-63-archive-1, anchor-paper-63-author-1]
+    order: 9
+    epistemic_status: source_available
+    title: Auditable resources
+    summary: A complete public ePrint supplies definitions, protocols, and proofs, while the Springer DOI and CISPA page establish publication identity; no executable artifact is represented.
+    source_anchor_ids: [anchor-paper-63-results, anchor-paper-63-publication, anchor-paper-63-author-summary]
+
   - id: paper-63-scrutiny
     kind: scrutiny
     parent_id: paper-63
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 20th International Conference on Applied Cryptography and Network Security (ACNS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-63-official-1]
+    order: 10
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: The work appeared at ACNS 2022 and has a public full version. This audit did not locate public reviews, a machine-checked proof audit, a correction, or an independent reproduction.
+    source_anchor_ids: [anchor-paper-63-publication, anchor-paper-63-citations]
+
+  - id: paper-63-lineage
+    kind: lineage
+    parent_id: paper-63
+    order: 11
+    epistemic_status: documented
+    title: Research lineage
+    summary: The paper extends mixed crash/send/receive/Byzantine models, diagnoses why dishonest-majority broadcast techniques do not transfer directly, and reframes send corruption through the gap between general and spotty delivery.
+    source_anchor_ids: [anchor-paper-63-results, anchor-paper-63-pathology]
 
 relations:
-  - id: paper-63-relation-question-contribution
-    type: motivates
+  - id: paper-63-relation-question-answer
+    type: answered_by
     from_id: paper-63-question
-    to_id: paper-63-contribution
-  - id: paper-63-relation-method-contribution
-    type: realizes
-    from_id: paper-63-method
-    to_id: paper-63-contribution
-  - id: paper-63-relation-contribution-claims
-    type: grounds
-    from_id: paper-63-contribution
+    to_id: paper-63-answer
+  - id: paper-63-relation-model-claims
+    type: scopes
+    from_id: paper-63-model-node
     to_id: paper-63-claims
+  - id: paper-63-relation-pathology-construction
+    type: motivates
+    from_id: paper-63-pathology-node
+    to_id: paper-63-construction
+  - id: paper-63-relation-repair-construction
+    type: component_of
+    from_id: paper-63-construction-repair
+    to_id: paper-63-construction
+  - id: paper-63-relation-construction-general
+    type: realizes
+    from_id: paper-63-construction
+    to_id: paper-63-claim-general
+  - id: paper-63-relation-spotty-answer
+    type: supports
+    from_id: paper-63-claim-spotty
+    to_id: paper-63-answer
   - id: paper-63-relation-evidence-claims
     type: supports
     from_id: paper-63-evidence
     to_id: paper-63-claims
-  - id: paper-63-relation-scope-claims
+  - id: paper-63-relation-boundaries-claims
     type: qualifies
-    from_id: paper-63-scope
+    from_id: paper-63-boundaries
     to_id: paper-63-claims
-  - id: paper-63-relation-artifacts-evidence
+  - id: paper-63-relation-resources-evidence
     type: enables_audit_of
-    from_id: paper-63-artifacts
+    from_id: paper-63-resources
     to_id: paper-63-evidence
-  - id: paper-63-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-63-scrutiny
-    to_id: paper-63-claims
 
 assessment:
   id: paper-63-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-63-curated, anchor-paper-63-official-1, anchor-paper-63-archive-1, anchor-paper-63-author-1]
+      level: high
+      rationale: The full version defines the model, specifies all subprotocols, proves the general and spotty thresholds, and supplies a matching spotty impossibility; the general threshold remains non-optimal and the proofs are not machine checked.
+      basis_source_anchor_ids: [anchor-paper-63-model, anchor-paper-63-main-theorem, anchor-paper-63-spotty]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-63-curated, anchor-paper-63-official-1, anchor-paper-63-archive-1, anchor-paper-63-author-1]
+      rationale: A complete public IACR full text exposes the definitions, protocol pseudocode, theorem statements, and proofs, with official and author-affiliation metadata linked separately.
+      basis_source_anchor_ids: [anchor-paper-63-results, anchor-paper-63-main-theorem, anchor-paper-63-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-63-curated]
+      rationale: Named authorship, ePrint identity, and peer-reviewed publication establish baseline provenance; roles, revision decisions, proof review, tool/AI use, and author approval of this map are not fully documented.
+      basis_source_anchor_ids: [anchor-paper-63-results, anchor-paper-63-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-63-official-1]
+      rationale: ACNS publication and public availability provide external exposure, but no public review reports, independent proof audit, formal mechanization, or correction history was located.
+      basis_source_anchor_ids: [anchor-paper-63-publication, anchor-paper-63-author-summary]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-63-curated]
+      level: low
+      rationale: OpenAlex record W3186077535 reported 5 citations in a DOI-specific query on 2026-07-11; this lies in the rubric's 0-8 range and remains a time-dependent, coverage-limited snapshot.
+      basis_source_anchor_ids: [anchor-paper-63-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-63-curated]
+      level: high
+      rationale: The paper supplies the first claimed sublinear-round consensus result allowing a majority of online faulty parties in the spotty model, proves that threshold optimal, and identifies a structural obstruction for general send faults.
+      basis_source_anchor_ids: [anchor-paper-63-results, anchor-paper-63-spotty]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: "OpenAlex work lookup filtered by DOI 10.1007/978-3-031-09234-3_34"
+  citation_count: 5
+  signals:
+    - type: citation_count
+      value: 5
+      source_url: https://api.openalex.org/works/W3186077535
+  limitation: OpenAlex coverage, deduplication, and citation linkage are incomplete and can change; the count is a dated observation rather than a quality judgment.

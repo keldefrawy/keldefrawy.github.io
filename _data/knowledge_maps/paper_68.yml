@@ -11,211 +11,359 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol]
 
 title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
-short_title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+short_title: Short cAKE
 year: 2023
 venue: "29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (ASIACRYPT)"
-publication_status: "Published"
+publication_status: Published
 topic: privacy-identity
-labels:
-  - "Theory"
-  - "Applied"
-authors:
-  - "Karim Eldefrawy"
-  - "Nicholas Genise"
-  - "Stanislaw Jarecki"
+labels: [Theory, Applied]
+authors: [Karim Eldefrawy, Nicholas Genise, Stanislaw Jarecki]
 keywords:
-  - "authenticated key exchange"
-  - "covert communication"
-  - "concurrency"
+  - covert authenticated key exchange
+  - concurrency
+  - universal composability
+  - covert identity escrow
+  - covert KEM
+  - group credentials
 
-research_question: "Can authenticated key exchange remain covert under many concurrent sessions while using short messages and practical bandwidth?"
-central_answer: "The curated editorial summary reports a composable model and a minimal-message protocol whose traffic is intended to remain indistinguishable from random communication under concurrency, plus a proof-of-concept implementation."
+research_question: >-
+  Can members of a credentialed group establish independent authenticated keys in many concurrent sessions while making the protocol traffic and even the fact of group participation indistinguishable from random beacon strings?
+central_answer: >-
+  Short cAKE combines covert identity escrow and a covert KEM inside a UC functionality. Each party sends one simultaneous 351-byte message, and the construction derives a key only when both parties hold valid, non-revoked group credentials. The security theorem is conditional on the modeled components and assumptions, including static corruption and random-oracle-based building blocks; later compromise does not preserve past-session participation covertness.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text protocol extraction, assumption mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 35-page publicly archived ASIACRYPT chapter, cross-checked against the official DOI and IACR full-version record. Proof and implementation details that the proceedings chapter defers to the full version are marked as such.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification; UC interpretation, theorem dependencies, efficiency accounting, and ratings remain provisional.
 
 sources:
-  - id: source-paper-68-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #68"
-    url: /publications/#paper-68
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-68-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-981-99-8742-9_3"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-68-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2023/1418"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-68-public-pdf
+    type: public_archive_copy
+    title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+    url: https://par.nsf.gov/servlets/purl/10616428
+    provenance_category: archive
+    media_type: application/pdf
+    page_count: 35
+  - id: source-paper-68-eprint
+    type: public_preprint
+    title: IACR ePrint full version 2023/1418
+    url: https://eprint.iacr.org/2023/1418
+    provenance_category: archive
+  - id: source-paper-68-official
+    type: official_publication_record
+    title: ASIACRYPT 2023 publication record
+    url: https://doi.org/10.1007/978-981-99-8742-9_3
+    provenance_category: official
+  - id: source-paper-68-citations
+    type: citation_index_snapshot
+    title: OpenAlex record W4389897179
+    url: https://api.openalex.org/works/W4389897179
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-68-curated
-    source_id: source-paper-68-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-68
-  - id: anchor-paper-68-official-1
-    source_id: source-paper-68-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-981-99-8742-9_3"
-  - id: anchor-paper-68-archive-1
-    source_id: source-paper-68-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2023/1418"
+  - id: anchor-paper-68-problem
+    source_id: source-paper-68-public-pdf
+    label: Covert AKE problem, contributions, and efficiency summary
+    locator: Abstract and Section 1, PDF pages 1-6
+    url: https://par.nsf.gov/servlets/purl/10616428#page=1
+  - id: anchor-paper-68-overview
+    source_id: source-paper-68-public-pdf
+    label: Construction overview, components, and limitations
+    locator: Technical overview, PDF pages 6-9
+    url: https://par.nsf.gov/servlets/purl/10616428#page=6
+  - id: anchor-paper-68-uc-model
+    source_id: source-paper-68-public-pdf
+    label: Concurrent UC model and cAKE functionality
+    locator: Section 3, PDF pages 10-16
+    url: https://par.nsf.gov/servlets/purl/10616428#page=10
+  - id: anchor-paper-68-building-blocks
+    source_id: source-paper-68-public-pdf
+    label: Commitments, SPHF, credentials, and covert primitives
+    locator: Section 4, PDF pages 16-25
+    url: https://par.nsf.gov/servlets/purl/10616428#page=16
+  - id: anchor-paper-68-ckem
+    source_id: source-paper-68-public-pdf
+    label: Covert KEM construction and security theorem
+    locator: Section 5, PDF pages 25-28, including Theorem 5.1
+    url: https://par.nsf.gov/servlets/purl/10616428#page=25
+  - id: anchor-paper-68-cake
+    source_id: source-paper-68-public-pdf
+    label: Short cAKE protocol and UC realization
+    locator: Section 6, PDF pages 28-31, including Theorem 6.1
+    url: https://par.nsf.gov/servlets/purl/10616428#page=28
+  - id: anchor-paper-68-full-version
+    source_id: source-paper-68-eprint
+    label: Full-version proofs and proof-of-concept material
+    locator: IACR ePrint 2023/1418, cited by the proceedings chapter for deferred details
+    url: https://eprint.iacr.org/2023/1418.pdf
+  - id: anchor-paper-68-publication
+    source_id: source-paper-68-official
+    label: Official publication identity
+    locator: ASIACRYPT 2023, DOI 10.1007/978-981-99-8742-9_3
+    url: https://doi.org/10.1007/978-981-99-8742-9_3
+  - id: anchor-paper-68-citation-count
+    source_id: source-paper-68-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex cited_by_count was 2 when accessed 2026-07-11
+    url: https://api.openalex.org/works/W4389897179
 
 nodes:
   - id: paper-68
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
-    summary: "This paper constructs authenticated key exchange whose protocol traffic remains indistinguishable from random communication even when many sessions run concurrently. It supplies a composable security model, minimal message complexity, substantially lower bandwidth than prior constructions, and a proof-of-concept implementation."
-    source_anchor_ids: [anchor-paper-68-curated]
+    epistemic_status: published
+    title: Short concurrent covert AKE
+    summary: A one-flow group-authenticated key-exchange protocol whose UC goal includes hiding protocol execution and participant credentials within random-looking beacon traffic under concurrent execution.
+    source_anchor_ids: [anchor-paper-68-problem]
+
   - id: paper-68-question
     kind: question
     parent_id: paper-68
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can authenticated key exchange remain covert under many concurrent sessions while using short messages and practical bandwidth?"
-    source_anchor_ids: [anchor-paper-68-curated]
-  - id: paper-68-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can covert AKE simultaneously achieve concurrent composability, group membership and revocation checks, independent session keys, short messages, and no visible protocol marker?
+    source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-uc-model]
+
+  - id: paper-68-answer
     kind: contribution
     parent_id: paper-68
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports a composable model and a minimal-message protocol whose traffic is intended to remain indistinguishable from random communication under concurrency, plus a proof-of-concept implementation."
-    source_anchor_ids: [anchor-paper-68-curated]
-  - id: paper-68-method
-    kind: method
+    epistemic_status: proved_conditionally
+    title: Central construction
+    summary: Combine a covert identity-escrow mechanism and a covert KEM so that both credential checks must succeed before either party derives the session key, while each transmitted string remains distributed like a beacon string to outsiders.
+    source_anchor_ids: [anchor-paper-68-overview, anchor-paper-68-cake]
+
+  - id: paper-68-model
+    kind: model
     parent_id: paper-68
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described work defines concurrent covert AKE security, constructs a short protocol, proves it in the stated model, and evaluates a prototype."
-    source_anchor_ids: [anchor-paper-68-curated]
-  - id: paper-68-claims
-    kind: claim_group
+    epistemic_status: formalized
+    title: UC functionality and adversary
+    summary: The functionality represents a group manager, member credentials, revocation, concurrent sessions, authentication, key independence, and covert transcripts under static corruptions.
+    source_anchor_ids: [anchor-paper-68-uc-model]
+
+  - id: paper-68-model-covertness
+    kind: security_goal
+    parent_id: paper-68-model
+    order: 1
+    epistemic_status: defined
+    title: Transcript and identity covertness
+    summary: Before successful mutual recognition, observable protocol strings should be indistinguishable from the ambient random-beacon distribution and should not reveal a party's group token or membership.
+    source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-uc-model]
+
+  - id: paper-68-model-authentication
+    kind: security_goal
+    parent_id: paper-68-model
+    order: 2
+    epistemic_status: defined
+    title: Authenticated independent keys
+    summary: Honest parties accepting the same session obtain a shared key only for valid, non-revoked credentials, and concurrent sessions obtain independent keys under the ideal functionality.
+    source_anchor_ids: [anchor-paper-68-uc-model]
+
+  - id: paper-68-protocol
+    kind: protocol
     parent_id: paper-68
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports concurrent covertness, authenticated key establishment, minimal message complexity, substantially lower bandwidth than prior constructions, and a proof-of-concept implementation."
-    source_anchor_ids: [anchor-paper-68-curated]
+    epistemic_status: constructed
+    title: Short cAKE protocol
+    summary: Each party simultaneously sends one compound message containing the commitment and sender/receiver material needed for covert credential escrow and covert encapsulation, then locally combines both acceptance conditions before deriving a key.
+    source_anchor_ids: [anchor-paper-68-overview, anchor-paper-68-cake]
+
+  - id: paper-68-protocol-identity
+    kind: protocol_component
+    parent_id: paper-68-protocol
+    order: 1
+    epistemic_status: constructed
+    title: Covert identity escrow
+    summary: A group credential is committed and tested without exposing it to non-members; revocation information is included in the local decision.
+    source_anchor_ids: [anchor-paper-68-building-blocks, anchor-paper-68-cake]
+
+  - id: paper-68-protocol-ckem
+    kind: protocol_component
+    parent_id: paper-68-protocol
+    order: 2
+    epistemic_status: constructed
+    title: Covert key encapsulation
+    summary: The CKEM is compiled from Sigma-protocol, trapdoor-commitment, and smooth-projective-hash ingredients in the random-oracle model, with properties designed for same-statement concurrency and postponed statements.
+    source_anchor_ids: [anchor-paper-68-building-blocks, anchor-paper-68-ckem]
+
+  - id: paper-68-protocol-efficiency
+    kind: property
+    parent_id: paper-68-protocol
+    order: 3
+    epistemic_status: analytically_derived
+    title: One simultaneous flow and short messages
+    summary: Each party sends one 351-byte message consisting of four DDH-group elements and two type-3 pairing-curve points; the paper reports roughly a tenfold size reduction over its prior comparison point.
+    source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-cake]
+
+  - id: paper-68-results
+    kind: claim_group
+    parent_id: paper-68
+    order: 5
+    epistemic_status: theorem_backed
+    title: Security and efficiency results
+    summary: The source states separate conditional security results for the CKEM compiler and for the composed cAKE realization, together with operation counts.
+    source_anchor_ids: [anchor-paper-68-ckem, anchor-paper-68-cake]
+
+  - id: paper-68-result-ckem
+    kind: theorem
+    parent_id: paper-68-results
+    order: 1
+    epistemic_status: proved_conditionally
+    title: Covert KEM theorem
+    summary: Theorem 5.1 establishes the required CKEM security from the listed commitment, proof, hash, and random-oracle assumptions under the theorem's concurrency conditions.
+    source_anchor_ids: [anchor-paper-68-ckem]
+
+  - id: paper-68-result-cake
+    kind: theorem
+    parent_id: paper-68-results
+    order: 2
+    epistemic_status: proved_conditionally
+    title: UC realization theorem
+    summary: Theorem 6.1 states that the composed protocol realizes the defined cAKE functionality when the covert identity-escrow and CKEM components satisfy their required properties.
+    source_anchor_ids: [anchor-paper-68-cake]
+
+  - id: paper-68-result-cost
+    kind: claim
+    parent_id: paper-68-results
+    order: 3
+    epistemic_status: analytically_derived
+    title: Per-party computation
+    summary: The proceedings analysis reports 14 exponentiations in total, including ten fixed-base and four variable-base operations, plus 4+n pairings for a group parameter n.
+    source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-cake]
+
   - id: paper-68-evidence
     kind: evidence_group
     parent_id: paper-68
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "A composable proof, communication comparison, and prototype are reported, but definitions, assumptions, reductions, traffic distributions, implementation, and measurements were not audited."
-    source_anchor_ids: [anchor-paper-68-curated]
-  - id: paper-68-scope
+    order: 6
+    epistemic_status: formal_with_deferred_details
+    title: Evidence structure
+    summary: The chapter gives the UC functionality, component definitions, concrete construction, theorem statements, and analytical costs; it directs readers to the IACR full version for deferred proofs and proof-of-concept implementation details.
+    source_anchor_ids: [anchor-paper-68-uc-model, anchor-paper-68-ckem, anchor-paper-68-cake, anchor-paper-68-full-version]
+
+  - id: paper-68-boundaries
     kind: limitation_group
     parent_id: paper-68
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked setup and credential assumptions, adversary scheduling, failure and replay behavior, the source of cover traffic or randomness, composability boundaries, side channels, or comparator configurations."
-    source_anchor_ids: [anchor-paper-68-curated]
-  - id: paper-68-artifacts
+    order: 7
+    epistemic_status: explicitly_bounded
+    title: Scope and limitations
+    summary: The result is conditional on a trusted credential lifecycle and specific cryptographic models; its covertness guarantee does not automatically survive later endpoint compromise.
+    source_anchor_ids: [anchor-paper-68-overview, anchor-paper-68-uc-model]
+
+  - id: paper-68-boundary-corruption
+    kind: limitation
+    parent_id: paper-68-boundaries
+    order: 1
+    epistemic_status: model_bounded
+    title: Static corruption and no forward covertness
+    summary: The analysis uses static corruption. Later compromise may reveal that a party participated in past sessions even when session-key security remains, so forward privacy of participation is outside the claim.
+    source_anchor_ids: [anchor-paper-68-overview, anchor-paper-68-uc-model]
+
+  - id: paper-68-boundary-setup
+    kind: limitation
+    parent_id: paper-68-boundaries
+    order: 2
+    epistemic_status: assumption_dependent
+    title: Credential and random-oracle assumptions
+    summary: A group manager must issue credentials and distribute revocation state securely, and the CKEM compiler relies on random-oracle and group assumptions; these are prerequisites rather than guarantees of cAKE itself.
+    source_anchor_ids: [anchor-paper-68-building-blocks, anchor-paper-68-ckem]
+
+  - id: paper-68-boundary-implementation
+    kind: limitation
+    parent_id: paper-68-boundaries
+    order: 3
+    epistemic_status: evidence_boundary
+    title: Proceedings chapter defers implementation detail
+    summary: The represented 35-page chapter gives analytical costs but sends readers to the full ePrint for proof-of-concept measurements; no independent deployment or side-channel evaluation is established here.
+    source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-full-version]
+
+  - id: paper-68-resources
     kind: artifact_group
     parent_id: paper-68
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-68-curated, anchor-paper-68-official-1, anchor-paper-68-archive-1]
+    order: 8
+    epistemic_status: source_available
+    title: Auditable resources
+    summary: A complete public proceedings copy, IACR full-version record, and official DOI expose the protocol and its formal context. No public source-code repository was located in this audit.
+    source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-full-version, anchor-paper-68-publication]
+
   - id: paper-68-scrutiny
     kind: scrutiny
     parent_id: paper-68
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 29th Annual International Conference on the Theory and Applications of Cryptology and Information Security (ASIACRYPT). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-68-official-1]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: ASIACRYPT publication establishes venue scrutiny, but public reports, independent implementation reproduction, proof verification, correction, or adversarial follow-up were not located.
+    source_anchor_ids: [anchor-paper-68-publication]
+
+  - id: paper-68-lineage
+    kind: lineage
+    parent_id: paper-68
+    order: 10
+    epistemic_status: documented
+    title: Protocol lineage
+    summary: Short cAKE compresses earlier covert AKE directions by combining covert credential recognition and encapsulation under a composable concurrent-session model.
+    source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-overview]
 
 relations:
-  - id: paper-68-relation-question-contribution
-    type: motivates
-    from_id: paper-68-question
-    to_id: paper-68-contribution
-  - id: paper-68-relation-method-contribution
-    type: realizes
-    from_id: paper-68-method
-    to_id: paper-68-contribution
-  - id: paper-68-relation-contribution-claims
-    type: grounds
-    from_id: paper-68-contribution
-    to_id: paper-68-claims
-  - id: paper-68-relation-evidence-claims
-    type: supports
-    from_id: paper-68-evidence
-    to_id: paper-68-claims
-  - id: paper-68-relation-scope-claims
-    type: qualifies
-    from_id: paper-68-scope
-    to_id: paper-68-claims
-  - id: paper-68-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-68-artifacts
-    to_id: paper-68-evidence
-  - id: paper-68-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-68-scrutiny
-    to_id: paper-68-claims
+  - {id: paper-68-rel-answer-question, type: addresses, from_id: paper-68-answer, to_id: paper-68-question}
+  - {id: paper-68-rel-model-answer, type: scopes, from_id: paper-68-model, to_id: paper-68-answer}
+  - {id: paper-68-rel-protocol-answer, type: realizes, from_id: paper-68-protocol, to_id: paper-68-answer}
+  - {id: paper-68-rel-identity-protocol, type: component_of, from_id: paper-68-protocol-identity, to_id: paper-68-protocol}
+  - {id: paper-68-rel-ckem-protocol, type: component_of, from_id: paper-68-protocol-ckem, to_id: paper-68-protocol}
+  - {id: paper-68-rel-ckem-theorem-component, type: supports, from_id: paper-68-result-ckem, to_id: paper-68-protocol-ckem}
+  - {id: paper-68-rel-cake-theorem-answer, type: supports, from_id: paper-68-result-cake, to_id: paper-68-answer}
+  - {id: paper-68-rel-evidence-results, type: supports, from_id: paper-68-evidence, to_id: paper-68-results}
+  - {id: paper-68-rel-boundaries-results, type: qualifies, from_id: paper-68-boundaries, to_id: paper-68-results}
+  - {id: paper-68-rel-resources-evidence, type: enables_audit_of, from_id: paper-68-resources, to_id: paper-68-evidence}
+  - {id: paper-68-rel-lineage-paper, type: contextualizes, from_id: paper-68-lineage, to_id: paper-68}
 
 assessment:
   id: paper-68-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-68-curated, anchor-paper-68-official-1, anchor-paper-68-archive-1]
+      rationale: The complete chapter defines the UC target, components, protocol, theorem statements, and cost analysis, but defers proof and implementation details to the full version and has no independent verification represented here.
+      basis_source_anchor_ids: [anchor-paper-68-uc-model, anchor-paper-68-ckem, anchor-paper-68-cake, anchor-paper-68-full-version]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-68-curated, anchor-paper-68-official-1, anchor-paper-68-archive-1]
+      rationale: A complete public archive copy, IACR full-version route, and official DOI make the protocol, assumptions, and formal claims directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-full-version, anchor-paper-68-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-68-curated]
+      rationale: Named authorship, publication identity, and public manuscript versions are documented; author roles, revision lineage, proof-tool use, and artifact-version history are not.
+      basis_source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-68-official-1]
+      rationale: ASIACRYPT publication establishes venue review, but public reports, independent proof checking, implementation reproduction, and correction history were not located.
+      basis_source_anchor_ids: [anchor-paper-68-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-68-curated]
+      level: low
+      rationale: The dated OpenAlex snapshot located 2 citations. Under the author-defined rule, 0 through 8 located citations is Low; citation count does not measure correctness.
+      basis_source_anchor_ids: [anchor-paper-68-citation-count]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-68-curated]
+      level: high
+      rationale: The source combines concurrent UC covertness, group credential controls, one simultaneous flow, and short concrete messages in one protocol result; the assessment remains pending author verification.
+      basis_source_anchor_ids: [anchor-paper-68-problem, anchor-paper-68-uc-model, anchor-paper-68-cake]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex work lookup by DOI 10.1007/978-981-99-8742-9_3
+  citation_count: 2
+  source_url: https://api.openalex.org/works/W4389897179
+  signals:
+    - OpenAlex reported 2 citing works for the matched publication record.
+  limitation: Citation counts are index- and date-dependent and do not establish validity, implementation maturity, or adoption.

@@ -14,248 +14,242 @@ title: "Automated Inference of Dependencies of Network Services and Applications
 year: 2016
 status: "Published"
 venue: "IEEE COMPSAC, ADMNET workshop"
-topic: "ai-machine-learning"
+topic: ai-machine-learning
 labels: ["Applied"]
 ai_ml_labels: ["AI for security"]
-authors:
-  - "Karim Eldefrawy"
-  - "Tiffany Kim"
-  - "Pape M. Sylla"
-keywords:
-  - "network service dependencies"
-  - "transfer entropy"
-  - "causal inference"
-  - "network management"
-editorial_summary: "The paper infers which network services and applications depend on one another by passively applying transfer entropy to time series derived from network interactions. Tests on production traffic show fewer false alarms and efficient runtime compared with correlation-based methods, helping operators diagnose failures, plan maintenance, and spot anomalies."
+authors: ["Karim Eldefrawy", "Tiffany Kim", "Pape M. Sylla"]
+keywords: ["network service dependencies", "transfer entropy", "causal inference", "network management"]
 
-research_question: "Can dependencies among network services and applications be inferred passively and more reliably than with correlation-based analysis?"
-central_answer: "The paper reports applying transfer entropy to time series derived from network interactions and using the inferred dependencies for operational diagnosis and planning."
+abstract: >-
+  As the scale and complexity of modern computer networks increases, administrators and operators of such networks need tools to accurately infer dependencies between different network services and applications. Such tools can aid in (1) detecting misconfigurations, (2) effectively scheduling major software and hardware maintenance operations with minimal disruptions, and (3) exposing potential anomalies in a timely manner. Existing tools either only consider temporal correlations which require installing additional software to monitor interfaces, ignore network service profiles of more than two services, or do not necessarily capture actual causations. Such shortcomings result in high false detection rates of inferred dependencies. This paper presents the design and evaluation of an algorithm that utilizes the notion of Transfer Entropy (TE) to passively analyze and identify dependencies between various network services and applications. With TE, our algorithm formalizes and measures the amount of information exchanged between two entities (services or applications) in a computer network. By constructing time series of the interactions of such services and applications and computing the pairwise TE from such time series, our algorithm accurately infers dependencies based on causation with low false (positive and negative) alarms. Using collected network traffic from a test and production network, we demonstrate that the algorithm provides lower false alarms with efficient run time and computational requirements.
+
+research_question: >-
+  Can dependencies among network services and applications be inferred passively from traffic with fewer false positives and negatives than correlation-oriented approaches?
+central_answer: >-
+  The source abstract reports an algorithm that builds interaction time series, computes directional pairwise transfer entropy, and validates inferred dependencies on test and production traffic; because the manuscript body was not retrievable, the estimator, decision rule, ground truth, baselines, sample sizes, and numerical results remain pending.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: abstract-grounded method decomposition, provenance search, and initial assessment
+  method: "Conservative mapping of the complete abstract previously transcribed from the public ResearchGate author-uploaded PDF, plus the IEEE record. Direct retrieval was blocked by the host and no alternative legitimate author/archive copy was found; body-level claims were not reconstructed from secondary sources."
+  source_scope: metadata_and_source_abstract
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: "AI-authored abstract-grounded map awaiting author verification and full manuscript audit."
 
 sources:
-  - id: source-paper-30-site-record
-    type: curated_site_record
-    title: "Publication #30 metadata and editorial summary"
-    url: /publications/#paper-30
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-30-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/COMPSAC.2016.68"
-    provenance_category: official
-  - id: source-paper-30-resource-2
-    type: author_hosted_copy
+  - id: source-paper-30-author
+    type: author_full_text_route
     title: "ResearchGate author-uploaded PDF"
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/303252585_Automated_Identification_of_Network_Service_Dependencies_via_Transfer_Entropy/links/573dee7808ae9ace84112561/Automated-Identification-of-Network-Service-Dependencies-via-Transfer-Entropy.pdf"
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/303252585_Automated_Identification_of_Network_Service_Dependencies_via_Transfer_Entropy/links/573dee7808ae9ace84112561/Automated-Identification-of-Network-Service-Dependencies-via-Transfer-Entropy.pdf
     provenance_category: author
+    scope_note: "Complete abstract is transcribed in this map; body retrieval was blocked during this audit."
+  - id: source-paper-30-official
+    type: publication_record
+    title: "IEEE COMPSAC publication record"
+    url: https://doi.org/10.1109/COMPSAC.2016.68
+  - id: source-paper-30-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #30"
+    url: https://openalex.org/W2518247105
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-30-editorial
-    source_id: source-paper-30-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-30
-  - id: anchor-paper-30-resource-1
-    source_id: source-paper-30-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1109/COMPSAC.2016.68"
-  - id: anchor-paper-30-resource-2
-    source_id: source-paper-30-resource-2
-    label: "Author-hosted resource: ResearchGate author-uploaded PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/303252585_Automated_Identification_of_Network_Service_Dependencies_via_Transfer_Entropy/links/573dee7808ae9ace84112561/Automated-Identification-of-Network-Service-Dependencies-via-Transfer-Entropy.pdf"
+  - id: anchor-paper-30-abstract
+    source_id: source-paper-30-author
+    label: "Complete author-uploaded source abstract"
+    locator: "Abstract transcribed from author-uploaded PDF; body not audited"
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/303252585_Automated_Identification_of_Network_Service_Dependencies_via_Transfer_Entropy/links/573dee7808ae9ace84112561/Automated-Identification-of-Network-Service-Dependencies-via-Transfer-Entropy.pdf
+  - id: anchor-paper-30-publication
+    source_id: source-paper-30-official
+    label: "Official IEEE publication record"
+    locator: "COMPSAC Workshops 2016, pages 32-37"
+    url: https://doi.org/10.1109/COMPSAC.2016.68
+  - id: anchor-paper-30-citations
+    source_id: source-paper-30-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 3, accessed 2026-07-11"
+    url: https://openalex.org/W2518247105
 
 nodes:
   - id: paper-30
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Automated Inference of Dependencies of Network Services and Applications via Transfer Entropy"
-    summary: "The paper infers which network services and applications depend on one another by passively applying transfer entropy to time series derived from network interactions. Tests on production traffic show fewer false alarms and efficient runtime compared with correlation-based methods, helping operators diagnose failures, plan maintenance, and spot anomalies."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
+    epistemic_status: published_abstract_audited
+    title: "Automated Inference via Transfer Entropy"
+    summary: "An abstract-grounded passive algorithm for identifying directional dependencies between network services and applications from interaction time series."
+    source_anchor_ids: [anchor-paper-30-abstract]
 
   - id: paper-30-question
     kind: question
     parent_id: paper-30
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question_from_abstract
     title: "Research question"
-    summary: "Can dependencies among network services and applications be inferred passively and more reliably than with correlation-based analysis?"
-    source_anchor_ids: ["anchor-paper-30-editorial"]
+    summary: "Can service dependencies be inferred without host instrumentation while improving on pairwise temporal correlation and reducing false alarms?"
+    source_anchor_ids: [anchor-paper-30-abstract]
 
-  - id: paper-30-contribution
+  - id: paper-30-answer
     kind: contribution
     parent_id: paper-30
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports applying transfer entropy to time series derived from network interactions and using the inferred dependencies for operational diagnosis and planning."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
+    epistemic_status: source_abstract_asserted
+    title: "Central answer"
+    summary: "Convert observed service interactions into time series, calculate pairwise directional transfer entropy, and classify dependencies from information transfer."
+    source_anchor_ids: [anchor-paper-30-abstract]
+
+  - id: paper-30-scope
+    kind: scope
+    parent_id: paper-30
+    order: 3
+    epistemic_status: abstract_level
+    title: "Operational scope"
+    summary: "The intended uses are dependency mapping for misconfiguration detection, maintenance planning, anomaly exposure, and general network management."
+    source_anchor_ids: [anchor-paper-30-abstract]
 
   - id: paper-30-method
     kind: method
     parent_id: paper-30
-    order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported method constructs interaction time series from passive network observations, computes directional dependence with transfer entropy, and compares results with correlation-based methods."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
+    order: 4
+    epistemic_status: source_abstract_asserted
+    title: "Transfer-entropy pipeline"
+    summary: "The abstract describes passive traffic collection, interaction time-series construction, pairwise TE computation, and dependency inference; it does not expose preprocessing, estimator, lag selection, significance test, or decision threshold."
+    source_anchor_ids: [anchor-paper-30-abstract]
+
+  - id: paper-30-method-directionality
+    kind: component
+    parent_id: paper-30-method
+    order: 1
+    epistemic_status: source_abstract_asserted
+    title: "Directional dependence signal"
+    summary: "Transfer entropy is used to measure predictive information flow from one service/application time series to another rather than only symmetric temporal correlation."
+    source_anchor_ids: [anchor-paper-30-abstract]
 
   - id: paper-30-claims
     kind: claim_group
     parent_id: paper-30
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
-
-  - id: paper-30-claim-primary
-    kind: claim
-    parent_id: paper-30-claims
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The editorial summary reports fewer false alarms and efficient runtime on production traffic relative to correlation-based baselines."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
+    order: 5
+    epistemic_status: abstract_only
+    title: "Abstract-level findings"
+    summary: "The abstract reports low false-positive and false-negative alarms, lower false alarms than existing tools, and efficient runtime on test and production-network traffic."
+    source_anchor_ids: [anchor-paper-30-abstract]
 
   - id: paper-30-evidence
     kind: evidence_group
     parent_id: paper-30
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
+    order: 6
+    epistemic_status: not_body_audited
+    title: "Reported evaluation"
+    summary: "Only the abstract's statement that test and production traffic were used is visible; datasets, labels, baselines, metrics, numerical results, and uncertainty were not inspected."
+    source_anchor_ids: [anchor-paper-30-abstract]
 
-  - id: paper-30-evidence-reported
-    kind: evidence
-    parent_id: paper-30-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The current record identifies production-traffic tests and a baseline comparison, but the dataset, labels, parameter choices, metrics, and reproducibility materials were not audited."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
-
-  - id: paper-30-scope
+  - id: paper-30-boundaries
     kind: limitation_group
     parent_id: paper-30
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
-
-  - id: paper-30-scope-boundary
-    kind: limitation
-    parent_id: paper-30-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    order: 7
+    epistemic_status: material_source_gap
     title: "Unverified boundaries"
-    summary: "The represented result is limited to the environments, traffic, dependency definitions, and baselines used in the paper, none of which were inspected for this draft."
-    source_anchor_ids: ["anchor-paper-30-editorial"]
+    summary: "The map cannot determine how dependencies were ground-truthed, how TE bias and common causes were handled, whether results generalize across networks, or what computational scaling was measured."
+    source_anchor_ids: [anchor-paper-30-abstract]
 
-  - id: paper-30-resources
+  - id: paper-30-boundary-causality
+    kind: limitation
+    parent_id: paper-30-boundaries
+    order: 1
+    epistemic_status: interpretation_boundary
+    title: "Transfer entropy is not intervention proof"
+    summary: "The abstract uses causal language, but directional predictive information alone does not rule out confounding, indirect paths, or shared drivers; the body is needed to see what causal assumptions and controls were used."
+    source_anchor_ids: [anchor-paper-30-abstract]
+
+  - id: paper-30-artifacts
     kind: artifact_group
     parent_id: paper-30
-    order: 7
-    epistemic_status: resource_metadata_recorded
+    order: 8
+    epistemic_status: public_route_not_locally_fixed
     title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-30-resource-1", "anchor-paper-30-resource-2"]
-
-  - id: paper-30-resources-available
-    kind: artifact
-    parent_id: paper-30-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: ResearchGate author-uploaded PDF."
-    source_anchor_ids: ["anchor-paper-30-resource-1", "anchor-paper-30-resource-2"]
+    summary: "An IEEE record and author-uploaded PDF route exist, but no local fixed manuscript, code, traffic trace, or experiment package was added because direct retrieval was blocked."
+    source_anchor_ids: [anchor-paper-30-abstract, anchor-paper-30-publication]
 
   - id: paper-30-scrutiny
     kind: scrutiny
     parent_id: paper-30
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at IEEE COMPSAC, ADMNET workshop. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-30-resource-1"]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The work was published at the IEEE COMPSAC ADMNET workshop; reviews, independent replication, and operational deployment were not audited."
+    source_anchor_ids: [anchor-paper-30-publication]
+
+  - id: paper-30-lineage
+    kind: lineage
+    parent_id: paper-30
+    order: 10
+    epistemic_status: source_abstract_asserted
+    title: "Research lineage"
+    summary: "The method applies information-theoretic directional dependence estimation to service-dependency discovery as an alternative to correlation and host-instrumented tools."
+    source_anchor_ids: [anchor-paper-30-abstract]
 
 relations:
-  - id: relation-paper-30-contribution-addresses-question
+  - id: relation-paper-30-answer-addresses-question
     type: addresses
-    from_id: paper-30-contribution
+    from_id: paper-30-answer
     to_id: paper-30-question
-  - id: relation-paper-30-method-describes-contribution
-    type: describes_approach_to
+  - id: relation-paper-30-method-realizes-answer
+    type: realizes
     from_id: paper-30-method
-    to_id: paper-30-contribution
-  - id: relation-paper-30-evidence-supports-claim
+    to_id: paper-30-answer
+  - id: relation-paper-30-evidence-supports-claims
     type: supports
-    from_id: paper-30-evidence-reported
-    to_id: paper-30-claim-primary
-  - id: relation-paper-30-scope-qualifies-claim
+    from_id: paper-30-evidence
+    to_id: paper-30-claims
+  - id: relation-paper-30-causality-qualifies-answer
     type: qualifies
-    from_id: paper-30-scope-boundary
-    to_id: paper-30-claim-primary
-  - id: relation-paper-30-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-30-resources-available
-    to_id: paper-30-evidence-reported
-  - id: relation-paper-30-status-qualifies-claim
+    from_id: paper-30-boundary-causality
+    to_id: paper-30-answer
+  - id: relation-paper-30-boundaries-qualify-claims
     type: qualifies
-    from_id: paper-30-scrutiny
-    to_id: paper-30-claim-primary
+    from_id: paper-30-boundaries
+    to_id: paper-30-claims
 
 assessment:
   id: paper-30-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-30-editorial", "anchor-paper-30-resource-1"]
+      level: low
+      rationale: "The complete source abstract identifies an algorithm and reports production/test-traffic evaluation, but methods, datasets, baselines, and numerical evidence were not body-audited."
+      basis_source_anchor_ids: [anchor-paper-30-abstract]
     - id: auditability
       level: high
-      rationale: "The resource record provides a public author-uploaded full-text route, so the paper is directly inspectable and auditability is high. Local fixity, correspondence with the final published version, and a substantive audit of the paper and supplementary artifacts have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-30-resource-1", "anchor-paper-30-resource-2"]
+      rationale: "A public author-uploaded full-text route exists, satisfying the site's author-copy rule; direct body retrieval and local fixity were not achieved in this audit."
+      basis_source_anchor_ids: [anchor-paper-30-abstract]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-30-editorial"]
+      rationale: "Named authorship, an author-uploaded route, and an IEEE record establish baseline provenance; roles, code/data versions, and revision history are unknown."
+      basis_source_anchor_ids: [anchor-paper-30-abstract, anchor-paper-30-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-30-resource-1"]
+      rationale: "The paper has an IEEE workshop publication record, but reviews, replication, and deployment were not inspected."
+      basis_source_anchor_ids: [anchor-paper-30-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-30-editorial"]
+      level: low
+      rationale: "OpenAlex reports 3 located citations as of 2026-07-11. The count is index-specific and may omit versions or citations."
+      basis_source_anchor_ids: [anchor-paper-30-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a passive dependency-inference technique intended to support failure diagnosis, maintenance planning, and anomaly detection. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-30-editorial"]
+      rationale: "The abstract presents a concrete passive dependency-inference algorithm with operational uses, but novelty, empirical strength, and downstream impact were not body-audited."
+      basis_source_anchor_ids: [anchor-paper-30-abstract]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2518247105
+  citation_count: 3
   signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  limitation: "OpenAlex coverage and record matching are incomplete; this is a dated located-citation snapshot."

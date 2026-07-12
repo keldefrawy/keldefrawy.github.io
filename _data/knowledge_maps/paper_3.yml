@@ -18,151 +18,295 @@ labels: ["Applied"]
 authors: ["Karim Eldefrawy", "Claudio Soriente"]
 keywords: ["location privacy", "wireless networks", "user cooperation"]
 
-research_question: "Can cooperating wireless users reduce location tracking from persistent interface identifiers without long silent periods or disrupted sessions?"
-central_answer: "PEUC-WiN has users associated with the same access point cooperate to reduce identifier-based tracking while seeking to preserve sessions and throughput."
+research_question: >-
+  Can WLAN users rotate link- and network-layer identifiers to resist access-point tracking without repeatedly reassociating, terminating TCP connections, or accepting the throughput loss of prior silent-period approaches?
+central_answer: >-
+  PEUC-WiN synchronizes a group of users behind an untrusted access point so they permute a shared pool of IP/MAC pairs, while a trusted Privacy Enhancer proxies stable external connections and remaps them across each address rotation.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, evidence linking, and initial assessment
+  method: "Full-source audit of the checked-in Internet Archive snapshot of the formerly public UCI author copy and the official IEEE DOI record."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-drafted, source-linked map awaiting author verification before approval."
 
 sources:
-  - id: source-paper-3-site-record
-    type: curated_record
-    title: "Curated publication record for paper #3"
-    url: /publications/#paper-3
-  - id: source-paper-3-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/NPSEC.2006.320345"
-  - id: source-paper-3-archive-1
+  - id: source-paper-3-paper
+    type: archived_author_copy
+    title: "PEUC-WiN: Privacy Enhancement by User Cooperation in Wireless Networks"
+    url: /pubs/2006/peuc-win-npsec2006.pdf
+    media_type: application/pdf
+    sha256: 2543aaa0f4fe0538e6e1c88c04ae5622822d8c08cdd93558c514af6448dad86a
+    page_count: 6
+    provenance_category: author
+    version_note: "Internet Archive snapshot dated 2015-07-03 of the formerly public UCI author PDF."
+  - id: source-paper-3-archive
     type: manuscript_archive
-    title: "CiteSeerX archive"
-    url: "https://citeseerx.ist.psu.edu/document?doi=0f2ebd193c1a279f035d877c6c43c4cc43829b57&repid=rep1&type=pdf"
+    title: "Internet Archive capture of UCI author copy"
+    url: "https://web.archive.org/web/20150703110605/http://www.ics.uci.edu/%7Ekeldefra/papers/peucwin.pdf"
+  - id: source-paper-3-official
+    type: official_publication_record
+    title: "IEEE DOI record"
+    url: "https://doi.org/10.1109/NPSEC.2006.320345"
+  - id: source-paper-3-citations
+    type: citation_search
+    title: "Dated scholarly-web citation search"
+    url: "https://scholar.google.com/scholar?q=%22PEUC-WiN%3A+Privacy+Enhancement+by+User+Cooperation+in+Wireless+Networks%22"
+    version_note: "Search attempted 2026-07-11; no transparent citation count was retrievable in this environment."
 
 source_anchors:
-  - id: anchor-paper-3-site-record
-    source_id: source-paper-3-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-3
-  - id: anchor-paper-3-official-1
-    source_id: source-paper-3-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-3-problem
+    source_id: source-paper-3-paper
+    label: "Problem and claimed contribution"
+    locator: "Abstract and Section 1, PDF page 1 (printed page 38)"
+    url: /pubs/2006/peuc-win-npsec2006.pdf#page=1
+  - id: anchor-paper-3-model
+    source_id: source-paper-3-paper
+    label: "Group, adversary, keys, and trusted Privacy Enhancer"
+    locator: "Section 3, PDF pages 2-3 (printed pages 39-40)"
+    url: /pubs/2006/peuc-win-npsec2006.pdf#page=2
+  - id: anchor-paper-3-protocol
+    source_id: source-paper-3-paper
+    label: "Join, leave, update, address permutation, and proxy operation"
+    locator: "Section 3, PDF pages 3-4 (printed pages 40-41)"
+    url: /pubs/2006/peuc-win-npsec2006.pdf#page=3
+  - id: anchor-paper-3-security
+    source_id: source-paper-3-paper
+    label: "Security analysis and anonymity conditions"
+    locator: "Section 4, PDF page 4 (printed page 41)"
+    url: /pubs/2006/peuc-win-npsec2006.pdf#page=4
+  - id: anchor-paper-3-performance
+    source_id: source-paper-3-paper
+    label: "Performance model, implementation barrier, and simulation setup"
+    locator: "Section 5, PDF pages 4-5 (printed pages 41-42)"
+    url: /pubs/2006/peuc-win-npsec2006.pdf#page=4
+  - id: anchor-paper-3-results
+    source_id: source-paper-3-paper
+    label: "NC-TUns throughput comparison"
+    locator: "Section 5 and Figures 1-2, PDF pages 5-6 (printed pages 42-43)"
+    url: /pubs/2006/peuc-win-npsec2006.pdf#page=5
+  - id: anchor-paper-3-conclusion
+    source_id: source-paper-3-paper
+    label: "Conclusion and future work"
+    locator: "Section 6, PDF page 6 (printed page 43)"
+    url: /pubs/2006/peuc-win-npsec2006.pdf#page=6
+  - id: anchor-paper-3-archive
+    source_id: source-paper-3-archive
+    label: "Author-copy provenance"
+    locator: "Internet Archive capture 2015-07-03"
+    url: "https://web.archive.org/web/20150703110605/http://www.ics.uci.edu/%7Ekeldefra/papers/peucwin.pdf"
+  - id: anchor-paper-3-publication
+    source_id: source-paper-3-official
+    label: "Official publication metadata"
+    locator: "DOI 10.1109/NPSEC.2006.320345"
     url: "https://doi.org/10.1109/NPSEC.2006.320345"
-  - id: anchor-paper-3-archive-1
-    source_id: source-paper-3-archive-1
-    label: "CiteSeerX archive"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://citeseerx.ist.psu.edu/document?doi=0f2ebd193c1a279f035d877c6c43c4cc43829b57&repid=rep1&type=pdf"
+  - id: anchor-paper-3-citation-search
+    source_id: source-paper-3-citations
+    label: "Citation search attempted"
+    locator: "Exact-title search, 2026-07-11; no verified count retrieved"
+    url: "https://scholar.google.com/scholar?q=%22PEUC-WiN%3A+Privacy+Enhancement+by+User+Cooperation+in+Wireless+Networks%22"
 
 nodes:
   - id: paper-3
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "PEUC-WiN: Privacy Enhancement by User Cooperation in Wireless Networks"
-    summary: "PEUC-WiN combats location tracking caused by persistent wireless-interface identifiers by having users under the same access point cooperate. The design seeks to improve location privacy without the long silent periods, dropped sessions, and throughput disruption imposed by earlier identifier-changing approaches."
-    source_anchor_ids: [anchor-paper-3-site-record]
+    epistemic_status: published
+    title: "PEUC-WiN"
+    summary: "A cooperative WLAN location-privacy protocol that rotates users through a shared address pool while a trusted proxy preserves their external transport connections."
+    source_anchor_ids: [anchor-paper-3-problem, anchor-paper-3-publication]
 
   - id: paper-3-question
     kind: question
     parent_id: paper-3
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can cooperating wireless users reduce location tracking from persistent interface identifiers without long silent periods or disrupted sessions?"
-    source_anchor_ids: [anchor-paper-3-site-record]
+    summary: "Can identifier rotation reduce tracking by an untrusted access point without forcing repeated reassociation and TCP restart?"
+    source_anchor_ids: [anchor-paper-3-problem]
 
   - id: paper-3-answer
     kind: contribution
     parent_id: paper-3
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "PEUC-WiN has users associated with the same access point cooperate to reduce identifier-based tracking while seeking to preserve sessions and throughput."
-    source_anchor_ids: [anchor-paper-3-site-record]
+    epistemic_status: proposed_and_simulated
+    title: "Central answer"
+    summary: "Coordinate simultaneous IP/MAC permutations within an anonymity group and terminate stable external connections at a Privacy Enhancer that remaps traffic after every rotation."
+    source_anchor_ids: [anchor-paper-3-protocol, anchor-paper-3-results]
 
-  - id: paper-3-method
-    kind: method
+  - id: paper-3-scope
+    kind: scope
     parent_id: paper-3
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Coordinate privacy-enhancing behavior among users under a common access point instead of requiring each user to rely on prolonged radio silence."
-    source_anchor_ids: [anchor-paper-3-site-record]
+    epistemic_status: explicitly_scoped
+    title: "Threat model and trust assumptions"
+    summary: "Users registered at one malicious access point cooperate with a trusted Privacy Enhancer; the access point can observe all group traffic, while upper-layer payloads and control messages rely on public-key, signature, group-key, and IPsec protection."
+    source_anchor_ids: [anchor-paper-3-model, anchor-paper-3-security]
+
+  - id: paper-3-scope-anonymity
+    kind: assumption
+    parent_id: paper-3-scope
+    order: 1
+    epistemic_status: necessary_condition
+    title: "Anonymity-set condition"
+    summary: "Privacy requires more than one participating user; the anonymity level grows with group cardinality, while shorter rotation slots reduce tracking time at the cost of more switching overhead."
+    source_anchor_ids: [anchor-paper-3-model, anchor-paper-3-security]
+
+  - id: paper-3-protocol
+    kind: protocol
+    parent_id: paper-3
+    order: 4
+    epistemic_status: specified
+    title: "Cooperative address-rotation protocol"
+    summary: "The protocol maintains group membership, distributes an address table and hash-chain seed, synchronizes rotations, and maps each user to a collision-free address pair for each variable-length time slot."
+    source_anchor_ids: [anchor-paper-3-protocol]
+
+  - id: paper-3-protocol-control
+    kind: component
+    parent_id: paper-3-protocol
+    order: 1
+    epistemic_status: specified
+    title: "Membership and synchronization"
+    summary: "Signed and encrypted join/leave messages let the Privacy Enhancer update group size, address table, seed, and time base; timers handle departures that are not explicitly announced."
+    source_anchor_ids: [anchor-paper-3-protocol]
+
+  - id: paper-3-protocol-rotation
+    kind: component
+    parent_id: paper-3-protocol
+    order: 2
+    epistemic_status: specified
+    title: "Address permutation"
+    summary: "All members derive the same time-slot hash value and use offset indices to permute the table of active IP/MAC pairs without collisions; a hash-derived variable slot length counters fixed-period timing correlation."
+    source_anchor_ids: [anchor-paper-3-protocol]
+
+  - id: paper-3-protocol-proxy
+    kind: component
+    parent_id: paper-3-protocol
+    order: 3
+    epistemic_status: specified
+    title: "Privacy Enhancer proxy"
+    summary: "The proxy exposes a stable permanent address to correspondent nodes, tracks both legs of each connection, and adjusts IP addresses, sequence numbers, acknowledgments, and windows as users exchange address pairs."
+    source_anchor_ids: [anchor-paper-3-protocol]
 
   - id: paper-3-claims
     kind: claim_group
     parent_id: paper-3
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The paper reports that cooperation can improve location privacy while avoiding the session loss and throughput disruption associated with earlier identifier-changing approaches."
-    source_anchor_ids: [anchor-paper-3-site-record]
+    order: 5
+    epistemic_status: mixed
+    title: "Principal claims"
+    summary: "The paper gives an informal privacy analysis and simulation evidence about throughput disruption; it does not provide a formal security proof."
+    source_anchor_ids: [anchor-paper-3-security, anchor-paper-3-results]
+
+  - id: paper-3-claim-privacy
+    kind: claim
+    parent_id: paper-3-claims
+    order: 1
+    epistemic_status: informally_argued
+    title: "Upper-layer tracking resistance"
+    summary: "Against an observer limited to layer 2 and above, synchronized address permutation prevents straightforward identifier linkage, conditional on encrypted communications, uncompromised group secrets, and the stated registration assumptions."
+    source_anchor_ids: [anchor-paper-3-security]
+
+  - id: paper-3-claim-disruption
+    kind: claim
+    parent_id: paper-3-claims
+    order: 2
+    epistemic_status: simulation_supported
+    title: "Lower disruption than reassociation"
+    summary: "The NC-TUns comparison reports that PEUC-WiN retains TCP connections across address changes and therefore avoids the repeated handshakes, slow starts, and longer outages of reassociation-based rotation."
+    source_anchor_ids: [anchor-paper-3-performance, anchor-paper-3-results]
 
   - id: paper-3-evidence
     kind: evidence_group
     parent_id: paper-3
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports the design goal and comparison with earlier approaches; the protocol, threat model, and any evaluation have not been inspected."
-    source_anchor_ids: [anchor-paper-3-site-record]
+    order: 6
+    epistemic_status: simulation_and_measurement
+    title: "Evidence"
+    summary: "The authors measured interface-switch time on Linux laptops and simulated five cooperative users, two correspondent-path delay regimes, and comparative TCP throughput in NC-TUns 3.0."
+    source_anchor_ids: [anchor-paper-3-performance, anchor-paper-3-results]
 
-  - id: paper-3-limitations
+  - id: paper-3-boundaries
     kind: limitation_group
     parent_id: paper-3
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The summary does not establish the required number or trustworthiness of cooperating users, resistance to traffic analysis, deployment assumptions, or measured privacy gain."
-    source_anchor_ids: [anchor-paper-3-site-record]
-
-  - id: paper-3-resources
-    kind: artifact_group
-    parent_id: paper-3
     order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; CiteSeerX archive. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-3-official-1, anchor-paper-3-archive-1]
+    epistemic_status: material
+    title: "Trusted boundary and limitations"
+    summary: "The design depends on a trusted, available proxy and group secrets, excludes physical-layer tracking, and was simulated because commodity Wi-Fi drivers did not expose sequence-number control needed for implementation."
+    source_anchor_ids: [anchor-paper-3-security, anchor-paper-3-performance]
+
+  - id: paper-3-boundary-compromise
+    kind: limitation
+    parent_id: paper-3-boundaries
+    order: 1
+    epistemic_status: explicitly_vulnerable
+    title: "Member compromise and former-member leakage"
+    summary: "A malicious member that joins or is compromised learns the address schedule and can track members; forward-secure group-key refresh is suggested but left out of scope."
+    source_anchor_ids: [anchor-paper-3-security]
+
+  - id: paper-3-boundary-traffic
+    kind: limitation
+    parent_id: paper-3-boundaries
+    order: 2
+    epistemic_status: unresolved
+    title: "Traffic analysis and proxy bottleneck"
+    summary: "The proxy address can reveal group affiliation, triangular routing can degrade throughput, and the proxy is a bottleneck and single point of failure unless replicated."
+    source_anchor_ids: [anchor-paper-3-security, anchor-paper-3-performance]
+
+  - id: paper-3-artifacts
+    kind: artifact
+    parent_id: paper-3
+    order: 8
+    epistemic_status: paper_available_no_code
+    title: "Artifacts"
+    summary: "A fixed local copy of the archived author manuscript is available; no simulator configuration, code, packet traces, or implementation artifact was located."
+    source_anchor_ids: [anchor-paper-3-archive, anchor-paper-3-performance]
 
   - id: paper-3-scrutiny
     kind: scrutiny
     parent_id: paper-3
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · workshop paper at Second IEEE Workshop on Secure Network Protocols (NPSec). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-3-site-record, anchor-paper-3-official-1]
+    order: 9
+    epistemic_status: peer_reviewed
+    title: "Scrutiny and lineage"
+    summary: "The protocol appeared at NPSec 2006 and contrasts its transport continuity with earlier disposable-identifier and silent-period proposals; no independent reproduction or later adversarial analysis was located."
+    source_anchor_ids: [anchor-paper-3-problem, anchor-paper-3-publication]
 
 relations:
-  - id: paper-3-relation-method-supports-answer
-    type: supports
-    from_id: paper-3-method
+  - id: paper-3-relation-control-component
+    type: component_of
+    from_id: paper-3-protocol-control
+    to_id: paper-3-protocol
+  - id: paper-3-relation-rotation-component
+    type: component_of
+    from_id: paper-3-protocol-rotation
+    to_id: paper-3-protocol
+  - id: paper-3-relation-proxy-component
+    type: component_of
+    from_id: paper-3-protocol-proxy
+    to_id: paper-3-protocol
+  - id: paper-3-relation-protocol-realizes-answer
+    type: realizes
+    from_id: paper-3-protocol
     to_id: paper-3-answer
-  - id: paper-3-relation-evidence-supports-claim
+  - id: paper-3-relation-evidence-supports-disruption
     type: supports
     from_id: paper-3-evidence
-    to_id: paper-3-claims
-  - id: paper-3-relation-limitations-qualify-claim
+    to_id: paper-3-claim-disruption
+  - id: paper-3-relation-anonymity-qualifies-privacy
     type: qualifies
-    from_id: paper-3-limitations
-    to_id: paper-3-claims
-  - id: paper-3-relation-scrutiny-qualifies-status
+    from_id: paper-3-scope-anonymity
+    to_id: paper-3-claim-privacy
+  - id: paper-3-relation-compromise-qualifies-privacy
     type: qualifies
-    from_id: paper-3-scrutiny
-    to_id: paper-3
+    from_id: paper-3-boundary-compromise
+    to_id: paper-3-claim-privacy
+  - id: paper-3-relation-traffic-qualifies-answer
+    type: qualifies
+    from_id: paper-3-boundary-traffic
+    to_id: paper-3-answer
 
 assessment:
   id: paper-3-assessment-2026-07-11
@@ -173,32 +317,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports the design goal and comparison with earlier approaches; the protocol, threat model, and any evaluation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-3-site-record]
+      rationale: "The paper specifies the protocol and threat boundaries and supplies comparative simulation plus limited timing measurements, but lacks a formal proof, working implementation, public traces, and independent reproduction."
+      basis_source_anchor_ids: [anchor-paper-3-protocol, anchor-paper-3-security, anchor-paper-3-performance, anchor-paper-3-results]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-3-official-1, anchor-paper-3-archive-1]
+      rationale: "A fixed, author-origin full text is checked in with page count and hash, making the claims and stated evidence directly inspectable; no executable artifact is available."
+      basis_source_anchor_ids: [anchor-paper-3-archive, anchor-paper-3-results]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-3-site-record]
+      rationale: "Named authorship, manuscript provenance, and official publication metadata are documented; roles, revision/effort history, tool use, and simulation-artifact lineage are not."
+      basis_source_anchor_ids: [anchor-paper-3-archive, anchor-paper-3-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in Second IEEE Workshop on Secure Network Protocols (NPSec), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-3-official-1]
+      rationale: "The work has an official workshop publication record; review reports, reproduction, corrections, and independent security analysis were not located."
+      basis_source_anchor_ids: [anchor-paper-3-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-3-site-record]
+      level: low
+      rationale: "A dated exact-title scholarly-web search did not yield a transparent verified citation count in this environment. Under the author's rule, zero located citations maps to low; this is not a claim that the paper has no citations."
+      basis_source_anchor_ids: [anchor-paper-3-citation-search]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The paper reports that cooperation can improve location privacy while avoiding the session loss and throughput disruption associated with earlier identifier-changing approaches. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-3-site-record]
+      rationale: "The protocol makes a concrete privacy/performance tradeoff and anticipates practical transport-state continuity, but its trusted proxy and unimplemented driver requirements constrain the supported reach."
+      basis_source_anchor_ids: [anchor-paper-3-problem, anchor-paper-3-protocol, anchor-paper-3-performance]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "Exact-title scholarly-web search; transparent index count unavailable"
+  source: "Google Scholar query route plus general scholarly-web search"
+  citation_count: 0
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "Zero means no citations were verifiably located during this constrained search, not a total bibliometric count; author should replace it with a confirmed index snapshot."

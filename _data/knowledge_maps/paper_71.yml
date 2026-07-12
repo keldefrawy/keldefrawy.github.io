@@ -11,210 +11,411 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: []
 
 title: "Challenges in Timed-Cryptography: A Position Paper (Short Paper)"
-short_title: "Challenges in Timed-Cryptography: A Position Paper (Short Paper)"
 year: 2024
+status: "Published · short paper"
 venue: "8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)"
-publication_status: "Published · short paper"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
-  - "Perspective"
+labels: [Theory, Perspective]
 authors:
-  - "Karim Eldefrawy"
-  - "Ben Terner"
-  - "Moti Yung"
+  - Karim Eldefrawy
+  - Ben Terner
+  - Moti Yung
 keywords:
-  - "timed cryptography"
-  - "research agenda"
+  - timed cryptography
+  - time-lock puzzles
+  - random oracle model
+  - simulation-based security
+  - composability
+  - falsifiable assumptions
 
-research_question: "Which modeling assumptions prevent timed-cryptography analyses from faithfully representing computations whose security expires, leaks, or composes over real time?"
-central_answer: "The curated editorial summary reports a critique of idealized time-lock analyses and unbounded simulators, together with a call for realistic, falsifiable models that track running time, leakage, and compositional security loss."
+research_question: >-
+  What foundational inconsistencies and proof gaps prevent current time-lock-puzzle analyses from supporting sound, generally composable timed cryptographic protocols?
+central_answer: >-
+  The position paper identifies three recurring problems: mixing algebraic generation with random-oracle-like solving analyses, granting simulators enough computation to defeat the timed privacy being modeled, and proving only specialized forms of combination rather than general MPC composition. It argues that future foundations must model leakage and computational budgets consistently under falsifiable assumptions.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, argument mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 11-page IACR ePrint version, cross-checked against the official Springer chapter and dated citation-index record. The map distinguishes the authors' position and comparative critique from established impossibility results that the paper invokes, and does not recast argumentative claims as new formal theorems.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author audit. Interpretations of the critique, literature comparison, and ratings remain provisional until author approval.
 
 sources:
-  - id: source-paper-71-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #71"
-    url: /publications/#paper-71
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-71-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-031-76934-4_22"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-71-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2024/1529"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-71-eprint
+    type: public_archive_copy
+    title: "Challenges in Timed Cryptography: A Position Paper"
+    url: https://eprint.iacr.org/2024/1529.pdf
+    landing_page_url: https://eprint.iacr.org/2024/1529
+    provenance_category: archive
+    media_type: application/pdf
+    page_count: 11
+    license: CC BY
+  - id: source-paper-71-official
+    type: official_publication_record
+    title: Springer CSCML 2024 chapter record
+    url: https://doi.org/10.1007/978-3-031-76934-4_22
+    provenance_category: official
+  - id: source-paper-71-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W4405464518
+    url: https://openalex.org/W4405464518
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-71-curated
-    source_id: source-paper-71-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-71
-  - id: anchor-paper-71-official-1
-    source_id: source-paper-71-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-031-76934-4_22"
-  - id: anchor-paper-71-archive-1
-    source_id: source-paper-71-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2024/1529"
+  - id: anchor-paper-71-abstract
+    source_id: source-paper-71-eprint
+    label: Position, three concerns, and paper objective
+    locator: Abstract and Section 1, PDF pages 1-2
+    url: https://eprint.iacr.org/2024/1529.pdf#page=1
+  - id: anchor-paper-71-table
+    source_id: source-paper-71-eprint
+    label: Comparative model table
+    locator: Table 1, PDF page 3
+    url: https://eprint.iacr.org/2024/1529.pdf#page=3
+  - id: anchor-paper-71-inconsistency
+    source_id: source-paper-71-eprint
+    label: Algebraic-generation and idealized-solving inconsistency argument
+    locator: Sections 2-3, PDF pages 3-6
+    url: https://eprint.iacr.org/2024/1529.pdf#page=3
+  - id: anchor-paper-71-bbs
+    source_id: source-paper-71-eprint
+    label: Generalized BBS example and bounded indistinguishability
+    locator: Section 3, Definition 1, PDF page 6
+    url: https://eprint.iacr.org/2024/1529.pdf#page=6
+  - id: anchor-paper-71-simulation
+    source_id: source-paper-71-eprint
+    label: Computationally meaningful simulation requirement
+    locator: Section 4, PDF pages 6-8
+    url: https://eprint.iacr.org/2024/1529.pdf#page=6
+  - id: anchor-paper-71-stepwise
+    source_id: source-paper-71-eprint
+    label: Step-by-step companion simulation pattern and global-clock caution
+    locator: Section 4, PDF pages 7-8
+    url: https://eprint.iacr.org/2024/1529.pdf#page=7
+  - id: anchor-paper-71-composition
+    source_id: source-paper-71-eprint
+    label: Limits of combination, non-malleability, and IND-CCA analyses
+    locator: Section 5, PDF pages 8-9
+    url: https://eprint.iacr.org/2024/1529.pdf#page=8
+  - id: anchor-paper-71-conclusion
+    source_id: source-paper-71-eprint
+    label: Research agenda and three summarized shortcomings
+    locator: Section 6, PDF pages 9-10
+    url: https://eprint.iacr.org/2024/1529.pdf#page=9
+  - id: anchor-paper-71-publication
+    source_id: source-paper-71-official
+    label: Official CSCML publication identity
+    locator: CSCML 2024, pages 310-321, DOI 10.1007/978-3-031-76934-4_22
+    url: https://doi.org/10.1007/978-3-031-76934-4_22
+  - id: anchor-paper-71-citations
+    source_id: source-paper-71-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 0 citing works when accessed 2026-07-11
+    url: https://openalex.org/W4405464518
 
 nodes:
   - id: paper-71
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published_position_paper
     title: "Challenges in Timed-Cryptography: A Position Paper (Short Paper)"
-    summary: "This position paper argues that common analyses of time-lock puzzles rely on idealizations or simulators that do not faithfully model computations whose security expires. It calls for realistic and falsifiable models that track running time, leakage, and security loss when timed components are composed."
-    source_anchor_ids: [anchor-paper-71-curated]
+    summary: >-
+      A theory-focused position paper auditing the modeling and proof obligations required for timed cryptography, especially time-lock puzzles used inside larger multi-party protocols.
+    source_anchor_ids: [anchor-paper-71-abstract]
+
   - id: paper-71-question
     kind: question
     parent_id: paper-71
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Which modeling assumptions prevent timed-cryptography analyses from faithfully representing computations whose security expires, leaks, or composes over real time?"
-    source_anchor_ids: [anchor-paper-71-curated]
-  - id: paper-71-contribution
+    epistemic_status: research_question
+    title: Foundational question
+    summary: >-
+      Which parts of existing time-lock-puzzle analyses fail to support a consistent, falsifiable, and generally composable security claim?
+    source_anchor_ids: [anchor-paper-71-abstract]
+
+  - id: paper-71-answer
     kind: contribution
     parent_id: paper-71
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports a critique of idealized time-lock analyses and unbounded simulators, together with a call for realistic, falsifiable models that track running time, leakage, and compositional security loss."
-    source_anchor_ids: [anchor-paper-71-curated]
-  - id: paper-71-method
-    kind: method
+    epistemic_status: argued_position
+    title: Three-part diagnosis
+    summary: >-
+      The paper diagnoses inconsistent model mixing, computationally overpowered simulation, and insufficient composition guarantees, then advocates explicit computational budgets and a consistent treatment of intermediate-state leakage.
+    source_anchor_ids: [anchor-paper-71-abstract, anchor-paper-71-conclusion]
+
+  - id: paper-71-background
+    kind: definition
     parent_id: paper-71
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "As a position paper, the described method analyzes modeling practices and failure modes and formulates requirements for a more realistic research agenda."
-    source_anchor_ids: [anchor-paper-71-curated]
-  - id: paper-71-claims
-    kind: claim_group
+    epistemic_status: literature_grounded
+    title: Timed security and the generation-solving gap
+    summary: >-
+      A time-lock puzzle should be efficient to generate using a trapdoor while requiring a substantially longer sequential computation to solve publicly. Unlike ordinary indefinite security, privacy intentionally expires after a chosen time.
+    source_anchor_ids: [anchor-paper-71-abstract, anchor-paper-71-inconsistency]
+
+  - id: paper-71-critique
+    kind: argument_group
     parent_id: paper-71
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary argues that common idealizations can obscure expiring security and that timed components require explicit accounting for time, leakage, and composition."
-    source_anchor_ids: [anchor-paper-71-curated]
+    epistemic_status: author_argument
+    title: Model-consistency critique
+    summary: >-
+      The central critique is that one cannot claim a super-polynomial generation-solving gap from algebraic structure while analyzing the solver's intermediate states as independent random labels without confronting the random-oracle impossibility result.
+    source_anchor_ids: [anchor-paper-71-inconsistency]
+
+  - id: paper-71-impossibility
+    kind: premise
+    parent_id: paper-71-critique
+    order: 1
+    epistemic_status: prior_result_invoked
+    title: Random-oracle impossibility premise
+    summary: >-
+      The argument relies on prior work showing that random oracles alone, and repetitive computation whose next state is completely random given the previous state, cannot yield the desired super-polynomial time gap.
+    source_anchor_ids: [anchor-paper-71-abstract, anchor-paper-71-inconsistency]
+
+  - id: paper-71-model-mixing
+    kind: claim
+    parent_id: paper-71-critique
+    order: 2
+    epistemic_status: comparative_literature_claim
+    title: Algebraic generation versus idealized solving
+    summary: >-
+      For the surveyed constructions that claim the large gap, generation is analyzed algebraically while solving is analyzed in a random-oracle, generic-group, or effectively equivalent model; the authors argue these two halves are not jointly consistent.
+    source_anchor_ids: [anchor-paper-71-table, anchor-paper-71-inconsistency]
+
+  - id: paper-71-random-to-whom
+    kind: diagnostic_question
+    parent_id: paper-71-critique
+    order: 3
+    epistemic_status: author_argument
+    title: “Random” must be relative to a bounded observer
+    summary: >-
+      If intermediate states only look random to a bounded distinguisher, the proof must identify that observer and keep its allowed computation below the point at which the algebraic sequence becomes distinguishable or predictable.
+    source_anchor_ids: [anchor-paper-71-inconsistency, anchor-paper-71-bbs]
+
+  - id: paper-71-bbs-example
+    kind: analytical_example
+    parent_id: paper-71-critique
+    order: 4
+    epistemic_status: illustrative_not_general_proof
+    title: Generalized BBS boundary example
+    summary: >-
+      The generalized BBS assumption illustrates that a next repeated-square value can look random to a sufficiently shallow algorithm while the guarantee degrades as computation approaches the puzzle's solving depth.
+    source_anchor_ids: [anchor-paper-71-bbs]
+
+  - id: paper-71-simulator
+    kind: argument_group
+    parent_id: paper-71
+    order: 5
+    epistemic_status: author_argument
+    title: Meaningful simulation
+    summary: >-
+      In real-ideal security, a simulator should establish that an adversary can do no worse than an input-ignorant ideal process. For timed privacy, that comparison becomes uninformative if the simulator itself is allowed enough depth to solve the puzzle.
+    source_anchor_ids: [anchor-paper-71-simulation]
+
+  - id: paper-71-budget
+    kind: requirement
+    parent_id: paper-71-simulator
+    order: 1
+    epistemic_status: proposed_proof_obligation
+    title: Bound the simulator explicitly
+    summary: >-
+      The simulator's computational class or depth must be stated and must respect the adversarial bound relevant to the privacy interval; arbitrary polynomial time is not automatically meaningful when puzzle solving is itself polynomial but intentionally slow.
+    source_anchor_ids: [anchor-paper-71-simulation]
+
+  - id: paper-71-stepwise-pattern
+    kind: method
+    parent_id: paper-71-simulator
+    order: 2
+    epistemic_status: recommended_pattern
+    title: Step-by-step companion simulation
+    summary: >-
+      The paper recommends a natural design pattern in which the simulator advances with the adversary and uses ideal access only to provide each next response, keeping its computational progress comparable rather than jumping to the final puzzle solution.
+    source_anchor_ids: [anchor-paper-71-stepwise]
+
+  - id: paper-71-clock-boundary
+    kind: caution
+    parent_id: paper-71-simulator
+    order: 3
+    epistemic_status: case_study_argument
+    title: Global clocks do not automatically tether computation
+    summary: >-
+      A global timekeeping functionality can synchronize protocol time without necessarily limiting how much local computation an untethered simulator performs between clock events; resource accounting must therefore be explicit.
+    source_anchor_ids: [anchor-paper-71-stepwise]
+
+  - id: paper-71-composability
+    kind: argument_group
+    parent_id: paper-71
+    order: 6
+    epistemic_status: comparative_literature_claim
+    title: Specialized combination is not general MPC composition
+    summary: >-
+      The surveyed literature offers useful but narrower properties—homomorphic combination, concurrent non-malleability, or IND-CCA security—without yet supplying the general subroutine composition needed for timed primitives inside arbitrary MPC.
+    source_anchor_ids: [anchor-paper-71-composition]
+
   - id: paper-71-evidence
     kind: evidence_group
     parent_id: paper-71
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The record reports conceptual critique and agenda-setting arguments rather than an independently audited theorem or experimental validation in this map."
-    source_anchor_ids: [anchor-paper-71-curated]
-  - id: paper-71-scope
+    order: 7
+    epistemic_status: analytical_literature_review
+    title: Evidence and argument structure
+    summary: >-
+      Support consists of a comparative table, close reading of model assumptions and simulation strategies, the prior impossibility theorem, and worked conceptual examples. The paper is not a new construction, empirical study, or complete impossibility proof for every future model.
+    source_anchor_ids: [anchor-paper-71-table, anchor-paper-71-inconsistency, anchor-paper-71-bbs, anchor-paper-71-composition]
+
+  - id: paper-71-boundaries
     kind: limitation_group
     parent_id: paper-71
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not inspected the examples, formal counterarguments, cited literature, scope of the critique, or whether the short paper supplies a complete replacement framework and compositional definition."
-    source_anchor_ids: [anchor-paper-71-curated]
-  - id: paper-71-artifacts
-    kind: artifact_group
+    order: 8
+    epistemic_status: material
+    title: Boundaries of the position
+    summary: >-
+      Several conclusions are critical interpretations of how idealized and generic analyses interact with prior impossibility results. The authors invite the community to falsify or refine those interpretations and do not claim that all idealization is useless.
+    source_anchor_ids: [anchor-paper-71-inconsistency, anchor-paper-71-conclusion]
+
+  - id: paper-71-boundary-constructive
+    kind: limitation
+    parent_id: paper-71-boundaries
+    order: 1
+    epistemic_status: explicit_scope_boundary
+    title: Diagnosis rather than final construction
+    summary: >-
+      The short paper identifies necessary proof obligations and a research direction; it does not itself deliver a fully general composable timed-MPC framework or protocol satisfying the requested foundations.
+    source_anchor_ids: [anchor-paper-71-abstract, anchor-paper-71-conclusion]
+
+  - id: paper-71-boundary-prior
+    kind: limitation
+    parent_id: paper-71-boundaries
+    order: 2
+    epistemic_status: explicit_qualification
+    title: Existing work retains partial value
+    summary: >-
+      The paper recognizes that earlier idealized and specialized analyses provided insight and that some reviewed works state machine bounds consistently; its objection is to treating those partial guarantees as the final basis for general realizable composition.
+    source_anchor_ids: [anchor-paper-71-composition, anchor-paper-71-conclusion]
+
+  - id: paper-71-agenda
+    kind: lineage
     parent_id: paper-71
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-71-curated, anchor-paper-71-official-1, anchor-paper-71-archive-1]
+    order: 9
+    epistemic_status: proposed_research_agenda
+    title: Moving-forward agenda
+    summary: >-
+      Establish timed-cryptography foundations that represent leakage during solving, bound adversaries, simulators, and distinguishers coherently, use falsifiable assumptions, and support general composition as a protocol subroutine.
+    source_anchor_ids: [anchor-paper-71-conclusion]
+
   - id: paper-71-scrutiny
     kind: scrutiny
     parent_id: paper-71
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-71-official-1]
+    order: 10
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The short paper appeared in the peer-reviewed CSCML proceedings and has a public archive copy. Review reports, rebuttal, a published technical response to the critique, or an independent formal audit are not represented here.
+    source_anchor_ids: [anchor-paper-71-publication]
 
 relations:
-  - id: paper-71-relation-question-contribution
-    type: motivates
-    from_id: paper-71-question
-    to_id: paper-71-contribution
-  - id: paper-71-relation-method-contribution
-    type: realizes
-    from_id: paper-71-method
-    to_id: paper-71-contribution
-  - id: paper-71-relation-contribution-claims
-    type: grounds
-    from_id: paper-71-contribution
-    to_id: paper-71-claims
-  - id: paper-71-relation-evidence-claims
-    type: supports
-    from_id: paper-71-evidence
-    to_id: paper-71-claims
-  - id: paper-71-relation-scope-claims
-    type: qualifies
-    from_id: paper-71-scope
-    to_id: paper-71-claims
-  - id: paper-71-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-71-artifacts
-    to_id: paper-71-evidence
-  - id: paper-71-relation-scrutiny-claims
+  - id: paper-71-relation-answer-question
+    type: addresses
+    from_id: paper-71-answer
+    to_id: paper-71-question
+  - id: paper-71-relation-background-question
     type: contextualizes
-    from_id: paper-71-scrutiny
-    to_id: paper-71-claims
+    from_id: paper-71-background
+    to_id: paper-71-question
+  - id: paper-71-relation-impossibility-mixing
+    type: supports
+    from_id: paper-71-impossibility
+    to_id: paper-71-model-mixing
+  - id: paper-71-relation-random-mixing
+    type: refines
+    from_id: paper-71-random-to-whom
+    to_id: paper-71-model-mixing
+  - id: paper-71-relation-bbs-random
+    type: illustrates
+    from_id: paper-71-bbs-example
+    to_id: paper-71-random-to-whom
+  - id: paper-71-relation-budget-simulator
+    type: constrains
+    from_id: paper-71-budget
+    to_id: paper-71-simulator
+  - id: paper-71-relation-stepwise-budget
+    type: operationalizes
+    from_id: paper-71-stepwise-pattern
+    to_id: paper-71-budget
+  - id: paper-71-relation-clock-budget
+    type: qualifies
+    from_id: paper-71-clock-boundary
+    to_id: paper-71-budget
+  - id: paper-71-relation-critique-answer
+    type: supports
+    from_id: paper-71-critique
+    to_id: paper-71-answer
+  - id: paper-71-relation-simulator-answer
+    type: supports
+    from_id: paper-71-simulator
+    to_id: paper-71-answer
+  - id: paper-71-relation-composition-answer
+    type: supports
+    from_id: paper-71-composability
+    to_id: paper-71-answer
+  - id: paper-71-relation-boundary-answer
+    type: qualifies
+    from_id: paper-71-boundary-constructive
+    to_id: paper-71-answer
+  - id: paper-71-relation-agenda-question
+    type: responds_to
+    from_id: paper-71-agenda
+    to_id: paper-71-question
 
 assessment:
   id: paper-71-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-71-curated, anchor-paper-71-official-1, anchor-paper-71-archive-1]
+      rationale: >-
+        The paper supplies a structured literature comparison, traces its critique to a prior impossibility result, and analyzes simulator and distinguisher bounds with a concrete BBS example. It is a position paper rather than a new construction, exhaustive meta-analysis, or formal impossibility theorem covering every future model.
+      basis_source_anchor_ids: [anchor-paper-71-table, anchor-paper-71-inconsistency, anchor-paper-71-bbs, anchor-paper-71-simulation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-71-curated, anchor-paper-71-official-1, anchor-paper-71-archive-1]
+      rationale: >-
+        The complete paper is publicly inspectable through the IACR archive, with precise section/page anchors and an official DOI record. This map does not yet record a stable local binary or hash, and no formalization or review reports were located.
+      basis_source_anchor_ids: [anchor-paper-71-abstract, anchor-paper-71-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-71-curated]
+      rationale: >-
+        Named authorship, affiliations, archive history, venue, pages, and DOI establish baseline human and lifecycle provenance. Contributor roles, revision history, tool use, and the relationship between the archive and final typeset version have not been fully audited.
+      basis_source_anchor_ids: [anchor-paper-71-abstract, anchor-paper-71-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-71-official-1]
+      rationale: >-
+        Publication in the CSCML proceedings establishes venue review, but reports, rebuttal, independent formal checking, published responses, and correction history are not represented.
+      basis_source_anchor_ids: [anchor-paper-71-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-71-curated]
+      level: low
+      rationale: >-
+        OpenAlex reported 0 citations for the published chapter on 2026-07-11. Under the author-defined corpus rule, 0 through 8 located citations is Low; this is an index-specific snapshot, not a claim that no citation exists elsewhere.
+      basis_source_anchor_ids: [anchor-paper-71-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-71-curated]
+      rationale: >-
+        The paper articulates concrete proof obligations and a coherent agenda for an underdeveloped foundation of timed cryptography. Its priority, acceptance by the broader community, and effect on subsequent models remain to be independently established.
+      basis_source_anchor_ids: [anchor-paper-71-abstract, anchor-paper-71-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: OpenAlex DOI lookup
+  citation_count: 0
+  source_url: https://openalex.org/W4405464518
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: OpenAlex reported no citing works for the Springer chapter, but index coverage, version merging with IACR ePrint 2024/1529, and very recent citations may be incomplete; zero means none located in this dated record.

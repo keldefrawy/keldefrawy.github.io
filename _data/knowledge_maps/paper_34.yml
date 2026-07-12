@@ -12,247 +12,450 @@ contribution_types: [protocol]
 
 title: "Proactively Secure Cloud-Enabled Storage"
 year: 2017
-status: "Published"
+status: Published
 venue: "37th IEEE International Conference on Distributed Computing Systems (ICDCS)"
-topic: "secure-systems-networks"
-labels: ["Theory", "Applied"]
+topic: secure-systems-networks
+labels: [Theory, Applied, System, Implementation]
 authors:
-  - "Karim Eldefrawy"
-  - "Sky Faber"
-  - "Tyler Kaczmarek"
+  - Karim Eldefrawy
+  - Sky Faber
+  - Tyler Kaczmarek
 keywords:
-  - "cloud storage"
-  - "proactive secret sharing"
-editorial_summary: "The paper designs and implements PiSCES, a cloud-storage system that periodically refreshes secret shares so data can stay confidential even if an attacker compromises different servers over time. Its evaluation shows that proactive protection can scale beyond tiny cryptographic keys to larger files and tens of commodity cloud servers at practical cost."
+  - proactive secret sharing
+  - cloud storage
+  - mobile adversary
+  - share refresh
+  - secure reboot
+  - Amazon EC2
 
-research_question: "Can proactive secret sharing protect substantial cloud-stored data against a mobile attacker at a practical systems scale?"
-central_answer: "The paper reports PiSCES, which periodically refreshes shares across cloud servers and evaluates the approach on larger files and tens of commodity servers."
+research_question: >-
+  Can proactive secret sharing, previously used mainly for small cryptographic secrets, be engineered into a practical cloud-storage system for megabyte-scale files and tens of servers while preserving long-term confidentiality against a mobile compromise adversary?
+central_answer: >-
+  PiSCES packs file data into secret shares, distributes them across virtual servers, and periodically reboots servers, recovers and rerandomizes shares, replaces keys, and disassociates old storage. A prototype on Amazon EC2 explores security, file, concurrency, field-size, and refresh parameters and reports that carefully chosen configurations make proactive storage of larger data operationally and economically feasible under a passive mobile-adversary model and substantial cloud/hypervisor assumptions.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, systems-and-security claim mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete author-uploaded full text exposed through the recorded ResearchGate route, cross-checked against the IEEE DOI record. The accessible source was read section by section, but a directly downloadable local PDF and immutable file hash were not obtained; section anchors therefore identify content rather than local page images.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Security-model readings, system assumptions, measurements, and ratings should be checked by an author before approval.
 
 sources:
-  - id: source-paper-34-site-record
-    type: curated_site_record
-    title: "Publication #34 metadata and editorial summary"
-    url: /publications/#paper-34
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-34-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/ICDCS.2017.293"
-    provenance_category: official
-  - id: source-paper-34-resource-2
+  - id: source-paper-34-author-full-text
     type: author_hosted_copy
-    title: "ResearchGate author full text"
-    url: "https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage"
+    title: "Proactively Secure Cloud-Enabled Storage"
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
     provenance_category: author
+    media_type: application/pdf
+    availability_note: Author-uploaded full text is publicly exposed through the landing page; no stable direct-PDF URL or local fixity was obtained in this audit.
+  - id: source-paper-34-official
+    type: official_publication_record
+    title: IEEE ICDCS 2017 publication record
+    url: https://doi.org/10.1109/ICDCS.2017.293
+    provenance_category: official
+  - id: source-paper-34-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2734832021
+    url: https://openalex.org/W2734832021
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-34-editorial
-    source_id: source-paper-34-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-34
-  - id: anchor-paper-34-resource-1
-    source_id: source-paper-34-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1109/ICDCS.2017.293"
-  - id: anchor-paper-34-resource-2
-    source_id: source-paper-34-resource-2
-    label: "Author-hosted resource: ResearchGate author full text"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage"
+  - id: anchor-paper-34-problem
+    source_id: source-paper-34-author-full-text
+    label: Problem, contribution, and deployment scenarios
+    locator: Abstract and Section I, including Contributions and Envisioned Use Cases
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-adversary
+    source_id: source-paper-34-author-full-text
+    label: Passive mobile-adversary model
+    locator: Section III-A, Adversary Model
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-pss
+    source_id: source-paper-34-author-full-text
+    label: Packed proactive secret sharing and parameter constraints
+    locator: Sections II and III-B-C, Cryptographic Building Blocks and Roadblocks
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-design
+    source_id: source-paper-34-author-full-text
+    label: PiSCES components and five-stage server lifecycle
+    locator: Section IV and Figure 4, System Design
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-reboot
+    source_id: source-paper-34-author-full-text
+    label: Secure reboot, key replacement, restart schedule, and disassociation
+    locator: Section IV-A, Cloud Provider and Hypervisor
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-network-storage
+    source_id: source-paper-34-author-full-text
+    label: Broadcast, timing, network, and share-storage assumptions
+    locator: Sections IV-B-C, Secure Broadcast and Share Storage Hosts
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-security
+    source_id: source-paper-34-author-full-text
+    label: System security analysis and hypervisor boundary
+    locator: Section V, Security Analysis
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-implementation
+    source_id: source-paper-34-author-full-text
+    label: Prototype architecture and host control flow
+    locator: Section VI, Implementation
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-evaluation
+    source_id: source-paper-34-author-full-text
+    label: EC2 testbed, varied parameters, performance, and cost
+    locator: Sections VI-VII, Testing Parameters, Testbed Setup, and Results
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-lessons
+    source_id: source-paper-34-author-full-text
+    label: Lessons learned, selected configuration, and conclusions
+    locator: Sections VIII-IX
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
+  - id: anchor-paper-34-publication
+    source_id: source-paper-34-official
+    label: Official ICDCS publication identity
+    locator: ICDCS 2017, pages 1499-1509, DOI 10.1109/ICDCS.2017.293
+    url: https://doi.org/10.1109/ICDCS.2017.293
+  - id: anchor-paper-34-citations
+    source_id: source-paper-34-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 0 citing works when accessed 2026-07-11
+    url: https://openalex.org/W2734832021
 
 nodes:
   - id: paper-34
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Proactively Secure Cloud-Enabled Storage"
-    summary: "The paper designs and implements PiSCES, a cloud-storage system that periodically refreshes secret shares so data can stay confidential even if an attacker compromises different servers over time. Its evaluation shows that proactive protection can scale beyond tiny cryptographic keys to larger files and tens of commodity cloud servers at practical cost."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    summary: >-
+      A theory-to-system feasibility study that turns packed proactive secret sharing into PiSCES, a cloud file-storage prototype whose shares, servers, and keys are periodically refreshed to limit what a mobile attacker can accumulate over time.
+    source_anchor_ids: [anchor-paper-34-problem]
 
   - id: paper-34-question
     kind: question
     parent_id: paper-34
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can proactive secret sharing protect substantial cloud-stored data against a mobile attacker at a practical systems scale?"
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can proactive security be scaled from small keys and fewer than ten parties to larger files and tens of commodity cloud servers at tolerable refresh time and monetary cost?
+    source_anchor_ids: [anchor-paper-34-problem, anchor-paper-34-pss]
 
-  - id: paper-34-contribution
+  - id: paper-34-answer
     kind: contribution
     parent_id: paper-34
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports PiSCES, which periodically refreshes shares across cloud servers and evaluates the approach on larger files and tens of commodity servers."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    epistemic_status: source_asserted
+    title: PiSCES feasibility result
+    summary: >-
+      The paper designs and prototypes a proactively secure storage service parameterized by an underlying PSS scheme and reports that packed shares, constant-amortized refresh, reboot orchestration, and deployment-specific tuning make larger-file operation feasible.
+    source_anchor_ids: [anchor-paper-34-problem, anchor-paper-34-design, anchor-paper-34-lessons]
 
-  - id: paper-34-method
-    kind: method
+  - id: paper-34-scope
+    kind: scope
     parent_id: paper-34
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported system distributes stored data as shares, periodically refreshes them, and measures an implementation deployed across commodity cloud servers."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    epistemic_status: explicitly_scoped
+    title: Confidentiality-focused proactive model
+    summary: >-
+      Time is divided into rounds. Between rounds, old shares are rerandomized and removed so compromises collected in different periods cannot be combined; the represented goal is long-term data confidentiality rather than a general cloud integrity or availability service.
+    source_anchor_ids: [anchor-paper-34-problem, anchor-paper-34-adversary]
+
+  - id: paper-34-threat
+    kind: threat_model
+    parent_id: paper-34-scope
+    order: 1
+    epistemic_status: defined
+    title: Passive mobile compromise adversary
+    summary: >-
+      The honest-but-curious outside adversary may compromise different servers over time and eventually visit all of them, but fewer than one third in any round. It cannot globally monitor traffic, delay traffic it did not send, create servers, corrupt multiple hypervisors, break the Internet, or orchestrate system-wide denial of service.
+    source_anchor_ids: [anchor-paper-34-adversary]
+
+  - id: paper-34-assumption-pss
+    kind: assumption
+    parent_id: paper-34-scope
+    order: 2
+    epistemic_status: inherited_security_assumption
+    title: Underlying packed PSS guarantee
+    summary: >-
+      The implementation instantiates a perfectly secure packed PSS scheme with constant amortized communication per share. Its privacy and robustness parameter constraints include l + t at most d and 3t + l less than n.
+    source_anchor_ids: [anchor-paper-34-pss]
+
+  - id: paper-34-assumption-platform
+    kind: assumption
+    parent_id: paper-34-scope
+    order: 3
+    epistemic_status: assumed
+    title: Trusted lifecycle mechanisms
+    summary: >-
+      Security relies on read-only pristine images, authenticated fresh keys, controlled VM creation, scheduled reboot, bounded network delay, and secure disassociation that prevents a restarted VM from accessing storage and RAM associated with earlier rounds.
+    source_anchor_ids: [anchor-paper-34-reboot, anchor-paper-34-network-storage]
+
+  - id: paper-34-design
+    kind: system
+    parent_id: paper-34
+    order: 4
+    epistemic_status: specified_and_implemented
+    title: PiSCES architecture
+    summary: >-
+      A client shares files among n storage hosts; hosts keep inactive shares in secondary storage, periodically load batches into memory, execute recovery and refresh, and write new shares back. The client may disconnect between upload and reconstruction.
+    source_anchor_ids: [anchor-paper-34-design, anchor-paper-34-network-storage]
+
+  - id: paper-34-design-deployments
+    kind: method
+    parent_id: paper-34-design
+    order: 1
+    epistemic_status: proposed
+    title: Three deployment patterns
+    summary: >-
+      The design covers a single cloud provider, multiple providers, and a hybrid of local enterprise infrastructure with remote providers. Only the single-provider arrangement is the reported prototype deployment.
+    source_anchor_ids: [anchor-paper-34-problem, anchor-paper-34-evaluation]
+
+  - id: paper-34-protocol-lifecycle
+    kind: protocol
+    parent_id: paper-34-design
+    order: 2
+    epistemic_status: specified
+    title: Proactive server lifecycle
+    summary: >-
+      The hypervisor creates hosts from a read-only image, allocates shares, shuts down and reclaims resources, initializes a replacement with fresh authenticated keys, and lets peers recover and rerandomize its shares according to a predetermined rotation schedule.
+    source_anchor_ids: [anchor-paper-34-design, anchor-paper-34-reboot]
+
+  - id: paper-34-protocol-keying
+    kind: protocol
+    parent_id: paper-34-design
+    order: 3
+    epistemic_status: specified_with_alternatives
+    title: Epoch key secrecy
+    summary: >-
+      The prototype assumes TPM-backed or hypervisor-installed fresh keying material so a key learned in period i cannot forge or decrypt period-j traffic. The paper also discusses pre-uploaded signed key pairs as a way to reduce hypervisor computation.
+    source_anchor_ids: [anchor-paper-34-pss, anchor-paper-34-reboot]
 
   - id: paper-34-claims
     kind: claim_group
     parent_id: paper-34
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    order: 5
+    epistemic_status: source_asserted
+    title: Main claims
+    summary: >-
+      The paper combines inherited PSS confidentiality with systems assumptions and empirical feasibility evidence. The cryptographic, architectural, and measured claims have different support and should not be collapsed into one guarantee.
+    source_anchor_ids: [anchor-paper-34-security, anchor-paper-34-evaluation]
 
-  - id: paper-34-claim-primary
+  - id: paper-34-claim-confidentiality
     kind: claim
     parent_id: paper-34-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports that proactive protection scales beyond small keys to larger files and tens of servers at practical cost."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    epistemic_status: conditional_on_model
+    title: Long-term confidentiality against mobile compromise
+    summary: >-
+      If fewer than the tolerated servers are exposed within any refresh period and old state, keys, and adversarial presence are removed at the boundary, observations from different periods do not combine to reveal the protected file.
+    source_anchor_ids: [anchor-paper-34-adversary, anchor-paper-34-pss, anchor-paper-34-security]
+
+  - id: paper-34-claim-scale
+    kind: claim
+    parent_id: paper-34-claims
+    order: 2
+    epistemic_status: implemented_and_measured
+    title: Larger-file and tens-of-host feasibility
+    summary: >-
+      The prototype exercises files beyond cryptographic-key sizes and configurations up to 30 servers, including a t = 9 threshold point, showing that the selected PSS can operate at a scale not previously exercised by the cited PSS implementations.
+    source_anchor_ids: [anchor-paper-34-pss, anchor-paper-34-evaluation]
+
+  - id: paper-34-claim-cost
+    kind: claim
+    parent_id: paper-34-claims
+    order: 3
+    epistemic_status: reported_measurement
+    title: Deployment-specific cost feasibility
+    summary: >-
+      The lessons-learned section reports, for one tuned configuration, storage of a 10-kilobyte object at approximately 0.08 cents per kilobyte per refresh; it does not claim that this price generalizes across clouds, dates, objects, or assurance settings.
+    source_anchor_ids: [anchor-paper-34-lessons]
 
   - id: paper-34-evidence
     kind: evidence_group
     parent_id: paper-34
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    order: 6
+    epistemic_status: mixed_analytical_and_empirical
+    title: Evidence
+    summary: >-
+      Evidence includes the inherited packed-PSS conditions, an architectural security analysis, an implemented multi-host prototype, an automated EC2 benchmarking driver, and parameter sweeps over security, file, restart, packing, threading, and field-size choices.
+    source_anchor_ids: [anchor-paper-34-pss, anchor-paper-34-security, anchor-paper-34-implementation, anchor-paper-34-evaluation]
 
-  - id: paper-34-evidence-reported
+  - id: paper-34-evidence-testbed
     kind: evidence
     parent_id: paper-34-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The current record identifies a system implementation and scale/performance evaluation, but deployment details, workloads, failure model, measurements, and code were not audited."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    epistemic_status: reported_experiment
+    title: Amazon EC2 testbed
+    summary: >-
+      The experiments use dedicated EC2 Small, Medium, and Large instances and an outside driver that creates deployments and initiates measurements. Dedicated hosts reduce interference but differ from the lower-priced instances anticipated for practical operation.
+    source_anchor_ids: [anchor-paper-34-evaluation]
 
-  - id: paper-34-scope
+  - id: paper-34-evidence-parameters
+    kind: evidence
+    parent_id: paper-34-evidence
+    order: 2
+    epistemic_status: systematic_parameter_study
+    title: Parameter exploration
+    summary: >-
+      The study varies n, tolerated corruptions t, file size s, simultaneous restarts r, packing l, concurrent refreshed shares b, and field size g. It identifies t and refresh interval as especially consequential and reports n = 21, t = 4, l = 6, r = 3, g = 1024 as its best tested selection.
+    source_anchor_ids: [anchor-paper-34-evaluation, anchor-paper-34-lessons]
+
+  - id: paper-34-evidence-security
+    kind: evidence
+    parent_id: paper-34-evidence
+    order: 3
+    epistemic_status: architectural_argument
+    title: Security analysis boundary
+    summary: >-
+      The paper reasons about hypervisor compromise, secure broadcast, reboot authentication, and stale-state isolation, but the represented source does not supply a composable end-to-end proof that the concrete cloud implementation realizes the ideal PSS model.
+    source_anchor_ids: [anchor-paper-34-security]
+
+  - id: paper-34-boundaries
     kind: limitation_group
     parent_id: paper-34
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    order: 7
+    epistemic_status: material
+    title: Limitations and operational assumptions
+    summary: >-
+      PiSCES trades long-term confidentiality for periodic computation, many hosts, synchronized recovery windows, key and image trust, and provider-dependent state isolation. Parameter selection is non-obvious, and more hosts can improve threshold efficiency while increasing fleet complexity and idle cost.
+    source_anchor_ids: [anchor-paper-34-reboot, anchor-paper-34-network-storage, anchor-paper-34-lessons]
 
-  - id: paper-34-scope-boundary
+  - id: paper-34-boundary-passive
     kind: limitation
-    parent_id: paper-34-scope
+    parent_id: paper-34-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Confidentiality depends on the mobile-corruption and refresh assumptions. Availability, integrity, provider independence, maximum object size, and operational cost remain unverified here."
-    source_anchor_ids: ["anchor-paper-34-editorial"]
+    epistemic_status: explicitly_out_of_scope
+    title: Passive-adversary and availability boundary
+    summary: >-
+      The core evaluation does not establish Byzantine robustness against arbitrary active deviations, multi-hypervisor compromise, global traffic observation, Internet failure, or denial of service. Manual recovery may be required after some assumed-away platform failures.
+    source_anchor_ids: [anchor-paper-34-adversary, anchor-paper-34-security]
 
-  - id: paper-34-resources
+  - id: paper-34-boundary-deletion
+    kind: limitation
+    parent_id: paper-34-boundaries
+    order: 2
+    epistemic_status: weakened_requirement
+    title: Disassociation is not assured deletion
+    summary: >-
+      Because commercial clouds did not provide guaranteed erasure, the design substitutes probabilistic or architectural disassociation: a new VM must not regain physical access to the prior round's RAM or disk. This is a key assumption, not a measured deletion guarantee.
+    source_anchor_ids: [anchor-paper-34-network-storage]
+
+  - id: paper-34-artifacts
     kind: artifact_group
     parent_id: paper-34
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-34-resource-1", "anchor-paper-34-resource-2"]
-
-  - id: paper-34-resources-available
-    kind: artifact
-    parent_id: paper-34-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: ResearchGate author full text."
-    source_anchor_ids: ["anchor-paper-34-resource-1", "anchor-paper-34-resource-2"]
+    order: 8
+    epistemic_status: paper_described
+    title: Artifacts and reproducibility
+    summary: >-
+      The paper describes an implementation and automated AWS benchmark, but this audit located no public code repository, deployment scripts, raw measurements, machine images, or preserved cloud-price snapshot associated with the publication.
+    source_anchor_ids: [anchor-paper-34-implementation, anchor-paper-34-evaluation]
 
   - id: paper-34-scrutiny
     kind: scrutiny
     parent_id: paper-34
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at 37th IEEE International Conference on Distributed Computing Systems (ICDCS). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-34-resource-1"]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The paper appeared at IEEE ICDCS. The official record establishes venue review, but public reports, rebuttal, independent deployment, reproduction, and correction history were not located in this audit.
+    source_anchor_ids: [anchor-paper-34-publication]
 
 relations:
-  - id: relation-paper-34-contribution-addresses-question
+  - id: paper-34-relation-answer-question
     type: addresses
-    from_id: paper-34-contribution
+    from_id: paper-34-answer
     to_id: paper-34-question
-  - id: relation-paper-34-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-34-method
-    to_id: paper-34-contribution
-  - id: relation-paper-34-evidence-supports-claim
+  - id: paper-34-relation-lifecycle-design
+    type: component_of
+    from_id: paper-34-protocol-lifecycle
+    to_id: paper-34-design
+  - id: paper-34-relation-keying-design
+    type: component_of
+    from_id: paper-34-protocol-keying
+    to_id: paper-34-design
+  - id: paper-34-relation-pss-confidentiality
     type: supports
-    from_id: paper-34-evidence-reported
-    to_id: paper-34-claim-primary
-  - id: relation-paper-34-scope-qualifies-claim
+    from_id: paper-34-assumption-pss
+    to_id: paper-34-claim-confidentiality
+  - id: paper-34-relation-platform-confidentiality
     type: qualifies
-    from_id: paper-34-scope-boundary
-    to_id: paper-34-claim-primary
-  - id: relation-paper-34-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-34-resources-available
-    to_id: paper-34-evidence-reported
-  - id: relation-paper-34-status-qualifies-claim
+    from_id: paper-34-assumption-platform
+    to_id: paper-34-claim-confidentiality
+  - id: paper-34-relation-testbed-scale
+    type: supports
+    from_id: paper-34-evidence-testbed
+    to_id: paper-34-claim-scale
+  - id: paper-34-relation-parameters-scale
+    type: supports
+    from_id: paper-34-evidence-parameters
+    to_id: paper-34-claim-scale
+  - id: paper-34-relation-parameters-cost
+    type: supports
+    from_id: paper-34-evidence-parameters
+    to_id: paper-34-claim-cost
+  - id: paper-34-relation-passive-confidentiality
+    type: limits
+    from_id: paper-34-boundary-passive
+    to_id: paper-34-claim-confidentiality
+  - id: paper-34-relation-deletion-confidentiality
+    type: limits
+    from_id: paper-34-boundary-deletion
+    to_id: paper-34-claim-confidentiality
+  - id: paper-34-relation-security-evidence-claim
     type: qualifies
-    from_id: paper-34-scrutiny
-    to_id: paper-34-claim-primary
+    from_id: paper-34-evidence-security
+    to_id: paper-34-claim-confidentiality
 
 assessment:
   id: paper-34-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-34-editorial", "anchor-paper-34-resource-1"]
+      level: high
+      rationale: >-
+        The complete paper combines explicit PSS conditions, a concrete architecture and threat model, an implemented system, cloud experiments, and a multi-parameter performance and cost study. The concrete end-to-end security argument is architectural rather than machine-checked or independently reproduced.
+      basis_source_anchor_ids: [anchor-paper-34-pss, anchor-paper-34-security, anchor-paper-34-implementation, anchor-paper-34-evaluation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a public author-uploaded full-text route, so the paper is directly inspectable and auditability is high. Local fixity, correspondence with the final published version, and a substantive audit of the paper and supplementary artifacts have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-34-resource-1", "anchor-paper-34-resource-2"]
+      rationale: >-
+        A public author-uploaded full-text route and the official DOI make the paper's assumptions, design, and reported measurements inspectable, satisfying the author-defined High rule. A stable direct PDF, local hash, code, and raw data were not obtained.
+      basis_source_anchor_ids: [anchor-paper-34-problem, anchor-paper-34-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-34-editorial"]
+      rationale: >-
+        Named authors, affiliations, venue, date, DOI, and an author-uploaded manuscript are documented. Contributor roles, revision history, software versions, tool use, and experiment-artifact lineage were not audited.
+      basis_source_anchor_ids: [anchor-paper-34-problem, anchor-paper-34-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-34-resource-1"]
+      rationale: >-
+        ICDCS publication establishes external venue scrutiny, while review reports, rebuttal, independent cryptographic audit, reproduction, deployment, and correction history remain unrepresented.
+      basis_source_anchor_ids: [anchor-paper-34-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-34-editorial"]
+      level: low
+      rationale: >-
+        OpenAlex reported no citing works for this DOI on 2026-07-11. Under the author-defined corpus rule, 0 through 8 located citations is Low. Index coverage may be incomplete and the count is not a correctness judgment.
+      basis_source_anchor_ids: [anchor-paper-34-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: an implemented bridge between proactive secret sharing and cloud storage at data and deployment scales beyond tiny keys. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-34-editorial"]
+      rationale: >-
+        The source presents the work as the first feasibility study of proactive security for larger cloud-stored files and supplies an implemented bridge from cryptographic protocol to cloud operation. Priority and downstream uptake were not independently established, and the audited citation index located no citing works.
+      basis_source_anchor_ids: [anchor-paper-34-problem, anchor-paper-34-lessons, anchor-paper-34-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: OpenAlex DOI lookup
+  citation_count: 0
+  source_url: https://openalex.org/W2734832021
   signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  limitation: OpenAlex reported zero citing works, but citation indexes can miss conference citations and author-name variants; the result is a dated lower-bound signal, not evidence that no citation exists anywhere.

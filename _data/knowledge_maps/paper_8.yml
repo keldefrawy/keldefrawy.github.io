@@ -18,160 +18,222 @@ labels: ["Theory", "Applied"]
 authors: ["Fabio Soldo", "Karim Eldefrawy", "Athina Markopoulou", "Bala Krishnamurthy", "Kobus van der Merwe"]
 keywords: ["traffic filtering", "blacklists", "optimization"]
 
-research_question: "How can a blacklist be compressed into a limited router-filter budget while blocking malicious sources and minimizing collateral damage to legitimate hosts?"
-central_answer: "The paper formulates filter selection over IP-prefix aggregates and reports optimal efficient algorithms for static and changing blacklists, with strong results when malicious addresses cluster."
+research_question: >-
+  How can a router compress a large, possibly changing IP blacklist into a small set of source-prefix filters while controlling collateral damage and the fraction of malicious addresses left unblocked?
+central_answer: >-
+  Model filters as address intervals and exploit their one-dimensional order. FILTER-ALL-STATIC greedily merges the cheapest adjacent bad-address ranges; FILTER-SOME-STATIC also weighs the cost of leaving a bad address unfiltered. The paper proves both greedy constructions optimal, extends them incrementally to changing blacklists, and simulates how address clustering and density affect filter efficiency.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, evidence linking, and initial assessment
+  method: "Full-source audit of the checked-in author-hosted paper and official IEEE DOI record."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-drafted, source-linked map awaiting author verification before approval."
 
 sources:
-  - id: source-paper-8-site-record
-    type: curated_record
-    title: "Curated publication record for paper #8"
-    url: /publications/#paper-8
-  - id: source-paper-8-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/ITA.2008.4601049"
-  - id: source-paper-8-archive-1
-    type: manuscript_archive
-    title: "CiteSeerX archive"
-    url: "https://citeseerx.ist.psu.edu/document?doi=b1e1e721800aa7c604e8680b7b63e029b470c6c2&repid=rep1&type=pdf"
-  - id: source-paper-8-author-1
+  - id: source-paper-8-paper
     type: author_copy
+    title: "Filtering Sources of Unwanted Traffic Based on Blacklists"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf
+    media_type: application/pdf
+    sha256: 988b4c9b50eb5f2ad774ced50a405be8584a51b54c79d3d36a94ecc9369d7d75
+    page_count: 10
+    provenance_category: author
+    version_note: "Author-hosted conference paper; local copy checked 2026-07-11."
+  - id: source-paper-8-author
+    type: author_copy_origin
     title: "Author-hosted paper"
     url: "https://rfob.org/papers/ita08.pdf"
+  - id: source-paper-8-official
+    type: official_publication_record
+    title: "IEEE DOI record"
+    url: "https://doi.org/10.1109/ITA.2008.4601049"
+  - id: source-paper-8-citations
+    type: citation_search
+    title: "Dated scholarly-web citation search"
+    url: "https://scholar.google.com/scholar?q=%22Filtering+Sources+of+Unwanted+Traffic+Based+on+Blacklists%22"
+    version_note: "Search attempted 2026-07-11; no transparent citation count was retrievable in this environment."
 
 source_anchors:
-  - id: anchor-paper-8-site-record
-    source_id: source-paper-8-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-8
-  - id: anchor-paper-8-official-1
-    source_id: source-paper-8-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1109/ITA.2008.4601049"
-  - id: anchor-paper-8-archive-1
-    source_id: source-paper-8-archive-1
-    label: "CiteSeerX archive"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://citeseerx.ist.psu.edu/document?doi=b1e1e721800aa7c604e8680b7b63e029b470c6c2&repid=rep1&type=pdf"
-  - id: anchor-paper-8-author-1
-    source_id: source-paper-8-author-1
-    label: "Author-hosted paper"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-8-problem
+    source_id: source-paper-8-paper
+    label: "Problem, assumptions, and contributions"
+    locator: "Abstract and Section I, PDF pages 1-2"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf#page=1
+  - id: anchor-paper-8-model
+    source_id: source-paper-8-paper
+    label: "Blacklist, filter, weight, and objective definitions"
+    locator: "Section II, PDF pages 2-3"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf#page=2
+  - id: anchor-paper-8-p0
+    source_id: source-paper-8-paper
+    label: "FILTER-ALL-STATIC algorithm and optimality"
+    locator: "Section III-A, Algorithms 1-2 and Theorem 3.1, PDF pages 3-5"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf#page=3
+  - id: anchor-paper-8-p1
+    source_id: source-paper-8-paper
+    label: "FILTER-SOME-STATIC algorithm and optimality"
+    locator: "Section III-B, Algorithm 3 and Theorem 3.2, PDF pages 5-7"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf#page=5
+  - id: anchor-paper-8-dynamic
+    source_id: source-paper-8-paper
+    label: "Dynamic blacklist updates"
+    locator: "Sections III-C and III-D, PDF pages 7-8"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf#page=7
+  - id: anchor-paper-8-evaluation
+    source_id: source-paper-8-paper
+    label: "Clustering and density simulations"
+    locator: "Section IV, PDF pages 8-10"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf#page=8
+  - id: anchor-paper-8-conclusion
+    source_id: source-paper-8-paper
+    label: "Summary and future work"
+    locator: "Section V, PDF page 10"
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf#page=10
+  - id: anchor-paper-8-provenance
+    source_id: source-paper-8-author
+    label: "Author-copy provenance"
+    locator: "Public author-hosted PDF"
     url: "https://rfob.org/papers/ita08.pdf"
+  - id: anchor-paper-8-publication
+    source_id: source-paper-8-official
+    label: "Official publication metadata"
+    locator: "DOI 10.1109/ITA.2008.4601049"
+    url: "https://doi.org/10.1109/ITA.2008.4601049"
+  - id: anchor-paper-8-citation-search
+    source_id: source-paper-8-citations
+    label: "Citation search attempted"
+    locator: "Exact-title search, 2026-07-11; no verified count retrieved"
+    url: "https://scholar.google.com/scholar?q=%22Filtering+Sources+of+Unwanted+Traffic+Based+on+Blacklists%22"
 
 nodes:
   - id: paper-8
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "Filtering Sources of Unwanted Traffic Based on Blacklists"
-    summary: "The paper turns a blacklist of malicious source addresses into a limited set of router filters while balancing attack blocking against collateral damage to legitimate hosts in aggregated prefixes. Its optimal, efficient algorithms cover static and changing blacklists and perform especially well when malicious addresses are clustered."
-    source_anchor_ids: [anchor-paper-8-site-record]
-
+    summary: "A family of provably optimal algorithms for compiling static and changing source-IP blacklists into a bounded number of interval filters."
+    source_anchor_ids: [anchor-paper-8-problem, anchor-paper-8-publication]
   - id: paper-8-question
     kind: question
     parent_id: paper-8
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How can a blacklist be compressed into a limited router-filter budget while blocking malicious sources and minimizing collateral damage to legitimate hosts?"
-    source_anchor_ids: [anchor-paper-8-site-record]
-
+    summary: "How should limited ACL entries aggregate blacklist addresses while balancing missed malicious sources against blocked legitimate addresses?"
+    source_anchor_ids: [anchor-paper-8-problem]
   - id: paper-8-answer
     kind: contribution
     parent_id: paper-8
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper formulates filter selection over IP-prefix aggregates and reports optimal efficient algorithms for static and changing blacklists, with strong results when malicious addresses cluster."
-    source_anchor_ids: [anchor-paper-8-site-record]
-
-  - id: paper-8-method
-    kind: method
+    epistemic_status: proved_and_simulated
+    title: "Central answer"
+    summary: "Exploit the total order of IP addresses: greedy adjacent-range operations produce optimal static filter sets and efficient incremental variants reuse that structure as a blacklist changes."
+    source_anchor_ids: [anchor-paper-8-p0, anchor-paper-8-p1, anchor-paper-8-dynamic]
+  - id: paper-8-model
+    kind: model
     parent_id: paper-8
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Optimize prefix-based filter placement using blacklist structure, balancing blocked malicious addresses against legitimate hosts contained in the same aggregates."
-    source_anchor_ids: [anchor-paper-8-site-record]
-
-  - id: paper-8-claims
-    kind: claim_group
+    epistemic_status: formalized
+    title: "Weighted interval-filter model"
+    summary: "Each filter blocks a contiguous address range. Address weights can encode legitimate-traffic cost, confidence in maliciousness, or operator policy, under a maximum filter count."
+    source_anchor_ids: [anchor-paper-8-model]
+  - id: paper-8-p0
+    kind: algorithm
     parent_id: paper-8
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The reported algorithms are optimal for the stated filter-allocation formulation and perform especially well on clustered malicious-address distributions."
-    source_anchor_ids: [anchor-paper-8-site-record]
-
+    epistemic_status: proved_optimal
+    title: "FILTER-ALL-STATIC"
+    summary: "Starting with one filter per bad address, the greedy algorithm merges the N-F least-cost adjacent ranges. Theorem 3.1 proves optimality; sorting yields O(N log N) time."
+    source_anchor_ids: [anchor-paper-8-p0]
+  - id: paper-8-p1
+    kind: algorithm
+    parent_id: paper-8
+    order: 5
+    epistemic_status: proved_optimal
+    title: "FILTER-SOME-STATIC"
+    summary: "At each step the algorithm compares removing a bad-address filter with merging adjacent filters, using signed address weights to trade false negatives against collateral damage. Theorem 3.2 proves optimality."
+    source_anchor_ids: [anchor-paper-8-p1]
+  - id: paper-8-dynamic
+    kind: algorithm
+    parent_id: paper-8
+    order: 6
+    epistemic_status: incrementally_specified
+    title: "Dynamic blacklist variants"
+    summary: "FILTER-ALL-DYNAMIC updates the sorted merge-cost list after an address arrives or departs; a corresponding filter-some method is outlined to exploit temporal correlation rather than recomputing from scratch."
+    source_anchor_ids: [anchor-paper-8-dynamic]
   - id: paper-8-evidence
     kind: evidence_group
     parent_id: paper-8
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports algorithmic optimality and evaluation on static and changing blacklists; proofs, complexity bounds, datasets, and baselines have not been inspected."
-    source_anchor_ids: [anchor-paper-8-site-record]
-
-  - id: paper-8-limitations
+    order: 7
+    epistemic_status: simulation
+    title: "Clustering and density evaluation"
+    summary: "Multifractal and synthetic blacklist distributions vary clustering, blacklist density, filter budget, and weights to measure blocked bad addresses and collateral damage."
+    source_anchor_ids: [anchor-paper-8-evaluation]
+  - id: paper-8-result
+    kind: result
+    parent_id: paper-8-evidence
+    order: 1
+    epistemic_status: simulation_supported
+    title: "Clustering makes aggregation effective"
+    summary: "The reported benefits are strongest when malicious addresses cluster in the IP space; sparse or weakly clustered blacklists require more filters or greater collateral damage."
+    source_anchor_ids: [anchor-paper-8-evaluation]
+  - id: paper-8-boundaries
     kind: limitation_group
     parent_id: paper-8
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The record does not establish robustness to blacklist error, adversarial address dispersion, routing changes, IPv6 aggregation, or operational constraints outside the stated optimization."
-    source_anchor_ids: [anchor-paper-8-site-record]
-
-  - id: paper-8-resources
-    kind: artifact_group
+    order: 8
+    epistemic_status: material
+    title: "Operational boundaries"
+    summary: "Blacklist construction and accuracy are assumed, weights are policy inputs, spoofing and evasion are not modeled, and evaluation uses distribution models rather than a deployed filtering system or released longitudinal blacklist."
+    source_anchor_ids: [anchor-paper-8-problem, anchor-paper-8-model, anchor-paper-8-evaluation, anchor-paper-8-conclusion]
+  - id: paper-8-artifacts
+    kind: artifact
     parent_id: paper-8
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Publisher / DOI; CiteSeerX archive; Author-hosted paper. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-8-official-1, anchor-paper-8-archive-1, anchor-paper-8-author-1]
-
+    order: 9
+    epistemic_status: paper_available_no_code
+    title: "Artifacts"
+    summary: "A fixed author copy is available locally; implementation, simulation code, generated blacklists, and result data were not located."
+    source_anchor_ids: [anchor-paper-8-evaluation, anchor-paper-8-provenance]
   - id: paper-8-scrutiny
     kind: scrutiny
     parent_id: paper-8
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · workshop paper at Information Theory and Applications Workshop (ITA). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-8-site-record, anchor-paper-8-official-1]
+    order: 10
+    epistemic_status: peer_reviewed
+    title: "Scrutiny"
+    summary: "The work appeared at ITA 2008 with explicit optimality arguments and a public author copy; review reports or independent reproduction were not located."
+    source_anchor_ids: [anchor-paper-8-p0, anchor-paper-8-p1, anchor-paper-8-publication]
 
 relations:
-  - id: paper-8-relation-method-supports-answer
-    type: supports
-    from_id: paper-8-method
+  - id: paper-8-relation-model-formalizes-question
+    type: formalizes
+    from_id: paper-8-model
+    to_id: paper-8-question
+  - id: paper-8-relation-p0-realizes-answer
+    type: realizes
+    from_id: paper-8-p0
     to_id: paper-8-answer
-  - id: paper-8-relation-evidence-supports-claim
-    type: supports
+  - id: paper-8-relation-p1-realizes-answer
+    type: realizes
+    from_id: paper-8-p1
+    to_id: paper-8-answer
+  - id: paper-8-relation-dynamic-extends-answer
+    type: extends
+    from_id: paper-8-dynamic
+    to_id: paper-8-answer
+  - id: paper-8-relation-evidence-evaluates-answer
+    type: evaluates
     from_id: paper-8-evidence
-    to_id: paper-8-claims
-  - id: paper-8-relation-limitations-qualify-claim
+    to_id: paper-8-answer
+  - id: paper-8-relation-boundaries-qualify-answer
     type: qualifies
-    from_id: paper-8-limitations
-    to_id: paper-8-claims
-  - id: paper-8-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-8-scrutiny
-    to_id: paper-8
+    from_id: paper-8-boundaries
+    to_id: paper-8-answer
 
 assessment:
   id: paper-8-assessment-2026-07-11
@@ -181,33 +243,34 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary reports algorithmic optimality and evaluation on static and changing blacklists; proofs, complexity bounds, datasets, and baselines have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-8-site-record]
+      level: high
+      rationale: "The paper formally defines objectives, supplies algorithms and optimality arguments, analyzes complexity, and evaluates clustering effects; operational blacklist accuracy and deployment remain outside scope."
+      basis_source_anchor_ids: [anchor-paper-8-model, anchor-paper-8-p0, anchor-paper-8-p1, anchor-paper-8-evaluation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-8-official-1, anchor-paper-8-archive-1, anchor-paper-8-author-1]
+      rationale: "A fixed author-hosted full text is checked in with page count and hash, making algorithms, proofs, assumptions, and simulations inspectable."
+      basis_source_anchor_ids: [anchor-paper-8-provenance, anchor-paper-8-p0, anchor-paper-8-p1, anchor-paper-8-evaluation]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-8-site-record]
+      rationale: "Named authorship, author-copy provenance, and official metadata are documented; author roles, revision history, and simulation lineage are not."
+      basis_source_anchor_ids: [anchor-paper-8-provenance, anchor-paper-8-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in Information Theory and Applications Workshop (ITA), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-8-official-1]
+      rationale: "The work has a workshop publication record and explicit proofs, but no public reviews, mechanized verification, or independent reproduction was located."
+      basis_source_anchor_ids: [anchor-paper-8-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-8-site-record]
+      level: low
+      rationale: "No citations were verifiably located in the constrained dated search. Under the author's 0-8 rule this is low, but it is not a claim that the paper has no citations."
+      basis_source_anchor_ids: [anchor-paper-8-citation-search]
     - id: contribution_significance
-      level: medium
-      rationale: "The current title or editorial summary reports an optimal algorithmic result for the stated problem. This is a potentially significant signal, but the optimality proof, priority, and field-level impact have not been source-audited; the rating therefore remains medium."
-      basis_source_anchor_ids: [anchor-paper-8-site-record]
+      level: high
+      rationale: "The work turns blacklist compression into a precise optimization family with efficient exact algorithms, dynamic updates, and an explicit false-positive/false-negative control."
+      basis_source_anchor_ids: [anchor-paper-8-problem, anchor-paper-8-p0, anchor-paper-8-p1, anchor-paper-8-dynamic]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "Exact-title scholarly-web search; transparent index count unavailable"
+  source: "Google Scholar query route plus general scholarly-web search"
+  citation_count: 0
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "Zero means no citations were verifiably located during this constrained search, not a total bibliometric count; author should replace it with a confirmed index snapshot."

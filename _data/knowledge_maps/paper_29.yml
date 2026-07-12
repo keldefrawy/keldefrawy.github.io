@@ -14,244 +14,336 @@ title: "Byzantine Fault Tolerant Software-Defined Networking (SDN) Controllers"
 year: 2016
 status: "Published"
 venue: "IEEE COMPSAC, MidCCI workshop"
-topic: "secure-systems-networks"
+topic: secure-systems-networks
 labels: ["Theory", "Applied"]
-authors:
-  - "Karim Eldefrawy"
-  - "Tyler Kaczmarek"
-keywords:
-  - "software-defined networking"
-  - "Byzantine fault tolerance"
-editorial_summary: "The paper replaces the single vulnerable SDN controller with replicated controllers that use Byzantine fault-tolerant state-machine replication to survive malicious behavior in both the control and data planes. Its prototype tolerates one compromised component among four replicas and demonstrates feasibility with roughly a twofold slowdown in the best configuration."
+authors: ["Karim Eldefrawy", "Tyler Kaczmarek"]
+keywords: ["software-defined networking", "Byzantine fault tolerance"]
 
-research_question: "Can a software-defined network avoid a single vulnerable controller and continue operating when a control- or data-plane component behaves maliciously?"
-central_answer: "The paper reports replicating controllers with Byzantine fault-tolerant state-machine replication and demonstrates a four-replica prototype designed to tolerate one compromised component."
+research_question: >-
+  Can an SDN controller avoid being a single point of malicious failure by replicating control decisions with Byzantine state-machine replication while retaining usable flow-setup performance?
+central_answer: >-
+  The paper integrates OpenFlowJ and Beacon with BFT-SMaRt through a per-switch proxy, producing SimpleBFT and BeaconBFT controllers that tolerate f faulty controller replicas among 3f+1 under the stated model; a four-replica Mininet prototype demonstrates feasibility but substantial and architecture-dependent throughput cost.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, architecture/threat-model mapping, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete seven-page author-hosted paper, including architecture, adversary model, security analysis, Mininet experiment, numerical results, and explicit limitations. PDF pages 1 and 5 were rendered and visually inspected."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: "AI-authored source-linked map awaiting author verification. Performance numbers were transcribed and not reproduced; the paper's security reasoning is not a machine-checked proof."
 
 sources:
-  - id: source-paper-29-site-record
-    type: curated_site_record
-    title: "Publication #29 metadata and editorial summary"
-    url: /publications/#paper-29
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-29-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/COMPSAC.2016.76"
-    provenance_category: official
-  - id: source-paper-29-resource-2
-    type: author_hosted_copy
-    title: "Author-hosted paper"
-    url: "https://sprout.ics.uci.edu/pubs/resilient_sdn_controller.pdf"
+  - id: source-paper-29-fulltext
+    type: scholarly_article
+    title: "Byzantine Fault Tolerant Software-Defined Networking (SDN) Controllers (author copy)"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf
+    media_type: application/pdf
+    sha256: 8def111897c43434bf26e16fba7b43af130cfda485bea0fcad9744e62095a730
+    page_count: 7
     provenance_category: author
+  - id: source-paper-29-author-origin
+    type: author_copy
+    title: "UC Irvine SPRout author copy"
+    url: https://sprout.ics.uci.edu/pubs/resilient_sdn_controller.pdf
+  - id: source-paper-29-official
+    type: publication_record
+    title: "IEEE COMPSAC publication record"
+    url: https://doi.org/10.1109/COMPSAC.2016.76
+  - id: source-paper-29-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #29"
+    url: https://openalex.org/W2514641934
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-29-editorial
-    source_id: source-paper-29-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-29
-  - id: anchor-paper-29-resource-1
-    source_id: source-paper-29-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1109/COMPSAC.2016.76"
-  - id: anchor-paper-29-resource-2
-    source_id: source-paper-29-resource-2
-    label: "Author-hosted resource: Author-hosted paper"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://sprout.ics.uci.edu/pubs/resilient_sdn_controller.pdf"
+  - id: anchor-paper-29-problem
+    source_id: source-paper-29-fulltext
+    label: "Problem, contribution, and headline prototype result"
+    locator: "Abstract and Section I, PDF pages 1-2"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf#page=1
+  - id: anchor-paper-29-bftsmart
+    source_id: source-paper-29-fulltext
+    label: "BFT-SMaRt protocol and assumptions"
+    locator: "Section II.B, PDF pages 2-3"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf#page=2
+  - id: anchor-paper-29-adversary
+    source_id: source-paper-29-fulltext
+    label: "Controller and switch adversary model"
+    locator: "Section II.C, PDF page 3"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf#page=3
+  - id: anchor-paper-29-design
+    source_id: source-paper-29-fulltext
+    label: "Proxy architecture and two controller prototypes"
+    locator: "Section III and Figures 2-3, PDF pages 3-4"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf#page=3
+  - id: anchor-paper-29-security
+    source_id: source-paper-29-fulltext
+    label: "Security analysis and quorum reasoning"
+    locator: "Section IV, PDF pages 4-5"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf#page=4
+  - id: anchor-paper-29-evaluation
+    source_id: source-paper-29-fulltext
+    label: "Mininet experiment and flow-setup results"
+    locator: "Section V and Table I, PDF page 5"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf#page=5
+  - id: anchor-paper-29-limitations
+    source_id: source-paper-29-fulltext
+    label: "Future work, scale boundary, and conclusion"
+    locator: "Sections VII-VIII, PDF pages 6-7"
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf#page=6
+  - id: anchor-paper-29-publication
+    source_id: source-paper-29-official
+    label: "Official IEEE publication record"
+    locator: "COMPSAC Workshops 2016"
+    url: https://doi.org/10.1109/COMPSAC.2016.76
+  - id: anchor-paper-29-citations
+    source_id: source-paper-29-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 43, accessed 2026-07-11"
+    url: https://openalex.org/W2514641934
 
 nodes:
   - id: paper-29
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Byzantine Fault Tolerant Software-Defined Networking (SDN) Controllers"
-    summary: "The paper replaces the single vulnerable SDN controller with replicated controllers that use Byzantine fault-tolerant state-machine replication to survive malicious behavior in both the control and data planes. Its prototype tolerates one compromised component among four replicas and demonstrates feasibility with roughly a twofold slowdown in the best configuration."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    epistemic_status: published
+    title: "Byzantine Fault Tolerant SDN Controllers"
+    summary: "A replicated SDN control architecture and Java prototype that applies BFT-SMaRt to OpenFlowJ and Beacon controllers."
+    source_anchor_ids: [anchor-paper-29-problem]
 
   - id: paper-29-question
     kind: question
     parent_id: paper-29
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can a software-defined network avoid a single vulnerable controller and continue operating when a control- or data-plane component behaves maliciously?"
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    summary: "Can the logically centralized SDN control plane tolerate malicious controllers and switches without a new centralized fault point and without prohibitive flow-setup cost?"
+    source_anchor_ids: [anchor-paper-29-problem]
 
-  - id: paper-29-contribution
+  - id: paper-29-answer
     kind: contribution
     parent_id: paper-29
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports replicating controllers with Byzantine fault-tolerant state-machine replication and demonstrates a four-replica prototype designed to tolerate one compromised component."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    epistemic_status: implemented
+    title: "Central answer"
+    summary: "Replicate deterministic controller logic with BFT-SMaRt, place a service proxy beside each switch, and require f+1 identical replica replies before installing a flow rule."
+    source_anchor_ids: [anchor-paper-29-design, anchor-paper-29-security]
+
+  - id: paper-29-scope
+    kind: scope
+    parent_id: paper-29
+    order: 3
+    epistemic_status: defined
+    title: "Threat and system model"
+    summary: "The system contains 3f+1 controller replicas plus switch-side clients/proxies, with authenticated replica messages and BFT-SMaRt's total-order execution."
+    source_anchor_ids: [anchor-paper-29-bftsmart, anchor-paper-29-adversary]
+
+  - id: paper-29-scope-adversary
+    kind: threat_model
+    parent_id: paper-29-scope
+    order: 1
+    epistemic_status: defined
+    title: "Byzantine control and data planes"
+    summary: "The adversary actively corrupts up to f controller components and arbitrarily many switches, allowing message injection, replay, modification, arbitrary requests/replies, or silence."
+    source_anchor_ids: [anchor-paper-29-adversary]
+
+  - id: paper-29-scope-assumptions
+    kind: assumption
+    parent_id: paper-29-scope
+    order: 2
+    epistemic_status: assumed
+    title: "Replication assumptions"
+    summary: "Correctness relies on BFT-SMaRt's communication and quorum assumptions, deterministic replicas, authenticated messages (MACs in the prototype), direct client-to-replica communication, and at most f faulty replicas."
+    source_anchor_ids: [anchor-paper-29-bftsmart, anchor-paper-29-security]
 
   - id: paper-29-method
     kind: method
     parent_id: paper-29
-    order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported design applies Byzantine state-machine replication to SDN controllers and evaluates prototype fault tolerance and performance."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    order: 4
+    epistemic_status: implemented
+    title: "Proxy-mediated replicated controller"
+    summary: "A per-switch proxy translates OpenFlow Packet_In requests into BFT client requests and translates the agreed response back into Packet_Out or Flow_Mod messages."
+    source_anchor_ids: [anchor-paper-29-design]
+
+  - id: paper-29-method-prototypes
+    kind: component
+    parent_id: paper-29-method
+    order: 1
+    epistemic_status: implemented
+    title: "SimpleBFT and BeaconBFT"
+    summary: "The authors integrate OpenFlowJ and Beacon with BFT-SMaRt, respectively, and evaluate both as learning-switch controllers with four replicas for f=1."
+    source_anchor_ids: [anchor-paper-29-design, anchor-paper-29-evaluation]
 
   - id: paper-29-claims
     kind: claim_group
     parent_id: paper-29
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    order: 5
+    epistemic_status: mixed
+    title: "Principal claims"
+    summary: "The paper combines quorum-based fault-tolerance reasoning with performance evidence from a proof-of-concept prototype."
+    source_anchor_ids: [anchor-paper-29-security, anchor-paper-29-evaluation]
 
-  - id: paper-29-claim-primary
+  - id: paper-29-claim-security
     kind: claim
     parent_id: paper-29-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports tolerance of one compromised component among four replicas and feasibility with about a twofold slowdown in the best tested configuration."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    epistemic_status: analytically_supported_conditional
+    title: "Single-fault tolerance in tested configuration"
+    summary: "With four controller replicas, no one compromised replica can make a client accept an unsolicited or incorrect action because the client requires two identical replies and consensus quorums remain available."
+    source_anchor_ids: [anchor-paper-29-security]
+
+  - id: paper-29-claim-performance
+    kind: claim
+    parent_id: paper-29-claims
+    order: 2
+    epistemic_status: experimentally_supported
+    title: "Measured flow-setup cost"
+    summary: "SimpleBFT reports 59.3 flow modifications/s versus OpenFlowJ's 106.9 (about 1.8× slower); BeaconBFT reports 87.0 versus Beacon's 550.6 (about 6.3× slower)."
+    source_anchor_ids: [anchor-paper-29-evaluation]
 
   - id: paper-29-evidence
     kind: evidence_group
     parent_id: paper-29
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    order: 6
+    epistemic_status: documented
+    title: "Evidence chain"
+    summary: "Evidence consists of architecture diagrams, quorum analysis inherited from BFT-SMaRt, two implementations, and comparative Mininet flow-setup measurements."
+    source_anchor_ids: [anchor-paper-29-design, anchor-paper-29-security, anchor-paper-29-evaluation]
 
-  - id: paper-29-evidence-reported
+  - id: paper-29-evidence-experiment
     kind: evidence
     parent_id: paper-29-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial summary identifies a prototype evaluation and a comparative slowdown figure, but the workloads, fault injections, measurements, and statistical treatment were not audited."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    epistemic_status: reported_not_reproduced
+    title: "Mininet proof-of-concept"
+    summary: "The test uses 64 hosts and 63 switches in a binary tree, a reactive empty-table workload, four controller replicas, and flow setup duration, delay, and rate metrics; no fault-injection result is reported."
+    source_anchor_ids: [anchor-paper-29-evaluation]
 
-  - id: paper-29-scope
+  - id: paper-29-boundaries
     kind: limitation_group
     parent_id: paper-29
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    order: 7
+    epistemic_status: material
+    title: "Boundaries and limitations"
+    summary: "The source explicitly treats the implementation as a proof of concept and says it is not ready for large-scale networks with tens of thousands of flow changes per second."
+    source_anchor_ids: [anchor-paper-29-problem, anchor-paper-29-limitations]
 
-  - id: paper-29-scope-boundary
+  - id: paper-29-boundary-evaluation
     kind: limitation
-    parent_id: paper-29-scope
+    parent_id: paper-29-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The current record does not establish which SDN platforms, threat boundaries, network conditions, liveness assumptions, or configurations the result covers."
-    source_anchor_ids: ["anchor-paper-29-editorial"]
+    epistemic_status: evaluation_limitation
+    title: "No adversarial or large-scale validation"
+    summary: "The reported experiment measures benign throughput in Mininet; it does not inject Byzantine faults, test recovery/view change, measure geographic distribution, or demonstrate production traffic scale."
+    source_anchor_ids: [anchor-paper-29-evaluation, anchor-paper-29-limitations]
 
-  - id: paper-29-resources
+  - id: paper-29-boundary-architecture
+    kind: limitation
+    parent_id: paper-29-boundaries
+    order: 2
+    epistemic_status: implementation_limitation
+    title: "Proxy and serialization costs"
+    summary: "Each switch depends on a paired proxy, and BFT-SMaRt's total ordering removes much of Beacon's parallel advantage; the paper proposes integrated switches, batching, and speculative/coarser consensus as future work."
+    source_anchor_ids: [anchor-paper-29-design, anchor-paper-29-evaluation, anchor-paper-29-limitations]
+
+  - id: paper-29-artifacts
     kind: artifact_group
     parent_id: paper-29
-    order: 7
-    epistemic_status: resource_metadata_recorded
+    order: 8
+    epistemic_status: full_text_available
     title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-29-resource-1", "anchor-paper-29-resource-2"]
-
-  - id: paper-29-resources-available
-    kind: artifact
-    parent_id: paper-29-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted paper."
-    source_anchor_ids: ["anchor-paper-29-resource-1", "anchor-paper-29-resource-2"]
+    summary: "The complete author copy is mirrored locally with fixity metadata and linked to the IEEE record; no source-code repository or experiment package was identified."
+    source_anchor_ids: [anchor-paper-29-problem, anchor-paper-29-publication]
 
   - id: paper-29-scrutiny
     kind: scrutiny
     parent_id: paper-29
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at IEEE COMPSAC, MidCCI workshop. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-29-resource-1"]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The paper was published at the IEEE COMPSAC MidCCI workshop; reviews, independent replications, and later security evaluations were not audited."
+    source_anchor_ids: [anchor-paper-29-publication]
+
+  - id: paper-29-lineage
+    kind: lineage
+    parent_id: paper-29
+    order: 10
+    epistemic_status: documented
+    title: "Research lineage"
+    summary: "The design adapts general BFT state-machine replication to the SDN control plane while contrasting data-plane fault-tolerance systems and separate fault-tolerant data stores."
+    source_anchor_ids: [anchor-paper-29-bftsmart, anchor-paper-29-limitations]
 
 relations:
-  - id: relation-paper-29-contribution-addresses-question
+  - id: relation-paper-29-answer-addresses-question
     type: addresses
-    from_id: paper-29-contribution
+    from_id: paper-29-answer
     to_id: paper-29-question
-  - id: relation-paper-29-method-describes-contribution
-    type: describes_approach_to
+  - id: relation-paper-29-method-realizes-answer
+    type: realizes
     from_id: paper-29-method
-    to_id: paper-29-contribution
-  - id: relation-paper-29-evidence-supports-claim
+    to_id: paper-29-answer
+  - id: relation-paper-29-assumptions-qualify-security
+    type: qualifies
+    from_id: paper-29-scope-assumptions
+    to_id: paper-29-claim-security
+  - id: relation-paper-29-experiment-supports-performance
     type: supports
-    from_id: paper-29-evidence-reported
-    to_id: paper-29-claim-primary
-  - id: relation-paper-29-scope-qualifies-claim
+    from_id: paper-29-evidence-experiment
+    to_id: paper-29-claim-performance
+  - id: relation-paper-29-evaluation-boundary-qualifies-performance
     type: qualifies
-    from_id: paper-29-scope-boundary
-    to_id: paper-29-claim-primary
-  - id: relation-paper-29-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-29-resources-available
-    to_id: paper-29-evidence-reported
-  - id: relation-paper-29-status-qualifies-claim
+    from_id: paper-29-boundary-evaluation
+    to_id: paper-29-claim-performance
+  - id: relation-paper-29-architecture-boundary-qualifies-answer
     type: qualifies
-    from_id: paper-29-scrutiny
-    to_id: paper-29-claim-primary
+    from_id: paper-29-boundary-architecture
+    to_id: paper-29-answer
+  - id: relation-paper-29-artifacts-enable-audit
+    type: enables_audit_of
+    from_id: paper-29-artifacts
+    to_id: paper-29-evidence
 
 assessment:
   id: paper-29-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-29-editorial", "anchor-paper-29-resource-1"]
+      rationale: "The paper gives a concrete architecture, threat model, security analysis, two prototypes, and comparative performance measurements. No fault injection, code artifact, independent reproduction, or formal proof audit was available."
+      basis_source_anchor_ids: [anchor-paper-29-security, anchor-paper-29-evaluation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-29-resource-1", "anchor-paper-29-resource-2"]
+      rationale: "The complete author-hosted paper is mirrored locally with page count and SHA-256, making design, assumptions, and reported data inspectable; implementation source and experiment package are not public in this map."
+      basis_source_anchor_ids: [anchor-paper-29-design, anchor-paper-29-evaluation]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-29-editorial"]
+      rationale: "Named authorship, affiliations, an author copy, and an IEEE record establish baseline provenance. Code version, contributor roles, and experimental artifact lineage are not documented."
+      basis_source_anchor_ids: [anchor-paper-29-problem, anchor-paper-29-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-29-resource-1"]
+      rationale: "The work has an IEEE workshop publication record, but reviews, independent replication, and subsequent adversarial evaluation were not inspected."
+      basis_source_anchor_ids: [anchor-paper-29-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-29-editorial"]
+      level: high
+      rationale: "OpenAlex reports 43 located citations as of 2026-07-11, meeting the site's 11+ high threshold. Citation count alone does not establish correctness or deployment."
+      basis_source_anchor_ids: [anchor-paper-29-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a fault-tolerant controller architecture that addresses malicious behavior across SDN control and data planes. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-29-editorial"]
+      rationale: "The paper demonstrates an early BFT SDN-controller integration with concrete measurements, but scale, fault-injection validation, priority, and long-term operational influence were not independently assessed."
+      basis_source_anchor_ids: [anchor-paper-29-problem, anchor-paper-29-limitations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2514641934
+  citation_count: 43
   signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  limitation: "OpenAlex coverage, deduplication, and version merging are imperfect; this is a dated located-citation snapshot."

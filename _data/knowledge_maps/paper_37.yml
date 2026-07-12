@@ -12,258 +12,497 @@ contribution_types: [protocol]
 
 title: "HYDRA: Hybrid Design for Remote Attestation Using a Formally Verified Microkernel"
 year: 2017
-status: "Published"
+status: Published
 venue: "10th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec)"
-topic: "secure-systems-networks"
-labels: ["Theory", "Applied"]
+topic: secure-systems-networks
+labels: [Applied, System, Implementation, Formal Verification]
 authors:
-  - "Karim Eldefrawy"
-  - "Norrathep Rattanavipanon"
-  - "Gene Tsudik"
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Gene Tsudik
 keywords:
-  - "remote attestation"
-  - "seL4"
-  - "embedded systems"
-editorial_summary: "HYDRA is the first hybrid remote-attestation design to use the formally verified seL4 microkernel for memory isolation, protection, and access control instead of extensive custom hardware. Implementations on commodity boards show the approach is practical, attesting 10 MB of memory in under 250 ms with the fastest tested checksum."
+  - remote attestation
+  - seL4
+  - formally verified microkernel
+  - embedded systems
+  - secure boot
+  - capability access control
 
-research_question: "Can a formally verified microkernel provide the isolation needed for hybrid remote attestation without extensive custom hardware?"
-central_answer: "HYDRA uses seL4 for memory isolation, protection, and access control and reports implementations on commodity boards."
+research_question: >-
+  Can a commodity embedded platform realize the isolation, key protection, atomic execution, and freshness properties required for hybrid remote attestation by relying mainly on a formally verified microkernel rather than custom processor modifications?
+central_answer: >-
+  HYDRA securely boots seL4, launches a highest-priority attestation process with exclusive capabilities to its code, state, key, and clock, and has that process authenticate fresh requests and MAC a selected process-memory range. The seL4 refinement and access-control proofs support kernel-enforced isolation, while two commodity-board prototypes and microbenchmarks show practical performance; the whole attestation system is not itself formally verified and remains conditional on secure boot, correct configuration and attestation code, hardware and DMA assumptions, and exclusion of physical attacks and side channels.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text systems, security-boundary, and evaluation mapping
+  method: >-
+    Source-grounded review of the complete 12-page author-hosted WiSec paper, including visual inspection of its abstract and security/evaluation pages. The map distinguishes machine-checked seL4 guarantees, paper-level configuration arguments, unverified HYDRA code, and empirical feasibility evidence.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Formal-guarantee boundaries, implementation details, measurements, and ratings should be checked by an author before approval.
 
 sources:
-  - id: source-paper-37-site-record
-    type: curated_site_record
-    title: "Publication #37 metadata and editorial summary"
-    url: /publications/#paper-37
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-37-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3098243.3098261"
-    provenance_category: official
-  - id: source-paper-37-resource-2
-    type: public_archive_record
-    title: "arXiv"
-    url: "https://arxiv.org/abs/1703.02688"
-    provenance_category: archive
-  - id: source-paper-37-resource-3
+  - id: source-paper-37-author-pdf
     type: author_hosted_copy
-    title: "UCI author copy"
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/hydra.pdf"
+    title: "HYDRA: Hybrid Design for Remote Attestation (Using a Formally Verified Microkernel)"
+    url: /pubs/2017/hydra-wisec2017.pdf
     provenance_category: author
+    retrieved_from: https://sprout.ics.uci.edu/projects/attestation/papers/hydra.pdf
+    media_type: application/pdf
+    sha256: 997b79fc030d4589d52225dff1c8126c67a143e45f2b6c906e7d84125f55199d
+    page_count: 12
+  - id: source-paper-37-arxiv
+    type: public_archive_record
+    title: arXiv 1703.02688
+    url: https://arxiv.org/abs/1703.02688
+    provenance_category: archive
+  - id: source-paper-37-official
+    type: official_publication_record
+    title: ACM WiSec 2017 publication record
+    url: https://doi.org/10.1145/3098243.3098261
+    provenance_category: official
+  - id: source-paper-37-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2604623598
+    url: https://openalex.org/W2604623598
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-37-editorial
-    source_id: source-paper-37-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-37
-  - id: anchor-paper-37-resource-1
-    source_id: source-paper-37-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/3098243.3098261"
-  - id: anchor-paper-37-resource-2
-    source_id: source-paper-37-resource-2
-    label: "Archive resource: arXiv"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://arxiv.org/abs/1703.02688"
-  - id: anchor-paper-37-resource-3
-    source_id: source-paper-37-resource-3
-    label: "Author-hosted resource: UCI author copy"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/hydra.pdf"
+  - id: anchor-paper-37-problem
+    source_id: source-paper-37-author-pdf
+    label: Hybrid-attestation goal, contributions, platforms, and headline result
+    locator: Abstract and Section 1, PDF pages 1-2
+    url: /pubs/2017/hydra-wisec2017.pdf#page=1
+  - id: anchor-paper-37-properties
+    source_id: source-paper-37-author-pdf
+    label: Remote-attestation objective and minimal security properties
+    locator: Section 3.2, PDF pages 3-4
+    url: /pubs/2017/hydra-wisec2017.pdf#page=3
+  - id: anchor-paper-37-threat
+    source_id: source-paper-37-author-pdf
+    label: Remote, local, and excluded physical adversaries
+    locator: Section 3.3, PDF page 4
+    url: /pubs/2017/hydra-wisec2017.pdf#page=4
+  - id: anchor-paper-37-sel4
+    source_id: source-paper-37-author-pdf
+    label: seL4 refinement, access-control, integrity, and confidentiality guarantees
+    locator: Section 4.1, PDF pages 4-5
+    url: /pubs/2017/hydra-wisec2017.pdf#page=4
+  - id: anchor-paper-37-controls
+    source_id: source-paper-37-author-pdf
+    label: Derivation of HYDRA access-control configuration C1-C4
+    locator: Section 4.2 and Table 2, PDF pages 5-6
+    url: /pubs/2017/hydra-wisec2017.pdf#page=5
+  - id: anchor-paper-37-components
+    source_id: source-paper-37-author-pdf
+    label: ROM, seL4, attestation algorithm, clock, and secure-boot requirements
+    locator: Sections 4.3-4.4, PDF pages 5-6
+    url: /pubs/2017/hydra-wisec2017.pdf#page=5
+  - id: anchor-paper-37-algorithm
+    source_id: source-paper-37-author-pdf
+    label: Fresh authenticated request and memory-MAC procedure
+    locator: Section 4.4.3 and Algorithm 1, PDF pages 6-7
+    url: /pubs/2017/hydra-wisec2017.pdf#page=6
+  - id: anchor-paper-37-implementation
+    source_id: source-paper-37-author-pdf
+    label: seL4 v1.3 implementation, process configuration, and code size
+    locator: Sections 5-5.3 and Table 3, PDF pages 6-8
+    url: /pubs/2017/hydra-wisec2017.pdf#page=6
+  - id: anchor-paper-37-key-clock
+    source_id: source-paper-37-author-pdf
+    label: Key storage and prototype timestamp mechanism
+    locator: Sections 5.4-5.5, PDF pages 8-9
+    url: /pubs/2017/hydra-wisec2017.pdf#page=8
+  - id: anchor-paper-37-security
+    source_id: source-paper-37-author-pdf
+    label: Informal mapping from nine implementation features to RA requirements
+    locator: Section 6, PDF page 9
+    url: /pubs/2017/hydra-wisec2017.pdf#page=9
+  - id: anchor-paper-37-evaluation
+    source_id: source-paper-37-author-pdf
+    label: Sabre Lite runtime breakdown, scaling, and MAC comparisons
+    locator: Section 7, Table 4, and Figure 5, PDF pages 9-10
+    url: /pubs/2017/hydra-wisec2017.pdf#page=9
+  - id: anchor-paper-37-odroid
+    source_id: source-paper-37-author-pdf
+    label: ODROID-XU4 platform results
+    locator: Appendix A and Figure 6, PDF pages 11-12
+    url: /pubs/2017/hydra-wisec2017.pdf#page=11
+  - id: anchor-paper-37-proof-assumptions
+    source_id: source-paper-37-author-pdf
+    label: Assumptions outside the seL4 functional-correctness proof
+    locator: Appendix B, PDF page 12
+    url: /pubs/2017/hydra-wisec2017.pdf#page=12
+  - id: anchor-paper-37-publication
+    source_id: source-paper-37-official
+    label: Official WiSec publication identity
+    locator: WiSec 2017, pages 99-110, DOI 10.1145/3098243.3098261
+    url: https://doi.org/10.1145/3098243.3098261
+  - id: anchor-paper-37-citations
+    source_id: source-paper-37-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 72 citing works when accessed 2026-07-11
+    url: https://openalex.org/W2604623598
 
 nodes:
   - id: paper-37
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "HYDRA: Hybrid Design for Remote Attestation Using a Formally Verified Microkernel"
-    summary: "HYDRA is the first hybrid remote-attestation design to use the formally verified seL4 microkernel for memory isolation, protection, and access control instead of extensive custom hardware. Implementations on commodity boards show the approach is practical, attesting 10 MB of memory in under 250 ms with the fastest tested checksum."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    summary: >-
+      A remote-attestation protocol and implemented system that replaces most custom microcontroller access controls with seL4-enforced capabilities and process isolation, retaining hardware secure boot and a time source.
+    source_anchor_ids: [anchor-paper-37-problem]
 
   - id: paper-37-question
     kind: question
     parent_id: paper-37
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can a formally verified microkernel provide the isolation needed for hybrid remote attestation without extensive custom hardware?"
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can verified operating-system mechanisms provide the isolation and atomicity needed for secure attestation on commodity embedded boards with less bespoke hardware than SMART or TrustLite?
+    source_anchor_ids: [anchor-paper-37-problem, anchor-paper-37-properties]
 
-  - id: paper-37-contribution
+  - id: paper-37-answer
     kind: contribution
     parent_id: paper-37
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "HYDRA uses seL4 for memory isolation, protection, and access control and reports implementations on commodity boards."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    epistemic_status: source_asserted
+    title: HYDRA co-design
+    summary: >-
+      Secure boot authenticates seL4 and the attestation binary; seL4 gives one highest-priority initial process exclusive authority over the key and relevant memory; that process authenticates fresh requests and MACs requested process memory.
+    source_anchor_ids: [anchor-paper-37-controls, anchor-paper-37-components, anchor-paper-37-algorithm]
 
-  - id: paper-37-method
-    kind: method
+  - id: paper-37-objective
+    kind: definition
     parent_id: paper-37
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported design places attestation-sensitive functionality behind seL4-enforced isolation and evaluates implementations with alternative checksum choices on commodity hardware."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    epistemic_status: adopted_from_prior_analysis
+    title: Attestation security objective
+    summary: >-
+      A prover should produce an unforgeable token that convinces a verifier of its measured state; malware must not make a compromised state appear expected, and request handling should resist malicious triggering and replay.
+    source_anchor_ids: [anchor-paper-37-properties]
+
+  - id: paper-37-properties
+    kind: requirement_group
+    parent_id: paper-37-objective
+    order: 1
+    epistemic_status: enumerated
+    title: Minimal RA properties
+    summary: >-
+      The adopted requirements are exclusive access to attestation key K, no leakage of key-derived intermediates, immutable attestation code, uninterruptible execution, controlled entry and exit, and authenticated fresh verifier requests.
+    source_anchor_ids: [anchor-paper-37-properties]
+
+  - id: paper-37-threat
+    kind: threat_model
+    parent_id: paper-37
+    order: 4
+    epistemic_status: defined
+    title: Application-compromise adversary
+    summary: >-
+      Remote or local attackers may control all ordinary application software and communication before and after attestation. They cannot physically tamper, induce hardware faults, extract K through side channels, or interrupt seL4 or the protected attestation process.
+    source_anchor_ids: [anchor-paper-37-threat]
+
+  - id: paper-37-assumption-setup
+    kind: assumption
+    parent_id: paper-37-threat
+    order: 1
+    epistemic_status: assumed
+    title: Provisioning and boot trust
+    summary: >-
+      The prover and verifier share a pre-provisioned secret K. ROM authenticates the boot image, seL4 verifies the initial attestation process, and the initial capability distribution exactly implements the paper's configuration.
+    source_anchor_ids: [anchor-paper-37-components, anchor-paper-37-key-clock]
+
+  - id: paper-37-assumption-proof
+    kind: assumption
+    parent_id: paper-37-threat
+    order: 2
+    epistemic_status: outside_verified_kernel
+    title: seL4 proof assumptions
+    summary: >-
+      The inherited functional-correctness claim assumes correct ARM assembly, conforming untampered hardware, correct cache and TLB management, correct boot code, disabled or trusted DMA, and absence of timing side channels.
+    source_anchor_ids: [anchor-paper-37-proof-assumptions]
+
+  - id: paper-37-sel4
+    kind: verified_component
+    parent_id: paper-37
+    order: 5
+    epistemic_status: externally_machine_checked
+    title: seL4 verified enforcement base
+    summary: >-
+      seL4's refinement chain links abstract specification through C and binary behavior, and separate access-control proofs establish authority confinement, integrity, and confidentiality for correctly configured capabilities under the stated assumptions.
+    source_anchor_ids: [anchor-paper-37-sel4]
+
+  - id: paper-37-configuration
+    kind: method
+    parent_id: paper-37
+    order: 6
+    epistemic_status: paper_argued
+    title: HYDRA capability configuration
+    summary: >-
+      PR-Att receives exclusive access to the attestation binary and K, its thread-control block, and its virtual address space, plus exclusive write authority over the clock; all later processes receive lower priority and only minimal capabilities.
+    source_anchor_ids: [anchor-paper-37-controls, anchor-paper-37-implementation]
+
+  - id: paper-37-configuration-priority
+    kind: method
+    parent_id: paper-37-configuration
+    order: 1
+    epistemic_status: enforced_if_code_conforms
+    title: Atomic high-priority execution
+    summary: >-
+      Making PR-Att the initial, highest-priority user process and preventing later processes from raising priority is used to establish uninterruptibility; protecting its TCB and address space supplies controlled invocation and no-leak isolation.
+    source_anchor_ids: [anchor-paper-37-controls, anchor-paper-37-security]
+
+  - id: paper-37-protocol
+    kind: protocol
+    parent_id: paper-37
+    order: 7
+    epistemic_status: specified_and_implemented
+    title: HYDRA attestation protocol
+    summary: >-
+      A request names a timestamp, target process, memory interval, and MAC. PR-Att rejects stale or unauthenticated requests, maps the target range into its own address space, MACs request context and bytes under K, and returns the report.
+    source_anchor_ids: [anchor-paper-37-algorithm]
+
+  - id: paper-37-protocol-boot
+    kind: protocol
+    parent_id: paper-37-protocol
+    order: 1
+    epistemic_status: implemented
+    title: Boot and setup sequence
+    summary: >-
+      A ROM loader verifies the signed seL4 image, seL4 authenticates PR-Att, and PR-Att creates the remaining user processes with non-overlapping virtual spaces and no capability-grant endpoint that could leak its authority.
+    source_anchor_ids: [anchor-paper-37-components, anchor-paper-37-implementation]
+
+  - id: paper-37-protocol-freshness
+    kind: protocol
+    parent_id: paper-37-protocol
+    order: 2
+    epistemic_status: prototype_approximation
+    title: Request freshness and DoS mitigation
+    summary: >-
+      The design calls for a protected real-time clock. Because seL4 lacked a driver, the prototype combines a persisted prior timestamp, the first validated request, and a protected timer counter; a secure counter is an alternative with weaker delayed-message detection.
+    source_anchor_ids: [anchor-paper-37-key-clock]
 
   - id: paper-37-claims
     kind: claim_group
     parent_id: paper-37
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    order: 8
+    epistemic_status: source_asserted
+    title: Main claims
+    summary: >-
+      The paper claims conditional RA security and practical performance. Kernel isolation is machine-checked upstream; the mapping from HYDRA code and configuration to the required RA properties is an informal paper argument.
+    source_anchor_ids: [anchor-paper-37-security, anchor-paper-37-evaluation]
 
-  - id: paper-37-claim-primary
+  - id: paper-37-claim-security
     kind: claim
     parent_id: paper-37-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary characterizes HYDRA as the first hybrid attestation design using seL4 and reports attestation of 10 MB in under 250 ms with the fastest tested checksum."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    epistemic_status: informally_derived_from_verified_component
+    title: Satisfaction of minimal RA properties
+    summary: >-
+      Nine boot, priority, memory, TCB, capability, and clock features are mapped to exclusive K access, no leaks, immutability, uninterruptibility, controlled invocation, and verifier authentication.
+    source_anchor_ids: [anchor-paper-37-security]
+
+  - id: paper-37-claim-hardware
+    kind: claim
+    parent_id: paper-37-claims
+    order: 2
+    epistemic_status: design_comparison
+    title: Reduced bespoke hardware requirement
+    summary: >-
+      Unlike earlier hybrid designs that modify microcontroller access controls, HYDRA pushes isolation and scheduling into seL4; it still needs hardware-enforced secure boot, immutable trust material, and a reliable clock or counter.
+    source_anchor_ids: [anchor-paper-37-controls, anchor-paper-37-components]
+
+  - id: paper-37-claim-performance
+    kind: claim
+    parent_id: paper-37-claims
+    order: 3
+    epistemic_status: measured
+    title: Commodity-platform feasibility
+    summary: >-
+      The Sabre Lite prototype reports under 250 milliseconds to attest 10 MB with a Speck-based MAC, while ODROID-XU4 reports under 100 milliseconds with keyed BLAKE2S; memory and process-count costs scale approximately linearly in the tested ranges.
+    source_anchor_ids: [anchor-paper-37-evaluation, anchor-paper-37-odroid]
 
   - id: paper-37-evidence
     kind: evidence_group
     parent_id: paper-37
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    order: 9
+    epistemic_status: mixed_formal_argument_and_experiment
+    title: Evidence stack
+    summary: >-
+      Support combines upstream Isabelle/HOL proofs for seL4, manual configuration and code obligations for HYDRA, two C implementations on commodity boards, and runtime measurements decomposed into request verification, memory mapping, and MAC computation.
+    source_anchor_ids: [anchor-paper-37-sel4, anchor-paper-37-security, anchor-paper-37-implementation, anchor-paper-37-evaluation]
 
-  - id: paper-37-evidence-reported
+  - id: paper-37-evidence-code
     kind: evidence
     parent_id: paper-37-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record reports a microkernel-based implementation and timing measurements, but the threat model, proof-to-system boundary, board configurations, checksum security, and experiments were not audited."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    epistemic_status: implemented
+    title: Prototype scale
+    summary: >-
+      On seL4 1.3, the complete build with helper libraries and network stack is reported as 105,360 C lines and 574 KB, while HYDRA-specific code excluding helpers is about 2,800 lines and the base seL4 kernel is 215 KB.
+    source_anchor_ids: [anchor-paper-37-implementation]
 
-  - id: paper-37-scope
+  - id: paper-37-evidence-runtime
+    kind: evidence
+    parent_id: paper-37-evidence
+    order: 2
+    epistemic_status: reported_experiment
+    title: Runtime breakdown and scaling
+    summary: >-
+      On Sabre Lite, MAC computation accounts for roughly 89 percent of the 1 MB time and 92 percent of the 20 KB time; memory mapping remains below one fifth of MAC time in the tested sizes, and process-count scaling is approximately linear.
+    source_anchor_ids: [anchor-paper-37-evaluation]
+
+  - id: paper-37-boundaries
     kind: limitation_group
     parent_id: paper-37
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    order: 10
+    epistemic_status: material
+    title: Formal and empirical boundaries
+    summary: >-
+      HYDRA inherits verified isolation only where the actual boot chain, hardware, capability configuration, and code satisfy seL4 assumptions. PR-Att, cryptography, timestamp persistence, network stack, device drivers, and the end-to-end RA theorem are not machine-checked by this work.
+    source_anchor_ids: [anchor-paper-37-implementation, anchor-paper-37-security, anchor-paper-37-proof-assumptions]
 
-  - id: paper-37-scope-boundary
+  - id: paper-37-boundary-adversary
     kind: limitation
-    parent_id: paper-37-scope
+    parent_id: paper-37-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Formal verification inherited from seL4 does not by itself verify the complete HYDRA integration. Secure boot, hardware, cryptographic, timing, and deployment assumptions require inspection."
-    source_anchor_ids: ["anchor-paper-37-editorial"]
+    epistemic_status: explicitly_out_of_scope
+    title: Physical, DMA, and side-channel boundary
+    summary: >-
+      Physical attackers, hardware faults, key extraction, timing leakage, and untrusted DMA are excluded. The paper notes that helper networking code is acceptable to the objective only if an I/O MMU prevents DMA attacks.
+    source_anchor_ids: [anchor-paper-37-threat, anchor-paper-37-proof-assumptions]
 
-  - id: paper-37-resources
+  - id: paper-37-boundary-comparison
+    kind: limitation
+    parent_id: paper-37-boundaries
+    order: 2
+    epistemic_status: experimental_limitation
+    title: No same-platform baseline
+    summary: >-
+      SMART and TrustLite could not run on the same off-the-shelf boards because of their hardware and microcontroller requirements, so the evaluation establishes HYDRA feasibility but not a controlled performance comparison against those systems.
+    source_anchor_ids: [anchor-paper-37-evaluation]
+
+  - id: paper-37-artifacts
     kind: artifact_group
     parent_id: paper-37
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-37-resource-1", "anchor-paper-37-resource-2", "anchor-paper-37-resource-3"]
-
-  - id: paper-37-resources-available
-    kind: artifact
-    parent_id: paper-37-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: arXiv; Author-hosted: UCI author copy."
-    source_anchor_ids: ["anchor-paper-37-resource-1", "anchor-paper-37-resource-2", "anchor-paper-37-resource-3"]
+    order: 11
+    epistemic_status: partial
+    title: Artifacts and reproducibility
+    summary: >-
+      The full paper, arXiv record, seL4 and library repositories, algorithm pseudocode, and platform descriptions are public. This audit did not locate a publication-specific HYDRA repository, exact build image, benchmark scripts, or raw measurements.
+    source_anchor_ids: [anchor-paper-37-implementation, anchor-paper-37-publication]
 
   - id: paper-37-scrutiny
     kind: scrutiny
     parent_id: paper-37
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at 10th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-37-resource-1"]
+    order: 12
+    epistemic_status: venue_reviewed_and_upstream_verified
+    title: External scrutiny
+    summary: >-
+      HYDRA appeared at ACM WiSec and builds on independently published seL4 proof artifacts. That is stronger than an unreviewed design, but neither venue acceptance nor upstream kernel verification constitutes independent verification of the full HYDRA composition.
+    source_anchor_ids: [anchor-paper-37-publication, anchor-paper-37-sel4]
 
 relations:
-  - id: relation-paper-37-contribution-addresses-question
+  - id: paper-37-relation-answer-question
     type: addresses
-    from_id: paper-37-contribution
+    from_id: paper-37-answer
     to_id: paper-37-question
-  - id: relation-paper-37-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-37-method
-    to_id: paper-37-contribution
-  - id: relation-paper-37-evidence-supports-claim
+  - id: paper-37-relation-properties-objective
+    type: operationalizes
+    from_id: paper-37-properties
+    to_id: paper-37-objective
+  - id: paper-37-relation-sel4-configuration
     type: supports
-    from_id: paper-37-evidence-reported
-    to_id: paper-37-claim-primary
-  - id: relation-paper-37-scope-qualifies-claim
+    from_id: paper-37-sel4
+    to_id: paper-37-configuration
+  - id: paper-37-relation-configuration-protocol
+    type: enables
+    from_id: paper-37-configuration
+    to_id: paper-37-protocol
+  - id: paper-37-relation-boot-protocol
+    type: component_of
+    from_id: paper-37-protocol-boot
+    to_id: paper-37-protocol
+  - id: paper-37-relation-freshness-protocol
+    type: component_of
+    from_id: paper-37-protocol-freshness
+    to_id: paper-37-protocol
+  - id: paper-37-relation-security-claim
+    type: supports
+    from_id: paper-37-configuration
+    to_id: paper-37-claim-security
+  - id: paper-37-relation-runtime-performance
+    type: supports
+    from_id: paper-37-evidence-runtime
+    to_id: paper-37-claim-performance
+  - id: paper-37-relation-proof-security
     type: qualifies
-    from_id: paper-37-scope-boundary
-    to_id: paper-37-claim-primary
-  - id: relation-paper-37-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-37-resources-available
-    to_id: paper-37-evidence-reported
-  - id: relation-paper-37-status-qualifies-claim
+    from_id: paper-37-assumption-proof
+    to_id: paper-37-claim-security
+  - id: paper-37-relation-boundaries-security
     type: qualifies
-    from_id: paper-37-scrutiny
-    to_id: paper-37-claim-primary
+    from_id: paper-37-boundaries
+    to_id: paper-37-claim-security
+  - id: paper-37-relation-adversary-security
+    type: limits
+    from_id: paper-37-boundary-adversary
+    to_id: paper-37-claim-security
+  - id: paper-37-relation-comparison-performance
+    type: qualifies
+    from_id: paper-37-boundary-comparison
+    to_id: paper-37-claim-performance
 
 assessment:
   id: paper-37-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-37-editorial", "anchor-paper-37-resource-1"]
+      level: high
+      rationale: >-
+        The complete paper combines a requirement decomposition, inherited machine-checked kernel guarantees, explicit configuration and protocol logic, two commodity implementations, and detailed performance experiments. The end-to-end HYDRA security argument and HYDRA-specific code are not formally verified or independently reproduced.
+      basis_source_anchor_ids: [anchor-paper-37-sel4, anchor-paper-37-security, anchor-paper-37-implementation, anchor-paper-37-evaluation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-37-resource-1", "anchor-paper-37-resource-2", "anchor-paper-37-resource-3"]
+      rationale: >-
+        A checked-in author copy with SHA-256 and page count, arXiv route, official DOI, precise page anchors, and public upstream seL4 artifacts make the paper and its inherited proof base directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-37-problem, anchor-paper-37-publication, anchor-paper-37-sel4]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-37-editorial"]
+      rationale: >-
+        Named authors, affiliations, venue, DOI, funding, author and archive copies, platforms, seL4 version, and code-size breakdown are documented. Contributor roles, revision history, exact source commit, build environment, and benchmark artifact lineage were not audited.
+      basis_source_anchor_ids: [anchor-paper-37-problem, anchor-paper-37-implementation, anchor-paper-37-publication]
     - id: external_scrutiny
-      level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-37-resource-1"]
+      level: high
+      rationale: >-
+        The system received WiSec review and relies on a substantial independently reviewed, machine-checked seL4 refinement and access-control proof stack. Public HYDRA review reports and an independent end-to-end reproduction were not located.
+      basis_source_anchor_ids: [anchor-paper-37-publication, anchor-paper-37-sel4]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-37-editorial"]
+      level: high
+      rationale: >-
+        OpenAlex reported 72 citations on 2026-07-11. Under the author-defined corpus rule, more than 10 located citations is High. The count is index- and date-dependent and does not certify the system.
+      basis_source_anchor_ids: [anchor-paper-37-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary characterizes the contribution as a first hybrid remote-attestation design based on the formally verified seL4 microkernel. This is potentially significant, but the priority claim and its downstream impact were not independently audited; the rating therefore remains medium."
-      basis_source_anchor_ids: ["anchor-paper-37-editorial"]
+      level: high
+      rationale: >-
+        The paper presents the first claimed hybrid RA design centered on a formally verified microkernel, implements it on two boards, and has substantial documented follow-on attention. Priority, deployment, and independent replication were not separately audited.
+      basis_source_anchor_ids: [anchor-paper-37-problem, anchor-paper-37-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 72
+  source_url: https://openalex.org/W2604623598
+  signals:
+    - OpenAlex reported 72 works citing the WiSec paper.
+  limitation: Citation counts vary by index and date, may include self-citations, and do not establish that later work reproduced the prototype or verified the full system composition.

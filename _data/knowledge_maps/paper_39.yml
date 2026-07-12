@@ -14,235 +14,269 @@ title: "Security Threats, Defenses, and Recommended Practices for Enterprise Mob
 year: 2018
 status: "Published · public full text not located"
 venue: "Information Systems Security Association (ISSA) Journal, Volume 16, Number 5"
-topic: "secure-systems-networks"
-labels: ["Perspective"]
+topic: secure-systems-networks
+labels: [Perspective]
 authors:
-  - "Karim Eldefrawy"
-  - "Vincent Sritapan"
+  - Karim Eldefrawy
+  - Vincent Sritapan
 keywords:
-  - "enterprise mobility"
-  - "security guidance"
-availability: "Public full text not located; the link is a publisher bibliographic listing."
-editorial_summary: "Based on the title and bibliographic context, this article appears to survey risks created by enterprise use of mobile devices and map them to available defenses. No public full text was available to verify a more detailed description of its recommendations."
+  - enterprise mobility
+  - mobile security
+  - security guidance
+  - recommended practices
+availability: >-
+  The official author bibliography and independent citations confirm publication on pages 25-31, but systematic title, author, issue, archive, and PDF searches did not locate public full text.
 
-research_question: "What security threats arise from enterprise mobility, and which defenses or practices should organizations consider?"
-central_answer: "The local record cautiously infers that the article surveys enterprise-mobile risks and maps them to defenses; no detailed answer can be verified without the full text."
+research_question: >-
+  What threats, defenses, and recommended organizational practices should enterprises consider when employees and services rely on mobile devices?
+central_answer: >-
+  The title establishes a practitioner guidance objective, but no source-audited answer can be represented: the public record does not expose the article's threat taxonomy, recommendation set, evidence base, scope, or assumptions.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: systematic availability search, metadata mapping, and bounded assessment
+  method: >-
+    Searched exact title, both authors, ISSA Journal volume 16 number 5, page range, and PDF variants across general web results, the publisher, author bibliographies, bibliographic indexes, and archives. Only publication metadata, author biographies, and later references were located. No claim about the article's substantive content is inferred beyond its title.
+  source_scope: metadata_only_full_text_unavailable
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored bounded map awaiting full author audit and a copy of the article. Substantive knowledge nodes should be added only after the 25-31 page text is supplied or located.
 
 sources:
-  - id: source-paper-39-site-record
-    type: curated_site_record
-    title: "Publication #39 metadata and editorial summary"
-    url: /publications/#paper-39
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-39-resource-1
+  - id: source-paper-39-publisher
     type: official_publication_record
-    title: "Publisher bibliography"
-    url: "https://www.members.issa.org/page/journal-authors-2018"
+    title: ISSA Journal 2018 author bibliography
+    url: https://www.members.issa.org/page/journal-authors-2018
     provenance_category: official
+  - id: source-paper-39-author-record
+    type: author_bibliography
+    title: Karim Eldefrawy publication record
+    url: https://keldefrawy.github.io/pubs.html
+    provenance_category: author
+  - id: source-paper-39-independent-citation
+    type: bibliographic_citation
+    title: Independent dissertation bibliography identifying ISSA Journal pages 25-31
+    url: https://scholarworks.waldenu.edu/cgi/viewcontent.cgi?article=10638&context=dissertations
+    accessed_at: "2026-07-11"
+  - id: source-paper-39-patent-citation
+    type: reception_signal
+    title: Google Patents record citing the article
+    url: https://patents.google.com/patent/US20180191760A1
+    accessed_at: "2026-07-11"
+  - id: source-paper-39-openalex-search
+    type: citation_index_snapshot
+    title: OpenAlex exact-title search
+    url: https://api.openalex.org/works?filter=title.search:Security%20Threats%20Defenses%20and%20Recommended%20Practices%20for%20Enterprise%20Mobility
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-39-editorial
-    source_id: source-paper-39-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-39
-  - id: anchor-paper-39-resource-1
-    source_id: source-paper-39-resource-1
-    label: "Official resource: Publisher bibliography"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://www.members.issa.org/page/journal-authors-2018"
+  - id: anchor-paper-39-bibliography
+    source_id: source-paper-39-publisher
+    label: Publisher confirmation of title and authors
+    locator: 2018 ISSA Journal Authors entries for Vincent Sritapan and Karim Eldefrawy
+    url: https://www.members.issa.org/page/journal-authors-2018
+  - id: anchor-paper-39-author-record
+    source_id: source-paper-39-author-record
+    label: Author publication listing
+    locator: Publication #39; ISSA Journal volume 16, number 5, May 2018
+    url: https://keldefrawy.github.io/pubs.html
+  - id: anchor-paper-39-pages
+    source_id: source-paper-39-independent-citation
+    label: Independent bibliographic page-range confirmation
+    locator: Bibliography entry cites ISSA Journal 16(5), pages 25-31
+    url: https://scholarworks.waldenu.edu/cgi/viewcontent.cgi?article=10638&context=dissertations
+  - id: anchor-paper-39-reception
+    source_id: source-paper-39-patent-citation
+    label: Located non-academic citation signal
+    locator: Google Patents family-citation listing names the 2018 article
+    url: https://patents.google.com/patent/US20180191760A1
+  - id: anchor-paper-39-index-search
+    source_id: source-paper-39-openalex-search
+    label: Dated exact-title index search
+    locator: OpenAlex returned no exact-title work record on 2026-07-11
+    url: https://api.openalex.org/works?filter=title.search:Security%20Threats%20Defenses%20and%20Recommended%20Practices%20for%20Enterprise%20Mobility
 
 nodes:
   - id: paper-39
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published_metadata_only
     title: "Security Threats, Defenses, and Recommended Practices for Enterprise Mobility"
-    summary: "Based on the title and bibliographic context, this article appears to survey risks created by enterprise use of mobile devices and map them to available defenses. No public full text was available to verify a more detailed description of its recommendations."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    summary: >-
+      A seven-page ISSA Journal practitioner article whose existence, authorship, issue, and page range are corroborated, but whose public full text and substantive contents were not located.
+    source_anchor_ids: [anchor-paper-39-bibliography, anchor-paper-39-pages]
 
   - id: paper-39-question
     kind: question
     parent_id: paper-39
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "What security threats arise from enterprise mobility, and which defenses or practices should organizations consider?"
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    epistemic_status: title_derived
+    title: Apparent organizing question
+    summary: >-
+      Which security risks arise in enterprise mobility, and which defensive practices should organizations adopt? This wording is a conservative restatement of the title, not a quotation or source-audited research question.
+    source_anchor_ids: [anchor-paper-39-bibliography]
 
-  - id: paper-39-contribution
-    kind: contribution
+  - id: paper-39-format
+    kind: scope
     parent_id: paper-39
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The local record cautiously infers that the article surveys enterprise-mobile risks and maps them to defenses; no detailed answer can be verified without the full text."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    epistemic_status: bibliographically_verified
+    title: Publication form
+    summary: >-
+      The article appeared in the practitioner-facing ISSA Journal, volume 16, number 5, May 2018, on pages 25-31. The publisher page supplies author biographies but no abstract or article body.
+    source_anchor_ids: [anchor-paper-39-bibliography, anchor-paper-39-pages]
 
-  - id: paper-39-method
-    kind: method
+  - id: paper-39-orientation
+    kind: contribution
     parent_id: paper-39
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The apparent method is a practitioner-oriented survey or guidance synthesis, but this characterization is inferred only from title and bibliographic context."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    epistemic_status: title_and_venue_only
+    title: Perspective and guidance orientation
+    summary: >-
+      The verified title frames the work as threat/defense synthesis and recommended practice, supporting the Perspective label. It does not establish a new protocol, primitive, system, algorithm, dataset, or formal theorem.
+    source_anchor_ids: [anchor-paper-39-bibliography]
 
   - id: paper-39-claims
     kind: claim_group
     parent_id: paper-39
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
-
-  - id: paper-39-claim-primary
-    kind: claim
-    parent_id: paper-39-claims
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "No substantive technical claim is represented beyond the cautious editorial inference that the article surveys threats, defenses, and recommended practices."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    epistemic_status: unavailable
+    title: Substantive claims not represented
+    summary: >-
+      No threat taxonomy, defense mapping, recommendation, case study, empirical result, standards reference, or prioritization claim is included in this map because none could be checked against the article.
+    source_anchor_ids: [anchor-paper-39-bibliography]
 
   - id: paper-39-evidence
     kind: evidence_group
     parent_id: paper-39
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    epistemic_status: unavailable
+    title: Evidence unavailable for audit
+    summary: >-
+      The public records do not reveal whether the guidance derives from literature review, field experience, government programs, incident data, standards analysis, or author judgment.
+    source_anchor_ids: [anchor-paper-39-bibliography, anchor-paper-39-pages]
 
-  - id: paper-39-evidence-reported
-    kind: evidence
-    parent_id: paper-39-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "Only a publisher bibliographic listing and a title-based editorial summary are available in the current record."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
-
-  - id: paper-39-scope
+  - id: paper-39-boundaries
     kind: limitation_group
     parent_id: paper-39
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    epistemic_status: material
+    title: Map boundary
+    summary: >-
+      Without the article, its definition of enterprise mobility, covered platforms, adversary model, organizational assumptions, date-sensitive recommendations, and limitations remain unknown.
+    source_anchor_ids: [anchor-paper-39-bibliography]
 
-  - id: paper-39-scope-boundary
+  - id: paper-39-boundary-temporal
     kind: limitation
-    parent_id: paper-39-scope
+    parent_id: paper-39-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The full text was not located. Specific threats, recommendations, evidence standards, platform assumptions, and publication review process are unknown."
-    source_anchor_ids: ["anchor-paper-39-editorial"]
+    epistemic_status: editorial_caution
+    title: Time-sensitive practice guidance
+    summary: >-
+      Any 2018 platform, product, threat, or practice recommendation may now be historically informative rather than current. The missing text prevents identifying which statements are stable principles and which are time-bound.
+    source_anchor_ids: [anchor-paper-39-pages]
 
-  - id: paper-39-resources
+  - id: paper-39-availability
     kind: artifact_group
     parent_id: paper-39
     order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "1 linked resource is recorded by provenance category; its content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-39-resource-1"]
-
-  - id: paper-39-resources-available
-    kind: artifact
-    parent_id: paper-39-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher bibliography."
-    source_anchor_ids: ["anchor-paper-39-resource-1"]
+    epistemic_status: searched_not_found
+    title: Availability and artifacts
+    summary: >-
+      The publisher bibliography, author listing, and independent citations are public. No PDF, abstract, archived issue copy, supplementary artifact, code, dataset, or standards crosswalk was located.
+    source_anchor_ids: [anchor-paper-39-bibliography, anchor-paper-39-author-record, anchor-paper-39-pages]
 
   - id: paper-39-scrutiny
     kind: scrutiny
     parent_id: paper-39
     order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · public full text not located at Information Systems Security Association (ISSA) Journal, Volume 16, Number 5. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-39-resource-1"]
+    epistemic_status: editorial_process_unknown
+    title: External scrutiny
+    summary: >-
+      Publication in ISSA Journal establishes editorial exposure, but the represented sources do not document peer-review criteria, reviewer comments, corrections, independent validation, or formal endorsement of the recommendations.
+    source_anchor_ids: [anchor-paper-39-bibliography]
+
+  - id: paper-39-reception
+    kind: reception
+    parent_id: paper-39
+    order: 9
+    epistemic_status: bounded_search_result
+    title: Located references
+    summary: >-
+      Exact-title searches located an independent dissertation bibliography and a patent-family citation listing. OpenAlex returned no exact-title work record, so these are minimum located signals rather than a comprehensive citation count.
+    source_anchor_ids: [anchor-paper-39-pages, anchor-paper-39-reception, anchor-paper-39-index-search]
 
 relations:
-  - id: relation-paper-39-contribution-addresses-question
-    type: addresses
-    from_id: paper-39-contribution
-    to_id: paper-39-question
-  - id: relation-paper-39-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-39-method
-    to_id: paper-39-contribution
-  - id: relation-paper-39-evidence-supports-claim
-    type: supports
-    from_id: paper-39-evidence-reported
-    to_id: paper-39-claim-primary
-  - id: relation-paper-39-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-39-scope-boundary
-    to_id: paper-39-claim-primary
-  - id: relation-paper-39-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-39-resources-available
-    to_id: paper-39-evidence-reported
-  - id: relation-paper-39-status-qualifies-claim
-    type: qualifies
-    from_id: paper-39-scrutiny
-    to_id: paper-39-claim-primary
+  - id: paper-39-relation-question-paper
+    type: organizes
+    from_id: paper-39-question
+    to_id: paper-39
+  - id: paper-39-relation-orientation-paper
+    type: characterizes
+    from_id: paper-39-orientation
+    to_id: paper-39
+  - id: paper-39-relation-boundaries-claims
+    type: prevents_assessment_of
+    from_id: paper-39-boundaries
+    to_id: paper-39-claims
+  - id: paper-39-relation-availability-evidence
+    type: limits_audit_of
+    from_id: paper-39-availability
+    to_id: paper-39-evidence
+  - id: paper-39-relation-reception-paper
+    type: contextualizes
+    from_id: paper-39-reception
+    to_id: paper-39
 
 assessment:
   id: paper-39-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: low
-      rationale: "Only a title-based editorial inference and bibliographic record are represented; no full text or substantive evidence was available for audit, so epistemic support is limited."
-      basis_source_anchor_ids: ["anchor-paper-39-editorial", "anchor-paper-39-resource-1"]
+      rationale: >-
+        Only bibliographic facts and a title-derived orientation are auditable; no substantive claim, recommendation, evidence source, or limitation could be checked against the article.
+      basis_source_anchor_ids: [anchor-paper-39-bibliography, anchor-paper-39-pages]
     - id: auditability
       level: medium
-      rationale: "The resource record provides only official publication metadata and no archive or author-hosted copy; full-text assumptions, evidence, and version identity are not readily auditable from this map. Auditability is therefore medium."
-      basis_source_anchor_ids: ["anchor-paper-39-resource-1"]
+      rationale: >-
+        The resource record provides only official publication metadata and no public archive or author-hosted copy. Under the author-defined rule, this makes Auditability Medium rather than High.
+      basis_source_anchor_ids: [anchor-paper-39-bibliography, anchor-paper-39-author-record]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-39-editorial"]
+      rationale: >-
+        Named authorship, author biographies, month, volume, issue, and pages establish baseline provenance. Contributor roles, revision history, source materials, conflicts, and approval trail are unavailable.
+      basis_source_anchor_ids: [anchor-paper-39-bibliography, anchor-paper-39-pages]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-39-resource-1"]
+      rationale: >-
+        ISSA Journal publication establishes editorial exposure, but peer-review status, review reports, correction history, and independent validation are unknown.
+      basis_source_anchor_ids: [anchor-paper-39-bibliography]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-39-editorial"]
+      level: low
+      rationale: >-
+        The dated search located two explicit downstream references and no OpenAlex exact-title record. Under the author-defined corpus rule, 0 through 8 located citations is Low.
+      basis_source_anchor_ids: [anchor-paper-39-pages, anchor-paper-39-reception, anchor-paper-39-index-search]
     - id: contribution_significance
       level: not_assessed
-      rationale: "Only a title, bibliographic listing, and editorially inferred research aim are available; the article's contribution, novelty, priority, and impact cannot yet be assessed."
-      basis_source_anchor_ids: ["anchor-paper-39-editorial"]
+      rationale: >-
+        The unavailable article body prevents assessment of novelty, breadth, prioritization, or whether its recommendations changed practice; a title alone is insufficient to rate significance.
+      basis_source_anchor_ids: [anchor-paper-39-bibliography]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: Exact-title web, publisher, bibliography, patent, and OpenAlex title-index search
+  citation_count: 2
+  count_kind: minimum_explicit_references_located
+  source_url: https://www.members.issa.org/page/journal-authors-2018
+  signals:
+    - A later dissertation bibliography cites the ISSA Journal article and identifies pages 25-31.
+    - A Google Patents record lists the article in its citation family.
+  limitation: This is not a normalized scholarly-index total; OpenAlex has no exact-title record, search engines may miss paywalled citations, and the two located signals are heterogeneous.

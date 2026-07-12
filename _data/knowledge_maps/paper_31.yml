@@ -14,247 +14,415 @@ title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
 year: 2016
 status: "Published · brief announcement"
 venue: "ACM Symposium on Principles of Distributed Computing (PODC)"
-topic: "secure-encrypted-computation"
-labels: ["Theory"]
+topic: secure-encrypted-computation
+labels: [Theory]
 authors:
-  - "Shlomi Dolev"
-  - "Karim Eldefrawy"
-  - "Joshua Lampkins"
-  - "Rafail Ostrovsky"
-  - "Moti Yung"
+  - Shlomi Dolev
+  - Karim Eldefrawy
+  - Joshua Lampkins
+  - Rafail Ostrovsky
+  - Moti Yung
 keywords:
-  - "proactive secret sharing"
-  - "dishonest majority"
-editorial_summary: "This brief announcement gives the first proactive secret-sharing feasibility result that remains confidential even when passive corruptions form a dishonest majority. It supports nearly all parties being passively compromised under stated fault conditions, allows mixed passive and active adversaries, and reduces batched communication to cubic in the number of parties."
+  - proactive secret sharing
+  - dishonest majority
 
-research_question: "Is proactive secret sharing feasible when passively corrupted parties may form a dishonest majority within a refresh period?"
-central_answer: "The brief announcement reports a construction retaining confidentiality under nearly all passive corruptions subject to stated fault conditions, with treatment of mixed passive and active adversaries."
+research_question: >-
+  Can proactive secret sharing preserve a long-lived secret when passively corrupted parties may form a dishonest majority in one refresh period, while still supporting refresh and recovery in the presence of bounded active faults?
+central_answer: >-
+  The announcement encodes the secret as many random additive summands and verifiably shares those summands with polynomials of increasing degree. It then gives DM-Share, DM-Reconstruct, DM-Refresh, and DM-Recover protocols whose stated thresholds extend passive security beyond an honest majority, at the cost of synchrony, authenticated private channels, secure deletion, non-robust active security, and polynomial communication.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, claim mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete three-page PODC brief announcement downloaded from the recorded author-hosted route, including visual inspection of its first and technical pages. The map distinguishes stated protocol guarantees from proof details deferred to the full paper.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting author verification. Thresholds, interpretations, and ratings should be checked by an author before approval.
 
 sources:
-  - id: source-paper-31-site-record
-    type: curated_site_record
-    title: "Publication #31 metadata and editorial summary"
-    url: /publications/#paper-31
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-31-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/2933057.2933059"
-    provenance_category: official
-  - id: source-paper-31-resource-2
+  - id: source-paper-31-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted paper"
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/193.pdf"
+    title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf
     provenance_category: author
+    retrieved_from: https://web.cs.ucla.edu/~rafail/PUBLIC/193.pdf
+    media_type: application/pdf
+    sha256: 66c0484c3ad92a7849bc3bb4613b730f4d73a5ac0f6bce0fcd05d144d7435cba
+    page_count: 3
+  - id: source-paper-31-official
+    type: official_publication_record
+    title: ACM PODC 2016 publication record
+    url: https://doi.org/10.1145/2933057.2933059
+    provenance_category: official
+  - id: source-paper-31-citation-index
+    type: citation_index_snapshot
+    title: SciSpace citation listing for the PODC brief announcement
+    url: https://scispace.com/papers/brief-announcement-proactive-secret-sharing-with-a-dishonest-1jlgc03e8w
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-31-editorial
-    source_id: source-paper-31-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-31
-  - id: anchor-paper-31-resource-1
-    source_id: source-paper-31-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/2933057.2933059"
-  - id: anchor-paper-31-resource-2
-    source_id: source-paper-31-resource-2
-    label: "Author-hosted resource: Author-hosted paper"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/193.pdf"
+  - id: anchor-paper-31-problem-results
+    source_id: source-paper-31-author-pdf
+    label: Problem, claimed novelty, thresholds, and communication
+    locator: Abstract and Section 1, PDF page 1
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=1
+  - id: anchor-paper-31-system-model
+    source_id: source-paper-31-author-pdf
+    label: Synchronous network, channels, epochs, refresh, and deletion assumptions
+    locator: Sections 2.1 and Time Periods and Refresh Phases, PDF pages 1-2
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=1
+  - id: anchor-paper-31-secret-sharing-model
+    source_id: source-paper-31-author-pdf
+    label: Secret sharing, verifiable sharing, proactive refresh, recovery, and discrete-log commitment assumption
+    locator: Section 2.2, PDF page 2
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=2
+  - id: anchor-paper-31-blueprint
+    source_id: source-paper-31-author-pdf
+    label: Additive-summand and increasing-degree polynomial blueprint
+    locator: Section 3.1, PDF page 2
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=2
+  - id: anchor-paper-31-share-reconstruct
+    source_id: source-paper-31-author-pdf
+    label: DM-Share and DM-Reconstruct
+    locator: Section 3.2, PDF pages 2-3
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=2
+  - id: anchor-paper-31-refresh
+    source_id: source-paper-31-author-pdf
+    label: DM-Refresh and preservation of the shared secret
+    locator: Section 3.3, PDF page 3
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=3
+  - id: anchor-paper-31-recovery
+    source_id: source-paper-31-author-pdf
+    label: DM-Recover, privacy intuition, and recovery-dependent thresholds
+    locator: Section 3.4, PDF page 3
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=3
+  - id: anchor-paper-31-limitations
+    source_id: source-paper-31-author-pdf
+    label: Conclusion, non-robust active security, communication, and open questions
+    locator: Section 4, PDF page 3
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=3
+  - id: anchor-paper-31-publication
+    source_id: source-paper-31-official
+    label: Official PODC publication record
+    locator: ACM PODC 2016, DOI 10.1145/2933057.2933059
+    url: https://doi.org/10.1145/2933057.2933059
+  - id: anchor-paper-31-citations
+    source_id: source-paper-31-citation-index
+    label: Dated citation-count snapshot
+    locator: SciSpace listing reported 1 citation when accessed 2026-07-11
+    url: https://scispace.com/papers/brief-announcement-proactive-secret-sharing-with-a-dishonest-1jlgc03e8w
 
 nodes:
   - id: paper-31
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
-    summary: "This brief announcement gives the first proactive secret-sharing feasibility result that remains confidential even when passive corruptions form a dishonest majority. It supports nearly all parties being passively compromised under stated fault conditions, allows mixed passive and active adversaries, and reduces batched communication to cubic in the number of parties."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    summary: >-
+      A three-page announcement of a proactive secret-sharing construction that uses additive encoding and verifiable polynomial sharing to exceed the passive honest-majority barrier while retaining bounded recovery and active-fault guarantees.
+    source_anchor_ids: [anchor-paper-31-problem-results]
 
   - id: paper-31-question
     kind: question
     parent_id: paper-31
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Is proactive secret sharing feasible when passively corrupted parties may form a dishonest majority within a refresh period?"
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can a mobile-adversary PSS scheme remain confidential when passive corruptions within one refresh period may include a dishonest majority, rather than fewer than half of the parties?
+    source_anchor_ids: [anchor-paper-31-problem-results]
 
-  - id: paper-31-contribution
+  - id: paper-31-answer
     kind: contribution
     parent_id: paper-31
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The brief announcement reports a construction retaining confidentiality under nearly all passive corruptions subject to stated fault conditions, with treatment of mixed passive and active adversaries."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    epistemic_status: source_asserted
+    title: Central construction
+    summary: >-
+      Split the secret into random additive summands, verifiably share each summand with a polynomial from an increasing-degree family, and refresh or recover those polynomial shares without reconstructing the secret.
+    source_anchor_ids: [anchor-paper-31-blueprint, anchor-paper-31-share-reconstruct]
 
-  - id: paper-31-method
-    kind: method
+  - id: paper-31-scope
+    kind: scope
     parent_id: paper-31
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported construction combines proactive refresh with a corruption model that distinguishes passive and active faults and uses batching to reduce communication."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    epistemic_status: explicitly_scoped
+    title: Model and required environment
+    summary: >-
+      The protocol runs among n parties in synchronized epochs over a synchronous network with authenticated broadcast and pairwise private authenticated channels; honest parties erase old shares after refresh.
+    source_anchor_ids: [anchor-paper-31-system-model]
+
+  - id: paper-31-scope-mobile-adversary
+    kind: threat_model
+    parent_id: paper-31-scope
+    order: 1
+    epistemic_status: defined
+    title: Mobile mixed adversary
+    summary: >-
+      The adversary may eventually compromise all parties across the system lifetime, but the stated passive, active, and recovery-dependent thresholds must hold within each refresh period.
+    source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-system-model]
+
+  - id: paper-31-scope-setup
+    kind: assumption
+    parent_id: paper-31-scope
+    order: 2
+    epistemic_status: assumed
+    title: Communication and reset assumptions
+    summary: >-
+      Synchrony, a global clock, authenticated broadcast, private authenticated channels, restoration to a pristine state, and deletion of obsolete shares are environmental assumptions rather than guarantees constructed by this scheme.
+    source_anchor_ids: [anchor-paper-31-system-model]
+
+  - id: paper-31-scope-commitments
+    kind: assumption
+    parent_id: paper-31-scope
+    order: 3
+    epistemic_status: computational_assumption
+    title: Verifiability assumption
+    summary: >-
+      Active-fault checking uses homomorphic commitments instantiated in the announcement by Feldman VSS, whose hiding/security properties rely on discrete-log hardness over the selected field group.
+    source_anchor_ids: [anchor-paper-31-secret-sharing-model]
+
+  - id: paper-31-construction
+    kind: method
+    parent_id: paper-31
+    order: 4
+    epistemic_status: specified
+    title: Four-protocol PSS construction
+    summary: >-
+      DM-Share, DM-Reconstruct, DM-Refresh, and DM-Recover jointly implement sharing, reconstruction, proactive rerandomization, and replacement of shares lost by rebooted or faulty parties.
+    source_anchor_ids: [anchor-paper-31-share-reconstruct, anchor-paper-31-refresh, anchor-paper-31-recovery]
+
+  - id: paper-31-construction-encoding
+    kind: method
+    parent_id: paper-31-construction
+    order: 1
+    epistemic_status: specified
+    title: Additive encoding with increasing degrees
+    summary: >-
+      DM-Share writes s as the sum of n random summands and verifiably shares the summands with polynomials whose degrees increase across the family; reducing the maximum degree reserves interpolation capacity for share recovery.
+    source_anchor_ids: [anchor-paper-31-blueprint, anchor-paper-31-share-reconstruct]
+
+  - id: paper-31-construction-refresh
+    kind: protocol
+    parent_id: paper-31-construction
+    order: 2
+    epistemic_status: specified
+    title: DM-Refresh
+    summary: >-
+      Each party verifiably distributes a family of random refreshing polynomials whose constant terms sum to zero; adding their evaluations rerandomizes every local share while preserving the encoded secret, after which old shares are deleted.
+    source_anchor_ids: [anchor-paper-31-refresh]
+
+  - id: paper-31-construction-recover
+    kind: protocol
+    parent_id: paper-31-construction
+    order: 3
+    epistemic_status: specified
+    title: DM-Recover
+    summary: >-
+      Non-recovering parties mask their current polynomial shares with random polynomials that vanish at the recovering party's point, allowing that party to interpolate only its replacement shares rather than the secret or current sharing polynomials.
+    source_anchor_ids: [anchor-paper-31-recovery]
 
   - id: paper-31-claims
     kind: claim_group
     parent_id: paper-31
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    order: 5
+    epistemic_status: source_asserted
+    title: Stated guarantees
+    summary: >-
+      The announcement states separate thresholds for passive corruption, active corruption, mixed corruption, lost-share recovery, and batched communication; these guarantees are not interchangeable.
+    source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-limitations]
 
-  - id: paper-31-claim-primary
+  - id: paper-31-claim-passive
     kind: claim
     parent_id: paper-31-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary presents this as the first feasibility result for proactive secret sharing with a passive dishonest majority and reports cubic batched communication in the number of parties."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    epistemic_status: claimed_with_protocol_intuition
+    title: Passive dishonest-majority confidentiality
+    summary: >-
+      Without lost-share recovery, the paper states confidentiality for t < n passive corruptions in a refresh period; with e simultaneous lost shares or faults, the stated passive threshold becomes t < n - e.
+    source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-recovery, anchor-paper-31-limitations]
+
+  - id: paper-31-claim-active-mixed
+    kind: claim
+    parent_id: paper-31-claims
+    order: 2
+    epistemic_status: claimed_non_robust
+    title: Active and mixed corruption bounds
+    summary: >-
+      The non-robust construction states security for t < n/2 - e active corruptions and for mixed adversaries whose total may be a majority provided fewer than n/2 - e corruptions are active; detected cheating may cause abort.
+    source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-limitations]
+
+  - id: paper-31-claim-communication
+    kind: claim
+    parent_id: paper-31-claims
+    order: 3
+    epistemic_status: asymptotic_claim
+    title: Communication cost
+    summary: >-
+      The announcement reports O(n^4) communication for one secret and O(n^3) communication when multiple secrets are batched; it leaves lower communication for dishonest-majority PSS open.
+    source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-limitations]
 
   - id: paper-31-evidence
     kind: evidence_group
     parent_id: paper-31
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    order: 6
+    epistemic_status: bounded_by_brief_announcement
+    title: Evidence and proof boundary
+    summary: >-
+      The three-page source specifies the model, encoding blueprint, and protocol mechanisms and gives security intuition, but it does not contain the full definitions, games, lemmas, or complete proofs of the corresponding SCN paper.
+    source_anchor_ids: [anchor-paper-31-secret-sharing-model, anchor-paper-31-blueprint, anchor-paper-31-recovery]
 
-  - id: paper-31-evidence-reported
+  - id: paper-31-evidence-mechanism
     kind: evidence
     parent_id: paper-31-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record reports a construction, corruption thresholds, and an asymptotic communication claim; the brief proof arguments and exact conditions were not audited."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    epistemic_status: construction_inspected
+    title: Mechanism-level support
+    summary: >-
+      The source explains why additive summands resist passive reconstruction, why zero-sum refresh polynomials preserve the secret, and why vanishing recovery masks reveal only the recovering party's replacement evaluations.
+    source_anchor_ids: [anchor-paper-31-blueprint, anchor-paper-31-refresh, anchor-paper-31-recovery]
 
-  - id: paper-31-scope
+  - id: paper-31-boundaries
     kind: limitation_group
     parent_id: paper-31
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    order: 7
+    epistemic_status: material
+    title: Limitations and open obligations
+    summary: >-
+      The active guarantee is non-robust, thresholds decrease with parallel recovery, the scheme assumes synchrony and secure erasure, and the brief leaves complete proofs and optimal communication outside its three pages.
+    source_anchor_ids: [anchor-paper-31-system-model, anchor-paper-31-recovery, anchor-paper-31-limitations]
 
-  - id: paper-31-scope-boundary
+  - id: paper-31-boundary-open
     kind: limitation
-    parent_id: paper-31-scope
+    parent_id: paper-31-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "As a brief announcement, the represented record may omit full definitions and proofs. Exact thresholds, synchrony, setup, recovery, and active-fault guarantees require source review."
-    source_anchor_ids: ["anchor-paper-31-editorial"]
+    epistemic_status: open_problem
+    title: Open communication and asynchrony questions
+    summary: >-
+      The authors ask whether batched communication can fall below O(n^3) and note that no construction in the represented work attains dishonest-majority security up to n - 1 over asynchronous networks.
+    source_anchor_ids: [anchor-paper-31-limitations]
 
   - id: paper-31-resources
     kind: artifact_group
     parent_id: paper-31
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-31-resource-1", "anchor-paper-31-resource-2"]
-
-  - id: paper-31-resources-available
-    kind: artifact
-    parent_id: paper-31-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted paper."
-    source_anchor_ids: ["anchor-paper-31-resource-1", "anchor-paper-31-resource-2"]
+    order: 8
+    epistemic_status: publicly_available
+    title: Publication resources
+    summary: >-
+      The complete brief announcement is checked into this site with recorded fixity, and the ACM DOI provides the official publication identity; no code or executable artifact is claimed by the paper.
+    source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-publication]
 
   - id: paper-31-scrutiny
     kind: scrutiny
     parent_id: paper-31
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · brief announcement at ACM Symposium on Principles of Distributed Computing (PODC). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-31-resource-1"]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The construction appeared as a PODC brief announcement. That establishes venue exposure but is not equivalent to a full-paper proof audit, independent reproduction, or public review report.
+    source_anchor_ids: [anchor-paper-31-publication]
+
+  - id: paper-31-lineage
+    kind: lineage
+    parent_id: paper-31
+    order: 10
+    epistemic_status: documented
+    title: Relation to the full construction
+    summary: >-
+      This announcement is the compressed PODC presentation of the dishonest-majority PSS direction; the separate SCN paper contains the extended construction and proof treatment and must be mapped independently as paper #32.
+    source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-limitations]
 
 relations:
-  - id: relation-paper-31-contribution-addresses-question
+  - id: paper-31-relation-answer-question
     type: addresses
-    from_id: paper-31-contribution
+    from_id: paper-31-answer
     to_id: paper-31-question
-  - id: relation-paper-31-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-31-method
-    to_id: paper-31-contribution
-  - id: relation-paper-31-evidence-supports-claim
+  - id: paper-31-relation-encoding-answer
+    type: realizes
+    from_id: paper-31-construction-encoding
+    to_id: paper-31-answer
+  - id: paper-31-relation-refresh-construction
+    type: component_of
+    from_id: paper-31-construction-refresh
+    to_id: paper-31-construction
+  - id: paper-31-relation-recover-construction
+    type: component_of
+    from_id: paper-31-construction-recover
+    to_id: paper-31-construction
+  - id: paper-31-relation-mechanism-passive
     type: supports
-    from_id: paper-31-evidence-reported
-    to_id: paper-31-claim-primary
-  - id: relation-paper-31-scope-qualifies-claim
+    from_id: paper-31-evidence-mechanism
+    to_id: paper-31-claim-passive
+  - id: paper-31-relation-mechanism-active
+    type: supports
+    from_id: paper-31-evidence-mechanism
+    to_id: paper-31-claim-active-mixed
+  - id: paper-31-relation-scope-passive
     type: qualifies
-    from_id: paper-31-scope-boundary
-    to_id: paper-31-claim-primary
-  - id: relation-paper-31-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-31-resources-available
-    to_id: paper-31-evidence-reported
-  - id: relation-paper-31-status-qualifies-claim
+    from_id: paper-31-scope
+    to_id: paper-31-claim-passive
+  - id: paper-31-relation-scope-active
     type: qualifies
-    from_id: paper-31-scrutiny
-    to_id: paper-31-claim-primary
+    from_id: paper-31-scope
+    to_id: paper-31-claim-active-mixed
+  - id: paper-31-relation-boundaries-claims
+    type: qualifies
+    from_id: paper-31-boundaries
+    to_id: paper-31-claims
+  - id: paper-31-relation-lineage-paper
+    type: contextualizes
+    from_id: paper-31-lineage
+    to_id: paper-31
 
 assessment:
   id: paper-31-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-31-editorial", "anchor-paper-31-resource-1"]
+      rationale: >-
+        The complete brief specifies the model, construction blueprint, protocols, thresholds, and security intuition, but its three pages omit the full formal definitions and proofs. The evidence supports a medium source-grounded rating rather than a claim of complete proof verification.
+      basis_source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-blueprint, anchor-paper-31-recovery]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-31-resource-1", "anchor-paper-31-resource-2"]
+      rationale: >-
+        A checked-in author-hosted copy with recorded page count and SHA-256, together with the official DOI, makes the represented brief directly auditable. The separate full-paper proof and any immutable artifact history are outside this record.
+      basis_source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-31-editorial"]
+      rationale: >-
+        Named authorship, date, venue, official DOI, and author-hosted manuscript are documented. Contributor roles, revision history, tool use, and the exact lineage between brief and full versions have not been audited.
+      basis_source_anchor_ids: [anchor-paper-31-publication, anchor-paper-31-problem-results]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-31-resource-1"]
+      rationale: >-
+        PODC publication establishes external venue scrutiny, but the review reports, acceptance criteria, rebuttal, independent proof checking, and reproduction history are not public in the represented sources.
+      basis_source_anchor_ids: [anchor-paper-31-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-31-editorial"]
+      level: low
+      rationale: >-
+        The dated index snapshot located 1 citation. Under the author-defined corpus rule, 0 through 8 located citations is Low. Counts vary by index and date and do not measure correctness.
+      basis_source_anchor_ids: [anchor-paper-31-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary characterizes the contribution as a first feasibility result for proactive secret sharing under a passive dishonest majority. This is potentially significant, but the priority claim and its downstream impact were not independently audited; the rating therefore remains medium."
-      basis_source_anchor_ids: ["anchor-paper-31-editorial"]
+      rationale: >-
+        The source claims the first dishonest-majority PSS feasibility result and clearly identifies the prior honest-majority barrier. Priority and downstream influence require a separate literature and reception audit, so significance remains medium pending author verification.
+      basis_source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-limitations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: SciSpace title and DOI listing
+  citation_count: 1
+  source_url: https://scispace.com/papers/brief-announcement-proactive-secret-sharing-with-a-dishonest-1jlgc03e8w
+  signals:
+    - The index displayed one citation for the PODC brief announcement.
+  limitation: Citation counts are index- and date-dependent; the corresponding SCN full paper is a separate record and may receive citations that do not accrue to this brief announcement.

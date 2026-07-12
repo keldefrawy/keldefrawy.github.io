@@ -11,222 +11,414 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol, primitive]
 
 title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
-short_title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+short_title: APEX
 year: 2020
+status: Published
 venue: "29th USENIX Security Symposium"
-publication_status: "Published"
 topic: secure-systems-networks
-labels:
-  - "Theory"
-  - "Applied"
+labels: [Theory, Applied]
 authors:
-  - "Ivan De Oliveira Nunes"
-  - "Karim Eldefrawy"
-  - "Norrathep Rattanavipanon"
-  - "Gene Tsudik"
+  - Ivan De Oliveira Nunes
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Gene Tsudik
 keywords:
-  - "proofs of execution"
-  - "remote attestation"
-  - "embedded systems"
+  - proof of execution
+  - remote attestation
+  - embedded systems
+  - formal verification
 
-research_question: "Can a low-end remote device under full software compromise prove that specified code executed successfully and, when required, produced a particular authenticated output?"
-central_answer: "The curated editorial summary reports that APEX combines a low-overhead hardware/software architecture with formal verification to produce unforgeable proofs of execution on constrained devices."
+research_question: >-
+  Can a low-end embedded device under complete software compromise prove to a remote verifier that specified software ran atomically and produced an authentic fresh output?
+central_answer: >-
+  APEX defines a proof-of-execution security game and extends the verified VRASED attestation architecture with hardware-enforced execution, output, and metadata invariants. The design is model checked, implemented on OpenMSP430 and an FPGA, released as an artifact, and evaluated with low measured hardware overhead.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, formal-and-empirical evidence mapping, and initial assessment
+  method: >-
+    Complete review of the 18-page checked-in USENIX paper, including security definitions, architecture, LTL specifications, proof argument, implementation, evaluation, limitations, and visual inspection of the title and formal-specification pages. The map keeps guarantees about execution distinct from correctness of the executed software.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Security-game, invariant, overhead, and limitation transcriptions should be author-checked.
 
 sources:
-  - id: source-paper-54-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #54"
-    url: /publications/#paper-54
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-54-official-1
-    type: official_publication_resource
-    title: "USENIX paper page"
-    url: "https://www.usenix.org/conference/usenixsecurity20/presentation/nunes"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-54-archive-1
-    type: archive_resource
-    title: "USENIX prepublication"
-    url: "https://www.usenix.org/system/files/sec20fall_nunes_prepub.pdf"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-54-author-1
-    type: author_resource
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-54-author-pdf
+    type: author_hosted_copy
+    title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+    url: /pubs/2020/apex_usenixsec2020.pdf
+    provenance_category: author
+    media_type: application/pdf
+    sha256: c6b0c52488dcc69a6fcc34453d8f4f7a527120c2b3726ba2ddfe84e8fd585c7a
+    page_count: 18
+  - id: source-paper-54-official
+    type: official_publication_record
+    title: USENIX Security 2020 paper page
+    url: https://www.usenix.org/conference/usenixsecurity20/presentation/nunes
+    provenance_category: official
+  - id: source-paper-54-code
+    type: source_code_repository
+    title: APEX implementation
+    url: https://github.com/sprout-uci/APEX
+    provenance_category: artifact
+  - id: source-paper-54-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3017753896
+    url: https://api.openalex.org/works/W3017753896
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-54-curated
-    source_id: source-paper-54-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-54
-  - id: anchor-paper-54-official-1
-    source_id: source-paper-54-official-1
-    label: "USENIX paper page"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://www.usenix.org/conference/usenixsecurity20/presentation/nunes"
-  - id: anchor-paper-54-archive-1
-    source_id: source-paper-54-archive-1
-    label: "USENIX prepublication"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://www.usenix.org/system/files/sec20fall_nunes_prepub.pdf"
-  - id: anchor-paper-54-author-1
-    source_id: source-paper-54-author-1
-    label: "Author-hosted PDF"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf"
+  - id: anchor-paper-54-problem
+    source_id: source-paper-54-author-pdf
+    label: Motivation, questions, and claimed contribution
+    locator: Abstract and Section 1, PDF pages 1-2
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=1
+  - id: anchor-paper-54-pox-definition
+    source_id: source-paper-54-author-pdf
+    label: Proof-of-execution syntax and security game
+    locator: Section 4 and Definitions 1-2, PDF pages 4-6
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=4
+  - id: anchor-paper-54-adversary
+    source_id: source-paper-54-author-pdf
+    label: Full-software-compromise adversary and exclusions
+    locator: Section 4.1 and physical-attack discussion, PDF pages 5-6
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=5
+  - id: anchor-paper-54-machine
+    source_id: source-paper-54-author-pdf
+    label: MCU machine axioms
+    locator: Section 4.2, PDF pages 5-6
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=5
+  - id: anchor-paper-54-architecture
+    source_id: source-paper-54-author-pdf
+    label: APEX protocol, architecture, and authenticated proof
+    locator: Section 5.1 and Definition 3, PDF pages 6-8
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=6
+  - id: anchor-paper-54-subproperties
+    source_id: source-paper-54-author-pdf
+    label: Execution, output, and metadata protection
+    locator: Section 5.2, PDF pages 8-9
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=8
+  - id: anchor-paper-54-formal
+    source_id: source-paper-54-author-pdf
+    label: LTL specification, model checking, and PoX proof argument
+    locator: Section 6 and Definitions 4-6, PDF pages 9-11
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=9
+  - id: anchor-paper-54-evaluation
+    source_id: source-paper-54-author-pdf
+    label: OpenMSP430 implementation and evaluation
+    locator: Sections 7-7.2 and Tables 2-3, PDF pages 11-13
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=11
+  - id: anchor-paper-54-case-study
+    source_id: source-paper-54-author-pdf
+    label: Authenticated sensing and actuation proof of concept
+    locator: Section 7.3, PDF pages 13-15
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=13
+  - id: anchor-paper-54-limitations
+    source_id: source-paper-54-author-pdf
+    label: Limitations and future directions
+    locator: Section 8, PDF pages 14-15
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=14
+  - id: anchor-paper-54-conclusion
+    source_id: source-paper-54-author-pdf
+    label: Conclusion
+    locator: Section 9, PDF page 15
+    url: /pubs/2020/apex_usenixsec2020.pdf#page=15
+  - id: anchor-paper-54-code
+    source_id: source-paper-54-code
+    label: Public implementation repository
+    locator: Repository cited by the paper; artifact was not rebuilt in this map audit
+    url: https://github.com/sprout-uci/APEX
+  - id: anchor-paper-54-publication
+    source_id: source-paper-54-official
+    label: USENIX publication and artifact record
+    locator: USENIX Security 2020 paper page; paper carries an Artifact Evaluated - Passed badge
+    url: https://www.usenix.org/conference/usenixsecurity20/presentation/nunes
+  - id: anchor-paper-54-citations
+    source_id: source-paper-54-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 38 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3017753896
 
 nodes:
   - id: paper-54
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
-    summary: "APEX lets a low-end remote device produce an unforgeable proof that specified software executed successfully and optionally generated a particular authenticated output. Its security architecture is formally verified and incurs low overhead even on MSP430- and AVR-class devices."
-    source_anchor_ids: [anchor-paper-54-curated]
+    summary: >-
+      A formally specified, model-checked, implemented, and evaluated proof-of-execution architecture for low-end microcontrollers under complete software compromise.
+    source_anchor_ids: [anchor-paper-54-problem]
+
   - id: paper-54-question
     kind: question
     parent_id: paper-54
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can a low-end remote device under full software compromise prove that specified code executed successfully and, when required, produced a particular authenticated output?"
-    source_anchor_ids: [anchor-paper-54-curated]
-  - id: paper-54-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can a remote verifier bind a fresh device output to complete atomic execution of expected code even when every unprotected software component is adversarial?
+    source_anchor_ids: [anchor-paper-54-problem, anchor-paper-54-pox-definition]
+
+  - id: paper-54-answer
     kind: contribution
     parent_id: paper-54
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports that APEX combines a low-overhead hardware/software architecture with formal verification to produce unforgeable proofs of execution on constrained devices."
-    source_anchor_ids: [anchor-paper-54-curated]
-  - id: paper-54-method
-    kind: method
+    epistemic_status: constructed_and_verified
+    title: Central answer
+    summary: >-
+      APEX adds verified hardware monitors and protected execution metadata to VRASED so an attestation token authenticates the executable region, output region, request challenge, bounds, and a hardware-controlled successful-execution flag.
+    source_anchor_ids: [anchor-paper-54-architecture, anchor-paper-54-subproperties]
+
+  - id: paper-54-pox
+    kind: primitive
     parent_id: paper-54
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described method augments remote-attestation mechanisms with execution and output binding, then analyzes the architecture formally and instantiates it for MSP430- and AVR-class devices."
-    source_anchor_ids: [anchor-paper-54-curated]
-  - id: paper-54-claims
-    kind: claim_group
+    epistemic_status: formally_defined
+    title: Proof of execution primitive
+    summary: >-
+      PoX consists of request, atomic execution, proof generation, and verification algorithms. Security forbids convincing the verifier after no or incomplete execution and forbids substituting a tampered output for the actual execution result.
+    source_anchor_ids: [anchor-paper-54-pox-definition]
+
+  - id: paper-54-scope
+    kind: threat_model
     parent_id: paper-54
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports unforgeable proofs of successful execution under full software compromise, optional authentication of execution output, and low overhead on two classes of constrained devices."
-    source_anchor_ids: [anchor-paper-54-curated]
-  - id: paper-54-evidence
-    kind: evidence_group
+    epistemic_status: defined
+    title: Full software compromise
+    summary: >-
+      The adversary controls all device software, writable state, and DMA, and may read any memory not hardware-protected. It cannot change ROM, violate the assumed CPU semantics, induce physical faults, or extract secrets through physical side channels.
+    source_anchor_ids: [anchor-paper-54-adversary, anchor-paper-54-machine]
+
+  - id: paper-54-scope-correctness
+    kind: limitation
+    parent_id: paper-54-scope
+    order: 1
+    epistemic_status: explicitly_scoped
+    title: Execution is not program correctness
+    summary: >-
+      A valid APEX proof says the requested code ran under the defined conditions and produced the authenticated bytes; it does not establish that the code is bug-free, functionally correct, or safe on malicious inputs.
+    source_anchor_ids: [anchor-paper-54-pox-definition, anchor-paper-54-limitations]
+
+  - id: paper-54-architecture-node
+    kind: protocol
     parent_id: paper-54
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Formal verification and implementation overhead are reported in the editorial summary, but the threat model, formal statements, proof chain, tool outputs, hardware boundary, and measurements were not audited here."
-    source_anchor_ids: [anchor-paper-54-curated]
-  - id: paper-54-scope
-    kind: limitation_group
+    epistemic_status: specified
+    title: APEX protocol
+    summary: >-
+      The verifier supplies code or identifies preinstalled code, memory bounds, and a fresh challenge. Hardware enforces atomic execution and sets EXEC only after success; VRASED then computes an HMAC-based proof over code, output, and metadata.
+    source_anchor_ids: [anchor-paper-54-architecture]
+
+  - id: paper-54-architecture-execution
+    kind: mechanism
+    parent_id: paper-54-architecture-node
+    order: 1
+    epistemic_status: hardware_enforced
+    title: Execution and output protection
+    summary: >-
+      The verified logic rejects interrupted execution, entry or exit at the wrong boundary, DMA or software modification of protected regions, and changes to the executable or output between completion and proof generation.
+    source_anchor_ids: [anchor-paper-54-subproperties]
+
+  - id: paper-54-architecture-metadata
+    kind: mechanism
+    parent_id: paper-54-architecture-node
+    order: 2
+    epistemic_status: hardware_enforced
+    title: Protected metadata and freshness
+    summary: >-
+      Hardware makes the EXEC flag software read-only and protects challenge and region bounds; including the fresh challenge in key derivation and the MAC binds the proof to the current request.
+    source_anchor_ids: [anchor-paper-54-architecture, anchor-paper-54-subproperties]
+
+  - id: paper-54-formal
+    kind: evidence_group
     parent_id: paper-54
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "The guarantees remain conditional on an unaudited adversary model, trusted hardware and compilation boundaries, proof-to-implementation correspondence, and the exact meaning of successful execution."
-    source_anchor_ids: [anchor-paper-54-curated]
-  - id: paper-54-artifacts
+    epistemic_status: machine_checked
+    title: Formal evidence
+    summary: >-
+      APEX subproperties are expressed in linear temporal logic, translated into a finite-state hardware model, and checked with NuSMV; the security argument composes these invariants with VRASED remote-attestation security.
+    source_anchor_ids: [anchor-paper-54-formal]
+
+  - id: paper-54-claim-security
+    kind: claim
+    parent_id: paper-54-formal
+    order: 1
+    epistemic_status: proved_under_assumptions
+    title: PoX security under the stated MCU model
+    summary: >-
+      The paper argues that satisfying the verified execution, output, and metadata properties reduces a successful PoX forgery to breaking VRASED's attestation guarantee, under the cryptographic and machine assumptions.
+    source_anchor_ids: [anchor-paper-54-pox-definition, anchor-paper-54-formal]
+
+  - id: paper-54-implementation
     kind: artifact_group
     parent_id: paper-54
     order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 3 resources (1 official, 1 archive, 1 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-54-curated, anchor-paper-54-official-1, anchor-paper-54-archive-1, anchor-paper-54-author-1]
+    epistemic_status: implemented
+    title: Hardware and software implementation
+    summary: >-
+      The authors implement APEX on OpenMSP430, synthesize the design for an Artix-7 FPGA, reuse VRASED's protected attestation software, and publish the implementation.
+    source_anchor_ids: [anchor-paper-54-evaluation, anchor-paper-54-code]
+
+  - id: paper-54-evidence-overhead
+    kind: evidence
+    parent_id: paper-54-implementation
+    order: 1
+    epistemic_status: measured
+    title: Hardware, memory, and verification cost
+    summary: >-
+      Relative to VRASED, APEX adds 44 registers and 302 lookup tables, reported as about 2 percent and 12 percent respectively, plus 9 bytes of metadata RAM. Model checking takes about three minutes and 280 MB on the reported workstation.
+    source_anchor_ids: [anchor-paper-54-evaluation]
+
+  - id: paper-54-evidence-runtime
+    kind: evidence
+    parent_id: paper-54-implementation
+    order: 2
+    epistemic_status: measured
+    title: Runtime boundary
+    summary: >-
+      The hardware monitor adds no instructions to the protected program; proof latency is the program's own execution plus VRASED attestation, reported around 900 ms on an 8 MHz device for the evaluated configuration.
+    source_anchor_ids: [anchor-paper-54-evaluation]
+
+  - id: paper-54-case-study
+    kind: demonstration
+    parent_id: paper-54
+    order: 8
+    epistemic_status: proof_of_concept
+    title: Authenticated sensing and actuation
+    summary: >-
+      A fire-sensor prototype on an APEX-enabled MSP430 and FPGA binds temperature or humidity reads and buzzer actuation to specified code, illustrating how a verifier can detect spoofed software outputs in the model.
+    source_anchor_ids: [anchor-paper-54-case-study]
+
+  - id: paper-54-boundaries
+    kind: limitation_group
+    parent_id: paper-54
+    order: 9
+    epistemic_status: material
+    title: Limitations
+    summary: >-
+      Physical attacks and CPU-design faults are outside scope; code with external shared-library calls must be made self-contained; self-modifying code violates immutability; and atomic execution currently rejects interrupts, creating a real-time compatibility problem.
+    source_anchor_ids: [anchor-paper-54-adversary, anchor-paper-54-limitations]
+
+  - id: paper-54-artifacts
+    kind: artifact_group
+    parent_id: paper-54
+    order: 10
+    epistemic_status: evaluated_artifact
+    title: Public and evaluated artifact
+    summary: >-
+      The paper, source repository, and official USENIX record are public, and the paper carries an Artifact Evaluated - Passed badge. This map did not independently rebuild the repository.
+    source_anchor_ids: [anchor-paper-54-code, anchor-paper-54-publication]
+
   - id: paper-54-scrutiny
     kind: scrutiny
     parent_id: paper-54
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 29th USENIX Security Symposium. That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-54-official-1]
+    order: 11
+    epistemic_status: venue_and_artifact_reviewed
+    title: External scrutiny
+    summary: >-
+      APEX appeared at USENIX Security 2020 and passed the venue's represented artifact evaluation. Public review reports and independent formal re-verification are not linked.
+    source_anchor_ids: [anchor-paper-54-publication]
+
+  - id: paper-54-lineage
+    kind: lineage
+    parent_id: paper-54
+    order: 12
+    epistemic_status: documented
+    title: Extension of VRASED
+    summary: >-
+      APEX deliberately reuses VRASED's verified remote-attestation root and adds a proof-of-execution layer without changing the protected attestation routine, so the two services can coexist.
+    source_anchor_ids: [anchor-paper-54-architecture, anchor-paper-54-formal]
 
 relations:
-  - id: paper-54-relation-question-contribution
-    type: motivates
-    from_id: paper-54-question
-    to_id: paper-54-contribution
-  - id: paper-54-relation-method-contribution
-    type: realizes
-    from_id: paper-54-method
-    to_id: paper-54-contribution
-  - id: paper-54-relation-contribution-claims
-    type: grounds
-    from_id: paper-54-contribution
-    to_id: paper-54-claims
-  - id: paper-54-relation-evidence-claims
+  - id: paper-54-relation-answer-question
+    type: addresses
+    from_id: paper-54-answer
+    to_id: paper-54-question
+  - id: paper-54-relation-pox-answer
+    type: defines
+    from_id: paper-54-pox
+    to_id: paper-54-answer
+  - id: paper-54-relation-execution-architecture
+    type: component_of
+    from_id: paper-54-architecture-execution
+    to_id: paper-54-architecture-node
+  - id: paper-54-relation-metadata-architecture
+    type: component_of
+    from_id: paper-54-architecture-metadata
+    to_id: paper-54-architecture-node
+  - id: paper-54-relation-formal-security
     type: supports
-    from_id: paper-54-evidence
-    to_id: paper-54-claims
-  - id: paper-54-relation-scope-claims
+    from_id: paper-54-formal
+    to_id: paper-54-claim-security
+  - id: paper-54-relation-implementation-answer
+    type: realizes
+    from_id: paper-54-implementation
+    to_id: paper-54-answer
+  - id: paper-54-relation-case-study-answer
+    type: demonstrates
+    from_id: paper-54-case-study
+    to_id: paper-54-answer
+  - id: paper-54-relation-scope-security
     type: qualifies
     from_id: paper-54-scope
-    to_id: paper-54-claims
-  - id: paper-54-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-54-artifacts
-    to_id: paper-54-evidence
-  - id: paper-54-relation-scrutiny-claims
+    to_id: paper-54-claim-security
+  - id: paper-54-relation-boundaries-security
+    type: qualifies
+    from_id: paper-54-boundaries
+    to_id: paper-54-claim-security
+  - id: paper-54-relation-lineage-architecture
     type: contextualizes
-    from_id: paper-54-scrutiny
-    to_id: paper-54-claims
+    from_id: paper-54-lineage
+    to_id: paper-54-architecture-node
 
 assessment:
   id: paper-54-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-54-curated, anchor-paper-54-official-1, anchor-paper-54-archive-1, anchor-paper-54-author-1]
+      level: high
+      rationale: >-
+        The source combines a formal security game, machine-checked hardware invariants, a reduction argument, synthesizable implementation, measured overheads, and an end-to-end proof of concept, while clearly stating its assumptions and exclusions.
+      basis_source_anchor_ids: [anchor-paper-54-pox-definition, anchor-paper-54-formal, anchor-paper-54-evaluation, anchor-paper-54-limitations]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-54-curated, anchor-paper-54-official-1, anchor-paper-54-archive-1, anchor-paper-54-author-1]
+      rationale: >-
+        A checked-in author copy with fixity metadata, official open-access record, public code, formal specifications, and represented artifact badge make the evidence highly inspectable.
+      basis_source_anchor_ids: [anchor-paper-54-problem, anchor-paper-54-code, anchor-paper-54-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-54-curated]
+      rationale: >-
+        Authors, venue, source copy, public repository, platform, and verification stack are documented, but contributor roles and exact commit-to-paper build provenance are not fully captured in this map.
+      basis_source_anchor_ids: [anchor-paper-54-code, anchor-paper-54-publication]
     - id: external_scrutiny
-      level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-54-official-1]
+      level: high
+      rationale: >-
+        Publication at USENIX Security plus the Artifact Evaluated - Passed badge provides both venue and artifact scrutiny; private review reports and independent proof rechecking remain unavailable.
+      basis_source_anchor_ids: [anchor-paper-54-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-54-curated]
+      level: high
+      rationale: >-
+        The dated exact-title OpenAlex record located 38 citations. Under the author-defined corpus rule, 11 or more located citations is High; the count remains index- and date-dependent.
+      basis_source_anchor_ids: [anchor-paper-54-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-54-curated]
+      level: high
+      rationale: >-
+        The work defines and realizes a new low-end proof-of-execution service with formal and concrete evidence, and the citation snapshot indicates substantial uptake. Priority and correctness are still not guaranteed by this rating.
+      basis_source_anchor_ids: [anchor-paper-54-problem, anchor-paper-54-conclusion, anchor-paper-54-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact-title lookup because the USENIX record has no DOI
+  citation_count: 38
+  source_url: https://api.openalex.org/works/W3017753896
+  signals:
+    - The exact-title OpenAlex work reported 38 citing works.
+  limitation: The USENIX record has no DOI in the mapped metadata; title matching was checked against authors and venue, and counts remain index-dependent.

@@ -11,179 +11,311 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [scheme]
 
 title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
-short_title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+short_title: "In-App Selective Access Control"
 year: 2022
 venue: "6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)"
-publication_status: "Published"
+publication_status: Published
 topic: privacy-identity
-labels:
-  - "Applied"
+labels: [Applied]
 authors:
-  - "Karim Eldefrawy"
-  - "Tancrède Lepoint"
-  - "Laura Tam"
+  - Karim Eldefrawy
+  - Tancrede Lepoint
+  - Laura Tam
 keywords:
-  - "access control"
-  - "attribute-based encryption"
-  - "documents"
+  - selective access control
+  - ciphertext-policy attribute-based encryption
+  - hybrid encryption
+  - Microsoft Office add-in
+  - fine-grained document protection
+  - enterprise deployment
 
-research_question: "Can selected portions of documents remain cryptographically inaccessible inside familiar office applications unless a reader's attributes satisfy the embedded policy?"
-central_answer: "The curated editorial summary reports an in-application design that encrypts selected document regions under attribute-based access policies, reducing reliance on the surrounding platform for confidentiality enforcement."
+research_question: >-
+  Can fine-grained access policies be enforced cryptographically inside familiar Office documents, while preserving the document format and keeping encryption and decryption responsive enough for ordinary use?
+central_answer: >-
+  The paper implements an Excel add-in that encrypts selected cell ranges locally under random symmetric keys and protects those keys with FAME ciphertext-policy attribute-based encryption. The same document remains usable by recipients with different attributes, and prototype measurements report sub-second to low-second workflows for the tested policies and spreadsheet sizes, subject to key-management, platform, and deployment assumptions.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, version comparison, evidence mapping, and initial assessment
+  method: >-
+    Source-grounded review of both checked-in PDFs: the 16-page published paper and the distinct 26-page extended version. Both title pages and a substantive evaluation page were rendered and visually inspected. Technical details below use the extended version where it adds deployment and platform analysis, while publication identity and the published abstract remain tied to the proceedings version.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification. In particular, the version relationship, prototype-to-production boundary, and security interpretations should be checked before approval.
 
 sources:
-  - id: source-paper-62-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #62"
-    url: /publications/#paper-62
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-62-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-031-07689-3_32"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-62-author-1
-    type: author_resource
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-62-author-2
-    type: author_resource
-    title: "Extended version"
-    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-62-published
+    type: author_hosted_copy
+    title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+    url: /pubs/2022/cscml2022-abe-msoffice.pdf
+    provenance_category: author
+    media_type: application/pdf
+    sha256: 2e7ff82af4619bd136419bc6efe8e1d42f6dd441ab4181896008c60e44bd9b00
+    page_count: 16
+    version_note: Published CSCML proceedings version.
+  - id: source-paper-62-extended
+    type: author_hosted_copy
+    title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms (Extended Version)"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf
+    provenance_category: author
+    media_type: application/pdf
+    sha256: 182274d9bbabd5049e614f795a9da4dc274d885ec9b0f377fdbafa5d19b16239
+    page_count: 26
+    version_note: Distinct extended version with additional enterprise-deployment, alternative-encryption, and platform-extension material.
+  - id: source-paper-62-official
+    type: official_publication_record
+    title: Springer CSCML 2022 chapter record
+    url: https://doi.org/10.1007/978-3-031-07689-3_32
+    provenance_category: official
+  - id: source-paper-62-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W4285178185
+    url: https://api.openalex.org/works/W4285178185
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-62-curated
-    source_id: source-paper-62-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-62
-  - id: anchor-paper-62-official-1
-    source_id: source-paper-62-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-031-07689-3_32"
-  - id: anchor-paper-62-author-1
-    source_id: source-paper-62-author-1
-    label: "Author-hosted PDF"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf"
-  - id: anchor-paper-62-author-2
-    source_id: source-paper-62-author-2
-    label: "Extended version"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf"
+  - id: anchor-paper-62-problem
+    source_id: source-paper-62-extended
+    label: Motivation, contribution, and prototype boundary
+    locator: "Abstract and Section 1, PDF pages 1-3"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=1
+  - id: anchor-paper-62-setting
+    source_id: source-paper-62-extended
+    label: Key authority, hosting, encryption/decryption services, and recipients
+    locator: "Sections 3.1-3.2, PDF pages 6-7"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=6
+  - id: anchor-paper-62-workflows
+    source_id: source-paper-62-extended
+    label: Spreadsheet creation, hybrid encryption, storage, and decryption workflows
+    locator: "Sections 3.3-3.5, PDF pages 7-11"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=7
+  - id: anchor-paper-62-policies
+    source_id: source-paper-62-extended
+    label: Policy language, numerical attributes, parser modification, and bit-length caveat
+    locator: "Section 3.6, PDF pages 11-13"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=11
+  - id: anchor-paper-62-evaluation
+    source_id: source-paper-62-extended
+    label: FAME/Charm environment and encryption, decryption, and size measurements
+    locator: "Section 4 and Tables 1-3, PDF pages 13-16"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=13
+  - id: anchor-paper-62-alternative
+    source_id: source-paper-62-extended
+    label: Standardized multi-receiver alternative, informal security reasoning, and limits
+    locator: "Section 5, PDF pages 16-20"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=16
+  - id: anchor-paper-62-deployment
+    source_id: source-paper-62-extended
+    label: Enterprise building blocks and cloud, hybrid, and on-premises deployment options
+    locator: "Section 6, PDF pages 20-22"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=20
+  - id: anchor-paper-62-platforms
+    source_id: source-paper-62-extended
+    label: Extension to other platforms and client-side-execution boundary
+    locator: "Sections 7-8, PDF pages 22-24"
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf#page=22
+  - id: anchor-paper-62-published-version
+    source_id: source-paper-62-published
+    label: Published version identity and abstract
+    locator: "Title page and abstract, PDF page 1"
+    url: /pubs/2022/cscml2022-abe-msoffice.pdf#page=1
+  - id: anchor-paper-62-publication
+    source_id: source-paper-62-official
+    label: Official peer-reviewed publication record
+    locator: "CSCML 2022, DOI 10.1007/978-3-031-07689-3_32"
+    url: https://doi.org/10.1007/978-3-031-07689-3_32
+  - id: anchor-paper-62-citations
+    source_id: source-paper-62-openalex
+    label: Dated citation-count snapshot
+    locator: "OpenAlex cited_by_count = 0, queried by DOI on 2026-07-11"
+    url: https://api.openalex.org/works/W4285178185
 
 nodes:
   - id: paper-62
     kind: paper
-    parent_id: null
+    parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
-    summary: "This work adds cryptographically enforced, fine-grained access control inside familiar document applications such as Microsoft Office. Selected portions of a document remain encrypted and become readable only to users whose attributes satisfy the embedded policy, reducing reliance on the surrounding platform to enforce permissions correctly."
-    source_anchor_ids: [anchor-paper-62-curated]
+    epistemic_status: published
+    title: In-app selective access control
+    summary: A working Office add-in design for encrypting selected document regions under attribute policies, evaluated as an Excel prototype and extended with enterprise-deployment analysis.
+    source_anchor_ids: [anchor-paper-62-problem, anchor-paper-62-published-version]
+
   - id: paper-62-question
     kind: question
     parent_id: paper-62
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can selected portions of documents remain cryptographically inaccessible inside familiar office applications unless a reader's attributes satisfy the embedded policy?"
-    source_anchor_ids: [anchor-paper-62-curated]
-  - id: paper-62-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can users selectively share one intact Office document while cryptography, rather than a trusted document server, determines which protected regions each recipient can read?
+    source_anchor_ids: [anchor-paper-62-problem]
+
+  - id: paper-62-answer
     kind: contribution
     parent_id: paper-62
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports an in-application design that encrypts selected document regions under attribute-based access policies, reducing reliance on the surrounding platform for confidentiality enforcement."
-    source_anchor_ids: [anchor-paper-62-curated]
-  - id: paper-62-method
-    kind: method
+    epistemic_status: implemented_and_measured
+    title: Central answer
+    summary: Integrate a policy UI and hybrid encryption into an Office JavaScript add-in, place encrypted cell data in the document's custom XML, and release a data key only when a recipient's CP-ABE attributes satisfy the policy.
+    source_anchor_ids: [anchor-paper-62-workflows, anchor-paper-62-evaluation]
+
+  - id: paper-62-scope
+    kind: scope
     parent_id: paper-62
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described approach integrates selective encryption and policy evaluation into document applications so that protected regions are decrypted only for qualifying users."
-    source_anchor_ids: [anchor-paper-62-curated]
+    epistemic_status: explicitly_scoped
+    title: System and trust boundary
+    summary: The prototype protects selected spreadsheet content while relying on a key-issuing authority, Office's add-in and document APIs, cryptographic implementations, and secure handling of recipient keys.
+    source_anchor_ids: [anchor-paper-62-setting, anchor-paper-62-deployment]
+
+  - id: paper-62-scope-authority
+    kind: assumption
+    parent_id: paper-62-scope
+    order: 1
+    epistemic_status: trusted_component
+    title: Key authority and identity integration
+    summary: An authority alone holds the CP-ABE master secret and issues attribute keys; an enterprise deployment must connect that lifecycle to IAM, private-key storage, revocation, and logging infrastructure.
+    source_anchor_ids: [anchor-paper-62-setting, anchor-paper-62-deployment]
+
+  - id: paper-62-scheme
+    kind: scheme
+    parent_id: paper-62
+    order: 4
+    epistemic_status: implemented
+    title: Selective-encryption scheme
+    summary: The design combines local authenticated symmetric encryption for cell contents with FAME CP-ABE encapsulation of a random content key and an embedded policy describing eligible attributes.
+    source_anchor_ids: [anchor-paper-62-workflows, anchor-paper-62-evaluation]
+
+  - id: paper-62-scheme-document
+    kind: component
+    parent_id: paper-62-scheme
+    order: 1
+    epistemic_status: implemented
+    title: Document-preserving storage
+    summary: Ciphertexts and metadata are stored in a custom XML part, protected cells are cleared or shown as unavailable, and formulas remain recoverable because the workflow encrypts underlying cell inputs rather than only rendered text.
+    source_anchor_ids: [anchor-paper-62-workflows]
+
+  - id: paper-62-scheme-policy
+    kind: component
+    parent_id: paper-62-scheme
+    order: 2
+    epistemic_status: implemented_with_caveats
+    title: Policy representation
+    summary: The UI supports AND/OR combinations over string and numerical predicates; numerical comparisons are compiled into bit attributes, increasing policy size and requiring a fixed bit length chosen consistently by issuers and encryptors.
+    source_anchor_ids: [anchor-paper-62-policies]
+
   - id: paper-62-claims
     kind: claim_group
     parent_id: paper-62
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports fine-grained, cryptographically enforced selective access control for Microsoft Office and similar platforms."
-    source_anchor_ids: [anchor-paper-62-curated]
+    order: 5
+    epistemic_status: mixed
+    title: Principal claims
+    summary: The paper makes an implementation claim, a conditional confidentiality claim, and a measured usability/performance claim; it does not claim a production deployment or an end-to-end formal proof.
+    source_anchor_ids: [anchor-paper-62-workflows, anchor-paper-62-evaluation, anchor-paper-62-alternative]
+
+  - id: paper-62-claim-access
+    kind: claim
+    parent_id: paper-62-claims
+    order: 1
+    epistemic_status: cryptographically_conditional
+    title: Attribute-gated confidentiality
+    summary: A recipient who lacks a CP-ABE key satisfying the cell policy should not recover the symmetric content key, conditional on the CP-ABE, authenticated-encryption, key-issuance, and client-execution assumptions.
+    source_anchor_ids: [anchor-paper-62-workflows, anchor-paper-62-evaluation]
+
+  - id: paper-62-claim-performance
+    kind: claim
+    parent_id: paper-62-claims
+    order: 2
+    epistemic_status: experimentally_supported
+    title: Interactive-scale prototype performance
+    summary: In the reported laptop/Docker environment, encrypting 10,000 cells ranges from 580 ms for the simplest policy to 1.614 s for the largest tested policy; decrypting one to ten 100-cell ranges averages about 1.082-1.851 s.
+    source_anchor_ids: [anchor-paper-62-evaluation]
+
   - id: paper-62-evidence
     kind: evidence_group
     parent_id: paper-62
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The editorial summary describes the design goal and enforcement approach but gives no audited experimental, usability, interoperability, leakage, or deployment evidence in this map."
-    source_anchor_ids: [anchor-paper-62-curated]
-  - id: paper-62-scope
+    order: 6
+    epistemic_status: implemented_and_measured
+    title: Evidence chain
+    summary: Evidence consists of described add-in workflows, screenshots, a FAME/Charm prototype, concrete policy and file-size tests, and deployment analysis; no public code repository or independent reproduction is identified in the audited sources.
+    source_anchor_ids: [anchor-paper-62-workflows, anchor-paper-62-evaluation, anchor-paper-62-deployment]
+
+  - id: paper-62-boundaries
     kind: limitation_group
     parent_id: paper-62
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "Key issuance, revocation, policy privacy, metadata leakage, document-format transformations, application compromise, copy-and-paste behavior, usability, and supported platform versions were not audited."
-    source_anchor_ids: [anchor-paper-62-curated]
-  - id: paper-62-artifacts
+    order: 7
+    epistemic_status: material
+    title: Limits and unresolved obligations
+    summary: The tested system is a prototype, large numerical policies expand substantially, the standardized fallback loses collusion resistance for AND clauses, and production security depends on key lifecycle, trusted client execution, Office APIs, and enterprise integration.
+    source_anchor_ids: [anchor-paper-62-policies, anchor-paper-62-alternative, anchor-paper-62-deployment]
+
+  - id: paper-62-boundary-platform
+    kind: limitation
+    parent_id: paper-62-boundaries
+    order: 1
+    epistemic_status: platform_dependent
+    title: Client-side execution is essential
+    summary: Platforms that execute extensions only on a server may expose plaintext or long-term keys to that server; the paper's out-of-platform workaround improves trust placement at a cost in usability.
+    source_anchor_ids: [anchor-paper-62-platforms]
+
+  - id: paper-62-resources
     kind: artifact_group
     parent_id: paper-62
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 3 resources (1 official, 0 archive, 2 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-62-curated, anchor-paper-62-official-1, anchor-paper-62-author-1, anchor-paper-62-author-2]
+    order: 8
+    epistemic_status: source_available
+    title: Auditable resources and versions
+    summary: "Both the published and extended PDFs are checked into this site with fixity and page counts. They are distinct versions: the extended copy adds material and should not silently replace the published record."
+    source_anchor_ids: [anchor-paper-62-published-version, anchor-paper-62-deployment, anchor-paper-62-publication]
+
   - id: paper-62-scrutiny
     kind: scrutiny
     parent_id: paper-62
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 6th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-62-official-1]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: The proceedings paper appeared at CSCML 2022. No public review reports, artifact evaluation, independent reproduction, correction, or adversarial analysis was located in this audit.
+    source_anchor_ids: [anchor-paper-62-publication]
+
+  - id: paper-62-lineage
+    kind: lineage
+    parent_id: paper-62
+    order: 10
+    epistemic_status: documented
+    title: Research and version lineage
+    summary: The work applies mature CP-ABE ideas to widely used authoring software, with Excel as the measured case and Word, Outlook, PowerPoint, browser, and other platform directions treated at different implementation or future-work stages.
+    source_anchor_ids: [anchor-paper-62-problem, anchor-paper-62-platforms]
 
 relations:
-  - id: paper-62-relation-question-contribution
-    type: motivates
+  - id: paper-62-relation-question-answer
+    type: answered_by
     from_id: paper-62-question
-    to_id: paper-62-contribution
-  - id: paper-62-relation-method-contribution
+    to_id: paper-62-answer
+  - id: paper-62-relation-scheme-answer
     type: realizes
-    from_id: paper-62-method
-    to_id: paper-62-contribution
-  - id: paper-62-relation-contribution-claims
-    type: grounds
-    from_id: paper-62-contribution
-    to_id: paper-62-claims
-  - id: paper-62-relation-evidence-claims
-    type: supports
-    from_id: paper-62-evidence
-    to_id: paper-62-claims
+    from_id: paper-62-scheme
+    to_id: paper-62-answer
   - id: paper-62-relation-scope-claims
     type: qualifies
     from_id: paper-62-scope
     to_id: paper-62-claims
-  - id: paper-62-relation-artifacts-evidence
+  - id: paper-62-relation-policy-scheme
+    type: component_of
+    from_id: paper-62-scheme-policy
+    to_id: paper-62-scheme
+  - id: paper-62-relation-evidence-claims
+    type: supports
+    from_id: paper-62-evidence
+    to_id: paper-62-claims
+  - id: paper-62-relation-boundaries-claims
+    type: qualifies
+    from_id: paper-62-boundaries
+    to_id: paper-62-claims
+  - id: paper-62-relation-resources-evidence
     type: enables_audit_of
-    from_id: paper-62-artifacts
+    from_id: paper-62-resources
     to_id: paper-62-evidence
   - id: paper-62-relation-scrutiny-claims
     type: contextualizes
@@ -195,36 +327,39 @@ assessment:
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-62-curated, anchor-paper-62-official-1, anchor-paper-62-author-1, anchor-paper-62-author-2]
+      level: high
+      rationale: The paper specifies a concrete scheme and trust boundary, implements the central workflow, and reports multiple performance and size experiments; production deployment, public code, usability studies, and independent reproduction remain outside that evidence.
+      basis_source_anchor_ids: [anchor-paper-62-workflows, anchor-paper-62-evaluation, anchor-paper-62-alternative]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-62-curated, anchor-paper-62-official-1, anchor-paper-62-author-1, anchor-paper-62-author-2]
+      rationale: Both public full-text versions are checked into the author site with recorded SHA-256 hashes and page counts, making the assumptions, workflow, measurements, and version differences directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-62-published-version, anchor-paper-62-problem, anchor-paper-62-evaluation]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-62-curated]
+      rationale: Named authorship, two identifiable versions, and peer-reviewed publication establish baseline provenance; contributor roles, revision history, prototype revision, tool/AI use, and author approval of this map are incomplete.
+      basis_source_anchor_ids: [anchor-paper-62-published-version, anchor-paper-62-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-62-official-1]
+      rationale: CSCML publication supplies venue-level scrutiny, but no public reviews, artifact evaluation, independent reproduction, or adversarial analysis was located.
+      basis_source_anchor_ids: [anchor-paper-62-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-62-curated]
+      level: low
+      rationale: OpenAlex record W4285178185 reported 0 citations in a DOI-specific query on 2026-07-11; this is a time-dependent index snapshot with database coverage and record-linkage limits.
+      basis_source_anchor_ids: [anchor-paper-62-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-62-curated]
+      rationale: The work demonstrates a concrete route from ABE research to familiar enterprise documents and measures it, but the audited evidence does not establish broad deployment, standardization, or downstream adoption.
+      basis_source_anchor_ids: [anchor-paper-62-problem, anchor-paper-62-evaluation, anchor-paper-62-platforms]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: "OpenAlex work lookup filtered by DOI 10.1007/978-3-031-07689-3_32"
+  citation_count: 0
+  signals:
+    - type: citation_count
+      value: 0
+      source_url: https://api.openalex.org/works/W4285178185
+  limitation: OpenAlex coverage, deduplication, and citation linkage are incomplete and can change; the count is a dated observation rather than a quality judgment.

@@ -161,7 +161,7 @@ publications_browser: true
                   <p class="publication-knowledge-link">
                     <a href="{{ landing.url | relative_url }}">
                       Scientific knowledge map
-                      <span>{% if mapped_record.curation.source_scope == "full_source_audit" %}claims, evidence, limits, and profile{% elsif mapped_record.curation.source_scope == "metadata_and_author_supplied_abstract" or mapped_record.curation.source_scope == "metadata_and_source_abstract" %}abstract-grounded AI draft · manuscript audit pending{% else %}AI draft · full-text audit pending{% endif %}</span>
+                      <span>{% if mapped_record.curation.source_scope == "full_source_audit" %}claims, evidence, limits, and profile{% elsif mapped_record.curation.source_scope == "metadata_and_author_supplied_abstract" or mapped_record.curation.source_scope == "metadata_and_source_abstract" %}abstract-grounded AI draft · manuscript audit pending{% else %}AI draft · full author audit pending{% endif %}</span>
                       <span aria-hidden="true">→</span>
                     </a>
                   </p>

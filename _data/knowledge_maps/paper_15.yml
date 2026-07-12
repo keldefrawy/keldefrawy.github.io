@@ -18,38 +18,27 @@ labels: ["Theory", "Applied"]
 authors: ["Karim Eldefrawy", "Gene Tsudik"]
 keywords: ["location privacy", "MANET routing"]
 
-research_question: "Can on-demand MANET routes be discovered by current location rather than persistent identity while resisting hostile or compromised participants?"
-central_answer: "PRISM replaces identity-centric discovery with location-addressed on-demand routing and is reported to improve privacy and efficiency under analyzed insider and outsider attacks."
+research_question: >-
+  Can an on-demand MANET route be discovered toward a geographic destination area without requiring durable identities and while limiting what outsiders and insiders learn about the communicating nodes and network topology?
+central_answer: >-
+  PRISM adapts AODV to location-centric addressing: a source floods a group-signed request containing a destination area and temporary key, and any node in that area can return an encrypted, group-signed reply over the reverse path. The design protects against outsiders and passive insiders under its cryptographic assumptions, but reveals the queried area and existence of a respondent and requires extensions to address active-insider location fraud and Sybil behavior.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; the checked-in full-text PDF's title, authorship, page count, and file identity were verified, but its substantive claims were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, protocol and threat-model decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete checked-in journal paper, its publisher and archive records, and a dated ResearchGate citation snapshot. Simulations and security reasoning were inspected but not independently reproduced."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-15-site-record
-    type: curated_record
-    title: "Curated publication record for paper #15"
-    url: /publications/#paper-15
-  - id: source-paper-15-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/JSAC.2011.111203"
-  - id: source-paper-15-archive-1
-    type: archived_author_copy
-    title: "Archived UCI author copy"
-    url: "https://web.archive.org/web/20150703110555id_/http://www.ics.uci.edu/~keldefra/papers/jsac11.pdf"
-    provenance_category: archive
-  - id: source-paper-15-author-local
-    type: author_hosted_copy
-    title: "Author-hosted PDF"
+  - id: source-paper-15-paper
+    type: scholarly_article
+    title: "Privacy-Preserving Location-Based On-Demand Routing in MANETs"
     url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf
     media_type: application/pdf
     sha256: ecc2b70f32c26a99c6a38b72aecc33c7920cb96d18a31ebeda08821d34baae31
@@ -57,128 +46,256 @@ sources:
     provenance_category: author
     retrieved_at: "2026-07-11"
     retrieved_from_url: "https://web.archive.org/web/20150703110555id_/http://www.ics.uci.edu/~keldefra/papers/jsac11.pdf"
+  - id: source-paper-15-official
+    type: publication_record
+    title: "IEEE JSAC publisher record"
+    url: "https://doi.org/10.1109/JSAC.2011.111203"
+  - id: source-paper-15-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/220641668_Privacy-Preserving_Location-Based_On-Demand_Routing_in_MANETs"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-15-site-record
-    source_id: source-paper-15-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-15
-  - id: anchor-paper-15-official-1
-    source_id: source-paper-15-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-15-question
+    source_id: source-paper-15-paper
+    label: "Problem, goals, and claimed contribution"
+    locator: "Abstract and Sections I-II.A, PDF pages 1-2"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=1
+  - id: anchor-paper-15-model
+    source_id: source-paper-15-paper
+    label: "Location-centric model and assumptions"
+    locator: "Sections II-III.A, PDF pages 2-3"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=2
+  - id: anchor-paper-15-adversary
+    source_id: source-paper-15-paper
+    label: "Outsider and insider adversary classes"
+    locator: "Section III.B, PDF page 3"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=3
+  - id: anchor-paper-15-protocol
+    source_id: source-paper-15-paper
+    label: "PRISM route-request, route-reply, and forwarding protocol"
+    locator: "Section IV.A-B and Figure 1, PDF pages 4-5"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=4
+  - id: anchor-paper-15-security
+    source_id: source-paper-15-paper
+    label: "Security and privacy analysis"
+    locator: "Section IV.C-F, PDF pages 5-6"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=5
+  - id: anchor-paper-15-simulation
+    source_id: source-paper-15-paper
+    label: "Simulation setup and routing-overhead results"
+    locator: "Section V.A-C, PDF pages 6-8"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=6
+  - id: anchor-paper-15-leakage
+    source_id: source-paper-15-paper
+    label: "Topology leakage and utility evaluation"
+    locator: "Section V.D-E, PDF pages 8-9"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=8
+  - id: anchor-paper-15-limitations
+    source_id: source-paper-15-paper
+    label: "Limitations and conclusions"
+    locator: "Sections IV and VII, PDF pages 5-6 and 9"
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf#page=9
+  - id: anchor-paper-15-publication
+    source_id: source-paper-15-official
+    label: "Official journal publication record"
+    locator: "IEEE JSAC 29(10), DOI record"
     url: "https://doi.org/10.1109/JSAC.2011.111203"
-  - id: anchor-paper-15-archive-1
-    source_id: source-paper-15-archive-1
-    label: "Archived UCI author copy"
-    locator: "Internet Archive capture of Karim El Defrawy's UCI-hosted journal PDF used to obtain the checked-in copy."
-    url: "https://web.archive.org/web/20150703110555id_/http://www.ics.uci.edu/~keldefra/papers/jsac11.pdf"
-  - id: anchor-paper-15-author-local
-    source_id: source-paper-15-author-local
-    label: "Author-hosted PDF"
-    locator: "Checked-in 10-page PDF; title and both authors were verified against the rendered first page, and SHA-256 records file identity."
-    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf
+  - id: anchor-paper-15-citations
+    source_id: source-paper-15-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate displayed Citations (107), observed 2026-07-11; coverage and version merging may differ from other indexes."
+    url: "https://www.researchgate.net/publication/220641668_Privacy-Preserving_Location-Based_On-Demand_Routing_in_MANETs"
 
 nodes:
   - id: paper-15
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Privacy-Preserving Location-Based On-Demand Routing in MANETs"
-    summary: "PRISM replaces identity-centric route discovery with on-demand routing addressed to current locations, protecting participants in hostile or compromised MANETs. Its analysis and evaluation find that the protocol resists insider and outsider attacks while offering better privacy and efficiency than alternative techniques."
-    source_anchor_ids: [anchor-paper-15-site-record]
+    epistemic_status: published
+    title: "PRISM"
+    summary: "An on-demand, location-addressed MANET routing protocol designed to reduce identity and topology leakage in hostile settings."
+    source_anchor_ids: [anchor-paper-15-question]
 
   - id: paper-15-question
     kind: question
     parent_id: paper-15
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can on-demand MANET routes be discovered by current location rather than persistent identity while resisting hostile or compromised participants?"
-    source_anchor_ids: [anchor-paper-15-site-record]
+    summary: "Can route discovery reach whichever authorized node occupies a target area without exposing a permanent source or destination identity?"
+    source_anchor_ids: [anchor-paper-15-question, anchor-paper-15-model]
 
   - id: paper-15-answer
     kind: contribution
     parent_id: paper-15
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "PRISM replaces identity-centric discovery with location-addressed on-demand routing and is reported to improve privacy and efficiency under analyzed insider and outsider attacks."
-    source_anchor_ids: [anchor-paper-15-site-record]
+    epistemic_status: analytically_and_empirically_supported
+    title: "Central answer"
+    summary: "Use group-signed, identity-free route requests to a geographic area, temporary public keys for the reply, and short-lived route/session identifiers for data forwarding."
+    source_anchor_ids: [anchor-paper-15-protocol, anchor-paper-15-security]
 
-  - id: paper-15-method
-    kind: method
+  - id: paper-15-goals
+    kind: scope
     parent_id: paper-15
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Discover routes to a destination's current location while limiting protocol disclosures that would reveal long-term identities or movement histories."
-    source_anchor_ids: [anchor-paper-15-site-record]
+    epistemic_status: explicitly_scoped
+    title: "Design goals"
+    summary: "PRISM targets tracking resistance, protection from active and passive outsiders and insiders, and acceptable routing cost in critical mobile networks."
+    source_anchor_ids: [anchor-paper-15-question]
 
-  - id: paper-15-claims
-    kind: claim_group
+  - id: paper-15-assumptions
+    kind: assumption_group
+    parent_id: paper-15-goals
+    order: 1
+    epistemic_status: assumed
+    title: "Infrastructure and device assumptions"
+    summary: "Nodes know their location, have loose time synchronization and public-key capabilities, and receive credentials and a network-wide key from an offline trusted authority; eviction is only supported between deployments."
+    source_anchor_ids: [anchor-paper-15-model]
+
+  - id: paper-15-adversary
+    kind: threat_model
+    parent_id: paper-15-goals
+    order: 2
+    epistemic_status: defined
+    title: "Adversary classes"
+    summary: "The analysis separates passive and active outsiders from passive and active insiders; physical-layer time-difference tracking is explicitly outside the model."
+    source_anchor_ids: [anchor-paper-15-adversary]
+
+  - id: paper-15-protocol
+    kind: protocol
     parent_id: paper-15
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The paper reports resistance to its modeled insider and outsider attacks together with better privacy and efficiency than the compared alternatives."
-    source_anchor_ids: [anchor-paper-15-site-record]
+    epistemic_status: proposed
+    title: "PRISM route discovery"
+    summary: "The source broadcasts a request containing the destination area, fresh temporary public key, timestamp, and group signature; nodes flood it while caching only request hashes and reverse-hop state."
+    source_anchor_ids: [anchor-paper-15-protocol]
 
-  - id: paper-15-evidence
-    kind: evidence_group
+  - id: paper-15-protocol-reply
+    kind: protocol_step
+    parent_id: paper-15-protocol
+    order: 1
+    epistemic_status: specified
+    title: "Anonymous route reply"
+    summary: "A node in the destination area returns a group-signed reply that binds the request hash and encrypts a fresh session key and exact location to the source's temporary key."
+    source_anchor_ids: [anchor-paper-15-protocol]
+
+  - id: paper-15-protocol-data
+    kind: protocol_step
+    parent_id: paper-15-protocol
+    order: 2
+    epistemic_status: specified
+    title: "Data phase"
+    summary: "Short-lived route identifiers derived from request material guide forwarding, while the negotiated session key protects the end-to-end payload."
+    source_anchor_ids: [anchor-paper-15-protocol]
+
+  - id: paper-15-claim-outsider
+    kind: security_claim
     parent_id: paper-15
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports analysis and evaluation of privacy and efficiency; threat definitions, proofs, simulation or experimental setup, and detailed results have not been audited."
-    source_anchor_ids: [anchor-paper-15-site-record]
+    epistemic_status: conditional_analysis
+    title: "Outsider protection"
+    summary: "The network-wide key and cryptographic authentication are intended to exclude outsiders from useful routing traffic and prevent request or reply forgery under the stated assumptions."
+    source_anchor_ids: [anchor-paper-15-security]
+
+  - id: paper-15-claim-insider
+    kind: privacy_claim
+    parent_id: paper-15
+    order: 6
+    epistemic_status: conditional_analysis
+    title: "Passive-insider privacy"
+    summary: "Group-signature unlinkability and temporary keys hide durable identities, but an observer still learns the requested destination area and that some node there replied."
+    source_anchor_ids: [anchor-paper-15-security]
+
+  - id: paper-15-boundary-active
+    kind: limitation
+    parent_id: paper-15
+    order: 7
+    epistemic_status: explicitly_reported
+    title: "Active-insider boundary"
+    summary: "Base PRISM does not prevent a credentialed insider from location fraud, Sybil behavior, or some man-in-the-middle actions; one-time certificates or tamper-resistant signing/location hardware are proposed extensions."
+    source_anchor_ids: [anchor-paper-15-security]
+
+  - id: paper-15-evidence-overhead
+    kind: empirical_evidence
+    parent_id: paper-15
+    order: 8
+    epistemic_status: simulation
+    title: "Routing-overhead evaluation"
+    summary: "Simulations vary 20-100 nodes, query fractions, and three mobility models over repeated 10,000-second runs; overhead rises sharply under an intentionally heavy all-node, five-second query workload and is lower at moderate query rates."
+    source_anchor_ids: [anchor-paper-15-simulation]
+
+  - id: paper-15-evidence-privacy
+    kind: empirical_evidence
+    parent_id: paper-15
+    order: 9
+    epistemic_status: simulation
+    title: "Topology-leakage evaluation"
+    summary: "The experiments estimate the fraction of topology exposed by observed route discoveries; leakage depends strongly on query volume and mobility, with group and time-variant mobility revealing less than random waypoint in the tested settings."
+    source_anchor_ids: [anchor-paper-15-leakage]
 
   - id: paper-15-limitations
     kind: limitation_group
     parent_id: paper-15
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The available record does not establish protection against every collusion or observation model, inaccurate location information, extreme mobility, key compromise, or untested deployment."
-    source_anchor_ids: [anchor-paper-15-site-record]
+    order: 10
+    epistemic_status: material
+    title: "Trusted boundaries and leakage"
+    summary: "The destination area and response event remain visible, physical tracking is out of scope, an offline authority and shared network key are trusted, and simulated performance does not establish behavior in a deployed hostile MANET."
+    source_anchor_ids: [anchor-paper-15-adversary, anchor-paper-15-security, anchor-paper-15-limitations]
 
-  - id: paper-15-resources
+  - id: paper-15-artifacts
     kind: artifact_group
     parent_id: paper-15
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Publisher / DOI; archived UCI author copy; author-hosted PDF. The checked-in PDF's identity was verified, but its substantive contents and supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-15-official-1, anchor-paper-15-archive-1, anchor-paper-15-author-local]
+    order: 11
+    epistemic_status: paper_and_simulation_description
+    title: "Artifacts"
+    summary: "The complete paper documents protocol formats, security reasoning, simulation parameters, and results; no simulation source, raw trace set, or implementation repository was located."
+    source_anchor_ids: [anchor-paper-15-protocol, anchor-paper-15-simulation]
 
   - id: paper-15-scrutiny
     kind: scrutiny
     parent_id: paper-15
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · journal article at IEEE Journal on Selected Areas in Communications, Volume 29, Number 10. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-15-site-record, anchor-paper-15-official-1]
+    order: 12
+    epistemic_status: journal_reviewed
+    title: "External scrutiny and reception"
+    summary: "The work appeared in IEEE JSAC and ResearchGate reports 107 citations; this audit did not inspect review reports, citing contexts, corrections, or an independent implementation."
+    source_anchor_ids: [anchor-paper-15-publication, anchor-paper-15-citations]
+
+  - id: paper-15-lineage
+    kind: lineage
+    parent_id: paper-15
+    order: 13
+    epistemic_status: documented
+    title: "Relation to ALARM"
+    summary: "PRISM develops an on-demand counterpart to ALARM's proactive location-centric design, reducing routine topology dissemination while introducing query-dependent area leakage."
+    source_anchor_ids: [anchor-paper-15-question, anchor-paper-15-leakage]
 
 relations:
-  - id: paper-15-relation-method-supports-answer
+  - id: paper-15-relation-reply-part-of-protocol
+    type: part_of
+    from_id: paper-15-protocol-reply
+    to_id: paper-15-protocol
+  - id: paper-15-relation-data-part-of-protocol
+    type: part_of
+    from_id: paper-15-protocol-data
+    to_id: paper-15-protocol
+  - id: paper-15-relation-protocol-supports-answer
     type: supports
-    from_id: paper-15-method
+    from_id: paper-15-protocol
     to_id: paper-15-answer
-  - id: paper-15-relation-evidence-supports-claim
+  - id: paper-15-relation-privacy-supports-answer
     type: supports
-    from_id: paper-15-evidence
-    to_id: paper-15-claims
-  - id: paper-15-relation-limitations-qualify-claim
+    from_id: paper-15-evidence-privacy
+    to_id: paper-15-answer
+  - id: paper-15-relation-active-qualifies-answer
+    type: qualifies
+    from_id: paper-15-boundary-active
+    to_id: paper-15-answer
+  - id: paper-15-relation-limitations-qualify-insider
     type: qualifies
     from_id: paper-15-limitations
-    to_id: paper-15-claims
-  - id: paper-15-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-15-scrutiny
-    to_id: paper-15
+    to_id: paper-15-claim-insider
 
 assessment:
   id: paper-15-assessment-2026-07-11
@@ -189,32 +306,34 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports analysis and evaluation of privacy and efficiency; threat definitions, proofs, simulation or experimental setup, and detailed results have not been audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-15-site-record]
+      rationale: "The paper gives a concrete protocol, explicit adversary analysis, and repeated simulations of overhead and leakage across mobility models. The security argument is conditional, raw simulation artifacts are unavailable, and no deployment or independent reproduction was audited."
+      basis_source_anchor_ids: [anchor-paper-15-protocol, anchor-paper-15-security, anchor-paper-15-simulation, anchor-paper-15-leakage]
     - id: auditability
       level: high
-      rationale: "A verified author-hosted PDF is stored with this site, with its source route, page count, and SHA-256 identity recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, supplementary-artifact completeness, and independent reproduction remain separate questions."
-      basis_source_anchor_ids: [anchor-paper-15-official-1, anchor-paper-15-archive-1, anchor-paper-15-author-local]
+      rationale: "A complete author copy is checked into the site with source route, page count, and SHA-256 identity. Protocol details and reported simulations are inspectable, although code and raw traces were not located."
+      basis_source_anchor_ids: [anchor-paper-15-protocol, anchor-paper-15-simulation]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-15-site-record]
+      rationale: "Named authorship, an archived author copy, and the journal DOI establish baseline provenance. Contributor roles, simulation lineage, revision history, and tool use are not documented."
+      basis_source_anchor_ids: [anchor-paper-15-question, anchor-paper-15-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE Journal on Selected Areas in Communications, Volume 29, Number 10, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-15-official-1]
+      rationale: "IEEE JSAC publication and later citations demonstrate scrutiny and attention, but review reports, correction history, adversarial reanalysis, and independent reproduction were not located."
+      basis_source_anchor_ids: [anchor-paper-15-publication, anchor-paper-15-citations]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-15-site-record]
+      level: high
+      rationale: "ResearchGate displayed 107 citations on 2026-07-11, exceeding the rubric's 11-citation high threshold. The count is index-specific and citation contexts were not audited."
+      basis_source_anchor_ids: [anchor-paper-15-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete contribution: The paper reports resistance to its modeled insider and outsider attacks together with better privacy and efficiency than the compared alternatives. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-15-site-record]
+      level: high
+      rationale: "The protocol develops a distinct location-centric, on-demand privacy design with quantified topology leakage and has a substantial citation trail, while retaining clear active-insider and infrastructure boundaries."
+      basis_source_anchor_ids: [anchor-paper-15-question, anchor-paper-15-leakage, anchor-paper-15-limitations, anchor-paper-15-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 107
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate displayed Citations (107)."
+  limitation: "ResearchGate coverage and version merging can differ from other indexes; citing contexts, polarity, implementations, and operational adoption were not audited."

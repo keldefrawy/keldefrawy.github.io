@@ -12,158 +12,206 @@ contribution_types: [protocol]
 
 title: "An Architecture for a Resilient Cloud Computing Infrastructure"
 year: 2013
+status: "Published"
 venue: "IEEE International Conference on Technologies for Homeland Security (HST)"
 topic: secure-systems-networks
 labels: ["Applied"]
 authors: ["Joshua Baron", "Karim Eldefrawy", "Aleksey Nogin", "Rafail Ostrovsky"]
 keywords: ["cloud resilience", "self-healing systems", "secure computation"]
 
-research_question: "Can a cloud continue operating under recurring node compromises by separating supervision from user computation and periodically restoring corrupted components?"
-central_answer: "The proposed architecture uses a separate self-healing control plane, cryptographic protocols, and hardware-assisted reinitialization to recover nodes while compromises continue."
+abstract: >-
+  This paper proposes an architecture for a resilient cloud computing infrastructure that provably maintains cloud functionality against persistent successful corruptions of cloud nodes. The architecture is composed of a self-healing software mechanism for the entire cloud, as well as hardware-assisted regeneration of compromised (or faulty) nodes from a pristine state. Such an architecture aims to secure critical distributed cloud computations well beyond the current state of the art by tolerating, in a seamless fashion, a continuous rate of successful corruptions up to certain corruption rate limit, e.g., 30% of all cloud nodes may be corrupted within a tunable window of time. The proposed architecture achieves these properties based on a principled separation of distributed task supervision from the computation of user-defined jobs. The task supervision and enduser communication are performed by a new software mechanism called the Control Operations Plane (COP), which builds a trustworthy and resilient, self-healing cloud computing infrastructure out of the underlying untrustworthy and faulty hosts. The COP leverages provably-secure cryptographic protocols that are efficient and robust in the presence of many corrupted participants — such a cloud regularly and unobtrusively refreshes itself by restoring COP nodes from a pristine state at regular intervals.
+
+research_question: >-
+  Can a cloud continue supervising and executing distributed jobs despite an ongoing stream of node compromises, provided compromise occurs below a bounded rate and nodes can periodically return to a pristine state?
+central_answer: >-
+  The source abstract proposes a Control Operations Plane that separates trusted task supervision and end-user communication from user jobs, uses robust cryptographic protocols, and combines software refresh with hardware-assisted regeneration; the paper body was not obtained for this audit, so the precise model, proof, protocol, and evaluation remain unverified here.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: abstract-grounded claim decomposition, provenance search, and initial assessment
+  method: "Conservative mapping of the complete source abstract transcribed from the public author-uploaded full-text route, plus official publication metadata. The ResearchGate landing page was public, but the manuscript body could not be retrieved without crossing access controls; no body-level technical claim is asserted."
+  source_scope: metadata_and_source_abstract
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored abstract-grounded map awaiting author verification and a full manuscript audit."
 
 sources:
-  - id: source-paper-23-site-record
-    type: curated_record
-    title: "Curated publication record for paper #23"
-    url: /publications/#paper-23
-  - id: source-paper-23-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/THS.2013.6699036"
-  - id: source-paper-23-author-1
-    type: author_hosted_copy
-    title: "ResearchGate author full text"
-    url: "https://www.researchgate.net/publication/261054497_An_architecture_for_a_resilient_cloud_computing_infrastructure"
+  - id: source-paper-23-author
+    type: author_full_text_route
+    title: "ResearchGate author-uploaded full-text record"
+    url: https://www.researchgate.net/publication/261054497_An_architecture_for_a_resilient_cloud_computing_infrastructure
     provenance_category: author
+    scope_note: "The public page exposes the paper abstract and identifies author-uploaded content; the full body was not retrieved in this audit."
+  - id: source-paper-23-official
+    type: publication_record
+    title: "IEEE HST publication record"
+    url: https://doi.org/10.1109/THS.2013.6699036
+  - id: source-paper-23-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #23"
+    url: https://openalex.org/W2040098860
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-23-site-record
-    source_id: source-paper-23-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-23
-  - id: anchor-paper-23-official-1
-    source_id: source-paper-23-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1109/THS.2013.6699036"
-  - id: anchor-paper-23-author-1
-    source_id: source-paper-23-author-1
-    label: "Author-hosted resource: ResearchGate author full text"
-    locator: "Public author-uploaded full-text route recorded in the local resource data; local fixity, correspondence to the published version, and substantive content have not been audited for this draft."
-    url: "https://www.researchgate.net/publication/261054497_An_architecture_for_a_resilient_cloud_computing_infrastructure"
+  - id: anchor-paper-23-abstract
+    source_id: source-paper-23-author
+    label: "Complete author-uploaded source abstract"
+    locator: "ResearchGate abstract; author content uploaded 2016; body not audited"
+    url: https://www.researchgate.net/publication/261054497_An_architecture_for_a_resilient_cloud_computing_infrastructure
+  - id: anchor-paper-23-publication
+    source_id: source-paper-23-official
+    label: "Official IEEE publication record"
+    locator: "HST 2013, pages 390-395"
+    url: https://doi.org/10.1109/THS.2013.6699036
+  - id: anchor-paper-23-citations
+    source_id: source-paper-23-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 2, accessed 2026-07-11"
+    url: https://openalex.org/W2040098860
 
 nodes:
   - id: paper-23
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published_abstract_audited
     title: "An Architecture for a Resilient Cloud Computing Infrastructure"
-    summary: "The paper proposes a self-healing control operations plane that separates cloud task supervision from user computations and uses cryptographic protocols plus hardware-assisted reinitialization to recover corrupted nodes. The design aims to keep the cloud operating despite a continuing stream of compromises, provided the corruption rate stays below a configurable threshold within each recovery window."
-    source_anchor_ids: [anchor-paper-23-site-record]
+    summary: "An abstract-grounded architecture for a self-healing cloud control layer that combines cryptographic protocols with periodic regeneration of compromised nodes."
+    source_anchor_ids: [anchor-paper-23-abstract]
 
   - id: paper-23-question
     kind: question
     parent_id: paper-23
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question_from_abstract
     title: "Research question"
-    summary: "Can a cloud continue operating under recurring node compromises by separating supervision from user computation and periodically restoring corrupted components?"
-    source_anchor_ids: [anchor-paper-23-site-record]
+    summary: "How can critical cloud functionality survive persistent successful node corruptions rather than only a fixed set of failures?"
+    source_anchor_ids: [anchor-paper-23-abstract]
 
   - id: paper-23-answer
     kind: contribution
     parent_id: paper-23
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The proposed architecture uses a separate self-healing control plane, cryptographic protocols, and hardware-assisted reinitialization to recover nodes while compromises continue."
-    source_anchor_ids: [anchor-paper-23-site-record]
+    epistemic_status: source_abstract_asserted
+    title: "Central answer"
+    summary: "Separate supervision from user computation in a Control Operations Plane and periodically restore its nodes from pristine state while robust cryptographic protocols maintain distributed control."
+    source_anchor_ids: [anchor-paper-23-abstract]
+
+  - id: paper-23-scope
+    kind: scope
+    parent_id: paper-23
+    order: 3
+    epistemic_status: abstract_level
+    title: "Abstract-level model"
+    summary: "The abstract describes untrustworthy cloud hosts, continuous successful corruptions below a rate limit, tunable recovery windows, and hardware-assisted restoration."
+    source_anchor_ids: [anchor-paper-23-abstract]
+
+  - id: paper-23-scope-adversary
+    kind: threat_model
+    parent_id: paper-23-scope
+    order: 1
+    epistemic_status: incompletely_specified
+    title: "Persistent mobile compromise"
+    summary: "The motivating adversary can repeatedly compromise nodes; the abstract gives 30% within a tunable window as an example, not enough detail here to reconstruct exact quantifiers, scheduling power, or synchrony assumptions."
+    source_anchor_ids: [anchor-paper-23-abstract]
 
   - id: paper-23-method
     kind: method
     parent_id: paper-23
-    order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Supervise cloud tasks from an isolated operations plane, detect or tolerate corruption, and reinitialize nodes within configurable recovery windows."
-    source_anchor_ids: [anchor-paper-23-site-record]
+    order: 4
+    epistemic_status: source_abstract_asserted
+    title: "Control Operations Plane"
+    summary: "COP handles distributed task supervision and end-user communication separately from user-defined jobs, creating a narrow control substrate over faulty hosts."
+    source_anchor_ids: [anchor-paper-23-abstract]
+
+  - id: paper-23-method-refresh
+    kind: component
+    parent_id: paper-23-method
+    order: 1
+    epistemic_status: source_abstract_asserted
+    title: "Software refresh plus hardware regeneration"
+    summary: "The architecture combines cloud-wide self-healing software with regular hardware-assisted restoration of compromised or faulty COP nodes from a pristine state."
+    source_anchor_ids: [anchor-paper-23-abstract]
 
   - id: paper-23-claims
     kind: claim_group
     parent_id: paper-23
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The design aims to maintain cloud operation provided the corruption rate remains below a configured threshold during each recovery window."
-    source_anchor_ids: [anchor-paper-23-site-record]
+    order: 5
+    epistemic_status: abstract_only
+    title: "Abstract-level claims"
+    summary: "The abstract claims maintained cloud functionality below a corruption-rate bound and attributes it to COP, robust cryptographic protocols, and periodic regeneration."
+    source_anchor_ids: [anchor-paper-23-abstract]
 
   - id: paper-23-evidence
     kind: evidence_group
     parent_id: paper-23
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary documents an architectural design and a conditional resilience objective; formal analysis, prototype details, recovery measurements, and attack experiments have not been inspected."
-    source_anchor_ids: [anchor-paper-23-site-record]
+    order: 6
+    epistemic_status: not_body_audited
+    title: "Evidence presently visible"
+    summary: "Only the source abstract and publication record were audited; figures, protocol specifications, proof arguments, simulations, and implementation evidence in the paper body were not inspected."
+    source_anchor_ids: [anchor-paper-23-abstract, anchor-paper-23-publication]
 
-  - id: paper-23-limitations
+  - id: paper-23-boundaries
     kind: limitation_group
     parent_id: paper-23
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The central resilience claim is conditional on a bounded corruption rate and trusted recovery mechanisms; detection accuracy, control-plane compromise, availability attacks, and deployment costs remain unaudited."
-    source_anchor_ids: [anchor-paper-23-site-record]
+    order: 7
+    epistemic_status: material_source_gap
+    title: "Unverified boundaries"
+    summary: "The map cannot certify the exact corruption/recovery schedule, threshold, liveness model, trusted hardware state, protocol instantiation, proof theorem, performance, or deployment evidence without the manuscript body."
+    source_anchor_ids: [anchor-paper-23-abstract]
 
-  - id: paper-23-resources
+  - id: paper-23-artifacts
     kind: artifact_group
     parent_id: paper-23
-    order: 7
-    epistemic_status: linked_not_content_audited
+    order: 8
+    epistemic_status: public_route_not_locally_fixed
     title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; ResearchGate author full text. Their contents, persistence, version correspondence, and any supplementary artifacts have not been substantively audited."
-    source_anchor_ids: [anchor-paper-23-official-1, anchor-paper-23-author-1]
+    summary: "An official DOI and an author-uploaded full-text route exist, but no local fixed manuscript or software artifact was added because the public host blocked direct body retrieval in this audit."
+    source_anchor_ids: [anchor-paper-23-abstract, anchor-paper-23-publication]
 
   - id: paper-23-scrutiny
     kind: scrutiny
     parent_id: paper-23
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at IEEE International Conference on Technologies for Homeland Security (HST). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-23-site-record, anchor-paper-23-official-1]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The work was published at IEEE HST 2013; review reports, proof checking, reproductions, and later operational evaluations were not audited."
+    source_anchor_ids: [anchor-paper-23-publication]
+
+  - id: paper-23-lineage
+    kind: lineage
+    parent_id: paper-23
+    order: 10
+    epistemic_status: source_abstract_asserted
+    title: "Research direction"
+    summary: "The architecture treats proactive secure computation and trusted restoration as a cloud control substrate, anticipating a broader self-healing CloudCOP line."
+    source_anchor_ids: [anchor-paper-23-abstract]
 
 relations:
-  - id: paper-23-relation-method-supports-answer
-    type: supports
+  - id: relation-paper-23-answer-addresses-question
+    type: addresses
+    from_id: paper-23-answer
+    to_id: paper-23-question
+  - id: relation-paper-23-method-realizes-answer
+    type: realizes
     from_id: paper-23-method
     to_id: paper-23-answer
-  - id: paper-23-relation-evidence-supports-claim
+  - id: relation-paper-23-refresh-realizes-method
+    type: realizes
+    from_id: paper-23-method-refresh
+    to_id: paper-23-method
+  - id: relation-paper-23-evidence-supports-claims
     type: supports
     from_id: paper-23-evidence
     to_id: paper-23-claims
-  - id: paper-23-relation-limitations-qualify-claim
+  - id: relation-paper-23-boundaries-qualify-claims
     type: qualifies
-    from_id: paper-23-limitations
+    from_id: paper-23-boundaries
     to_id: paper-23-claims
-  - id: paper-23-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-23-scrutiny
-    to_id: paper-23
 
 assessment:
   id: paper-23-assessment-2026-07-11
@@ -173,33 +221,34 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary documents an architectural design and a conditional resilience objective; formal analysis, prototype details, recovery measurements, and attack experiments have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-23-site-record]
+      level: low
+      rationale: "A complete source abstract identifies the architecture and intended guarantee, but the model, protocol, proof, and evaluation body were not obtained or audited."
+      basis_source_anchor_ids: [anchor-paper-23-abstract]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable author-uploaded full-text route. This makes the paper's assumptions, evidence, and stated methods directly inspectable, so auditability is high; local fixity, correspondence to the published version, and a substantive content audit have not been verified."
-      basis_source_anchor_ids: [anchor-paper-23-official-1, anchor-paper-23-author-1]
+      rationale: "A public author-uploaded full-text route exists, satisfying the site's author-copy rule, but this audit could not retrieve and locally fix the body; the map therefore remains abstract-grounded."
+      basis_source_anchor_ids: [anchor-paper-23-abstract]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-23-site-record]
+      rationale: "Named authorship, an author-uploaded record, and an IEEE publication record establish baseline provenance; roles, revisions, and artifact lineage are unknown."
+      basis_source_anchor_ids: [anchor-paper-23-abstract, anchor-paper-23-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE International Conference on Technologies for Homeland Security (HST), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-23-official-1]
+      rationale: "The work has an IEEE conference publication record, but review materials and independent validation were not inspected."
+      basis_source_anchor_ids: [anchor-paper-23-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-23-site-record]
+      level: low
+      rationale: "OpenAlex reports 2 located citations as of 2026-07-11. The count is index-specific and may omit versions or citations."
+      basis_source_anchor_ids: [anchor-paper-23-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The design aims to maintain cloud operation provided the corruption rate remains below a configured threshold during each recovery window. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-23-site-record]
+      rationale: "The abstract presents a distinctive proactive cloud-control architecture, but novelty priority, theorem strength, and downstream impact were not body-audited."
+      basis_source_anchor_ids: [anchor-paper-23-abstract]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2040098860
+  citation_count: 2
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "OpenAlex coverage and record matching are incomplete; this is a dated located-citation snapshot."

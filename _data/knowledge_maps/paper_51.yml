@@ -12,257 +12,388 @@ contribution_types: [protocol, scheme]
 
 title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
 year: 2019
-status: "Published"
+status: Published
 venue: "26th ACM Conference on Computer and Communications Security (CCS)"
-topic: "secure-encrypted-computation"
-labels: ["Theory", "Applied"]
+topic: secure-encrypted-computation
+labels: [Theory, Applied]
 authors:
-  - "Karim Eldefrawy"
-  - "Vitor Pereira"
-keywords:
-  - "secure multiparty computation"
-  - "EasyCrypt"
-  - "code extraction"
-editorial_summary: "This paper formalizes reusable secret-sharing and proactive MPC constructions in EasyCrypt and proves concrete instantiations with machine assistance. A Why3-based extraction toolchain turns the verified specifications into executable code with modest overhead relative to manually written implementations."
+  - Karim Eldefrawy
+  - Vitor Pereira
+keywords: [secure multiparty computation, proactive security, EasyCrypt, machine-checked proof, verified extraction, OCaml]
 
-research_question: "Can machine-checked secure-multiparty-computation specifications be converted into practical executable evaluators while preserving a high-assurance reasoning path?"
-central_answer: "The paper reports EasyCrypt formalizations and proofs plus a Why3-based extraction toolchain that produces executable code with modest overhead."
+research_question: >-
+  Can multiparty and proactive secure-computation protocols against active adversaries be specified and proved in a proof assistant, then turned into executable code while keeping the security argument modular and the performance usable?
+central_answer: >-
+  The paper builds reusable EasyCrypt abstractions for secret sharing and MPC, proves real/ideal security and sequential-composition lemmas, instantiates them with Shamir/Pedersen, BGW-style arithmetic, refresh/recover, and gradual secret sharing, and extracts OCaml through a new EasyCrypt-to-Why3 toolchain. Microbenchmarks show feasibility while exposing an explicit trusted base of unverified arithmetic, randomness, decoder, and translation components.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text formal-method extraction, proof-boundary mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 48-page author/ePrint version, including visual inspection of title, proof architecture, extraction pipeline, and benchmark pages. Theorems, security experiments, instantiations, extraction path, trusted computing base, and measurements were read; EasyCrypt scripts and generated executables were not independently run.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Formal interpretations, implementation-boundary statements, and ratings remain provisional.
 
 sources:
-  - id: source-paper-51-site-record
-    type: curated_site_record
-    title: "Publication #51 metadata and editorial summary"
-    url: /publications/#paper-51
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-51-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3319535.3354205"
-    provenance_category: official
-  - id: source-paper-51-resource-2
-    type: public_archive_record
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2019/922"
-    provenance_category: archive
-  - id: source-paper-51-resource-3
+  - id: source-paper-51-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2019/verif-mpc_ccs2019.pdf"
+    title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf
     provenance_category: author
+    media_type: application/pdf
+    sha256: ab815efb0a8793e59af6f80b848746801dfb25c5dbfa092fbce68a0c8578fce3
+    page_count: 48
+  - id: source-paper-51-official
+    type: official_publication_record
+    title: ACM CCS 2019 publication record
+    url: https://doi.org/10.1145/3319535.3354205
+    provenance_category: official
+  - id: source-paper-51-eprint
+    type: public_archive_record
+    title: IACR ePrint 2019/922
+    url: https://eprint.iacr.org/2019/922
+    provenance_category: archive
+  - id: source-paper-51-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2986715259
+    url: https://openalex.org/W2986715259
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-51-editorial
-    source_id: source-paper-51-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-51
-  - id: anchor-paper-51-resource-1
-    source_id: source-paper-51-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/3319535.3354205"
-  - id: anchor-paper-51-resource-2
-    source_id: source-paper-51-resource-2
-    label: "Archive resource: IACR ePrint"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://eprint.iacr.org/2019/922"
-  - id: anchor-paper-51-resource-3
-    source_id: source-paper-51-resource-3
-    label: "Author-hosted resource: Author-hosted PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://keldefrawy.github.io/pubs/2019/verif-mpc_ccs2019.pdf"
+  - id: anchor-paper-51-problem
+    source_id: source-paper-51-author-pdf
+    label: Problem, gaps in prior work, contributions, and evaluator overview
+    locator: "Abstract and Sections 1-1.3, PDF pages 1-5"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=1
+  - id: anchor-paper-51-model
+    source_id: source-paper-51-author-pdf
+    label: Secret sharing, BGW arithmetic, refresh periods, and proactive MPC model
+    locator: "Section 2, PDF page 6"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=6
+  - id: anchor-paper-51-proof-overview
+    source_id: source-paper-51-author-pdf
+    label: Abstract/concrete proof architecture and code scale
+    locator: "Sections 3-3.1, PDF pages 6-8"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=6
+  - id: anchor-paper-51-theorem
+    source_id: source-paper-51-author-pdf
+    label: Evaluator security reduction and Theorem 1
+    locator: "Section 3.1, Theorem 1, PDF pages 7-8"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=7
+  - id: anchor-paper-51-sharing
+    source_id: source-paper-51-author-pdf
+    label: Abstract sharing, integrity, commitments, VSS, Shamir/Pedersen, and gradual PSS
+    locator: "Section 3.2, PDF pages 8-13"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=8
+  - id: anchor-paper-51-mpc
+    source_id: source-paper-51-author-pdf
+    label: Private/random/proactive functionalities, real/ideal games, and corruption oracles
+    locator: "Section 3.3, PDF pages 13-16"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=13
+  - id: anchor-paper-51-composition
+    source_id: source-paper-51-author-pdf
+    label: Sequential composition lemmas and concrete add/mul/refresh/recover protocols
+    locator: "Sections 3.3-3.4, PDF pages 15-18"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=15
+  - id: anchor-paper-51-extraction
+    source_id: source-paper-51-author-pdf
+    label: EasyCrypt-to-WhyML translation and Why3-to-OCaml extraction
+    locator: "Section 4 and Figure 19, PDF pages 19-22"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=19
+  - id: anchor-paper-51-tcb
+    source_id: source-paper-51-author-pdf
+    label: Abstracted finite fields, groups, randomness, Reed-Solomon decoder, and translation boundary
+    locator: "Sections 1.3, 4, and 5, PDF pages 5, 19-22"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=5
+  - id: anchor-paper-51-implementation
+    source_id: source-paper-51-author-pdf
+    label: Extracted implementations, benchmark environment, and Charm comparison
+    locator: "Section 5, PDF pages 22-25"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=22
+  - id: anchor-paper-51-benchmarks
+    source_id: source-paper-51-author-pdf
+    label: Secret-sharing and MPC microbenchmarks across party/field sizes
+    locator: "Section 5 and Tables 2-4, PDF pages 24-26"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=24
+  - id: anchor-paper-51-limits
+    source_id: source-paper-51-author-pdf
+    label: Non-UC scope, performance-comparison limits, and future work
+    locator: "Sections 1.2-1.3, 5, and 7, PDF pages 4-5, 25-27"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=4
+  - id: anchor-paper-51-appendices
+    source_id: source-paper-51-author-pdf
+    label: Polynomial library, security definitions, and concrete protocol specifications
+    locator: "Appendices A-D, PDF pages 33-48"
+    url: /pubs/2019/verif-mpc_ccs2019.pdf#page=33
+  - id: anchor-paper-51-publication
+    source_id: source-paper-51-official
+    label: Official peer-reviewed publication identity
+    locator: "CCS 2019, DOI 10.1145/3319535.3354205"
+    url: https://doi.org/10.1145/3319535.3354205
+  - id: anchor-paper-51-eprint
+    source_id: source-paper-51-eprint
+    label: Public full-version archive identity
+    locator: "IACR ePrint 2019/922"
+    url: https://eprint.iacr.org/2019/922
+  - id: anchor-paper-51-reception
+    source_id: source-paper-51-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 7 citing works on 2026-07-11"
+    url: https://openalex.org/W2986715259
 
 nodes:
   - id: paper-51
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
-    summary: "This paper formalizes reusable secret-sharing and proactive MPC constructions in EasyCrypt and proves concrete instantiations with machine assistance. A Why3-based extraction toolchain turns the verified specifications into executable code with modest overhead relative to manually written implementations."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
+    epistemic_status: published
+    title: High-assurance MPC evaluator
+    summary: A machine-checked modular security development and extraction toolchain for executable secret-sharing and proactive MPC components, paired with microbenchmarks and explicit TCB limits.
+    source_anchor_ids: [anchor-paper-51-problem]
   - id: paper-51-question
     kind: question
     parent_id: paper-51
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can machine-checked secure-multiparty-computation specifications be converted into practical executable evaluators while preserving a high-assurance reasoning path?"
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
-  - id: paper-51-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can active/proactive multiparty protocols be proved end-to-end in EasyCrypt and converted into executable evaluators without abandoning modularity or practical performance?
+    source_anchor_ids: [anchor-paper-51-problem]
+  - id: paper-51-answer
     kind: contribution
     parent_id: paper-51
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports EasyCrypt formalizations and proofs plus a Why3-based extraction toolchain that produces executable code with modest overhead."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
-  - id: paper-51-method
-    kind: method
+    epistemic_status: machine_checked_and_extracted
+    title: Central answer
+    summary: Prove generic security once at abstract interfaces, discharge concrete instantiation obligations, then translate executable operators to WhyML and use Why3 extraction to produce OCaml.
+    source_anchor_ids: [anchor-paper-51-proof-overview, anchor-paper-51-extraction]
+  - id: paper-51-model-node
+    kind: threat_model
     parent_id: paper-51
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented workflow formalizes reusable sharing and proactive-MPC components in EasyCrypt, proves concrete instantiations, and extracts implementations through Why3."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
+    epistemic_status: formally_modeled
+    title: Passive, static-active, and proactive adversaries
+    summary: Real/ideal experiments expose corrupt, corruptInput, and abort oracles; proactive security allows a changing corrupted set but requires refresh and recovery before accumulated views become useful.
+    source_anchor_ids: [anchor-paper-51-model, anchor-paper-51-mpc]
+  - id: paper-51-assumptions
+    kind: assumption
+    parent_id: paper-51
+    order: 4
+    epistemic_status: explicit
+    title: Cryptographic and execution assumptions
+    summary: Active security uses Pedersen-style commitments and DDH; protocol operation assumes the represented communication model, while concrete execution trusts field/group arithmetic, randomness, and Reed-Solomon implementations.
+    source_anchor_ids: [anchor-paper-51-problem, anchor-paper-51-sharing, anchor-paper-51-tcb]
+  - id: paper-51-framework
+    kind: formal_framework
+    parent_id: paper-51
+    order: 5
+    epistemic_status: machine_checked
+    title: Abstract reusable EasyCrypt framework
+    summary: Approximately 2K lines define abstract secret-sharing and MPC interfaces; approximately 7K more instantiate them, including about 1K lines of protocol specifications.
+    source_anchor_ids: [anchor-paper-51-proof-overview]
+  - id: paper-51-sharing-node
+    kind: scheme_group
+    parent_id: paper-51-framework
+    order: 1
+    epistemic_status: machine_checked
+    title: Secret-sharing hierarchy
+    summary: The framework separates passive privacy, share integrity, and malicious/verifiable security, proving that commitments plus integrity-preserving sharing construct VSS.
+    source_anchor_ids: [anchor-paper-51-sharing]
+  - id: paper-51-mpc-node
+    kind: protocol_group
+    parent_id: paper-51-framework
+    order: 2
+    epistemic_status: machine_checked
+    title: MPC functionality hierarchy
+    summary: Deterministic/private protocols compute arithmetic, random protocols rerandomize shares, and proactive protocols recover corrupted parties into fresh states.
+    source_anchor_ids: [anchor-paper-51-mpc]
+  - id: paper-51-composition-node
+    kind: theorem_group
+    parent_id: paper-51-framework
+    order: 3
+    epistemic_status: machine_checked
+    title: Sequential composition lemmas
+    summary: Machine-checked lemmas establish malicious-after-malicious, random-after-malicious, and proactive-after-random security, allowing evaluator proofs to be assembled from subprotocol proofs.
+    source_anchor_ids: [anchor-paper-51-composition]
+  - id: paper-51-theorem-node
+    kind: theorem
+    parent_id: paper-51
+    order: 6
+    epistemic_status: machine_checked
+    title: Evaluator reduction theorem
+    summary: Theorem 1 upper-bounds an adversary's proactive distinguishing advantage against the evaluator by advantages against its VSS and proactive-MPC components, with efficient simulators/reductions.
+    source_anchor_ids: [anchor-paper-51-theorem]
+  - id: paper-51-instantiations
+    kind: implementation_group
+    parent_id: paper-51
+    order: 7
+    epistemic_status: formalized_and_extracted
+    title: Concrete protocol instantiations
+    summary: The development includes Shamir sharing, Pedersen commitments, VSS, additive/batch/gradual sharing, BGW-style addition and multiplication, and refresh/recover protocols.
+    source_anchor_ids: [anchor-paper-51-sharing, anchor-paper-51-composition, anchor-paper-51-appendices]
+  - id: paper-51-evaluator
+    kind: protocol
+    parent_id: paper-51-instantiations
+    order: 1
+    epistemic_status: machine_checked_and_extracted
+    title: Arithmetic-circuit evaluator
+    summary: Parties share private inputs, locally add, synchronize for multiplication and degree reduction, periodically refresh/recover, then reconstruct the output.
+    source_anchor_ids: [anchor-paper-51-problem, anchor-paper-51-model]
+  - id: paper-51-gradual
+    kind: scheme
+    parent_id: paper-51-instantiations
+    order: 2
+    epistemic_status: machine_checked_and_extracted
+    title: Gradual dishonest-majority PSS
+    summary: An additive-summand/batch-sharing construction from the earlier dishonest-majority PSS line is formalized and used as the extraction example; it is distinct from the honest-majority BGW MPC instantiation.
+    source_anchor_ids: [anchor-paper-51-sharing, anchor-paper-51-extraction]
+  - id: paper-51-extraction-node
+    kind: toolchain
+    parent_id: paper-51
+    order: 8
+    epistemic_status: implemented_with_unverified_translation
+    title: EasyCrypt → WhyML → OCaml
+    summary: A syntactic translator maps executable EasyCrypt operators into WhyML, after which Why3's verified extraction generates OCaml; only OCaml is evaluated, though the architecture could target other languages.
+    source_anchor_ids: [anchor-paper-51-extraction]
   - id: paper-51-claims
     kind: claim_group
     parent_id: paper-51
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
-  - id: paper-51-claim-primary
+    order: 9
+    epistemic_status: mixed_formal_and_empirical
+    title: Principal claims
+    summary: The paper claims machine-checked modular security, first-of-kind active BGW verification/extraction, feasible executable performance, and reuse of the abstract framework.
+    source_anchor_ids: [anchor-paper-51-problem, anchor-paper-51-theorem, anchor-paper-51-benchmarks]
+  - id: paper-51-claim-security
     kind: claim
     parent_id: paper-51-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports machine-assisted proofs and executable extraction with modest overhead relative to manually written implementations."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
+    epistemic_status: machine_checked_within_model
+    title: Modular real/ideal security
+    summary: EasyCrypt checks the reductions and composition claims for the modeled protocols and instantiations; guarantees remain conditional on model fidelity and trusted abstract components.
+    source_anchor_ids: [anchor-paper-51-theorem, anchor-paper-51-composition]
+  - id: paper-51-claim-executable
+    kind: claim
+    parent_id: paper-51-claims
+    order: 2
+    epistemic_status: high_assurance_not_fully_verified_end_to_end
+    title: Extracted executable correspondence
+    summary: Why3 extraction preserves the translated WhyML program, while the EasyCrypt-to-WhyML translator is intentionally simple but not itself proved correct; external libraries remain in the TCB.
+    source_anchor_ids: [anchor-paper-51-extraction, anchor-paper-51-tcb]
+  - id: paper-51-claim-performance
+    kind: claim
+    parent_id: paper-51-claims
+    order: 3
+    epistemic_status: microbenchmark_supported
+    title: Feasible but non-optimized performance
+    summary: Benchmarks cover 5, 9, and 15 parties and 128–1024-bit fields. Passive operations are fast; malicious multiplication/refresh/recovery grow sharply, reaching seconds for larger parameters.
+    source_anchor_ids: [anchor-paper-51-implementation, anchor-paper-51-benchmarks]
   - id: paper-51-evidence
     kind: evidence_group
     parent_id: paper-51
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
-  - id: paper-51-evidence-reported
-    kind: evidence
-    parent_id: paper-51-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies proof-assistant and extraction tools plus a performance comparison, but theorem coverage, trusted code base, extraction correctness, benchmarks, and artifacts were not audited."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
-  - id: paper-51-scope
+    order: 10
+    epistemic_status: machine_checked_proofs_code_and_benchmarks
+    title: Evidence stack
+    summary: EasyCrypt definitions/proofs, explicit theorem reductions, code excerpts, a polynomial library, protocol appendices, generated WhyML/OCaml examples, and 100-run median microbenchmarks provide complementary evidence.
+    source_anchor_ids: [anchor-paper-51-theorem, anchor-paper-51-appendices, anchor-paper-51-extraction, anchor-paper-51-benchmarks]
+  - id: paper-51-tcb-node
+    kind: limitation
+    parent_id: paper-51
+    order: 11
+    epistemic_status: explicit_trusted_base
+    title: Trusted computing base
+    summary: Finite-field and cyclic-group implementations (Zarith/CryptoKit), randomness, OpenSSL-generated parameters, an external Reed-Solomon decoder, OCaml toolchain, and unverified EasyCrypt-to-WhyML translation sit outside the machine-checked core.
+    source_anchor_ids: [anchor-paper-51-tcb, anchor-paper-51-implementation]
+  - id: paper-51-boundaries
     kind: limitation_group
     parent_id: paper-51
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
-  - id: paper-51-scope-boundary
-    kind: limitation
-    parent_id: paper-51-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Machine checking applies only to represented specifications and proof obligations. The compiler, extraction, runtime, cryptographic primitives, and comparison methodology may remain trusted."
-    source_anchor_ids: ["anchor-paper-51-editorial"]
-
-  - id: paper-51-resources
+    order: 12
+    epistemic_status: explicit
+    title: Formal and evaluation boundaries
+    summary: The proof is not UC; BGW active corruption is static rather than adaptive; network/broadcast semantics and low-level libraries are not fully verified; only OCaml and microbenchmarks are evaluated; optimized MPC frameworks are not compared directly.
+    source_anchor_ids: [anchor-paper-51-limits]
+  - id: paper-51-artifacts
     kind: artifact_group
     parent_id: paper-51
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-51-resource-1", "anchor-paper-51-resource-2", "anchor-paper-51-resource-3"]
-
-  - id: paper-51-resources-available
-    kind: artifact
-    parent_id: paper-51-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: IACR ePrint; Author-hosted: Author-hosted PDF."
-    source_anchor_ids: ["anchor-paper-51-resource-1", "anchor-paper-51-resource-2", "anchor-paper-51-resource-3"]
-
+    order: 13
+    epistemic_status: paper_and_archive_available
+    title: Artifacts and reproducibility
+    summary: Full author/ePrint versions, extensive code excerpts, and dependency URLs are public. This audit did not locate a version-pinned repository containing every EasyCrypt proof, translator, generated program, and benchmark harness.
+    source_anchor_ids: [anchor-paper-51-eprint, anchor-paper-51-appendices]
   - id: paper-51-scrutiny
     kind: scrutiny
     parent_id: paper-51
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at 26th ACM Conference on Computer and Communications Security (CCS). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-51-resource-1"]
+    order: 14
+    epistemic_status: top_venue_and_machine_checked
+    title: External scrutiny
+    summary: ACM CCS review and machine checking supply distinct scrutiny layers, but public review reports, independent proof reruns, and reproduction of extracted executables were not located.
+    source_anchor_ids: [anchor-paper-51-publication, anchor-paper-51-eprint]
+  - id: paper-51-lineage
+    kind: lineage
+    parent_id: paper-51
+    order: 15
+    epistemic_status: documented
+    title: Proactive-security lineage and future direction
+    summary: The work formalizes components from dishonest-majority PSS and BGW, then identifies adaptive adversaries, dynamic/asynchronous groups, UC security, SPDZ/GMW, verified libraries, and verified communication as follow-on obligations.
+    source_anchor_ids: [anchor-paper-51-sharing, anchor-paper-51-limits]
 
 relations:
-  - id: relation-paper-51-contribution-addresses-question
-    type: addresses
-    from_id: paper-51-contribution
-    to_id: paper-51-question
-  - id: relation-paper-51-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-51-method
-    to_id: paper-51-contribution
-  - id: relation-paper-51-evidence-supports-claim
-    type: supports
-    from_id: paper-51-evidence-reported
-    to_id: paper-51-claim-primary
-  - id: relation-paper-51-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-51-scope-boundary
-    to_id: paper-51-claim-primary
-  - id: relation-paper-51-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-51-resources-available
-    to_id: paper-51-evidence-reported
-  - id: relation-paper-51-status-qualifies-claim
-    type: qualifies
-    from_id: paper-51-scrutiny
-    to_id: paper-51-claim-primary
+  - {id: paper-51-relation-answer-question, type: addresses, from_id: paper-51-answer, to_id: paper-51-question}
+  - {id: paper-51-relation-sharing-framework, type: component_of, from_id: paper-51-sharing-node, to_id: paper-51-framework}
+  - {id: paper-51-relation-mpc-framework, type: component_of, from_id: paper-51-mpc-node, to_id: paper-51-framework}
+  - {id: paper-51-relation-composition-framework, type: component_of, from_id: paper-51-composition-node, to_id: paper-51-framework}
+  - {id: paper-51-relation-framework-theorem, type: supports, from_id: paper-51-framework, to_id: paper-51-theorem-node}
+  - {id: paper-51-relation-instantiations-theorem, type: instantiates, from_id: paper-51-instantiations, to_id: paper-51-theorem-node}
+  - {id: paper-51-relation-evaluator-instantiations, type: component_of, from_id: paper-51-evaluator, to_id: paper-51-instantiations}
+  - {id: paper-51-relation-gradual-instantiations, type: component_of, from_id: paper-51-gradual, to_id: paper-51-instantiations}
+  - {id: paper-51-relation-extraction-executable, type: supports, from_id: paper-51-extraction-node, to_id: paper-51-claim-executable}
+  - {id: paper-51-relation-theorem-security, type: supports, from_id: paper-51-theorem-node, to_id: paper-51-claim-security}
+  - {id: paper-51-relation-tcb-security, type: qualifies, from_id: paper-51-tcb-node, to_id: paper-51-claim-security}
+  - {id: paper-51-relation-tcb-executable, type: qualifies, from_id: paper-51-tcb-node, to_id: paper-51-claim-executable}
+  - {id: paper-51-relation-evidence-claims, type: supports, from_id: paper-51-evidence, to_id: paper-51-claims}
+  - {id: paper-51-relation-boundaries-claims, type: qualifies, from_id: paper-51-boundaries, to_id: paper-51-claims}
+  - {id: paper-51-relation-lineage-paper, type: contextualizes, from_id: paper-51-lineage, to_id: paper-51}
 
 assessment:
   id: paper-51-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-51-editorial", "anchor-paper-51-resource-1"]
+      level: high
+      rationale: The full version supplies machine-checked definitions, reductions, composition lemmas, concrete instantiations, extraction examples, explicit TCB limits, and systematic microbenchmarks.
+      basis_source_anchor_ids: [anchor-paper-51-theorem, anchor-paper-51-composition, anchor-paper-51-extraction, anchor-paper-51-benchmarks]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-51-resource-1", "anchor-paper-51-resource-2", "anchor-paper-51-resource-3"]
+      rationale: A checked-in full author copy with hash/page count, IACR archive, DOI, precise theorem/code/benchmark anchors, and extensive appendices make the represented work inspectable.
+      basis_source_anchor_ids: [anchor-paper-51-problem, anchor-paper-51-eprint, anchor-paper-51-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-51-editorial"]
+      rationale: Authors, venue, DOI/ePrint, proof/code scale, toolchain, dependencies, compiler, hardware, and benchmark procedure are documented; roles, revisions, exact repository commits, proof logs, and generated artifact hashes are not.
+      basis_source_anchor_ids: [anchor-paper-51-publication, anchor-paper-51-extraction, anchor-paper-51-implementation]
     - id: external_scrutiny
-      level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-51-resource-1"]
+      level: high
+      rationale: ACM CCS review and machine checking offer strong but different scrutiny surfaces; independent reruns, artifact evaluation status, and public review reports were not located.
+      basis_source_anchor_ids: [anchor-paper-51-publication, anchor-paper-51-eprint, anchor-paper-51-theorem]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-51-editorial"]
+      level: low
+      rationale: OpenAlex reported 7 citations on 2026-07-11; under the finalized rubric, 0 through 8 located citations is Low.
+      basis_source_anchor_ids: [anchor-paper-51-reception]
     - id: contribution_significance
-      level: medium
-      rationale: "The curated summary indicates a substantive contribution: an end-to-end high-assurance workflow spanning MPC specification, machine-assisted proof, extraction, and executable evaluation. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-51-editorial"]
+      level: high
+      rationale: The paper crosses from machine-checked multiparty security arguments to extracted executable protocols against active/proactive adversaries and exposes the remaining end-to-end TCB, a substantial methodological contribution despite modest dated citation count.
+      basis_source_anchor_ids: [anchor-paper-51-problem, anchor-paper-51-theorem, anchor-paper-51-tcb]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 7
+  source_url: https://openalex.org/W2986715259
+  signals:
+    - OpenAlex reported 7 works citing the CCS paper.
+  limitation: Citation counts vary by index/date, may include self-citations, and do not establish independent proof reruns or adoption of the extraction toolchain.

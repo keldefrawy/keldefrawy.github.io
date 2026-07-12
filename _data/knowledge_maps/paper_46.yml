@@ -12,249 +12,321 @@ contribution_types: [protocol]
 
 title: "PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems"
 year: 2019
-status: "Published"
+status: Published
 venue: "IEEE/ACM International Conference on Computer-Aided Design (ICCAD)"
-topic: "secure-systems-networks"
-labels: ["Theory", "Applied"]
+topic: secure-systems-networks
+labels: [Theory, Applied]
 authors:
-  - "Ivan De Oliveira Nunes"
-  - "Karim Eldefrawy"
-  - "Norrathep Rattanavipanon"
-  - "Gene Tsudik"
-keywords:
-  - "remote attestation"
-  - "secure updates"
-  - "embedded systems"
-editorial_summary: "PURE extends verified remote attestation so a verifier can obtain trustworthy proofs that a compromised embedded device was updated, erased, and reset correctly. The added services remain secure under full software compromise and require very little additional hardware."
+  - Ivan De Oliveira Nunes
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Gene Tsudik
+keywords: [remote attestation, proof of update, proof of reset, proof of erasure, formal verification, embedded systems]
 
-research_question: "Can verified remote attestation be extended so a verifier can establish that a compromised low-end device was updated, erased, and reset as intended?"
-central_answer: "PURE reportedly adds update, erasure, and reset services to a verified attestation foundation while targeting security under full software compromise and small hardware cost."
+research_question: >-
+  Can a verifier do more than detect compromise on a low-end embedded device—can it obtain trustworthy evidence that the device was updated, erased, reset, and returned to a functional malware-free state?
+central_answer: >-
+  PURE extends VRASED with three challenge-response services: Proof of Reset, Proof of Update, and Proof of Erasure. Security games and reductions tie valid proofs to the corresponding memory transition, modified trusted components are model-checked, and an OpenMSP430/Basys3 implementation adds about 0.4% registers and 50 bytes of trusted ROM.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, proof-boundary mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete checked-in paper, including visual inspection of the first and evaluation pages. Security games, constructions, reductions, LTL changes, implementation, performance tables, and stated limitations were read; the repository was identified but not independently built or model-checked.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Proof interpretations, measurements, and ratings remain provisional.
 
 sources:
-  - id: source-paper-46-site-record
-    type: curated_site_record
-    title: "Publication #46 metadata and editorial summary"
-    url: /publications/#paper-46
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-46-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/ICCAD45719.2019.8942118"
-    provenance_category: official
-  - id: source-paper-46-resource-2
+  - id: source-paper-46-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2019/pure_iccad2019.pdf"
+    title: "PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems"
+    url: /pubs/2019/pure_iccad2019.pdf
     provenance_category: author
+    media_type: application/pdf
+    sha256: 390829f6114e86f1b43c428d84420bcaab00949f5c3dda6678c004200917fe2d
+    page_count: 8
+  - id: source-paper-46-official
+    type: official_publication_record
+    title: IEEE ICCAD 2019 publication record
+    url: https://doi.org/10.1109/ICCAD45719.2019.8942118
+    provenance_category: official
+  - id: source-paper-46-repository
+    type: code_repository
+    title: PURE branch in the VRASED repository
+    url: https://github.com/sprout-uci/vrased/tree/pure
+    version_note: Repository cited by the paper; no immutable commit was pinned in this audit.
+  - id: source-paper-46-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2997695369
+    url: https://openalex.org/W2997695369
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-46-editorial
-    source_id: source-paper-46-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-46
-  - id: anchor-paper-46-resource-1
-    source_id: source-paper-46-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1109/ICCAD45719.2019.8942118"
-  - id: anchor-paper-46-resource-2
-    source_id: source-paper-46-resource-2
-    label: "Author-hosted resource: Author-hosted PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://keldefrawy.github.io/pubs/2019/pure_iccad2019.pdf"
+  - id: anchor-paper-46-problem
+    source_id: source-paper-46-author-pdf
+    label: Problem, architecture goal, contributions, and headline overhead
+    locator: "Abstract and Section 1, PDF pages 1-2"
+    url: /pubs/2019/pure_iccad2019.pdf#page=1
+  - id: anchor-paper-46-vrased
+    source_id: source-paper-46-author-pdf
+    label: VRASED architecture, LTL verification, and inherited RA game
+    locator: "Section 3, PDF pages 2-4"
+    url: /pubs/2019/pure_iccad2019.pdf#page=2
+  - id: anchor-paper-46-adversary
+    source_id: source-paper-46-author-pdf
+    label: Full software-compromise adversary and physical/hardware assumptions
+    locator: "Section 4, PDF page 4"
+    url: /pubs/2019/pure_iccad2019.pdf#page=4
+  - id: anchor-paper-46-por
+    source_id: source-paper-46-author-pdf
+    label: Proof-of-Reset game, construction, theorem, and verified implementation
+    locator: "Section 5, PDF pages 4-6"
+    url: /pubs/2019/pure_iccad2019.pdf#page=4
+  - id: anchor-paper-46-pou
+    source_id: source-paper-46-author-pdf
+    label: Proof-of-Update game, construction, theorem, request authentication, and helper-code boundary
+    locator: "Section 6, PDF pages 6-7"
+    url: /pubs/2019/pure_iccad2019.pdf#page=6
+  - id: anchor-paper-46-poe
+    source_id: source-paper-46-author-pdf
+    label: Proof-of-Erasure construction and helper-code caveat
+    locator: "Section 7, PDF page 7"
+    url: /pubs/2019/pure_iccad2019.pdf#page=7
+  - id: anchor-paper-46-evaluation
+    source_id: source-paper-46-author-pdf
+    label: FPGA resources, ROM/RAM, and runtime evaluation
+    locator: "Section 8, Table 2 and Figure 5, PDF pages 7-8"
+    url: /pubs/2019/pure_iccad2019.pdf#page=7
+  - id: anchor-paper-46-conclusion
+    source_id: source-paper-46-author-pdf
+    label: Serial-composition conclusion and future directions
+    locator: "Section 9, PDF page 8"
+    url: /pubs/2019/pure_iccad2019.pdf#page=8
+  - id: anchor-paper-46-repository
+    source_id: source-paper-46-repository
+    label: Public implementation and verification artifacts
+    locator: "PURE repository branch, accessed 2026-07-11"
+    url: https://github.com/sprout-uci/vrased/tree/pure
+  - id: anchor-paper-46-publication
+    source_id: source-paper-46-official
+    label: Official peer-reviewed publication identity
+    locator: "ICCAD 2019, DOI 10.1109/ICCAD45719.2019.8942118"
+    url: https://doi.org/10.1109/ICCAD45719.2019.8942118
+  - id: anchor-paper-46-reception
+    source_id: source-paper-46-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 16 citing works on 2026-07-11"
+    url: https://openalex.org/W2997695369
 
 nodes:
   - id: paper-46
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems"
-    summary: "PURE extends verified remote attestation so a verifier can obtain trustworthy proofs that a compromised embedded device was updated, erased, and reset correctly. The added services remain secure under full software compromise and require very little additional hardware."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
+    epistemic_status: published
+    title: PURE
+    summary: A verified-attestation extension that gives a remote verifier cryptographic proofs of reset, update, and erasure on a low-end MCU.
+    source_anchor_ids: [anchor-paper-46-problem]
   - id: paper-46-question
     kind: question
     parent_id: paper-46
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can verified remote attestation be extended so a verifier can establish that a compromised low-end device was updated, erased, and reset as intended?"
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
-  - id: paper-46-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: After remote attestation detects compromise, can the verifier prove that remediation really changed all intended device state and restarted execution safely?
+    source_anchor_ids: [anchor-paper-46-problem]
+  - id: paper-46-answer
     kind: contribution
     parent_id: paper-46
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "PURE reportedly adds update, erasure, and reset services to a verified attestation foundation while targeting security under full software compromise and small hardware cost."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
-  - id: paper-46-method
-    kind: method
+    epistemic_status: implemented_and_formally_analyzed
+    title: Central answer
+    summary: Reuse VRASED's protected HMAC and hardware monitor to bind a fresh challenge to reset, update, or erasure transitions, then serially compose the three services.
+    source_anchor_ids: [anchor-paper-46-vrased, anchor-paper-46-por, anchor-paper-46-pou, anchor-paper-46-poe]
+  - id: paper-46-threat
+    kind: threat_model
     parent_id: paper-46
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented method extends a hardware/software attestation architecture with monitored recovery operations and corresponding security reasoning."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
+    epistemic_status: defined
+    title: Full software-compromise adversary
+    summary: Malware controls the prover's writable memory and software execution, including code-reuse attempts and refusal to cooperate, but cannot violate protected hardware/ROM, extract the attestation key, or mount physical/fault attacks.
+    source_anchor_ids: [anchor-paper-46-adversary]
+  - id: paper-46-assumptions
+    kind: assumption
+    parent_id: paper-46
+    order: 4
+    epistemic_status: inherited_and_extended
+    title: Trusted boundary
+    summary: Guarantees inherit VRASED's MCU-signal, reset, key, HMAC, compiler, and hardware-monitor assumptions; helper-code availability and verifier request authentication are separate operational concerns.
+    source_anchor_ids: [anchor-paper-46-vrased, anchor-paper-46-pou, anchor-paper-46-poe]
+  - id: paper-46-services
+    kind: protocol_group
+    parent_id: paper-46
+    order: 5
+    epistemic_status: specified_verified_and_implemented
+    title: Three remediation services
+    summary: Each service has a security game and construction; only trusted-component changes are model-checked, while theorem proofs connect accepted HMAC evidence to the intended state transition.
+    source_anchor_ids: [anchor-paper-46-por, anchor-paper-46-pou, anchor-paper-46-poe]
+  - id: paper-46-por-node
+    kind: protocol
+    parent_id: paper-46-services
+    order: 1
+    epistemic_status: implemented_and_model_checked
+    title: Proof of Reset (PoR)
+    summary: Trusted code authenticates reset completion under a challenge, and hardware rules ensure that the proof is emitted only through the reset path before execution returns to unprivileged software.
+    source_anchor_ids: [anchor-paper-46-por]
+  - id: paper-46-pou-node
+    kind: protocol
+    parent_id: paper-46-services
+    order: 2
+    epistemic_status: implemented_and_reduction_proved
+    title: Proof of Update (PoU)
+    summary: Untrusted helper code writes target software S into region UR; VRASED then authenticates UR and request context so a valid proof is tied to the installed bytes, assuming request origin is authenticated when needed.
+    source_anchor_ids: [anchor-paper-46-pou]
+  - id: paper-46-poe-node
+    kind: protocol
+    parent_id: paper-46-services
+    order: 3
+    epistemic_status: implemented_and_reduction_reused
+    title: Proof of Erasure (PoE)
+    summary: PoE specializes update to an all-zero target over the erased region; erasing all writable memory requires immutable or separately attested helper code to avoid hiding malware in an excluded region.
+    source_anchor_ids: [anchor-paper-46-poe]
+  - id: paper-46-compose
+    kind: protocol
+    parent_id: paper-46-services
+    order: 4
+    epistemic_status: composition_argument
+    title: Serial remediation sequence
+    summary: Update program memory, erase residual writable state, then reset so the verifier obtains evidence of new code, cleared old data, and reinitialized control flow.
+    source_anchor_ids: [anchor-paper-46-problem, anchor-paper-46-conclusion]
   - id: paper-46-claims
     kind: claim_group
     parent_id: paper-46
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
-  - id: paper-46-claim-primary
+    order: 6
+    epistemic_status: mixed_formal_and_empirical
+    title: Principal claims
+    summary: PURE claims game-based service security, formal conformance of modified trusted hardware, low incremental footprint, and practical runtime.
+    source_anchor_ids: [anchor-paper-46-por, anchor-paper-46-pou, anchor-paper-46-evaluation]
+  - id: paper-46-claim-security
     kind: claim
     parent_id: paper-46-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports proofs of update, reset, and erasure under full software compromise with very little additional hardware."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
+    epistemic_status: proved_conditional
+    title: Accepted proofs imply intended transitions
+    summary: Under VRASED/HMAC assumptions, an adversary cannot produce accepted PoR or PoU/PoE evidence without taking the corresponding reset or memory-state action except with negligible probability.
+    source_anchor_ids: [anchor-paper-46-por, anchor-paper-46-pou, anchor-paper-46-poe]
+  - id: paper-46-claim-verification
+    kind: claim
+    parent_id: paper-46-claims
+    order: 2
+    epistemic_status: model_checked_within_rtl_model
+    title: Modified trusted logic satisfies LTL policies
+    summary: Additional reset-operation state and DMA/execution rules are translated to NuSMV and checked as extensions to VRASED's hardware monitor; this is not verification of every MCU component.
+    source_anchor_ids: [anchor-paper-46-vrased, anchor-paper-46-por]
+  - id: paper-46-claim-overhead
+    kind: claim
+    parent_id: paper-46-claims
+    order: 3
+    epistemic_status: experimentally_supported
+    title: Small incremental cost
+    summary: Relative to VRASED, PURE adds 4 LUTs, 3 registers, about 50 bytes of trusted ROM, and 26 bytes of helper code; PoR takes 26 ms at 8 MHz and update/erasure scale linearly with memory size.
+    source_anchor_ids: [anchor-paper-46-evaluation]
   - id: paper-46-evidence
     kind: evidence_group
     parent_id: paper-46
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
-  - id: paper-46-evidence-reported
-    kind: evidence
-    parent_id: paper-46-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies verified design claims and hardware-cost claims, but specifications, proof boundaries, implementation, measurements, and inherited assumptions were not audited."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
-  - id: paper-46-scope
+    order: 7
+    epistemic_status: formal_artifact_and_fpga_measurement
+    title: Evidence stack
+    summary: Security games and theorem arguments, NuSMV checks of added trusted logic, an OpenMSP430/Basys3 FPGA implementation, resource synthesis, runtime measurements, and a public code branch jointly support the claims.
+    source_anchor_ids: [anchor-paper-46-por, anchor-paper-46-pou, anchor-paper-46-evaluation, anchor-paper-46-repository]
+  - id: paper-46-boundaries
     kind: limitation_group
     parent_id: paper-46
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
-  - id: paper-46-scope-boundary
-    kind: limitation
-    parent_id: paper-46-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The phrase full software compromise does not include unmodeled hardware or physical attacks. Correctness also depends on the underlying verified-attestation and integration assumptions."
-    source_anchor_ids: ["anchor-paper-46-editorial"]
-
-  - id: paper-46-resources
+    order: 8
+    epistemic_status: material
+    title: Security and deployment boundaries
+    summary: A valid proof does not authenticate who requested a malicious update unless verifier authentication is enabled; writable helper code can be erased or infected; physical attacks, faults, and the complete MCU are outside the model.
+    source_anchor_ids: [anchor-paper-46-adversary, anchor-paper-46-pou, anchor-paper-46-poe]
+  - id: paper-46-artifacts
     kind: artifact_group
     parent_id: paper-46
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-46-resource-1", "anchor-paper-46-resource-2"]
-
-  - id: paper-46-resources-available
-    kind: artifact
-    parent_id: paper-46-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted PDF."
-    source_anchor_ids: ["anchor-paper-46-resource-1", "anchor-paper-46-resource-2"]
-
+    order: 9
+    epistemic_status: public_unpinned
+    title: Implementation and verification artifacts
+    summary: The paper and PURE repository branch are public. This map records no immutable repository revision, build transcript, model-check log, FPGA bitstream hash, or independent reproduction.
+    source_anchor_ids: [anchor-paper-46-repository, anchor-paper-46-evaluation]
   - id: paper-46-scrutiny
     kind: scrutiny
     parent_id: paper-46
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at IEEE/ACM International Conference on Computer-Aided Design (ICCAD). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-46-resource-1"]
+    order: 10
+    epistemic_status: venue_reviewed_with_machine_checked_components
+    title: External scrutiny
+    summary: ICCAD publication and public formal/implementation artifacts provide substantial exposure, but no public review reports or independent end-to-end verification were located.
+    source_anchor_ids: [anchor-paper-46-publication, anchor-paper-46-repository]
+  - id: paper-46-lineage
+    kind: lineage
+    parent_id: paper-46
+    order: 11
+    epistemic_status: explicit
+    title: VRASED extension
+    summary: >-
+      PURE is downstream of VRASED (#50): it reuses VRASED's verified attestation TCB and HMAC path, adding remediation states and services rather than replacing the base architecture.
+    source_anchor_ids: [anchor-paper-46-vrased, anchor-paper-46-problem]
 
 relations:
-  - id: relation-paper-46-contribution-addresses-question
-    type: addresses
-    from_id: paper-46-contribution
-    to_id: paper-46-question
-  - id: relation-paper-46-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-46-method
-    to_id: paper-46-contribution
-  - id: relation-paper-46-evidence-supports-claim
-    type: supports
-    from_id: paper-46-evidence-reported
-    to_id: paper-46-claim-primary
-  - id: relation-paper-46-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-46-scope-boundary
-    to_id: paper-46-claim-primary
-  - id: relation-paper-46-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-46-resources-available
-    to_id: paper-46-evidence-reported
-  - id: relation-paper-46-status-qualifies-claim
-    type: qualifies
-    from_id: paper-46-scrutiny
-    to_id: paper-46-claim-primary
+  - {id: paper-46-relation-answer-question, type: addresses, from_id: paper-46-answer, to_id: paper-46-question}
+  - {id: paper-46-relation-por-services, type: component_of, from_id: paper-46-por-node, to_id: paper-46-services}
+  - {id: paper-46-relation-pou-services, type: component_of, from_id: paper-46-pou-node, to_id: paper-46-services}
+  - {id: paper-46-relation-poe-services, type: component_of, from_id: paper-46-poe-node, to_id: paper-46-services}
+  - {id: paper-46-relation-services-compose, type: composed_by, from_id: paper-46-services, to_id: paper-46-compose}
+  - {id: paper-46-relation-services-security, type: supports, from_id: paper-46-services, to_id: paper-46-claim-security}
+  - {id: paper-46-relation-evidence-overhead, type: supports, from_id: paper-46-evidence, to_id: paper-46-claim-overhead}
+  - {id: paper-46-relation-assumptions-security, type: qualifies, from_id: paper-46-assumptions, to_id: paper-46-claim-security}
+  - {id: paper-46-relation-boundaries-claims, type: qualifies, from_id: paper-46-boundaries, to_id: paper-46-claims}
+  - {id: paper-46-relation-lineage-paper, type: contextualizes, from_id: paper-46-lineage, to_id: paper-46}
 
 assessment:
   id: paper-46-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-46-editorial", "anchor-paper-46-resource-1"]
+      level: high
+      rationale: The full paper combines explicit games and reductions, model-checked trusted-component changes, a concrete FPGA implementation, resource/runtime evaluation, and public artifacts, while retaining clear trusted-boundary limits.
+      basis_source_anchor_ids: [anchor-paper-46-por, anchor-paper-46-pou, anchor-paper-46-evaluation, anchor-paper-46-repository]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-46-resource-1", "anchor-paper-46-resource-2"]
+      rationale: A checked-in full paper with hash/page count, precise anchors, DOI, and public code/verification branch make assumptions and evidence inspectable; the exact artifact revision is not pinned.
+      basis_source_anchor_ids: [anchor-paper-46-problem, anchor-paper-46-repository, anchor-paper-46-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-46-editorial"]
+      rationale: Authors, venue, DOI, predecessor architecture, toolchain, hardware platform, and repository are documented; roles, revision history, immutable artifact versions, and run provenance remain incomplete.
+      basis_source_anchor_ids: [anchor-paper-46-publication, anchor-paper-46-repository, anchor-paper-46-evaluation]
     - id: external_scrutiny
-      level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-46-resource-1"]
+      level: high
+      rationale: ICCAD review plus inspectable model-checked components and public implementation provide multiple scrutiny surfaces; independent reproduction and public review reports were not found.
+      basis_source_anchor_ids: [anchor-paper-46-publication, anchor-paper-46-repository]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-46-editorial"]
+      level: high
+      rationale: OpenAlex reported 16 citations on 2026-07-11; under the finalized rubric, 11 or more located citations is High.
+      basis_source_anchor_ids: [anchor-paper-46-reception]
     - id: contribution_significance
-      level: medium
-      rationale: "The curated summary indicates a substantive contribution: an extension of verified remote attestation from measurement to externally checkable recovery actions. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-46-editorial"]
+      level: high
+      rationale: PURE turns verified compromise detection into a composable remote-remediation path with formal and concrete evidence for constrained devices; broad deployment and independent replication remain unaudited.
+      basis_source_anchor_ids: [anchor-paper-46-problem, anchor-paper-46-evaluation]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 16
+  source_url: https://openalex.org/W2997695369
+  signals:
+    - OpenAlex reported 16 works citing the ICCAD paper.
+  limitation: The count varies by index/date, may include self-citations, and does not show whether later work reproduced the FPGA implementation or rechecked the proofs.

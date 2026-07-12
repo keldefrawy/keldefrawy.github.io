@@ -11,13 +11,12 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol]
 
 title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-short_title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+short_title: "PRISM Messaging Overlay"
 year: null
 venue: null
 publication_status: "Ongoing work"
 topic: privacy-identity
-labels:
-  - "Applied"
+labels: ["Applied"]
 availability: "Public manuscript not found; this work is listed as ongoing."
 authors:
   - "Linda Briesemeister"
@@ -30,138 +29,248 @@ keywords:
   - "intrusion resilience"
   - "MPC"
 
-research_question: "Can an anonymous messaging overlay use secure multiparty computation to preserve privacy and service resilience even when some infrastructure components are compromised?"
-central_answer: "Based only on the working title and editorial listing, PRISM is intended to combine MPC with an intrusion-resilient anonymous messaging overlay."
+research_question: >-
+  Can a messaging overlay combine privacy-preserving secure multiparty computation with continued operation or recovery despite compromised infrastructure?
+central_answer: >-
+  The title and project record establish that PRISM targets privacy-preserving, intrusion-resilient messaging using MPC. No public manuscript was located, so the overlay architecture, protocol messages, anonymity and resilience definitions, compromise threshold, proof, implementation, and evaluation remain unverified.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: metadata verification, project-provenance mapping, public-source searching, and uncertainty documentation
+  method: >-
+    AI drafting from the author-site paper and project records followed by exact-title, author-title, archive, index, project, and coauthor-profile searches. Project provenance is separated from paper evidence; no public manuscript or stable paper-specific scholarly record was located.
+  source_scope: metadata_project_provenance_and_documented_public_source_search
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: "AI-authored bounded map awaiting full author audit; project descriptions are not treated as manuscript evidence."
 
 sources:
   - id: source-paper-76-curated
     type: curated_site_record
     title: "Website publication record for Paper #76"
     url: /publications/#paper-76
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+    scope_note: "Author-site title, authorship, ongoing-work status, and editorial summary; not a manuscript or source for protocol details."
+  - id: source-paper-76-project
+    type: project_provenance_record
+    title: "Author-site PRISM project listing"
+    url: /projects.html
+    scope_note: >-
+      Records Karim Eldefrawy's 2019–2023 role as PI of PRISM and identifies DARPA RACE funding. It establishes project lineage only, not this paper's technical claims, authorship roles, review status, or results.
+  - id: source-paper-76-manuscript-search
+    type: source_search_record
+    title: "Public-manuscript search for Paper #76"
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
+    accessed_at: "2026-07-11"
+    scope_note: >-
+      Exact-title and author-title variants were checked across the open web, arXiv, IACR ePrint, DBLP, Crossref, OpenAlex, DARPA/project pages, and discoverable author or coauthor pages. Project mentions were found, but no paper-specific public manuscript, abstract, DOI, archive identifier, or stable index record was located.
+  - id: source-paper-76-citation-search
+    type: citation_search_snapshot
+    title: "Exact-title scholarly-web citation search"
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
+    accessed_at: "2026-07-11"
+    scope_note: "Project and award descriptions were excluded because they do not cite a paper with this identity."
 
 source_anchors:
-  - id: anchor-paper-76-curated
+  - id: anchor-paper-76-metadata
     source_id: source-paper-76-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    label: "Author-site paper metadata"
+    locator: "Paper #76 title, named authors, protocol tag, topic, and Ongoing work status"
     url: /publications/#paper-76
+  - id: anchor-paper-76-project
+    source_id: source-paper-76-project
+    label: "PRISM project provenance"
+    locator: "Projects listing: 2019–2023 PI of PRISM, funded by DARPA RACE"
+    url: /projects.html
+  - id: anchor-paper-76-search-gap
+    source_id: source-paper-76-manuscript-search
+    label: "Documented full-text search gap"
+    locator: >-
+      Search completed 2026-07-11 across exact-title and author-title web queries, arXiv, IACR ePrint, DBLP, Crossref, OpenAlex, project pages, and discoverable author/coauthor pages; project provenance found but no primary paper text or stable record
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
+  - id: anchor-paper-76-citations
+    source_id: source-paper-76-citation-search
+    label: "Dated exact-title citation search"
+    locator: "No citation to a manuscript with this exact identity verifiably located when searched 2026-07-11"
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
 
 nodes:
   - id: paper-76
     kind: paper
-    parent_id: null
+    parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-    summary: "Based on its working title, PRISM combines secure multiparty computation with an anonymous messaging overlay designed to tolerate compromised infrastructure. Its goal is to protect communication privacy and keep the service resilient even when some participating components are penetrated."
-    source_anchor_ids: [anchor-paper-76-curated]
+    epistemic_status: metadata_only_pending_author_audit
+    title: "PRISM messaging overlay"
+    summary: >-
+      An ongoing applied-protocol effort whose title combines privacy-preserving messaging, intrusion resilience, and secure multiparty computation. Public project provenance exists, but no paper manuscript was located.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project, anchor-paper-76-search-gap]
+
   - id: paper-76-question
     kind: question
     parent_id: paper-76
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can an anonymous messaging overlay use secure multiparty computation to preserve privacy and service resilience even when some infrastructure components are compromised?"
-    source_anchor_ids: [anchor-paper-76-curated]
-  - id: paper-76-contribution
-    kind: contribution
+    epistemic_status: title_inferred
+    title: "Research direction"
+    summary: >-
+      Can a messaging overlay hide sensitive communication relationships or content while continuing to provide useful service despite compromised components?
+    source_anchor_ids: [anchor-paper-76-metadata]
+
+  - id: paper-76-objective-privacy
+    kind: objective
     parent_id: paper-76
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "Based only on the working title and editorial listing, PRISM is intended to combine MPC with an intrusion-resilient anonymous messaging overlay."
-    source_anchor_ids: [anchor-paper-76-curated]
-  - id: paper-76-method
-    kind: method
+    epistemic_status: term_present_definition_unavailable
+    title: "Privacy-preserving messaging"
+    summary: >-
+      Privacy is an explicit design objective in the title. The protected objects—sender, receiver, relationship, message content, membership, metadata, or traffic patterns—and the anonymity game are not stated in the located sources.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
+
+  - id: paper-76-objective-resilience
+    kind: objective
     parent_id: paper-76
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "No public manuscript is represented. The allocation of MPC tasks, overlay architecture, intrusion-recovery mechanism, and messaging protocol are not specified by the available record."
-    source_anchor_ids: [anchor-paper-76-curated]
-  - id: paper-76-claims
-    kind: claim_group
+    epistemic_status: term_present_definition_unavailable
+    title: "Intrusion resilience"
+    summary: >-
+      Intrusion resilience is explicit in the title, but compromise thresholds, proactive recovery, state refresh, availability target, detection assumptions, and recovery semantics are unavailable.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
+
+  - id: paper-76-mpc
+    kind: method
     parent_id: paper-76
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The listing supports only a system objective: communication privacy and resilience under some infrastructure compromise. It does not establish a concrete threat threshold or guarantee."
-    source_anchor_ids: [anchor-paper-76-curated]
+    epistemic_status: method_named_details_unavailable
+    title: "MPC-based design"
+    summary: >-
+      Secure multiparty computation is named as a design basis. The computed functionality, participating roles, corruption model, setup, chosen MPC protocol, and online costs are not publicly specified.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
+
+  - id: paper-76-protocol
+    kind: protocol
+    parent_id: paper-76
+    order: 5
+    epistemic_status: classified_but_not_publicly_specified
+    title: "Messaging-overlay protocol"
+    summary: >-
+      The curated taxonomy classifies the work as a protocol, while the title identifies a messaging overlay. No roles, message flow, state machine, cryptographic subprotocols, or failure handling can be extracted without the manuscript.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
+
+  - id: paper-76-project-lineage
+    kind: provenance
+    parent_id: paper-76
+    order: 6
+    epistemic_status: documented_project_context
+    title: "DARPA RACE project lineage"
+    summary: >-
+      The author-site projects page records PRISM as a 2019–2023 DARPA RACE effort led by Karim Eldefrawy. This connects the work to a funded research program but does not validate paper-level claims.
+    source_anchor_ids: [anchor-paper-76-project]
+
+  - id: paper-76-security
+    kind: security_argument
+    parent_id: paper-76
+    order: 7
+    epistemic_status: not_available_for_audit
+    title: "Security argument unavailable"
+    summary: >-
+      No formal privacy or resilience definition, theorem, reduction, assumption set, failure probability, or composition guarantee was located.
+    source_anchor_ids: [anchor-paper-76-search-gap]
+
   - id: paper-76-evidence
     kind: evidence_group
     parent_id: paper-76
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "No public manuscript, venue record, security proof, architecture specification, implementation, experiment, or artifact is represented in the resource data."
-    source_anchor_ids: [anchor-paper-76-curated]
-  - id: paper-76-scope
+    order: 8
+    epistemic_status: no_public_evidence_located
+    title: "Evidence status"
+    summary: >-
+      No implementation, deployment, experiment, simulation, proof, architecture specification, or supplementary artifact attributable to this paper was located.
+    source_anchor_ids: [anchor-paper-76-search-gap]
+
+  - id: paper-76-boundaries
     kind: limitation_group
     parent_id: paper-76
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "Compromise thresholds, anonymity definition, traffic-analysis resistance, availability, recovery, membership, key management, network assumptions, MPC protocol, performance, and deployment model remain unknown."
-    source_anchor_ids: [anchor-paper-76-curated]
+    order: 9
+    epistemic_status: explicit_unknowns
+    title: "Unresolved technical boundaries"
+    summary: >-
+      A substantive audit requires the system and trust boundaries, messaging and MPC roles, attacker visibility, compromise threshold, recovery mechanism, anonymity and availability definitions, network assumptions, performance model, and evaluation evidence.
+    source_anchor_ids: [anchor-paper-76-search-gap]
+
+  - id: paper-76-search
+    kind: audit_record
+    parent_id: paper-76
+    order: 10
+    epistemic_status: documented_search
+    title: "Public-source search"
+    summary: >-
+      The audit found project-level provenance but no manuscript after exact-title, author-title, archive, index, project, and public-profile searches; project mentions were not promoted into technical claims.
+    source_anchor_ids: [anchor-paper-76-project, anchor-paper-76-search-gap]
+
   - id: paper-76-artifacts
     kind: artifact_group
     parent_id: paper-76
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
-    source_anchor_ids: [anchor-paper-76-curated]
+    order: 11
+    epistemic_status: metadata_and_project_record_only
+    title: "Available artifacts"
+    summary: "The represented resources are the author-site paper listing and project listing; neither is a manuscript, protocol specification, or implementation."
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project]
+
   - id: paper-76-scrutiny
     kind: scrutiny
     parent_id: paper-76
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this item as ongoing work. No completed venue review, public review report, independent reproduction, correction, or adversarial analysis is represented."
-    source_anchor_ids: [anchor-paper-76-curated]
+    order: 12
+    epistemic_status: no_completed_paper_scrutiny_located
+    title: "Scrutiny and reception"
+    summary: >-
+      The work is listed as ongoing. Program sponsorship is not peer review, and no completed venue review, independent audit, reproduction, correction, or paper citation was located.
+    source_anchor_ids: [anchor-paper-76-project, anchor-paper-76-citations]
 
 relations:
-  - id: paper-76-relation-question-contribution
+  - id: paper-76-relation-question-privacy
     type: motivates
     from_id: paper-76-question
-    to_id: paper-76-contribution
-  - id: paper-76-relation-method-contribution
-    type: realizes
-    from_id: paper-76-method
-    to_id: paper-76-contribution
-  - id: paper-76-relation-contribution-claims
-    type: grounds
-    from_id: paper-76-contribution
-    to_id: paper-76-claims
-  - id: paper-76-relation-evidence-claims
-    type: supports
-    from_id: paper-76-evidence
-    to_id: paper-76-claims
-  - id: paper-76-relation-scope-claims
+    to_id: paper-76-objective-privacy
+  - id: paper-76-relation-question-resilience
+    type: motivates
+    from_id: paper-76-question
+    to_id: paper-76-objective-resilience
+  - id: paper-76-relation-mpc-would-realize-protocol
+    type: would_help_realize
+    from_id: paper-76-mpc
+    to_id: paper-76-protocol
+  - id: paper-76-relation-protocol-targets-privacy
+    type: targets
+    from_id: paper-76-protocol
+    to_id: paper-76-objective-privacy
+  - id: paper-76-relation-protocol-targets-resilience
+    type: targets
+    from_id: paper-76-protocol
+    to_id: paper-76-objective-resilience
+  - id: paper-76-relation-project-contextualizes-paper
+    type: contextualizes
+    from_id: paper-76-project-lineage
+    to_id: paper-76
+  - id: paper-76-relation-security-would-support-protocol
+    type: would_support
+    from_id: paper-76-security
+    to_id: paper-76-protocol
+  - id: paper-76-relation-boundaries-qualify-paper
     type: qualifies
-    from_id: paper-76-scope
-    to_id: paper-76-claims
-  - id: paper-76-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-76-artifacts
+    from_id: paper-76-boundaries
+    to_id: paper-76
+  - id: paper-76-relation-search-limits-evidence
+    type: limits_audit_of
+    from_id: paper-76-search
     to_id: paper-76-evidence
-  - id: paper-76-relation-scrutiny-claims
+  - id: paper-76-relation-artifacts-limit-protocol
+    type: limits_audit_of
+    from_id: paper-76-artifacts
+    to_id: paper-76-protocol
+  - id: paper-76-relation-scrutiny-contextualizes-paper
     type: contextualizes
     from_id: paper-76-scrutiny
-    to_id: paper-76-claims
+    to_id: paper-76
 
 assessment:
   id: paper-76-assessment-2026-07-11
@@ -172,32 +281,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: low
-      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
-      basis_source_anchor_ids: [anchor-paper-76-curated]
+      rationale: "The title and project record establish objectives and lineage, but no manuscript, security definition, proof, protocol specification, implementation, or evaluation was located."
+      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project, anchor-paper-76-search-gap]
     - id: auditability
       level: low
-      rationale: "No paper-specific official publication record, public archive, or author-hosted copy is represented; full-text assumptions, evidence, artifacts, and version identity cannot presently be audited from this map. Auditability is therefore low."
-      basis_source_anchor_ids: [anchor-paper-76-curated]
+      rationale: "No paper-specific official publication record, public archive, or author-hosted copy was located; full-text assumptions, evidence, and version identity cannot be audited from this map."
+      basis_source_anchor_ids: [anchor-paper-76-search-gap]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-76-curated]
+      rationale: "Named authorship, ongoing-work status, and documented project lineage provide baseline human and lifecycle provenance. Contributor roles, manuscript revisions, AI or tool use, and artifact lineage remain unaudited."
+      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project]
     - id: external_scrutiny
-      level: not_assessed
-      rationale: "The item is listed as ongoing work, with no completed external-review record or independent scrutiny evidence represented."
-      basis_source_anchor_ids: [anchor-paper-76-curated]
+      level: low
+      rationale: "The item is ongoing work. DARPA program context is not a completed paper review or independent technical validation."
+      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-76-curated]
+      level: low
+      rationale: "The dated exact-title search located 0 paper citations. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; project and award pages are not citations."
+      basis_source_anchor_ids: [anchor-paper-76-citations]
     - id: contribution_significance
       level: not_assessed
-      rationale: "Only a working title, bibliographic listing, and editorially inferred research aim are available; contribution, novelty, priority, and impact cannot yet be assessed."
-      basis_source_anchor_ids: [anchor-paper-76-curated]
+      rationale: "The objectives are potentially important, but novelty, achieved guarantees, and impact cannot be assessed from project and title metadata."
+      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: "Exact-title scholarly-web search"
+  citation_count: 0
+  source_url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: "The exact manuscript may not be public or indexed. Zero excludes project and award descriptions that do not cite a paper with this identity; it does not preclude private, variant-title, or future references."

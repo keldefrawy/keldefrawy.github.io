@@ -8,254 +8,421 @@ machine_path: /knowledge/papers/paper-36.json
 root_node_id: paper-36
 stage: mapped_draft
 contribution_type_vocabulary_version: "0.1"
-contribution_types: [protocol, primitive]
+contribution_types: [protocol, algorithm]
 
 title: "Brief Announcement: Secure Self-Stabilizing Computation"
 year: 2017
 status: "Published · brief announcement"
 venue: "ACM Symposium on Principles of Distributed Computing (PODC)"
-topic: "secure-encrypted-computation"
-labels: ["Theory"]
+topic: secure-encrypted-computation
+labels: [Theory]
 authors:
-  - "Shlomi Dolev"
-  - "Karim Eldefrawy"
-  - "Juan A. Garay"
-  - "Muni Venkateswarlu Kumaramangalam"
-  - "Rafail Ostrovsky"
-  - "Moti Yung"
+  - Shlomi Dolev
+  - Karim Eldefrawy
+  - Juan Garay
+  - Muni Venkateswarlu Kumaramangalam
+  - Rafail Ostrovsky
+  - Moti Yung
 keywords:
-  - "self-stabilization"
-  - "secure multiparty computation"
-editorial_summary: "The paper defines secure self-stabilizing computation, in which a distributed system recovers not only correct operation but also privacy and integrity after even a temporary compromise of every component. It demonstrates the idea with a jointly computed finite-state machine that autonomously restores secure MPC guarantees once enough parties recover and the Byzantine threshold is again satisfied."
+  - self-stabilization
+  - secure multiparty computation
+  - Byzantine faults
+  - finite-state machine
+  - proactive recovery
+  - secret sharing
 
-research_question: "Can a distributed computation autonomously regain privacy, integrity, and correct operation after a transient compromise reaches every component?"
-central_answer: "The brief announcement defines secure self-stabilizing computation and reports a jointly computed finite-state-machine example that restores secure MPC guarantees after enough parties recover."
+research_question: >-
+  Can a continuously running distributed computation automatically recover not only functional consistency but also input, output, and state confidentiality and computational correctness after a temporary period in which every party may have been compromised?
+central_answer: >-
+  The announcement defines secure self-stabilizing computation and sketches an FSM protocol that repeatedly establishes fresh keys, validates secret-shared state through MPC and error correction, resets invalid state to a default, and securely computes the next transition and output. Once independent recovery restores the required Byzantine threshold, the construction is intended to converge to consistent private computation and progressively erase the adversary's knowledge of current state.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text model and algorithm extraction, claim mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete three-page PODC brief announcement, including visual inspection of its abstract and algorithm pages. The map distinguishes the proposed definition and protocol composition from complete formal proofs or an implementation, neither of which appears in the brief.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Thresholds, recovery interpretation, and evidence ratings should be checked by an author before approval.
 
 sources:
-  - id: source-paper-36-site-record
-    type: curated_site_record
-    title: "Publication #36 metadata and editorial summary"
-    url: /publications/#paper-36
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-36-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3087801.3087864"
-    provenance_category: official
-  - id: source-paper-36-resource-2
+  - id: source-paper-36-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted paper"
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/204.pdf"
+    title: "Brief Announcement: Secure Self-Stabilizing Computation"
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf
     provenance_category: author
+    retrieved_from: https://web.cs.ucla.edu/~rafail/PUBLIC/204.pdf
+    media_type: application/pdf
+    sha256: bb6ef27496017f16e38ccc04feb10523d4b59ee3f97050d4942aeb4701ba0c73
+    page_count: 3
+  - id: source-paper-36-official
+    type: official_publication_record
+    title: ACM PODC 2017 publication record
+    url: https://doi.org/10.1145/3087801.3087864
+    provenance_category: official
+  - id: source-paper-36-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2737996187
+    url: https://openalex.org/W2737996187
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-36-editorial
-    source_id: source-paper-36-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-36
-  - id: anchor-paper-36-resource-1
-    source_id: source-paper-36-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/3087801.3087864"
-  - id: anchor-paper-36-resource-2
-    source_id: source-paper-36-resource-2
-    label: "Author-hosted resource: Author-hosted paper"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/204.pdf"
+  - id: anchor-paper-36-problem
+    source_id: source-paper-36-author-pdf
+    label: Secure self-stabilization problem and claimed direction
+    locator: Abstract, PDF page 1
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf#page=1
+  - id: anchor-paper-36-system
+    source_id: source-paper-36-author-pdf
+    label: Parties, network, key setup, hardware, inputs, and clocks
+    locator: Section 1, System and Network Model, PDF pages 1-2
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf#page=1
+  - id: anchor-paper-36-adversary
+    source_id: source-paper-36-author-pdf
+    label: Mixed mobile adversary and recovery assumptions
+    locator: Section 1, Mixed Adversarial Model, PDF page 2
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf#page=2
+  - id: anchor-paper-36-definition
+    source_id: source-paper-36-author-pdf
+    label: Convergence, closure, MPC security, and secure self-stabilization
+    locator: Section 2, PDF page 2
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf#page=2
+  - id: anchor-paper-36-construction
+    source_id: source-paper-36-author-pdf
+    label: Clock, key, VSS, state-validation, transition, and output pipeline
+    locator: Section 3, PDF page 3
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf#page=3
+  - id: anchor-paper-36-algorithm
+    source_id: source-paper-36-author-pdf
+    label: Secure self-stabilizing FSM Algorithm 1
+    locator: Algorithm 1, PDF page 3
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf#page=3
+  - id: anchor-paper-36-forgetting
+    source_id: source-paper-36-author-pdf
+    label: Post-convergence secrecy recovery under transition-graph conditions
+    locator: Discussion following Algorithm 1, PDF page 3
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf#page=3
+  - id: anchor-paper-36-publication
+    source_id: source-paper-36-official
+    label: Official PODC publication identity
+    locator: PODC 2017, pages 415-417, DOI 10.1145/3087801.3087864
+    url: https://doi.org/10.1145/3087801.3087864
+  - id: anchor-paper-36-citations
+    source_id: source-paper-36-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 5 citing works when accessed 2026-07-11
+    url: https://openalex.org/W2737996187
 
 nodes:
   - id: paper-36
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Brief Announcement: Secure Self-Stabilizing Computation"
-    summary: "The paper defines secure self-stabilizing computation, in which a distributed system recovers not only correct operation but also privacy and integrity after even a temporary compromise of every component. It demonstrates the idea with a jointly computed finite-state machine that autonomously restores secure MPC guarantees once enough parties recover and the Byzantine threshold is again satisfied."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    summary: >-
+      A three-page announcement that joins self-stabilizing distributed systems with secure MPC so a computation can recover confidentiality and correctness after total but temporary compromise.
+    source_anchor_ids: [anchor-paper-36-problem]
 
   - id: paper-36-question
     kind: question
     parent_id: paper-36
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can a distributed computation autonomously regain privacy, integrity, and correct operation after a transient compromise reaches every component?"
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      After parties recover asynchronously from an arbitrary globally compromised state, can the system autonomously reestablish a coherent computation whose state, inputs, and outputs are again private and whose transitions are correct?
+    source_anchor_ids: [anchor-paper-36-problem, anchor-paper-36-definition]
 
-  - id: paper-36-contribution
+  - id: paper-36-answer
     kind: contribution
     parent_id: paper-36
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The brief announcement defines secure self-stabilizing computation and reports a jointly computed finite-state-machine example that restores secure MPC guarantees after enough parties recover."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    epistemic_status: source_asserted
+    title: Secure self-stabilizing computation
+    summary: >-
+      The paper proposes convergence and closure for a secret-shared FSM together with recurring key renewal, state validation, default-state recovery, and secure transition evaluation once fewer than the tolerated Byzantine parties remain.
+    source_anchor_ids: [anchor-paper-36-definition, anchor-paper-36-construction]
 
-  - id: paper-36-method
-    kind: method
+  - id: paper-36-model
+    kind: scope
     parent_id: paper-36
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented approach combines self-stabilization with secure multiparty computation and uses a distributed finite-state machine as the demonstrating construction."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    epistemic_status: defined
+    title: Continuous distributed FSM model
+    summary: >-
+      n parties over a complete synchronous or semi-synchronous network continuously compute a public Mealy FSM on periodically supplied secret-shared inputs. Parties do not know their compromise history and maintain secret shares of FSM state and output.
+    source_anchor_ids: [anchor-paper-36-system, anchor-paper-36-construction]
+
+  - id: paper-36-model-setup
+    kind: assumption
+    parent_id: paper-36-model
+    order: 1
+    epistemic_status: assumed
+    title: Cryptographic and hardware setup
+    summary: >-
+      Every party has a true random number generator and tamper-resistant access to its private key and the configuration authority's public key; parties can authenticate fresh public keys, derive pairwise secure channels, and establish secure broadcast.
+    source_anchor_ids: [anchor-paper-36-system]
+
+  - id: paper-36-model-clock
+    kind: assumption
+    parent_id: paper-36-model
+    order: 2
+    epistemic_status: inherited_component
+    title: Stabilizing time base
+    summary: >-
+      A self-stabilizing Byzantine clock-synchronization protocol supplies logical global pulses and common round numbers in the semi-synchronous setting; this clock is an assumed underlying service, not constructed in the announcement.
+    source_anchor_ids: [anchor-paper-36-system, anchor-paper-36-construction]
+
+  - id: paper-36-model-adversary
+    kind: threat_model
+    parent_id: paper-36-model
+    order: 3
+    epistemic_status: defined
+    title: Temporary total mixed compromise
+    summary: >-
+      A computationally bounded adversary may passively or actively corrupt any number of parties, including all n for a finite interval, but watchdog-driven recovery prevents indefinite control of every party and the adversary cannot immediately recapture a just-recovered party.
+    source_anchor_ids: [anchor-paper-36-adversary]
+
+  - id: paper-36-definition-standard
+    kind: definition
+    parent_id: paper-36
+    order: 4
+    epistemic_status: reviewed
+    title: Standard self-stabilization
+    summary: >-
+      Convergence requires reaching some consistent legal configuration from any arbitrary configuration in finite rounds; closure requires remaining legal absent another unexpected fault.
+    source_anchor_ids: [anchor-paper-36-definition]
+
+  - id: paper-36-definition-secure
+    kind: definition
+    parent_id: paper-36
+    order: 5
+    epistemic_status: introduced
+    title: Security recovery requirement
+    summary: >-
+      Secure self-stabilization extends functional convergence so that after enough parties recover and the MPC corruption threshold again holds, secrecy of computation state, inputs, and outputs and correctness of computation are automatically regained.
+    source_anchor_ids: [anchor-paper-36-definition]
+
+  - id: paper-36-construction
+    kind: protocol
+    parent_id: paper-36
+    order: 6
+    epistemic_status: specified_at_brief_level
+    title: Secure FSM stabilization protocol
+    summary: >-
+      Each transition round refreshes communication keys, verifiably reshapes the state shares, securely checks that they encode a legitimate state, and evaluates public transition and output circuits using an existing MPC protocol.
+    source_anchor_ids: [anchor-paper-36-construction]
+
+  - id: paper-36-construction-keys
+    kind: protocol
+    parent_id: paper-36-construction
+    order: 1
+    epistemic_status: composed_from_primitives
+    title: Fresh channel establishment
+    summary: >-
+      Parties generate fresh key pairs from local true randomness, use Byzantine agreement to agree on each public key, and derive fresh pairwise symmetric keys before processing the next FSM transition.
+    source_anchor_ids: [anchor-paper-36-construction]
+
+  - id: paper-36-construction-state
+    kind: algorithm
+    parent_id: paper-36-construction
+    order: 2
+    epistemic_status: specified
+    title: State validation and reset
+    summary: >-
+      VSS supplies redundant state shares and an MPC evaluates an error-detection circuit such as Berlekamp-Welch to test polynomial degree and membership in the legal-state set. Invalid state is replaced by shares of public default state S0.
+    source_anchor_ids: [anchor-paper-36-construction, anchor-paper-36-algorithm]
+
+  - id: paper-36-construction-transition
+    kind: algorithm
+    parent_id: paper-36-construction
+    order: 3
+    epistemic_status: specified
+    title: Private transition and output evaluation
+    summary: >-
+      On a valid state, MPC applies transition circuit T to the current state and new input and output circuit O to produce secret-shared next state and output; after reset, the same circuits run from S0.
+    source_anchor_ids: [anchor-paper-36-algorithm]
 
   - id: paper-36-claims
     kind: claim_group
     parent_id: paper-36
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    order: 7
+    epistemic_status: source_asserted
+    title: Stated recovery claims
+    summary: >-
+      The brief states conditional recovery rather than uninterrupted security: during total compromise all secrets may be exposed, and protection resumes only after the required party threshold and supporting services recover.
+    source_anchor_ids: [anchor-paper-36-definition, anchor-paper-36-forgetting]
 
-  - id: paper-36-claim-primary
+  - id: paper-36-claim-convergence
     kind: claim
     parent_id: paper-36-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports recovery of secure-computation guarantees after system state and parties return to conditions satisfying a Byzantine threshold."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    epistemic_status: construction_claim
+    title: Consistency and security convergence
+    summary: >-
+      Once fewer than roughly one third of participants are Byzantine in the illustrated setting, state checking and secure transition evaluation are claimed to restore consistent state, correct computation, and confidentiality.
+    source_anchor_ids: [anchor-paper-36-problem, anchor-paper-36-algorithm]
+
+  - id: paper-36-claim-forgetting
+    kind: claim
+    parent_id: paper-36-claims
+    order: 2
+    epistemic_status: graph_conditional
+    title: Loss of stale adversarial state knowledge
+    summary: >-
+      With unknown fresh inputs, a complete FSM transition graph makes every state possible to the adversary after the first post-convergence transition; an expander transition graph is stated to erase state knowledge after logarithmically many transitions.
+    source_anchor_ids: [anchor-paper-36-forgetting]
 
   - id: paper-36-evidence
     kind: evidence_group
     parent_id: paper-36
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    order: 8
+    epistemic_status: bounded_by_brief_announcement
+    title: Evidence and proof boundary
+    summary: >-
+      The announcement defines the setting, composes known cryptographic and stabilization components, and supplies Algorithm 1 and recovery intuition. It does not present a formal ideal functionality, simulator, theorem statement, full proof, implementation, or experiment.
+    source_anchor_ids: [anchor-paper-36-system, anchor-paper-36-definition, anchor-paper-36-algorithm]
 
-  - id: paper-36-evidence-reported
+  - id: paper-36-evidence-mechanism
     kind: evidence
     parent_id: paper-36-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies a definition and demonstration construction, but formal recovery conditions, convergence, adversary scheduling, and proofs were not audited."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    epistemic_status: mechanism_inspected
+    title: Mechanism-level support
+    summary: >-
+      Fresh randomness severs old channel-key exposure, error-correcting state checks remove malformed Byzantine shares, the default state restores legality, and post-recovery secret inputs drive the FSM away from previously known state.
+    source_anchor_ids: [anchor-paper-36-construction, anchor-paper-36-forgetting]
 
-  - id: paper-36-scope
+  - id: paper-36-boundaries
     kind: limitation_group
     parent_id: paper-36
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    order: 9
+    epistemic_status: material
+    title: Assumptions and limitations
+    summary: >-
+      Recovery depends on trustworthy local reset, TRNGs, secure hardware keys, clock stabilization, Byzantine agreement, VSS, and an MPC whose threshold has recovered. The protocol does not protect secrets already learned during total compromise or guarantee correct outputs before convergence.
+    source_anchor_ids: [anchor-paper-36-system, anchor-paper-36-adversary, anchor-paper-36-definition]
 
-  - id: paper-36-scope-boundary
+  - id: paper-36-boundary-model
     kind: limitation
-    parent_id: paper-36-scope
+    parent_id: paper-36-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The result is a brief announcement. The meaning of temporary total compromise, retained adversarial information, stabilization time, and post-recovery threshold must be checked in the source."
-    source_anchor_ids: ["anchor-paper-36-editorial"]
+    epistemic_status: unresolved_in_brief
+    title: Formal and systems obligations
+    summary: >-
+      The three-page source does not analyze composability among all assumed services, recovery timing, adaptive re-corruption rates, output handling during unsafe rounds, implementation overhead, or failures of the hardware watchdog and configuration authority.
+    source_anchor_ids: [anchor-paper-36-system, anchor-paper-36-algorithm]
 
-  - id: paper-36-resources
+  - id: paper-36-artifacts
     kind: artifact_group
     parent_id: paper-36
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-36-resource-1", "anchor-paper-36-resource-2"]
-
-  - id: paper-36-resources-available
-    kind: artifact
-    parent_id: paper-36-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted paper."
-    source_anchor_ids: ["anchor-paper-36-resource-1", "anchor-paper-36-resource-2"]
+    order: 10
+    epistemic_status: publication_only
+    title: Artifacts and resources
+    summary: >-
+      The complete brief announcement and official DOI are available. No extended proof, code, proof-assistant artifact, implementation, trace, or evaluation dataset is linked by the paper.
+    source_anchor_ids: [anchor-paper-36-problem, anchor-paper-36-publication]
 
   - id: paper-36-scrutiny
     kind: scrutiny
     parent_id: paper-36
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · brief announcement at ACM Symposium on Principles of Distributed Computing (PODC). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-36-resource-1"]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared as a PODC brief announcement. This gives venue exposure but not the evidentiary weight of a full-paper security proof, independently verified implementation, or public review record.
+    source_anchor_ids: [anchor-paper-36-publication]
 
 relations:
-  - id: relation-paper-36-contribution-addresses-question
+  - id: paper-36-relation-answer-question
     type: addresses
-    from_id: paper-36-contribution
+    from_id: paper-36-answer
     to_id: paper-36-question
-  - id: relation-paper-36-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-36-method
-    to_id: paper-36-contribution
-  - id: relation-paper-36-evidence-supports-claim
+  - id: paper-36-relation-secure-standard
+    type: extends
+    from_id: paper-36-definition-secure
+    to_id: paper-36-definition-standard
+  - id: paper-36-relation-keys-construction
+    type: component_of
+    from_id: paper-36-construction-keys
+    to_id: paper-36-construction
+  - id: paper-36-relation-state-construction
+    type: component_of
+    from_id: paper-36-construction-state
+    to_id: paper-36-construction
+  - id: paper-36-relation-transition-construction
+    type: component_of
+    from_id: paper-36-construction-transition
+    to_id: paper-36-construction
+  - id: paper-36-relation-construction-convergence
     type: supports
-    from_id: paper-36-evidence-reported
-    to_id: paper-36-claim-primary
-  - id: relation-paper-36-scope-qualifies-claim
+    from_id: paper-36-construction
+    to_id: paper-36-claim-convergence
+  - id: paper-36-relation-mechanism-convergence
+    type: supports
+    from_id: paper-36-evidence-mechanism
+    to_id: paper-36-claim-convergence
+  - id: paper-36-relation-adversary-convergence
     type: qualifies
-    from_id: paper-36-scope-boundary
-    to_id: paper-36-claim-primary
-  - id: relation-paper-36-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-36-resources-available
-    to_id: paper-36-evidence-reported
-  - id: relation-paper-36-status-qualifies-claim
+    from_id: paper-36-model-adversary
+    to_id: paper-36-claim-convergence
+  - id: paper-36-relation-forgetting-claim
+    type: supports
+    from_id: paper-36-construction-transition
+    to_id: paper-36-claim-forgetting
+  - id: paper-36-relation-boundaries-claims
     type: qualifies
-    from_id: paper-36-scrutiny
-    to_id: paper-36-claim-primary
+    from_id: paper-36-boundaries
+    to_id: paper-36-claims
 
 assessment:
   id: paper-36-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-36-editorial", "anchor-paper-36-resource-1"]
+      rationale: >-
+        The complete brief specifies the model, recovery concept, component pipeline, FSM algorithm, threshold example, and forgetting intuition. Its three pages do not include formal security definitions and proofs, an implementation, or experiments, so the evidence remains Medium.
+      basis_source_anchor_ids: [anchor-paper-36-definition, anchor-paper-36-construction, anchor-paper-36-algorithm]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-36-resource-1", "anchor-paper-36-resource-2"]
+      rationale: >-
+        A checked-in author copy with SHA-256, page count, and precise page anchors, plus the official DOI, makes every claim in the brief directly inspectable. No extended artifact was located.
+      basis_source_anchor_ids: [anchor-paper-36-problem, anchor-paper-36-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-36-editorial"]
+      rationale: >-
+        Named authorship, affiliations, funding acknowledgments, date, venue, DOI, and author copy are documented. Contributor roles, revision history, tool use, and any extended-version lineage have not been audited.
+      basis_source_anchor_ids: [anchor-paper-36-problem, anchor-paper-36-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-36-resource-1"]
+      rationale: >-
+        PODC publication establishes external venue scrutiny, but the item is a brief announcement and no review reports, rebuttal, independent proof audit, implementation, or reproduction were located.
+      basis_source_anchor_ids: [anchor-paper-36-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-36-editorial"]
+      level: low
+      rationale: >-
+        OpenAlex reported 5 citations on 2026-07-11. Under the author-defined corpus rule, 0 through 8 located citations is Low. The count is index- and date-dependent and is not evidence of correctness.
+      basis_source_anchor_ids: [anchor-paper-36-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a formulation connecting self-stabilization with recovery of privacy and integrity in secure distributed computation. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-36-editorial"]
+      rationale: >-
+        The brief articulates a distinctive recovery target that combines confidentiality, correctness, and self-stabilization and supplies a concrete FSM composition. Priority, generality, and downstream adoption require a broader literature audit.
+      basis_source_anchor_ids: [anchor-paper-36-problem, anchor-paper-36-definition]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 5
+  source_url: https://openalex.org/W2737996187
+  signals:
+    - OpenAlex reported 5 works citing the PODC brief announcement.
+  limitation: Citation counts vary by index and date; the generic OpenAlex display title for this DOI may reduce discoverability, and counts do not establish verification or adoption.

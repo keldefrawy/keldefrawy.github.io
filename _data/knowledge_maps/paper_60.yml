@@ -11,211 +11,371 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [algorithm]
 
 title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
-short_title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
 year: 2021
+status: Published
 venue: "IEEE International Conference on Quantum Computing and Engineering (QCE)"
-publication_status: "Published"
 topic: algorithms-foundations
-labels:
-  - "Theory"
-  - "Applied"
+labels: [Theory, Applied]
 authors:
-  - "Wim van Dam"
-  - "Karim Eldefrawy"
-  - "Nicholas Genise"
-  - "Natalie Parham"
+  - Wim van Dam
+  - Karim Eldefrawy
+  - Nicholas Genise
+  - Natalie Parham
 keywords:
-  - "quantum optimization"
-  - "knapsack"
+  - quantum optimization
+  - QAOA
+  - knapsack
+  - constrained optimization
 
-research_question: "Can shallow quantum optimization heuristics exploit classical greedy structure to find better feasible solutions for difficult knapsack instances?"
-central_answer: "The curated editorial summary reports a QAOA variant initialized near a classical greedy solution and equipped with mixers that explore nearby feasible alternatives."
+research_question: >-
+  Can shallow QAOA-style heuristics use a classical greedy solution to stay near feasible high-value regions of a constrained knapsack search space and outperform comparably simple classical heuristics?
+central_answer: >-
+  The paper initializes qubits from smoothed greedy marginals and introduces hourglass and copula mixers that preserve those biases while exploring nearby solutions. Statevector simulations on small hard-instance families report better performance than selected shallow classical baselines, with explicit classical-simulability and scaling caveats.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, algorithm-and-experiment mapping, and initial assessment
+  method: >-
+    Complete review of the 21-page arXiv manuscript, including derivations, pseudocode, hard-instance generators, parameter optimization, comparisons, conclusions, and visual inspection of title and simulation-result pages. Claims are bounded to depth-one statevector simulations at n equals 10 and the selected baselines.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Mixer descriptions, experimental settings, and interpretation of comparative results should be checked.
 
 sources:
-  - id: source-paper-60-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #60"
-    url: /publications/#paper-60
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-60-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/QCE52317.2021.00033"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-60-archive-1
-    type: archive_resource
-    title: "arXiv"
-    url: "https://arxiv.org/abs/2108.08805"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-60-archive-pdf
+    type: public_archive_copy
+    title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
+    url: /pubs/2021/quantum-optimization-knapsack.pdf
+    provenance_category: archive
+    retrieved_from: https://arxiv.org/pdf/2108.08805
+    media_type: application/pdf
+    sha256: d403fa39c25c7b77b806b19cc86dee9c1a2dab74976f6d9fdb967230d5603ac5
+    page_count: 21
+  - id: source-paper-60-official
+    type: official_publication_record
+    title: IEEE QCE 2021 publication record
+    url: https://doi.org/10.1109/QCE52317.2021.00033
+    provenance_category: official
+  - id: source-paper-60-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3194167622
+    url: https://api.openalex.org/works/W3194167622
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-60-curated
-    source_id: source-paper-60-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-60
-  - id: anchor-paper-60-official-1
-    source_id: source-paper-60-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1109/QCE52317.2021.00033"
-  - id: anchor-paper-60-archive-1
-    source_id: source-paper-60-archive-1
-    label: "arXiv"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://arxiv.org/abs/2108.08805"
+  - id: anchor-paper-60-problem
+    source_id: source-paper-60-archive-pdf
+    label: Motivation, contributions, and classical-simulability caveat
+    locator: Abstract and Sections 1-1.1, PDF pages 1-2
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=1
+  - id: anchor-paper-60-qaoa
+    source_id: source-paper-60-archive-pdf
+    label: QAOA and penalty-function baseline
+    locator: Section 2, PDF pages 2-3
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=2
+  - id: anchor-paper-60-mixers
+    source_id: source-paper-60-archive-pdf
+    label: Biased initial states, hourglass mixer, and copula mixer
+    locator: Section 3, PDF pages 3-7
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=3
+  - id: anchor-paper-60-knapsack
+    source_id: source-paper-60-archive-pdf
+    label: Knapsack definition and classical baselines
+    locator: Section 4, PDF pages 7-9
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=7
+  - id: anchor-paper-60-qkp
+    source_id: source-paper-60-archive-pdf
+    label: Knapsack-specific xQAOA design
+    locator: Section 5, PDF pages 9-11
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=9
+  - id: anchor-paper-60-instances
+    source_id: source-paper-60-archive-pdf
+    label: Five hard-instance distributions
+    locator: Section 6.1, PDF pages 11-12
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=11
+  - id: anchor-paper-60-classical
+    source_id: source-paper-60-archive-pdf
+    label: Classical comparison setup
+    locator: Section 6.2, PDF pages 12-13
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=12
+  - id: anchor-paper-60-quantum
+    source_id: source-paper-60-archive-pdf
+    label: Quantum algorithms and parameter optimization
+    locator: Sections 6.3.1-6.3.2, PDF pages 13-15
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=13
+  - id: anchor-paper-60-results
+    source_id: source-paper-60-archive-pdf
+    label: Simulation results and sensitivity
+    locator: Sections 6.3.3-6.3.4, PDF pages 15-16
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=15
+  - id: anchor-paper-60-conclusion
+    source_id: source-paper-60-archive-pdf
+    label: Conclusions, limits, and future work
+    locator: Section 7, PDF page 18
+    url: /pubs/2021/quantum-optimization-knapsack.pdf#page=18
+  - id: anchor-paper-60-publication
+    source_id: source-paper-60-official
+    label: Official IEEE QCE publication identity
+    locator: DOI 10.1109/QCE52317.2021.00033
+    url: https://doi.org/10.1109/QCE52317.2021.00033
+  - id: anchor-paper-60-citations
+    source_id: source-paper-60-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 4 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3194167622
 
 nodes:
   - id: paper-60
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
-    summary: "This paper adapts QAOA to constrained optimization by starting near a classical greedy solution and using mixers that explore feasible nearby alternatives. Experiments on difficult knapsack instances show that the shallow quantum heuristics often outperform several classical heuristics."
-    source_anchor_ids: [anchor-paper-60-curated]
+    summary: >-
+      Two biased QAOA-style optimization algorithms for constrained knapsack instances, analyzed algebraically and evaluated by small statevector simulations.
+    source_anchor_ids: [anchor-paper-60-problem]
+
   - id: paper-60-question
     kind: question
     parent_id: paper-60
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can shallow quantum optimization heuristics exploit classical greedy structure to find better feasible solutions for difficult knapsack instances?"
-    source_anchor_ids: [anchor-paper-60-curated]
-  - id: paper-60-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can a greedy warm start and bias-preserving mixers focus a shallow quantum search near feasible solutions without the qubit cost of penalty encodings?
+    source_anchor_ids: [anchor-paper-60-problem, anchor-paper-60-qaoa]
+
+  - id: paper-60-answer
     kind: contribution
     parent_id: paper-60
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports a QAOA variant initialized near a classical greedy solution and equipped with mixers that explore nearby feasible alternatives."
-    source_anchor_ids: [anchor-paper-60-curated]
-  - id: paper-60-method
-    kind: method
+    epistemic_status: simulated_support
+    title: Central answer
+    summary: >-
+      Convert a smoothed lazy-greedy profile into product-state qubit marginals, preserve those marginals with an hourglass mixer, and optionally add pairwise anticorrelation through a copula mixer.
+    source_anchor_ids: [anchor-paper-60-mixers, anchor-paper-60-qkp]
+
+  - id: paper-60-scope
+    kind: scope
     parent_id: paper-60
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described heuristic seeds a constrained quantum search from a classical solution and uses feasibility-preserving mixing operations to explore its neighborhood."
-    source_anchor_ids: [anchor-paper-60-curated]
-  - id: paper-60-claims
-    kind: claim_group
+    epistemic_status: explicitly_scoped
+    title: Experimental regime
+    summary: >-
+      Results use binary knapsack instances with ten items, depth-one circuits, statevector simulation, ten output samples per algorithm run, and 100 instances from each of five selected hard distributions.
+    source_anchor_ids: [anchor-paper-60-instances, anchor-paper-60-quantum, anchor-paper-60-results]
+
+  - id: paper-60-method
+    kind: algorithm
     parent_id: paper-60
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports that the shallow quantum heuristics often outperform several classical heuristics on the evaluated difficult knapsack instances."
-    source_anchor_ids: [anchor-paper-60-curated]
-  - id: paper-60-evidence
+    epistemic_status: specified
+    title: Biased xQAOA
+    summary: >-
+      A logistic smoothing of the lazy-greedy stopping ratio assigns each item a qubit inclusion probability, creating a constant-depth initial state near the capacity boundary rather than a uniform superposition.
+    source_anchor_ids: [anchor-paper-60-mixers, anchor-paper-60-qkp]
+
+  - id: paper-60-method-hourglass
+    kind: algorithm
+    parent_id: paper-60-method
+    order: 1
+    epistemic_status: specified
+    title: QKP hourglass mixer
+    summary: >-
+      A single-qubit mixer has each biased marginal state as an eigenstate, preserving the chosen product-distribution bias while the objective phase steers probability toward higher-value strings.
+    source_anchor_ids: [anchor-paper-60-mixers, anchor-paper-60-qkp]
+
+  - id: paper-60-method-copula
+    kind: algorithm
+    parent_id: paper-60-method
+    order: 2
+    epistemic_status: specified
+    title: QKP copula mixer
+    summary: >-
+      Two-qubit copula operations preserve individual marginals while adding tunable correlations; the evaluated ring construction favors anticorrelation so neighboring items are less likely to be jointly selected.
+    source_anchor_ids: [anchor-paper-60-mixers, anchor-paper-60-qkp]
+
+  - id: paper-60-baselines
     kind: evidence_group
     parent_id: paper-60
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Comparative experiments are reported, but instance generation, comparator tuning, circuit depth, simulator or hardware conditions, statistical analysis, and raw results were not audited."
-    source_anchor_ids: [anchor-paper-60-curated]
-  - id: paper-60-scope
-    kind: limitation_group
+    epistemic_status: controlled_simulation
+    title: Comparison design
+    summary: >-
+      Quantum heuristics are compared with lazy greedy, very greedy, warm-start simulated annealing, and a global one-step annealing variant on strongly correlated, inverse-strong, profit, and two spanner distributions.
+    source_anchor_ids: [anchor-paper-60-instances, anchor-paper-60-classical]
+
+  - id: paper-60-parameters
+    kind: method
+    parent_id: paper-60-baselines
+    order: 1
+    epistemic_status: per_instance_optimized
+    title: Parameter search
+    summary: >-
+      Quantum angles are grid-searched then refined with BFGS for each instance across bias strengths and selected copula correlations; simulated annealing temperature is also tuned per instance from repeated trials.
+    source_anchor_ids: [anchor-paper-60-classical, anchor-paper-60-quantum]
+
+  - id: paper-60-claim-comparison
+    kind: claim
     parent_id: paper-60
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "The reported result is heuristic and instance-dependent; this draft does not infer general quantum advantage, asymptotic superiority, noise robustness, or performance on distributions outside the reported experiments."
-    source_anchor_ids: [anchor-paper-60-curated]
-  - id: paper-60-artifacts
-    kind: artifact_group
+    epistemic_status: simulation_result
+    title: Better results than selected shallow heuristics
+    summary: >-
+      Across the sampled ten-item instances, the hourglass variant typically exceeds the four chosen classical heuristics and the copula variant improves further; infeasible outputs count as zero rather than being postselected away.
+    source_anchor_ids: [anchor-paper-60-results]
+
+  - id: paper-60-claim-sensitivity
+    kind: claim
     parent_id: paper-60
     order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-60-curated, anchor-paper-60-official-1, anchor-paper-60-archive-1]
+    epistemic_status: numerical_observation
+    title: Limited sensitivity on the tested size
+    summary: >-
+      The tested copula mixer generally prefers maximal anticorrelation, performance varies weakly across the sampled bias strengths, and favorable beta angles cluster in two regions, suggesting some parameter reuse at n equals 10.
+    source_anchor_ids: [anchor-paper-60-results]
+
+  - id: paper-60-boundaries
+    kind: limitation_group
+    parent_id: paper-60
+    order: 8
+    epistemic_status: material
+    title: Boundaries
+    summary: >-
+      Experiments are statevector simulations at n equals 10 and depth one, use heavily optimized per-instance parameters, and compare only simple classical methods. The authors expect more elaborate classical algorithms to outperform these quantum heuristics and leave larger n, deeper p, and parameter-scaling behavior open.
+    source_anchor_ids: [anchor-paper-60-quantum, anchor-paper-60-results, anchor-paper-60-conclusion]
+
+  - id: paper-60-boundary-classical
+    kind: limitation
+    parent_id: paper-60-boundaries
+    order: 1
+    epistemic_status: explicitly_acknowledged
+    title: Hourglass path can be quantum-inspired classical
+    summary: >-
+      For a linear objective such as knapsack, the first non-entangling technique can be classically simulated with comparable circuit complexity, so its improvement is not evidence of quantum advantage.
+    source_anchor_ids: [anchor-paper-60-problem, anchor-paper-60-conclusion]
+
+  - id: paper-60-evidence
+    kind: evidence_group
+    parent_id: paper-60
+    order: 9
+    epistemic_status: analytical_and_simulated
+    title: Evidence boundary
+    summary: >-
+      The paper supplies circuit derivations, pseudocode, instance generators, baseline settings, scatter plots, and sensitivity results. It supplies neither hardware experiments nor a proof of asymptotic advantage.
+    source_anchor_ids: [anchor-paper-60-mixers, anchor-paper-60-instances, anchor-paper-60-results]
+
+  - id: paper-60-resources
+    kind: artifact_group
+    parent_id: paper-60
+    order: 10
+    epistemic_status: source_available
+    title: Publication resources
+    summary: >-
+      The checked-in arXiv manuscript has fixity metadata and the DOI identifies the IEEE publication. No code or data artifact is represented in the paper map.
+    source_anchor_ids: [anchor-paper-60-problem, anchor-paper-60-publication]
+
   - id: paper-60-scrutiny
     kind: scrutiny
     parent_id: paper-60
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in IEEE International Conference on Quantum Computing and Engineering (QCE). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-60-official-1]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The paper appeared at IEEE QCE 2021. Public review reports and independent experimental reproduction are not linked.
+    source_anchor_ids: [anchor-paper-60-publication]
+
+  - id: paper-60-lineage
+    kind: lineage
+    parent_id: paper-60
+    order: 12
+    epistemic_status: documented
+    title: Warm-start constrained QAOA line
+    summary: >-
+      The work extends prior alternating-operator and warm-start approaches with constant-depth bias-preserving and copula mixers specialized and tested for knapsack.
+    source_anchor_ids: [anchor-paper-60-mixers, anchor-paper-60-conclusion]
 
 relations:
-  - id: paper-60-relation-question-contribution
-    type: motivates
-    from_id: paper-60-question
-    to_id: paper-60-contribution
-  - id: paper-60-relation-method-contribution
+  - id: paper-60-relation-answer-question
+    type: addresses
+    from_id: paper-60-answer
+    to_id: paper-60-question
+  - id: paper-60-relation-method-answer
     type: realizes
     from_id: paper-60-method
-    to_id: paper-60-contribution
-  - id: paper-60-relation-contribution-claims
-    type: grounds
-    from_id: paper-60-contribution
-    to_id: paper-60-claims
-  - id: paper-60-relation-evidence-claims
+    to_id: paper-60-answer
+  - id: paper-60-relation-hourglass-method
+    type: component_of
+    from_id: paper-60-method-hourglass
+    to_id: paper-60-method
+  - id: paper-60-relation-copula-method
+    type: component_of
+    from_id: paper-60-method-copula
+    to_id: paper-60-method
+  - id: paper-60-relation-baselines-comparison
+    type: supports
+    from_id: paper-60-baselines
+    to_id: paper-60-claim-comparison
+  - id: paper-60-relation-parameters-comparison
+    type: qualifies
+    from_id: paper-60-parameters
+    to_id: paper-60-claim-comparison
+  - id: paper-60-relation-boundaries-comparison
+    type: qualifies
+    from_id: paper-60-boundaries
+    to_id: paper-60-claim-comparison
+  - id: paper-60-relation-evidence-answer
     type: supports
     from_id: paper-60-evidence
-    to_id: paper-60-claims
-  - id: paper-60-relation-scope-claims
-    type: qualifies
-    from_id: paper-60-scope
-    to_id: paper-60-claims
-  - id: paper-60-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-60-artifacts
-    to_id: paper-60-evidence
-  - id: paper-60-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-60-scrutiny
-    to_id: paper-60-claims
+    to_id: paper-60-answer
 
 assessment:
   id: paper-60-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-60-curated, anchor-paper-60-official-1, anchor-paper-60-archive-1]
+      rationale: >-
+        The algorithms are derived and evaluated systematically on five instance families with transparent baselines and caveats, but evidence is limited to small statevector simulations and does not establish scaling or quantum advantage.
+      basis_source_anchor_ids: [anchor-paper-60-mixers, anchor-paper-60-classical, anchor-paper-60-results, anchor-paper-60-conclusion]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-60-curated, anchor-paper-60-official-1, anchor-paper-60-archive-1]
+      rationale: >-
+        The complete checked-in archive copy has page count and SHA-256 and is linked to the official DOI; algorithms and experiment settings are explicit, though code and raw results are absent.
+      basis_source_anchor_ids: [anchor-paper-60-problem, anchor-paper-60-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-60-curated]
+      rationale: >-
+        Authors, venue, versions, funding, algorithms, and experimental choices are documented; code revision, raw data, contributor roles, and tool versions are not.
+      basis_source_anchor_ids: [anchor-paper-60-publication, anchor-paper-60-instances, anchor-paper-60-results]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-60-official-1]
+      rationale: >-
+        IEEE QCE publication establishes venue review, but review reports and independent reproduction are not represented.
+      basis_source_anchor_ids: [anchor-paper-60-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-60-curated]
+      level: low
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 4 citations. Under the author-defined rule, 0 through 8 located citations is Low; counts vary by index and date.
+      basis_source_anchor_ids: [anchor-paper-60-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-60-curated]
+      rationale: >-
+        The bias-preserving and copula mixer constructions are reusable ideas for constrained optimization, but the paper itself rules out a quantum-advantage interpretation for one path and leaves scaling open.
+      basis_source_anchor_ids: [anchor-paper-60-problem, anchor-paper-60-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup
+  citation_count: 4
+  source_url: https://api.openalex.org/works/W3194167622
+  signals:
+    - The exact DOI-matched OpenAlex work reported four citing works.
+  limitation: Citation counts are index- and date-dependent and may merge arXiv and IEEE versions differently.

@@ -14,257 +14,373 @@ title: "Communication-Optimal Proactive Secret Sharing for Dynamic Groups"
 year: 2015
 status: "Published"
 venue: "International Conference on Applied Cryptography and Network Security (ACNS)"
-topic: "secure-encrypted-computation"
+topic: secure-encrypted-computation
 labels: ["Theory"]
-authors:
-  - "Joshua Baron"
-  - "Karim Eldefrawy"
-  - "Joshua Lampkins"
-  - "Rafail Ostrovsky"
-keywords:
-  - "proactive secret sharing"
-  - "dynamic groups"
-  - "communication complexity"
-editorial_summary: "This work protects long-lived secrets even as participants join, leave, or are eventually compromised by periodically refreshing shares and restoring parties. It gives the first dynamic proactive secret-sharing schemes with optimal amortized constant communication per secret, improving on polynomial or exponential prior costs, and extends them to dynamic proactive MPC."
+authors: ["Joshua Baron", "Karim Eldefrawy", "Joshua Lampkins", "Rafail Ostrovsky"]
+keywords: ["proactive secret sharing", "dynamic groups", "communication complexity"]
 
-research_question: "Can proactive secret sharing retain long-term confidentiality under changing group membership while reducing amortized communication to the optimal per-secret scale?"
-central_answer: "The paper reports dynamic refresh and recovery schemes with optimal amortized constant communication per secret, together with an extension to dynamic proactive multiparty computation."
+research_question: >-
+  Can proactively protected long-lived secrets move between changing participant sets and thresholds with constant amortized communication per secret, while retaining near-optimal perfect or statistical corruption tolerance?
+central_answer: >-
+  The paper constructs a dynamic proactive secret-sharing scheme whose Redistribute protocol changes thresholds, refreshes packed polynomial sharings, and transfers them to a new group using batched sharing, hyper-invertible matrices, and error correction; it also sketches dynamic proactive MPC by redistributing between circuit layers.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, definition/assumption mapping, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete 24-page UCLA author-hosted version, including definitions, threshold constraints, four threshold-change cases, refresh/recovery, UC proof appendix, and the DPMPC application. PDF pages 1 and 14 were rendered and visually inspected."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: "AI-authored source-linked map awaiting author verification. Security and optimality claims were mapped from the paper but not independently reproved."
 
 sources:
-  - id: source-paper-28-site-record
-    type: curated_site_record
-    title: "Publication #28 metadata and editorial summary"
-    url: /publications/#paper-28
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-28-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-319-28166-7_2"
-    provenance_category: official
-  - id: source-paper-28-resource-2
-    type: public_archive_record
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2015/304"
-    provenance_category: archive
-  - id: source-paper-28-resource-3
-    type: author_hosted_copy
-    title: "UCLA author copy"
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/188.pdf"
+  - id: source-paper-28-fulltext
+    type: scholarly_article
+    title: "Communication-Optimal Proactive Secret Sharing for Dynamic Groups (author-hosted full version)"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf
+    media_type: application/pdf
+    sha256: ba44ecd33639b11a480cd69d8455eefe3584bce3c14b9ad81e727a10babbfc72
+    page_count: 24
     provenance_category: author
+    version_note: "Complete author version; not compared line by line with the ACNS proceedings text or IACR ePrint revision history."
+  - id: source-paper-28-author-origin
+    type: author_copy
+    title: "UCLA author copy"
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/188.pdf
+  - id: source-paper-28-archive
+    type: manuscript_archive
+    title: "IACR ePrint 2015/304"
+    url: https://eprint.iacr.org/2015/304
+  - id: source-paper-28-official
+    type: publication_record
+    title: "ACNS publication record"
+    url: https://doi.org/10.1007/978-3-319-28166-7_2
+  - id: source-paper-28-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #28"
+    url: https://openalex.org/W2296195235
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-28-editorial
-    source_id: source-paper-28-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-28
-  - id: anchor-paper-28-resource-1
-    source_id: source-paper-28-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1007/978-3-319-28166-7_2"
-  - id: anchor-paper-28-resource-2
-    source_id: source-paper-28-resource-2
-    label: "Archive resource: IACR ePrint"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://eprint.iacr.org/2015/304"
-  - id: anchor-paper-28-resource-3
-    source_id: source-paper-28-resource-3
-    label: "Author-hosted resource: UCLA author copy"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/188.pdf"
+  - id: anchor-paper-28-problem
+    source_id: source-paper-28-fulltext
+    label: "Problem, techniques, contributions, and comparison"
+    locator: "Abstract and Sections 1-2, PDF pages 1-5"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=1
+  - id: anchor-paper-28-roadblocks
+    source_id: source-paper-28-fulltext
+    label: "Why prior PSS/DPSS refresh does not directly give optimal dynamic redistribution"
+    locator: "Section 3, PDF pages 5-6"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=5
+  - id: anchor-paper-28-definitions
+    source_id: source-paper-28-fulltext
+    label: "SS, PSS, and DPSS definitions"
+    locator: "Section 4.1, Definitions 1-4, PDF pages 6-8"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=6
+  - id: anchor-paper-28-parameters
+    source_id: source-paper-28-fulltext
+    label: "Perfect/statistical parameter and group-change constraints"
+    locator: "Section 4.2, PDF pages 8-9"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=8
+  - id: anchor-paper-28-redistribution
+    source_id: source-paper-28-fulltext
+    label: "Threshold Change and Refresh Recovery protocols"
+    locator: "Section 5 and Figures 1-3, PDF pages 9-15"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=9
+  - id: anchor-paper-28-virtualization
+    source_id: source-paper-28-fulltext
+    label: "Statistical party virtualization"
+    locator: "Section 6, PDF page 15"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=15
+  - id: anchor-paper-28-dpmpc
+    source_id: source-paper-28-fulltext
+    label: "Dynamic proactive MPC application"
+    locator: "Section 7, PDF page 16"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=16
+  - id: anchor-paper-28-proof
+    source_id: source-paper-28-fulltext
+    label: "UC ideal functionality and representative threshold-change simulator"
+    locator: "Appendix B, PDF pages 21-24"
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf#page=21
+  - id: anchor-paper-28-publication
+    source_id: source-paper-28-official
+    label: "Official ACNS publication record"
+    locator: "ACNS 2015, pages 23-41"
+    url: https://doi.org/10.1007/978-3-319-28166-7_2
+  - id: anchor-paper-28-citations
+    source_id: source-paper-28-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 41, accessed 2026-07-11"
+    url: https://openalex.org/W2296195235
 
 nodes:
   - id: paper-28
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Communication-Optimal Proactive Secret Sharing for Dynamic Groups"
-    summary: "This work protects long-lived secrets even as participants join, leave, or are eventually compromised by periodically refreshing shares and restoring parties. It gives the first dynamic proactive secret-sharing schemes with optimal amortized constant communication per secret, improving on polynomial or exponential prior costs, and extends them to dynamic proactive MPC."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    summary: "A dynamic proactive secret-sharing construction that refreshes long-lived secrets while parties and thresholds change."
+    source_anchor_ids: [anchor-paper-28-problem]
 
   - id: paper-28-question
     kind: question
     parent_id: paper-28
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can proactive secret sharing retain long-term confidentiality under changing group membership while reducing amortized communication to the optimal per-secret scale?"
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    summary: "Can a mobile-adversary-resistant sharing scheme add, remove, or replace parties without the O(n⁴) or exponential communication of prior dynamic schemes?"
+    source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-roadblocks]
 
-  - id: paper-28-contribution
+  - id: paper-28-answer
     kind: contribution
     parent_id: paper-28
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports dynamic refresh and recovery schemes with optimal amortized constant communication per secret, together with an extension to dynamic proactive multiparty computation."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    epistemic_status: source_asserted
+    title: "Central answer"
+    summary: "Batch Θ(n) secrets per polynomial and use hyper-invertible transformations plus masked share transfer so a new group receives refreshed shares while neither old nor new corruptions reveal enough correlated state."
+    source_anchor_ids: [anchor-paper-28-roadblocks, anchor-paper-28-redistribution]
+
+  - id: paper-28-scope
+    kind: scope
+    parent_id: paper-28
+    order: 3
+    epistemic_status: defined
+    title: "DPSS functionality"
+    summary: "Definition 4 specifies Share, Redistribute, and Open with termination, correctness, and secrecy under a phase-by-phase mobile corruption threshold τ(n(i)) while party set and threshold change."
+    source_anchor_ids: [anchor-paper-28-definitions]
+
+  - id: paper-28-scope-adversary
+    kind: threat_model
+    parent_id: paper-28-scope
+    order: 1
+    epistemic_status: defined
+    title: "Mobile adversary"
+    summary: "The adversary may corrupt changing parties across phases but not more than the active threshold in any phase; perfect and statistical variants use different parameter regimes."
+    source_anchor_ids: [anchor-paper-28-definitions, anchor-paper-28-parameters]
+
+  - id: paper-28-scope-constraints
+    kind: assumption
+    parent_id: paper-28-scope
+    order: 2
+    epistemic_status: explicit
+    title: "Dynamic-change constraints"
+    summary: "Perfect security limits each population change to a factor of two and requires old honest shares to interpolate new polynomials while old corrupt shares cannot; the statistical base protocol constrains threshold changes to a factor of two."
+    source_anchor_ids: [anchor-paper-28-parameters]
 
   - id: paper-28-method
     kind: method
     parent_id: paper-28
+    order: 4
+    epistemic_status: specified
+    title: "Redistribution construction"
+    summary: "Four Threshold Change protocols handle increasing/decreasing thresholds with or without batch-size changes; Refresh Recovery then masks, checks, and transfers the refreshed packed shares."
+    source_anchor_ids: [anchor-paper-28-redistribution]
+
+  - id: paper-28-method-threshold
+    kind: component
+    parent_id: paper-28-method
+    order: 1
+    epistemic_status: specified
+    title: "Threshold and batch transformation"
+    summary: "Hyper-invertible matrices distribute transformed sharings among old parties, who emulate trusted threshold conversion; Berlekamp-Welch reconstruction tolerates corrupted contributions."
+    source_anchor_ids: [anchor-paper-28-redistribution]
+
+  - id: paper-28-method-refresh
+    kind: component
+    parent_id: paper-28-method
+    order: 2
+    epistemic_status: specified
+    title: "Masked refresh and share transfer"
+    summary: "Old parties create U sharings of existing shares and random/zero V sharings; each new party receives a linear combination equal to its share of H+Q without the old group learning Q or the new group learning H."
+    source_anchor_ids: [anchor-paper-28-redistribution]
+
+  - id: paper-28-method-virtualization
+    kind: component
+    parent_id: paper-28-method
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported method combines periodic share refresh, party restoration, support for joins and departures, and batching or amortization across secrets."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    epistemic_status: described
+    title: "Statistical threshold amplification"
+    summary: "Committee-based party virtualization raises the low-threshold statistical base construction toward one-half corruption while preserving constant-round redistribution."
+    source_anchor_ids: [anchor-paper-28-virtualization]
 
   - id: paper-28-claims
     kind: claim_group
     parent_id: paper-28
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    order: 5
+    epistemic_status: source_asserted_with_proof_material
+    title: "Principal claims"
+    summary: "The paper reports first dynamic proactive schemes with O(1) amortized communication per secret, information-theoretic security, near-optimal thresholds, and a DPMPC application."
+    source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-proof]
 
-  - id: paper-28-claim-primary
+  - id: paper-28-claim-complexity
     kind: claim
     parent_id: paper-28-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary characterizes the schemes as the first dynamic proactive secret-sharing constructions with optimal amortized constant communication per secret and reports an extension to dynamic proactive MPC."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    epistemic_status: analytically_supported
+    title: "Amortized communication optimality"
+    summary: "Batching O(n) secrets and moving O(n)-scale data yields O(1) amortized field elements per secret; the paper explicitly does not claim optimal non-amortized complexity."
+    source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-parameters]
+
+  - id: paper-28-claim-thresholds
+    kind: claim
+    parent_id: paper-28-claims
+    order: 2
+    epistemic_status: proved_conditional
+    title: "Near-optimal corruption thresholds"
+    summary: "The reported perfect variant supports any threshold fraction below one third under chosen constants; party virtualization raises the statistical variant toward one half."
+    source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-parameters, anchor-paper-28-virtualization]
+
+  - id: paper-28-claim-dpmpc
+    kind: claim
+    parent_id: paper-28-claims
+    order: 3
+    epistemic_status: construction_sketch
+    title: "Dynamic proactive MPC"
+    summary: "The application section proposes executing Redistribute between circuit layers of an existing proactive MPC to let the computing party set and threshold evolve."
+    source_anchor_ids: [anchor-paper-28-dpmpc]
 
   - id: paper-28-evidence
     kind: evidence_group
     parent_id: paper-28
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    order: 6
+    epistemic_status: formal_paper_evidence
+    title: "Evidence chain"
+    summary: "The source provides precise functionality definitions, protocol pseudocode, parameter inequalities, complexity reasoning, and UC ideal/simulator material."
+    source_anchor_ids: [anchor-paper-28-definitions, anchor-paper-28-redistribution, anchor-paper-28-proof]
 
-  - id: paper-28-evidence-reported
+  - id: paper-28-evidence-proof
     kind: evidence
     parent_id: paper-28-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record reports constructions and asymptotic comparisons with polynomial or exponential prior communication costs; the proofs and cost model were not audited."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    epistemic_status: paper_proof_not_machine_checked
+    title: "Security argument"
+    summary: "Appendix B writes an ideal functionality and simulator for Threshold Change2 and states analogous functionality for the other threshold-change and refresh components; this audit did not mechanically verify the extrapolation or all imported subprotocol theorems."
+    source_anchor_ids: [anchor-paper-28-proof]
 
-  - id: paper-28-scope
+  - id: paper-28-boundaries
     kind: limitation_group
     parent_id: paper-28
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    order: 7
+    epistemic_status: material
+    title: "Trusted boundaries and limitations"
+    summary: "The result assumes synchrony, threshold-bounded phases, admissible population changes, large batches for amortization, and an external mechanism that agrees on new membership."
+    source_anchor_ids: [anchor-paper-28-parameters, anchor-paper-28-redistribution]
 
-  - id: paper-28-scope-boundary
+  - id: paper-28-boundary-governance
     kind: limitation
-    parent_id: paper-28-scope
+    parent_id: paper-28-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Security thresholds, network assumptions, setup requirements, constants hidden by amortization, and the precise MPC extension were not checked against the paper."
-    source_anchor_ids: ["anchor-paper-28-editorial"]
+    epistemic_status: out_of_scope
+    title: "Membership governance is external"
+    summary: "Voting, a trusted administrator, or a predetermined schedule must decide additions and removals; the paper explicitly leaves that mechanism outside the protocol."
+    source_anchor_ids: [anchor-paper-28-redistribution]
 
-  - id: paper-28-resources
+  - id: paper-28-boundary-evidence
+    kind: limitation
+    parent_id: paper-28-boundaries
+    order: 2
+    epistemic_status: no_empirical_evaluation
+    title: "No implementation evidence"
+    summary: "The source supplies no code, benchmarks, failure experiments, concrete field sizes, or distributed-system deployment."
+    source_anchor_ids: [anchor-paper-28-dpmpc]
+
+  - id: paper-28-artifacts
     kind: artifact_group
     parent_id: paper-28
-    order: 7
-    epistemic_status: resource_metadata_recorded
+    order: 8
+    epistemic_status: full_text_available
     title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-28-resource-1", "anchor-paper-28-resource-2", "anchor-paper-28-resource-3"]
-
-  - id: paper-28-resources-available
-    kind: artifact
-    parent_id: paper-28-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: IACR ePrint; Author-hosted: UCLA author copy."
-    source_anchor_ids: ["anchor-paper-28-resource-1", "anchor-paper-28-resource-2", "anchor-paper-28-resource-3"]
+    summary: "A fixed 24-page author version, its UCLA origin, IACR ePrint record, and ACNS DOI are available; no implementation repository was identified."
+    source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-publication]
 
   - id: paper-28-scrutiny
     kind: scrutiny
     parent_id: paper-28
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at International Conference on Applied Cryptography and Network Security (ACNS). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-28-resource-1"]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The work was published at ACNS 2015; review reports, independent proof audits, and implementations were not inspected."
+    source_anchor_ids: [anchor-paper-28-publication]
+
+  - id: paper-28-lineage
+    kind: lineage
+    parent_id: paper-28
+    order: 10
+    epistemic_status: documented
+    title: "Research lineage"
+    summary: "The construction extends paper #25's packed proactive redistribution from a fixed group to changing groups and thresholds, then reuses it as the state-refresh layer for dynamic proactive MPC."
+    source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-dpmpc]
 
 relations:
-  - id: relation-paper-28-contribution-addresses-question
+  - id: relation-paper-28-answer-addresses-question
     type: addresses
-    from_id: paper-28-contribution
+    from_id: paper-28-answer
     to_id: paper-28-question
-  - id: relation-paper-28-method-describes-contribution
-    type: describes_approach_to
+  - id: relation-paper-28-method-realizes-answer
+    type: realizes
     from_id: paper-28-method
-    to_id: paper-28-contribution
-  - id: relation-paper-28-evidence-supports-claim
+    to_id: paper-28-answer
+  - id: relation-paper-28-proof-supports-thresholds
     type: supports
-    from_id: paper-28-evidence-reported
-    to_id: paper-28-claim-primary
-  - id: relation-paper-28-scope-qualifies-claim
+    from_id: paper-28-evidence-proof
+    to_id: paper-28-claim-thresholds
+  - id: relation-paper-28-constraints-qualify-thresholds
     type: qualifies
-    from_id: paper-28-scope-boundary
-    to_id: paper-28-claim-primary
-  - id: relation-paper-28-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-28-resources-available
-    to_id: paper-28-evidence-reported
-  - id: relation-paper-28-status-qualifies-claim
+    from_id: paper-28-scope-constraints
+    to_id: paper-28-claim-thresholds
+  - id: relation-paper-28-governance-qualifies-answer
     type: qualifies
-    from_id: paper-28-scrutiny
-    to_id: paper-28-claim-primary
+    from_id: paper-28-boundary-governance
+    to_id: paper-28-answer
+  - id: relation-paper-28-dpmpc-contextualizes-lineage
+    type: contextualizes
+    from_id: paper-28-claim-dpmpc
+    to_id: paper-28-lineage
+  - id: relation-paper-28-artifacts-enable-audit
+    type: enables_audit_of
+    from_id: paper-28-artifacts
+    to_id: paper-28-evidence
 
 assessment:
   id: paper-28-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-28-editorial", "anchor-paper-28-resource-1"]
+      rationale: "The complete source gives formal definitions, protocols, parameter constraints, complexity analysis, and UC proof material. The proof is not machine checked and there is no implementation or independent reproduction."
+      basis_source_anchor_ids: [anchor-paper-28-definitions, anchor-paper-28-proof]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-28-resource-1", "anchor-paper-28-resource-2", "anchor-paper-28-resource-3"]
+      rationale: "A complete author-hosted full version is mirrored locally with page count and SHA-256, and an ePrint record exists, making the construction and proof material directly inspectable."
+      basis_source_anchor_ids: [anchor-paper-28-redistribution, anchor-paper-28-proof]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-28-editorial"]
+      rationale: "Named authorship, author and archive copies, and an ACNS record establish baseline provenance. Roles, revision history, and artifact lineage are not captured."
+      basis_source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-28-resource-1"]
+      rationale: "The work has an ACNS publication record and public ePrint, but reviews, independent proof audits, and implementations were not inspected."
+      basis_source_anchor_ids: [anchor-paper-28-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-28-editorial"]
+      level: high
+      rationale: "OpenAlex reports 41 located citations as of 2026-07-11, meeting the site's 11+ high threshold. This count does not establish correctness or practical adoption."
+      basis_source_anchor_ids: [anchor-paper-28-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary characterizes the contribution as a first dynamic proactive secret-sharing result with an optimal amortized communication characterization. This is potentially significant, but the priority and optimality claims and their downstream impact were not independently audited; the rating therefore remains medium."
-      basis_source_anchor_ids: ["anchor-paper-28-editorial"]
+      level: high
+      rationale: "The paper reports the first information-theoretic DPSS with constant amortized per-secret communication and near-optimal thresholds; this is a source-level priority claim, not an independent historical adjudication."
+      basis_source_anchor_ids: [anchor-paper-28-problem]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2296195235
+  citation_count: 41
   signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  limitation: "OpenAlex coverage, deduplication, and version merging are imperfect; this is a dated located-citation snapshot."

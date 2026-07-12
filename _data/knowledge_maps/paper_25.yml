@@ -12,157 +12,347 @@ contribution_types: [protocol, scheme]
 
 title: "How to Withstand Mobile Virus Attacks, Revisited"
 year: 2014
+status: "Published"
 venue: "ACM Symposium on Principles of Distributed Computing (PODC)"
 topic: secure-encrypted-computation
 labels: ["Theory"]
 authors: ["Joshua Baron", "Karim Eldefrawy", "Joshua Lampkins", "Rafail Ostrovsky"]
 keywords: ["proactive MPC", "mobile adversaries", "packed secret sharing"]
 
-research_question: "Can proactive secure multiparty computation tolerate a mobile adversary with near-linear communication rather than incurring prohibitive resharing and precomputation costs?"
-central_answer: "The work introduces packed proactive secret sharing and UC-secure MPC protocols, reporting near-linear communication per step and mobile-corruption thresholds near one third or one half depending on the security regime."
+research_question: >-
+  Can proactive secure multiparty computation against an adaptive mobile adversary achieve universal composability, near-linear communication, and near-optimal corruption thresholds despite the need to refresh all long-lived state?
+central_answer: >-
+  The paper introduces packed proactive secret sharing with constant amortized communication per secret, a Block-Redistribute protocol that refreshes and restores packed shares, and a layer-by-layer proactive MPC protocol; party virtualization raises the reported perfect-security threshold toward one third and the statistical threshold toward one half.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, theorem/assumption mapping, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete 34-page UCLA author-hosted full version, including definitions, protocol specifications, complexity analysis, UC ideal functionalities, and appendix proofs; PDF pages 1 and 12 were rendered and visually inspected."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification. The paper proofs were mapped but not independently reproved or machine checked."
 
 sources:
-  - id: source-paper-25-site-record
-    type: curated_record
-    title: "Curated publication record for paper #25"
-    url: /publications/#paper-25
-  - id: source-paper-25-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/2611462.2611474"
-  - id: source-paper-25-author-1
+  - id: source-paper-25-fulltext
+    type: scholarly_article
+    title: "How to Withstand Mobile Virus Attacks, Revisited (author-hosted full version)"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf
+    media_type: application/pdf
+    sha256: 6035df99829f970f28ad4522659ab5887de378dd28d1e220095e548711ccb4cd
+    page_count: 34
+    provenance_category: author
+    version_note: "Complete author version with appendices; not compared line by line with the ten-page PODC proceedings version."
+  - id: source-paper-25-author-origin
     type: author_copy
-    title: "Author-hosted paper"
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/167.pdf"
+    title: "UCLA author copy"
+    url: https://web.cs.ucla.edu/~rafail/PUBLIC/167.pdf
+  - id: source-paper-25-official
+    type: publication_record
+    title: "ACM PODC publication record"
+    url: https://doi.org/10.1145/2611462.2611474
+  - id: source-paper-25-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #25"
+    url: https://openalex.org/W2029416521
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-25-site-record
-    source_id: source-paper-25-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-25
-  - id: anchor-paper-25-official-1
-    source_id: source-paper-25-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1145/2611462.2611474"
-  - id: anchor-paper-25-author-1
-    source_id: source-paper-25-author-1
-    label: "Author-hosted paper"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://web.cs.ucla.edu/~rafail/PUBLIC/167.pdf"
+  - id: anchor-paper-25-problem
+    source_id: source-paper-25-fulltext
+    label: "Problem, roadblocks, contributions, and headline bounds"
+    locator: "Abstract and Sections 1.2-1.4, PDF pages 1-5"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=1
+  - id: anchor-paper-25-model
+    source_id: source-paper-25-fulltext
+    label: "Proactive UC model, phases, erasures, and baseline parameters"
+    locator: "Section 2, PDF pages 5-7"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=5
+  - id: anchor-paper-25-redistribution
+    source_id: source-paper-25-fulltext
+    label: "Packed sharing and Block-Redistribute"
+    locator: "Sections 3.2-3.3 and Theorem 1, PDF pages 8-11"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=8
+  - id: anchor-paper-25-pmpc
+    source_id: source-paper-25-fulltext
+    label: "Layer-by-layer PMPC protocol and complexity"
+    locator: "Sections 3.4-3.5 and Figure 1, PDF pages 11-13"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=11
+  - id: anchor-paper-25-theorems
+    source_id: source-paper-25-fulltext
+    label: "Perfect and statistical proactive-security theorems"
+    locator: "Theorems 2-3, PDF page 13; Theorem 12, PDF page 34"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=13
+  - id: anchor-paper-25-uc-definition
+    source_id: source-paper-25-fulltext
+    label: "Exact proactive UC execution and security definitions"
+    locator: "Appendix A, PDF pages 15-18"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=15
+  - id: anchor-paper-25-proofs
+    source_id: source-paper-25-fulltext
+    label: "Redistribution and PMPC proof chain"
+    locator: "Appendices B and D, PDF pages 18-21 and 26-29"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=18
+  - id: anchor-paper-25-virtualization
+    source_id: source-paper-25-fulltext
+    label: "Party virtualization and near-optimal thresholds"
+    locator: "Appendix E, PDF pages 29-34"
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf#page=29
+  - id: anchor-paper-25-publication
+    source_id: source-paper-25-official
+    label: "Official ACM publication record"
+    locator: "PODC 2014, pages 293-302"
+    url: https://doi.org/10.1145/2611462.2611474
+  - id: anchor-paper-25-citations
+    source_id: source-paper-25-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 37, accessed 2026-07-11"
+    url: https://openalex.org/W2029416521
 
 nodes:
   - id: paper-25
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "How to Withstand Mobile Virus Attacks, Revisited"
-    summary: "This work revisits proactive MPC, where different machines may be compromised over time, and identifies why standard precomputation and sharing techniques become too costly under mobile faults. It introduces packed proactive secret sharing and UC-secure MPC protocols with near-linear per-step communication while tolerating almost one-third perfect-security or one-half statistical-security moving corruptions."
-    source_anchor_ids: [anchor-paper-25-site-record]
+    summary: "A proactive MPC construction that refreshes computation state against mobile corruption using packed proactive secret sharing and communication-efficient redistribution."
+    source_anchor_ids: [anchor-paper-25-problem]
 
   - id: paper-25-question
     kind: question
     parent_id: paper-25
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can proactive secure multiparty computation tolerate a mobile adversary with near-linear communication rather than incurring prohibitive resharing and precomputation costs?"
-    source_anchor_ids: [anchor-paper-25-site-record]
+    summary: "Can the communication improvements of stationary-fault MPC survive a model in which an adversary eventually corrupts every party, subject only to a per-stage rate bound?"
+    source_anchor_ids: [anchor-paper-25-problem]
 
   - id: paper-25-answer
     kind: contribution
     parent_id: paper-25
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The work introduces packed proactive secret sharing and UC-secure MPC protocols, reporting near-linear communication per step and mobile-corruption thresholds near one third or one half depending on the security regime."
-    source_anchor_ids: [anchor-paper-25-site-record]
+    epistemic_status: source_asserted
+    title: "Central answer"
+    summary: "Pack Θ(n) secrets into polynomial sharings, refresh and restore them with hyper-invertible-matrix checks, and evaluate a transformed circuit layer by layer with redistribution after every layer."
+    source_anchor_ids: [anchor-paper-25-redistribution, anchor-paper-25-pmpc]
+
+  - id: paper-25-scope
+    kind: scope
+    parent_id: paper-25
+    order: 3
+    epistemic_status: defined
+    title: "Proactive execution model"
+    summary: "Parties communicate synchronously over perfectly secure point-to-point channels and broadcast, erase old state, and alternate operation with refreshment stages."
+    source_anchor_ids: [anchor-paper-25-model, anchor-paper-25-uc-definition]
+
+  - id: paper-25-scope-adversary
+    kind: threat_model
+    parent_id: paper-25-scope
+    order: 1
+    epistemic_status: defined
+    title: "Active adaptive mobile adversary"
+    summary: "The adversary may adaptively corrupt different parties over time, but at most the stated threshold per stage; a party corrupted during a refresh counts in both adjacent stages."
+    source_anchor_ids: [anchor-paper-25-model, anchor-paper-25-uc-definition]
+
+  - id: paper-25-scope-recovery
+    kind: assumption
+    parent_id: paper-25-scope
+    order: 2
+    epistemic_status: assumed
+    title: "Reboot and erasure assumptions"
+    summary: "Corrupted parties can be rebooted to a pristine state with global computation information and secure-channel access, and honest-period randomness and erased state remain unrecoverable; selecting whom to reboot is outside the protocol."
+    source_anchor_ids: [anchor-paper-25-problem, anchor-paper-25-model]
 
   - id: paper-25-method
     kind: method
     parent_id: paper-25
+    order: 4
+    epistemic_status: specified
+    title: "Construction stack"
+    summary: "The protocol composes packed sharing, proactive redistribution, circuit normalization and permutation, per-layer arithmetic, and party virtualization."
+    source_anchor_ids: [anchor-paper-25-redistribution, anchor-paper-25-pmpc, anchor-paper-25-virtualization]
+
+  - id: paper-25-method-ppss
+    kind: component
+    parent_id: paper-25-method
+    order: 1
+    epistemic_status: specified_and_proved
+    title: "Packed proactive secret sharing"
+    summary: "Multiple secrets occupy evaluation points of one polynomial; random masking polynomials and hyper-invertible matrices amortize refresh and checking to O(1) communication per secret."
+    source_anchor_ids: [anchor-paper-25-problem, anchor-paper-25-redistribution]
+
+  - id: paper-25-method-redistribute
+    kind: component
+    parent_id: paper-25-method
+    order: 2
+    epistemic_status: specified_and_proved
+    title: "Block-Redistribute"
+    summary: "Three phases rerandomize packed sharings, verifiably double-share state, and reconstruct current shares for rebooted parties using Berlekamp-Welch recovery."
+    source_anchor_ids: [anchor-paper-25-redistribution, anchor-paper-25-proofs]
+
+  - id: paper-25-method-pmpc
+    kind: component
+    parent_id: paper-25-method
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Pack multiple secrets into proactive shares and refresh or compute on them through protocols designed for universally composable security under moving corruptions."
-    source_anchor_ids: [anchor-paper-25-site-record]
+    epistemic_status: specified_and_proved
+    title: "Layer-by-layer PMPC"
+    summary: "Inputs are robustly shared; secrets are permuted for each homogeneous addition or multiplication layer; obsolete state is erased; all live sharings are redistributed after every layer before final reconstruction."
+    source_anchor_ids: [anchor-paper-25-pmpc]
 
   - id: paper-25-claims
     kind: claim_group
     parent_id: paper-25
+    order: 5
+    epistemic_status: proved_conditional
+    title: "Principal theorems"
+    summary: "The paper states UC-security and communication bounds under explicit network, erasure, circuit-width, and corruption-rate conditions."
+    source_anchor_ids: [anchor-paper-25-redistribution, anchor-paper-25-theorems]
+
+  - id: paper-25-claim-redistribution
+    kind: claim
+    parent_id: paper-25-claims
+    order: 1
+    epistemic_status: proved_conditional
+    title: "Redistribution theorem"
+    summary: "Theorem 1 states perfect UC realization of the redistribution functionality against adaptive corruption threshold n/8, assuming secure point-to-point and broadcast channels, with O(W + poly(n)) communication for W secrets."
+    source_anchor_ids: [anchor-paper-25-redistribution, anchor-paper-25-proofs]
+
+  - id: paper-25-claim-pmpc
+    kind: claim
+    parent_id: paper-25-claims
+    order: 2
+    epistemic_status: proved_conditional
+    title: "Base PMPC theorem"
+    summary: "For an n-party arithmetic circuit at least Ω(n) gates wide, Theorem 2 gives perfect proactive UC security against an active adaptive adversary corrupting fewer than n/8 parties per stage."
+    source_anchor_ids: [anchor-paper-25-theorems, anchor-paper-25-proofs]
+
+  - id: paper-25-claim-thresholds
+    kind: claim
+    parent_id: paper-25-claims
+    order: 3
+    epistemic_status: proved_conditional
+    title: "Virtualized thresholds"
+    summary: "Theorem 3 raises perfect security to any constant corruption fraction δ < 1/3, while the statistical variant in Theorem 12 supports δ < 1/2."
+    source_anchor_ids: [anchor-paper-25-theorems, anchor-paper-25-virtualization]
+
+  - id: paper-25-claim-complexity
+    kind: claim
+    parent_id: paper-25-claims
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The paper reports near-linear per-step communication while tolerating almost one-third moving corruptions for perfect security or almost one-half for statistical security."
-    source_anchor_ids: [anchor-paper-25-site-record]
+    epistemic_status: analytically_supported
+    title: "Near-linear communication"
+    summary: "The final virtualized construction is reported with communication O(C log² C polylog n + D poly(n) log² C), where C and D are circuit size and depth; packed share maintenance is constant amortized per secret."
+    source_anchor_ids: [anchor-paper-25-problem, anchor-paper-25-pmpc]
 
   - id: paper-25-evidence
     kind: evidence_group
     parent_id: paper-25
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports packed sharing, UC-security, communication complexity, and corruption thresholds; models, quantifiers, proofs, constants, and implementations have not been source-audited."
-    source_anchor_ids: [anchor-paper-25-site-record]
+    order: 6
+    epistemic_status: formal_paper_evidence
+    title: "Evidence chain"
+    summary: "The source supplies ideal functionalities, explicit protocols, complexity derivations, simulators for redistribution, an inductive PMPC simulation, and committee-based threshold amplification."
+    source_anchor_ids: [anchor-paper-25-uc-definition, anchor-paper-25-proofs, anchor-paper-25-virtualization]
 
-  - id: paper-25-limitations
+  - id: paper-25-evidence-proof
+    kind: evidence
+    parent_id: paper-25-evidence
+    order: 1
+    epistemic_status: paper_proof_not_machine_checked
+    title: "UC proof structure"
+    summary: "The appendices compare real and ideal executions, construct simulators, and use layer induction plus prior subprotocol security; this audit checked statement/assumption alignment but did not rederive every simulation step."
+    source_anchor_ids: [anchor-paper-25-proofs]
+
+  - id: paper-25-boundaries
     kind: limitation_group
     parent_id: paper-25
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The guarantees depend on the paper's mobile-adversary, network, setup, and corruption-timing models; concrete cost, active robustness, and edge cases have not been inspected."
-    source_anchor_ids: [anchor-paper-25-site-record]
+    order: 7
+    epistemic_status: material
+    title: "Trusted boundaries and limitations"
+    summary: "The guarantees rely on synchrony, secure channels, broadcast, erasures, reliable pristine reboot, stage-rate enforcement, and sufficiently wide arithmetic circuits."
+    source_anchor_ids: [anchor-paper-25-model, anchor-paper-25-theorems]
 
-  - id: paper-25-resources
+  - id: paper-25-boundary-systems
+    kind: limitation
+    parent_id: paper-25-boundaries
+    order: 1
+    epistemic_status: assumed
+    title: "Recovery mechanism is external"
+    summary: "The paper does not specify how compromise is detected, how parties are selected and securely rebooted, or how proactive PKI/secure channels and broadcast are implemented."
+    source_anchor_ids: [anchor-paper-25-problem, anchor-paper-25-model]
+
+  - id: paper-25-boundary-evidence
+    kind: limitation
+    parent_id: paper-25-boundaries
+    order: 2
+    epistemic_status: no_empirical_evaluation
+    title: "No implementation evaluation"
+    summary: "Evidence is theoretical; the audited version does not provide code, benchmarks, network measurements, or concrete parameter sizing."
+    source_anchor_ids: [anchor-paper-25-pmpc]
+
+  - id: paper-25-artifacts
     kind: artifact_group
     parent_id: paper-25
-    order: 7
-    epistemic_status: linked_not_content_audited
+    order: 8
+    epistemic_status: full_text_available
     title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Author-hosted paper. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-25-official-1, anchor-paper-25-author-1]
+    summary: "A fixed local mirror of the 34-page author full version and the ACM publication record are available; no implementation repository was identified."
+    source_anchor_ids: [anchor-paper-25-problem, anchor-paper-25-publication]
 
   - id: paper-25-scrutiny
     kind: scrutiny
     parent_id: paper-25
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at ACM Symposium on Principles of Distributed Computing (PODC). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-25-site-record, anchor-paper-25-official-1]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The work was published at ACM PODC 2014; review reports, independent proof audits, and implementations were not examined."
+    source_anchor_ids: [anchor-paper-25-publication]
+
+  - id: paper-25-lineage
+    kind: lineage
+    parent_id: paper-25
+    order: 10
+    epistemic_status: documented
+    title: "Research lineage"
+    summary: "The construction revisits the Ostrovsky-Yung proactive model using packed-sharing and hyper-invertible-matrix techniques from later efficient MPC, and it directly precedes the dynamic-group protocol in paper #28."
+    source_anchor_ids: [anchor-paper-25-problem]
 
 relations:
-  - id: paper-25-relation-method-supports-answer
-    type: supports
+  - id: relation-paper-25-answer-addresses-question
+    type: addresses
+    from_id: paper-25-answer
+    to_id: paper-25-question
+  - id: relation-paper-25-method-realizes-answer
+    type: realizes
     from_id: paper-25-method
     to_id: paper-25-answer
-  - id: paper-25-relation-evidence-supports-claim
+  - id: relation-paper-25-proof-supports-redistribution
     type: supports
-    from_id: paper-25-evidence
-    to_id: paper-25-claims
-  - id: paper-25-relation-limitations-qualify-claim
+    from_id: paper-25-evidence-proof
+    to_id: paper-25-claim-redistribution
+  - id: relation-paper-25-proof-supports-pmpc
+    type: supports
+    from_id: paper-25-evidence-proof
+    to_id: paper-25-claim-pmpc
+  - id: relation-paper-25-adversary-qualifies-pmpc
     type: qualifies
-    from_id: paper-25-limitations
-    to_id: paper-25-claims
-  - id: paper-25-relation-scrutiny-qualifies-status
+    from_id: paper-25-scope-adversary
+    to_id: paper-25-claim-pmpc
+  - id: relation-paper-25-recovery-qualifies-pmpc
     type: qualifies
-    from_id: paper-25-scrutiny
-    to_id: paper-25
+    from_id: paper-25-scope-recovery
+    to_id: paper-25-claim-pmpc
+  - id: relation-paper-25-boundaries-qualify-claims
+    type: qualifies
+    from_id: paper-25-boundaries
+    to_id: paper-25-claims
+  - id: relation-paper-25-artifacts-enable-audit
+    type: enables_audit_of
+    from_id: paper-25-artifacts
+    to_id: paper-25-evidence
 
 assessment:
   id: paper-25-assessment-2026-07-11
@@ -173,32 +363,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports packed sharing, UC-security, communication complexity, and corruption thresholds; models, quantifiers, proofs, constants, and implementations have not been source-audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-25-site-record]
+      rationale: "The complete source gives formal definitions, protocols, complexity analyses, and UC proof arguments. No machine-checked proof, implementation, or independent reproduction was audited."
+      basis_source_anchor_ids: [anchor-paper-25-theorems, anchor-paper-25-proofs]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-25-official-1, anchor-paper-25-author-1]
+      rationale: "A complete author-hosted full version with all appendices is mirrored locally with page count and SHA-256, making assumptions and proofs inspectable. Proceedings-version identity and independent proof checking remain open."
+      basis_source_anchor_ids: [anchor-paper-25-problem, anchor-paper-25-proofs]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-25-site-record]
+      rationale: "Named authorship, an author-hosted full version, acknowledgements, and an ACM record establish baseline provenance. Roles, revision history, and artifact lineage are not captured."
+      basis_source_anchor_ids: [anchor-paper-25-problem, anchor-paper-25-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in ACM Symposium on Principles of Distributed Computing (PODC), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-25-official-1]
+      rationale: "The work has an ACM PODC publication record, but reviews, independent proof audits, and implementations were not inspected."
+      basis_source_anchor_ids: [anchor-paper-25-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-25-site-record]
+      level: high
+      rationale: "OpenAlex reports 37 located citations as of 2026-07-11, meeting the site's 11+ high threshold. The index may merge or omit versions and does not establish correctness or adoption."
+      basis_source_anchor_ids: [anchor-paper-25-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete contribution: The paper reports near-linear per-step communication while tolerating almost one-third moving corruptions for perfect security or almost one-half for statistical security. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-25-site-record]
+      level: high
+      rationale: "The paper reports the first perfectly UC-secure proactive MPC with near-linear communication and introduces packed proactive secret sharing with constant amortized per-secret cost; this is a source-level priority claim, not an independent historical adjudication."
+      basis_source_anchor_ids: [anchor-paper-25-problem]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2029416521
+  citation_count: 37
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "OpenAlex coverage, deduplication, and version merging are imperfect; the count is a dated located-citation snapshot."

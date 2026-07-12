@@ -26,7 +26,7 @@
   archive: []
   author:
   - label: Author-hosted manuscript PDF
-    url: https://keldefrawy.github.io/pubs/2026/private-identity-bulletin-boards-cscml2026.pdf
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf
 - id: 73
   official:
   - label: Publisher / DOI
@@ -52,7 +52,9 @@
   archive:
   - label: arXiv
     url: https://arxiv.org/abs/2305.09905
-  author: []
+  author:
+  - label: Author-hosted preprint PDF
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf
 - id: 69
   official:
   - label: Publisher / DOI
@@ -85,6 +87,8 @@
   author:
   - label: Author-hosted paper
     url: https://www.esat.kuleuven.be/cosic/publications/article-3637.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf
 - id: 65
   official:
   - label: Publisher / DOI
@@ -105,6 +109,8 @@
   author:
   - label: MIT author copy
     url: https://people.csail.mit.edu/sanchez/papers/2022.craterlake.isca.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2022/craterlake-isca2022.pdf
 - id: 63
   official:
   - label: Publisher / DOI
@@ -122,9 +128,9 @@
   archive: []
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice.pdf
+    url: /pubs/2022/cscml2022-abe-msoffice.pdf
   - label: Extended version
-    url: https://keldefrawy.github.io/pubs/2022/cscml2022-abe-msoffice-extended-version.pdf
+    url: /pubs/2022/cscml2022-abe-msoffice-extended-version.pdf
 - id: 61
   official:
   - label: Publisher / DOI
@@ -140,7 +146,9 @@
   archive:
   - label: arXiv
     url: https://arxiv.org/abs/2108.08805
-  author: []
+  author:
+  - label: Author-hosted PDF
+    url: /pubs/2021/quantum-optimization-knapsack.pdf
 - id: 59
   official:
   - label: Related conference version
@@ -148,7 +156,9 @@
   archive:
   - label: arXiv
     url: https://arxiv.org/abs/2109.05371
-  author: []
+  author:
+  - label: Author-hosted extended version
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf
 - id: 58
   official:
   - label: Publisher / DOI
@@ -156,7 +166,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2021/1149
-  author: []
+  author:
+  - label: Author-hosted PDF
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf
 - id: 57
   official:
   - label: Publisher / DOI
@@ -190,7 +202,7 @@
     url: https://www.usenix.org/system/files/sec20fall_nunes_prepub.pdf
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2020/apex_usenixsec2020.pdf
+    url: /pubs/2020/apex_usenixsec2020.pdf
 - id: 53
   official:
   - label: Publisher / DOI
@@ -201,6 +213,8 @@
   author:
   - label: UCI author copy
     url: https://sprout.ics.uci.edu/pubs/augmented2020.pdf
+  - label: Author-hosted extended version
+    url: /pubs/2020/alice-acns2020-extended.pdf
 - id: 52
   official:
   - label: Publisher / DOI
@@ -210,7 +224,7 @@
     url: https://eprint.iacr.org/2019/1383
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf
+    url: /pubs/2020/pssdgdm_acns2020.pdf
 - id: 51
   official:
   - label: Publisher / DOI
@@ -220,7 +234,7 @@
     url: https://eprint.iacr.org/2019/922
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2019/verif-mpc_ccs2019.pdf
+    url: /pubs/2019/verif-mpc_ccs2019.pdf
 - id: 50
   official:
   - label: USENIX paper page
@@ -228,7 +242,7 @@
   archive: []
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2019/vrased_usenixsec2019.pdf
+    url: /pubs/2019/vrased_usenixsec2019.pdf
 - id: 49
   official:
   - label: Publisher / DOI
@@ -236,7 +250,7 @@
   archive: []
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2019/btc_acns2019.pdf
+    url: /pubs/2019/btc_acns2019.pdf
 - id: 48
   official:
   - label: Publisher / DOI
@@ -244,7 +258,7 @@
   archive: []
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf
+    url: /pubs/2019/snuse_fgcs2019.pdf
 - id: 47
   official:
   - label: Publisher / DOI
@@ -254,7 +268,7 @@
     url: https://par.nsf.gov/servlets/purl/10121392
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2019/ra-opinion_wisec2019.pdf
+    url: /pubs/2019/ra-opinion_wisec2019.pdf
 - id: 46
   official:
   - label: Publisher / DOI
@@ -262,7 +276,7 @@
   archive: []
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2019/pure_iccad2019.pdf
+    url: /pubs/2019/pure_iccad2019.pdf
 - id: 45
   official:
   - label: Publisher / DOI
@@ -287,6 +301,8 @@
   author:
   - label: Author-hosted paper
     url: https://sprout.ics.uci.edu/people/ivan/pubs/2018_snuse.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2018/snuse-cscml2018.pdf
 - id: 42
   official:
   - label: Publisher / DOI
@@ -297,6 +313,8 @@
   author:
   - label: UCI author copy
     url: https://sprout.ics.uci.edu/projects/attestation/papers/reconcile-ra-safety.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf
 - id: 41
   official:
   - label: Publisher / DOI
@@ -305,6 +323,8 @@
   author:
   - label: Author-hosted paper
     url: https://sprout.ics.uci.edu/projects/attestation/papers/consistency.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf
 - id: 40
   official:
   - label: Publisher / DOI
@@ -337,6 +357,8 @@
   author:
   - label: UCI author copy
     url: https://sprout.ics.uci.edu/projects/attestation/papers/hydra.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2017/hydra-wisec2017.pdf
 - id: 36
   official:
   - label: Publisher / DOI
@@ -345,6 +367,8 @@
   author:
   - label: Author-hosted paper
     url: https://web.cs.ucla.edu/~rafail/PUBLIC/204.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2017/secure-self-stabilizing-computation-podc2017-brief.pdf
 - id: 35
   official:
   - label: Publisher / DOI
@@ -355,6 +379,8 @@
   author:
   - label: UMD author copy
     url: https://www.cs.umd.edu/~jkatz/papers/reusable-FE.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2017/reusable-fuzzy-extractors-lwe-cscml2017.pdf
 - id: 34
   official:
   - label: Publisher / DOI
@@ -373,6 +399,8 @@
   author:
   - label: UCI author copy
     url: https://sprout.ics.uci.edu/projects/attestation/papers/lisa.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2017/lisa-asiaccs2017.pdf
 - id: 32
   official:
   - label: Publisher / DOI
@@ -389,6 +417,8 @@
   author:
   - label: Author-hosted paper
     url: https://web.cs.ucla.edu/~rafail/PUBLIC/193.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf
 - id: 30
   official:
   - label: Publisher / DOI
@@ -405,6 +435,8 @@
   author:
   - label: Author-hosted paper
     url: https://sprout.ics.uci.edu/pubs/resilient_sdn_controller.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2016/byzantine-fault-tolerant-sdn-controllers.pdf
 - id: 28
   official:
   - label: Publisher / DOI
@@ -415,12 +447,16 @@
   author:
   - label: UCLA author copy
     url: https://web.cs.ucla.edu/~rafail/PUBLIC/188.pdf
+  - label: Author-hosted full version
+    url: /pubs/2015/communication-optimal-proactive-secret-sharing-dynamic-groups.pdf
 - id: 27
   official: []
   archive: []
   author:
   - label: Author-hosted paper
     url: https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf
+  - label: Author-hosted extended abstract PDF
+    url: /pubs/2015/remote-attestation-heterogeneous-cps-automotive.pdf
 - id: 26
   official:
   - label: Publisher / DOI
@@ -437,6 +473,8 @@
   author:
   - label: Author-hosted paper
     url: https://web.cs.ucla.edu/~rafail/PUBLIC/167.pdf
+  - label: Author-hosted full version
+    url: /pubs/2014/how-to-withstand-mobile-virus-attacks-revisited.pdf
 - id: 24
   official:
   - label: Publisher / DOI
@@ -459,6 +497,8 @@
   author:
   - label: Oxford author copy
     url: https://www.cs.ox.ac.uk/files/7240/globecom_camera.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2013/neighborhood-watch-network-coding-key-sharing.pdf
 - id: 21
   official:
   - label: Publisher / DOI
@@ -469,6 +509,8 @@
   author:
   - label: UCLA author copy
     url: https://web.cs.ucla.edu/~rafail/PUBLIC/129.pdf
+  - label: Author-hosted full version
+    url: /pubs/2013/5pm-secure-pattern-matching.pdf
 - id: 20
   official:
   - label: Publisher / DOI
@@ -476,7 +518,7 @@
   archive: []
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2013/blindfolded-data-search-ieee-computer2013.pdf
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf
   - label: UCI coauthor copy
     url: https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf
 - id: 19
@@ -503,6 +545,8 @@
   author:
   - label: UCI author copy
     url: https://ics.uci.edu/~gts/paps/smart.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2012/smart-ndss2012.pdf
 - id: 16
   official:
   - label: Journal PDF
@@ -513,6 +557,8 @@
   author:
   - label: Author-hosted PDF
     url: https://emilianodc.com/PAPERS/IJSN12.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf
 - id: 15
   official:
   - label: Publisher / DOI
@@ -522,7 +568,7 @@
     url: https://web.archive.org/web/20150703110555id_/http://www.ics.uci.edu/~keldefra/papers/jsac11.pdf
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2011/privacy-preserving-routing-jsac2011.pdf
+    url: /pubs/2011/privacy-preserving-routing-jsac2011.pdf
 - id: 14
   official:
   - label: Publisher / DOI
@@ -540,7 +586,7 @@
     url: https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2011/group-distance-bounding-trust2011.pdf
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf
 - id: 12
   official:
   - label: Publisher / DOI
@@ -550,7 +596,7 @@
     url: https://web.archive.org/web/20120120122917id_/http://www.syssec.ethz.ch/research/wisec10-attks.pdf
   author:
   - label: Author-hosted PDF
-    url: https://keldefrawy.github.io/pubs/2010/physical-layer-identification-wisec2010.pdf
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf
 - id: 11
   official:
   - label: Publisher / DOI
@@ -559,6 +605,8 @@
   author:
   - label: Author-hosted paper
     url: https://archimedes-12-vagrant.ics.uci.edu/pubs/karim-wireless-net-code-ll-enc.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf
 - id: 10
   official:
   - label: Publisher / DOI
@@ -567,6 +615,8 @@
   author:
   - label: Author-hosted PDF
     url: https://www.johnsolis.com/publications/dtn_compsac09.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf
 - id: 9
   official:
   - label: Publisher / DOI
@@ -577,6 +627,8 @@
   author:
   - label: UCI author copy
     url: https://sprout.ics.uci.edu/pubs/04697044.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2008/prism-icnp2008.pdf
 - id: 8
   official:
   - label: Publisher / DOI
@@ -587,6 +639,8 @@
   author:
   - label: Author-hosted paper
     url: https://rfob.org/papers/ita08.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2008/filtering-blacklists-ita2008.pdf
 - id: 7
   official:
   - label: Publisher / DOI
@@ -597,12 +651,16 @@
   author:
   - label: UCI author copy
     url: https://ics.uci.edu/~gts/paps/alarm07.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2007/alarm-icnp2007.pdf
 - id: 6
   official: []
   archive:
   - label: arXiv
     url: https://arxiv.org/abs/cs/0612066
-  author: []
+  author:
+  - label: Author-hosted PDF
+    url: /pubs/2007/optimal-filtering-ddos-ita2007.pdf
 - id: 5
   official:
   - label: USENIX paper page
@@ -610,7 +668,9 @@
   archive:
   - label: CiteSeerX archive
     url: https://citeseerx.ist.psu.edu/document?doi=f6e27485882d0986e8e939dd7f1a3dcc897d33ac&repid=rep1&type=pdf
-  author: []
+  author:
+  - label: Author-hosted PDF
+    url: /pubs/2007/bottorrent-sruti2007.pdf
 - id: 4
   official:
   - label: Publisher / DOI
@@ -621,6 +681,8 @@
   author:
   - label: UCI author copy
     url: https://ics.uci.edu/~gts/paps/ezt07.pdf
+  - label: Author-hosted PDF
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf
 - id: 3
   official:
   - label: Publisher / DOI
@@ -628,7 +690,9 @@
   archive:
   - label: CiteSeerX archive
     url: https://citeseerx.ist.psu.edu/document?doi=0f2ebd193c1a279f035d877c6c43c4cc43829b57&repid=rep1&type=pdf
-  author: []
+  author:
+  - label: Author-hosted PDF
+    url: /pubs/2006/peuc-win-npsec2006.pdf
 - id: 2
   official:
   - label: Publisher / DOI

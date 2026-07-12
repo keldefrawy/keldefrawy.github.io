@@ -18,151 +18,302 @@ labels: ["Theory"]
 authors: ["Joshua Baron", "Karim Eldefrawy", "Kirill Minkovich", "Rafail Ostrovsky", "Eric Tressler"]
 keywords: ["secure pattern matching", "homomorphic encryption"]
 
-research_question: "Can a client privately search a server's text for rich pattern matches while protecting both parties even when one participant is malicious?"
-central_answer: "5PM encodes multiple matching modes through linear algebra and additive homomorphic encryption, reporting hidden queries, protected unrelated text, sublinear-in-circuit communication, and eight rounds in the malicious model."
+research_question: >-
+  Can two parties privately evaluate expressive pattern queries—exact match, single-character wildcards, non-binary substring/Hamming matching, and optionally hidden pattern length—with communication below the size of a generic matching circuit and security against malicious participants?
+central_answer: >-
+  5PM turns pattern matching into linear operations over character-delay vectors and an activation vector, enabling an honest-but-curious protocol from generic additively homomorphic encryption and a malicious protocol from threshold ElGamal plus zero-knowledge proofs. The source proves conditional security and gives sublinear-in-circuit communication and low round counts; only the honest-but-curious variant is implemented and benchmarked in the audited full version.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, protocol and proof decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete public IACR ePrint full version, the SCN publisher record, an author-uploaded full-text route, and a dated ResearchGate citation snapshot. Proof statements and benchmarks were inspected but not independently re-proved or rerun."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-19-site-record
-    type: curated_record
-    title: "Curated publication record for paper #19"
-    url: /publications/#paper-19
-  - id: source-paper-19-official-1
+  - id: source-paper-19-eprint
+    type: scholarly_preprint
+    title: "5PM: Secure Pattern Matching, full version"
+    url: "https://eprint.iacr.org/2012/698.pdf"
+    media_type: application/pdf
+    page_count: 51
+    provenance_category: public_archive
+    retrieved_at: "2026-07-11"
+  - id: source-paper-19-official
     type: publication_record
-    title: "Publisher / DOI"
+    title: "SCN 2012 publisher record"
     url: "https://doi.org/10.1007/978-3-642-32928-9_13"
-  - id: source-paper-19-archive-1
-    type: manuscript_archive
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2012/698"
+  - id: source-paper-19-author
+    type: author_hosted_copy
+    title: "ResearchGate author-uploaded full text"
+    url: "https://www.researchgate.net/publication/266956911_5PM_Secure_Pattern_Matching"
+    provenance_category: author
+    retrieved_at: "2026-07-11"
+  - id: source-paper-19-journal
+    type: subsequent_publication_record
+    title: "Journal of Computer Security full-version record"
+    url: "https://journals.sagepub.com/doi/10.3233/JCS-130481"
+    year: 2013
+  - id: source-paper-19-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/266956911_5PM_Secure_Pattern_Matching"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-19-site-record
-    source_id: source-paper-19-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-19
-  - id: anchor-paper-19-official-1
-    source_id: source-paper-19-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-19-question
+    source_id: source-paper-19-eprint
+    label: "Problem, functionality, and claimed contributions"
+    locator: "Abstract and Section 1, PDF pages 1-4"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=1"
+  - id: anchor-paper-19-ipm
+    source_id: source-paper-19-eprint
+    label: "Insecure pattern-matching algorithm and character-delay vectors"
+    locator: "Section 2.1, PDF pages 5-7"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=5"
+  - id: anchor-paper-19-linear
+    source_id: source-paper-19-eprint
+    label: "Linear-algebra formulation and Stretch/Cut/ColSum operations"
+    locator: "Sections 2.2-2.3, PDF pages 7-10"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=7"
+  - id: anchor-paper-19-hbc
+    source_id: source-paper-19-eprint
+    label: "Honest-but-curious 5PM protocol"
+    locator: "Section 3.2, PDF pages 11-12"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=11"
+  - id: anchor-paper-19-malicious
+    source_id: source-paper-19-eprint
+    label: "Malicious-static-corruption protocol and zero-knowledge checks"
+    locator: "Section 3.3, PDF pages 12-16"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=12"
+  - id: anchor-paper-19-theorems
+    source_id: source-paper-19-eprint
+    label: "Security theorems and complexity claims"
+    locator: "Theorems 1-2 and Section 4, PDF pages 12-18"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=12"
+  - id: anchor-paper-19-proofs
+    source_id: source-paper-19-eprint
+    label: "Simulation-based proof details"
+    locator: "Proof sections and appendices, PDF pages 32-48"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=32"
+  - id: anchor-paper-19-implementation
+    source_id: source-paper-19-eprint
+    label: "Honest-but-curious implementation and benchmark tables"
+    locator: "Implementation section and Table 13, PDF pages 48-50"
+    url: "https://eprint.iacr.org/2012/698.pdf#page=48"
+  - id: anchor-paper-19-publication
+    source_id: source-paper-19-official
+    label: "Official conference publication record"
+    locator: "SCN 2012, pages 222-240, DOI record"
     url: "https://doi.org/10.1007/978-3-642-32928-9_13"
-  - id: anchor-paper-19-archive-1
-    source_id: source-paper-19-archive-1
-    label: "IACR ePrint"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://eprint.iacr.org/2012/698"
+  - id: anchor-paper-19-journal
+    source_id: source-paper-19-journal
+    label: "Subsequent journal full-version record"
+    locator: "Journal of Computer Security 21(5), pages 601-625"
+    url: "https://journals.sagepub.com/doi/10.3233/JCS-130481"
+  - id: anchor-paper-19-citations
+    source_id: source-paper-19-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate displayed Citations (56), observed 2026-07-11; coverage and merging of conference, ePrint, and journal versions may differ from other indexes."
+    url: "https://www.researchgate.net/publication/266956911_5PM_Secure_Pattern_Matching"
 
 nodes:
   - id: paper-19
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "5PM: Secure Pattern Matching"
-    summary: "5PM lets a client search a server's text for exact, wildcard, approximate, and substring matches without revealing the query or exposing unrelated text, even against malicious participants. A linear-algebra formulation with additive homomorphic encryption gives sublinear-in-circuit communication, supports arbitrary alphabets and hidden pattern length, and completes in eight rounds in the malicious model."
-    source_anchor_ids: [anchor-paper-19-site-record]
+    epistemic_status: published
+    title: "5PM"
+    summary: "A two-party secure pattern-matching protocol family based on an algebraic reduction and additively homomorphic encryption."
+    source_anchor_ids: [anchor-paper-19-question]
 
   - id: paper-19-question
     kind: question
     parent_id: paper-19
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can a client privately search a server's text for rich pattern matches while protecting both parties even when one participant is malicious?"
-    source_anchor_ids: [anchor-paper-19-site-record]
+    summary: "Can expressive non-binary pattern search be securely computed with communication linear in text-plus-pattern length rather than linear in a quadratic generic circuit?"
+    source_anchor_ids: [anchor-paper-19-question]
 
   - id: paper-19-answer
     kind: contribution
     parent_id: paper-19
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "5PM encodes multiple matching modes through linear algebra and additive homomorphic encryption, reporting hidden queries, protected unrelated text, sublinear-in-circuit communication, and eight rounds in the malicious model."
-    source_anchor_ids: [anchor-paper-19-site-record]
+    epistemic_status: formally_supported
+    title: "Central answer"
+    summary: "Represent candidate matches as linear matrix/vector operations over character-delay vectors, then evaluate those operations homomorphically with protocol-specific checks for semi-honest or malicious behavior."
+    source_anchor_ids: [anchor-paper-19-linear, anchor-paper-19-hbc, anchor-paper-19-malicious]
 
-  - id: paper-19-method
-    kind: method
+  - id: paper-19-scope
+    kind: scope
     parent_id: paper-19
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Represent exact, wildcard, approximate, and substring matching algebraically and evaluate the representation with additive homomorphic encryption and malicious-security protocol steps."
-    source_anchor_ids: [anchor-paper-19-site-record]
+    epistemic_status: explicitly_scoped
+    title: "Functionality and parties"
+    summary: "A server holds text of length n and a client holds a pattern of length m over an arbitrary alphabet; outputs can represent exact, single-wildcard, substring/Hamming matches, with optional pattern-length hiding."
+    source_anchor_ids: [anchor-paper-19-question]
 
-  - id: paper-19-claims
-    kind: claim_group
+  - id: paper-19-adversary
+    kind: threat_model
+    parent_id: paper-19-scope
+    order: 1
+    epistemic_status: defined
+    title: "Semi-honest and malicious models"
+    summary: "Separate constructions address honest-but-curious behavior and static malicious corruption in the stand-alone model; privacy is defined through simulation and allowed leakage such as public length bounds."
+    source_anchor_ids: [anchor-paper-19-hbc, anchor-paper-19-malicious, anchor-paper-19-proofs]
+
+  - id: paper-19-primitive-ipm
+    kind: primitive
     parent_id: paper-19
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The conference version reports malicious security, support for arbitrary alphabets and hidden pattern length, communication sublinear in the corresponding circuit, and completion in eight rounds."
-    source_anchor_ids: [anchor-paper-19-site-record]
+    epistemic_status: algorithmically_defined
+    title: "Character-delay-vector matching"
+    summary: "Each pattern character creates delayed contributions to an activation vector; a match is detected where the accumulated value equals the pattern length, with adjustments for wildcards and allowed Hamming distance."
+    source_anchor_ids: [anchor-paper-19-ipm]
 
-  - id: paper-19-evidence
-    kind: evidence_group
+  - id: paper-19-primitive-linear
+    kind: primitive
     parent_id: paper-19
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports protocol properties, communication behavior, and round count; security definitions, proofs, parameter choices, and any benchmarks have not been source-audited."
-    source_anchor_ids: [anchor-paper-19-site-record]
+    epistemic_status: proposed
+    title: "Linear-algebra reduction"
+    summary: "Matrix multiplication followed by Stretch, Cut, and column summation expresses matching using additions and scalar products compatible with additive homomorphism."
+    source_anchor_ids: [anchor-paper-19-linear]
+
+  - id: paper-19-protocol-hbc
+    kind: protocol
+    parent_id: paper-19
+    order: 6
+    epistemic_status: proven_conditional_and_implemented
+    title: "Two-round honest-but-curious protocol"
+    summary: "The client encrypts preprocessed pattern material, the server evaluates the linear matching computation over ciphertexts, and the client decrypts the blinded result; security relies on semantic security of the chosen additive homomorphic scheme."
+    source_anchor_ids: [anchor-paper-19-hbc, anchor-paper-19-theorems]
+
+  - id: paper-19-protocol-malicious
+    kind: protocol
+    parent_id: paper-19
+    order: 7
+    epistemic_status: proven_conditional_not_implemented
+    title: "Eight-round malicious protocol"
+    summary: "Threshold ElGamal, commitments, and interleaved zero-knowledge arguments constrain both parties to well-formed encrypted inputs and protocol steps while preserving the algebraic matching path."
+    source_anchor_ids: [anchor-paper-19-malicious, anchor-paper-19-theorems]
+
+  - id: paper-19-claim-security-hbc
+    kind: formal_claim
+    parent_id: paper-19
+    order: 8
+    epistemic_status: theorem_in_source
+    title: "Semi-honest security"
+    summary: "Theorem 1 establishes simulation-based security of the honest-but-curious construction assuming a semantically secure additively homomorphic encryption scheme over the specified group."
+    source_anchor_ids: [anchor-paper-19-theorems, anchor-paper-19-proofs]
+
+  - id: paper-19-claim-security-malicious
+    kind: formal_claim
+    parent_id: paper-19
+    order: 9
+    epistemic_status: theorem_in_source
+    title: "Malicious security"
+    summary: "Theorem 2 establishes security of the malicious construction under the Decisional Diffie-Hellman assumption and the soundness/zero-knowledge properties of its proof subprotocols."
+    source_anchor_ids: [anchor-paper-19-theorems, anchor-paper-19-proofs]
+
+  - id: paper-19-claim-complexity
+    kind: formal_claim
+    parent_id: paper-19
+    order: 10
+    epistemic_status: asymptotic_analysis
+    title: "Communication and round complexity"
+    summary: "The malicious construction uses O((m+n)k^2) bandwidth and O(m+n) encryptions and completes in eight rounds; the honest-but-curious construction completes in two rounds, with computational work still scaling with pattern-text interactions."
+    source_anchor_ids: [anchor-paper-19-question, anchor-paper-19-theorems]
+
+  - id: paper-19-evidence-proof
+    kind: formal_evidence
+    parent_id: paper-19
+    order: 11
+    epistemic_status: human_proof
+    title: "Simulation proof chain"
+    summary: "The full version supplies hybrid/simulator arguments for the protocol components and their composition; this map records the chain but does not independently verify every proof step."
+    source_anchor_ids: [anchor-paper-19-proofs]
+
+  - id: paper-19-evidence-implementation
+    kind: empirical_evidence
+    parent_id: paper-19
+    order: 12
+    epistemic_status: measured_prototype
+    title: "Honest-but-curious prototype"
+    summary: "A C++ Paillier-based implementation on a dual quad-core 2.93 GHz machine reports, for alphabet 36, pattern 100, and text 10,000, about 7.55 seconds at 1024-bit keys and 25.01 seconds at 2048-bit keys."
+    source_anchor_ids: [anchor-paper-19-implementation]
 
   - id: paper-19-limitations
     kind: limitation_group
     parent_id: paper-19
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The record does not establish concrete cost at deployment sizes, leakage outside the stated model, cryptographic parameter assumptions, implementation security, or behavior for unsupported matching functions."
-    source_anchor_ids: [anchor-paper-19-site-record]
+    order: 13
+    epistemic_status: material
+    title: "Implementation and evidence limits"
+    summary: "The malicious protocol is not implemented in the reported evaluation, benchmarks use an older single-machine setup, preprocessing and key generation are separated from online totals, and no public code or independent reproduction was located."
+    source_anchor_ids: [anchor-paper-19-implementation]
 
-  - id: paper-19-resources
+  - id: paper-19-artifacts
     kind: artifact_group
     parent_id: paper-19
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; IACR ePrint. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-19-official-1, anchor-paper-19-archive-1]
+    order: 14
+    epistemic_status: paper_and_proof_only
+    title: "Artifacts"
+    summary: "The IACR full version exposes detailed constructions, proofs, and benchmark tables; an author-uploaded full text is also public, but no code repository, test vectors, or locally fixed PDF was obtained."
+    source_anchor_ids: [anchor-paper-19-proofs, anchor-paper-19-implementation]
 
   - id: paper-19-scrutiny
     kind: scrutiny
     parent_id: paper-19
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · conference version at 8th Conference on Security and Cryptography for Networks (SCN). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-19-site-record, anchor-paper-19-official-1]
+    order: 15
+    epistemic_status: conference_and_journal_reviewed
+    title: "External scrutiny and reception"
+    summary: "A preliminary version appeared at SCN 2012, a full version later appeared in the Journal of Computer Security, and ResearchGate reports 56 citations; review reports and independent proof/implementation audits were not inspected."
+    source_anchor_ids: [anchor-paper-19-publication, anchor-paper-19-journal, anchor-paper-19-citations]
+
+  - id: paper-19-lineage
+    kind: lineage
+    parent_id: paper-19
+    order: 16
+    epistemic_status: documented
+    title: "Research lineage"
+    summary: "5PM contributes a reusable linear representation for secure string search and supplies the cryptographic search primitive later used and surveyed in application-oriented private-search work."
+    source_anchor_ids: [anchor-paper-19-question, anchor-paper-19-linear]
 
 relations:
-  - id: paper-19-relation-method-supports-answer
+  - id: paper-19-relation-ipm-enables-linear
+    type: enables
+    from_id: paper-19-primitive-ipm
+    to_id: paper-19-primitive-linear
+  - id: paper-19-relation-linear-enables-hbc
+    type: enables
+    from_id: paper-19-primitive-linear
+    to_id: paper-19-protocol-hbc
+  - id: paper-19-relation-linear-enables-malicious
+    type: enables
+    from_id: paper-19-primitive-linear
+    to_id: paper-19-protocol-malicious
+  - id: paper-19-relation-proof-supports-hbc
     type: supports
-    from_id: paper-19-method
-    to_id: paper-19-answer
-  - id: paper-19-relation-evidence-supports-claim
+    from_id: paper-19-evidence-proof
+    to_id: paper-19-claim-security-hbc
+  - id: paper-19-relation-proof-supports-malicious
     type: supports
-    from_id: paper-19-evidence
-    to_id: paper-19-claims
-  - id: paper-19-relation-limitations-qualify-claim
+    from_id: paper-19-evidence-proof
+    to_id: paper-19-claim-security-malicious
+  - id: paper-19-relation-implementation-supports-hbc
+    type: supports
+    from_id: paper-19-evidence-implementation
+    to_id: paper-19-protocol-hbc
+  - id: paper-19-relation-limitations-qualify-answer
     type: qualifies
     from_id: paper-19-limitations
-    to_id: paper-19-claims
-  - id: paper-19-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-19-scrutiny
-    to_id: paper-19
+    to_id: paper-19-answer
 
 assessment:
   id: paper-19-assessment-2026-07-11
@@ -172,33 +323,36 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary reports protocol properties, communication behavior, and round count; security definitions, proofs, parameter choices, and any benchmarks have not been source-audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-19-site-record]
+      level: high
+      rationale: "The full version provides explicit functionality and adversary models, theorem statements, extensive simulation-based proofs, asymptotic analysis, and an honest-but-curious implementation with benchmarks. The malicious variant is not implemented and neither proof nor benchmark was independently reproduced in this audit."
+      basis_source_anchor_ids: [anchor-paper-19-theorems, anchor-paper-19-proofs, anchor-paper-19-implementation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-19-official-1, anchor-paper-19-archive-1]
+      rationale: "A complete IACR full version and an author-uploaded full text make the construction, proofs, and benchmarks directly inspectable. This audit did not obtain a locally hashed binary or public implementation source."
+      basis_source_anchor_ids: [anchor-paper-19-question, anchor-paper-19-proofs, anchor-paper-19-implementation]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-19-site-record]
+      rationale: "Named authorship, public ePrint, conference DOI, author upload, and later journal record establish a clear publication lineage. Contributor roles, code versions, benchmark scripts, and revision history are not documented."
+      basis_source_anchor_ids: [anchor-paper-19-question, anchor-paper-19-publication, anchor-paper-19-journal]
     - id: external_scrutiny
-      level: medium
-      rationale: "The record reports publication in 8th Conference on Security and Cryptography for Networks (SCN), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-19-official-1]
+      level: high
+      rationale: "The work passed SCN review, received a journal full-version publication, and has a substantial citation trail. Review reports, independent proof checking, and implementation replication were not located."
+      basis_source_anchor_ids: [anchor-paper-19-publication, anchor-paper-19-journal, anchor-paper-19-citations]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-19-site-record]
+      level: high
+      rationale: "ResearchGate displayed 56 citations on 2026-07-11, exceeding the rubric's 11-citation high threshold. The count may merge conference, ePrint, and journal versions, and citing contexts were not reviewed."
+      basis_source_anchor_ids: [anchor-paper-19-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete contribution: The conference version reports malicious security, support for arbitrary alphabets and hidden pattern length, communication sublinear in the corresponding circuit, and completion in eight rounds. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-19-site-record]
+      level: high
+      rationale: "The work provides a general algebraic primitive, malicious-security construction, favorable communication/round complexity, and a prototype, and it has a sustained citation and publication trail."
+      basis_source_anchor_ids: [anchor-paper-19-question, anchor-paper-19-theorems, anchor-paper-19-implementation, anchor-paper-19-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 56
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate displayed Citations (56)."
+    - "A full version subsequently appeared in the Journal of Computer Security."
+  limitation: "ResearchGate may merge the conference, IACR ePrint, and journal versions differently from other indexes; citing contexts, polarity, proof reuse, and software adoption were not audited."

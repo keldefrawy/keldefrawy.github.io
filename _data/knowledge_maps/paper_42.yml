@@ -14,258 +14,291 @@ title: "Reconciling Remote Attestation and Safety-Critical Operation on Simple I
 year: 2018
 status: "Published · invited paper"
 venue: "55th Design Automation Conference (DAC)"
-topic: "secure-systems-networks"
-labels: ["Theory"]
+topic: secure-systems-networks
+labels: [Theory]
 authors:
-  - "Xavier Carpent"
-  - "Karim Eldefrawy"
-  - "Norrathep Rattanavipanon"
-  - "Ahmad-Reza Sadeghi"
-  - "Gene Tsudik"
-keywords:
-  - "remote attestation"
-  - "safety-critical systems"
-  - "IoT"
-editorial_summary: "This paper examines the conflict between atomic remote-attestation scans and devices that must remain available for safety-critical work. It analyzes transient and relocating malware and explores periodic measurement, shuffled traversal, interruptible attestation, and memory-locking mitigations."
+  - Xavier Carpent
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Ahmad-Reza Sadeghi
+  - Gene Tsudik
+keywords: [remote attestation, safety-critical systems, transient malware, shuffled measurement, memory locking]
 
-research_question: "How can simple safety-critical IoT devices perform remote attestation without making an unacceptable tradeoff between atomic measurement and continued operation?"
-central_answer: "The paper analyzes transient and relocating malware and explores periodic measurement, shuffled traversal, interruptible attestation, and memory locking as mitigation directions."
+research_question: >-
+  How can remote attestation preserve malware-detection value when its atomic memory scan can delay safety-critical work, yet making the scan interruptible creates opportunities for transient or self-relocating malware?
+central_answer: >-
+  There is no single cost-free reconciliation. The paper organizes a protocol design space around periodic self-measurement, randomized traversal, and lock-scheduled interruptible measurements; each changes freshness, false-negative probability, temporal consistency, availability, hardware assumptions, or communication requirements.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, claim mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete six-page invited paper downloaded from NSF/UCI public routes, including visual inspection of the first and mechanism pages. The map treats the work as a protocol/design analysis, not as a new implementation or formal proof.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Mechanism interpretations and ratings remain provisional until author approval.
 
 sources:
-  - id: source-paper-42-site-record
-    type: curated_site_record
-    title: "Publication #42 metadata and editorial summary"
-    url: /publications/#paper-42
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-42-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3195970.3199853"
-    provenance_category: official
-  - id: source-paper-42-resource-2
-    type: public_archive_record
-    title: "NSF Public Access"
-    url: "https://par.nsf.gov/servlets/purl/10063867"
-    provenance_category: archive
-  - id: source-paper-42-resource-3
+  - id: source-paper-42-author-pdf
     type: author_hosted_copy
-    title: "UCI author copy"
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/reconcile-ra-safety.pdf"
+    title: "Invited: Reconciling Remote Attestation and Safety-Critical Operation on Simple IoT Devices"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf
     provenance_category: author
+    retrieved_from: https://sprout.ics.uci.edu/projects/attestation/papers/reconcile-ra-safety.pdf
+    media_type: application/pdf
+    sha256: ba16e8faacd8788bfcc3db035f7e15d98b3b86705cf9cb7d648f38e83bdf7ef8
+    page_count: 6
+  - id: source-paper-42-official
+    type: official_publication_record
+    title: DAC 2018 publication record
+    url: https://doi.org/10.1145/3195970.3199853
+    provenance_category: official
+  - id: source-paper-42-archive
+    type: public_archive_copy
+    title: NSF Public Access copy
+    url: https://par.nsf.gov/servlets/purl/10063867
+    provenance_category: archive
+  - id: source-paper-42-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2809340493
+    url: https://openalex.org/W2809340493
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-42-editorial
-    source_id: source-paper-42-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-42
-  - id: anchor-paper-42-resource-1
-    source_id: source-paper-42-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/3195970.3199853"
-  - id: anchor-paper-42-resource-2
-    source_id: source-paper-42-resource-2
-    label: "Archive resource: NSF Public Access"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://par.nsf.gov/servlets/purl/10063867"
-  - id: anchor-paper-42-resource-3
-    source_id: source-paper-42-resource-3
-    label: "Author-hosted resource: UCI author copy"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/reconcile-ra-safety.pdf"
+  - id: anchor-paper-42-problem
+    source_id: source-paper-42-author-pdf
+    label: Safety/security conflict, malware classes, and mitigation overview
+    locator: "Abstract and Section 1, PDF page 1"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=1
+  - id: anchor-paper-42-ra-model
+    source_id: source-paper-42-author-pdf
+    label: RA approaches, on-demand protocol, and coverage assumptions
+    locator: "Sections 2.1-2.3, PDF pages 1-2"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=1
+  - id: anchor-paper-42-overhead
+    source_id: source-paper-42-author-pdf
+    label: Hashing cost and safety-critical fire-alarm example
+    locator: "Sections 2.4-2.5 and Figure 2, PDF pages 2-3"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=2
+  - id: anchor-paper-42-threats
+    source_id: source-paper-42-author-pdf
+    label: Transient, self-relocating, and interrupt-triggering malware
+    locator: "Section 2.5, PDF page 3"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=3
+  - id: anchor-paper-42-locking
+    source_id: source-paper-42-author-pdf
+    label: All-Lock, decreasing-lock, and increasing-lock protocols
+    locator: "Section 3.1, PDF pages 3-5"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=3
+  - id: anchor-paper-42-shuffle
+    source_id: source-paper-42-author-pdf
+    label: SMARM shuffled-measurement analysis
+    locator: "Section 3.2, PDF page 5"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=5
+  - id: anchor-paper-42-self
+    source_id: source-paper-42-author-pdf
+    label: ERASMUS and SeED self-measurement designs and assumptions
+    locator: "Section 3.3, PDF pages 5-6"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=5
+  - id: anchor-paper-42-conclusion
+    source_id: source-paper-42-author-pdf
+    label: Conclusions and tradeoff boundary
+    locator: "Section 4, PDF page 6"
+    url: /pubs/2018/reconcile-ra-safety-dac2018.pdf#page=6
+  - id: anchor-paper-42-publication
+    source_id: source-paper-42-official
+    label: Official invited-paper publication identity
+    locator: "DAC 2018, DOI 10.1145/3195970.3199853"
+    url: https://doi.org/10.1145/3195970.3199853
+  - id: anchor-paper-42-reception
+    source_id: source-paper-42-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 12 citing works on 2026-07-11"
+    url: https://openalex.org/W2809340493
 
 nodes:
   - id: paper-42
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Reconciling Remote Attestation and Safety-Critical Operation on Simple IoT Devices"
-    summary: "This paper examines the conflict between atomic remote-attestation scans and devices that must remain available for safety-critical work. It analyzes transient and relocating malware and explores periodic measurement, shuffled traversal, interruptible attestation, and memory-locking mitigations."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
+    epistemic_status: published_invited_paper
+    title: Remote attestation under safety-critical constraints
+    summary: A protocol-level analysis of why atomic attestation threatens availability and why interruptibility threatens malware detection, with a taxonomy of imperfect mitigations.
+    source_anchor_ids: [anchor-paper-42-problem]
   - id: paper-42-question
     kind: question
     parent_id: paper-42
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "How can simple safety-critical IoT devices perform remote attestation without making an unacceptable tradeoff between atomic measurement and continued operation?"
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
-  - id: paper-42-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can a simple IoT prover remain responsive to critical events while still producing a fresh, meaningful malware measurement?
+    source_anchor_ids: [anchor-paper-42-problem, anchor-paper-42-overhead]
+  - id: paper-42-answer
     kind: contribution
     parent_id: paper-42
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper analyzes transient and relocating malware and explores periodic measurement, shuffled traversal, interruptible attestation, and memory locking as mitigation directions."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
-  - id: paper-42-method
-    kind: method
+    epistemic_status: analytical_synthesis
+    title: Central answer
+    summary: Use explicit tradeoffs among periodic self-measurement, randomized order, and progressive locking; no surveyed protocol dominates on freshness, detection, consistency, availability, and assumptions.
+    source_anchor_ids: [anchor-paper-42-locking, anchor-paper-42-shuffle, anchor-paper-42-self]
+  - id: paper-42-baseline
+    kind: protocol
     parent_id: paper-42
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented method is comparative security analysis of attestation strategies under safety-critical availability constraints."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
+    epistemic_status: defined
+    title: On-demand RA baseline
+    summary: A verifier sends a fresh challenge, the prover computes an authenticated measurement over selected memory, returns it, and the verifier checks it against an admissible state.
+    source_anchor_ids: [anchor-paper-42-ra-model]
+  - id: paper-42-threat
+    kind: threat_model
+    parent_id: paper-42
+    order: 4
+    epistemic_status: defined
+    title: Malware and availability threats
+    summary: Transient malware can leave between measurements, self-relocating malware can evade a predictable interruptible scan, and malware may trigger a nominally critical task to preempt attestation.
+    source_anchor_ids: [anchor-paper-42-threats]
+  - id: paper-42-assumptions
+    kind: assumption
+    parent_id: paper-42
+    order: 5
+    epistemic_status: model_dependent
+    title: Mechanism-dependent assumptions
+    summary: Solutions variously need secure keys and measurement code, memory-lock enforcement, secret scan order, protected clocks or counters, authenticated channels, and predictable verifier expectations.
+    source_anchor_ids: [anchor-paper-42-ra-model, anchor-paper-42-locking, anchor-paper-42-self]
+  - id: paper-42-designs
+    kind: method
+    parent_id: paper-42
+    order: 6
+    epistemic_status: comparative_analysis
+    title: Mitigation design space
+    summary: The paper compares three protocol families rather than presenting a single deployed system.
+    source_anchor_ids: [anchor-paper-42-locking, anchor-paper-42-shuffle, anchor-paper-42-self]
+  - id: paper-42-design-lock
+    kind: protocol
+    parent_id: paper-42-designs
+    order: 1
+    epistemic_status: specified
+    title: Progressive locking
+    summary: All-Lock freezes all memory; Dec-Lock releases measured blocks and targets start-time consistency; Inc-Lock progressively locks measured blocks and targets end-time consistency.
+    source_anchor_ids: [anchor-paper-42-locking]
+  - id: paper-42-design-shuffle
+    kind: protocol
+    parent_id: paper-42-designs
+    order: 2
+    epistemic_status: probability_analyzed
+    title: Shuffled measurement
+    summary: SMARM hides traversal order so roving malware cannot know which block is safe; one scan leaves escape probability near e^-1, so repeated independent scans reduce but do not eliminate false negatives.
+    source_anchor_ids: [anchor-paper-42-shuffle]
+  - id: paper-42-design-self
+    kind: protocol
+    parent_id: paper-42-designs
+    order: 3
+    epistemic_status: comparative_analysis
+    title: Periodic self-measurement
+    summary: ERASMUS decouples measurement frequency from verifier collection; SeED makes reports prover-initiated but adds protected time/replay and expected-delivery requirements.
+    source_anchor_ids: [anchor-paper-42-self]
   - id: paper-42-claims
     kind: claim_group
     parent_id: paper-42
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
-  - id: paper-42-claim-primary
-    kind: claim
-    parent_id: paper-42-claims
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports that atomic scanning conflicts with continued operation and that alternative traversal, scheduling, interruption, and locking strategies create different security-availability tradeoffs."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
+    order: 7
+    epistemic_status: analytical
+    title: Main conclusions
+    summary: Atomic scans can be dangerously slow, while interruptible or scheduled protocols exchange stronger availability for weaker or more assumption-heavy detection guarantees.
+    source_anchor_ids: [anchor-paper-42-overhead, anchor-paper-42-conclusion]
   - id: paper-42-evidence
     kind: evidence_group
     parent_id: paper-42
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
-  - id: paper-42-evidence-reported
-    kind: evidence
-    parent_id: paper-42-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The current record identifies malware analyses and mitigation exploration, but formal models, proofs, implementations, and comparative measurements were not audited."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
-  - id: paper-42-scope
+    order: 8
+    epistemic_status: synthesis_of_prior_results
+    title: Evidence basis
+    summary: Support consists of measured hashing costs, worked attack scenarios, cited probability analysis for shuffled measurement, and a structured comparison of existing mechanisms; no new prototype or formal proof is reported.
+    source_anchor_ids: [anchor-paper-42-overhead, anchor-paper-42-shuffle, anchor-paper-42-self]
+  - id: paper-42-boundaries
     kind: limitation_group
     parent_id: paper-42
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
-  - id: paper-42-scope-boundary
-    kind: limitation
-    parent_id: paper-42-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The paper is invited and the represented mitigations may be exploratory. Device timing, memory behavior, malware capability, safety deadlines, and residual risks require source review."
-    source_anchor_ids: ["anchor-paper-42-editorial"]
-
-  - id: paper-42-resources
+    order: 9
+    epistemic_status: explicit
+    title: Limits of reconciliation
+    summary: Self-measurement can be stale; shuffled scans need repetition; locking impairs writes; protected time and communication expectations add hardware and availability assumptions; on-demand RA remains necessary for maximum freshness.
+    source_anchor_ids: [anchor-paper-42-locking, anchor-paper-42-shuffle, anchor-paper-42-self, anchor-paper-42-conclusion]
+  - id: paper-42-artifacts
     kind: artifact_group
     parent_id: paper-42
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-42-resource-1", "anchor-paper-42-resource-2", "anchor-paper-42-resource-3"]
-
-  - id: paper-42-resources-available
-    kind: artifact
-    parent_id: paper-42-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: NSF Public Access; Author-hosted: UCI author copy."
-    source_anchor_ids: ["anchor-paper-42-resource-1", "anchor-paper-42-resource-2", "anchor-paper-42-resource-3"]
-
+    order: 10
+    epistemic_status: publication_only
+    title: Artifacts
+    summary: Full author and NSF copies plus the DOI are public. The invited synthesis does not claim a new implementation, dataset, proof artifact, or reproduction package.
+    source_anchor_ids: [anchor-paper-42-problem, anchor-paper-42-publication]
   - id: paper-42-scrutiny
     kind: scrutiny
     parent_id: paper-42
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · invited paper at 55th Design Automation Conference (DAC). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-42-resource-1"]
+    order: 11
+    epistemic_status: invited_venue_paper
+    title: External scrutiny
+    summary: DAC publication provides external venue exposure, while the represented source is an invited analytical paper and public review reports were not located.
+    source_anchor_ids: [anchor-paper-42-publication]
+  - id: paper-42-lineage
+    kind: lineage
+    parent_id: paper-42
+    order: 12
+    epistemic_status: documented
+    title: Relation to temporal consistency
+    summary: The locking taxonomy and consistency vocabulary are drawn from the fuller treatment in paper #41; this paper reframes them around safety-critical protocol selection.
+    source_anchor_ids: [anchor-paper-42-locking, anchor-paper-42-conclusion]
 
 relations:
-  - id: relation-paper-42-contribution-addresses-question
-    type: addresses
-    from_id: paper-42-contribution
-    to_id: paper-42-question
-  - id: relation-paper-42-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-42-method
-    to_id: paper-42-contribution
-  - id: relation-paper-42-evidence-supports-claim
-    type: supports
-    from_id: paper-42-evidence-reported
-    to_id: paper-42-claim-primary
-  - id: relation-paper-42-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-42-scope-boundary
-    to_id: paper-42-claim-primary
-  - id: relation-paper-42-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-42-resources-available
-    to_id: paper-42-evidence-reported
-  - id: relation-paper-42-status-qualifies-claim
-    type: qualifies
-    from_id: paper-42-scrutiny
-    to_id: paper-42-claim-primary
+  - {id: paper-42-relation-answer-question, type: addresses, from_id: paper-42-answer, to_id: paper-42-question}
+  - {id: paper-42-relation-baseline-threat, type: exposed_to, from_id: paper-42-baseline, to_id: paper-42-threat}
+  - {id: paper-42-relation-lock-designs, type: component_of, from_id: paper-42-design-lock, to_id: paper-42-designs}
+  - {id: paper-42-relation-shuffle-designs, type: component_of, from_id: paper-42-design-shuffle, to_id: paper-42-designs}
+  - {id: paper-42-relation-self-designs, type: component_of, from_id: paper-42-design-self, to_id: paper-42-designs}
+  - {id: paper-42-relation-designs-answer, type: supports, from_id: paper-42-designs, to_id: paper-42-answer}
+  - {id: paper-42-relation-assumptions-designs, type: qualifies, from_id: paper-42-assumptions, to_id: paper-42-designs}
+  - {id: paper-42-relation-evidence-claims, type: supports, from_id: paper-42-evidence, to_id: paper-42-claims}
+  - {id: paper-42-relation-boundaries-claims, type: qualifies, from_id: paper-42-boundaries, to_id: paper-42-claims}
+  - {id: paper-42-relation-lineage-paper, type: contextualizes, from_id: paper-42-lineage, to_id: paper-42}
 
 assessment:
   id: paper-42-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-42-editorial", "anchor-paper-42-resource-1"]
+      rationale: The complete paper offers explicit threat scenarios, timing evidence, and mechanism/probability analysis, but it is an invited synthesis without a new implementation, full formal proof, or independent evaluation.
+      basis_source_anchor_ids: [anchor-paper-42-overhead, anchor-paper-42-shuffle, anchor-paper-42-conclusion]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-42-resource-1", "anchor-paper-42-resource-2", "anchor-paper-42-resource-3"]
+      rationale: Checked-in author text with SHA-256/page count, an NSF copy, precise page anchors, and a DOI make all represented arguments directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-42-problem, anchor-paper-42-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-42-editorial"]
+      rationale: Authorship, invited status, venue, date, DOI, and manuscript are documented; contributor roles, revision history, and exact source lineage are not.
+      basis_source_anchor_ids: [anchor-paper-42-problem, anchor-paper-42-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-42-resource-1"]
+      rationale: DAC publication establishes external exposure, but review reports, artifact review, and independent validation of the synthesis were not found.
+      basis_source_anchor_ids: [anchor-paper-42-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-42-editorial"]
+      level: high
+      rationale: OpenAlex reported 12 citations on 2026-07-11; under the author-defined rule, more than 10 located citations is High.
+      basis_source_anchor_ids: [anchor-paper-42-reception]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a focused articulation of the tension between remote-attestation atomicity and safety-critical availability. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-42-editorial"]
+      rationale: The paper clearly exposes a safety/security conflict and organizes practical protocol choices, but it primarily synthesizes mechanisms developed across prior work.
+      basis_source_anchor_ids: [anchor-paper-42-problem, anchor-paper-42-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 12
+  source_url: https://openalex.org/W2809340493
+  signals:
+    - OpenAlex reported 12 works citing the DAC invited paper.
+  limitation: Counts vary by index and date and do not distinguish citations to the synthesis from citations validating any particular mitigation.

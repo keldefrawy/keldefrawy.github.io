@@ -12,249 +12,343 @@ contribution_types: [protocol, scheme]
 
 title: "Temporal Consistency of Integrity-Ensuring Computations and Applications to Embedded Systems Security"
 year: 2018
-status: "Published"
+status: Published
 venue: "ACM Asia Conference on Computer and Communications Security (AsiaCCS)"
-topic: "secure-systems-networks"
-labels: ["Theory", "Applied"]
+topic: secure-systems-networks
+labels: [Theory, Applied]
 authors:
-  - "Xavier Carpent"
-  - "Karim Eldefrawy"
-  - "Norrathep Rattanavipanon"
-  - "Gene Tsudik"
+  - Xavier Carpent
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Gene Tsudik
 keywords:
-  - "temporal consistency"
-  - "embedded systems"
-  - "integrity"
-editorial_summary: "This paper formalizes the requirement that an interruptible integrity computation correspond to an input state that actually existed at some point in time. It demonstrates attacks caused by inconsistent inputs and evaluates several enforcement mechanisms on commodity embedded platforms."
+  - temporal consistency
+  - integrity measurement
+  - remote attestation
+  - embedded systems
+  - memory locking
 
-research_question: "How can an interruptible integrity computation be guaranteed to describe a system state that actually existed at one point in time?"
-central_answer: "The paper formalizes temporal consistency, demonstrates attacks exploiting inconsistent inputs, and reports several enforcement mechanisms evaluated on commodity embedded platforms."
+research_question: >-
+  How can an interruptible integrity computation over mutable memory be made to describe a state that actually existed, without making a real-time embedded device unavailable for the entire computation?
+central_answer: >-
+  The paper defines temporal consistency, gives an attestation security game that makes the timing obligation explicit, and develops locking, copying, and inconsistency-detection mechanisms that trade memory availability against the interval for which the result is consistent. Implementations on two embedded boards report under ten-percent overhead for selected mechanisms.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, claim mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete checked-in author copy, including visual inspection of the title page and experimental pages. Formal definitions, mechanisms, appendices, and reported experiments were read; implementation artifacts and independent reproduction were not audited.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Formal interpretations, experimental readings, and ratings remain provisional until author approval.
 
 sources:
-  - id: source-paper-41-site-record
-    type: curated_site_record
-    title: "Publication #41 metadata and editorial summary"
-    url: /publications/#paper-41
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-41-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3196494.3196526"
-    provenance_category: official
-  - id: source-paper-41-resource-2
+  - id: source-paper-41-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted paper"
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/consistency.pdf"
+    title: "Temporal Consistency of Integrity-Ensuring Computations and Applications to Embedded Systems Security"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf
     provenance_category: author
+    retrieved_from: https://sprout.ics.uci.edu/projects/attestation/papers/consistency.pdf
+    media_type: application/pdf
+    sha256: 66973edb677ae748d63120d391de14b2fb9601979c65874afc34e185e960e48f
+    page_count: 15
+  - id: source-paper-41-official
+    type: official_publication_record
+    title: ACM AsiaCCS 2018 publication record
+    url: https://doi.org/10.1145/3196494.3196526
+    provenance_category: official
+  - id: source-paper-41-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2806634969
+    url: https://openalex.org/W2806634969
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-41-editorial
-    source_id: source-paper-41-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-41
-  - id: anchor-paper-41-resource-1
-    source_id: source-paper-41-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/3196494.3196526"
-  - id: anchor-paper-41-resource-2
-    source_id: source-paper-41-resource-2
-    label: "Author-hosted resource: Author-hosted paper"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/consistency.pdf"
+  - id: anchor-paper-41-problem
+    source_id: source-paper-41-author-pdf
+    label: Problem, inconsistency attack, contributions, and claimed scope
+    locator: "Abstract and Section 1, PDF pages 1-2"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=1
+  - id: anchor-paper-41-model
+    source_id: source-paper-41-author-pdf
+    label: Temporal-consistency model, notation, and attestation timing
+    locator: "Section 3 and Figure 3, PDF page 4"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=4
+  - id: anchor-paper-41-game
+    source_id: source-paper-41-author-pdf
+    label: Temporal-consistency security game and adversarial objective
+    locator: "Appendix A, PDF pages 13-14"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=13
+  - id: anchor-paper-41-locks
+    source_id: source-paper-41-author-pdf
+    label: All-Lock, decreasing-lock, increasing-lock, and extended variants
+    locator: "Sections 4.1-4.2, PDF page 5"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=5
+  - id: anchor-paper-41-copy
+    source_id: source-paper-41-author-pdf
+    label: Copy-lock, writeback, lazy-copy, and non-sequential variants
+    locator: "Sections 4.3-4.4, PDF pages 5-7"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=5
+  - id: anchor-paper-41-detection
+    source_id: source-paper-41-author-pdf
+    label: Memory-access violations and inconsistency detection
+    locator: "Sections 4.6-4.7, PDF page 7"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=7
+  - id: anchor-paper-41-implementation
+    source_id: source-paper-41-author-pdf
+    label: seL4-based implementation and experimental setup
+    locator: "Sections 5.1-5.2, PDF pages 7-8"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=7
+  - id: anchor-paper-41-evaluation
+    source_id: source-paper-41-author-pdf
+    label: Primitive, mechanism, and inconsistency-detection measurements
+    locator: "Sections 5.3-5.6 and Figures 7-12, PDF pages 8-11"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=8
+  - id: anchor-paper-41-conclusion
+    source_id: source-paper-41-author-pdf
+    label: Conclusions and guarantee/performance boundary
+    locator: "Section 7, PDF page 12"
+    url: /pubs/2018/temporal-consistency-asiaccs2018.pdf#page=12
+  - id: anchor-paper-41-publication
+    source_id: source-paper-41-official
+    label: Official peer-reviewed publication identity
+    locator: "AsiaCCS 2018, DOI 10.1145/3196494.3196526"
+    url: https://doi.org/10.1145/3196494.3196526
+  - id: anchor-paper-41-reception
+    source_id: source-paper-41-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 21 citing works on 2026-07-11"
+    url: https://openalex.org/W2806634969
 
 nodes:
   - id: paper-41
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Temporal Consistency of Integrity-Ensuring Computations and Applications to Embedded Systems Security"
-    summary: "This paper formalizes the requirement that an interruptible integrity computation correspond to an input state that actually existed at some point in time. It demonstrates attacks caused by inconsistent inputs and evaluates several enforcement mechanisms on commodity embedded platforms."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    epistemic_status: published
+    title: Temporal consistency for integrity computations
+    summary: >-
+      A definition, attack analysis, mechanism family, and two-platform evaluation for making long-running integrity computations over mutable embedded-system memory correspond to a real state.
+    source_anchor_ids: [anchor-paper-41-problem]
 
   - id: paper-41-question
     kind: question
     parent_id: paper-41
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "How can an interruptible integrity computation be guaranteed to describe a system state that actually existed at one point in time?"
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: Can integrity measurement remain interruptible for safety-critical work without producing a digest of a memory state that never existed?
+    source_anchor_ids: [anchor-paper-41-problem, anchor-paper-41-model]
 
-  - id: paper-41-contribution
+  - id: paper-41-answer
     kind: contribution
     parent_id: paper-41
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper formalizes temporal consistency, demonstrates attacks exploiting inconsistent inputs, and reports several enforcement mechanisms evaluated on commodity embedded platforms."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    epistemic_status: source_asserted
+    title: Central answer
+    summary: Make the desired consistency time or interval explicit, then enforce it with memory locking, snapshot copying, or detection-and-recovery rather than assuming immutable input.
+    source_anchor_ids: [anchor-paper-41-model, anchor-paper-41-locks, anchor-paper-41-detection]
 
-  - id: paper-41-method
-    kind: method
+  - id: paper-41-definition
+    kind: definition
     parent_id: paper-41
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported method combines a formal consistency requirement, adversarial examples, enforcement designs, and platform experiments."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    epistemic_status: defined
+    title: Temporal consistency
+    summary: >-
+      For a sequential function F over memory M, the output must equal F evaluated on all of M at some relevant time, rather than on a patchwork assembled from values observed before and after interrupts.
+    source_anchor_ids: [anchor-paper-41-model]
+
+  - id: paper-41-threat
+    kind: threat_model
+    parent_id: paper-41
+    order: 4
+    epistemic_status: defined
+    title: Mutable-memory and malware adversary
+    summary: >-
+      An interrupting process or self-relocating malware can modify already measured or not-yet-measured blocks; remote attestation adds the objective of returning a valid-looking report while evading detection.
+    source_anchor_ids: [anchor-paper-41-problem, anchor-paper-41-game]
+
+  - id: paper-41-scope
+    kind: scope
+    parent_id: paper-41
+    order: 5
+    epistemic_status: explicitly_scoped
+    title: System and enforcement assumptions
+    summary: >-
+      The mechanisms assume enforceable page or region permissions, trustworthy measurement code and key handling, and a platform able to mediate writes; the implementation uses seL4 capabilities and page faults on two ARM boards.
+    source_anchor_ids: [anchor-paper-41-implementation]
+
+  - id: paper-41-mechanisms
+    kind: method
+    parent_id: paper-41
+    order: 6
+    epistemic_status: specified_and_implemented
+    title: Consistency mechanism family
+    summary: The paper maps different lock and copy schedules to different consistency points, availability costs, and memory overheads.
+    source_anchor_ids: [anchor-paper-41-locks, anchor-paper-41-copy]
+
+  - id: paper-41-mechanism-locks
+    kind: scheme
+    parent_id: paper-41-mechanisms
+    order: 1
+    epistemic_status: specified_and_implemented
+    title: Locking variants
+    summary: >-
+      All-Lock freezes all input; Dec-Lock releases blocks after reading and gives start-time consistency; Inc-Lock locks blocks as read and gives end-time consistency. Extended variants hold locks longer to widen the guaranteed interval.
+    source_anchor_ids: [anchor-paper-41-locks]
+
+  - id: paper-41-mechanism-copy
+    kind: scheme
+    parent_id: paper-41-mechanisms
+    order: 2
+    epistemic_status: specified
+    title: Copy-based variants
+    summary: >-
+      Cpy-Lock briefly locks while copying input into a stable buffer, then computes over the copy; writeback and lazy-copy variants change memory, pause, and storage tradeoffs.
+    source_anchor_ids: [anchor-paper-41-copy]
+
+  - id: paper-41-mechanism-detect
+    kind: protocol
+    parent_id: paper-41-mechanisms
+    order: 3
+    epistemic_status: implemented
+    title: Detect and resolve inconsistency
+    summary: >-
+      Write-protect attested pages, catch a modifying process through fault IPC, suspend checksum computation, release affected memory, and choose to abort, restart, or continue while reporting the inconsistency.
+    source_anchor_ids: [anchor-paper-41-detection, anchor-paper-41-evaluation]
 
   - id: paper-41-claims
     kind: claim_group
     parent_id: paper-41
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    order: 7
+    epistemic_status: mixed
+    title: Principal claims
+    summary: The work makes definitional, security-game, mechanism-correctness, and measured-overhead claims whose support types differ.
+    source_anchor_ids: [anchor-paper-41-model, anchor-paper-41-game, anchor-paper-41-evaluation]
 
-  - id: paper-41-claim-primary
+  - id: paper-41-claim-correctness
     kind: claim
     parent_id: paper-41-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports that inconsistent snapshots enable attacks and that several mechanisms can enforce temporal consistency with evaluated system costs."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    epistemic_status: analytically_supported
+    title: Each mechanism realizes a stated consistency point
+    summary: >-
+      The lock/copy ordering arguments connect Dec-Lock to the start state, Inc-Lock to the end state, and full locking or stable copies to stronger intervals, conditional on enforcement and sequential access assumptions.
+    source_anchor_ids: [anchor-paper-41-locks, anchor-paper-41-copy]
+
+  - id: paper-41-claim-overhead
+    kind: claim
+    parent_id: paper-41-claims
+    order: 2
+    epistemic_status: experimentally_supported
+    title: Practical overhead on tested platforms
+    summary: >-
+      The paper reports that selected consistency mechanisms add less than ten percent runtime overhead on I.MX6-SabreLite and ODROID-XU4, with availability behavior depending on page size, memory size, and write activity.
+    source_anchor_ids: [anchor-paper-41-evaluation, anchor-paper-41-conclusion]
 
   - id: paper-41-evidence
     kind: evidence_group
     parent_id: paper-41
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    order: 8
+    epistemic_status: mixed_formal_and_empirical
+    title: Evidence stack
+    summary: >-
+      Support consists of an explicit model and security game, mechanism-by-mechanism timing arguments, an seL4 implementation, primitive microbenchmarks, and end-to-end measurements over varying memory and page sizes.
+    source_anchor_ids: [anchor-paper-41-game, anchor-paper-41-implementation, anchor-paper-41-evaluation]
 
-  - id: paper-41-evidence-reported
-    kind: evidence
-    parent_id: paper-41-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies formalization, attacks, and experiments, but definitions, proofs, attack implementations, platforms, and measurements were not audited."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
-
-  - id: paper-41-scope
+  - id: paper-41-boundaries
     kind: limitation_group
     parent_id: paper-41
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
+    order: 9
+    epistemic_status: material
+    title: Boundaries and tradeoffs
+    summary: >-
+      No mechanism simultaneously minimizes locking, storage, downtime, and detection latency. Guarantees depend on mediated memory writes, and results from two boards do not establish portability or independent reproduction.
+    source_anchor_ids: [anchor-paper-41-copy, anchor-paper-41-detection, anchor-paper-41-conclusion]
 
-  - id: paper-41-scope-boundary
-    kind: limitation
-    parent_id: paper-41-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The guarantee depends on the exact memory, interruption, adversary, and timing models. Applicability beyond the evaluated embedded platforms remains unverified."
-    source_anchor_ids: ["anchor-paper-41-editorial"]
-
-  - id: paper-41-resources
+  - id: paper-41-artifacts
     kind: artifact_group
     parent_id: paper-41
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-41-resource-1", "anchor-paper-41-resource-2"]
-
-  - id: paper-41-resources-available
-    kind: artifact
-    parent_id: paper-41-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted paper."
-    source_anchor_ids: ["anchor-paper-41-resource-1", "anchor-paper-41-resource-2"]
+    order: 10
+    epistemic_status: partial
+    title: Artifacts and audit trail
+    summary: The full paper and official record are public with local fixity; this audit did not locate a version-pinned implementation, benchmark scripts, raw data, or reproduction report.
+    source_anchor_ids: [anchor-paper-41-implementation, anchor-paper-41-publication]
 
   - id: paper-41-scrutiny
     kind: scrutiny
     parent_id: paper-41
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at ACM Asia Conference on Computer and Communications Security (AsiaCCS). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-41-resource-1"]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: AsiaCCS publication and later citations establish external exposure, but review reports and independent experimental or formal audits were not located.
+    source_anchor_ids: [anchor-paper-41-publication, anchor-paper-41-reception]
+
+  - id: paper-41-lineage
+    kind: lineage
+    parent_id: paper-41
+    order: 12
+    epistemic_status: documented
+    title: Research lineage
+    summary: >-
+      The temporal-consistency analysis supplies the mechanism vocabulary later used to explain the availability conflict in paper #42 and forms part of the verified-attestation line leading to VRASED and PURE.
+    source_anchor_ids: [anchor-paper-41-problem, anchor-paper-41-conclusion]
 
 relations:
-  - id: relation-paper-41-contribution-addresses-question
-    type: addresses
-    from_id: paper-41-contribution
-    to_id: paper-41-question
-  - id: relation-paper-41-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-41-method
-    to_id: paper-41-contribution
-  - id: relation-paper-41-evidence-supports-claim
-    type: supports
-    from_id: paper-41-evidence-reported
-    to_id: paper-41-claim-primary
-  - id: relation-paper-41-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-41-scope-boundary
-    to_id: paper-41-claim-primary
-  - id: relation-paper-41-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-41-resources-available
-    to_id: paper-41-evidence-reported
-  - id: relation-paper-41-status-qualifies-claim
-    type: qualifies
-    from_id: paper-41-scrutiny
-    to_id: paper-41-claim-primary
+  - {id: paper-41-relation-answer-question, type: addresses, from_id: paper-41-answer, to_id: paper-41-question}
+  - {id: paper-41-relation-definition-answer, type: operationalizes, from_id: paper-41-definition, to_id: paper-41-answer}
+  - {id: paper-41-relation-threat-definition, type: motivates, from_id: paper-41-threat, to_id: paper-41-definition}
+  - {id: paper-41-relation-locks-mechanisms, type: component_of, from_id: paper-41-mechanism-locks, to_id: paper-41-mechanisms}
+  - {id: paper-41-relation-copy-mechanisms, type: component_of, from_id: paper-41-mechanism-copy, to_id: paper-41-mechanisms}
+  - {id: paper-41-relation-detect-mechanisms, type: component_of, from_id: paper-41-mechanism-detect, to_id: paper-41-mechanisms}
+  - {id: paper-41-relation-mechanisms-correctness, type: supports, from_id: paper-41-mechanisms, to_id: paper-41-claim-correctness}
+  - {id: paper-41-relation-evidence-overhead, type: supports, from_id: paper-41-evidence, to_id: paper-41-claim-overhead}
+  - {id: paper-41-relation-scope-claims, type: qualifies, from_id: paper-41-scope, to_id: paper-41-claims}
+  - {id: paper-41-relation-boundaries-claims, type: qualifies, from_id: paper-41-boundaries, to_id: paper-41-claims}
+  - {id: paper-41-relation-lineage-paper, type: contextualizes, from_id: paper-41-lineage, to_id: paper-41}
 
 assessment:
   id: paper-41-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-41-editorial", "anchor-paper-41-resource-1"]
+      level: high
+      rationale: The complete paper combines an explicit model and security game, mechanism analysis, two implementations, and detailed experiments; code and independent reproduction were not audited.
+      basis_source_anchor_ids: [anchor-paper-41-model, anchor-paper-41-game, anchor-paper-41-evaluation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-41-resource-1", "anchor-paper-41-resource-2"]
+      rationale: The author copy is checked in with SHA-256, page count, precise anchors, and an official DOI; implementation and raw measurements are not version-pinned here.
+      basis_source_anchor_ids: [anchor-paper-41-problem, anchor-paper-41-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-41-editorial"]
+      rationale: Named authors, venue, DOI, full text, platforms, and methods are documented, while contribution roles, revision history, exact source revision, and experiment lineage remain unaudited.
+      basis_source_anchor_ids: [anchor-paper-41-publication, anchor-paper-41-implementation]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-41-resource-1"]
+      rationale: AsiaCCS publication establishes venue scrutiny, but review reports, an artifact evaluation, and independent reproduction were not found.
+      basis_source_anchor_ids: [anchor-paper-41-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-41-editorial"]
+      level: high
+      rationale: OpenAlex reported 21 citations on 2026-07-11; under the author-defined rule, more than 10 located citations is High. Counts do not certify correctness.
+      basis_source_anchor_ids: [anchor-paper-41-reception]
     - id: contribution_significance
-      level: medium
-      rationale: "The curated summary indicates a substantive contribution: a formal integrity condition connecting interruptible computation to a state that genuinely existed. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-41-editorial"]
+      level: high
+      rationale: The paper frames a previously implicit implementation obligation, supplies a reusable definition and mechanism design space, and has documented follow-on attention; priority was not exhaustively audited.
+      basis_source_anchor_ids: [anchor-paper-41-problem, anchor-paper-41-reception]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 21
+  source_url: https://openalex.org/W2806634969
+  signals:
+    - OpenAlex reported 21 works citing the AsiaCCS paper.
+  limitation: Citation counts vary by index and date, may include self-citations, and do not establish that later work reproduced the implementation or validated every mechanism.

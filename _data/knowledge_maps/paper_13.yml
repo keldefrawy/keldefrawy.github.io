@@ -18,38 +18,27 @@ labels: ["Theory"]
 authors: ["Srdjan Čapkun", "Karim Eldefrawy", "Gene Tsudik"]
 keywords: ["distance bounding", "proximity", "authentication"]
 
-research_question: "How can distance-bounding security and proximity checks be extended from one prover-verifier pair to groups of devices?"
-central_answer: "The work introduces passive distance bounding and multiparty protocols intended to reduce cost and improve security relative to running every pairwise exchange."
+research_question: >-
+  How can several provers and verifiers establish one-way distance bounds more efficiently than running every verifier-prover pair separately, while retaining a meaningful security argument?
+central_answer: >-
+  A passive verifier can infer a distance bound by observing an active distance-bounding exchange and combining time-difference-of-arrival geometry with the active verifier's bound. Rotating a subset of verifiers through the active role reduces message cost, but the guarantees depend on trusted active verifiers, known locations, radio and timing assumptions, and the security of the underlying pairwise protocol.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; the checked-in full-text PDF's title, authorship, page count, and file identity were verified, but its substantive claims were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, protocol decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete checked-in short paper, its publisher record, and a dated ResearchGate citation snapshot. Security arguments are labeled as analytical and conditional rather than formal machine-checked proofs."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-13-site-record
-    type: curated_record
-    title: "Curated publication record for paper #13"
-    url: /publications/#paper-13
-  - id: source-paper-13-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-642-21599-5_23"
-  - id: source-paper-13-archive-1
-    type: archived_author_copy
-    title: "Archived UCI author copy"
-    url: "https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf"
-    provenance_category: archive
-  - id: source-paper-13-author-local
-    type: author_hosted_copy
-    title: "Author-hosted PDF"
+  - id: source-paper-13-paper
+    type: scholarly_article
+    title: "Group Distance Bounding Protocols (Short Paper)"
     url: /pubs/2011/group-distance-bounding-trust2011.pdf
     media_type: application/pdf
     sha256: 8cc3cb818ed21bd4772fea76b12a01d54b336e6019f0f847c6a9e08887665503
@@ -57,128 +46,233 @@ sources:
     provenance_category: author
     retrieved_at: "2026-07-11"
     retrieved_from_url: "https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf"
+  - id: source-paper-13-official
+    type: publication_record
+    title: "TRUST 2011 publisher record"
+    url: "https://doi.org/10.1007/978-3-642-21599-5_23"
+  - id: source-paper-13-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/225982565_GDB_Group_Distance_Bounding_Protocols"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-13-site-record
-    source_id: source-paper-13-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-13
-  - id: anchor-paper-13-official-1
-    source_id: source-paper-13-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-13-question
+    source_id: source-paper-13-paper
+    label: "Motivation, contribution, and one-way GDB scope"
+    locator: "Abstract and Section 1, PDF pages 1-2"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf#page=1
+  - id: anchor-paper-13-model
+    source_id: source-paper-13-paper
+    label: "GDB cases, environmental assumptions, and adversary"
+    locator: "Section 2, PDF pages 2-3"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf#page=2
+  - id: anchor-paper-13-passive
+    source_id: source-paper-13-paper
+    label: "Passive distance-bounding primitive and geometric argument"
+    locator: "Section 3, PDF pages 4-5"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf#page=4
+  - id: anchor-paper-13-protocol
+    source_id: source-paper-13-paper
+    label: "One-way group protocol construction"
+    locator: "Section 4, PDF pages 5-6"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf#page=5
+  - id: anchor-paper-13-performance
+    source_id: source-paper-13-paper
+    label: "Message-count analysis and active-verifier tradeoff"
+    locator: "Section 5.1, PDF page 6"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf#page=6
+  - id: anchor-paper-13-security
+    source_id: source-paper-13-paper
+    label: "Security analysis and malicious-active-verifier boundary"
+    locator: "Section 5.2, PDF pages 6-7"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf#page=6
+  - id: anchor-paper-13-future
+    source_id: source-paper-13-paper
+    label: "Conclusions and future work"
+    locator: "Section 7, PDF page 8"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf#page=8
+  - id: anchor-paper-13-publication
+    source_id: source-paper-13-official
+    label: "Official short-paper publication record"
+    locator: "TRUST 2011, DOI record"
     url: "https://doi.org/10.1007/978-3-642-21599-5_23"
-  - id: anchor-paper-13-archive-1
-    source_id: source-paper-13-archive-1
-    label: "Archived UCI author copy"
-    locator: "Internet Archive capture of Karim El Defrawy's UCI-hosted short-paper PDF used to obtain the checked-in copy."
-    url: "https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf"
-  - id: anchor-paper-13-author-local
-    source_id: source-paper-13-author-local
-    label: "Author-hosted PDF"
-    locator: "Checked-in 8-page PDF explicitly labeled Short Paper; title and all three authors were verified against the rendered first page, and SHA-256 records file identity."
-    url: /pubs/2011/group-distance-bounding-trust2011.pdf
+  - id: anchor-paper-13-citations
+    source_id: source-paper-13-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate displayed Citations (14), observed 2026-07-11; the page may merge or separate versions differently from other indexes."
+    url: "https://www.researchgate.net/publication/225982565_GDB_Group_Distance_Bounding_Protocols"
 
 nodes:
   - id: paper-13
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Group Distance Bounding Protocols (Short Paper)"
-    summary: "This work extends distance bounding from one prover and one verifier to groups of devices, motivated by pairing, access control, and secure localization. It introduces passive distance bounding and multi-party protocols that reduce cost and improve security compared with simply running every pairwise distance-bounding exchange."
-    source_anchor_ids: [anchor-paper-13-site-record]
+    epistemic_status: published
+    title: "One-way group distance bounding"
+    summary: "A short paper defining group distance-bounding settings and introducing passive observation as a primitive for cheaper multi-party protocols."
+    source_anchor_ids: [anchor-paper-13-question]
 
   - id: paper-13-question
     kind: question
     parent_id: paper-13
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How can distance-bounding security and proximity checks be extended from one prover-verifier pair to groups of devices?"
-    source_anchor_ids: [anchor-paper-13-site-record]
+    summary: "Can multiple verifiers and provers establish secure upper-distance bounds with fewer rapid exchanges than a complete pairwise deployment?"
+    source_anchor_ids: [anchor-paper-13-question]
 
   - id: paper-13-answer
     kind: contribution
     parent_id: paper-13
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The work introduces passive distance bounding and multiparty protocols intended to reduce cost and improve security relative to running every pairwise exchange."
-    source_anchor_ids: [anchor-paper-13-site-record]
+    epistemic_status: analytically_supported
+    title: "Central answer"
+    summary: "Let some verifiers actively challenge while others passively observe timing; passive bounds can be derived geometrically and the active fraction controls a security-efficiency tradeoff."
+    source_anchor_ids: [anchor-paper-13-passive, anchor-paper-13-protocol, anchor-paper-13-performance]
 
-  - id: paper-13-method
-    kind: method
+  - id: paper-13-scope
+    kind: scope
     parent_id: paper-13
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Generalize distance-bounding interactions to group settings, including passive observations and coordinated multiparty exchanges."
-    source_anchor_ids: [anchor-paper-13-site-record]
+    epistemic_status: explicitly_scoped
+    title: "One-way group settings"
+    summary: "The construction addresses many-prover/many-verifier, one-prover/many-verifier, and many-prover/one-verifier one-way cases; mutual GDB is acknowledged but left outside this short paper."
+    source_anchor_ids: [anchor-paper-13-model, anchor-paper-13-future]
 
-  - id: paper-13-claims
-    kind: claim_group
+  - id: paper-13-assumptions
+    kind: assumption_group
+    parent_id: paper-13-scope
+    order: 1
+    epistemic_status: assumed
+    title: "Timing, geometry, and trust assumptions"
+    summary: "Nodes are in mutual radio range, rapid processing is available, verifiers know their locations and pairwise distances, and passive verifiers can receive the three relevant transmissions."
+    source_anchor_ids: [anchor-paper-13-model, anchor-paper-13-passive]
+
+  - id: paper-13-adversary
+    kind: threat_model
+    parent_id: paper-13-scope
+    order: 2
+    epistemic_status: defined
+    title: "Adversary and exclusions"
+    summary: "Provers may collude and attempt distance or mafia fraud, but verifiers are trusted in the base argument; reception blocking, directional antennas, terrorist fraud, and distance hijacking beyond the assumed base protocol are excluded."
+    source_anchor_ids: [anchor-paper-13-model, anchor-paper-13-security]
+
+  - id: paper-13-primitive
+    kind: primitive
     parent_id: paper-13
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The proposed group protocols are reported to reduce cost and strengthen security compared with a naive collection of pairwise distance-bounding sessions."
-    source_anchor_ids: [anchor-paper-13-site-record]
+    epistemic_status: proposed
+    title: "Passive distance bounding"
+    summary: "A passive verifier timestamps the active verifier's commitment/challenge and the prover's response, then combines a time-difference-of-arrival hyperbola with the active distance bound to derive its own upper bound."
+    source_anchor_ids: [anchor-paper-13-passive]
 
-  - id: paper-13-evidence
-    kind: evidence_group
+  - id: paper-13-primitive-security
+    kind: security_argument
+    parent_id: paper-13-primitive
+    order: 1
+    epistemic_status: conditional_argument
+    title: "Why a prover cannot shorten only the passive bound"
+    summary: "Under the timing geometry, making the passive verifier infer an impossibly short distance would also require defeating the active verifier's underlying distance-bound exchange."
+    source_anchor_ids: [anchor-paper-13-passive]
+
+  - id: paper-13-protocol
+    kind: protocol
     parent_id: paper-13
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports protocol contributions and comparative benefits; security models, timing assumptions, proofs, and implementation evidence have not been inspected."
-    source_anchor_ids: [anchor-paper-13-site-record]
+    epistemic_status: proposed
+    title: "Active/passive GDB protocol"
+    summary: "A selected fraction of verifiers runs active pairwise exchanges while remaining verifiers observe them, permitting each active exchange to contribute bounds to more than one verifier."
+    source_anchor_ids: [anchor-paper-13-protocol]
+
+  - id: paper-13-evidence-performance
+    kind: analytic_evidence
+    parent_id: paper-13
+    order: 6
+    epistemic_status: calculated
+    title: "Communication-cost analysis"
+    summary: "For the paper's 30-prover/30-verifier example, an 80% active fraction saves about one third of messages and a 60% active fraction saves more than half relative to naive pairwise execution."
+    source_anchor_ids: [anchor-paper-13-performance]
+
+  - id: paper-13-evidence-security
+    kind: analytic_evidence
+    parent_id: paper-13
+    order: 7
+    epistemic_status: conditional_analysis
+    title: "Security analysis"
+    summary: "The paper relates success probability to the underlying distance-bounding protocol and the chance that an adversary controls active verifiers; it provides analytical metrics rather than a reduction-style theorem or machine-checked proof."
+    source_anchor_ids: [anchor-paper-13-security]
+
+  - id: paper-13-boundary-active
+    kind: limitation
+    parent_id: paper-13
+    order: 8
+    epistemic_status: material
+    title: "Malicious active verifier boundary"
+    summary: "An active verifier can lie about location or send challenges early, so passive conclusions are only as trustworthy as the active participant and underlying protocol; multiple simultaneous verifiers may be needed for secure localization."
+    source_anchor_ids: [anchor-paper-13-security]
 
   - id: paper-13-limitations
     kind: limitation_group
     parent_id: paper-13
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The short-paper record does not establish all collusion cases, physical-layer timing errors, group-size scaling, deployment constraints, or completeness of the security analysis."
-    source_anchor_ids: [anchor-paper-13-site-record]
+    order: 9
+    epistemic_status: explicitly_reported
+    title: "Unresolved scope"
+    summary: "The short paper has no implementation or noisy-channel evaluation and leaves mutual GDB, passive operation without known verifier locations, denial of service, and realistic group-radio conditions to future work."
+    source_anchor_ids: [anchor-paper-13-future]
 
-  - id: paper-13-resources
+  - id: paper-13-artifacts
     kind: artifact_group
     parent_id: paper-13
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Publisher / DOI; archived UCI author copy; author-hosted PDF. The checked-in short-paper PDF's identity was verified, but its substantive contents and supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-13-official-1, anchor-paper-13-archive-1, anchor-paper-13-author-local]
+    order: 10
+    epistemic_status: paper_only
+    title: "Artifacts"
+    summary: "The located artifact is the complete eight-page short paper. No protocol implementation, trace set, or formal proof artifact is linked."
+    source_anchor_ids: [anchor-paper-13-question, anchor-paper-13-performance]
 
   - id: paper-13-scrutiny
     kind: scrutiny
     parent_id: paper-13
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · short paper at 4th International Conference on Trust and Trustworthy Computing (TRUST). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-13-site-record, anchor-paper-13-official-1]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: "External scrutiny and reception"
+    summary: "The work appeared at TRUST 2011 and ResearchGate reports 14 citations; review reports and an independent implementation or proof audit were not located."
+    source_anchor_ids: [anchor-paper-13-publication, anchor-paper-13-citations]
+
+  - id: paper-13-lineage
+    kind: lineage
+    parent_id: paper-13
+    order: 12
+    epistemic_status: source_asserted
+    title: "Research lineage"
+    summary: "The paper extends distance bounding from one verifier-prover pair to group settings and introduces passive distance bounding as the organizing primitive for that extension."
+    source_anchor_ids: [anchor-paper-13-question, anchor-paper-13-passive]
 
 relations:
-  - id: paper-13-relation-method-supports-answer
+  - id: paper-13-relation-primitive-enables-protocol
+    type: enables
+    from_id: paper-13-primitive
+    to_id: paper-13-protocol
+  - id: paper-13-relation-security-supports-primitive
     type: supports
-    from_id: paper-13-method
+    from_id: paper-13-primitive-security
+    to_id: paper-13-primitive
+  - id: paper-13-relation-performance-supports-answer
+    type: supports
+    from_id: paper-13-evidence-performance
     to_id: paper-13-answer
-  - id: paper-13-relation-evidence-supports-claim
+  - id: paper-13-relation-security-supports-answer
     type: supports
-    from_id: paper-13-evidence
-    to_id: paper-13-claims
-  - id: paper-13-relation-limitations-qualify-claim
+    from_id: paper-13-evidence-security
+    to_id: paper-13-answer
+  - id: paper-13-relation-active-qualifies-security
+    type: qualifies
+    from_id: paper-13-boundary-active
+    to_id: paper-13-evidence-security
+  - id: paper-13-relation-limitations-qualify-answer
     type: qualifies
     from_id: paper-13-limitations
-    to_id: paper-13-claims
-  - id: paper-13-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-13-scrutiny
-    to_id: paper-13
+    to_id: paper-13-answer
 
 assessment:
   id: paper-13-assessment-2026-07-11
@@ -189,32 +283,34 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports protocol contributions and comparative benefits; security models, timing assumptions, proofs, and implementation evidence have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-13-site-record]
+      rationale: "The paper defines the primitive and group settings, gives a geometric security argument, and quantifies message savings. The security treatment is conditional and analytical, and no implementation, simulation, or machine-checked proof is supplied."
+      basis_source_anchor_ids: [anchor-paper-13-passive, anchor-paper-13-performance, anchor-paper-13-security, anchor-paper-13-future]
     - id: auditability
       level: high
-      rationale: "A verified author-hosted short-paper PDF is stored with this site, with its source route, page count, and SHA-256 identity recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, supplementary-artifact completeness, and independent reproduction remain separate questions."
-      basis_source_anchor_ids: [anchor-paper-13-official-1, anchor-paper-13-archive-1, anchor-paper-13-author-local]
+      rationale: "A complete author copy is checked into the site with source route, page count, and SHA-256 identity. Definitions, protocol steps, and analytical arguments are directly inspectable, though there is no executable artifact."
+      basis_source_anchor_ids: [anchor-paper-13-model, anchor-paper-13-protocol, anchor-paper-13-security]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-13-site-record]
+      rationale: "Named authorship, an archived author copy, and a DOI establish baseline provenance. Contributor roles, revision history, analysis scripts, and tool use are not documented."
+      basis_source_anchor_ids: [anchor-paper-13-question, anchor-paper-13-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in 4th International Conference on Trust and Trustworthy Computing (TRUST), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-13-official-1]
+      rationale: "Publication as a TRUST short paper indicates venue review, but review reports, corrections, independent formal analysis, and empirical replication were not located."
+      basis_source_anchor_ids: [anchor-paper-13-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-13-site-record]
+      level: high
+      rationale: "ResearchGate displayed 14 citations on 2026-07-11, which meets the rubric's 11-or-more high band. The count is index-specific and may merge related versions."
+      basis_source_anchor_ids: [anchor-paper-13-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The proposed group protocols are reported to reduce cost and strengthen security compared with a naive collection of pairwise distance-bounding sessions. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-13-site-record]
+      rationale: "The paper introduces a clear group generalization and a reusable passive primitive, but the short version leaves important trust, synchronization, and implementation questions open."
+      basis_source_anchor_ids: [anchor-paper-13-question, anchor-paper-13-passive, anchor-paper-13-future]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 14
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate displayed Citations (14)."
+  limitation: "ResearchGate may merge or separate the short paper, arXiv version, and related expanded work differently from other indexes; citing contexts and polarity were not audited."

@@ -18,160 +18,234 @@ labels: ["Theory", "Applied"]
 authors: ["Karim Eldefrawy", "Gene Tsudik"]
 keywords: ["anonymous routing", "location privacy", "group signatures"]
 
-research_question: "Can nodes route through a suspicious mobile ad hoc network without exposing persistent identities or location histories while retaining authenticated topology information?"
-central_answer: "ALARM builds routes from current locations and uses group signatures plus one-time pseudonyms to authenticate location announcements while reducing identity exposure and tracking."
+research_question: >-
+  Can a link-state mobile ad hoc routing protocol authenticate topology information and deliver to geographic destinations without exposing stable node identities or readily linkable location histories?
+central_answer: >-
+  ALARM has every member periodically flood a group-signed location announcement containing a timestamp, temporary public key, and one-time pseudonym. Nodes construct a location topology and route to locations rather than long-term identities. The paper informally analyzes passive-insider and active-outsider security and simulates privacy under several mobility models.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, evidence linking, and initial assessment
+  method: "Full-source audit of the checked-in UCI author copy and official IEEE DOI record."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-drafted, source-linked map awaiting author verification before approval."
 
 sources:
-  - id: source-paper-7-site-record
-    type: curated_record
-    title: "Curated publication record for paper #7"
-    url: /publications/#paper-7
-  - id: source-paper-7-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/ICNP.2007.4375861"
-  - id: source-paper-7-archive-1
-    type: manuscript_archive
-    title: "CiteSeerX archive"
-    url: "https://citeseerx.ist.psu.edu/document?doi=fc53c0247201ee1ebb23f5b7570d4bf4eb205f4b&repid=rep1&type=pdf"
-  - id: source-paper-7-author-1
+  - id: source-paper-7-paper
     type: author_copy
+    title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
+    url: /pubs/2007/alarm-icnp2007.pdf
+    media_type: application/pdf
+    sha256: 8413fcbe7caba7e218d60019e7a7e4ae4ad5ca28a1c695cbf5fdb5abbc613e14
+    page_count: 10
+    provenance_category: author
+    version_note: "UCI author-hosted conference paper; local copy checked 2026-07-11."
+  - id: source-paper-7-author
+    type: author_copy_origin
     title: "UCI author copy"
     url: "https://ics.uci.edu/~gts/paps/alarm07.pdf"
+  - id: source-paper-7-official
+    type: official_publication_record
+    title: "IEEE DOI record"
+    url: "https://doi.org/10.1109/ICNP.2007.4375861"
+  - id: source-paper-7-citations
+    type: citation_search
+    title: "Dated scholarly-web citation search"
+    url: "https://scholar.google.com/scholar?q=%22ALARM%3A+Anonymous+Location-Aided+Routing+in+Suspicious+MANETs%22"
+    version_note: "Search attempted 2026-07-11; no transparent citation count was retrievable in this environment."
 
 source_anchors:
-  - id: anchor-paper-7-site-record
-    source_id: source-paper-7-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-7
-  - id: anchor-paper-7-official-1
-    source_id: source-paper-7-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1109/ICNP.2007.4375861"
-  - id: anchor-paper-7-archive-1
-    source_id: source-paper-7-archive-1
-    label: "CiteSeerX archive"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://citeseerx.ist.psu.edu/document?doi=fc53c0247201ee1ebb23f5b7570d4bf4eb205f4b&repid=rep1&type=pdf"
-  - id: anchor-paper-7-author-1
-    source_id: source-paper-7-author-1
-    label: "UCI author copy"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-7-problem
+    source_id: source-paper-7-paper
+    label: "Goals, contributions, and routing choice"
+    locator: "Abstract and Sections I-II, PDF pages 1-3"
+    url: /pubs/2007/alarm-icnp2007.pdf#page=1
+  - id: anchor-paper-7-assumptions
+    source_id: source-paper-7-paper
+    label: "System assumptions and group-signature interface"
+    locator: "Section IV, PDF pages 4-5"
+    url: /pubs/2007/alarm-icnp2007.pdf#page=4
+  - id: anchor-paper-7-protocol
+    source_id: source-paper-7-paper
+    label: "LAM generation, flooding, pseudonyms, and delivery"
+    locator: "Section IV, PDF pages 5-6"
+    url: /pubs/2007/alarm-icnp2007.pdf#page=5
+  - id: anchor-paper-7-security
+    source_id: source-paper-7-paper
+    label: "Threat model and informal security analysis"
+    locator: "Section V, PDF pages 6-7"
+    url: /pubs/2007/alarm-icnp2007.pdf#page=6
+  - id: anchor-paper-7-metric
+    source_id: source-paper-7-paper
+    label: "Average Node Privacy definition"
+    locator: "Section VI, PDF pages 7-8"
+    url: /pubs/2007/alarm-icnp2007.pdf#page=7
+  - id: anchor-paper-7-results
+    source_id: source-paper-7-paper
+    label: "Mobility-model simulation results"
+    locator: "Section VI and Figures 3-6, PDF pages 7-9"
+    url: /pubs/2007/alarm-icnp2007.pdf#page=7
+  - id: anchor-paper-7-discussion
+    source_id: source-paper-7-paper
+    label: "Overhead, insider protection, and deployment boundaries"
+    locator: "Section VII, PDF pages 9-10"
+    url: /pubs/2007/alarm-icnp2007.pdf#page=9
+  - id: anchor-paper-7-provenance
+    source_id: source-paper-7-author
+    label: "Author-copy provenance"
+    locator: "Public UCI author-hosted PDF"
     url: "https://ics.uci.edu/~gts/paps/alarm07.pdf"
+  - id: anchor-paper-7-publication
+    source_id: source-paper-7-official
+    label: "Official publication metadata"
+    locator: "DOI 10.1109/ICNP.2007.4375861"
+    url: "https://doi.org/10.1109/ICNP.2007.4375861"
+  - id: anchor-paper-7-citation-search
+    source_id: source-paper-7-citations
+    label: "Citation search attempted"
+    locator: "Exact-title search, 2026-07-11; no verified count retrieved"
+    url: "https://scholar.google.com/scholar?q=%22ALARM%3A+Anonymous+Location-Aided+Routing+in+Suspicious+MANETs%22"
 
 nodes:
   - id: paper-7
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
-    summary: "ALARM uses current locations rather than persistent node identities to build an authenticated map and route through a suspicious mobile ad hoc network. Group signatures and one-time pseudonyms provide origin authentication and location integrity while preserving node anonymity and resistance to tracking."
-    source_anchor_ids: [anchor-paper-7-site-record]
-
+    epistemic_status: published
+    title: "ALARM"
+    summary: "A location-aided link-state routing protocol that combines group signatures, rotating pseudonyms, and temporary encryption keys to reduce identity and movement disclosure."
+    source_anchor_ids: [anchor-paper-7-problem, anchor-paper-7-publication]
   - id: paper-7-question
     kind: question
     parent_id: paper-7
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can nodes route through a suspicious mobile ad hoc network without exposing persistent identities or location histories while retaining authenticated topology information?"
-    source_anchor_ids: [anchor-paper-7-site-record]
-
+    summary: "Can nodes authenticate a mobile topology and route by location while remaining anonymous and difficult to track?"
+    source_anchor_ids: [anchor-paper-7-problem]
   - id: paper-7-answer
     kind: contribution
     parent_id: paper-7
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "ALARM builds routes from current locations and uses group signatures plus one-time pseudonyms to authenticate location announcements while reducing identity exposure and tracking."
-    source_anchor_ids: [anchor-paper-7-site-record]
-
-  - id: paper-7-method
-    kind: method
+    epistemic_status: proposed_and_simulated
+    title: "Central answer"
+    summary: "Authenticate unlinkable per-slot location announcements with group signatures, derive a common topology snapshot, and address encrypted traffic to a location-bound temporary key and pseudonym."
+    source_anchor_ids: [anchor-paper-7-protocol, anchor-paper-7-results]
+  - id: paper-7-scope
+    kind: scope
     parent_id: paper-7
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Construct an authenticated location-based network map and route over it using group-authenticated announcements and short-lived pseudonyms."
-    source_anchor_ids: [anchor-paper-7-site-record]
-
-  - id: paper-7-claims
-    kind: claim_group
+    epistemic_status: explicitly_scoped
+    title: "Environment and trust assumptions"
+    summary: "Nodes know location and time, share a bounded radio range, move enough to create ambiguity, and obtain group credentials from an offline group manager; the analysis assumes a passive insider or active outsider."
+    source_anchor_ids: [anchor-paper-7-assumptions, anchor-paper-7-security]
+  - id: paper-7-protocol
+    kind: protocol
     parent_id: paper-7
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The protocol is reported to provide origin authentication and location integrity together with node anonymity and resistance to tracking."
-    source_anchor_ids: [anchor-paper-7-site-record]
-
+    epistemic_status: specified
+    title: "Location Announcement Message protocol"
+    summary: "Each slot, a node floods its location, timestamp, temporary public key, and group signature. Recipients verify and deduplicate LAMs, build a geographic connectivity graph, and use the signature as a one-slot pseudonym."
+    source_anchor_ids: [anchor-paper-7-protocol]
+  - id: paper-7-routing
+    kind: component
+    parent_id: paper-7-protocol
+    order: 1
+    epistemic_status: specified
+    title: "Location-addressed delivery"
+    summary: "A sender selects the current pseudonym at the destination location and encrypts under that LAM's temporary key, avoiding a stable identity in route establishment."
+    source_anchor_ids: [anchor-paper-7-protocol]
+  - id: paper-7-security
+    kind: claim_group
+    parent_id: paper-7
+    order: 5
+    epistemic_status: informally_argued
+    title: "Security and privacy claims"
+    summary: "Group-signature verification authenticates membership without naming the signer; timestamps resist replay, while randomized movement and fresh signatures are intended to frustrate linking across topology snapshots."
+    source_anchor_ids: [anchor-paper-7-security]
+  - id: paper-7-insider
+    kind: limitation
+    parent_id: paper-7-security
+    order: 1
+    epistemic_status: conditional
+    title: "Active-insider boundary"
+    summary: "Ordinary group signatures do not stop a malicious member from multiple-location Sybil announcements; self-distinguishing signatures or tamper-resistant location/signing hardware is required for that stronger threat."
+    source_anchor_ids: [anchor-paper-7-protocol, anchor-paper-7-discussion]
+  - id: paper-7-metric
+    kind: metric
+    parent_id: paper-7
+    order: 6
+    epistemic_status: defined
+    title: "Average Node Privacy"
+    summary: "ANP measures, across two topology snapshots, the average fraction of later nodes to which an earlier node can remain plausibly mapped; it ranges from complete traceability to full ambiguity."
+    source_anchor_ids: [anchor-paper-7-metric]
   - id: paper-7-evidence
     kind: evidence_group
     parent_id: paper-7
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports the design and its intended security properties; security definitions, proofs, mobility assumptions, and performance evaluation have not been inspected."
-    source_anchor_ids: [anchor-paper-7-site-record]
-
-  - id: paper-7-limitations
+    order: 7
+    epistemic_status: simulation
+    title: "Mobility simulations"
+    summary: "Random-walk, random-waypoint, and reference-point group mobility experiments vary speed and evaluate ANP; privacy deteriorates when motion is slow, predictable, or preserves relative group positions."
+    source_anchor_ids: [anchor-paper-7-results]
+  - id: paper-7-boundaries
     kind: limitation_group
     parent_id: paper-7
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The current record does not establish protection under every insider coalition, location-observation model, group-key compromise, mobility pattern, or deployment condition."
-    source_anchor_ids: [anchor-paper-7-site-record]
-
-  - id: paper-7-resources
-    kind: artifact_group
+    order: 8
+    epistemic_status: material
+    title: "Protocol boundaries"
+    summary: "Jamming and DoS, physical observation, and strongly correlated movement are outside the claimed protection. Periodic network-wide LAM flooding costs bandwidth and power and reveals topology and network size."
+    source_anchor_ids: [anchor-paper-7-security, anchor-paper-7-results, anchor-paper-7-discussion]
+  - id: paper-7-artifacts
+    kind: artifact
     parent_id: paper-7
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Publisher / DOI; CiteSeerX archive; UCI author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-7-official-1, anchor-paper-7-archive-1, anchor-paper-7-author-1]
-
+    order: 9
+    epistemic_status: paper_available_no_code
+    title: "Artifacts"
+    summary: "A fixed author copy is available locally; protocol code, group-signature integration, simulator configuration, and result data were not located."
+    source_anchor_ids: [anchor-paper-7-results, anchor-paper-7-provenance]
   - id: paper-7-scrutiny
     kind: scrutiny
     parent_id: paper-7
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at IEEE International Conference on Network Protocols (ICNP). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-7-site-record, anchor-paper-7-official-1]
+    order: 10
+    epistemic_status: peer_reviewed
+    title: "Scrutiny"
+    summary: "ALARM appeared at IEEE ICNP 2007. The paper provides an informal analysis and simulations, but no formal security proof or independent reproduction was located."
+    source_anchor_ids: [anchor-paper-7-security, anchor-paper-7-publication]
 
 relations:
-  - id: paper-7-relation-method-supports-answer
-    type: supports
-    from_id: paper-7-method
+  - id: paper-7-relation-protocol-realizes-answer
+    type: realizes
+    from_id: paper-7-protocol
     to_id: paper-7-answer
-  - id: paper-7-relation-evidence-supports-claim
+  - id: paper-7-relation-routing-component
+    type: component_of
+    from_id: paper-7-routing
+    to_id: paper-7-protocol
+  - id: paper-7-relation-security-supports-answer
+    type: supports
+    from_id: paper-7-security
+    to_id: paper-7-answer
+  - id: paper-7-relation-metric-evaluates-answer
+    type: evaluates
+    from_id: paper-7-metric
+    to_id: paper-7-answer
+  - id: paper-7-relation-evidence-supports-answer
     type: supports
     from_id: paper-7-evidence
-    to_id: paper-7-claims
-  - id: paper-7-relation-limitations-qualify-claim
+    to_id: paper-7-answer
+  - id: paper-7-relation-insider-qualifies-security
     type: qualifies
-    from_id: paper-7-limitations
-    to_id: paper-7-claims
-  - id: paper-7-relation-scrutiny-qualifies-status
+    from_id: paper-7-insider
+    to_id: paper-7-security
+  - id: paper-7-relation-boundaries-qualify-answer
     type: qualifies
-    from_id: paper-7-scrutiny
-    to_id: paper-7
+    from_id: paper-7-boundaries
+    to_id: paper-7-answer
 
 assessment:
   id: paper-7-assessment-2026-07-11
@@ -182,32 +256,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports the design and its intended security properties; security definitions, proofs, mobility assumptions, and performance evaluation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-7-site-record]
+      rationale: "The protocol, threat boundaries, informal analysis, privacy metric, and mobility simulations are documented, but no formal proof, implementation, or independent reproduction is supplied."
+      basis_source_anchor_ids: [anchor-paper-7-protocol, anchor-paper-7-security, anchor-paper-7-metric, anchor-paper-7-results]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-7-official-1, anchor-paper-7-archive-1, anchor-paper-7-author-1]
+      rationale: "A fixed author-hosted full text is checked in with page count and hash, making the protocol and evidence directly inspectable."
+      basis_source_anchor_ids: [anchor-paper-7-provenance, anchor-paper-7-results]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-7-site-record]
+      rationale: "Named authorship, author-copy provenance, and official metadata are documented; roles, revisions, tool use, and simulation lineage are not."
+      basis_source_anchor_ids: [anchor-paper-7-provenance, anchor-paper-7-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE International Conference on Network Protocols (ICNP), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-7-official-1]
+      rationale: "The work has an official full-conference publication record; public reviews, formal verification, and independent reproduction were not located."
+      basis_source_anchor_ids: [anchor-paper-7-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-7-site-record]
+      level: low
+      rationale: "No citations were verifiably located in the constrained dated search. Under the author's 0-8 rule this is low, but it is not a claim that the paper has no citations."
+      basis_source_anchor_ids: [anchor-paper-7-citation-search]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete contribution: The protocol is reported to provide origin authentication and location integrity together with node anonymity and resistance to tracking. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-7-site-record]
+      level: high
+      rationale: "ALARM combines a concrete routing protocol, anonymity mechanism, insider/outsider analysis, and an explicit privacy metric, while making its mobility and insider assumptions visible."
+      basis_source_anchor_ids: [anchor-paper-7-problem, anchor-paper-7-protocol, anchor-paper-7-metric, anchor-paper-7-discussion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "Exact-title scholarly-web search; transparent index count unavailable"
+  source: "Google Scholar query route plus general scholarly-web search"
+  citation_count: 0
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "Zero means no citations were verifiably located during this constrained search, not a total bibliometric count; author should replace it with a confirmed index snapshot."

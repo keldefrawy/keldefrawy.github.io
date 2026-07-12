@@ -77,6 +77,11 @@ sources:
     title: "CSCML 2026 venue website"
     url: "https://www.cscml.org/"
     scope_note: "Author-supplied venue homepage. It supports venue-level context only and is not a paper-specific listing, acceptance notice, manuscript, or source for technical claims."
+  - id: source-paper-79-citation-search
+    type: citation_search_snapshot
+    title: Exact-title scholarly-web search
+    url: "https://www.google.com/search?q=%22Can+Composing+Generative+Models+Avoid+Hallucinations%3F+Implications+for+Cybersecurity+Use+Cases%22"
+    accessed_at: "2026-07-11"
 
 source_anchors:
   - id: anchor-paper-79-curated
@@ -94,6 +99,11 @@ source_anchors:
     label: "CSCML 2026 venue website"
     locator: "Venue homepage only. It is not a paper-specific page, acceptance notice, manuscript, review record, or source for technical claims."
     url: "https://www.cscml.org/"
+  - id: anchor-paper-79-citations
+    source_id: source-paper-79-citation-search
+    label: Dated exact-title citation search
+    locator: No citing work was verifiably located for the under-review manuscript when searched 2026-07-11
+    url: "https://www.google.com/search?q=%22Can+Composing+Generative+Models+Avoid+Hallucinations%3F+Implications+for+Cybersecurity+Use+Cases%22"
 
 nodes:
   - id: paper-79
@@ -128,6 +138,102 @@ nodes:
     title: "Method or construction"
     summary: "The abstract reports closure theorems, under the paper’s conditions, for deterministic semantic post-processing, Bayesian-compatible score aggregation, and expert routing. It also reports two calibration counterexamples and separates confidence-only claims from claims backed by checkable witnesses. Exact formal definitions and hypotheses remain unavailable without the manuscript."
     source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-calibration
+    kind: definition
+    parent_id: paper-79-method
+    order: 1
+    epistemic_status: defined_in_author_abstract
+    title: "Calibration"
+    summary: "The abstract defines calibration operationally: among claims assigned score z, the average truth rate is z. The manuscript's probability space, conditioning, claim granularity, and approximation conventions remain unaudited."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-kv-baseline
+    kind: prior_result
+    parent_id: paper-79-method
+    order: 2
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Kalai–Vempala single-generator floor"
+    summary: "The abstract reports the prior result that a calibrated fact-level generator must hallucinate monofacts—facts occurring once in training—at a rate lower-bounded by the Good–Turing missing-mass estimate minus calibration error."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-closure
+    kind: theorem_group
+    parent_id: paper-79-method
+    order: 3
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Calibration closure under three operators"
+    summary: "The abstract reports that calibration is preserved by three specified composition operators under the paper's conditions; exact theorem statements, domains, measurability assumptions, and error propagation require the manuscript."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-postprocessing
+    kind: operator
+    parent_id: paper-79-closure
+    order: 1
+    epistemic_status: reported_operator
+    title: "Deterministic semantic post-processing"
+    summary: "The first covered operator deterministically transforms generated semantic content. The abstract reports calibration closure but does not expose the formal semantic map or sufficient conditions."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-aggregation
+    kind: operator
+    parent_id: paper-79-closure
+    order: 2
+    epistemic_status: reported_operator
+    title: "Bayesian-compatible score aggregation"
+    summary: "The second operator combines scores in a Bayesian-compatible way. This is narrower than arbitrary averaging; the abstract's first counterexample warns that marginal calibration alone does not make an averaged ensemble calibrated."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-routing
+    kind: operator
+    parent_id: paper-79-closure
+    order: 3
+    epistemic_status: reported_operator
+    title: "Routing to expert models"
+    summary: "The third operator selects one of several expert models, sometimes described as a mixture of experts. The abstract reports a closure theorem under conditions and separately shows that global expert calibration alone is insufficient under arbitrary routing."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-floor
+    kind: theorem_consequence
+    parent_id: paper-79-method
+    order: 4
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Hallucination floor survives covered composition"
+    summary: "Because the covered operators preserve calibration, the abstract concludes that the Kalai–Vempala monofact floor also applies to composites built from those operators."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-escape
+    kind: boundary
+    parent_id: paper-79-method
+    order: 5
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Ways to fall outside the conclusion"
+    summary: "An observed composite below the floor must, according to the abstract, be miscalibrated at its final output, violate a closure theorem's conditions, or operate after verification has changed the evidence state."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-counterexamples
+    kind: counterexample_group
+    parent_id: paper-79-method
+    order: 6
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Two calibration counterexamples"
+    summary: "The abstract reports examples showing that natural but weaker premises do not guarantee calibration of the composite."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-counterexample-average
+    kind: counterexample
+    parent_id: paper-79-counterexamples
+    order: 1
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Marginally calibrated experts may not average safely"
+    summary: "Experts that are each marginally calibrated need not yield a calibrated ensemble when their outputs are simply averaged."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-counterexample-route
+    kind: counterexample
+    parent_id: paper-79-counterexamples
+    order: 2
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Globally calibrated experts may fail under routing"
+    summary: "Experts that are globally calibrated need not remain calibrated after a router selectively sends different cases to them."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-model-judge-boundary
+    kind: scope_boundary
+    parent_id: paper-79-method
+    order: 7
+    epistemic_status: abstract_scope_observation
+    title: "Model-as-judge is motivation, not a listed closure operator"
+    summary: "Model-as-judge mechanisms appear in the abstract's system motivation, but the three reported closure results are post-processing, Bayesian-compatible aggregation, and expert routing; the abstract does not claim a general model-as-judge closure theorem."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
   - id: paper-79-claims
     kind: claim_group
     parent_id: paper-79
@@ -135,6 +241,38 @@ nodes:
     epistemic_status: reported_in_author_abstract_not_independently_audited
     title: "Principal reported claims"
     summary: "The abstract reports that calibrated compositions built from the three covered operators retain the Kalai–Vempala monofact hallucination floor; a system that beats it must be finally miscalibrated, violate a closure condition, or change the evidence state through verification."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-cyber-workflows
+    kind: application_context
+    parent_id: paper-79-claims
+    order: 1
+    epistemic_status: mapped_in_author_abstract
+    title: "Cybersecurity workflows"
+    summary: "The abstract maps the theory to vulnerability discovery, code review and generation, test generation, log analysis, alert triage, and incident summarization by generative systems."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-operational-facts
+    kind: concept
+    parent_id: paper-79-claims
+    order: 2
+    epistemic_status: mapped_in_author_abstract
+    title: "Operational claims as facts"
+    summary: "Cybersecurity 'facts' include claims about vulnerability existence, exploitability, patch safety, alert validity, and incident attribution; rare claims in their tail are treated as analogous to monofacts."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-witness-boundary
+    kind: boundary
+    parent_id: paper-79-claims
+    order: 3
+    epistemic_status: explicitly_reported_boundary
+    title: "Verification changes the evidence state"
+    summary: "A rare-bug claim supported only by model confidence remains monofact-like, while a concrete exploit, proof certificate, or execution trace is a checkable witness. The abstract places verified witnesses outside its pre-verification composition analysis."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-audit-procedure
+    kind: evaluation_method
+    parent_id: paper-79-claims
+    order: 4
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Evaluation procedure for composed systems"
+    summary: "The abstract reports a procedure for determining whether an observed hallucination reduction is compatible with the analysis and identifying whether calibration, operator conditions, or verification explain it; procedural steps and validation evidence require manuscript audit."
     source_anchor_ids: [anchor-paper-79-author-abstract]
   - id: paper-79-evidence
     kind: evidence_group
@@ -178,9 +316,69 @@ relations:
     type: realizes
     from_id: paper-79-method
     to_id: paper-79-contribution
+  - id: paper-79-relation-calibration-enables-closure
+    type: defines_property_for
+    from_id: paper-79-calibration
+    to_id: paper-79-closure
+  - id: paper-79-relation-postprocessing-instantiates-closure
+    type: instantiates
+    from_id: paper-79-postprocessing
+    to_id: paper-79-closure
+  - id: paper-79-relation-aggregation-instantiates-closure
+    type: instantiates
+    from_id: paper-79-aggregation
+    to_id: paper-79-closure
+  - id: paper-79-relation-routing-instantiates-closure
+    type: instantiates
+    from_id: paper-79-routing
+    to_id: paper-79-closure
+  - id: paper-79-relation-closure-transfers-floor
+    type: transfers
+    from_id: paper-79-closure
+    to_id: paper-79-floor
+  - id: paper-79-relation-kv-grounds-floor
+    type: grounds
+    from_id: paper-79-kv-baseline
+    to_id: paper-79-floor
+  - id: paper-79-relation-escape-qualifies-floor
+    type: qualifies
+    from_id: paper-79-escape
+    to_id: paper-79-floor
+  - id: paper-79-relation-counterexamples-bound-closure
+    type: bounds
+    from_id: paper-79-counterexamples
+    to_id: paper-79-closure
+  - id: paper-79-relation-average-instantiates-counterexamples
+    type: instantiates
+    from_id: paper-79-counterexample-average
+    to_id: paper-79-counterexamples
+  - id: paper-79-relation-route-instantiates-counterexamples
+    type: instantiates
+    from_id: paper-79-counterexample-route
+    to_id: paper-79-counterexamples
+  - id: paper-79-relation-model-judge-qualifies-method
+    type: qualifies
+    from_id: paper-79-model-judge-boundary
+    to_id: paper-79-method
   - id: paper-79-relation-contribution-claims
     type: grounds
     from_id: paper-79-contribution
+    to_id: paper-79-claims
+  - id: paper-79-relation-cyber-applies-claims
+    type: applies
+    from_id: paper-79-cyber-workflows
+    to_id: paper-79-claims
+  - id: paper-79-relation-operational-instantiates-cyber
+    type: instantiates
+    from_id: paper-79-operational-facts
+    to_id: paper-79-cyber-workflows
+  - id: paper-79-relation-witness-bounds-claims
+    type: bounds
+    from_id: paper-79-witness-boundary
+    to_id: paper-79-claims
+  - id: paper-79-relation-audit-evaluates-claims
+    type: evaluates
+    from_id: paper-79-audit-procedure
     to_id: paper-79-claims
   - id: paper-79-relation-evidence-claims
     type: supports
@@ -223,9 +421,9 @@ assessment:
       rationale: "Under-review status records a pending process. No acceptance, completed review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
       basis_source_anchor_ids: [anchor-paper-79-curated]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-79-curated]
+      level: low
+      rationale: "A dated exact-title scholarly-web search located 0 citations for this under-review manuscript. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; this may change after dissemination."
+      basis_source_anchor_ids: [anchor-paper-79-citations]
     - id: contribution_significance
       level: medium
       rationale: "The abstract reports a theoretical closure limitation with direct cybersecurity implications, counterexamples, an evidence-state boundary, and an audit procedure. Novelty comparisons, formal proofs, and downstream impact remain unaudited, so this is a provisional significance assessment rather than a breakthrough claim."
@@ -233,7 +431,8 @@ assessment:
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: Exact-title scholarly-web search
+  citation_count: 0
+  source_url: "https://www.google.com/search?q=%22Can+Composing+Generative+Models+Avoid+Hallucinations%3F+Implications+for+Cybersecurity+Use+Cases%22"
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: "The work is under review and no manuscript or index record is public. Zero means no verifiable citation was located in this dated exact-title search, not that future or unindexed references are impossible."

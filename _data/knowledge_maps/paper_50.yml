@@ -15,8 +15,7 @@ short_title: VRASED
 year: 2019
 venue: 28th USENIX Security Symposium
 topic: secure-systems-networks
-labels:
-  - Applied
+labels: [Applied, System, Implementation, Formal Verification]
 authors:
   - Ivan De Oliveira Nunes
   - Karim Eldefrawy
@@ -76,6 +75,11 @@ sources:
     title: "Mind the Gap: Studying the Insecurity of Provably Secure Embedded Trusted Execution Architectures"
     url: https://jovanbulck.github.io/files/oakland22-gap.pdf
     year: 2022
+  - id: source-vrased-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2965443102
+    url: https://openalex.org/W2965443102
+    accessed_at: "2026-07-11"
 
 source_anchors:
   - id: anchor-paper-problem-novelty
@@ -158,6 +162,11 @@ source_anchors:
     label: Independent adversarial analysis of gaps between formal models and concrete implementations
     locator: "Abstract and contributions, PDF pages 1-2"
     url: https://jovanbulck.github.io/files/oakland22-gap.pdf#page=1
+  - id: anchor-vrased-citations
+    source_id: source-vrased-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 89 citing works for the USENIX record when accessed 2026-07-11
+    url: https://openalex.org/W2965443102
 
 nodes:
   - id: paper-50
@@ -457,9 +466,9 @@ assessment:
       rationale: The work passed conference review, exposes public artifacts, received detailed independent adversarial examination, and has a public response that records scope distinctions and prototype changes.
       basis_source_anchor_ids: [anchor-usenix-publication, anchor-mind-gap-attacks, anchor-repository-boundary-response]
     - id: reception
-      level: medium
-      rationale: A dated qualitative snapshot shows multiple follow-on architectures, outside analysis, and an independent reimplementation, but this draft does not yet include a field-adjusted citation or adoption count.
-      basis_source_anchor_ids: [anchor-mind-gap-context, anchor-repository-artifacts]
+      level: high
+      rationale: OpenAlex reported 89 citations for the USENIX record on 2026-07-11. Under the author-defined corpus rule, 11 or more located citations is High; follow-on architectures, outside analysis, and an independent reimplementation add qualitative evidence, but neither count nor uptake establishes correctness.
+      basis_source_anchor_ids: [anchor-vrased-citations, anchor-mind-gap-context, anchor-repository-artifacts]
     - id: contribution_significance
       level: high
       rationale: The paper introduced a first-of-kind verified hybrid remote-attestation architecture and helped establish a research line around both verified low-end security architectures and the limits of transferring proofs to implementations.
@@ -467,9 +476,11 @@ assessment:
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: qualitative
-  citation_count:
+  method: OpenAlex exact-title record plus qualitative lineage audit
+  citation_count: 89
+  source_url: https://openalex.org/W2965443102
   signals:
+    - OpenAlex reported 89 works citing the USENIX publication record.
     - The public repository identifies PURE and APEX as follow-on architectures.
     - The independent Mind the Gap study describes VRASED as part of a mature research project with several derived architectures and an outside reimplementation.
-  limitation: No field-adjusted citation, deployment, teaching, or standards snapshot has yet been curated.
+  limitation: The count is index- and date-dependent, may include self-citations, and does not merge the separate arXiv record; citation and lineage signals do not establish correctness, deployment breadth, or complete independent reproduction.

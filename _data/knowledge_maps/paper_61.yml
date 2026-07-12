@@ -11,210 +11,406 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol]
 
 title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
-short_title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
 year: 2022
+status: Published
 venue: "20th International Conference on Applied Cryptography and Network Security (ACNS)"
-publication_status: "Published"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
+labels: [Theory]
 authors:
-  - "Karim Eldefrawy"
-  - "Tancrède Lepoint"
-  - "Antonin Leroux"
+  - Karim Eldefrawy
+  - Tancrède Lepoint
+  - Antonin Leroux
 keywords:
-  - "secure multiparty computation"
-  - "proactive security"
-  - "dynamic groups"
+  - secure multiparty computation
+  - proactive security
+  - dynamic groups
+  - dishonest majority
 
-research_question: "Can proactive MPC remain communication-efficient when group membership changes and a mobile adversary may control a dishonest majority in each period?"
-central_answer: "The curated editorial summary reports a construction with quadratic amortized communication per secret, using efficient bivariate multiplication and batched proactive sharing for dynamic groups."
+research_question: >-
+  Can a full proactive MPC protocol evaluate arithmetic circuits efficiently when a mobile adversary may control a dishonest majority and the participant group changes between computation layers?
+central_answer: >-
+  The paper extends batched bivariate proactive secret sharing with multi-dealer input sharing, addition, permutation, and a new no-precomputation multiplication pipeline. It proves conditional proactive security and fair reconstruction and reports O(n squared) amortized communication per secret for maximum-size batches.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, protocol-and-proof mapping, and initial assessment
+  method: >-
+    Complete review of the 44-page IACR ePrint PDF through the public archive, including the adversary model, multi-dealer sharing, eight-operation PMPC, multiplication subprotocols, thresholds, ideal functionalities, and appendical proofs. Direct local download was blocked by an archive anti-bot challenge, so no local hash is claimed.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Thresholds, proof-composition wording, and asymptotic expressions require author checking.
 
 sources:
-  - id: source-paper-61-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #61"
-    url: /publications/#paper-61
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-61-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-031-09234-3_28"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-61-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2021/1564"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-61-archive-pdf
+    type: public_archive_copy
+    title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
+    url: https://eprint.iacr.org/2021/1564.pdf
+    provenance_category: archive
+    media_type: application/pdf
+    page_count: 44
+  - id: source-paper-61-official
+    type: official_publication_record
+    title: ACNS 2022 publisher record
+    url: https://doi.org/10.1007/978-3-031-09234-3_28
+    provenance_category: official
+  - id: source-paper-61-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3214757571
+    url: https://api.openalex.org/works/W3214757571
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-61-curated
-    source_id: source-paper-61-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-61
-  - id: anchor-paper-61-official-1
-    source_id: source-paper-61-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-031-09234-3_28"
-  - id: anchor-paper-61-archive-1
-    source_id: source-paper-61-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2021/1564"
+  - id: anchor-paper-61-problem
+    source_id: source-paper-61-archive-pdf
+    label: Problem, contributions, and headline thresholds
+    locator: Abstract and Section 1.1, PDF pages 1-3
+    url: https://eprint.iacr.org/2021/1564.pdf#page=1
+  - id: anchor-paper-61-overview
+    source_id: source-paper-61-archive-pdf
+    label: Bivariate multiplication overview
+    locator: Section 1.2, PDF pages 3-5
+    url: https://eprint.iacr.org/2021/1564.pdf#page=3
+  - id: anchor-paper-61-model
+    source_id: source-paper-61-archive-pdf
+    label: Mobile mixed adversary and cryptographic assumptions
+    locator: Sections 2.1-2.3, PDF pages 5-8
+    url: https://eprint.iacr.org/2021/1564.pdf#page=5
+  - id: anchor-paper-61-share
+    source_id: source-paper-61-archive-pdf
+    label: Multi-dealer batched proactive sharing
+    locator: Section 3 and Protocol 1, PDF pages 8-10
+    url: https://eprint.iacr.org/2021/1564.pdf#page=8
+  - id: anchor-paper-61-pmpc
+    source_id: source-paper-61-archive-pdf
+    label: Eight-subprotocol dynamic PMPC
+    locator: Section 4 and Protocol 2, PDF pages 10-13
+    url: https://eprint.iacr.org/2021/1564.pdf#page=10
+  - id: anchor-paper-61-main-theorem
+    source_id: source-paper-61-archive-pdf
+    label: Full PMPC security and fairness theorem
+    locator: Theorem 1, PDF page 13, with proof in Appendix D, PDF pages 39-41
+    url: https://eprint.iacr.org/2021/1564.pdf#page=13
+  - id: anchor-paper-61-multiplication
+    source_id: source-paper-61-archive-pdf
+    label: Resharing, masking, product, verification, and Mult
+    locator: Sections 5.1-5.5 and Protocols 3-7, PDF pages 13-20
+    url: https://eprint.iacr.org/2021/1564.pdf#page=13
+  - id: anchor-paper-61-mult-theorem
+    source_id: source-paper-61-archive-pdf
+    label: Multiplication security and communication
+    locator: Theorem 2, PDF page 20
+    url: https://eprint.iacr.org/2021/1564.pdf#page=20
+  - id: anchor-paper-61-proofs
+    source_id: source-paper-61-archive-pdf
+    label: Updated PSS proofs, multiplication proofs, permutation, and full composition
+    locator: Appendices A-E, PDF pages 21-44
+    url: https://eprint.iacr.org/2021/1564.pdf#page=21
+  - id: anchor-paper-61-boundaries
+    source_id: source-paper-61-archive-pdf
+    label: Scheduling, planned membership, fairness, and evidence boundaries
+    locator: Sections 2.1 and 4 and Appendix D, PDF pages 5-6, 10-13, and 39-41
+    url: https://eprint.iacr.org/2021/1564.pdf#page=5
+  - id: anchor-paper-61-publication
+    source_id: source-paper-61-official
+    label: Official ACNS publication identity
+    locator: DOI 10.1007/978-3-031-09234-3_28
+    url: https://doi.org/10.1007/978-3-031-09234-3_28
+  - id: anchor-paper-61-citations
+    source_id: source-paper-61-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 3 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3214757571
 
 nodes:
   - id: paper-61
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
-    summary: "This paper constructs proactive multiparty computation for groups whose membership changes while a mobile adversary may control a dishonest majority in each period. It reduces amortized communication to quadratic per secret and introduces efficient bivariate multiplication and batched proactive sharing techniques."
-    source_anchor_ids: [anchor-paper-61-curated]
+    summary: >-
+      A formal batched proactive MPC protocol for arithmetic circuits, dynamic groups, mobile mixed adversaries, and dishonest-majority thresholds.
+    source_anchor_ids: [anchor-paper-61-problem]
+
   - id: paper-61-question
     kind: question
     parent_id: paper-61
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can proactive MPC remain communication-efficient when group membership changes and a mobile adversary may control a dishonest majority in each period?"
-    source_anchor_ids: [anchor-paper-61-curated]
-  - id: paper-61-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can the efficient dynamic dishonest-majority PSS of paper #52 be extended to multiplication and full circuit evaluation without returning to quartic communication?
+    source_anchor_ids: [anchor-paper-61-problem]
+
+  - id: paper-61-answer
     kind: contribution
     parent_id: paper-61
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports a construction with quadratic amortized communication per secret, using efficient bivariate multiplication and batched proactive sharing for dynamic groups."
-    source_anchor_ids: [anchor-paper-61-curated]
-  - id: paper-61-method
-    kind: method
+    epistemic_status: theorem_supported
+    title: Central answer
+    summary: >-
+      Add a multi-dealer Share, local Add, batched Permute, and a new verified bivariate multiplication pipeline to the existing refresh, recover, redistribute, and reconstruct protocols.
+    source_anchor_ids: [anchor-paper-61-share, anchor-paper-61-pmpc, anchor-paper-61-multiplication]
+
+  - id: paper-61-scope
+    kind: threat_model
     parent_id: paper-61
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described protocol combines proactive share maintenance for changing memberships with bivariate multiplication and batching techniques intended to reduce amortized communication."
-    source_anchor_ids: [anchor-paper-61-curated]
+    epistemic_status: defined
+    title: Mobile mixed adversary
+    summary: >-
+      A computationally bounded adversary adaptively chooses passive and active corruptions between predefined refresh phases and may eventually visit every party, while the within-phase multi-threshold remains satisfied.
+    source_anchor_ids: [anchor-paper-61-model]
+
+  - id: paper-61-scope-network
+    kind: assumption
+    parent_id: paper-61-scope
+    order: 1
+    epistemic_status: assumed
+    title: Network, reset, and cryptographic assumptions
+    summary: >-
+      Parties use synchronous pairwise secure channels and authenticated broadcast, reset parties return to a pristine state, old shares are not retained, and proofs rely on DDH-based homomorphic commitments plus Paillier and zero-knowledge multiplication components.
+    source_anchor_ids: [anchor-paper-61-model, anchor-paper-61-multiplication]
+
+  - id: paper-61-pmpc
+    kind: protocol
+    parent_id: paper-61
+    order: 4
+    epistemic_status: specified
+    title: Layered dynamic PMPC
+    summary: >-
+      Inputs are batched and shared, then each arithmetic-circuit layer permutes operands, applies Add or Mult, redistributes shares for planned departures and arrivals, optionally refreshes, and finally reconstructs designated outputs.
+    source_anchor_ids: [anchor-paper-61-pmpc]
+
+  - id: paper-61-pmpc-maintenance
+    kind: protocol
+    parent_id: paper-61-pmpc
+    order: 1
+    epistemic_status: reused_and_adapted
+    title: Proactive and dynamic maintenance
+    summary: >-
+      Refresh rerandomizes current batches, Recover restores reset parties, Redistribute changes membership, and gradual Reconstruct releases outputs fairly within a separate threshold region.
+    source_anchor_ids: [anchor-paper-61-pmpc, anchor-paper-61-proofs]
+
+  - id: paper-61-share
+    kind: protocol
+    parent_id: paper-61-pmpc
+    order: 2
+    epistemic_status: specified
+    title: Multi-dealer batched Share
+    summary: >-
+      Multiple input owners first Shamir-share their values and the parties combine those univariate sharings into a common bivariate batch, removing the earlier requirement that every batched secret originate from one dealer.
+    source_anchor_ids: [anchor-paper-61-share]
+
+  - id: paper-61-mult
+    kind: protocol
+    parent_id: paper-61-pmpc
+    order: 3
+    epistemic_status: specified
+    title: Bivariate batched multiplication
+    summary: >-
+      The protocol splits each batch into roughly square-root-sized univariate groups, creates bivariate zero masks, computes blinded cross-products with pairwise zero-knowledge multiplication, verifies random evaluations, and recombines product sharings.
+    source_anchor_ids: [anchor-paper-61-overview, anchor-paper-61-multiplication]
+
+  - id: paper-61-mult-verification
+    kind: mechanism
+    parent_id: paper-61-mult
+    order: 1
+    epistemic_status: cryptographically_checked
+    title: Commitment and random-evaluation checks
+    summary: >-
+      Homomorphic commitments check local algebra, Paillier-based ZK-Mult protects pairwise products, and a jointly sampled random evaluation detects malformed bivariate commitments except with the theorem's bounded probability.
+    source_anchor_ids: [anchor-paper-61-model, anchor-paper-61-multiplication, anchor-paper-61-proofs]
+
   - id: paper-61-claims
     kind: claim_group
     parent_id: paper-61
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports proactive MPC for dynamic groups with dishonest majorities and quadratic amortized communication per secret."
-    source_anchor_ids: [anchor-paper-61-curated]
+    order: 5
+    epistemic_status: formally_analyzed
+    title: Main guarantees
+    summary: >-
+      Theorems separately state multiplication security, full PMPC secrecy and correctness, conditional fairness, and amortized communication; the thresholds and ideal functionalities must be read together.
+    source_anchor_ids: [anchor-paper-61-main-theorem, anchor-paper-61-mult-theorem]
+
+  - id: paper-61-claim-efficiency
+    kind: claim
+    parent_id: paper-61-claims
+    order: 1
+    epistemic_status: asymptotic_theorem
+    title: Quadratic amortized communication
+    summary: >-
+      For batches of size n minus 2, the complete PMPC reports O(n squared) amortized communication per secret; the new multiplication and permutation procedures report O(n times square root of n) amortized communication.
+    source_anchor_ids: [anchor-paper-61-problem, anchor-paper-61-mult-theorem, anchor-paper-61-proofs]
+
+  - id: paper-61-claim-security
+    kind: claim
+    parent_id: paper-61-claims
+    order: 2
+    epistemic_status: proved_under_model
+    title: Dishonest-majority proactive security
+    summary: >-
+      Under DDH and the formal model, Theorem 1 gives a secrecy and correctness region with a square-root batch-size loss from n minus 3, plus a distinct mixed active/passive threshold for fair reconstruction.
+    source_anchor_ids: [anchor-paper-61-main-theorem, anchor-paper-61-proofs]
+
+  - id: paper-61-claim-mult
+    kind: claim
+    parent_id: paper-61-claims
+    order: 3
+    epistemic_status: proved_under_model
+    title: No-precomputation multiplication
+    summary: >-
+      Theorem 2 realizes the multiplication ideal functionality for batches within the degree bound and a square-root-loss corruption threshold, without a preprocessing phase.
+    source_anchor_ids: [anchor-paper-61-mult-theorem, anchor-paper-61-proofs]
+
   - id: paper-61-evidence
     kind: evidence_group
     parent_id: paper-61
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Theoretical constructions and communication bounds are reported, but security definitions, protocol transcripts, proofs, corruption schedules, and asymptotic accounting were not audited."
-    source_anchor_ids: [anchor-paper-61-curated]
-  - id: paper-61-scope
+    order: 6
+    epistemic_status: proof_documented
+    title: Formal evidence
+    summary: >-
+      The source contains detailed pseudocode, commitment checks, ideal functionalities, subprotocol simulators, permutation constructions, and an appendical composition argument. This map audits their presence, not every proof step independently.
+    source_anchor_ids: [anchor-paper-61-multiplication, anchor-paper-61-proofs]
+
+  - id: paper-61-boundaries
     kind: limitation_group
     parent_id: paper-61
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked the period model, honest-party conditions, erasures, setup and network assumptions, liveness guarantees, membership-transition semantics, or constants hidden by the stated quadratic cost."
-    source_anchor_ids: [anchor-paper-61-curated]
-  - id: paper-61-artifacts
+    order: 7
+    epistemic_status: material
+    title: Boundaries
+    summary: >-
+      Membership changes are assumed planned before execution and occur between circuit layers; corruption sets change only during refresh; fairness holds only in its narrower region; the protocol assumes synchrony, secure channels, reset and erasure; and evidence is formal rather than implemented or benchmarked.
+    source_anchor_ids: [anchor-paper-61-model, anchor-paper-61-pmpc, anchor-paper-61-boundaries]
+
+  - id: paper-61-boundary-refresh
+    kind: limitation
+    parent_id: paper-61-boundaries
+    order: 1
+    epistemic_status: deployment_tradeoff
+    title: Refresh frequency is a policy input
+    summary: >-
+      More frequent refresh permits the adversary less time within a corruption set but costs more communication; the protocol accepts a set of refresh layers rather than deriving an operational schedule.
+    source_anchor_ids: [anchor-paper-61-pmpc, anchor-paper-61-boundaries]
+
+  - id: paper-61-resources
     kind: artifact_group
     parent_id: paper-61
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-61-curated, anchor-paper-61-official-1, anchor-paper-61-archive-1]
+    order: 8
+    epistemic_status: full_text_available
+    title: Publication resources
+    summary: >-
+      The complete IACR ePrint exposes all proofs and the DOI fixes the ACNS identity. No public implementation artifact or local byte copy is represented in this map.
+    source_anchor_ids: [anchor-paper-61-problem, anchor-paper-61-publication]
+
   - id: paper-61-scrutiny
     kind: scrutiny
     parent_id: paper-61
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 20th International Conference on Applied Cryptography and Network Security (ACNS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-61-official-1]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared at ACNS 2022. Public reviews, independent proof checking, and reproductions are not linked.
+    source_anchor_ids: [anchor-paper-61-publication]
+
+  - id: paper-61-lineage
+    kind: lineage
+    parent_id: paper-61
+    order: 10
+    epistemic_status: documented
+    title: Builds full PMPC on paper #52
+    summary: >-
+      The paper reuses the dynamic bivariate PSS from paper #52, adapts its proof to multi-dealer batches, and adds the missing arithmetic-circuit multiplication and permutation layers.
+    source_anchor_ids: [anchor-paper-61-problem, anchor-paper-61-share, anchor-paper-61-multiplication]
 
 relations:
-  - id: paper-61-relation-question-contribution
-    type: motivates
-    from_id: paper-61-question
-    to_id: paper-61-contribution
-  - id: paper-61-relation-method-contribution
+  - id: paper-61-relation-answer-question
+    type: addresses
+    from_id: paper-61-answer
+    to_id: paper-61-question
+  - id: paper-61-relation-maintenance-pmpc
+    type: component_of
+    from_id: paper-61-pmpc-maintenance
+    to_id: paper-61-pmpc
+  - id: paper-61-relation-share-pmpc
+    type: component_of
+    from_id: paper-61-share
+    to_id: paper-61-pmpc
+  - id: paper-61-relation-mult-pmpc
+    type: component_of
+    from_id: paper-61-mult
+    to_id: paper-61-pmpc
+  - id: paper-61-relation-verification-mult
+    type: supports
+    from_id: paper-61-mult-verification
+    to_id: paper-61-mult
+  - id: paper-61-relation-pmpc-answer
     type: realizes
-    from_id: paper-61-method
-    to_id: paper-61-contribution
-  - id: paper-61-relation-contribution-claims
-    type: grounds
-    from_id: paper-61-contribution
-    to_id: paper-61-claims
+    from_id: paper-61-pmpc
+    to_id: paper-61-answer
   - id: paper-61-relation-evidence-claims
     type: supports
     from_id: paper-61-evidence
     to_id: paper-61-claims
-  - id: paper-61-relation-scope-claims
+  - id: paper-61-relation-scope-security
     type: qualifies
     from_id: paper-61-scope
+    to_id: paper-61-claim-security
+  - id: paper-61-relation-boundaries-claims
+    type: qualifies
+    from_id: paper-61-boundaries
     to_id: paper-61-claims
-  - id: paper-61-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-61-artifacts
-    to_id: paper-61-evidence
-  - id: paper-61-relation-scrutiny-claims
+  - id: paper-61-relation-lineage-paper
     type: contextualizes
-    from_id: paper-61-scrutiny
-    to_id: paper-61-claims
+    from_id: paper-61-lineage
+    to_id: paper-61
 
 assessment:
   id: paper-61-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-61-curated, anchor-paper-61-official-1, anchor-paper-61-archive-1]
+      level: high
+      rationale: >-
+        The complete source defines the model, specifies all subprotocols, states exact thresholds and ideal functionalities, and supplies appendical proofs and a composition argument. It provides no implementation evidence.
+      basis_source_anchor_ids: [anchor-paper-61-main-theorem, anchor-paper-61-multiplication, anchor-paper-61-mult-theorem, anchor-paper-61-proofs]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-61-curated, anchor-paper-61-official-1, anchor-paper-61-archive-1]
+      rationale: >-
+        The complete IACR archive PDF and official DOI expose assumptions, protocols, and proofs. Archive anti-bot controls prevented recording local byte fixity, and no author-hosted copy is represented.
+      basis_source_anchor_ids: [anchor-paper-61-problem, anchor-paper-61-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-61-curated]
+      rationale: >-
+        Authorship, date, archive identity, venue, and DOI are documented; revision history, roles, tool use, and artifact lineage are not.
+      basis_source_anchor_ids: [anchor-paper-61-publication, anchor-paper-61-problem]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-61-official-1]
+      rationale: >-
+        ACNS publication establishes venue review, but public reports, independent proof checks, and implementation review are unavailable.
+      basis_source_anchor_ids: [anchor-paper-61-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-61-curated]
+      level: low
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 3 citations. Under the author-defined rule, 0 through 8 located citations is Low; counts vary by index and date.
+      basis_source_anchor_ids: [anchor-paper-61-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-61-curated]
+      rationale: >-
+        The work closes the full-MPC gap in its bivariate dishonest-majority line and reports a large asymptotic improvement, but priority and downstream impact remain to be independently assessed.
+      basis_source_anchor_ids: [anchor-paper-61-problem, anchor-paper-61-share, anchor-paper-61-multiplication]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup
+  citation_count: 3
+  source_url: https://api.openalex.org/works/W3214757571
+  signals:
+    - The exact DOI-matched OpenAlex work reported three citing works.
+  limitation: Citation counts are index- and date-dependent and may merge or split ePrint and proceedings versions differently.

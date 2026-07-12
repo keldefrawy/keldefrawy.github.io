@@ -14,236 +14,255 @@ title: "Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automoti
 year: 2015
 status: "Published · extended abstract"
 venue: "Embedded Security in Cars USA (escar USA) Workshop"
-topic: "secure-systems-networks"
+topic: secure-systems-networks
 labels: ["Applied", "Perspective"]
-authors:
-  - "Karim Eldefrawy"
-  - "Gavin Holland"
-  - "Gene Tsudik"
-keywords:
-  - "remote attestation"
-  - "automotive security"
-  - "cyber-physical systems"
-editorial_summary: "This extended abstract argues that remote attestation should move from checking one embedded device to checking the many heterogeneous components of a cyber-physical system, using a modern vehicle as the motivating case. It outlines how multiple device attestations could be combined efficiently and identifies open problems for automotive and broader CPS deployments."
+authors: ["Karim Eldefrawy", "Gavin Holland", "Gene Tsudik"]
+keywords: ["remote attestation", "automotive security", "cyber-physical systems"]
 
-research_question: "How can remote attestation assess a heterogeneous cyber-physical system as a whole rather than only one embedded component at a time?"
-central_answer: "The extended abstract proposes combining attestations from multiple heterogeneous components and frames efficiency and deployment questions through the automotive use case."
+research_question: >-
+  What models, architectures, schedules, and trusted components are needed to extend remote attestation from one embedded prover to a heterogeneous cyber-physical system such as a modern vehicle?
+central_answer: >-
+  The extended abstract proposes an in-vehicle root of trust that coordinates attestation across high-, medium-, and low-end modules, distinguishes startup from runtime attestation, and presents composability, ordering, scheduling, response, and synthesis as open research problems rather than completed protocols or evaluated guarantees.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: complete-source extraction, proposal/claim separation, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete three-page author-hosted extended abstract. PDF pages 1 and 2 were rendered and visually inspected. Because the source is explicitly a proposed-talk outline, the map distinguishes proposed architecture and research questions from established results."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: "AI-authored source-linked map awaiting author verification. The source proposes a research agenda; it does not present a completed multi-device protocol, proof, implementation, or evaluation."
 
 sources:
-  - id: source-paper-27-site-record
-    type: curated_site_record
-    title: "Publication #27 metadata and editorial summary"
-    url: /publications/#paper-27
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-27-resource-1
-    type: author_hosted_copy
-    title: "Author-hosted paper"
-    url: "https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf"
+  - id: source-paper-27-fulltext
+    type: scholarly_article
+    title: "Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case (Extended Abstract)"
+    url: /pubs/2015/remote-attestation-heterogeneous-cps-automotive.pdf
+    media_type: application/pdf
+    sha256: 663d5605f52e2979b93fe47071482553e475ef9ac52820699bb579c3086d6801
+    page_count: 3
     provenance_category: author
+  - id: source-paper-27-author-origin
+    type: author_copy
+    title: "UC Irvine author copy"
+    url: https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf
+  - id: source-paper-27-citation-query
+    type: scholarly_index_query
+    title: "OpenAlex exact-title search for paper #27"
+    url: "https://api.openalex.org/works?search=Remote%20Attestation%20of%20Heterogeneous%20Cyber-Physical%20Systems%20The%20Automotive%20Use%20Case&per-page=5"
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-27-editorial
-    source_id: source-paper-27-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-27
-  - id: anchor-paper-27-resource-1
-    source_id: source-paper-27-resource-1
-    label: "Author-hosted resource: Author-hosted paper"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf"
+  - id: anchor-paper-27-problem
+    source_id: source-paper-27-fulltext
+    label: "Motivation, source scope, and proposed talk outline"
+    locator: "Abstract and Sections I-II, PDF page 1"
+    url: /pubs/2015/remote-attestation-heterogeneous-cps-automotive.pdf#page=1
+  - id: anchor-paper-27-ra-landscape
+    source_id: source-paper-27-fulltext
+    label: "Software, hardware, and hybrid remote-attestation boundaries"
+    locator: "Section II.1, PDF pages 1-2"
+    url: /pubs/2015/remote-attestation-heterogeneous-cps-automotive.pdf#page=1
+  - id: anchor-paper-27-heterogeneous
+    source_id: source-paper-27-fulltext
+    label: "Composability, ordering, scheduling, and automotive IRT proposal"
+    locator: "Section II.2, PDF pages 2-3"
+    url: /pubs/2015/remote-attestation-heterogeneous-cps-automotive.pdf#page=2
+  - id: anchor-paper-27-future
+    source_id: source-paper-27-fulltext
+    label: "Explicit open problems and intended research directions"
+    locator: "Section II.3, PDF page 3"
+    url: /pubs/2015/remote-attestation-heterogeneous-cps-automotive.pdf#page=3
+  - id: anchor-paper-27-citations
+    source_id: source-paper-27-citation-query
+    label: "Dated OpenAlex exact-title citation search"
+    locator: "No matching work among returned results; 0 located citations, accessed 2026-07-11"
+    url: "https://api.openalex.org/works?search=Remote%20Attestation%20of%20Heterogeneous%20Cyber-Physical%20Systems%20The%20Automotive%20Use%20Case&per-page=5"
 
 nodes:
   - id: paper-27
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case"
-    summary: "This extended abstract argues that remote attestation should move from checking one embedded device to checking the many heterogeneous components of a cyber-physical system, using a modern vehicle as the motivating case. It outlines how multiple device attestations could be combined efficiently and identifies open problems for automotive and broader CPS deployments."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    epistemic_status: published_extended_abstract
+    title: "Remote Attestation of Heterogeneous Cyber-Physical Systems"
+    summary: "A position-oriented extended abstract that frames multi-device remote attestation for vehicles and identifies the architecture and formalization work still needed."
+    source_anchor_ids: [anchor-paper-27-problem]
 
   - id: paper-27-question
     kind: question
     parent_id: paper-27
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How can remote attestation assess a heterogeneous cyber-physical system as a whole rather than only one embedded component at a time?"
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    summary: "How should attestations from heterogeneous CPS components be combined without allowing malware migration, unsafe interruption, or weakest-component failure?"
+    source_anchor_ids: [anchor-paper-27-problem, anchor-paper-27-heterogeneous]
 
-  - id: paper-27-contribution
+  - id: paper-27-answer
     kind: contribution
     parent_id: paper-27
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The extended abstract proposes combining attestations from multiple heterogeneous components and frames efficiency and deployment questions through the automotive use case."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    epistemic_status: proposed_research_direction
+    title: "Proposed direction"
+    summary: "Use a high-end in-vehicle root of trust to manage keys and coordinate attestations of medium- and low-end ECUs, while developing composable definitions and schedules for static and dynamic roots of trust."
+    source_anchor_ids: [anchor-paper-27-heterogeneous]
+
+  - id: paper-27-scope
+    kind: scope
+    parent_id: paper-27
+    order: 3
+    epistemic_status: explicitly_scoped
+    title: "Automotive CPS scope"
+    summary: "The motivating system contains more than 70 heterogeneous ECUs and wireless interfaces, with focus on remotely induced software compromise rather than scalable physical capture."
+    source_anchor_ids: [anchor-paper-27-problem, anchor-paper-27-heterogeneous]
+
+  - id: paper-27-scope-adversary
+    kind: threat_model
+    parent_id: paper-27-scope
+    order: 1
+    epistemic_status: qualitative
+    title: "Remote malware focus"
+    summary: "The source treats remote software attacks as the principal concern and states that physical access generally requires special tamper-resistant hardware; no complete adversary game is defined."
+    source_anchor_ids: [anchor-paper-27-problem]
 
   - id: paper-27-method
     kind: method
     parent_id: paper-27
-    order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported approach is a conceptual system framing: it uses a modern vehicle to organize a design space for composing multiple device attestations."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    order: 4
+    epistemic_status: proposed_not_implemented
+    title: "Heterogeneous attestation architecture"
+    summary: "High-end modules may host the in-vehicle root of trust, medium-end modules may use TrustZone, HSMs, or SMART-like support, and low-end modules may be attested through accessible memory or firmware mechanisms."
+    source_anchor_ids: [anchor-paper-27-ra-landscape, anchor-paper-27-heterogeneous]
+
+  - id: paper-27-method-static
+    kind: component
+    parent_id: paper-27-method
+    order: 1
+    epistemic_status: proposed
+    title: "Startup attestation"
+    summary: "The IRT could attest all modules while the vehicle starts, accepting a potentially multi-second delay to establish a static root of trust."
+    source_anchor_ids: [anchor-paper-27-heterogeneous]
+
+  - id: paper-27-method-dynamic
+    kind: component
+    parent_id: paper-27-method
+    order: 2
+    epistemic_status: open_problem
+    title: "Runtime attestation"
+    summary: "A dynamic root would require randomized component checks that do not interfere with safety or operation, together with a response policy after failure; the source leaves both as challenges."
+    source_anchor_ids: [anchor-paper-27-heterogeneous]
 
   - id: paper-27-claims
     kind: claim_group
     parent_id: paper-27
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
-
-  - id: paper-27-claim-primary
-    kind: claim
-    parent_id: paper-27-claims
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The reported contribution is a system-level attestation direction and a set of open problems for automotive and broader cyber-physical deployments."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    order: 5
+    epistemic_status: agenda_not_result
+    title: "Claims versus proposals"
+    summary: "The source claims that heterogeneous CPS attestation is important and outlines plausible architecture choices, but it does not claim a completed secure composition theorem or measured system."
+    source_anchor_ids: [anchor-paper-27-problem, anchor-paper-27-future]
 
   - id: paper-27-evidence
     kind: evidence_group
     parent_id: paper-27
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    order: 6
+    epistemic_status: literature_grounded_argument
+    title: "Evidence and rationale"
+    summary: "Support consists of a compact synthesis of prior software-only, hardware, hybrid, formal-model, and automotive-security work plus concrete timing and ECU-capability examples."
+    source_anchor_ids: [anchor-paper-27-ra-landscape, anchor-paper-27-heterogeneous]
 
-  - id: paper-27-evidence-reported
-    kind: evidence
-    parent_id: paper-27-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The local editorial summary reports an automotive motivating analysis and an outline of combined attestation; no implementation or experiment is asserted in the current record."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
-
-  - id: paper-27-scope
+  - id: paper-27-boundaries
     kind: limitation_group
     parent_id: paper-27
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    order: 7
+    epistemic_status: explicit_open_problems
+    title: "Open problems"
+    summary: "Composable security definitions, order and timing, malware movement, minimal interruption, device heterogeneity, failure response, automated verification, and protocol synthesis are all explicitly left unresolved."
+    source_anchor_ids: [anchor-paper-27-heterogeneous, anchor-paper-27-future]
 
-  - id: paper-27-scope-boundary
-    kind: limitation
-    parent_id: paper-27-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "This is an extended abstract and conceptual agenda. Concrete protocol definitions, threat assumptions, security proofs, and performance results were not audited."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
-
-  - id: paper-27-resources
+  - id: paper-27-artifacts
     kind: artifact_group
     parent_id: paper-27
-    order: 7
-    epistemic_status: resource_metadata_recorded
+    order: 8
+    epistemic_status: full_text_available
     title: "Artifacts and resources"
-    summary: "1 linked resource is recorded by provenance category; its content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-27-resource-1"]
-
-  - id: paper-27-resources-available
-    kind: artifact
-    parent_id: paper-27-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Author-hosted: Author-hosted paper."
-    source_anchor_ids: ["anchor-paper-27-resource-1"]
+    summary: "The complete three-page author-hosted extended abstract is mirrored locally with page count and SHA-256; no implementation or formal artifact is claimed by the source."
+    source_anchor_ids: [anchor-paper-27-problem]
 
   - id: paper-27-scrutiny
     kind: scrutiny
     parent_id: paper-27
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · extended abstract at Embedded Security in Cars USA (escar USA) Workshop. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-27-editorial"]
+    order: 9
+    epistemic_status: workshop_extended_abstract
+    title: "External scrutiny"
+    summary: "The work was presented as an extended abstract/talk at escar USA 2015; review process, audience feedback, and follow-on validation were not audited."
+    source_anchor_ids: [anchor-paper-27-problem]
+
+  - id: paper-27-lineage
+    kind: lineage
+    parent_id: paper-27
+    order: 10
+    epistemic_status: documented
+    title: "Research lineage"
+    summary: "The agenda extends single-prover remote attestation, including SMART and minimalist RA, toward collective and heterogeneous device settings."
+    source_anchor_ids: [anchor-paper-27-ra-landscape, anchor-paper-27-future]
 
 relations:
-  - id: relation-paper-27-contribution-addresses-question
+  - id: relation-paper-27-answer-addresses-question
     type: addresses
-    from_id: paper-27-contribution
+    from_id: paper-27-answer
     to_id: paper-27-question
-  - id: relation-paper-27-method-describes-contribution
+  - id: relation-paper-27-method-describes-answer
     type: describes_approach_to
     from_id: paper-27-method
-    to_id: paper-27-contribution
-  - id: relation-paper-27-evidence-supports-claim
-    type: supports
-    from_id: paper-27-evidence-reported
-    to_id: paper-27-claim-primary
-  - id: relation-paper-27-scope-qualifies-claim
+    to_id: paper-27-answer
+  - id: relation-paper-27-evidence-motivates-method
+    type: motivates
+    from_id: paper-27-evidence
+    to_id: paper-27-method
+  - id: relation-paper-27-boundaries-qualify-answer
     type: qualifies
-    from_id: paper-27-scope-boundary
-    to_id: paper-27-claim-primary
-  - id: relation-paper-27-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-27-resources-available
-    to_id: paper-27-evidence-reported
-  - id: relation-paper-27-status-qualifies-claim
-    type: qualifies
-    from_id: paper-27-scrutiny
-    to_id: paper-27-claim-primary
+    from_id: paper-27-boundaries
+    to_id: paper-27-answer
 
 assessment:
   id: paper-27-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-27-editorial", "anchor-paper-27-resource-1"]
+      level: low
+      rationale: "The complete extended abstract provides a well-scoped literature-grounded agenda, but no new protocol proof, implementation, or experiment is presented."
+      basis_source_anchor_ids: [anchor-paper-27-problem, anchor-paper-27-future]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-27-resource-1"]
+      rationale: "The complete source is author-hosted and mirrored locally with page count and SHA-256; all three pages are directly inspectable."
+      basis_source_anchor_ids: [anchor-paper-27-problem]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+      rationale: "Named authorship, affiliations, date, and author-hosted source establish baseline provenance. Draft history and contributor roles are not recorded."
+      basis_source_anchor_ids: [anchor-paper-27-problem]
     - id: external_scrutiny
-      level: low
-      rationale: "A workshop publication status is listed, but no official publication record or review documentation is linked; the review process and any independent reproduction or criticism were not audited."
-      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+      level: medium
+      rationale: "The source records an escar USA workshop presentation, but the review process and independent technical scrutiny were not audited."
+      basis_source_anchor_ids: [anchor-paper-27-problem]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+      level: low
+      rationale: "An exact-title OpenAlex search returned no matching work, so 0 citations were located as of 2026-07-11. Absence of an indexed record is not evidence of zero citations elsewhere."
+      basis_source_anchor_ids: [anchor-paper-27-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a system-level extension of remote-attestation thinking from one device to heterogeneous cyber-physical systems. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-27-editorial"]
+      rationale: "The source clearly articulates a multi-device RA research agenda, but it is a perspective extended abstract rather than a completed technical result."
+      basis_source_anchor_ids: [anchor-paper-27-future]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex exact-title search; no matching work located"
+  source_url: "https://api.openalex.org/works?search=Remote%20Attestation%20of%20Heterogeneous%20Cyber-Physical%20Systems%20The%20Automotive%20Use%20Case&per-page=5"
+  citation_count: 0
   signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  limitation: "No matching OpenAlex work was found, so the located-citation count is zero; indexing gaps and title variants may conceal citations."

@@ -12,248 +12,332 @@ contribution_types: [algorithm]
 
 title: "Longitudinal Analysis of Misuse of Bitcoin"
 year: 2019
-status: "Published"
+status: Published
 venue: "17th International Conference on Applied Cryptography and Network Security (ACNS)"
-topic: "secure-systems-networks"
-labels: ["Applied"]
+topic: secure-systems-networks
+labels: [Applied]
 authors:
-  - "Karim Eldefrawy"
-  - "Ashish Gehani"
-  - "Alexandre Matton"
-keywords:
-  - "Bitcoin"
-  - "measurement"
-  - "dark web"
-editorial_summary: "This paper combines Bitcoin blockchain history with millions of candidate addresses collected from the dark web to quantify suspicious and malicious use over time. It develops mixing heuristics and finds that a small concentration of addresses accounts for most of the observed dark-web Bitcoin value."
+  - Karim Eldefrawy
+  - Ashish Gehani
+  - Alexandre Matton
+keywords: [Bitcoin, dark web, longitudinal measurement, CoinJoin detection, transaction graph, cryptocurrency misuse]
 
-research_question: "What longitudinal patterns of suspicious or malicious Bitcoin use can be inferred by linking blockchain history with addresses collected from dark-web sources?"
-central_answer: "The paper reports combining blockchain history with millions of candidate addresses, applying mixing heuristics, and measuring concentration over time."
+research_question: >-
+  What quantitative patterns distinguish Bitcoin addresses observed on the dark web from the broader blockchain over time, and can CoinJoin transactions be detected well enough to avoid treating mixer-induced links as ordinary counterparties?
+central_answer: >-
+  The study joins the Bitcoin blockchain through May 2018 with addresses harvested from dark-web pages in 2016–2017, filters and labels those addresses, and introduces a constrained subset-search heuristic for CoinJoin detection. It reports declining dark-web address visibility, much higher activity and mixing among dark-web addresses, and concentration of associated value, while explicitly warning that crawl coverage, inherited labels, and heuristic errors preclude causal or exhaustive claims.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text data/method extraction and initial assessment
+  method: >-
+    Source-grounded review of the complete checked-in paper, including visual inspection of title, dataset, algorithm, and results pages. Data provenance, algorithm steps, quantitative findings, and stated limitations were read; code, datasets, and calculations were not independently rerun.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Statistical interpretations, counts, and ratings remain provisional.
 
 sources:
-  - id: source-paper-49-site-record
-    type: curated_site_record
-    title: "Publication #49 metadata and editorial summary"
-    url: /publications/#paper-49
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-49-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-030-21568-2_13"
-    provenance_category: official
-  - id: source-paper-49-resource-2
+  - id: source-paper-49-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2019/btc_acns2019.pdf"
+    title: "Longitudinal Analysis of Misuse of Bitcoin"
+    url: /pubs/2019/btc_acns2019.pdf
     provenance_category: author
+    media_type: application/pdf
+    sha256: da730c6a2804ed673c22f8dc7052837cfd87c3db19b378583b24eb88c8b5bd1f
+    page_count: 20
+  - id: source-paper-49-official
+    type: official_publication_record
+    title: ACNS 2019 publication record
+    url: https://doi.org/10.1007/978-3-030-21568-2_13
+    provenance_category: official
+  - id: source-paper-49-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2947572383
+    url: https://openalex.org/W2947572383
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-49-editorial
-    source_id: source-paper-49-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-49
-  - id: anchor-paper-49-resource-1
-    source_id: source-paper-49-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1007/978-3-030-21568-2_13"
-  - id: anchor-paper-49-resource-2
-    source_id: source-paper-49-resource-2
-    label: "Author-hosted resource: Author-hosted PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://keldefrawy.github.io/pubs/2019/btc_acns2019.pdf"
+  - id: anchor-paper-49-problem
+    source_id: source-paper-49-author-pdf
+    label: Research objective, data scale, contributions, and headline findings
+    locator: "Abstract and Sections 1-1.3, PDF pages 1-4"
+    url: /pubs/2019/btc_acns2019.pdf#page=1
+  - id: anchor-paper-49-limitations
+    source_id: source-paper-49-author-pdf
+    label: Coverage, labeling, ground-truth, and heuristic limitations
+    locator: "Section 1.4, PDF page 4"
+    url: /pubs/2019/btc_acns2019.pdf#page=4
+  - id: anchor-paper-49-bitcoin
+    source_id: source-paper-49-author-pdf
+    label: Bitcoin address validation and CoinJoin mechanics
+    locator: "Section 2, PDF pages 4-6"
+    url: /pubs/2019/btc_acns2019.pdf#page=4
+  - id: anchor-paper-49-blockchain
+    source_id: source-paper-49-author-pdf
+    label: Blockchain time range, counts, and cross-check
+    locator: "Section 3.1, PDF pages 6-7"
+    url: /pubs/2019/btc_acns2019.pdf#page=6
+  - id: anchor-paper-49-darkweb
+    source_id: source-paper-49-author-pdf
+    label: IRB-approved upstream crawl, OnionCrawler, labeling, checksum filtering, and dataset
+    locator: "Section 3.2, PDF pages 7-9"
+    url: /pubs/2019/btc_acns2019.pdf#page=7
+  - id: anchor-paper-49-dark-results
+    source_id: source-paper-49-author-pdf
+    label: Dark-web address time series, active/malicious subsets, and takedown observations
+    locator: "Section 3.3, PDF pages 9-10"
+    url: /pubs/2019/btc_acns2019.pdf#page=9
+  - id: anchor-paper-49-heuristic
+    source_id: source-paper-49-author-pdf
+    label: CoinJoin conditions, constrained subset search, fee bounds, and pseudocode
+    locator: "Sections 4-4.1 and Algorithm 1, PDF pages 10-14"
+    url: /pubs/2019/btc_acns2019.pdf#page=10
+  - id: anchor-paper-49-mixing-results
+    source_id: source-paper-49-author-pdf
+    label: Heuristic runtime, approximation boundary, and CoinJoin prevalence
+    locator: "Section 4.2, PDF page 14"
+    url: /pubs/2019/btc_acns2019.pdf#page=14
+  - id: anchor-paper-49-neighborhood
+    source_id: source-paper-49-author-pdf
+    label: Transaction-graph construction and whole-chain statistics
+    locator: "Section 5.1 and Tables 3-4, PDF pages 14-16"
+    url: /pubs/2019/btc_acns2019.pdf#page=14
+  - id: anchor-paper-49-comparison
+    source_id: source-paper-49-author-pdf
+    label: Dark-web neighborhood comparison and interpretation cautions
+    locator: "Section 5.2 and Tables 5-8, PDF pages 16-18"
+    url: /pubs/2019/btc_acns2019.pdf#page=16
+  - id: anchor-paper-49-future
+    source_id: source-paper-49-author-pdf
+    label: Future cross-chain, attribution, and synchronization analyses
+    locator: "Section 6, PDF pages 18-19"
+    url: /pubs/2019/btc_acns2019.pdf#page=18
+  - id: anchor-paper-49-publication
+    source_id: source-paper-49-official
+    label: Official peer-reviewed publication identity
+    locator: "ACNS 2019, DOI 10.1007/978-3-030-21568-2_13"
+    url: https://doi.org/10.1007/978-3-030-21568-2_13
+  - id: anchor-paper-49-reception
+    source_id: source-paper-49-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 8 citing works on 2026-07-11"
+    url: https://openalex.org/W2947572383
 
 nodes:
   - id: paper-49
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Longitudinal Analysis of Misuse of Bitcoin"
-    summary: "This paper combines Bitcoin blockchain history with millions of candidate addresses collected from the dark web to quantify suspicious and malicious use over time. It develops mixing heuristics and finds that a small concentration of addresses accounts for most of the observed dark-web Bitcoin value."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
+    epistemic_status: published_empirical_study
+    title: Longitudinal Bitcoin misuse analysis
+    summary: A blockchain/dark-web measurement study with a new CoinJoin heuristic and explicit caveats about observation, labels, and missing ground truth.
+    source_anchor_ids: [anchor-paper-49-problem]
   - id: paper-49-question
     kind: question
     parent_id: paper-49
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "What longitudinal patterns of suspicious or malicious Bitcoin use can be inferred by linking blockchain history with addresses collected from dark-web sources?"
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
-  - id: paper-49-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: How prevalent and behaviorally distinctive is suspicious Bitcoin activity visible on dark-web pages, after accounting for mixer-generated transaction graph noise?
+    source_anchor_ids: [anchor-paper-49-problem]
+  - id: paper-49-answer
     kind: contribution
     parent_id: paper-49
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports combining blockchain history with millions of candidate addresses, applying mixing heuristics, and measuring concentration over time."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
-  - id: paper-49-method
-    kind: method
+    epistemic_status: empirically_supported
+    title: Central answer
+    summary: Observed dark-web addresses are more active, more connected, and more likely to mix than random blockchain addresses, but the sample measures public crawl visibility rather than all misuse.
+    source_anchor_ids: [anchor-paper-49-dark-results, anchor-paper-49-mixing-results, anchor-paper-49-comparison]
+  - id: paper-49-data
+    kind: dataset_group
     parent_id: paper-49
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented method collects candidate dark-web addresses, links them to blockchain transactions, applies heuristics for mixing behavior, and performs longitudinal measurement."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
+    epistemic_status: constructed_from_public_and_prior_data
+    title: Joined longitudinal datasets
+    summary: The analysis combines a nearly complete public blockchain window with candidate addresses extracted from an independently collected and labeled dark-web crawl.
+    source_anchor_ids: [anchor-paper-49-blockchain, anchor-paper-49-darkweb]
+  - id: paper-49-data-chain
+    kind: dataset
+    parent_id: paper-49-data
+    order: 1
+    epistemic_status: public_ledger_observation
+    title: Bitcoin blockchain through May 2018
+    summary: The study analyzes 397,301,155 unique active addresses and 316,386,663 transactions from genesis through May 2018, cross-checking aggregate counts against Blockchain.info.
+    source_anchor_ids: [anchor-paper-49-blockchain]
+  - id: paper-49-data-dark
+    kind: dataset
+    parent_id: paper-49-data
+    order: 2
+    epistemic_status: sampled_and_inherited_labels
+    title: Dark-web address corpus
+    summary: OnionCrawler ran twice daily from June 2016 to December 2017; checksum filtering reduces about 2.3 million candidates to 2,093,568 valid addresses, of which 47,697 carry selected suspicious/malicious tags.
+    source_anchor_ids: [anchor-paper-49-darkweb, anchor-paper-49-dark-results]
+  - id: paper-49-measurement-model
+    kind: scope
+    parent_id: paper-49
+    order: 4
+    epistemic_status: observational
+    title: What is measured
+    summary: An address inherits an onion page's labels, and activity is inferred from public transactions. This establishes associations and behaviors, not wallet ownership, intent, legal status, or causal effects.
+    source_anchor_ids: [anchor-paper-49-darkweb, anchor-paper-49-limitations]
+  - id: paper-49-algorithm
+    kind: algorithm
+    parent_id: paper-49
+    order: 5
+    epistemic_status: specified_and_executed
+    title: CoinJoin identification heuristic
+    summary: The algorithm detects repeated equal-valued outputs, checks participant/input consistency, then uses a fee-bounded depth-first subset search to assign inputs to participant outputs.
+    source_anchor_ids: [anchor-paper-49-heuristic]
+  - id: paper-49-algorithm-bound
+    kind: algorithmic_limit
+    parent_id: paper-49-algorithm
+    order: 1
+    epistemic_status: explicit_approximation
+    title: NP-hard search and large-input shortcut
+    summary: Subset allocation is NP-hard; transactions with over 17 inputs that pass the first filters are labeled CoinJoin without exhaustive search, creating an explicit false-positive/false-negative boundary.
+    source_anchor_ids: [anchor-paper-49-heuristic, anchor-paper-49-mixing-results]
+  - id: paper-49-graph
+    kind: method
+    parent_id: paper-49
+    order: 6
+    epistemic_status: specified
+    title: Neighborhood analysis
+    summary: Addresses are vertices and sender/receiver co-occurrence creates undirected edges; inferred CoinJoins are excluded from selected neighborhood calculations because mixer participants are not ordinary counterparties.
+    source_anchor_ids: [anchor-paper-49-neighborhood]
   - id: paper-49-claims
     kind: claim_group
     parent_id: paper-49
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
-  - id: paper-49-claim-primary
+    order: 7
+    epistemic_status: descriptive_empirical
+    title: Main quantitative findings
+    summary: Findings describe the sampled windows and classification rules; they are not estimates of all illicit cryptocurrency use.
+    source_anchor_ids: [anchor-paper-49-problem, anchor-paper-49-dark-results, anchor-paper-49-comparison]
+  - id: paper-49-claim-trend
     kind: claim
     parent_id: paper-49-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports that a relatively small concentration of addresses accounts for most observed dark-web Bitcoin value."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
+    epistemic_status: observed_association
+    title: Decline aligned with market takedowns
+    summary: Monthly addresses seen on the dark web decline over the sample and show drops during known market-takedown periods; the paper does not claim the takedowns are the sole cause.
+    source_anchor_ids: [anchor-paper-49-dark-results]
+  - id: paper-49-claim-mixing
+    kind: claim
+    parent_id: paper-49-claims
+    order: 2
+    epistemic_status: heuristic_supported
+    title: Higher observed CoinJoin participation
+    summary: The heuristic marks 0.4% of all addresses but 2.3% of dark-web addresses as CoinJoin participants, approximately a fivefold difference.
+    source_anchor_ids: [anchor-paper-49-mixing-results]
+  - id: paper-49-claim-activity
+    kind: claim
+    parent_id: paper-49-claims
+    order: 3
+    epistemic_status: dataset_supported
+    title: Higher connectivity and transaction volume
+    summary: Dark-web addresses have much higher neighbor and activity distributions than the full chain, although public visibility and service/exchange addresses can strongly bias that comparison.
+    source_anchor_ids: [anchor-paper-49-comparison]
+  - id: paper-49-claim-concentration
+    kind: claim
+    parent_id: paper-49-claims
+    order: 4
+    epistemic_status: dataset_supported
+    title: Concentrated associated value
+    summary: Within the dark-web-associated set, 2,828 addresses account for 99% of held bitcoin; this does not mean those addresses are controlled by dark-web operators.
+    source_anchor_ids: [anchor-paper-49-dark-results, anchor-paper-49-comparison]
   - id: paper-49-evidence
     kind: evidence_group
     parent_id: paper-49
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
-  - id: paper-49-evidence-reported
-    kind: evidence
-    parent_id: paper-49-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies millions of candidate addresses and blockchain analysis, but collection coverage, labels, heuristics, false positives, ethics, and concentration calculations were not audited."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
-  - id: paper-49-scope
+    order: 8
+    epistemic_status: large_scale_observational
+    title: Evidence stack
+    summary: Public-ledger data, twice-daily dark-web crawling, inherited and partially manually verified labels, address checksums, a specified heuristic, transaction graphs, descriptive statistics, and temporal comparisons support the findings.
+    source_anchor_ids: [anchor-paper-49-blockchain, anchor-paper-49-darkweb, anchor-paper-49-heuristic, anchor-paper-49-comparison]
+  - id: paper-49-boundaries
     kind: limitation_group
     parent_id: paper-49
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
-  - id: paper-49-scope-boundary
-    kind: limitation
-    parent_id: paper-49-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Candidate addresses and attribution heuristics may not establish malicious ownership or intent. Findings are bounded by source coverage, observation period, and Bitcoin-specific behavior."
-    source_anchor_ids: ["anchor-paper-49-editorial"]
-
-  - id: paper-49-resources
+    order: 9
+    epistemic_status: explicit
+    title: Validity limits
+    summary: Crawl coverage is incomplete; labels come from prior page classification; address visibility favors popular services; ownership and ground truth are missing; mixer detection is heuristic; privacy coins and activity after the windows are outside scope.
+    source_anchor_ids: [anchor-paper-49-limitations, anchor-paper-49-comparison, anchor-paper-49-future]
+  - id: paper-49-artifacts
     kind: artifact_group
     parent_id: paper-49
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-49-resource-1", "anchor-paper-49-resource-2"]
-
-  - id: paper-49-resources-available
-    kind: artifact
-    parent_id: paper-49-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted PDF."
-    source_anchor_ids: ["anchor-paper-49-resource-1", "anchor-paper-49-resource-2"]
-
+    order: 10
+    epistemic_status: partial
+    title: Reproducibility resources
+    summary: The paper provides pseudocode, date ranges, counts, tag lists, and methodology. This audit did not locate public code, the derived address/tag corpus, query outputs, or a fixed analysis environment.
+    source_anchor_ids: [anchor-paper-49-darkweb, anchor-paper-49-heuristic]
   - id: paper-49-scrutiny
     kind: scrutiny
     parent_id: paper-49
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at 17th International Conference on Applied Cryptography and Network Security (ACNS). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-49-resource-1"]
+    order: 11
+    epistemic_status: venue_reviewed_and_irb_upstream
+    title: External scrutiny
+    summary: ACNS publication establishes venue review; the upstream crawl received SRI IRB approval. Neither is equivalent to independent statistical reproduction or label validation.
+    source_anchor_ids: [anchor-paper-49-darkweb, anchor-paper-49-publication]
+  - id: paper-49-lineage
+    kind: lineage
+    parent_id: paper-49
+    order: 12
+    epistemic_status: open_directions
+    title: Follow-on analysis directions
+    summary: The paper proposes extending the design across other cryptocurrencies, entity/geographic attribution sources, and synchronized cross-chain activity.
+    source_anchor_ids: [anchor-paper-49-future]
 
 relations:
-  - id: relation-paper-49-contribution-addresses-question
-    type: addresses
-    from_id: paper-49-contribution
-    to_id: paper-49-question
-  - id: relation-paper-49-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-49-method
-    to_id: paper-49-contribution
-  - id: relation-paper-49-evidence-supports-claim
-    type: supports
-    from_id: paper-49-evidence-reported
-    to_id: paper-49-claim-primary
-  - id: relation-paper-49-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-49-scope-boundary
-    to_id: paper-49-claim-primary
-  - id: relation-paper-49-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-49-resources-available
-    to_id: paper-49-evidence-reported
-  - id: relation-paper-49-status-qualifies-claim
-    type: qualifies
-    from_id: paper-49-scrutiny
-    to_id: paper-49-claim-primary
+  - {id: paper-49-relation-answer-question, type: addresses, from_id: paper-49-answer, to_id: paper-49-question}
+  - {id: paper-49-relation-chain-data, type: component_of, from_id: paper-49-data-chain, to_id: paper-49-data}
+  - {id: paper-49-relation-dark-data, type: component_of, from_id: paper-49-data-dark, to_id: paper-49-data}
+  - {id: paper-49-relation-data-claims, type: supports, from_id: paper-49-data, to_id: paper-49-claims}
+  - {id: paper-49-relation-algorithm-mixing, type: supports, from_id: paper-49-algorithm, to_id: paper-49-claim-mixing}
+  - {id: paper-49-relation-algorithm-graph, type: filters, from_id: paper-49-algorithm, to_id: paper-49-graph}
+  - {id: paper-49-relation-model-claims, type: qualifies, from_id: paper-49-measurement-model, to_id: paper-49-claims}
+  - {id: paper-49-relation-evidence-claims, type: supports, from_id: paper-49-evidence, to_id: paper-49-claims}
+  - {id: paper-49-relation-boundaries-claims, type: limits, from_id: paper-49-boundaries, to_id: paper-49-claims}
+  - {id: paper-49-relation-lineage-paper, type: contextualizes, from_id: paper-49-lineage, to_id: paper-49}
 
 assessment:
   id: paper-49-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-49-editorial", "anchor-paper-49-resource-1"]
+      level: high
+      rationale: The paper analyzes hundreds of millions of ledger observations and millions of crawl candidates with documented collection, filtering, algorithm, statistics, and limitations; missing ground truth and heuristic error constrain interpretation.
+      basis_source_anchor_ids: [anchor-paper-49-blockchain, anchor-paper-49-darkweb, anchor-paper-49-heuristic, anchor-paper-49-limitations]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-49-resource-1", "anchor-paper-49-resource-2"]
+      rationale: A complete checked-in paper with hash/page count, precise method/result anchors, and DOI is inspectable. The derived corpus, code, and raw analysis outputs are not available in this map.
+      basis_source_anchor_ids: [anchor-paper-49-problem, anchor-paper-49-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-49-editorial"]
+      rationale: Authors, venue, funding, DOI, data windows, upstream IRB status, collection tool, and analysis procedures are documented; contributor roles, code revision, derived-data fixity, and run lineage are not.
+      basis_source_anchor_ids: [anchor-paper-49-darkweb, anchor-paper-49-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-49-resource-1"]
+      rationale: ACNS review and upstream IRB oversight provide external process checks, but public peer reports, artifact evaluation, and independent reproduction were not located.
+      basis_source_anchor_ids: [anchor-paper-49-darkweb, anchor-paper-49-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-49-editorial"]
+      level: low
+      rationale: OpenAlex reported 8 citations on 2026-07-11; under the finalized rubric, 0 through 8 located citations is Low.
+      basis_source_anchor_ids: [anchor-paper-49-reception]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a longitudinal empirical view of suspected Bitcoin misuse using combined dark-web and blockchain data. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-49-editorial"]
+      rationale: The work contributes a large longitudinal joined dataset analysis and independent CoinJoin heuristic, while missing ground truth and unavailable artifacts limit certainty and reuse.
+      basis_source_anchor_ids: [anchor-paper-49-problem, anchor-paper-49-limitations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 8
+  source_url: https://openalex.org/W2947572383
+  signals:
+    - OpenAlex reported 8 works citing the ACNS paper.
+  limitation: The count varies by index/date and does not indicate independent reproduction, data reuse, or validation of the CoinJoin classifier.

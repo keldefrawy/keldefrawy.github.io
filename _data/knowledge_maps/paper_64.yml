@@ -11,227 +11,382 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [algorithm]
 
 title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
-short_title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
+short_title: CraterLake
 year: 2022
 venue: "49th International Symposium on Computer Architecture (ISCA)"
-publication_status: "Published"
+publication_status: Published
 topic: secure-encrypted-computation
-labels:
-  - "Applied"
+labels: [Applied]
 authors:
-  - "Nikola Samardzic"
-  - "Axel Feldmann"
-  - "Aleksandar Krastev"
-  - "Nathan Manohar"
-  - "Nicholas Genise"
-  - "Srinivas Devadas"
-  - "Karim Eldefrawy"
-  - "Chris Peikert"
-  - "Daniel Sánchez"
+  - Nikola Samardzic
+  - Axel Feldmann
+  - Aleksandar Krastev
+  - Nathan Manohar
+  - Nicholas Genise
+  - Srinivas Devadas
+  - Karim Eldefrawy
+  - Chris Peikert
+  - Daniel Sánchez
 keywords:
-  - "fully homomorphic encryption"
-  - "hardware acceleration"
-  - "FHE bootstrapping"
-  - "compiler optimization"
+  - fully homomorphic encryption
+  - FHE accelerator
+  - bootstrapping
+  - boosted key switching
+  - hardware compiler co-design
 
-research_question: "Can hardware acceleration make fully homomorphic encryption practical for computations of unbounded depth by efficiently refreshing ciphertexts?"
-central_answer: "The curated editorial summary reports that CraterLake accelerates the expensive refresh operations that control ciphertext noise and is organized for long, general encrypted programs."
+research_question: >-
+  Can a programmable hardware accelerator remove the refresh bottleneck that had limited prior FHE accelerators to bounded-depth programs and efficiently execute deep encrypted workloads?
+central_answer: >-
+  CraterLake combines boosted key switching, a 2,048-lane vector architecture, specialized residue and key-switch generation units, and a scheduling compiler. In cycle-accurate simulation and RTL synthesis it supports CKKS, BGV, and GSW computations with bootstrapping and substantially outperforms the evaluated CPU and prior-accelerator baselines on deep workloads; these are modeled and synthesized results, not measurements from fabricated silicon.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, claim-evidence mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 15-page author copy, including visual inspection of the title page and evaluation pages, cross-checked against the official DOI and public-access record.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification; architecture interpretations, benchmark readings, and ratings remain provisional until approval.
 
 sources:
-  - id: source-paper-64-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #64"
-    url: /publications/#paper-64
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-64-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3470496.3527393"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-64-archive-1
-    type: archive_resource
-    title: "NSF Public Access"
-    url: "https://par.nsf.gov/servlets/purl/10350313"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-64-author-1
-    type: author_resource
-    title: "MIT author copy"
-    url: "https://people.csail.mit.edu/sanchez/papers/2022.craterlake.isca.pdf"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-64-local-pdf
+    type: author_hosted_copy
+    title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
+    url: /pubs/2022/craterlake-isca2022.pdf
+    provenance_category: author
+    retrieved_from: https://people.csail.mit.edu/sanchez/papers/2022.craterlake.isca.pdf
+    media_type: application/pdf
+    sha256: 3800eb135cdf91e1c86b959ecdf86df15cf72a8d64d97d8c820040cdbad9e5de
+    page_count: 15
+  - id: source-paper-64-official
+    type: official_publication_record
+    title: ACM ISCA 2022 publication record
+    url: https://doi.org/10.1145/3470496.3527393
+    provenance_category: official
+  - id: source-paper-64-public-access
+    type: public_archive_copy
+    title: NSF Public Access copy
+    url: https://par.nsf.gov/servlets/purl/10350313
+    provenance_category: archive
+  - id: source-paper-64-citations
+    type: citation_index_snapshot
+    title: OpenAlex record W4281792301
+    url: https://api.openalex.org/works/W4281792301
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-64-curated
-    source_id: source-paper-64-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-64
-  - id: anchor-paper-64-official-1
-    source_id: source-paper-64-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1145/3470496.3527393"
-  - id: anchor-paper-64-archive-1
-    source_id: source-paper-64-archive-1
-    label: "NSF Public Access"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://par.nsf.gov/servlets/purl/10350313"
-  - id: anchor-paper-64-author-1
-    source_id: source-paper-64-author-1
-    label: "MIT author copy"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://people.csail.mit.edu/sanchez/papers/2022.craterlake.isca.pdf"
+  - id: anchor-paper-64-problem
+    source_id: source-paper-64-local-pdf
+    label: FHE depth barrier and CraterLake contributions
+    locator: Abstract and Sections 1-2, PDF pages 1-4
+    url: /pubs/2022/craterlake-isca2022.pdf#page=1
+  - id: anchor-paper-64-fhe-model
+    source_id: source-paper-64-local-pdf
+    label: Supported schemes, ciphertext representation, and key switching
+    locator: Section 2, PDF pages 2-4
+    url: /pubs/2022/craterlake-isca2022.pdf#page=2
+  - id: anchor-paper-64-boosted
+    source_id: source-paper-64-local-pdf
+    label: Boosted key-switching algorithm and data reduction
+    locator: Section 3, PDF pages 4-6
+    url: /pubs/2022/craterlake-isca2022.pdf#page=4
+  - id: anchor-paper-64-architecture
+    source_id: source-paper-64-local-pdf
+    label: Vector organization, transpose network, residue conversion, and key-switch generation
+    locator: Sections 4-5, PDF pages 6-9
+    url: /pubs/2022/craterlake-isca2022.pdf#page=6
+  - id: anchor-paper-64-compiler
+    source_id: source-paper-64-local-pdf
+    label: Compiler scheduling, chaining, and data movement
+    locator: Section 6, PDF pages 9-10
+    url: /pubs/2022/craterlake-isca2022.pdf#page=9
+  - id: anchor-paper-64-implementation
+    source_id: source-paper-64-local-pdf
+    label: RTL synthesis, physical estimates, and simulation method
+    locator: Sections 7-8, PDF pages 10-11
+    url: /pubs/2022/craterlake-isca2022.pdf#page=10
+  - id: anchor-paper-64-performance
+    source_id: source-paper-64-local-pdf
+    label: Deep-workload latency and baseline comparisons
+    locator: Section 9 and Table 3, PDF pages 11-13
+    url: /pubs/2022/craterlake-isca2022.pdf#page=11
+  - id: anchor-paper-64-energy-security
+    source_id: source-paper-64-local-pdf
+    label: Energy and higher-security-parameter sensitivity
+    locator: Section 9, PDF pages 12-13
+    url: /pubs/2022/craterlake-isca2022.pdf#page=12
+  - id: anchor-paper-64-conclusion
+    source_id: source-paper-64-local-pdf
+    label: Conclusions and stated scope
+    locator: Section 11, PDF page 14
+    url: /pubs/2022/craterlake-isca2022.pdf#page=14
+  - id: anchor-paper-64-publication
+    source_id: source-paper-64-official
+    label: Official publication identity
+    locator: ISCA 2022, DOI 10.1145/3470496.3527393
+    url: https://doi.org/10.1145/3470496.3527393
+  - id: anchor-paper-64-citation-count
+    source_id: source-paper-64-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex cited_by_count was 177 when accessed 2026-07-11
+    url: https://api.openalex.org/works/W4281792301
 
 nodes:
   - id: paper-64
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
-    summary: "CraterLake is a hardware accelerator for fully homomorphic encryption that supports computations of unbounded depth by accelerating the expensive refresh operations that prevent ciphertext noise from growing without limit. Its architecture is designed to make long, general encrypted programs practical rather than restricting acceleration to a narrow fixed workload."
-    source_anchor_ids: [anchor-paper-64-curated]
+    epistemic_status: published
+    title: CraterLake
+    summary: >-
+      A hardware-software co-design for bootstrappable, programmable FHE whose evaluated contribution is efficient execution of workloads that exceed a fixed multiplicative-depth budget.
+    source_anchor_ids: [anchor-paper-64-problem]
+
   - id: paper-64-question
     kind: question
     parent_id: paper-64
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can hardware acceleration make fully homomorphic encryption practical for computations of unbounded depth by efficiently refreshing ciphertexts?"
-    source_anchor_ids: [anchor-paper-64-curated]
-  - id: paper-64-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can an FHE accelerator efficiently refresh very large ciphertexts and thereby support general computations of unbounded multiplicative depth?
+    source_anchor_ids: [anchor-paper-64-problem]
+
+  - id: paper-64-answer
     kind: contribution
     parent_id: paper-64
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports that CraterLake accelerates the expensive refresh operations that control ciphertext noise and is organized for long, general encrypted programs."
-    source_anchor_ids: [anchor-paper-64-curated]
-  - id: paper-64-method
-    kind: method
+    epistemic_status: source_asserted
+    title: Central answer
+    summary: >-
+      The design makes bootstrapping a first-class workload through a compact key-switch method, wide parallel datapath, on-chip specialization, and compiler-controlled reuse; the resulting simulated system executes deep CKKS workloads much faster than the evaluated baselines.
+    source_anchor_ids: [anchor-paper-64-boosted, anchor-paper-64-architecture, anchor-paper-64-performance]
+
+  - id: paper-64-model
+    kind: model
     parent_id: paper-64
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described architecture targets bootstrapping or related refresh work together with the supporting compute and memory path needed for unbounded-depth FHE execution."
-    source_anchor_ids: [anchor-paper-64-curated]
+    epistemic_status: defined
+    title: Cryptographic and workload model
+    summary: >-
+      The architecture targets ring-based FHE operations and supports CKKS, BGV, and GSW, with evaluation centered on CKKS. Deep parameter sets contain 64K ring elements and roughly 1,600-bit coefficients, making one ciphertext about 25 MB.
+    source_anchor_ids: [anchor-paper-64-fhe-model, anchor-paper-64-problem]
+
+  - id: paper-64-model-security
+    kind: assumption
+    parent_id: paper-64-model
+    order: 1
+    epistemic_status: parameter_dependent
+    title: Security and correctness are parameter dependent
+    summary: >-
+      CraterLake accelerates cryptographic computations chosen by the application and compiler; semantic security, numerical precision, circuit correctness, and parameter adequacy remain properties of the selected FHE scheme and parameter set.
+    source_anchor_ids: [anchor-paper-64-fhe-model, anchor-paper-64-energy-security]
+
+  - id: paper-64-design
+    kind: system
+    parent_id: paper-64
+    order: 4
+    epistemic_status: constructed
+    title: Hardware-software construction
+    summary: The system integrates algorithmic key-switch compression, a wide vector processor, specialized functional units, memory organization, and static compiler scheduling.
+    source_anchor_ids: [anchor-paper-64-boosted, anchor-paper-64-architecture, anchor-paper-64-compiler]
+
+  - id: paper-64-design-boosted
+    kind: algorithm
+    parent_id: paper-64-design
+    order: 1
+    epistemic_status: constructed
+    title: Boosted key switching
+    summary: >-
+      The boosted formulation reduces projected auxiliary key material for a deep parameter set from roughly 1.4 GB to about 50 MB, making reuse and movement feasible; KSHGen can generate half of a hint on demand and reduce resident hint storage to about 25 MB.
+    source_anchor_ids: [anchor-paper-64-boosted, anchor-paper-64-architecture]
+
+  - id: paper-64-design-datapath
+    kind: architecture
+    parent_id: paper-64-design
+    order: 2
+    epistemic_status: constructed
+    title: Wide-vector datapath
+    summary: >-
+      A 2,048-lane uniprocessor, fixed transpose network, and specialized residue-conversion and key-switch-generation units expose the parallelism and data transforms used by large polynomial operations.
+    source_anchor_ids: [anchor-paper-64-architecture]
+
+  - id: paper-64-design-compiler
+    kind: method
+    parent_id: paper-64-design
+    order: 3
+    epistemic_status: implemented
+    title: Compiler-directed scheduling
+    summary: >-
+      The compiler schedules operations, reuses data, overlaps or decouples movement from computation, and chains kernels so intermediate values need not repeatedly traverse costly memory paths.
+    source_anchor_ids: [anchor-paper-64-compiler]
+
   - id: paper-64-claims
     kind: claim_group
     parent_id: paper-64
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports support for efficient unbounded computation on encrypted data rather than acceleration limited to a narrow fixed workload."
-    source_anchor_ids: [anchor-paper-64-curated]
+    order: 5
+    epistemic_status: source_asserted
+    title: Principal claims
+    summary: The paper claims practical acceleration of unbounded-depth FHE and reports advantages in latency and energy over its evaluated CPU and F1+ baselines.
+    source_anchor_ids: [anchor-paper-64-performance, anchor-paper-64-energy-security]
+
+  - id: paper-64-claim-depth
+    kind: claim
+    parent_id: paper-64-claims
+    order: 1
+    epistemic_status: supported_by_evaluation
+    title: Refresh enables deep workloads
+    summary: >-
+      Unlike accelerators restricted to circuits within a fixed noise budget, the represented design includes bootstrapping and therefore runs the evaluated deep ResNet, LSTM, and other workloads without a bounded-depth architectural ceiling.
+    source_anchor_ids: [anchor-paper-64-problem, anchor-paper-64-performance]
+
+  - id: paper-64-claim-speed
+    kind: claim
+    parent_id: paper-64-claims
+    order: 2
+    epistemic_status: measured_in_model
+    title: Large modeled speedups on deep workloads
+    summary: >-
+      Across the paper's deep benchmark set, CraterLake reports an 11.2x geometric-mean speedup over the scaled F1+ baseline and 4,611x over the CPU baseline; reported examples include 249.45 ms for ResNet-20 and 3.91 ms for packed bootstrapping.
+    source_anchor_ids: [anchor-paper-64-performance]
+
+  - id: paper-64-claim-energy
+    kind: claim
+    parent_id: paper-64-claims
+    order: 3
+    epistemic_status: estimated
+    title: Energy advantage
+    summary: The modeled deep-workload evaluation reports about 18x lower energy and about 201x higher performance per joule than scaled F1+.
+    source_anchor_ids: [anchor-paper-64-energy-security]
+
   - id: paper-64-evidence
     kind: evidence_group
     parent_id: paper-64
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "A hardware architecture and performance evaluation are implied by the publication summary, but security parameters, schemes, workloads, baselines, simulator or silicon status, area, energy, and raw measurements were not audited."
-    source_anchor_ids: [anchor-paper-64-curated]
-  - id: paper-64-scope
+    order: 6
+    epistemic_status: documented
+    title: Evaluation evidence
+    summary: The evidence combines RTL synthesis and cycle-accurate architectural simulation with a 32-core AMD Threadripper CPU and a scaled improved F1+ design as baselines.
+    source_anchor_ids: [anchor-paper-64-implementation, anchor-paper-64-performance]
+
+  - id: paper-64-evidence-scaling
+    kind: evidence
+    parent_id: paper-64-evidence
+    order: 1
+    epistemic_status: sensitivity_analysis
+    title: Security-parameter sensitivity
+    summary: >-
+      Relative to the base 80-bit parameter evaluation, the paper reports a 1.36x geometric-mean slowdown at 128-bit security and 2.60x at 200-bit security, the latter using a larger 128K-element hardware configuration.
+    source_anchor_ids: [anchor-paper-64-energy-security]
+
+  - id: paper-64-boundaries
     kind: limitation_group
     parent_id: paper-64
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not established the supported FHE variants, parameter selection, correctness margins, refresh semantics, programmability limits, off-chip bandwidth needs, or performance and cost outside evaluated workloads."
-    source_anchor_ids: [anchor-paper-64-curated]
-  - id: paper-64-artifacts
+    order: 7
+    epistemic_status: explicitly_bounded
+    title: Scope and limitations
+    summary: The results establish a simulated and synthesized architecture under selected cryptographic parameters and workloads, not universal FHE performance or deployment readiness.
+    source_anchor_ids: [anchor-paper-64-implementation, anchor-paper-64-performance, anchor-paper-64-conclusion]
+
+  - id: paper-64-boundary-silicon
+    kind: limitation
+    parent_id: paper-64-boundaries
+    order: 1
+    epistemic_status: evidence_boundary
+    title: No fabricated-silicon measurement
+    summary: Area, power, timing, energy, and workload latency are derived from synthesis and simulation rather than a fabricated chip, so manufacturing and deployment effects remain unevaluated.
+    source_anchor_ids: [anchor-paper-64-implementation]
+
+  - id: paper-64-boundary-generalization
+    kind: limitation
+    parent_id: paper-64-boundaries
+    order: 2
+    epistemic_status: benchmark_bounded
+    title: Benchmark and baseline dependence
+    summary: >-
+      Speedups depend on the selected workloads, parameter sets, compiler schedules, and scaled comparison designs; shallow workloads sometimes narrow or reverse the advantage over F1+.
+    source_anchor_ids: [anchor-paper-64-performance, anchor-paper-64-energy-security]
+
+  - id: paper-64-resources
     kind: artifact_group
     parent_id: paper-64
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 3 resources (1 official, 1 archive, 1 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-64-curated, anchor-paper-64-official-1, anchor-paper-64-archive-1, anchor-paper-64-author-1]
+    order: 8
+    epistemic_status: source_available
+    title: Auditable resources
+    summary: The complete author copy is checked into this site with page count and SHA-256; official and NSF public-access records establish publication identity and an independent access route.
+    source_anchor_ids: [anchor-paper-64-problem, anchor-paper-64-publication]
+
   - id: paper-64-scrutiny
     kind: scrutiny
     parent_id: paper-64
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 49th International Symposium on Computer Architecture (ISCA). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-64-official-1]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: ISCA publication provides venue-level scrutiny. No public review reports, fabricated-hardware reproduction, correction, or independent benchmark replication was located in this audit.
+    source_anchor_ids: [anchor-paper-64-publication]
+
+  - id: paper-64-lineage
+    kind: lineage
+    parent_id: paper-64
+    order: 10
+    epistemic_status: documented
+    title: Architectural lineage
+    summary: The evaluation explicitly positions CraterLake against CPU FHE software and the prior F1/F1+ accelerator line, while changing the target from bounded-depth acceleration to refresh-capable deep computation.
+    source_anchor_ids: [anchor-paper-64-problem, anchor-paper-64-performance]
 
 relations:
-  - id: paper-64-relation-question-contribution
-    type: motivates
-    from_id: paper-64-question
-    to_id: paper-64-contribution
-  - id: paper-64-relation-method-contribution
-    type: realizes
-    from_id: paper-64-method
-    to_id: paper-64-contribution
-  - id: paper-64-relation-contribution-claims
-    type: grounds
-    from_id: paper-64-contribution
-    to_id: paper-64-claims
-  - id: paper-64-relation-evidence-claims
-    type: supports
-    from_id: paper-64-evidence
-    to_id: paper-64-claims
-  - id: paper-64-relation-scope-claims
-    type: qualifies
-    from_id: paper-64-scope
-    to_id: paper-64-claims
-  - id: paper-64-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-64-artifacts
-    to_id: paper-64-evidence
-  - id: paper-64-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-64-scrutiny
-    to_id: paper-64-claims
+  - {id: paper-64-rel-answer-question, type: addresses, from_id: paper-64-answer, to_id: paper-64-question}
+  - {id: paper-64-rel-design-answer, type: realizes, from_id: paper-64-design, to_id: paper-64-answer}
+  - {id: paper-64-rel-boosted-design, type: component_of, from_id: paper-64-design-boosted, to_id: paper-64-design}
+  - {id: paper-64-rel-datapath-design, type: component_of, from_id: paper-64-design-datapath, to_id: paper-64-design}
+  - {id: paper-64-rel-compiler-design, type: component_of, from_id: paper-64-design-compiler, to_id: paper-64-design}
+  - {id: paper-64-rel-evidence-speed, type: supports, from_id: paper-64-evidence, to_id: paper-64-claim-speed}
+  - {id: paper-64-rel-evidence-depth, type: supports, from_id: paper-64-evidence, to_id: paper-64-claim-depth}
+  - {id: paper-64-rel-evidence-energy, type: supports, from_id: paper-64-evidence, to_id: paper-64-claim-energy}
+  - {id: paper-64-rel-model-claims, type: qualifies, from_id: paper-64-model, to_id: paper-64-claims}
+  - {id: paper-64-rel-boundaries-claims, type: qualifies, from_id: paper-64-boundaries, to_id: paper-64-claims}
+  - {id: paper-64-rel-resources-evidence, type: enables_audit_of, from_id: paper-64-resources, to_id: paper-64-evidence}
+  - {id: paper-64-rel-lineage-paper, type: contextualizes, from_id: paper-64-lineage, to_id: paper-64}
 
 assessment:
   id: paper-64-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-64-curated, anchor-paper-64-official-1, anchor-paper-64-archive-1, anchor-paper-64-author-1]
+      level: high
+      rationale: The full paper documents algorithms, architecture, synthesis and simulation methods, baselines, benchmark results, and parameter sensitivity. The evidence is strong for the evaluated model but is not fabricated-silicon validation.
+      basis_source_anchor_ids: [anchor-paper-64-boosted, anchor-paper-64-implementation, anchor-paper-64-performance]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-64-curated, anchor-paper-64-official-1, anchor-paper-64-archive-1, anchor-paper-64-author-1]
+      rationale: A complete checked-in author copy with fixity and page count, plus official and public-archive records, makes assumptions, methods, and reported measurements directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-64-problem, anchor-paper-64-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-64-curated]
+      rationale: Named authorship, venue, DOI, manuscript identity, and public copies are documented; contributor roles, revision history, tool use, and artifact-version lineage are not.
+      basis_source_anchor_ids: [anchor-paper-64-problem, anchor-paper-64-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-64-official-1]
+      rationale: ISCA publication establishes venue review, but public reports, independent silicon reproduction, correction history, and adversarial re-evaluation were not located.
+      basis_source_anchor_ids: [anchor-paper-64-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-64-curated]
+      level: high
+      rationale: The dated OpenAlex snapshot located 177 citations. Under the author-defined rule, 11 or more located citations is High; citation counts do not establish correctness.
+      basis_source_anchor_ids: [anchor-paper-64-citation-count]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-64-curated]
+      level: high
+      rationale: The source presents the first accelerator targeting efficient unbounded-depth FHE and demonstrates large deep-workload improvements against contemporary baselines; the rating remains an AI draft pending author review.
+      basis_source_anchor_ids: [anchor-paper-64-problem, anchor-paper-64-performance]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex work lookup by DOI 10.1145/3470496.3527393
+  citation_count: 177
+  source_url: https://api.openalex.org/works/W4281792301
+  signals:
+    - OpenAlex reported 177 citing works for the matched publication record.
+  limitation: Citation counts are index- and date-dependent and measure visibility rather than validity, implementation quality, or practical adoption.

@@ -18,151 +18,268 @@ labels: ["Theory", "Applied"]
 authors: ["Karim Eldefrawy", "Gene Tsudik"]
 keywords: ["anonymous routing", "location privacy", "MANETs"]
 
-research_question: "Can location-based link-state routing provide authenticated topology information in suspicious MANETs while keeping nodes anonymous and difficult to track?"
-central_answer: "The journal version of ALARM uses signed location announcements and group signatures to authenticate the topology while limiting exposure of persistent node identities."
+research_question: >-
+  Can a mobile ad hoc network construct authenticated location-based routes without exposing durable node identities or making movement histories easy to link, even when network participants may observe topology updates?
+central_answer: >-
+  ALARM replaces long-lived identifiers with time-bounded location announcements authenticated by group signatures, allowing every node to build a current geographic topology while signatures remain unlinkable across periods. Its privacy and security claims are conditional on trusted location, time synchronization, group-signature infrastructure, mobility, and the stated outsider/insider model; active malicious insiders require stronger self-distinguishing signatures or tamper-resistant location/signing support.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, protocol and threat-model decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the public author-uploaded journal article and matching archive copy, its DOI record, and a dated ResearchGate citation snapshot. No local immutable copy could be acquired during this audit, so remote-source identity remains a limitation."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-14-site-record
-    type: curated_record
-    title: "Curated publication record for paper #14"
-    url: /publications/#paper-14
-  - id: source-paper-14-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/TMC.2010.256"
-  - id: source-paper-14-archive-1
-    type: manuscript_archive
-    title: "CiteSeerX archive"
+  - id: source-paper-14-author
+    type: author_hosted_copy
+    title: "ALARM journal article, author-uploaded full text"
+    url: "https://www.researchgate.net/publication/220466171_ALARM_Anonymous_location-aided_routing_in_suspicious_MANETs"
+    provenance_category: author
+    retrieved_at: "2026-07-11"
+  - id: source-paper-14-archive
+    type: archived_copy
+    title: "CiteSeerX archive copy"
     url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf"
+    media_type: application/pdf
+    provenance_category: archive
+  - id: source-paper-14-official
+    type: publication_record
+    title: "IEEE Transactions on Mobile Computing publisher record"
+    url: "https://doi.org/10.1109/TMC.2010.256"
+  - id: source-paper-14-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/220466171_ALARM_Anonymous_location-aided_routing_in_suspicious_MANETs"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-14-site-record
-    source_id: source-paper-14-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-14
-  - id: anchor-paper-14-official-1
-    source_id: source-paper-14-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-14-question
+    source_id: source-paper-14-archive
+    label: "Problem, goals, and contributions"
+    locator: "Abstract and Section I, PDF pages 1-2"
+    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf#page=1"
+  - id: anchor-paper-14-model
+    source_id: source-paper-14-archive
+    label: "Network assumptions and adversary classes"
+    locator: "Section IV.A-B, PDF pages 4-5"
+    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf#page=4"
+  - id: anchor-paper-14-privacy
+    source_id: source-paper-14-archive
+    label: "Group-signature and anonymity design elements"
+    locator: "Sections III and IV.C, PDF pages 3-5"
+    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf#page=3"
+  - id: anchor-paper-14-protocol
+    source_id: source-paper-14-archive
+    label: "ALARM location-announcement and routing protocol"
+    locator: "Section V, PDF pages 5-7"
+    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf#page=5"
+  - id: anchor-paper-14-security
+    source_id: source-paper-14-archive
+    label: "Outsider, passive-insider, and active-insider analysis"
+    locator: "Section VI, PDF pages 7-9"
+    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf#page=7"
+  - id: anchor-paper-14-anonymity
+    source_id: source-paper-14-archive
+    label: "Anonymity metric and mobility simulations"
+    locator: "Section VII, PDF pages 9-12"
+    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf#page=9"
+  - id: anchor-paper-14-performance
+    source_id: source-paper-14-archive
+    label: "Routing overhead and scalability analysis"
+    locator: "Section VIII, PDF pages 12-14"
+    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf#page=12"
+  - id: anchor-paper-14-limitations
+    source_id: source-paper-14-author
+    label: "Trusted boundaries and conclusions"
+    locator: "Sections IV, VI, and X; author-uploaded journal full text"
+    url: "https://www.researchgate.net/publication/220466171_ALARM_Anonymous_location-aided_routing_in_suspicious_MANETs"
+  - id: anchor-paper-14-publication
+    source_id: source-paper-14-official
+    label: "Official journal publication record"
+    locator: "IEEE Transactions on Mobile Computing 10(9), DOI record"
     url: "https://doi.org/10.1109/TMC.2010.256"
-  - id: anchor-paper-14-archive-1
-    source_id: source-paper-14-archive-1
-    label: "CiteSeerX archive"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf"
+  - id: anchor-paper-14-citations
+    source_id: source-paper-14-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate displayed Citations (146), observed 2026-07-11; coverage and version merging may differ from other indexes."
+    url: "https://www.researchgate.net/publication/220466171_ALARM_Anonymous_location-aided_routing_in_suspicious_MANETs"
 
 nodes:
   - id: paper-14
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
-    summary: "This journal version of ALARM gives a comprehensive security, privacy, and performance analysis of location-based link-state routing for suspicious MANETs. Nodes use signed location announcements and group signatures to authenticate topology information while remaining anonymous and difficult to track, even against specified insider and outsider attacks."
-    source_anchor_ids: [anchor-paper-14-site-record]
+    epistemic_status: published
+    title: "ALARM"
+    summary: "A privacy-preserving link-state protocol that authenticates geographic topology without exposing durable node identities."
+    source_anchor_ids: [anchor-paper-14-question]
 
   - id: paper-14-question
     kind: question
     parent_id: paper-14
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can location-based link-state routing provide authenticated topology information in suspicious MANETs while keeping nodes anonymous and difficult to track?"
-    source_anchor_ids: [anchor-paper-14-site-record]
+    summary: "Can nodes route using exact current locations while preventing outsiders and insiders from binding topology updates into durable identity and movement histories?"
+    source_anchor_ids: [anchor-paper-14-question]
 
   - id: paper-14-answer
     kind: contribution
     parent_id: paper-14
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The journal version of ALARM uses signed location announcements and group signatures to authenticate the topology while limiting exposure of persistent node identities."
-    source_anchor_ids: [anchor-paper-14-site-record]
+    epistemic_status: analytically_and_empirically_supported
+    title: "Central answer"
+    summary: "Flood signed, time-bounded location announcements under unlinkable group signatures, build a current geographic map, and communicate to locations rather than long-term identifiers."
+    source_anchor_ids: [anchor-paper-14-protocol, anchor-paper-14-security, anchor-paper-14-anonymity]
 
-  - id: paper-14-method
-    kind: method
+  - id: paper-14-scope
+    kind: scope
     parent_id: paper-14
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Build a link-state map from authenticated location announcements and route over that map using group authentication rather than individual public identities."
-    source_anchor_ids: [anchor-paper-14-site-record]
+    epistemic_status: explicitly_scoped
+    title: "System and trust model"
+    summary: "Nodes have a reliable current location, loose synchronized time, sufficient radio reach, and credentials from a group manager; mobility supplies anonymity over time."
+    source_anchor_ids: [anchor-paper-14-model, anchor-paper-14-privacy]
 
-  - id: paper-14-claims
-    kind: claim_group
+  - id: paper-14-adversary
+    kind: threat_model
+    parent_id: paper-14-scope
+    order: 1
+    epistemic_status: defined
+    title: "Adversary classes"
+    summary: "The base design analyzes passive insiders and active outsiders; active insiders can perform location fraud or Sybil behavior unless stronger signing/location mechanisms are added. Jamming and generic denial of service are excluded."
+    source_anchor_ids: [anchor-paper-14-model, anchor-paper-14-security]
+
+  - id: paper-14-primitive
+    kind: primitive
     parent_id: paper-14
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The paper reports security, privacy, and performance results supporting anonymous, tracking-resistant routing under its specified insider and outsider attacks."
-    source_anchor_ids: [anchor-paper-14-site-record]
+    epistemic_status: assumed_cryptographic_primitive
+    title: "Group-signature pseudonyms"
+    summary: "A node proves authorized membership without revealing which member signed; each announcement's signature functions as a period-specific pseudonym, while a group manager retains opening capability."
+    source_anchor_ids: [anchor-paper-14-privacy]
 
-  - id: paper-14-evidence
-    kind: evidence_group
+  - id: paper-14-protocol
+    kind: protocol
     parent_id: paper-14
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports comprehensive security, privacy, and performance analysis; definitions, proofs, mobility workloads, baselines, and numerical results have not been inspected."
-    source_anchor_ids: [anchor-paper-14-site-record]
+    epistemic_status: proposed
+    title: "Location Announcement Message workflow"
+    summary: "During each time slot, every node floods its location, timestamp, temporary public key, and group signature; recipients verify and assemble a topology snapshot used for location-centric routing and encrypted sessions."
+    source_anchor_ids: [anchor-paper-14-protocol]
+
+  - id: paper-14-claim-outsider
+    kind: security_claim
+    parent_id: paper-14
+    order: 6
+    epistemic_status: conditional_analysis
+    title: "Replay and forgery resistance"
+    summary: "Timestamps reject stale announcements and signatures bind location records against outsider forgery or modification, assuming the underlying primitives and time/location inputs behave as specified."
+    source_anchor_ids: [anchor-paper-14-security]
+
+  - id: paper-14-claim-privacy
+    kind: privacy_claim
+    parent_id: paper-14
+    order: 7
+    epistemic_status: conditional_analysis
+    title: "Tracking resistance"
+    summary: "A passive insider sees the complete current topology but cannot directly link group signatures across periods; anonymity then depends on how many plausible moving nodes fit a trajectory."
+    source_anchor_ids: [anchor-paper-14-security, anchor-paper-14-anonymity]
+
+  - id: paper-14-evidence-anonymity
+    kind: empirical_evidence
+    parent_id: paper-14
+    order: 8
+    epistemic_status: simulation
+    title: "Mobility and anonymity evaluation"
+    summary: "SimPy experiments over Random Walk, Reference Point Group Mobility, and Time-Variant User Mobility models evaluate cumulative k-anonymity as speed, stationary fraction, announcement interval, and observation duration vary."
+    source_anchor_ids: [anchor-paper-14-anonymity]
+
+  - id: paper-14-evidence-performance
+    kind: analytic_evidence
+    parent_id: paper-14
+    order: 9
+    epistemic_status: modeled
+    title: "Communication overhead"
+    summary: "The paper accounts for periodic flooding, announcement size, bandwidth, and update interval to characterize scalability; this is model/simulation evidence rather than a deployed MANET measurement."
+    source_anchor_ids: [anchor-paper-14-performance]
+
+  - id: paper-14-boundary-insider
+    kind: limitation
+    parent_id: paper-14
+    order: 10
+    epistemic_status: material
+    title: "Active-insider boundary"
+    summary: "Generic group signatures do not stop a credentialed node from lying about its position or creating multiple simultaneous-looking locations; the proposed mitigations rely on self-distinguishing signatures or tamper-resistant GPS/signing hardware."
+    source_anchor_ids: [anchor-paper-14-security, anchor-paper-14-limitations]
 
   - id: paper-14-limitations
     kind: limitation_group
     parent_id: paper-14
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The draft does not establish guarantees beyond the specified adversaries, observation coverage, group-key assumptions, location accuracy, mobility patterns, or evaluated network settings."
-    source_anchor_ids: [anchor-paper-14-site-record]
+    order: 11
+    epistemic_status: explicitly_reported
+    title: "Privacy and deployment limits"
+    summary: "ALARM intentionally reveals the full current topology to insiders, trusts a group manager plus location and time sources, gains privacy from mobility, and does not solve jamming, denial of service, or physical tracking."
+    source_anchor_ids: [anchor-paper-14-model, anchor-paper-14-security, anchor-paper-14-limitations]
 
-  - id: paper-14-resources
+  - id: paper-14-artifacts
     kind: artifact_group
     parent_id: paper-14
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; CiteSeerX archive. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-14-official-1, anchor-paper-14-archive-1]
+    order: 12
+    epistemic_status: paper_and_simulation_description
+    title: "Artifacts"
+    summary: "Public author and archive full texts are available and the simulation model is documented, but no source-code repository, raw traces, or immutable local paper copy is attached to this map."
+    source_anchor_ids: [anchor-paper-14-limitations, anchor-paper-14-anonymity]
 
   - id: paper-14-scrutiny
     kind: scrutiny
     parent_id: paper-14
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · journal article at IEEE Transactions on Mobile Computing, Volume 10, Number 9. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-14-site-record, anchor-paper-14-official-1]
+    order: 13
+    epistemic_status: journal_reviewed
+    title: "External scrutiny and reception"
+    summary: "The expanded work appeared in IEEE Transactions on Mobile Computing and ResearchGate reports 146 citations; this audit did not inspect review reports, citing contexts, or an independent protocol implementation."
+    source_anchor_ids: [anchor-paper-14-publication, anchor-paper-14-citations]
+
+  - id: paper-14-lineage
+    kind: lineage
+    parent_id: paper-14
+    order: 14
+    epistemic_status: source_asserted_and_reception_supported
+    title: "Research lineage"
+    summary: "ALARM establishes location-centric anonymous link-state routing as an alternative to identity-centric MANET routing and exposes the tradeoff between topology utility and trajectory privacy."
+    source_anchor_ids: [anchor-paper-14-question, anchor-paper-14-anonymity, anchor-paper-14-citations]
 
 relations:
-  - id: paper-14-relation-method-supports-answer
+  - id: paper-14-relation-primitive-enables-protocol
+    type: enables
+    from_id: paper-14-primitive
+    to_id: paper-14-protocol
+  - id: paper-14-relation-protocol-supports-outsider
     type: supports
-    from_id: paper-14-method
+    from_id: paper-14-protocol
+    to_id: paper-14-claim-outsider
+  - id: paper-14-relation-protocol-supports-privacy
+    type: supports
+    from_id: paper-14-protocol
+    to_id: paper-14-claim-privacy
+  - id: paper-14-relation-anonymity-supports-privacy
+    type: supports
+    from_id: paper-14-evidence-anonymity
+    to_id: paper-14-claim-privacy
+  - id: paper-14-relation-active-qualifies-answer
+    type: qualifies
+    from_id: paper-14-boundary-insider
     to_id: paper-14-answer
-  - id: paper-14-relation-evidence-supports-claim
-    type: supports
-    from_id: paper-14-evidence
-    to_id: paper-14-claims
-  - id: paper-14-relation-limitations-qualify-claim
+  - id: paper-14-relation-limits-qualify-privacy
     type: qualifies
     from_id: paper-14-limitations
-    to_id: paper-14-claims
-  - id: paper-14-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-14-scrutiny
-    to_id: paper-14
+    to_id: paper-14-claim-privacy
 
 assessment:
   id: paper-14-assessment-2026-07-11
@@ -173,32 +290,34 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports comprehensive security, privacy, and performance analysis; definitions, proofs, mobility workloads, baselines, and numerical results have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-14-site-record]
+      rationale: "The journal article provides an explicit protocol, threat analysis, anonymity metric, mobility simulations, and overhead modeling. Security arguments are conditional rather than reduction-style proofs, and no deployed implementation or independent reproduction was located."
+      basis_source_anchor_ids: [anchor-paper-14-protocol, anchor-paper-14-security, anchor-paper-14-anonymity, anchor-paper-14-performance]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-14-official-1, anchor-paper-14-archive-1]
+      rationale: "A complete author-uploaded copy and matching public archive copy make assumptions, protocol steps, and evidence directly inspectable. This audit could not store and hash a local binary, so remote version identity remains less stable than for checked-in papers."
+      basis_source_anchor_ids: [anchor-paper-14-question, anchor-paper-14-limitations]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-14-site-record]
+      rationale: "Named authorship, an author-uploaded full text, and the journal DOI establish baseline provenance. Contributor roles, simulation-code lineage, revision history, and tool use are not documented."
+      basis_source_anchor_ids: [anchor-paper-14-question, anchor-paper-14-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE Transactions on Mobile Computing, Volume 10, Number 9, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-14-official-1]
+      rationale: "Journal publication and a substantial citation trail show external attention, but review materials, independent reproduction, correction history, and adversarial protocol evaluation were not audited."
+      basis_source_anchor_ids: [anchor-paper-14-publication, anchor-paper-14-citations]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-14-site-record]
+      level: high
+      rationale: "ResearchGate displayed 146 citations on 2026-07-11, exceeding the rubric's 11-citation high threshold. The count is index-specific and citation contexts were not reviewed."
+      basis_source_anchor_ids: [anchor-paper-14-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete contribution: The paper reports security, privacy, and performance results supporting anonymous, tracking-resistant routing under its specified insider and outsider attacks. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-14-site-record]
+      level: high
+      rationale: "The paper offers a comprehensive anonymous location-centric routing design, makes topology/privacy tradeoffs explicit, and has a large citation trail, while clearly depending on strong infrastructure and mobility assumptions."
+      basis_source_anchor_ids: [anchor-paper-14-question, anchor-paper-14-limitations, anchor-paper-14-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 146
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate displayed Citations (146)."
+  limitation: "ResearchGate coverage and version merging differ from other scholarly indexes; citing contexts, polarity, independent implementations, and deployment adoption were not audited."

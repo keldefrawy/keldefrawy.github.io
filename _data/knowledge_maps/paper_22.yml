@@ -12,157 +12,304 @@ contribution_types: [algorithm]
 
 title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
 year: 2013
+status: "Published"
 venue: "IEEE Global Communications Conference (GLOBECOM)"
 topic: algorithms-foundations
 labels: ["Theory", "Applied"]
 authors: ["Martin Strohmeier", "Ivan Martinovic", "Utz Roedig", "Karim Eldefrawy", "Jens Schmitt"]
 keywords: ["network coding", "key sharing", "wireless networks"]
 
-research_question: "How should wireless network-coding keys be shared when larger key groups improve overhearing and throughput but magnify the damage of key compromise?"
-central_answer: "The paper formulates key assignment as an optimization problem and reports measured coding-gain improvements when an additional member joins a key-sharing group."
+research_question: >-
+  How does limiting the size and availability of shared link-layer keys change the multicast throughput attainable by network coding, and how should key groups be assigned to optimize throughput under local, global, and quality-of-service constraints?
+central_answer: >-
+  The paper formulates key-aware multicast as an integer linear program and evaluates exact optima on generated feed-forward networks and a MoteLab-derived sensor topology, showing that modest increases in key-group size can recover measurable coding gain without requiring one network-wide key.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, model reconstruction, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete six-page Oxford author copy, including the ILP, experimental setup, figures, and limitations; PDF pages 1 and 5 were rendered and visually inspected."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification. Numerical results were transcribed from the paper and not independently rerun."
 
 sources:
-  - id: source-paper-22-site-record
-    type: curated_record
-    title: "Curated publication record for paper #22"
-    url: /publications/#paper-22
-  - id: source-paper-22-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/GLOCOM.2013.6831179"
-  - id: source-paper-22-author-1
+  - id: source-paper-22-fulltext
+    type: scholarly_article
+    title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing (author copy)"
+    url: /pubs/2013/neighborhood-watch-network-coding-key-sharing.pdf
+    media_type: application/pdf
+    sha256: cc7cd150c46044a76903f9772727f771072a23ed102b6d8a2a42a07f551f75f6
+    page_count: 6
+    provenance_category: author
+  - id: source-paper-22-author-origin
     type: author_copy
     title: "Oxford author copy"
-    url: "https://www.cs.ox.ac.uk/files/7240/globecom_camera.pdf"
+    url: https://www.cs.ox.ac.uk/files/7240/globecom_camera.pdf
+  - id: source-paper-22-official
+    type: publication_record
+    title: "IEEE GLOBECOM publication record"
+    url: https://doi.org/10.1109/GLOCOM.2013.6831179
+  - id: source-paper-22-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #22"
+    url: https://openalex.org/W2074968496
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-22-site-record
-    source_id: source-paper-22-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-22
-  - id: anchor-paper-22-official-1
-    source_id: source-paper-22-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1109/GLOCOM.2013.6831179"
-  - id: anchor-paper-22-author-1
-    source_id: source-paper-22-author-1
-    label: "Oxford author copy"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://www.cs.ox.ac.uk/files/7240/globecom_camera.pdf"
+  - id: anchor-paper-22-problem
+    source_id: source-paper-22-fulltext
+    label: "Security-throughput tradeoff and contributions"
+    locator: "Abstract and Section I, PDF pages 1-2"
+    url: /pubs/2013/neighborhood-watch-network-coding-key-sharing.pdf#page=1
+  - id: anchor-paper-22-scenarios
+    source_id: source-paper-22-fulltext
+    label: "Network-coding scenarios and experimental topology generation"
+    locator: "Section III, PDF pages 2-3"
+    url: /pubs/2013/neighborhood-watch-network-coding-key-sharing.pdf#page=2
+  - id: anchor-paper-22-model
+    source_id: source-paper-22-fulltext
+    label: "Directed-graph model, objective, and local/global key constraints"
+    locator: "Section IV and Tables I-II, PDF pages 3-4"
+    url: /pubs/2013/neighborhood-watch-network-coding-key-sharing.pdf#page=3
+  - id: anchor-paper-22-evaluation
+    source_id: source-paper-22-fulltext
+    label: "Random-network and MoteLab results"
+    locator: "Section V and Figures 3-5, PDF pages 4-6"
+    url: /pubs/2013/neighborhood-watch-network-coding-key-sharing.pdf#page=4
+  - id: anchor-paper-22-conclusion
+    source_id: source-paper-22-fulltext
+    label: "Interpretation, transfer boundaries, and conclusion"
+    locator: "Section VI, PDF page 6"
+    url: /pubs/2013/neighborhood-watch-network-coding-key-sharing.pdf#page=6
+  - id: anchor-paper-22-publication
+    source_id: source-paper-22-official
+    label: "Official IEEE publication record"
+    locator: "GLOBECOM 2013"
+    url: https://doi.org/10.1109/GLOCOM.2013.6831179
+  - id: anchor-paper-22-citations
+    source_id: source-paper-22-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 0, accessed 2026-07-11"
+    url: https://openalex.org/W2074968496
 
 nodes:
   - id: paper-22
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
-    summary: "The paper exposes a practical tradeoff in wireless network coding: larger link-key groups enable more packet overhearing and throughput, but make each key compromise more damaging. It formulates key assignment as an optimization problem and finds that adding one member to a key-sharing group can improve coding gain by 1.3 to 13.7 percent across tested topologies."
-    source_anchor_ids: [anchor-paper-22-site-record]
+    epistemic_status: published
+    title: "Neighborhood Watch"
+    summary: "An optimization-and-evaluation study of how link-key sharing constrains the throughput gains available from wireless network coding."
+    source_anchor_ids: [anchor-paper-22-problem]
 
   - id: paper-22-question
     kind: question
     parent_id: paper-22
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How should wireless network-coding keys be shared when larger key groups improve overhearing and throughput but magnify the damage of key compromise?"
-    source_anchor_ids: [anchor-paper-22-site-record]
+    summary: "What throughput is lost when confidentiality policy limits which neighbors can overhear coded packets, and which key assignment best preserves multicast capacity?"
+    source_anchor_ids: [anchor-paper-22-problem]
 
   - id: paper-22-answer
     kind: contribution
     parent_id: paper-22
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper formulates key assignment as an optimization problem and reports measured coding-gain improvements when an additional member joins a key-sharing group."
-    source_anchor_ids: [anchor-paper-22-site-record]
+    epistemic_status: source_asserted
+    title: "Central answer"
+    summary: "Optimize flows and key membership jointly: the exact ILP quantifies the tradeoff, and the evaluated topologies show that coding gain can reappear well before all nodes share one key."
+    source_anchor_ids: [anchor-paper-22-model, anchor-paper-22-evaluation]
+
+  - id: paper-22-scope
+    kind: scope
+    parent_id: paper-22
+    order: 3
+    epistemic_status: explicitly_scoped
+    title: "Model and optimization scope"
+    summary: "The study treats single-source multicast in directed multi-hop wireless graphs with unit-capacity links, multiple streams, relay and sink nodes, and linear network coding."
+    source_anchor_ids: [anchor-paper-22-model]
+
+  - id: paper-22-scope-keys
+    kind: definition
+    parent_id: paper-22-scope
+    order: 1
+    epistemic_status: defined
+    title: "Two key-sharing constraints"
+    summary: "A local limit bounds how many adjacent receivers share a sender's key; a global limit bounds the number and membership of keys available across the network."
+    source_anchor_ids: [anchor-paper-22-problem, anchor-paper-22-model]
+
+  - id: paper-22-scope-security
+    kind: threat_model
+    parent_id: paper-22-scope
+    order: 2
+    epistemic_status: coarse_model
+    title: "Security proxy"
+    summary: "Security is represented by compromise exposure of shared link keys: smaller groups isolate a leaked key but reduce overhearing. The paper does not model an active attacker or prove a cryptographic security property."
+    source_anchor_ids: [anchor-paper-22-problem]
 
   - id: paper-22-method
     kind: method
     parent_id: paper-22
-    order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Model the security-throughput tradeoff created by key-sharing groups, optimize assignments, and evaluate coding gain across tested wireless topologies."
-    source_anchor_ids: [anchor-paper-22-site-record]
+    order: 4
+    epistemic_status: specified
+    title: "Integer linear program"
+    summary: "Binary flow and key-membership variables maximize aggregate sink flow while enforcing flow conservation, coding capacity, key-sharing eligibility, and optional source/sink quality-of-service constraints."
+    source_anchor_ids: [anchor-paper-22-model]
+
+  - id: paper-22-method-data
+    kind: component
+    parent_id: paper-22-method
+    order: 1
+    epistemic_status: documented
+    title: "Evaluated topologies"
+    summary: "The authors solve the model on 100 randomized four-layer feed-forward graphs and on a feed-forward topology derived from Harvard's MoteLab deployment with four sources, 18 relays, and eight sinks."
+    source_anchor_ids: [anchor-paper-22-scenarios, anchor-paper-22-evaluation]
 
   - id: paper-22-claims
     kind: claim_group
     parent_id: paper-22
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The reported evaluation finds that adding one member to a key-sharing group improves coding gain by 1.3 to 13.7 percent across the tested topologies, at the cost of greater compromise exposure."
-    source_anchor_ids: [anchor-paper-22-site-record]
+    order: 5
+    epistemic_status: empirically_supported_within_model
+    title: "Principal findings"
+    summary: "The reported gains are exact ILP optima for the modeled instances, not measurements from a deployed coded network."
+    source_anchor_ids: [anchor-paper-22-evaluation]
+
+  - id: paper-22-claim-random
+    kind: claim
+    parent_id: paper-22-claims
+    order: 1
+    epistemic_status: computational_experiment
+    title: "Random-network coding gain"
+    summary: "Across 100 generated networks, unrestricted coding gain averages 7.1%; increasing local group size from 10 to 11 adds at most 1.3 percentage points in the reported setting."
+    source_anchor_ids: [anchor-paper-22-evaluation]
+
+  - id: paper-22-claim-motelab
+    kind: claim
+    parent_id: paper-22-claims
+    order: 2
+    epistemic_status: computational_experiment
+    title: "MoteLab-derived coding gain"
+    summary: "The model yields 32 messages with coding versus 26 with routing at the unrestricted optimum (21.4% higher); raising group size from four to five contributes a reported 13.7% additional coding gain."
+    source_anchor_ids: [anchor-paper-22-evaluation]
+
+  - id: paper-22-claim-qos
+    kind: claim
+    parent_id: paper-22-claims
+    order: 3
+    epistemic_status: computational_experiment
+    title: "Constraint feasibility"
+    summary: "Under source constraints, network coding can make some modeled instances feasible when edge-disjoint routing cannot; with a 35% per-sink requirement, both methods become infeasible for the smallest groups."
+    source_anchor_ids: [anchor-paper-22-evaluation]
 
   - id: paper-22-evidence
     kind: evidence_group
     parent_id: paper-22
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports an optimization formulation and quantitative topology experiments; threat assumptions, objective function, algorithms, datasets, and statistical variation have not been inspected."
-    source_anchor_ids: [anchor-paper-22-site-record]
+    order: 6
+    epistemic_status: documented
+    title: "Evidence chain"
+    summary: "Evidence consists of an explicit ILP, a named solver, generated-network parameters, a public-testbed-derived topology, reported confidence intervals, and comparative figures."
+    source_anchor_ids: [anchor-paper-22-model, anchor-paper-22-evaluation]
 
-  - id: paper-22-limitations
+  - id: paper-22-evidence-reproducibility
+    kind: evidence
+    parent_id: paper-22-evidence
+    order: 1
+    epistemic_status: reported_not_reproduced
+    title: "Computational study"
+    summary: "The paper identifies SCIP and generation distributions, but this audit found no checked-in model, random seeds, generated instances, or result files and did not rerun the optimization."
+    source_anchor_ids: [anchor-paper-22-scenarios, anchor-paper-22-model]
+
+  - id: paper-22-boundaries
     kind: limitation_group
     parent_id: paper-22
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The result is limited to the tested topologies and key-compromise model; mobility, adaptive compromise, rekeying cost, larger groups, and operational traffic have not been audited."
-    source_anchor_ids: [anchor-paper-22-site-record]
+    order: 7
+    epistemic_status: material
+    title: "Boundaries and limitations"
+    summary: "The conclusions are conditional on the graph, traffic, capacity, key-compromise proxy, coding model, and tested topology families."
+    source_anchor_ids: [anchor-paper-22-model, anchor-paper-22-conclusion]
 
-  - id: paper-22-resources
+  - id: paper-22-boundary-model
+    kind: limitation
+    parent_id: paper-22-boundaries
+    order: 1
+    epistemic_status: model_limitation
+    title: "Idealized network and threat model"
+    summary: "The model omits mobility, wireless interference and loss, rekeying cost, key-distribution protocol failures, active attacks, and cryptographic overhead; unit link capacities and feed-forward structure simplify deployment reality."
+    source_anchor_ids: [anchor-paper-22-model, anchor-paper-22-conclusion]
+
+  - id: paper-22-boundary-evidence
+    kind: limitation
+    parent_id: paper-22-boundaries
+    order: 2
+    epistemic_status: evaluation_limitation
+    title: "Optimization, not field measurement"
+    summary: "The MoteLab case uses a derived connectivity map, and the paper reports solver outcomes rather than packet-level network-coding deployment measurements."
+    source_anchor_ids: [anchor-paper-22-scenarios, anchor-paper-22-evaluation]
+
+  - id: paper-22-artifacts
     kind: artifact_group
     parent_id: paper-22
-    order: 7
-    epistemic_status: linked_not_content_audited
+    order: 8
+    epistemic_status: full_text_available
     title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Oxford author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-22-official-1, anchor-paper-22-author-1]
+    summary: "The six-page author copy is mirrored locally with fixity metadata and linked to the Oxford origin and IEEE DOI; no code or dataset artifact was identified."
+    source_anchor_ids: [anchor-paper-22-problem, anchor-paper-22-publication]
 
   - id: paper-22-scrutiny
     kind: scrutiny
     parent_id: paper-22
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at IEEE Global Communications Conference (GLOBECOM). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-22-site-record, anchor-paper-22-official-1]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The work was published at IEEE GLOBECOM; reviews, replications, and later comparative evaluations were not audited."
+    source_anchor_ids: [anchor-paper-22-publication]
+
+  - id: paper-22-lineage
+    kind: lineage
+    parent_id: paper-22
+    order: 10
+    epistemic_status: source_asserted
+    title: "Research lineage"
+    summary: "The work connects information-theoretic network-coding capacity studies with operational link-layer confidentiality constraints by making key-group composition an optimization variable."
+    source_anchor_ids: [anchor-paper-22-problem, anchor-paper-22-conclusion]
 
 relations:
-  - id: paper-22-relation-method-supports-answer
-    type: supports
+  - id: relation-paper-22-answer-addresses-question
+    type: addresses
+    from_id: paper-22-answer
+    to_id: paper-22-question
+  - id: relation-paper-22-model-realizes-answer
+    type: realizes
     from_id: paper-22-method
     to_id: paper-22-answer
-  - id: paper-22-relation-evidence-supports-claim
+  - id: relation-paper-22-study-supports-random
     type: supports
-    from_id: paper-22-evidence
-    to_id: paper-22-claims
-  - id: paper-22-relation-limitations-qualify-claim
+    from_id: paper-22-evidence-reproducibility
+    to_id: paper-22-claim-random
+  - id: relation-paper-22-study-supports-motelab
+    type: supports
+    from_id: paper-22-evidence-reproducibility
+    to_id: paper-22-claim-motelab
+  - id: relation-paper-22-security-proxy-qualifies-answer
     type: qualifies
-    from_id: paper-22-limitations
-    to_id: paper-22-claims
-  - id: paper-22-relation-scrutiny-qualifies-status
+    from_id: paper-22-scope-security
+    to_id: paper-22-answer
+  - id: relation-paper-22-model-boundary-qualifies-claims
     type: qualifies
-    from_id: paper-22-scrutiny
-    to_id: paper-22
+    from_id: paper-22-boundary-model
+    to_id: paper-22-claims
+  - id: relation-paper-22-evidence-boundary-qualifies-claims
+    type: qualifies
+    from_id: paper-22-boundary-evidence
+    to_id: paper-22-claims
+  - id: relation-paper-22-artifacts-enable-audit
+    type: enables_audit_of
+    from_id: paper-22-artifacts
+    to_id: paper-22-evidence
 
 assessment:
   id: paper-22-assessment-2026-07-11
@@ -173,32 +320,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports an optimization formulation and quantitative topology experiments; threat assumptions, objective function, algorithms, datasets, and statistical variation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-22-site-record]
+      rationale: "An explicit optimization model and comparative computational study support the claims within the chosen instances. No code, instances, field experiment, or independent reproduction was audited."
+      basis_source_anchor_ids: [anchor-paper-22-model, anchor-paper-22-evaluation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-22-official-1, anchor-paper-22-author-1]
+      rationale: "The complete author copy is mirrored locally with page count and SHA-256, making the model, parameters, and reported figures inspectable; executable artifacts are absent."
+      basis_source_anchor_ids: [anchor-paper-22-model, anchor-paper-22-evaluation]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-22-site-record]
+      rationale: "Named authorship, affiliations, an author-hosted copy, and an IEEE record establish baseline provenance. Roles, revision history, solver inputs, and artifact lineage are not recorded."
+      basis_source_anchor_ids: [anchor-paper-22-problem, anchor-paper-22-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE Global Communications Conference (GLOBECOM), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-22-official-1]
+      rationale: "The paper has an IEEE GLOBECOM publication record, but review materials and independent replication were not inspected."
+      basis_source_anchor_ids: [anchor-paper-22-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-22-site-record]
+      level: low
+      rationale: "OpenAlex reports 0 located citations for this work as of 2026-07-11. This index-specific snapshot may miss citations, versions, or merged records."
+      basis_source_anchor_ids: [anchor-paper-22-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The reported evaluation finds that adding one member to a key-sharing group improves coding gain by 1.3 to 13.7 percent across the tested topologies, at the cost of greater compromise exposure. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-22-site-record]
+      rationale: "The paper formalizes a concrete security-performance planning problem and supplies quantitative results, but novelty priority and broader deployment impact were not independently assessed."
+      basis_source_anchor_ids: [anchor-paper-22-problem, anchor-paper-22-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2074968496
+  citation_count: 0
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "OpenAlex coverage and record matching are incomplete; the count is a dated located-citation snapshot, not a universal citation total."

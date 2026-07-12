@@ -11,214 +11,381 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [algorithm]
 
 title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
-short_title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+short_title: Optimized Formally Verified LPZK
 year: 2023
 venue: "30th ACM Conference on Computer and Communications Security (CCS)"
-publication_status: "Published"
+publication_status: Published
 topic: algorithms-foundations
-labels:
-  - "Theory"
-  - "Applied"
+labels: [Theory, Applied]
 authors:
-  - "Samuel Dittmer"
-  - "Karim Eldefrawy"
-  - "Stéphane Graham-Lengrand"
-  - "Steve Lu"
-  - "Rafail Ostrovsky"
-  - "Vitor Pereira"
+  - Samuel Dittmer
+  - Karim Eldefrawy
+  - Stéphane Graham-Lengrand
+  - Steve Lu
+  - Rafail Ostrovsky
+  - Vitor Pereira
 keywords:
-  - "zero knowledge"
-  - "formal verification"
-  - "performance"
+  - line-point zero knowledge
+  - EasyCrypt
+  - formal verification
+  - parallel execution
+  - memory optimization
+  - extracted OCaml
 
-research_question: "Can formally verified parallel execution and memory-access optimization make extracted Line-Point Zero-Knowledge code practical without abandoning its high-assurance proof path?"
-central_answer: "The curated editorial summary reports EasyCrypt-verified optimizations that yield roughly a 3,000-fold speedup and bring extracted code close to a manual implementation."
+research_question: >-
+  Can verified changes to data representation, memory access, and parallel scheduling make extracted Line-Point Zero-Knowledge code competitive with a hand-written implementation while preserving the protocol's security properties?
+central_answer: >-
+  The 2023 paper presents sequential, parallel, list, and array optimizations proved in EasyCrypt and reports speedups up to about 3,000x. A 2025 peer-reviewed re-analysis subsequently found defects in the modeled soundness and zero-knowledge proofs and a randomness-generation gap in the extracted verifier. The performance contribution remains separately evidenced, but the represented sources no longer support the original claim that the resulting protocol implementation has the asserted end-to-end high-assurance security.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text claim mapping, artifact tracing, later-scrutiny integration, and initial assessment
+  method: >-
+    Source-grounded review of the full IACR version, public code repository, official CCS record, and the 2025 peer-reviewed technical re-analysis. Performance and program-equivalence evidence are separated from challenged soundness, zero-knowledge, and extraction claims.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification; especially verify the characterization and present status of the 2025 findings before approval.
 
 sources:
-  - id: source-paper-67-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #67"
-    url: /publications/#paper-67
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-67-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3576915.3616583"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-67-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2023/1322"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-67-eprint
+    type: public_preprint
+    title: "Boosting the Performance of High-Assurance Cryptography"
+    url: https://eprint.iacr.org/2023/1322
+    provenance_category: archive
+  - id: source-paper-67-official
+    type: official_publication_record
+    title: ACM CCS 2023 publication record
+    url: https://doi.org/10.1145/3576915.3616583
+    provenance_category: official
+  - id: source-paper-67-code
+    type: source_code_repository
+    title: SRI High-Assurance Cryptography LPZK repository
+    url: https://github.com/SRI-CSL/high-assurance-crypto/tree/main/high-assurance-zk/lpzk
+    provenance_category: artifact
+  - id: source-paper-67-critique
+    type: peer_reviewed_followup
+    title: "Who Verifies the Verifiers? Lessons Learned From Formally Verified Line-Point Zero-Knowledge"
+    url: https://doi.org/10.62056/a0wa0lmol
+    provenance_category: official
+    publication_year: 2025
+  - id: source-paper-67-critique-record
+    type: institutional_record
+    title: Vrije Universiteit Amsterdam record for the 2025 re-analysis
+    url: https://research.vu.nl/en/publications/who-verifies-the-verifiers-lessons-learned-from-formally-verified/
+    provenance_category: author
+  - id: source-paper-67-citations
+    type: citation_index_snapshot
+    title: OpenAlex record W4388858956
+    url: https://api.openalex.org/works/W4388858956
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-67-curated
-    source_id: source-paper-67-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-67
-  - id: anchor-paper-67-official-1
-    source_id: source-paper-67-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1145/3576915.3616583"
-  - id: anchor-paper-67-archive-1
-    source_id: source-paper-67-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2023/1322"
+  - id: anchor-paper-67-problem
+    source_id: source-paper-67-eprint
+    label: Performance problem, approach, and reported contributions
+    locator: Abstract and Section 1
+    url: https://eprint.iacr.org/2023/1322.pdf
+  - id: anchor-paper-67-baseline
+    source_id: source-paper-67-eprint
+    label: LPZK baseline and EasyCrypt proof/extraction path
+    locator: Section 2
+    url: https://eprint.iacr.org/2023/1322.pdf
+  - id: anchor-paper-67-list-sequential
+    source_id: source-paper-67-eprint
+    label: List-based sequential optimization
+    locator: Section 3
+    url: https://eprint.iacr.org/2023/1322.pdf
+  - id: anchor-paper-67-list-parallel
+    source_id: source-paper-67-eprint
+    label: List-based parallel optimization and split/aggregate framework
+    locator: Section 4
+    url: https://eprint.iacr.org/2023/1322.pdf
+  - id: anchor-paper-67-array
+    source_id: source-paper-67-eprint
+    label: Array-based sequential and parallel variants
+    locator: Section 5
+    url: https://eprint.iacr.org/2023/1322.pdf
+  - id: anchor-paper-67-performance
+    source_id: source-paper-67-eprint
+    label: Extracted-code evaluation and speedup comparisons
+    locator: Section 6 and performance figures
+    url: https://eprint.iacr.org/2023/1322.pdf
+  - id: anchor-paper-67-original-conclusion
+    source_id: source-paper-67-eprint
+    label: Original assurance and performance conclusions
+    locator: Section 7, PDF page 28 in the ePrint version
+    url: https://eprint.iacr.org/2023/1322.pdf#page=28
+  - id: anchor-paper-67-code
+    source_id: source-paper-67-code
+    label: Public EasyCrypt and implementation materials
+    locator: LPZK subtree of the high-assurance-crypto repository
+    url: https://github.com/SRI-CSL/high-assurance-crypto/tree/main/high-assurance-zk/lpzk
+  - id: anchor-paper-67-critique-overview
+    source_id: source-paper-67-critique
+    label: Independent re-analysis and summary of findings
+    locator: Abstract, introduction, and overview of findings
+    url: https://doi.org/10.62056/a0wa0lmol
+  - id: anchor-paper-67-critique-security
+    source_id: source-paper-67-critique
+    label: Soundness and zero-knowledge model defects
+    locator: Technical analyses of soundness, zero knowledge, and the underlying pen-and-paper proof, Sections 3-5
+    url: https://doi.org/10.62056/a0wa0lmol
+  - id: anchor-paper-67-critique-extraction
+    source_id: source-paper-67-critique
+    label: Extracted-verifier randomness gap and lessons
+    locator: Extraction analysis and recommendations, Section 6 and conclusion
+    url: https://doi.org/10.62056/a0wa0lmol
+  - id: anchor-paper-67-publication
+    source_id: source-paper-67-official
+    label: Official publication identity
+    locator: ACM CCS 2023, DOI 10.1145/3576915.3616583
+    url: https://doi.org/10.1145/3576915.3616583
+  - id: anchor-paper-67-citation-count
+    source_id: source-paper-67-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex cited_by_count was 5 when accessed 2026-07-11
+    url: https://api.openalex.org/works/W4388858956
 
 nodes:
   - id: paper-67
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
-    summary: "This paper formally verifies parallel-execution and memory-access optimizations for an EasyCrypt implementation of Line-Point Zero-Knowledge. The verified optimizations produce roughly a 3,000-fold speedup and bring automatically extracted code close to the manually implemented version."
-    source_anchor_ids: [anchor-paper-67-curated]
+    epistemic_status: published_with_material_followup_critique
+    title: Optimized formally verified LPZK
+    summary: >-
+      An optimization and proof-engineering paper for LPZK whose reported performance gains are accompanied by EasyCrypt verification; later peer-reviewed scrutiny found that the security model and extracted verifier did not establish the claimed end-to-end security.
+    source_anchor_ids: [anchor-paper-67-problem, anchor-paper-67-critique-overview]
+
   - id: paper-67-question
     kind: question
     parent_id: paper-67
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can formally verified parallel execution and memory-access optimization make extracted Line-Point Zero-Knowledge code practical without abandoning its high-assurance proof path?"
-    source_anchor_ids: [anchor-paper-67-curated]
-  - id: paper-67-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can data-structure and parallelism changes close the performance gap between formally extracted and hand-written LPZK implementations without changing security-relevant behavior?
+    source_anchor_ids: [anchor-paper-67-problem]
+
+  - id: paper-67-answer-original
     kind: contribution
     parent_id: paper-67
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports EasyCrypt-verified optimizations that yield roughly a 3,000-fold speedup and bring extracted code close to a manual implementation."
-    source_anchor_ids: [anchor-paper-67-curated]
-  - id: paper-67-method
-    kind: method
+    epistemic_status: partially_supported_and_materially_qualified
+    title: Original answer, now qualified
+    summary: >-
+      The paper answers yes by verifying transformations and extracting optimized OCaml that approaches the manual implementation. The speed result is documented, but the later audit shows that the formal development's security specification and extraction boundary were insufficient to justify the original high-assurance conclusion.
+    source_anchor_ids: [anchor-paper-67-problem, anchor-paper-67-performance, anchor-paper-67-critique-security, anchor-paper-67-critique-extraction]
+
+  - id: paper-67-model
+    kind: model
     parent_id: paper-67
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described work formalizes parallel-execution and memory-access transformations for a verified Line-Point Zero-Knowledge implementation and then extracts optimized executable code."
-    source_anchor_ids: [anchor-paper-67-curated]
+    epistemic_status: defined_but_later_found_defective
+    title: LPZK proof and extraction boundary
+    summary: EasyCrypt models protocol procedures and security games, proves transformations relative to those models, and extracts selected procedures to OCaml; assurance is therefore only as strong as the modeled properties and the faithfulness of the extraction boundary.
+    source_anchor_ids: [anchor-paper-67-baseline, anchor-paper-67-critique-overview]
+
+  - id: paper-67-methods
+    kind: algorithm
+    parent_id: paper-67
+    order: 4
+    epistemic_status: implemented_and_verified_relative_to_model
+    title: Optimization family
+    summary: The work develops four related variants that alter traversal, memory representation, and execution parallelism while proving equivalence obligations in EasyCrypt.
+    source_anchor_ids: [anchor-paper-67-list-sequential, anchor-paper-67-list-parallel, anchor-paper-67-array]
+
+  - id: paper-67-method-ls
+    kind: algorithm
+    parent_id: paper-67-methods
+    order: 1
+    epistemic_status: implemented
+    title: List-sequential variant
+    summary: The list-sequential transformation restructures verifier-side computation to reduce repeated circuit or list traversal while retaining a sequential list representation.
+    source_anchor_ids: [anchor-paper-67-list-sequential]
+
+  - id: paper-67-method-lp
+    kind: algorithm
+    parent_id: paper-67-methods
+    order: 2
+    epistemic_status: implemented
+    title: List-parallel variant
+    summary: A generic split-compute-aggregate framework and parallel RAM wrappers distribute independent work across an arbitrary number of cores, subject to user-proved decomposition and aggregation conditions.
+    source_anchor_ids: [anchor-paper-67-list-parallel]
+
+  - id: paper-67-method-array
+    kind: algorithm
+    parent_id: paper-67-methods
+    order: 3
+    epistemic_status: implemented
+    title: Array-sequential and array-parallel variants
+    summary: Replacing linked-list access with arrays improves locality and supports both sequential and parallel extracted implementations.
+    source_anchor_ids: [anchor-paper-67-array]
+
   - id: paper-67-claims
     kind: claim_group
     parent_id: paper-67
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports preservation of formal assurance for the optimizations together with an approximately 3,000-fold performance improvement."
-    source_anchor_ids: [anchor-paper-67-curated]
+    order: 5
+    epistemic_status: mixed_after_followup
+    title: Claims and present evidence status
+    summary: Performance and transformation claims must be evaluated separately from soundness, zero-knowledge, and end-to-end assurance claims.
+    source_anchor_ids: [anchor-paper-67-performance, anchor-paper-67-critique-overview]
+
+  - id: paper-67-claim-performance
+    kind: claim
+    parent_id: paper-67-claims
+    order: 1
+    epistemic_status: experimentally_supported
+    title: Large performance improvement
+    summary: The evaluation reports speedups reaching roughly 3,000x over the prior extracted baseline and performance close to the hand-written LPZK implementation for the measured configurations.
+    source_anchor_ids: [anchor-paper-67-performance]
+
+  - id: paper-67-claim-security-original
+    kind: claim
+    parent_id: paper-67-claims
+    order: 2
+    epistemic_status: contradicted_by_later_analysis
+    title: Original high-assurance security conclusion
+    summary: The original paper presents the optimized extracted protocol as retaining verified LPZK security; the 2025 analysis gives attacks and model gaps showing that this conclusion is not established by the represented formal development.
+    source_anchor_ids: [anchor-paper-67-original-conclusion, anchor-paper-67-critique-security, anchor-paper-67-critique-extraction]
+
   - id: paper-67-evidence
     kind: evidence_group
     parent_id: paper-67
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Machine-checked optimization proofs and comparative benchmarks are reported, but the EasyCrypt development, trusted extraction and runtime stack, hardware, workloads, baselines, and raw data were not audited."
-    source_anchor_ids: [anchor-paper-67-curated]
-  - id: paper-67-scope
-    kind: limitation_group
-    parent_id: paper-67
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked the exact security and functional properties preserved, concurrency assumptions, memory model, constant-time behavior, proof-to-code correspondence, or benchmark generality."
-    source_anchor_ids: [anchor-paper-67-curated]
-  - id: paper-67-artifacts
-    kind: artifact_group
-    parent_id: paper-67
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-67-curated, anchor-paper-67-official-1, anchor-paper-67-archive-1]
-  - id: paper-67-scrutiny
+    epistemic_status: mixed
+    title: Evidence layers
+    summary: EasyCrypt proofs support properties of the encoded programs and games, extracted-code benchmarks support performance, and the public repository supports inspection; later adversarial analysis tests whether those layers capture the intended cryptographic guarantees.
+    source_anchor_ids: [anchor-paper-67-baseline, anchor-paper-67-performance, anchor-paper-67-code, anchor-paper-67-critique-overview]
+
+  - id: paper-67-followup
     kind: scrutiny
     parent_id: paper-67
+    order: 7
+    epistemic_status: independent_peer_reviewed_critique
+    title: 2025 independent security re-analysis
+    summary: The follow-up paper audits the proof models and implementation boundary and reports multiple security-critical discrepancies, making it essential context for interpreting the 2023 claims.
+    source_anchor_ids: [anchor-paper-67-critique-overview]
+
+  - id: paper-67-followup-soundness
+    kind: counterevidence
+    parent_id: paper-67-followup
+    order: 1
+    epistemic_status: demonstrated_attack
+    title: Soundness model permits false statements
+    summary: The re-analysis reports that the EasyCrypt soundness model and proof are incorrect and supplies an attack under which the verifier can accept a false statement.
+    source_anchor_ids: [anchor-paper-67-critique-security]
+
+  - id: paper-67-followup-zk
+    kind: counterevidence
+    parent_id: paper-67-followup
+    order: 2
+    epistemic_status: demonstrated_model_failure
+    title: Zero-knowledge model is deficient
+    summary: The re-analysis finds that the modeled zero-knowledge property does not exclude a verifier recovering the witness and also identifies a gap in the underlying pen-and-paper perfect-zero-knowledge argument under the analyzed interpretation.
+    source_anchor_ids: [anchor-paper-67-critique-security]
+
+  - id: paper-67-followup-extraction
+    kind: counterevidence
+    parent_id: paper-67-followup
+    order: 3
+    epistemic_status: implementation_gap
+    title: Randomness generation crosses the extraction boundary incorrectly
+    summary: The extracted verifier combines randomness generation with verified logic in a way the re-analysis identifies as inconsistent with the proved model, so proof-to-code correspondence is not end-to-end.
+    source_anchor_ids: [anchor-paper-67-critique-extraction]
+
+  - id: paper-67-boundaries
+    kind: limitation_group
+    parent_id: paper-67
     order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 30th ACM Conference on Computer and Communications Security (CCS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-67-official-1]
+    epistemic_status: materially_revised_by_followup
+    title: Present boundaries
+    summary: Formal verification establishes only a specified model and implementation boundary; it does not automatically validate the cryptographic definition, environmental assumptions, randomness interface, or extracted system.
+    source_anchor_ids: [anchor-paper-67-critique-overview, anchor-paper-67-critique-extraction]
+
+  - id: paper-67-boundary-performance
+    kind: limitation
+    parent_id: paper-67-boundaries
+    order: 1
+    epistemic_status: evidence_separation
+    title: Performance does not repair security
+    summary: The reported speedups can remain accurate even though the security model is deficient; conversely, the later attacks do not by themselves show that every program transformation or timing measurement is wrong.
+    source_anchor_ids: [anchor-paper-67-performance, anchor-paper-67-critique-overview]
+
+  - id: paper-67-resources
+    kind: artifact_group
+    parent_id: paper-67
+    order: 9
+    epistemic_status: public_artifacts_available
+    title: Auditable resources
+    summary: The IACR manuscript, public EasyCrypt and implementation repository, official CCS record, and peer-reviewed 2025 audit together make the claim history unusually inspectable.
+    source_anchor_ids: [anchor-paper-67-problem, anchor-paper-67-code, anchor-paper-67-publication, anchor-paper-67-critique-overview]
+
+  - id: paper-67-lineage
+    kind: lineage
+    parent_id: paper-67
+    order: 10
+    epistemic_status: documented_and_revised
+    title: Scientific lineage
+    summary: The work optimizes an earlier LPZK formalization; the 2025 paper is a direct technical reassessment that changes the warranted interpretation of its security contribution and records lessons for future high-assurance cryptography.
+    source_anchor_ids: [anchor-paper-67-baseline, anchor-paper-67-critique-overview]
 
 relations:
-  - id: paper-67-relation-question-contribution
-    type: motivates
-    from_id: paper-67-question
-    to_id: paper-67-contribution
-  - id: paper-67-relation-method-contribution
-    type: realizes
-    from_id: paper-67-method
-    to_id: paper-67-contribution
-  - id: paper-67-relation-contribution-claims
-    type: grounds
-    from_id: paper-67-contribution
-    to_id: paper-67-claims
-  - id: paper-67-relation-evidence-claims
-    type: supports
-    from_id: paper-67-evidence
-    to_id: paper-67-claims
-  - id: paper-67-relation-scope-claims
-    type: qualifies
-    from_id: paper-67-scope
-    to_id: paper-67-claims
-  - id: paper-67-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-67-artifacts
-    to_id: paper-67-evidence
-  - id: paper-67-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-67-scrutiny
-    to_id: paper-67-claims
+  - {id: paper-67-rel-answer-question, type: addresses, from_id: paper-67-answer-original, to_id: paper-67-question}
+  - {id: paper-67-rel-methods-answer, type: realizes, from_id: paper-67-methods, to_id: paper-67-answer-original}
+  - {id: paper-67-rel-ls-methods, type: component_of, from_id: paper-67-method-ls, to_id: paper-67-methods}
+  - {id: paper-67-rel-lp-methods, type: component_of, from_id: paper-67-method-lp, to_id: paper-67-methods}
+  - {id: paper-67-rel-array-methods, type: component_of, from_id: paper-67-method-array, to_id: paper-67-methods}
+  - {id: paper-67-rel-evidence-performance, type: supports, from_id: paper-67-evidence, to_id: paper-67-claim-performance}
+  - {id: paper-67-rel-soundness-security, type: contradicts, from_id: paper-67-followup-soundness, to_id: paper-67-claim-security-original}
+  - {id: paper-67-rel-zk-security, type: contradicts, from_id: paper-67-followup-zk, to_id: paper-67-claim-security-original}
+  - {id: paper-67-rel-extraction-security, type: contradicts, from_id: paper-67-followup-extraction, to_id: paper-67-claim-security-original}
+  - {id: paper-67-rel-followup-answer, type: qualifies, from_id: paper-67-followup, to_id: paper-67-answer-original}
+  - {id: paper-67-rel-boundaries-claims, type: qualifies, from_id: paper-67-boundaries, to_id: paper-67-claims}
+  - {id: paper-67-rel-resources-evidence, type: enables_audit_of, from_id: paper-67-resources, to_id: paper-67-evidence}
+  - {id: paper-67-rel-lineage-paper, type: contextualizes, from_id: paper-67-lineage, to_id: paper-67}
 
 assessment:
   id: paper-67-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-67-curated, anchor-paper-67-official-1, anchor-paper-67-archive-1]
+      rationale: The original paper and repository strongly document optimization and benchmark evidence, but peer-reviewed follow-up work materially contradicts the soundness, zero-knowledge, and extraction assurance. Medium reflects this mixed evidentiary state.
+      basis_source_anchor_ids: [anchor-paper-67-performance, anchor-paper-67-code, anchor-paper-67-critique-security, anchor-paper-67-critique-extraction]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-67-curated, anchor-paper-67-official-1, anchor-paper-67-archive-1]
+      rationale: Public full text, code and proof artifacts, official metadata, and an independent technical audit expose both the original claims and later counterevidence.
+      basis_source_anchor_ids: [anchor-paper-67-problem, anchor-paper-67-code, anchor-paper-67-critique-overview]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-67-curated]
+      rationale: Authorship, publication records, manuscript, and repository are documented, but contributor roles, exact artifact-to-paper commit identity, revision history, and toolchain provenance are incomplete.
+      basis_source_anchor_ids: [anchor-paper-67-publication, anchor-paper-67-code]
     - id: external_scrutiny
-      level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-67-official-1]
+      level: high
+      rationale: Beyond CCS review, a later peer-reviewed paper independently reconstructed and adversarially tested the formal claims, identifying concrete attacks and implementation gaps.
+      basis_source_anchor_ids: [anchor-paper-67-publication, anchor-paper-67-critique-overview, anchor-paper-67-critique-security]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-67-curated]
+      level: low
+      rationale: The dated OpenAlex snapshot located 5 citations. Under the author-defined rule, 0 through 8 located citations is Low; the qualitative importance of a direct audit is recorded separately.
+      basis_source_anchor_ids: [anchor-paper-67-citation-count, anchor-paper-67-critique-overview]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-67-curated]
+      rationale: The work contributes substantial optimization and a reusable parallelization approach, but later findings substantially reduce the warranted security significance of the high-assurance claim.
+      basis_source_anchor_ids: [anchor-paper-67-list-parallel, anchor-paper-67-performance, anchor-paper-67-critique-overview]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex work lookup by DOI 10.1145/3576915.3616583
+  citation_count: 5
+  source_url: https://api.openalex.org/works/W4388858956
+  signals:
+    - OpenAlex reported 5 citing works for the matched publication record.
+    - A 2025 peer-reviewed paper directly re-analyzed the formal models and extracted verifier.
+  limitation: Citation counts are index- and date-dependent; the qualitative scrutiny signal is not reducible to citation count, and neither signal alone determines correctness.

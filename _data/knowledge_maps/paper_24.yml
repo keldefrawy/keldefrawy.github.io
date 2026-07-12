@@ -12,58 +12,72 @@ contribution_types: [protocol, scheme]
 
 title: "Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet via Privacy-Preserving AppCoins"
 year: 2014
+status: "Published"
 venue: "Ninth Workshop on Secure Network Protocols (NPSec), co-located with IEEE ICNP"
 topic: privacy-identity
 labels: ["Theory", "Applied"]
 authors: ["Karim Eldefrawy", "Joshua Lampkins"]
 keywords: ["micropayments", "incentives", "privacy"]
 
-research_question: "Can privacy-preserving micropayments make abusive Internet behavior costly and reward honest cooperation without enabling coin malleability or double spending?"
-central_answer: "The paper proposes AppCoins with non-malleable, double-spending-resistant protocols and illustrates their use in email and onion routing with reported commodity-hardware costs."
+research_question: >-
+  Can privacy-preserving, low-overhead application-specific micropayments raise the economic cost of abusive Internet behavior while rewarding cooperative behavior?
+central_answer: >-
+  The available summary-level description says AppCoins combine privacy, non-malleability, and double-spending resistance and can be integrated into email and onion routing, with a performance analysis reported as practical on commodity hardware; no public manuscript was located, so the construction and evidence cannot yet be mapped below that level.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+      role: bounded provenance search, abstract-level synthesis, and initial assessment
+  method: "Systematic search of the official DOI, author/coauthor and institutional publication pages, scholarly indexes, and exact-title web results. OpenAlex reports the DOI as closed with no repository full text; no legitimate public manuscript was found. Technical structure below is therefore limited to the editorial summary already represented by the curated record."
   source_scope: metadata_and_editorial_summary
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored bounded map awaiting author verification and a manuscript. No protocol or performance detail beyond the available editorial summary should be treated as audited."
 
 sources:
-  - id: source-paper-24-site-record
+  - id: source-paper-24-site
     type: curated_record
     title: "Curated publication record for paper #24"
     url: /publications/#paper-24
-  - id: source-paper-24-official-1
+    scope_note: "Editorial summary, not a substitute for full text."
+  - id: source-paper-24-official
     type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/ICNP.2014.100"
+    title: "IEEE NPSec/ICNP publication record"
+    url: https://doi.org/10.1109/ICNP.2014.100
+  - id: source-paper-24-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #24"
+    url: https://openalex.org/W2066484879
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-24-site-record
-    source_id: source-paper-24-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
+  - id: anchor-paper-24-editorial
+    source_id: source-paper-24-site
+    label: "Curated editorial description"
+    locator: "Site editorial summary; manuscript not audited"
     url: /publications/#paper-24
-  - id: anchor-paper-24-official-1
-    source_id: source-paper-24-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1109/ICNP.2014.100"
+  - id: anchor-paper-24-publication
+    source_id: source-paper-24-official
+    label: "Official IEEE publication record"
+    locator: "NPSec 2014 / ICNP proceedings, pages 630-635"
+    url: https://doi.org/10.1109/ICNP.2014.100
+  - id: anchor-paper-24-citations
+    source_id: source-paper-24-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 4, accessed 2026-07-11"
+    url: https://openalex.org/W2066484879
 
 nodes:
   - id: paper-24
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet via Privacy-Preserving AppCoins"
-    summary: "The paper proposes privacy-preserving digital AppCoins as low-overhead micropayments that make abusive online behavior more expensive and reward cooperative behavior. It gives non-malleable, double-spending-resistant protocols and shows how email and onion routing could use them with practical commodity-hardware costs."
-    source_anchor_ids: [anchor-paper-24-site-record]
+    epistemic_status: published_metadata_only
+    title: "Privacy-Preserving AppCoins"
+    summary: "A proposed application-specific micropayment mechanism intended to attach economic incentives and disincentives to online behavior while preserving user privacy."
+    source_anchor_ids: [anchor-paper-24-editorial]
 
   - id: paper-24-question
     kind: question
@@ -71,89 +85,107 @@ nodes:
     order: 1
     epistemic_status: editorial_synthesis_pending_source_audit
     title: "Research question"
-    summary: "Can privacy-preserving micropayments make abusive Internet behavior costly and reward honest cooperation without enabling coin malleability or double spending?"
-    source_anchor_ids: [anchor-paper-24-site-record]
+    summary: "Can low-cost private digital coins deter abuse and reward cooperation without turning the payment mechanism into a user-tracking system?"
+    source_anchor_ids: [anchor-paper-24-editorial]
 
   - id: paper-24-answer
     kind: contribution
     parent_id: paper-24
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper proposes AppCoins with non-malleable, double-spending-resistant protocols and illustrates their use in email and onion routing with reported commodity-hardware costs."
-    source_anchor_ids: [anchor-paper-24-site-record]
+    epistemic_status: editorial_summary_report
+    title: "Reported central answer"
+    summary: "Define AppCoins and cryptographic protocols intended to resist malleation and double spending, then adapt email and onion-routing examples to consume or award them."
+    source_anchor_ids: [anchor-paper-24-editorial]
+
+  - id: paper-24-scope
+    kind: scope
+    parent_id: paper-24
+    order: 3
+    epistemic_status: incompletely_specified
+    title: "Intended scope"
+    summary: "The available description covers micropayment-based incentives for online applications, with email and onion routing as examples; issuer, spender, verifier, trust, and privacy models were not recoverable without the paper."
+    source_anchor_ids: [anchor-paper-24-editorial]
 
   - id: paper-24-method
     kind: method
     parent_id: paper-24
-    order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Attach low-overhead private payment incentives to application actions, enforce coin validity cryptographically, and analyze representative messaging and routing uses."
-    source_anchor_ids: [anchor-paper-24-site-record]
+    order: 4
+    epistemic_status: reported_not_source_audited
+    title: "Reported AppCoin protocols"
+    summary: "The site record reports privacy-preserving, non-malleable, double-spending-resistant coin protocols and application integration, but no algorithms, security games, assumptions, or message flows were available for audit."
+    source_anchor_ids: [anchor-paper-24-editorial]
 
   - id: paper-24-claims
     kind: claim_group
     parent_id: paper-24
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The proposed AppCoin protocols are reported to preserve payment privacy, resist malleability and double spending, and run at practical cost for the studied applications."
-    source_anchor_ids: [anchor-paper-24-site-record]
+    order: 5
+    epistemic_status: reported_not_source_audited
+    title: "Reported claims"
+    summary: "The record says AppCoins can increase attackers' financial cost, reward honest behavior, and run with practical commodity-hardware overhead; exact hypotheses and measurements are unavailable."
+    source_anchor_ids: [anchor-paper-24-editorial]
 
   - id: paper-24-evidence
     kind: evidence_group
     parent_id: paper-24
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports protocol security properties and commodity-hardware cost results; definitions, proofs, implementations, measurements, and economic experiments have not been inspected."
-    source_anchor_ids: [anchor-paper-24-site-record]
+    order: 6
+    epistemic_status: unavailable_for_audit
+    title: "Evidence gap"
+    summary: "The publication metadata confirms the paper exists, but neither proofs nor the reported performance analysis were inspectable; the current map supplies no independent support for the technical claims."
+    source_anchor_ids: [anchor-paper-24-editorial, anchor-paper-24-publication]
 
-  - id: paper-24-limitations
+  - id: paper-24-boundaries
     kind: limitation_group
     parent_id: paper-24
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The record does not establish incentive compatibility at population scale, currency issuance and governance, abuse-market adaptation, privacy under repeated use, or deployability in existing applications."
-    source_anchor_ids: [anchor-paper-24-site-record]
+    order: 7
+    epistemic_status: material_source_gap
+    title: "Unverified boundaries"
+    summary: "Privacy definition, non-malleability game, double-spending detection, issuer trust, unlinkability, value transfer, incentive equilibrium, application abuse model, and benchmark setup all require the missing manuscript."
+    source_anchor_ids: [anchor-paper-24-editorial]
 
-  - id: paper-24-resources
+  - id: paper-24-artifacts
     kind: artifact_group
     parent_id: paper-24
-    order: 7
-    epistemic_status: linked_not_content_audited
+    order: 8
+    epistemic_status: metadata_only
     title: "Artifacts and resources"
-    summary: "The curated record exposes 1 linked resource: Publisher / DOI. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-24-official-1]
+    summary: "Only the official DOI and bibliographic records were located. OpenAlex identifies no open or repository full text; no author copy, archive manuscript, code, or data was found."
+    source_anchor_ids: [anchor-paper-24-publication]
 
   - id: paper-24-scrutiny
     kind: scrutiny
     parent_id: paper-24
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at Ninth Workshop on Secure Network Protocols (NPSec), co-located with IEEE ICNP. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-24-site-record, anchor-paper-24-official-1]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The paper appears in the NPSec workshop proceedings co-located with IEEE ICNP; review materials and subsequent technical scrutiny were not audited."
+    source_anchor_ids: [anchor-paper-24-publication]
+
+  - id: paper-24-lineage
+    kind: lineage
+    parent_id: paper-24
+    order: 10
+    epistemic_status: editorial_synthesis_pending_source_audit
+    title: "Research direction"
+    summary: "The work frames privacy-preserving cryptographic tokens as application-layer incentive instruments rather than general-purpose currency."
+    source_anchor_ids: [anchor-paper-24-editorial]
 
 relations:
-  - id: paper-24-relation-method-supports-answer
-    type: supports
+  - id: relation-paper-24-answer-addresses-question
+    type: addresses
+    from_id: paper-24-answer
+    to_id: paper-24-question
+  - id: relation-paper-24-method-describes-answer
+    type: describes_approach_to
     from_id: paper-24-method
     to_id: paper-24-answer
-  - id: paper-24-relation-evidence-supports-claim
+  - id: relation-paper-24-evidence-supports-claims
     type: supports
     from_id: paper-24-evidence
     to_id: paper-24-claims
-  - id: paper-24-relation-limitations-qualify-claim
+  - id: relation-paper-24-boundaries-qualify-claims
     type: qualifies
-    from_id: paper-24-limitations
+    from_id: paper-24-boundaries
     to_id: paper-24-claims
-  - id: paper-24-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-24-scrutiny
-    to_id: paper-24
 
 assessment:
   id: paper-24-assessment-2026-07-11
@@ -163,33 +195,34 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary reports protocol security properties and commodity-hardware cost results; definitions, proofs, implementations, measurements, and economic experiments have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-24-site-record]
+      level: low
+      rationale: "Only publication metadata and a curated editorial summary are inspectable; protocols, proofs, incentive analysis, and performance evidence were not audited."
+      basis_source_anchor_ids: [anchor-paper-24-editorial, anchor-paper-24-publication]
     - id: auditability
       level: medium
-      rationale: "The resource record provides only official publication metadata and no archive or author-hosted copy; full-text assumptions, evidence, and version identity are not readily auditable from this map. Auditability is therefore medium."
-      basis_source_anchor_ids: [anchor-paper-24-official-1]
+      rationale: "An official publication record exists, but no public archive or author-hosted copy was located; full assumptions, evidence, and version identity are not readily auditable from this map."
+      basis_source_anchor_ids: [anchor-paper-24-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-24-site-record]
+      rationale: "Named authorship and an IEEE proceedings record establish baseline provenance. Roles, revisions, artifacts, and production history are not documented."
+      basis_source_anchor_ids: [anchor-paper-24-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in Ninth Workshop on Secure Network Protocols (NPSec), co-located with IEEE ICNP, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-24-official-1]
+      rationale: "The work has a workshop proceedings record, but review criteria, reports, and independent evaluation were not inspected."
+      basis_source_anchor_ids: [anchor-paper-24-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-24-site-record]
+      level: low
+      rationale: "OpenAlex reports 4 located citations as of 2026-07-11. The count is index-specific and may omit versions or citations."
+      basis_source_anchor_ids: [anchor-paper-24-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The proposed AppCoin protocols are reported to preserve payment privacy, resist malleability and double spending, and run at practical cost for the studied applications. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-24-site-record]
+      rationale: "The application-specific private-token framing is concrete, but technical novelty and practical impact cannot be certified without the manuscript."
+      basis_source_anchor_ids: [anchor-paper-24-editorial]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2066484879
+  citation_count: 4
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "OpenAlex coverage and record matching are incomplete; this is a dated located-citation snapshot."

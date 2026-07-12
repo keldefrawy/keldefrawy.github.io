@@ -11,13 +11,12 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: []
 
 title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
-short_title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+short_title: "Post-Quantum Non-Malleable Point Obfuscation"
 year: null
 venue: null
 publication_status: "Ongoing work"
 topic: algorithms-foundations
-labels:
-  - "Theory"
+labels: ["Theory"]
 availability: "Public manuscript not found; this work is listed as ongoing."
 authors:
   - "Daniel Apon"
@@ -29,138 +28,269 @@ keywords:
   - "post-quantum cryptography"
   - "obfuscation"
 
-research_question: "Can post-quantum point-function obfuscation prevent adversarial malleation while realizing useful random-oracle-like behavior?"
-central_answer: "Based only on the working title and editorial listing, the project seeks a post-quantum non-malleable point-obfuscation construction that blocks transformations into related obfuscated programs."
+research_question: >-
+  Can a post-quantum point-function obfuscation notion resist malleation while reproducing a useful aspect of random-oracle behavior?
+central_answer: >-
+  The title establishes this research objective, and a NIST administrative email verifies that a manuscript with this title and author list entered an internal review process in 2021. No public manuscript was located, so the construction, security notion, quantum-access model, assumptions, theorem, and proof remain unaudited.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: metadata verification, administrative-provenance analysis, public-source searching, and uncertainty documentation
+  method: >-
+    AI drafting from the author-site record, a public NIST administrative email, and exact-title, author-title, archive, index, and coauthor-profile searches. The NIST document is used only as manuscript provenance; it is not treated as full text, peer review, a citation, or evidence for any technical claim.
+  source_scope: metadata_administrative_provenance_and_documented_public_source_search
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: "AI-authored bounded map awaiting full author audit; technical content is intentionally not reconstructed from the title alone."
 
 sources:
   - id: source-paper-77-curated
     type: curated_site_record
     title: "Website publication record for Paper #77"
     url: /publications/#paper-77
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+    scope_note: "Author-site title, authorship, ongoing-work status, and editorial summary; not a manuscript or technical source."
+  - id: source-paper-77-nist-email
+    type: administrative_provenance_record
+    title: "NIST ERB sponsor-review email mentioning the manuscript"
+    url: "https://nist.pqcrypto.org/foia/20250416/RE_%20NPS_%20REMINDER%20-%20ERB%20Sponsor%20Review%20Manuscript.pdf"
+    media_type: application/pdf
+    scope_note: >-
+      The email names the manuscript and authors, records a 2021-03-02 submission date and ERB Control G2021-0620, and discusses administrative sponsor review before intended conference submission. It is neither the manuscript nor a scholarly citation, venue decision, review report, or technical validation.
+  - id: source-paper-77-manuscript-search
+    type: source_search_record
+    title: "Public-manuscript search for Paper #77"
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+    accessed_at: "2026-07-11"
+    scope_note: >-
+      Exact-title and author-title variants were checked across the open web, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, NIST/public-record pages, and discoverable author or coauthor pages. The NIST email was located, but no public manuscript, abstract, DOI, ePrint identifier, venue paper page, or stable scholarly index record was found.
+  - id: source-paper-77-citation-search
+    type: citation_search_snapshot
+    title: "Exact-title scholarly-web citation search"
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+    accessed_at: "2026-07-11"
+    scope_note: "The NIST administrative email was excluded from reception because it does not cite the work as scholarship."
 
 source_anchors:
-  - id: anchor-paper-77-curated
+  - id: anchor-paper-77-metadata
     source_id: source-paper-77-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    label: "Author-site paper metadata"
+    locator: "Paper #77 title, named authors, topic, Theory label, and Ongoing work status"
     url: /publications/#paper-77
+  - id: anchor-paper-77-nist-email
+    source_id: source-paper-77-nist-email
+    label: "NIST administrative manuscript provenance"
+    locator: >-
+      Public email record naming the manuscript and five authors; submitted 2021-03-02 under ERB Control G2021-0620; administrative sponsor-review correspondence, not manuscript content or scholarly review
+    url: "https://nist.pqcrypto.org/foia/20250416/RE_%20NPS_%20REMINDER%20-%20ERB%20Sponsor%20Review%20Manuscript.pdf"
+  - id: anchor-paper-77-search-gap
+    source_id: source-paper-77-manuscript-search
+    label: "Documented full-text search gap"
+    locator: >-
+      Search completed 2026-07-11 across exact-title and author-title web queries, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, NIST records, and discoverable author/coauthor pages; administrative provenance found but no primary full text or stable scholarly record
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+  - id: anchor-paper-77-citations
+    source_id: source-paper-77-citation-search
+    label: "Dated exact-title citation search"
+    locator: "No citing scholarly work verifiably located; the NIST administrative email was excluded from the count"
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
 
 nodes:
   - id: paper-77
     kind: paper
-    parent_id: null
+    parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
-    summary: "Based on its working title, this project studies point-function obfuscation that remains non-malleable against quantum-capable attackers. It asks how a concrete post-quantum construction can reproduce useful random-oracle behavior without letting an adversary transform an obfuscated program into a related one."
-    source_anchor_ids: [anchor-paper-77-curated]
+    epistemic_status: metadata_and_administrative_provenance_pending_author_audit
+    title: "Post-quantum non-malleable point obfuscation"
+    summary: >-
+      An ongoing theory project whose title targets a post-quantum, non-malleable point-obfuscation primitive. A NIST email verifies manuscript identity and administrative history, but no technical text is public in the located sources.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email, anchor-paper-77-search-gap]
+
   - id: paper-77-question
     kind: question
     parent_id: paper-77
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can post-quantum point-function obfuscation prevent adversarial malleation while realizing useful random-oracle-like behavior?"
-    source_anchor_ids: [anchor-paper-77-curated]
-  - id: paper-77-contribution
-    kind: contribution
+    epistemic_status: title_inferred
+    title: "Research direction"
+    summary: >-
+      Can point-function obfuscation retain a non-malleability property against quantum-capable adversaries and thereby realize a useful random-oracle-like capability?
+    source_anchor_ids: [anchor-paper-77-metadata]
+
+  - id: paper-77-point-obfuscation
+    kind: primitive
     parent_id: paper-77
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "Based only on the working title and editorial listing, the project seeks a post-quantum non-malleable point-obfuscation construction that blocks transformations into related obfuscated programs."
-    source_anchor_ids: [anchor-paper-77-curated]
-  - id: paper-77-method
-    kind: method
+    epistemic_status: primitive_named_definition_unavailable
+    title: "Point obfuscation"
+    summary: >-
+      Point obfuscation is named in the title. The point-function domain, correctness condition, hiding notion, auxiliary input, reusable access, and output representation are not specified publicly.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
+
+  - id: paper-77-nonmalleability
+    kind: security_property
     parent_id: paper-77
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "No public manuscript is represented. The candidate construction, post-quantum assumption, non-malleability game, and sense of random-oracle realization are not available for audit."
-    source_anchor_ids: [anchor-paper-77-curated]
-  - id: paper-77-claims
-    kind: claim_group
+    epistemic_status: property_named_definition_unavailable
+    title: "Non-malleability target"
+    summary: >-
+      Non-malleability is explicit in the title, but the admissible relation, challenge game, adversarial output, success event, and handling of trivial transformations are unavailable.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
+
+  - id: paper-77-postquantum
+    kind: threat_model
     parent_id: paper-77
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The listing supports only a research objective concerning post-quantum non-malleable point obfuscation; it does not establish existence, security, efficiency, or a realization theorem."
-    source_anchor_ids: [anchor-paper-77-curated]
+    epistemic_status: adversary_class_named_model_unavailable
+    title: "Post-quantum adversary"
+    summary: >-
+      The title claims a post-quantum setting, but it does not disclose whether the model permits quantum advice, superposition access, quantum random-oracle queries, adaptive challenge selection, or quantum outputs.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
+
+  - id: paper-77-random-oracle-goal
+    kind: objective
+    parent_id: paper-77
+    order: 5
+    epistemic_status: objective_named_scope_unavailable
+    title: "Further realizing random oracles"
+    summary: >-
+      The title situates the work in a program of realizing random-oracle behavior, but the targeted functionality, application class, and sense of realization cannot be inferred safely without the manuscript.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
+
+  - id: paper-77-construction
+    kind: construction
+    parent_id: paper-77
+    order: 6
+    epistemic_status: not_available_for_audit
+    title: "Construction unavailable"
+    summary: >-
+      No algorithm, compiler, parameter set, underlying primitive, or post-quantum assumption can be extracted from the located records.
+    source_anchor_ids: [anchor-paper-77-search-gap]
+
+  - id: paper-77-theorem
+    kind: theorem_group
+    parent_id: paper-77
+    order: 7
+    epistemic_status: not_available_for_audit
+    title: "Theorem and proof unavailable"
+    summary: >-
+      The available records do not establish existence, correctness, security, efficiency, or any reduction to a named hardness assumption.
+    source_anchor_ids: [anchor-paper-77-search-gap]
+
+  - id: paper-77-nist-provenance
+    kind: provenance
+    parent_id: paper-77
+    order: 8
+    epistemic_status: administratively_documented
+    title: "NIST ERB record"
+    summary: >-
+      A NIST email records that a manuscript with this title and author list was submitted on March 2, 2021 under ERB Control G2021-0620 and discusses sponsor review before intended conference peer review.
+    source_anchor_ids: [anchor-paper-77-nist-email]
+
+  - id: paper-77-provenance-boundary
+    kind: limitation
+    parent_id: paper-77-nist-provenance
+    order: 1
+    epistemic_status: source_scope_boundary
+    title: "What the email does not establish"
+    summary: >-
+      The email does not provide the manuscript, theorem statements, proof, public release, venue submission identity, acceptance decision, reviewer judgment, or citation evidence.
+    source_anchor_ids: [anchor-paper-77-nist-email]
+
   - id: paper-77-evidence
     kind: evidence_group
     parent_id: paper-77
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "No public manuscript, venue record, formal proof, implementation, experiment, or artifact is represented in the resource data."
-    source_anchor_ids: [anchor-paper-77-curated]
-  - id: paper-77-scope
+    order: 9
+    epistemic_status: no_public_technical_evidence_located
+    title: "Evidence status"
+    summary: "No public proof, formalization, implementation, experiment, or supplementary artifact attributable to this paper was located."
+    source_anchor_ids: [anchor-paper-77-search-gap]
+
+  - id: paper-77-unknowns
     kind: limitation_group
     parent_id: paper-77
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "The adversary class, quantum-access model, point-function domain, auxiliary input, malleation relation, simulation or indistinguishability target, assumptions, and efficiency remain unknown."
-    source_anchor_ids: [anchor-paper-77-curated]
+    order: 10
+    epistemic_status: explicit_unknowns
+    title: "Information needed for a substantive map"
+    summary: >-
+      Manuscript audit must establish the point-obfuscation syntax, correctness and non-malleability games, quantum oracle-access model, assumptions, construction, reduction, parameter loss, efficiency, applications, and relation to prior random-oracle realizations.
+    source_anchor_ids: [anchor-paper-77-search-gap]
+
+  - id: paper-77-search
+    kind: audit_record
+    parent_id: paper-77
+    order: 11
+    epistemic_status: documented_search
+    title: "Public-source search"
+    summary: >-
+      Exact-title, author-title, archive, index, NIST-record, and public-profile searches located administrative provenance but no primary technical source; the provenance record was kept separate from evidence and reception.
+    source_anchor_ids: [anchor-paper-77-nist-email, anchor-paper-77-search-gap]
+
   - id: paper-77-artifacts
     kind: artifact_group
     parent_id: paper-77
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
-    source_anchor_ids: [anchor-paper-77-curated]
+    order: 12
+    epistemic_status: metadata_and_administrative_record_only
+    title: "Available artifacts"
+    summary: "The represented resources are an author-site listing and a NIST administrative email; neither is the manuscript or a technical artifact."
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email]
+
   - id: paper-77-scrutiny
     kind: scrutiny
     parent_id: paper-77
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this item as ongoing work. No completed venue review, public review report, independent reproduction, correction, or adversarial analysis is represented."
-    source_anchor_ids: [anchor-paper-77-curated]
+    order: 13
+    epistemic_status: no_completed_scholarly_scrutiny_located
+    title: "Scrutiny and reception"
+    summary: >-
+      Administrative sponsor review is provenance, not completed scholarly peer review. No venue outcome, public review, reproduction, correction, cryptanalysis, or scholarly citation was located.
+    source_anchor_ids: [anchor-paper-77-nist-email, anchor-paper-77-citations]
 
 relations:
-  - id: paper-77-relation-question-contribution
-    type: motivates
+  - id: paper-77-relation-question-point
+    type: concerns
     from_id: paper-77-question
-    to_id: paper-77-contribution
-  - id: paper-77-relation-method-contribution
-    type: realizes
-    from_id: paper-77-method
-    to_id: paper-77-contribution
-  - id: paper-77-relation-contribution-claims
-    type: grounds
-    from_id: paper-77-contribution
-    to_id: paper-77-claims
-  - id: paper-77-relation-evidence-claims
-    type: supports
-    from_id: paper-77-evidence
-    to_id: paper-77-claims
-  - id: paper-77-relation-scope-claims
+    to_id: paper-77-point-obfuscation
+  - id: paper-77-relation-nonmalleability-qualifies-point
+    type: constrains
+    from_id: paper-77-nonmalleability
+    to_id: paper-77-point-obfuscation
+  - id: paper-77-relation-postquantum-qualifies-nonmalleability
     type: qualifies
-    from_id: paper-77-scope
-    to_id: paper-77-claims
-  - id: paper-77-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-77-artifacts
+    from_id: paper-77-postquantum
+    to_id: paper-77-nonmalleability
+  - id: paper-77-relation-point-targets-random-oracle-goal
+    type: intended_to_support
+    from_id: paper-77-point-obfuscation
+    to_id: paper-77-random-oracle-goal
+  - id: paper-77-relation-construction-would-realize-point
+    type: would_realize
+    from_id: paper-77-construction
+    to_id: paper-77-point-obfuscation
+  - id: paper-77-relation-theorem-would-support-construction
+    type: would_support
+    from_id: paper-77-theorem
+    to_id: paper-77-construction
+  - id: paper-77-relation-nist-contextualizes-paper
+    type: establishes_provenance_for
+    from_id: paper-77-nist-provenance
+    to_id: paper-77
+  - id: paper-77-relation-provenance-boundary-qualifies-nist
+    type: qualifies
+    from_id: paper-77-provenance-boundary
+    to_id: paper-77-nist-provenance
+  - id: paper-77-relation-search-limits-evidence
+    type: limits_audit_of
+    from_id: paper-77-search
     to_id: paper-77-evidence
-  - id: paper-77-relation-scrutiny-claims
+  - id: paper-77-relation-unknowns-qualify-paper
+    type: qualifies
+    from_id: paper-77-unknowns
+    to_id: paper-77
+  - id: paper-77-relation-scrutiny-contextualizes-paper
     type: contextualizes
     from_id: paper-77-scrutiny
-    to_id: paper-77-claims
+    to_id: paper-77
 
 assessment:
   id: paper-77-assessment-2026-07-11
@@ -171,32 +301,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: low
-      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
-      basis_source_anchor_ids: [anchor-paper-77-curated]
+      rationale: "The title and NIST email establish identity, objective, and administrative history, but no manuscript, definition, construction, theorem, proof, or technical artifact was located."
+      basis_source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email, anchor-paper-77-search-gap]
     - id: auditability
       level: low
-      rationale: "No paper-specific official publication record, public archive, or author-hosted copy is represented; full-text assumptions, evidence, artifacts, and version identity cannot presently be audited from this map. Auditability is therefore low."
-      basis_source_anchor_ids: [anchor-paper-77-curated]
+      rationale: "No paper-specific public archive or author-hosted manuscript was located. The NIST email is inspectable provenance but does not expose assumptions, evidence, or version content."
+      basis_source_anchor_ids: [anchor-paper-77-nist-email, anchor-paper-77-search-gap]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-77-curated]
+      rationale: "Named authorship, ongoing-work status, submission date, and ERB control number provide a concrete human and lifecycle trail. Contributor roles, revisions, AI or tool use, and manuscript/artifact lineage remain unaudited."
+      basis_source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email]
     - id: external_scrutiny
-      level: not_assessed
-      rationale: "The item is listed as ongoing work, with no completed external-review record or independent scrutiny evidence represented."
-      basis_source_anchor_ids: [anchor-paper-77-curated]
+      level: low
+      rationale: "The located record documents administrative sponsor review and intended later conference review, not a completed scholarly review outcome or independent technical validation."
+      basis_source_anchor_ids: [anchor-paper-77-nist-email]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-77-curated]
+      level: low
+      rationale: "The dated exact-title search located 0 scholarly citations. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; the NIST email is provenance, not a citation."
+      basis_source_anchor_ids: [anchor-paper-77-citations]
     - id: contribution_significance
       level: not_assessed
-      rationale: "Only a working title, bibliographic listing, and editorially inferred research aim are available; contribution, novelty, priority, and impact cannot yet be assessed."
-      basis_source_anchor_ids: [anchor-paper-77-curated]
+      rationale: "The title describes an ambitious theoretical objective, but result strength, novelty, assumptions, and impact cannot be assessed without technical text."
+      basis_source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: "Exact-title scholarly-web search with administrative mentions excluded"
+  citation_count: 0
+  source_url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: "No public manuscript or stable index record was located. Zero means no scholarly citation was verifiably attributable to the exact title; the NIST email establishes manuscript provenance only."

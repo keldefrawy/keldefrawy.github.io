@@ -11,178 +11,348 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol, algorithm]
 
 title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
-short_title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
 year: 2021
+status: Published
 venue: "28th ACM Conference on Computer and Communications Security (CCS)"
-publication_status: "Published"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
-  - "Applied"
+labels: [Theory, Applied]
 authors:
-  - "José Bacelar Almeida"
-  - "Manuel Barbosa"
-  - "Manuel L. Correia"
-  - "Karim Eldefrawy"
-  - "Stéphane Graham-Lengrand"
-  - "Hugo Pacheco"
-  - "Vitor Pereira"
+  - José Carlos Bacelar Almeida
+  - Manuel Barbosa
+  - Manuel L. Correia
+  - Karim Eldefrawy
+  - Stéphane Graham-Lengrand
+  - Hugo Pacheco
+  - Vitor Pereira
 keywords:
-  - "zero knowledge"
-  - "MPC-in-the-head"
-  - "formal verification"
+  - zero knowledge
+  - MPC-in-the-head
+  - EasyCrypt
+  - formal verification
 
-research_question: "Can the general MPC-in-the-Head transformation for NP zero-knowledge relations be machine checked modularly and yield an executable verified implementation?"
-central_answer: "The curated editorial summary reports an EasyCrypt development that accepts suitable MPC protocols as components, verifies the transformation, and supports executable extraction for benchmarking."
+research_question: >-
+  Can the generic MPC-in-the-Head transformation for NP zero-knowledge relations be specified and proved modularly in a proof assistant, then extracted into an executable verified implementation?
+central_answer: >-
+  The paper formalizes MitH in EasyCrypt with abstract interfaces for secret sharing, MPC, commitments, and zero knowledge; proves completeness, soundness, and zero knowledge; instantiates the framework with five-party BGW and two commitment choices; and extracts benchmarkable OCaml code.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, formal-development mapping, and initial assessment
+  method: >-
+    Complete review of the 29-page arXiv manuscript, including the EasyCrypt interfaces and proof claims, concrete instantiation, extraction paths, benchmarks, appendix, and visual inspection of title and formal-code pages. Machine checking is attributed only to the represented EasyCrypt development; this audit did not rerun it.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Formal-property wording, implementation boundaries, and benchmark transcription should be checked.
 
 sources:
-  - id: source-paper-58-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #58"
-    url: /publications/#paper-58
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-58-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3460120.3484771"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-58-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2021/1149"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-58-archive-pdf
+    type: public_archive_copy
+    title: "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf
+    provenance_category: archive
+    retrieved_from: https://arxiv.org/pdf/2104.05516
+    media_type: application/pdf
+    sha256: ff902956233cac0529a5c1283fcb83fde1c7be887aa32e0ef41a0dda8ef62d78
+    page_count: 29
+  - id: source-paper-58-official
+    type: official_publication_record
+    title: ACM CCS 2021 publication record
+    url: https://doi.org/10.1145/3460120.3484771
+    provenance_category: official
+  - id: source-paper-58-eprint
+    type: public_archive_record
+    title: IACR ePrint 2021/1149
+    url: https://eprint.iacr.org/2021/1149
+    provenance_category: archive
+  - id: source-paper-58-code
+    type: source_code_repository
+    title: High Assurance Zero Knowledge development
+    url: https://github.com/SRI-CSL/high-assurance-crypto/tree/main/high-assurance-zk
+    provenance_category: artifact
+  - id: source-paper-58-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3155472145
+    url: https://api.openalex.org/works/W3155472145
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-58-curated
-    source_id: source-paper-58-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-58
-  - id: anchor-paper-58-official-1
-    source_id: source-paper-58-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1145/3460120.3484771"
-  - id: anchor-paper-58-archive-1
-    source_id: source-paper-58-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2021/1149"
+  - id: anchor-paper-58-problem
+    source_id: source-paper-58-archive-pdf
+    label: MitH motivation and contributions
+    locator: Abstract and Section 1, PDF pages 1-4
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=1
+  - id: anchor-paper-58-preliminaries
+    source_id: source-paper-58-archive-pdf
+    label: Cryptographic definitions and EasyCrypt background
+    locator: Section 3, PDF pages 5-8
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=5
+  - id: anchor-paper-58-zk
+    source_id: source-paper-58-archive-pdf
+    label: ZK syntax, completeness, soundness, and simulation
+    locator: Section 4.1, PDF pages 9-12
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=9
+  - id: anchor-paper-58-mpc
+    source_id: source-paper-58-archive-pdf
+    label: Abstract MPC syntax and privacy
+    locator: Section 4.2, PDF pages 12-14
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=12
+  - id: anchor-paper-58-transformation
+    source_id: source-paper-58-archive-pdf
+    label: Formal MitH transformation and security arguments
+    locator: Sections 4.3-4.4, PDF pages 14-20
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=14
+  - id: anchor-paper-58-instantiation
+    source_id: source-paper-58-archive-pdf
+    label: Five-party BGW arithmetic-circuit instantiation
+    locator: Section 5.1, PDF pages 20-23
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=20
+  - id: anchor-paper-58-commitment
+    source_id: source-paper-58-archive-pdf
+    label: PRF-based commitment proof
+    locator: Section 5.2, PDF pages 23-25
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=23
+  - id: anchor-paper-58-extraction
+    source_id: source-paper-58-archive-pdf
+    label: Verified code extraction paths
+    locator: Section 5.3, PDF page 25
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=25
+  - id: anchor-paper-58-benchmarks
+    source_id: source-paper-58-archive-pdf
+    label: Preliminary performance results
+    locator: Section 5.4 and Table 1, PDF pages 25-26
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=25
+  - id: anchor-paper-58-boundaries
+    source_id: source-paper-58-archive-pdf
+    label: Instantiation and evaluation boundaries
+    locator: Sections 1 and 5, PDF pages 3-4 and 20-26
+    url: /pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf#page=3
+  - id: anchor-paper-58-code
+    source_id: source-paper-58-code
+    label: Public EasyCrypt and extracted-code repository
+    locator: Repository path cited in Section 1; not rebuilt during this audit
+    url: https://github.com/SRI-CSL/high-assurance-crypto/tree/main/high-assurance-zk
+  - id: anchor-paper-58-publication
+    source_id: source-paper-58-official
+    label: Official ACM CCS publication identity
+    locator: DOI 10.1145/3460120.3484771
+    url: https://doi.org/10.1145/3460120.3484771
+  - id: anchor-paper-58-citations
+    source_id: source-paper-58-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 1 citation when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3155472145
 
 nodes:
   - id: paper-58
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
-    summary: "This paper gives the first machine-checked implementation of the general MPC-in-the-Head transformation from secure computation to zero-knowledge proofs. Its modular EasyCrypt proof accepts suitable MPC protocols as components and supports extracting a verified executable implementation for benchmarking."
-    source_anchor_ids: [anchor-paper-58-curated]
+    epistemic_status: published
+    title: "Machine-Checked ZKP for NP Relations"
+    summary: >-
+      A modular EasyCrypt formalization of MPC-in-the-Head, with machine-checked security arguments, concrete five-party arithmetic-circuit instantiation, and extracted executable code.
+    source_anchor_ids: [anchor-paper-58-problem]
+
   - id: paper-58-question
     kind: question
     parent_id: paper-58
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can the general MPC-in-the-Head transformation for NP zero-knowledge relations be machine checked modularly and yield an executable verified implementation?"
-    source_anchor_ids: [anchor-paper-58-curated]
-  - id: paper-58-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can generic MitH proofs and their implementations be connected end to end through machine-checked definitions, modular components, and code extraction?
+    source_anchor_ids: [anchor-paper-58-problem]
+
+  - id: paper-58-answer
     kind: contribution
     parent_id: paper-58
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports an EasyCrypt development that accepts suitable MPC protocols as components, verifies the transformation, and supports executable extraction for benchmarking."
-    source_anchor_ids: [anchor-paper-58-curated]
-  - id: paper-58-method
-    kind: method
+    epistemic_status: machine_checked_and_extracted
+    title: Central answer
+    summary: >-
+      Specify each cryptographic layer as an EasyCrypt interface, prove the generic transformation once, instantiate its assumptions with verified components, and extract the resulting concrete protocol into OCaml.
+    source_anchor_ids: [anchor-paper-58-transformation, anchor-paper-58-instantiation, anchor-paper-58-extraction]
+
+  - id: paper-58-scope
+    kind: scope
     parent_id: paper-58
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described method formalizes the generic transformation and its component interfaces in EasyCrypt, proves security modularly, and extracts executable code."
-    source_anchor_ids: [anchor-paper-58-curated]
+    epistemic_status: explicitly_scoped
+    title: Concrete instantiation
+    summary: >-
+      The represented executable uses Shamir sharing and five-party BGW arithmetic-circuit evaluation tolerating two semi-honest corruptions; the abstract framework permits other components, but those alternatives are not all verified here.
+    source_anchor_ids: [anchor-paper-58-problem, anchor-paper-58-instantiation]
+
+  - id: paper-58-protocol
+    kind: protocol
+    parent_id: paper-58
+    order: 4
+    epistemic_status: formally_specified
+    title: Commit-challenge-response MitH
+    summary: >-
+      The prover emulates an MPC evaluation on shared witness data, commits to party views, opens a verifier-selected subset, and is accepted when the views are pairwise consistent and produce an accepting circuit result.
+    source_anchor_ids: [anchor-paper-58-zk, anchor-paper-58-transformation]
+
+  - id: paper-58-framework
+    kind: method
+    parent_id: paper-58
+    order: 5
+    epistemic_status: machine_checked
+    title: Modular EasyCrypt framework
+    summary: >-
+      Abstract theories define ZK protocols, relations, secret sharing, MPC circuits, party views, commitments, adversaries, simulators, and games; concrete clones discharge the interfaces and inherit the generic result.
+    source_anchor_ids: [anchor-paper-58-preliminaries, anchor-paper-58-zk, anchor-paper-58-mpc]
+
   - id: paper-58-claims
     kind: claim_group
     parent_id: paper-58
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports a first machine-checked implementation of the general transformation together with a modular proof and benchmarkable extracted implementation."
-    source_anchor_ids: [anchor-paper-58-curated]
-  - id: paper-58-evidence
-    kind: evidence_group
-    parent_id: paper-58
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Machine-checked proofs, executable extraction, and benchmarking are reported; the EasyCrypt development, component obligations, trusted computing base, extraction path, and results were not independently inspected."
-    source_anchor_ids: [anchor-paper-58-curated]
-  - id: paper-58-scope
-    kind: limitation_group
-    parent_id: paper-58
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not audited which NP relations and MPC protocols satisfy the interfaces, the exact security definitions and assumptions, extraction correctness, side channels, or benchmark representativeness."
-    source_anchor_ids: [anchor-paper-58-curated]
-  - id: paper-58-artifacts
-    kind: artifact_group
+    epistemic_status: machine_checked
+    title: Verified security properties
+    summary: >-
+      The development proves perfect completeness, concrete single-execution soundness and zero-knowledge bounds, and repetition meta-arguments in EasyCrypt rather than idealizing the commitment layer away.
+    source_anchor_ids: [anchor-paper-58-zk, anchor-paper-58-transformation]
+
+  - id: paper-58-claim-completeness
+    kind: claim
+    parent_id: paper-58-claims
+    order: 1
+    epistemic_status: machine_checked
+    title: Perfect completeness
+    summary: >-
+      For a valid witness-statement pair and honest randomness, the formal protocol's verifier accepts with probability one.
+    source_anchor_ids: [anchor-paper-58-zk, anchor-paper-58-transformation]
+
+  - id: paper-58-claim-soundness-zk
+    kind: claim
+    parent_id: paper-58-claims
+    order: 2
+    epistemic_status: machine_checked_under_component_assumptions
+    title: Soundness and zero knowledge
+    summary: >-
+      Soundness follows from MPC correctness and commitment binding, while simulation-based zero knowledge follows from privacy of the opened MPC views and commitment hiding; repetition reduces the one-shot error under the formalized meta-argument.
+    source_anchor_ids: [anchor-paper-58-zk, anchor-paper-58-transformation]
+
+  - id: paper-58-components
+    kind: method
     parent_id: paper-58
     order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-58-curated, anchor-paper-58-official-1, anchor-paper-58-archive-1]
+    epistemic_status: concretely_instantiated
+    title: Verified arithmetic-circuit components
+    summary: >-
+      The concrete stack fixes five BGW parties, Shamir sharing, addition, multiplication, scalar multiplication, and refresh gates over a finite field, and proves circuit correctness and two-view privacy compositionally.
+    source_anchor_ids: [anchor-paper-58-instantiation]
+
+  - id: paper-58-commitments
+    kind: algorithm
+    parent_id: paper-58-components
+    order: 1
+    epistemic_status: machine_checked
+    title: Pedersen and PRF commitment choices
+    summary: >-
+      One path reuses Pedersen commitments; a faster path commits to a whole serialized view with a collision-resistant PRF instantiated by HMAC/SHA-256, with EasyCrypt reductions for binding and hiding.
+    source_anchor_ids: [anchor-paper-58-commitment]
+
+  - id: paper-58-extraction
+    kind: artifact_group
+    parent_id: paper-58
+    order: 8
+    epistemic_status: verified_code_extracted
+    title: Executable extraction
+    summary: >-
+      An EasyCrypt extraction tool produces OCaml from concrete specifications. The efficient path manually preserves the modular scaffold while automatically extracting concrete components, a boundary distinct from fully automatic end-to-end module extraction.
+    source_anchor_ids: [anchor-paper-58-extraction, anchor-paper-58-code]
+
+  - id: paper-58-benchmarks
+    kind: evidence
+    parent_id: paper-58
+    order: 9
+    epistemic_status: preliminary_measurement
+    title: Preliminary benchmark evidence
+    summary: >-
+      Small arithmetic circuits are benchmarked on a 2016 dual-core MacBook Pro. The SHA-256 commitment path substantially reduces commit and verify time relative to Pedersen in the reported examples, but the experiments are not application-scale.
+    source_anchor_ids: [anchor-paper-58-benchmarks]
+
+  - id: paper-58-boundaries
+    kind: limitation_group
+    parent_id: paper-58
+    order: 10
+    epistemic_status: material
+    title: Boundaries
+    summary: >-
+      The concrete protocol fixes five parties and passive two-party corruption, evaluates arithmetic circuits represented as less-efficient trees, benchmarks only tiny circuits, and leaves actively secure or highly optimized MitH families and low-level optimized arithmetic to future work.
+    source_anchor_ids: [anchor-paper-58-problem, anchor-paper-58-instantiation, anchor-paper-58-benchmarks, anchor-paper-58-boundaries]
+
+  - id: paper-58-resources
+    kind: artifact_group
+    parent_id: paper-58
+    order: 11
+    epistemic_status: publicly_available
+    title: Auditable paper and development
+    summary: >-
+      The complete checked-in arXiv source has fixity metadata, the IACR ePrint and ACM DOI establish version identities, and the linked repository exposes formalization and extracted code. This audit did not rerun EasyCrypt or benchmarks.
+    source_anchor_ids: [anchor-paper-58-code, anchor-paper-58-publication]
+
   - id: paper-58-scrutiny
     kind: scrutiny
     parent_id: paper-58
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 28th ACM Conference on Computer and Communications Security (CCS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-58-official-1]
+    order: 12
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared at ACM CCS 2021 and makes its formal development public. Review reports and independent reproduction are not linked.
+    source_anchor_ids: [anchor-paper-58-publication, anchor-paper-58-code]
+
+  - id: paper-58-lineage
+    kind: lineage
+    parent_id: paper-58
+    order: 13
+    epistemic_status: documented
+    title: Builds on verified MPC extraction
+    summary: >-
+      The work reuses the earlier high-assurance BGW development and extraction mechanism, then lifts them through a generic MitH transformation to verified zero-knowledge protocols.
+    source_anchor_ids: [anchor-paper-58-problem, anchor-paper-58-instantiation]
 
 relations:
-  - id: paper-58-relation-question-contribution
-    type: motivates
-    from_id: paper-58-question
-    to_id: paper-58-contribution
-  - id: paper-58-relation-method-contribution
+  - id: paper-58-relation-answer-question
+    type: addresses
+    from_id: paper-58-answer
+    to_id: paper-58-question
+  - id: paper-58-relation-framework-answer
     type: realizes
-    from_id: paper-58-method
-    to_id: paper-58-contribution
-  - id: paper-58-relation-contribution-claims
-    type: grounds
-    from_id: paper-58-contribution
-    to_id: paper-58-claims
-  - id: paper-58-relation-evidence-claims
+    from_id: paper-58-framework
+    to_id: paper-58-answer
+  - id: paper-58-relation-protocol-framework
+    type: instantiated_by
+    from_id: paper-58-protocol
+    to_id: paper-58-framework
+  - id: paper-58-relation-components-protocol
+    type: instantiates
+    from_id: paper-58-components
+    to_id: paper-58-protocol
+  - id: paper-58-relation-commitments-components
+    type: component_of
+    from_id: paper-58-commitments
+    to_id: paper-58-components
+  - id: paper-58-relation-claims-protocol
     type: supports
-    from_id: paper-58-evidence
-    to_id: paper-58-claims
-  - id: paper-58-relation-scope-claims
+    from_id: paper-58-claims
+    to_id: paper-58-protocol
+  - id: paper-58-relation-extraction-answer
+    type: realizes
+    from_id: paper-58-extraction
+    to_id: paper-58-answer
+  - id: paper-58-relation-benchmarks-extraction
+    type: evaluates
+    from_id: paper-58-benchmarks
+    to_id: paper-58-extraction
+  - id: paper-58-relation-boundaries-claims
     type: qualifies
-    from_id: paper-58-scope
-    to_id: paper-58-claims
-  - id: paper-58-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-58-artifacts
-    to_id: paper-58-evidence
-  - id: paper-58-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-58-scrutiny
+    from_id: paper-58-boundaries
     to_id: paper-58-claims
 
 assessment:
@@ -190,36 +360,44 @@ assessment:
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-58-curated, anchor-paper-58-official-1, anchor-paper-58-archive-1]
+      level: high
+      rationale: >-
+        The paper links formal definitions, machine-checked proofs, concrete verified components, executable extraction, public code, and preliminary measurements, while stating the concrete instantiation's limits.
+      basis_source_anchor_ids: [anchor-paper-58-transformation, anchor-paper-58-instantiation, anchor-paper-58-extraction, anchor-paper-58-benchmarks]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-58-curated, anchor-paper-58-official-1, anchor-paper-58-archive-1]
+      rationale: >-
+        A checked-in full manuscript with page count and SHA-256, archive and DOI identities, and a public formal-development repository make the evidence directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-58-problem, anchor-paper-58-code, anchor-paper-58-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-58-curated]
+      rationale: >-
+        Authors, venue, archive versions, repository, toolchain, and benchmark machine are documented, but exact commit-to-paper correspondence and contributor roles are not fully captured.
+      basis_source_anchor_ids: [anchor-paper-58-code, anchor-paper-58-publication, anchor-paper-58-benchmarks]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-58-official-1]
+      rationale: >-
+        ACM CCS publication and public source provide external exposure, but review reports and an independent rerun are not represented.
+      basis_source_anchor_ids: [anchor-paper-58-publication, anchor-paper-58-code]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-58-curated]
+      level: low
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 1 citation. Under the author-defined rule, 0 through 8 located citations is Low; counts vary by index and date.
+      basis_source_anchor_ids: [anchor-paper-58-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-58-curated]
+      rationale: >-
+        The source claims the first end-to-end machine-checked MitH development for general NP relations, but independent priority and broad downstream uptake are not established by this map.
+      basis_source_anchor_ids: [anchor-paper-58-problem, anchor-paper-58-boundaries]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup
+  citation_count: 1
+  source_url: https://api.openalex.org/works/W3155472145
+  signals:
+    - The exact DOI-matched OpenAlex work reported one citing work.
+  limitation: Citation indexes may merge or split arXiv, IACR ePrint, and ACM versions differently.

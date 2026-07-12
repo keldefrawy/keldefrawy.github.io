@@ -18,151 +18,247 @@ labels: ["Theory"]
 authors: ["Claude Castelluccia", "Karim Eldefrawy", "Gene Tsudik"]
 keywords: ["network coding", "link-layer encryption", "wireless capacity"]
 
-research_question: "How does link-layer encryption intended to hide wireless traffic patterns affect the multicast capacity obtainable from network coding?"
-central_answer: "The paper models the interaction and reports that link-layer encryption can sharply reduce achievable multicast capacity, exposing a security-throughput tradeoff."
+research_question: >-
+  Under a probabilistic wireless-network model, how does partitioning neighbors into link-layer encryption groups change the multicast capacity achievable through wireless network coding?
+central_answer: >-
+  The analysis places high-probability bounds around the relevant cuts and shows that encryption-group membership thins usable overhearing links. Encryption among relays can preserve much of the coding benefit when the source cut remains rich, whereas encrypting source-neighbor links can directly reduce the bottleneck capacity.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, claim decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete checked-in paper, its publisher record, and a dated scholarly-index search. Theorems are summarized conditionally rather than independently re-proved."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-11-site-record
-    type: curated_record
-    title: "Curated publication record for paper #11"
-    url: /publications/#paper-11
-  - id: source-paper-11-official-1
+  - id: source-paper-11-paper
+    type: scholarly_article
+    title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf
+    media_type: application/pdf
+    sha256: 2f27222fc38f8d39184f2174fc9b3fa9bd8f03c43fce827b9cbf5c829c9d4ac2
+    page_count: 5
+    provenance_category: author
+    retrieved_at: "2026-07-11"
+    retrieved_from_url: "https://archimedes-12-vagrant.ics.uci.edu/pubs/karim-wireless-net-code-ll-enc.pdf"
+  - id: source-paper-11-official
     type: publication_record
-    title: "Publisher / DOI"
+    title: "IEEE INFOCOM Workshops publisher record"
     url: "https://doi.org/10.1109/INFCOMW.2010.5466615"
-  - id: source-paper-11-author-1
-    type: author_copy
-    title: "Author-hosted paper"
-    url: "https://archimedes-12-vagrant.ics.uci.edu/pubs/karim-wireless-net-code-ll-enc.pdf"
+  - id: source-paper-11-citations
+    type: citation_index_search
+    title: "Dated targeted scholarly-index search"
+    url: "https://scholar.google.com/scholar?q=%22Link-Layer+Encryption+Effect+on+Achievable+Capacity+in+Wireless+Network+Coding%22"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-11-site-record
-    source_id: source-paper-11-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-11
-  - id: anchor-paper-11-official-1
-    source_id: source-paper-11-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-11-question
+    source_id: source-paper-11-paper
+    label: "Problem, motivation, and contribution"
+    locator: "Abstract and Section I, PDF page 1"
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf#page=1
+  - id: anchor-paper-11-context
+    source_id: source-paper-11-paper
+    label: "Wireless network coding and link-layer encryption interaction"
+    locator: "Section II, PDF pages 1-2"
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf#page=1
+  - id: anchor-paper-11-model
+    source_id: source-paper-11-paper
+    label: "Graph, encryption-group, and connectivity model"
+    locator: "Sections III-IV.B, PDF page 3"
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf#page=3
+  - id: anchor-paper-11-theorem-one
+    source_id: source-paper-11-paper
+    label: "Cut-capacity concentration bound"
+    locator: "Section IV.C, Theorem 1, PDF page 4"
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf#page=4
+  - id: anchor-paper-11-theorem-two
+    source_id: source-paper-11-paper
+    label: "High-probability bounds on achievable multicast capacity"
+    locator: "Section IV.C, Theorem 2, PDF pages 4-5"
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf#page=4
+  - id: anchor-paper-11-implications
+    source_id: source-paper-11-paper
+    label: "Placement implications and explicit open issues"
+    locator: "Sections IV.C-V, PDF page 5"
+    url: /pubs/2010/link-layer-encryption-network-coding-infocomw2010.pdf#page=5
+  - id: anchor-paper-11-publication
+    source_id: source-paper-11-official
+    label: "Official workshop publication record"
+    locator: "IEEE INFOCOM Workshops 2010, DOI record"
     url: "https://doi.org/10.1109/INFCOMW.2010.5466615"
-  - id: anchor-paper-11-author-1
-    source_id: source-paper-11-author-1
-    label: "Author-hosted paper"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://archimedes-12-vagrant.ics.uci.edu/pubs/karim-wireless-net-code-ll-enc.pdf"
+  - id: anchor-paper-11-citations
+    source_id: source-paper-11-citations
+    label: "Citation search snapshot"
+    locator: "Targeted exact-title search performed 2026-07-11; no stable attributable citation count was located. This is a search result, not evidence that the paper has never been cited."
+    url: "https://scholar.google.com/scholar?q=%22Link-Layer+Encryption+Effect+on+Achievable+Capacity+in+Wireless+Network+Coding%22"
 
 nodes:
   - id: paper-11
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
-    summary: "This paper analyzes how link-layer encryption, used to hide traffic patterns even when end-to-end encryption is present, interacts with wireless network coding. Its model shows that link-layer encryption can sharply reduce achievable multicast capacity and exposes a security-throughput tradeoff for coded wireless networks."
-    source_anchor_ids: [anchor-paper-11-site-record]
+    epistemic_status: published
+    title: "Link-layer encryption and coded-wireless capacity"
+    summary: "A model-based study of how encryption groups constrain the broadcast overhearing on which wireless network coding relies."
+    source_anchor_ids: [anchor-paper-11-question]
 
   - id: paper-11-question
     kind: question
     parent_id: paper-11
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How does link-layer encryption intended to hide wireless traffic patterns affect the multicast capacity obtainable from network coding?"
-    source_anchor_ids: [anchor-paper-11-site-record]
+    summary: "How much multicast capacity is lost when nodes can code only across transmissions visible inside their link-layer encryption groups?"
+    source_anchor_ids: [anchor-paper-11-question, anchor-paper-11-context]
 
   - id: paper-11-answer
     kind: contribution
     parent_id: paper-11
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper models the interaction and reports that link-layer encryption can sharply reduce achievable multicast capacity, exposing a security-throughput tradeoff."
-    source_anchor_ids: [anchor-paper-11-site-record]
+    epistemic_status: source_asserted
+    title: "Central answer"
+    summary: "Encryption probabilistically removes usable overhearing relationships and can reduce the minimum cut; the most damaging placement is at the source-side cut, while encryption among relays may retain the coding benefit under the model's connectivity conditions."
+    source_anchor_ids: [anchor-paper-11-theorem-two, anchor-paper-11-implications]
+
+  - id: paper-11-scope
+    kind: scope
+    parent_id: paper-11
+    order: 3
+    epistemic_status: explicitly_scoped
+    title: "Network and security scope"
+    summary: "The paper studies single-source multicast on a quasi-random wireless graph with bidirectional unit-capacity links and probabilistic physical and encryption-group connectivity."
+    source_anchor_ids: [anchor-paper-11-model]
+
+  - id: paper-11-scope-security
+    kind: assumption
+    parent_id: paper-11-scope
+    order: 1
+    epistemic_status: assumed
+    title: "Encryption-group visibility"
+    summary: "A transmission is usable by network coding only among neighbors sharing the relevant link-layer key group; the analysis abstracts away concrete key-establishment and cipher details."
+    source_anchor_ids: [anchor-paper-11-context, anchor-paper-11-model]
+
+  - id: paper-11-scope-network
+    kind: assumption
+    parent_id: paper-11-scope
+    order: 2
+    epistemic_status: assumed
+    title: "Random connectivity model"
+    summary: "Physical adjacency and encryption-group membership are represented by fixed probabilities, with independence assumptions that enable concentration bounds."
+    source_anchor_ids: [anchor-paper-11-model, anchor-paper-11-theorem-one]
 
   - id: paper-11-method
     kind: method
     parent_id: paper-11
-    order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Analyze coded wireless multicast under link-layer encryption and compare achievable capacity with the unencrypted link-layer setting."
-    source_anchor_ids: [anchor-paper-11-site-record]
-
-  - id: paper-11-claims
-    kind: claim_group
-    parent_id: paper-11
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "Within the reported model, hiding link-level traffic through encryption can substantially reduce the throughput benefit of wireless network coding."
-    source_anchor_ids: [anchor-paper-11-site-record]
+    epistemic_status: analytic
+    title: "Cut-based probabilistic analysis"
+    summary: "The method converts link-layer-secure wireless coding into a random graph and bounds source-to-terminal cuts using lower-tail concentration and an explicit source-cut upper bound."
+    source_anchor_ids: [anchor-paper-11-model, anchor-paper-11-theorem-one, anchor-paper-11-theorem-two]
+
+  - id: paper-11-claim-concentration
+    kind: formal_claim
+    parent_id: paper-11
+    order: 5
+    epistemic_status: theorem_in_source
+    title: "Cut-capacity concentration"
+    summary: "Theorem 1 lower-bounds the probability that a fixed cut's random capacity does not fall substantially below its expectation, conditional on the paper's model and independence assumptions."
+    source_anchor_ids: [anchor-paper-11-theorem-one]
+
+  - id: paper-11-claim-capacity
+    kind: formal_claim
+    parent_id: paper-11
+    order: 6
+    epistemic_status: theorem_in_source
+    title: "Achievable-capacity interval"
+    summary: "Theorem 2 places the minimum-cut—and therefore the multicast rate available to network coding—between high-probability lower and source-cut upper bounds in the stated random topology."
+    source_anchor_ids: [anchor-paper-11-theorem-two]
 
   - id: paper-11-evidence
     kind: evidence_group
     parent_id: paper-11
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports a model-based capacity analysis; model assumptions, derivations, bounds, and any empirical validation have not been source-audited."
-    source_anchor_ids: [anchor-paper-11-site-record]
+    order: 7
+    epistemic_status: analytic_derivation
+    title: "Evidence and proof path"
+    summary: "Support consists of the random-graph construction, cut expectations, concentration reasoning, and source-cut comparison. The paper does not report an implementation, testbed, or simulation validating the model."
+    source_anchor_ids: [anchor-paper-11-model, anchor-paper-11-theorem-one, anchor-paper-11-theorem-two]
+
+  - id: paper-11-interpretation
+    kind: implication
+    parent_id: paper-11
+    order: 8
+    epistemic_status: source_interpretation
+    title: "Design implication"
+    summary: "Protecting relay-to-relay traffic can limit exposed traffic patterns without necessarily destroying coded throughput, but reducing source-neighbor visibility can make the source cut the bottleneck."
+    source_anchor_ids: [anchor-paper-11-implications]
 
   - id: paper-11-limitations
     kind: limitation_group
     parent_id: paper-11
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The available record does not establish the magnitude of the tradeoff for arbitrary topologies, coding strategies, traffic distributions, or concrete encryption deployments."
-    source_anchor_ids: [anchor-paper-11-site-record]
+    order: 9
+    epistemic_status: explicitly_reported
+    title: "Boundaries and open problems"
+    summary: "The paper assumes uniform fixed probabilities, omits interference and fading, and restricts itself to single-source multicast; heterogeneous keying and other traffic patterns remain open."
+    source_anchor_ids: [anchor-paper-11-implications]
 
-  - id: paper-11-resources
+  - id: paper-11-artifacts
     kind: artifact_group
     parent_id: paper-11
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Author-hosted paper. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-11-official-1, anchor-paper-11-author-1]
+    order: 10
+    epistemic_status: paper_only
+    title: "Artifacts"
+    summary: "The auditable artifact located for this map is the five-page author-hosted paper; no code, dataset, or experiment artifact is claimed."
+    source_anchor_ids: [anchor-paper-11-question]
 
   - id: paper-11-scrutiny
     kind: scrutiny
     parent_id: paper-11
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · workshop paper at IEEE INFOCOM Workshops. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-11-site-record, anchor-paper-11-official-1]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: "External scrutiny"
+    summary: "The work appeared in IEEE INFOCOM Workshops. Review reports, corrections, and an independent reproduction of the bounds were not located in this audit."
+    source_anchor_ids: [anchor-paper-11-publication]
+
+  - id: paper-11-lineage
+    kind: lineage
+    parent_id: paper-11
+    order: 12
+    epistemic_status: documented_in_source
+    title: "Research lineage"
+    summary: "The paper connects two previously separate design concerns—traffic-analysis resistance from link-layer encryption and throughput gains from wireless network coding—and frames their interaction as a capacity tradeoff."
+    source_anchor_ids: [anchor-paper-11-question, anchor-paper-11-context]
 
 relations:
-  - id: paper-11-relation-method-supports-answer
+  - id: paper-11-relation-method-supports-concentration
     type: supports
     from_id: paper-11-method
-    to_id: paper-11-answer
-  - id: paper-11-relation-evidence-supports-claim
+    to_id: paper-11-claim-concentration
+  - id: paper-11-relation-concentration-supports-capacity
     type: supports
-    from_id: paper-11-evidence
-    to_id: paper-11-claims
-  - id: paper-11-relation-limitations-qualify-claim
+    from_id: paper-11-claim-concentration
+    to_id: paper-11-claim-capacity
+  - id: paper-11-relation-capacity-supports-answer
+    type: supports
+    from_id: paper-11-claim-capacity
+    to_id: paper-11-answer
+  - id: paper-11-relation-scope-qualifies-capacity
+    type: qualifies
+    from_id: paper-11-scope-network
+    to_id: paper-11-claim-capacity
+  - id: paper-11-relation-limitations-qualify-answer
     type: qualifies
     from_id: paper-11-limitations
-    to_id: paper-11-claims
-  - id: paper-11-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-11-scrutiny
-    to_id: paper-11
+    to_id: paper-11-answer
+  - id: paper-11-relation-claim-motivates-interpretation
+    type: motivates
+    from_id: paper-11-claim-capacity
+    to_id: paper-11-interpretation
 
 assessment:
   id: paper-11-assessment-2026-07-11
@@ -173,32 +269,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports a model-based capacity analysis; model assumptions, derivations, bounds, and any empirical validation have not been source-audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-11-site-record]
+      rationale: "Two theorem-level probabilistic bounds and their derivations support the result within an explicit model, but the model is simplified and no simulation, testbed, or independent re-derivation is included."
+      basis_source_anchor_ids: [anchor-paper-11-model, anchor-paper-11-theorem-one, anchor-paper-11-theorem-two, anchor-paper-11-implications]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-11-official-1, anchor-paper-11-author-1]
+      rationale: "A complete author-hosted paper is checked into the site with its source route, page count, and SHA-256 identity recorded; assumptions and derivations are directly inspectable. No executable artifact or independent reproduction is available."
+      basis_source_anchor_ids: [anchor-paper-11-question, anchor-paper-11-theorem-two]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-11-site-record]
+      rationale: "Named authorship and a formal publication record establish baseline provenance. Contributor roles, drafting history, artifact lineage, and tool use are not documented in the audited sources."
+      basis_source_anchor_ids: [anchor-paper-11-question, anchor-paper-11-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE INFOCOM Workshops, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-11-official-1]
+      rationale: "Publication at IEEE INFOCOM Workshops indicates venue scrutiny, but review reports, corrections, independent proof checking, and replication were not located."
+      basis_source_anchor_ids: [anchor-paper-11-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-11-site-record]
+      level: low
+      rationale: "The dated targeted search did not expose a stable count attributable to this exact paper. Under the map's reception rubric, zero located citations falls in the low band; this does not assert that the paper has never been cited."
+      basis_source_anchor_ids: [anchor-paper-11-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: Within the reported model, hiding link-level traffic through encryption can substantially reduce the throughput benefit of wireless network coding. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-11-site-record]
+      rationale: "The work formalizes a concrete and underexplored security-throughput interaction, but its scope is a simplified single-source multicast model and field-level impact is not established by this audit."
+      basis_source_anchor_ids: [anchor-paper-11-question, anchor-paper-11-theorem-two, anchor-paper-11-implications]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: targeted_exact_title_scholarly_index_search
+  citation_count: 0
+  source: "Google Scholar exact-title query and general scholarly web search"
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "No stable citation count attributable to the exact paper was surfaced. The value records citations located by this audit, not a claim of zero lifetime citations; index coverage and version matching may differ."

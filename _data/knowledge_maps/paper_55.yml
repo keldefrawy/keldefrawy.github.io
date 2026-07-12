@@ -11,159 +11,348 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol]
 
 title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
-short_title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
 year: 2020
+status: Published
 venue: "12th Conference on Security and Cryptography for Networks (SCN)"
-publication_status: "Published"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
+labels: [Theory]
 authors:
-  - "Karim Eldefrawy"
-  - "Seoyeon Hwang"
-  - "Rafail Ostrovsky"
-  - "Moti Yung"
+  - Karim Eldefrawy
+  - Seoyeon Hwang
+  - Rafail Ostrovsky
+  - Moti Yung
 keywords:
-  - "proactive MPC"
-  - "general adversary structures"
-  - "dynamic groups"
+  - proactive MPC
+  - general adversary structures
+  - dynamic groups
+  - monotone span programs
 
-research_question: "Can proactive secure multiparty computation efficiently support changing memberships and non-threshold corruption patterns that themselves vary over time?"
-central_answer: "The curated editorial summary reports conversions between additive sharing and monotone-span-program sharing that support refresh, recovery, membership changes, and adaptation to dynamic general adversary structures."
+research_question: >-
+  Can proactive secure multiparty computation remain communication-aware when corruption patterns are non-threshold, the general adversary structure changes over time, and parties join or leave?
+central_answer: >-
+  The paper proactivizes both additive-sharing and monotone-span-program MPC, adds refresh, recovery, and redistribution for dynamic groups, and introduces secure conversions between the two representations so a system can select the one better suited to the current adversary structure.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, formal-claim mapping, and initial assessment
+  method: >-
+    Complete review of the 41-page IACR ePrint PDF through the public archive renderer, including the model, protocols, complexity statements, ideal functionalities, and appendical proofs. A direct local download was attempted but IACR returned an anti-bot HTML challenge; therefore this map records archive and author-hosted URLs without claiming local PDF fixity.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Protocol roles, dimensions, and complexity expressions should be checked against the typeset source.
 
 sources:
-  - id: source-paper-55-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #55"
-    url: /publications/#paper-55
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-55-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-030-57990-6_6"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-55-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2020/747"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-55-archive-pdf
+    type: public_archive_copy
+    title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
+    url: https://eprint.iacr.org/2020/747.pdf
+    provenance_category: archive
+    media_type: application/pdf
+    page_count: 41
+  - id: source-paper-55-author-copy
+    type: author_hosted_copy
+    title: ResearchGate author-uploaded full text
+    url: https://www.researchgate.net/publication/343112200_Communication-Efficient_Proactive_Secure_Computation_for_Dynamic_General_Adversary_Structures_and_Dynamic_Groups
+    provenance_category: author
+  - id: source-paper-55-official
+    type: official_publication_record
+    title: SCN 2020 publisher record
+    url: https://doi.org/10.1007/978-3-030-57990-6_6
+    provenance_category: official
+  - id: source-paper-55-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3037463771
+    url: https://api.openalex.org/works/W3037463771
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-55-curated
-    source_id: source-paper-55-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-55
-  - id: anchor-paper-55-official-1
-    source_id: source-paper-55-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-030-57990-6_6"
-  - id: anchor-paper-55-archive-1
-    source_id: source-paper-55-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2020/747"
+  - id: anchor-paper-55-problem
+    source_id: source-paper-55-archive-pdf
+    label: Problem, contributions, and structure-adaptive objective
+    locator: Abstract and Section 1, PDF pages 1-3
+    url: https://eprint.iacr.org/2020/747.pdf#page=1
+  - id: anchor-paper-55-author-copy
+    source_id: source-paper-55-author-copy
+    label: Author-uploaded full text
+    locator: ResearchGate public full-text record uploaded by an author
+    url: https://www.researchgate.net/publication/343112200_Communication-Efficient_Proactive_Secure_Computation_for_Dynamic_General_Adversary_Structures_and_Dynamic_Groups
+  - id: anchor-paper-55-blueprint
+    source_id: source-paper-55-archive-pdf
+    label: Dynamic PMPC blueprint and design roadblocks
+    locator: Sections 3.1-3.2, PDF pages 4-6
+    url: https://eprint.iacr.org/2020/747.pdf#page=4
+  - id: anchor-paper-55-model
+    source_id: source-paper-55-archive-pdf
+    label: Phase model, communication, and general adversary structures
+    locator: Sections 4.1-4.3, PDF pages 6-8
+    url: https://eprint.iacr.org/2020/747.pdf#page=6
+  - id: anchor-paper-55-overview
+    source_id: source-paper-55-archive-pdf
+    label: Two PMPC representations and conversion strategy
+    locator: Section 5 introduction, PDF pages 8-9
+    url: https://eprint.iacr.org/2020/747.pdf#page=8
+  - id: anchor-paper-55-additive
+    source_id: source-paper-55-archive-pdf
+    label: Additive-sharing PMPC protocols
+    locator: Section 5.1, PDF pages 9-12
+    url: https://eprint.iacr.org/2020/747.pdf#page=9
+  - id: anchor-paper-55-msp
+    source_id: source-paper-55-archive-pdf
+    label: MSP-based PMPC protocols
+    locator: Section 5.2, PDF pages 12-17
+    url: https://eprint.iacr.org/2020/747.pdf#page=12
+  - id: anchor-paper-55-convert
+    source_id: source-paper-55-archive-pdf
+    label: Share conversion between additive and MSP representations
+    locator: Section 5.3, PDF pages 17-19
+    url: https://eprint.iacr.org/2020/747.pdf#page=17
+  - id: anchor-paper-55-proofs
+    source_id: source-paper-55-archive-pdf
+    label: Protocol specifications, simulators, and proofs
+    locator: Appendices B-F, PDF pages 24-41
+    url: https://eprint.iacr.org/2020/747.pdf#page=24
+  - id: anchor-paper-55-boundaries
+    source_id: source-paper-55-archive-pdf
+    label: Representation-size, scheduling, and communication boundaries
+    locator: Sections 3.1-3.2 and 4.2, PDF pages 4-7
+    url: https://eprint.iacr.org/2020/747.pdf#page=4
+  - id: anchor-paper-55-publication
+    source_id: source-paper-55-official
+    label: Official SCN publication identity
+    locator: DOI 10.1007/978-3-030-57990-6_6
+    url: https://doi.org/10.1007/978-3-030-57990-6_6
+  - id: anchor-paper-55-citations
+    source_id: source-paper-55-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 3 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3037463771
 
 nodes:
   - id: paper-55
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
-    summary: "This paper designs proactive MPC for changing groups and non-threshold corruption patterns described by dynamic general adversary structures. Efficient conversions between additive sharing and monotone-span-program sharing support refreshing, recovery, membership changes, and adaptation to the current threat structure."
-    source_anchor_ids: [anchor-paper-55-curated]
+    summary: >-
+      A formal protocol suite for proactive MPC under changing non-threshold adversary structures and participant sets, with conversions between additive and MSP secret-sharing representations.
+    source_anchor_ids: [anchor-paper-55-problem]
+
   - id: paper-55-question
     kind: question
     parent_id: paper-55
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can proactive secure multiparty computation efficiently support changing memberships and non-threshold corruption patterns that themselves vary over time?"
-    source_anchor_ids: [anchor-paper-55-curated]
-  - id: paper-55-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      How can long-lived MPC adapt its security encoding when both the parties and the allowed corruption subsets change over time?
+    source_anchor_ids: [anchor-paper-55-problem]
+
+  - id: paper-55-answer
     kind: contribution
     parent_id: paper-55
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports conversions between additive sharing and monotone-span-program sharing that support refresh, recovery, membership changes, and adaptation to dynamic general adversary structures."
-    source_anchor_ids: [anchor-paper-55-curated]
-  - id: paper-55-method
-    kind: method
+    epistemic_status: source_asserted
+    title: Structure-adaptive PMPC
+    summary: >-
+      Maintain two proactive MPC realizations with different communication profiles and securely convert shares between them whenever the current general adversary structure makes the alternative representation preferable.
+    source_anchor_ids: [anchor-paper-55-overview, anchor-paper-55-convert]
+
+  - id: paper-55-scope
+    kind: scope
     parent_id: paper-55
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described construction uses multiple secret-sharing representations and conversion procedures to implement proactive maintenance and computation for dynamic parties and adversary structures."
-    source_anchor_ids: [anchor-paper-55-curated]
+    epistemic_status: defined
+    title: Communication and phase model
+    summary: >-
+      Parties use a synchronous network with authenticated broadcast and point-to-point channels. Operational and refresh phases alternate; a mobile adversary may change its corruption set subject to the current general adversary structure.
+    source_anchor_ids: [anchor-paper-55-model]
+
+  - id: paper-55-scope-gas
+    kind: threat_model
+    parent_id: paper-55-scope
+    order: 1
+    epistemic_status: defined
+    title: Dynamic general adversary structure
+    summary: >-
+      Access, secrecy, and adversary structures specify qualified, ignorant, and potentially corrupted subsets rather than a single cardinality threshold. The active protocol results rely on the Q2 condition that no two allowed adversary sets cover all parties.
+    source_anchor_ids: [anchor-paper-55-model, anchor-paper-55-overview]
+
+  - id: paper-55-framework
+    kind: protocol
+    parent_id: paper-55
+    order: 4
+    epistemic_status: specified
+    title: Eight-operation dynamic PMPC framework
+    summary: >-
+      Share, Reconstruct, Add, Multiply, Refresh, Recover, Redistribute, and Convert cover computation, proactive maintenance, membership change, and representation adaptation.
+    source_anchor_ids: [anchor-paper-55-blueprint, anchor-paper-55-overview]
+
+  - id: paper-55-framework-additive
+    kind: protocol
+    parent_id: paper-55-framework
+    order: 1
+    epistemic_status: specified
+    title: Additive-sharing PMPC
+    summary: >-
+      The additive realization distributes each summand to a designated holder set, uses information checking and dispute control against active faults, and adds new refresh, recover, and redistribution procedures.
+    source_anchor_ids: [anchor-paper-55-additive]
+
+  - id: paper-55-framework-msp
+    kind: protocol
+    parent_id: paper-55-framework
+    order: 2
+    epistemic_status: specified
+    title: MSP-based PMPC
+    summary: >-
+      The monotone-span-program realization represents access structures with an MSP matrix and develops random-sharing, robust-resharing, recovery, refresh, and redistribution components around the base MPC protocol.
+    source_anchor_ids: [anchor-paper-55-msp]
+
+  - id: paper-55-framework-convert
+    kind: protocol
+    parent_id: paper-55-framework
+    order: 3
+    epistemic_status: specified
+    title: Bidirectional share conversion
+    summary: >-
+      Conversion protocols transform an additive sharing into an MSP sharing and vice versa while preserving the secret, enabling protocol selection to follow the changing structure rather than remain fixed.
+    source_anchor_ids: [anchor-paper-55-convert]
+
   - id: paper-55-claims
     kind: claim_group
     parent_id: paper-55
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports communication-efficient proactive MPC capabilities for refreshing, recovering, joining, leaving, and adapting sharing to the current general adversary structure."
-    source_anchor_ids: [anchor-paper-55-curated]
+    order: 5
+    epistemic_status: formally_analyzed
+    title: Security and efficiency claims
+    summary: >-
+      The paper proves correctness and secrecy of the new maintenance and conversion subprotocols under their GAS conditions and gives separate communication bounds in terms of parties, maximal secrecy sets, MSP rows, field size, and checking parameters.
+    source_anchor_ids: [anchor-paper-55-additive, anchor-paper-55-msp, anchor-paper-55-convert, anchor-paper-55-proofs]
+
+  - id: paper-55-claim-proactive
+    kind: claim
+    parent_id: paper-55-claims
+    order: 1
+    epistemic_status: proved_under_model
+    title: Proactive refresh and recovery
+    summary: >-
+      Refresh rerandomizes shares so views across stages cannot be combined, and Recover reconstructs replacement shares for reset parties without revealing the maintained secret beyond the model's prescribed views.
+    source_anchor_ids: [anchor-paper-55-additive, anchor-paper-55-msp, anchor-paper-55-proofs]
+
+  - id: paper-55-claim-dynamic
+    kind: claim
+    parent_id: paper-55-claims
+    order: 2
+    epistemic_status: proved_under_model
+    title: Dynamic group redistribution
+    summary: >-
+      Redistribute transfers a sharing of the same secret to a changed participant group under the old and new phase structures, so departing shares do not remain sufficient under the stated assumptions.
+    source_anchor_ids: [anchor-paper-55-blueprint, anchor-paper-55-additive, anchor-paper-55-msp, anchor-paper-55-proofs]
+
+  - id: paper-55-claim-adaptive
+    kind: claim
+    parent_id: paper-55-claims
+    order: 3
+    epistemic_status: construction_supported
+    title: Representation-aware communication
+    summary: >-
+      Because additive complexity scales with the secrecy-structure description while MSP complexity scales with matrix dimension, conversion permits choosing the more communication-efficient representation for the current structure.
+    source_anchor_ids: [anchor-paper-55-overview, anchor-paper-55-convert]
+
   - id: paper-55-evidence
     kind: evidence_group
     parent_id: paper-55
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The record describes theoretical constructions and efficiency results; definitions, feasibility conditions, security theorems, reductions, and complexity bounds were not checked against the paper."
-    source_anchor_ids: [anchor-paper-55-curated]
-  - id: paper-55-scope
+    order: 6
+    epistemic_status: proof_documented
+    title: Formal evidence
+    summary: >-
+      The full source contains protocol pseudocode, correctness and secrecy statements, ideal-world formulations, simulators, and proofs for additive, MSP, and conversion components. This audit maps those obligations but does not independently verify every algebraic step.
+    source_anchor_ids: [anchor-paper-55-proofs]
+
+  - id: paper-55-boundaries
     kind: limitation_group
     parent_id: paper-55
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not audited corruption timing, erasure assumptions, synchrony, admissibility conditions for adversary structures, liveness, or the exact communication and computation measures."
-    source_anchor_ids: [anchor-paper-55-curated]
-  - id: paper-55-artifacts
+    order: 7
+    epistemic_status: material
+    title: Boundaries
+    summary: >-
+      The results assume synchrony, authenticated broadcast, point-to-point channels, phase-based reboot and erasure behavior, and Q2-compatible structures. Communication can still be large because an adversary-structure description itself may be exponential in the party count.
+    source_anchor_ids: [anchor-paper-55-model, anchor-paper-55-boundaries]
+
+  - id: paper-55-boundary-scheduling
+    kind: limitation
+    parent_id: paper-55-boundaries
+    order: 1
+    epistemic_status: explicitly_out_of_scope
+    title: Refresh policy and structure compression are not solved
+    summary: >-
+      The paper constructs refresh mechanisms but does not specify when a deployment should trigger them, and it explicitly does not minimize the description size of general adversary structures.
+    source_anchor_ids: [anchor-paper-55-blueprint, anchor-paper-55-boundaries]
+
+  - id: paper-55-boundary-evaluation
+    kind: limitation
+    parent_id: paper-55-boundaries
+    order: 2
+    epistemic_status: absent_evidence
+    title: No implementation evaluation
+    summary: >-
+      Evidence is formal and asymptotic; the represented paper does not supply a prototype, concrete benchmark, network experiment, or deployment study.
+    source_anchor_ids: [anchor-paper-55-problem, anchor-paper-55-proofs]
+
+  - id: paper-55-resources
     kind: artifact_group
     parent_id: paper-55
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-55-curated, anchor-paper-55-official-1, anchor-paper-55-archive-1]
+    order: 8
+    epistemic_status: full_text_available
+    title: Publication resources
+    summary: >-
+      The complete IACR ePrint and an author-uploaded ResearchGate full text expose the protocol and proofs, while the DOI identifies the SCN version. No code artifact is claimed.
+    source_anchor_ids: [anchor-paper-55-problem, anchor-paper-55-publication]
+
   - id: paper-55-scrutiny
     kind: scrutiny
     parent_id: paper-55
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 12th Conference on Security and Cryptography for Networks (SCN). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-55-official-1]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The paper appeared at SCN 2020. Review reports, independent proof audits, and reproductions are not represented.
+    source_anchor_ids: [anchor-paper-55-publication]
+
+  - id: paper-55-lineage
+    kind: lineage
+    parent_id: paper-55
+    order: 10
+    epistemic_status: documented
+    title: Extends two general-adversary MPC lines
+    summary: >-
+      The construction proactivizes prior additive and MSP-based GAS MPC protocols and connects them through conversion, while later paper #61 follows a different dishonest-majority bivariate-PSS route for threshold-style dynamic groups.
+    source_anchor_ids: [anchor-paper-55-overview, anchor-paper-55-convert]
 
 relations:
-  - id: paper-55-relation-question-contribution
-    type: motivates
-    from_id: paper-55-question
-    to_id: paper-55-contribution
-  - id: paper-55-relation-method-contribution
+  - id: paper-55-relation-answer-question
+    type: addresses
+    from_id: paper-55-answer
+    to_id: paper-55-question
+  - id: paper-55-relation-additive-framework
+    type: component_of
+    from_id: paper-55-framework-additive
+    to_id: paper-55-framework
+  - id: paper-55-relation-msp-framework
+    type: component_of
+    from_id: paper-55-framework-msp
+    to_id: paper-55-framework
+  - id: paper-55-relation-convert-framework
+    type: component_of
+    from_id: paper-55-framework-convert
+    to_id: paper-55-framework
+  - id: paper-55-relation-convert-answer
     type: realizes
-    from_id: paper-55-method
-    to_id: paper-55-contribution
-  - id: paper-55-relation-contribution-claims
-    type: grounds
-    from_id: paper-55-contribution
-    to_id: paper-55-claims
+    from_id: paper-55-framework-convert
+    to_id: paper-55-answer
   - id: paper-55-relation-evidence-claims
     type: supports
     from_id: paper-55-evidence
@@ -172,50 +361,58 @@ relations:
     type: qualifies
     from_id: paper-55-scope
     to_id: paper-55-claims
-  - id: paper-55-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-55-artifacts
-    to_id: paper-55-evidence
-  - id: paper-55-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-55-scrutiny
+  - id: paper-55-relation-boundaries-claims
+    type: qualifies
+    from_id: paper-55-boundaries
     to_id: paper-55-claims
+  - id: paper-55-relation-lineage-paper
+    type: contextualizes
+    from_id: paper-55-lineage
+    to_id: paper-55
 
 assessment:
   id: paper-55-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-55-curated, anchor-paper-55-official-1, anchor-paper-55-archive-1]
+      level: high
+      rationale: >-
+        The complete source provides definitions, explicit protocol suites, communication bounds, ideal functionalities, and appendical proofs. It supplies theoretical rather than implementation evidence.
+      basis_source_anchor_ids: [anchor-paper-55-overview, anchor-paper-55-proofs, anchor-paper-55-boundaries]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-55-curated, anchor-paper-55-official-1, anchor-paper-55-archive-1]
+      rationale: >-
+        The full archive PDF and an author-uploaded copy expose assumptions and proofs, with an official DOI for publication identity. Direct local byte fixity could not be recorded because the archive blocked automated download.
+      basis_source_anchor_ids: [anchor-paper-55-author-copy, anchor-paper-55-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-55-curated]
+      rationale: >-
+        Authors, venue, DOI, archive, and author-hosted full text are documented; revision history, contributor roles, and tool use are not.
+      basis_source_anchor_ids: [anchor-paper-55-publication, anchor-paper-55-problem]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-55-official-1]
+      rationale: >-
+        SCN publication establishes venue review, but review reports, independent proof checks, and implementations are unavailable.
+      basis_source_anchor_ids: [anchor-paper-55-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-55-curated]
+      level: low
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 3 citations. Under the author-defined rule, 0 through 8 located citations is Low; counts are index- and date-dependent.
+      basis_source_anchor_ids: [anchor-paper-55-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-55-curated]
+      rationale: >-
+        The paper addresses dynamic GAS, dynamic groups, and representation conversion in one PMPC framework, but this map does not independently establish priority or broad deployment impact.
+      basis_source_anchor_ids: [anchor-paper-55-problem, anchor-paper-55-convert]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup
+  citation_count: 3
+  source_url: https://api.openalex.org/works/W3037463771
+  signals:
+    - The exact DOI-matched OpenAlex work reported three citing works.
+  limitation: Citation counts vary by index and may merge or split the ePrint and SCN versions.

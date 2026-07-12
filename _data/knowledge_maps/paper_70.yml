@@ -11,209 +11,362 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol]
 
 title: "Entanglement-Based Mutual Quantum Distance Bounding"
-short_title: "Entanglement-Based Mutual Quantum Distance Bounding"
+short_title: Mutual Quantum Distance Bounding
 year: 2024
 venue: "8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)"
-publication_status: "Published"
+publication_status: Published
 topic: secure-systems-networks
-labels:
-  - "Theory"
-authors:
-  - "Aysajan Abidin"
-  - "Karim Eldefrawy"
-  - "Dave Singelée"
+labels: [Theory]
+authors: [Aysajan Abidin, Karim Eldefrawy, Dave Singelée]
 keywords:
-  - "quantum protocols"
-  - "distance bounding"
+  - quantum distance bounding
+  - mutual authentication
+  - entanglement
+  - relay attacks
+  - distance fraud
+  - mafia fraud
 
-research_question: "Can two parties mutually bound their distance in one quantum-protocol execution while avoiding attacks and extra communication affecting earlier one-way designs?"
-central_answer: "The curated editorial summary reports entanglement-based mutual distance-bounding protocols that resist attacks identified for earlier one-way quantum protocols and omit a final prover-to-verifier message."
+research_question: >-
+  Can entangled quantum challenges let two parties bound each other's distance in one protocol execution, with fewer rounds than running two one-way protocols and with explicit resistance arguments for reflection and relay attacks?
+central_answer: >-
+  The paper proposes an entanglement-based one-way protocol and a mutual protocol in which both parties obtain timing evidence during one execution. The mutual design reduces rounds and communication relative to two separate one-way runs and gives informal success-probability analyses for several frauds. It is not terrorist-fraud resistant as presented, and it provides neither a formal quantum security proof nor an experimental implementation.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text protocol extraction, attack-boundary mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 23-page arXiv manuscript, including visual inspection of the title and security-analysis pages, cross-checked against the official CSCML DOI.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification; verify protocol-flow interpretation, attack probabilities, evidence boundaries, and ratings before approval.
 
 sources:
-  - id: source-paper-70-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #70"
-    url: /publications/#paper-70
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-70-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-031-76934-4_14"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-70-archive-1
-    type: archive_resource
-    title: "arXiv"
-    url: "https://arxiv.org/abs/2305.09905"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-70-local-pdf
+    type: public_preprint
+    title: "Entanglement-Based Mutual Quantum Distance Bounding"
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf
+    provenance_category: archive
+    retrieved_from: https://arxiv.org/pdf/2305.09905
+    media_type: application/pdf
+    sha256: a0fa5f76a6fdec8dbf53df826fc5169cfde32d05885581c9e60bdca18c14d033
+    page_count: 23
+  - id: source-paper-70-arxiv
+    type: public_preprint_record
+    title: arXiv 2305.09905
+    url: https://arxiv.org/abs/2305.09905
+    provenance_category: archive
+  - id: source-paper-70-official
+    type: official_publication_record
+    title: CSCML publication record
+    url: https://doi.org/10.1007/978-3-031-76934-4_14
+    provenance_category: official
+  - id: source-paper-70-citations
+    type: citation_index_snapshot
+    title: OpenAlex record W4405464499
+    url: https://api.openalex.org/works/W4405464499
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-70-curated
-    source_id: source-paper-70-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-70
-  - id: anchor-paper-70-official-1
-    source_id: source-paper-70-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-031-76934-4_14"
-  - id: anchor-paper-70-archive-1
-    source_id: source-paper-70-archive-1
-    label: "arXiv"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://arxiv.org/abs/2305.09905"
+  - id: anchor-paper-70-problem
+    source_id: source-paper-70-local-pdf
+    label: Distance-bounding problem and claimed contributions
+    locator: Abstract and Section 1, PDF pages 1-4
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf#page=1
+  - id: anchor-paper-70-background
+    source_id: source-paper-70-local-pdf
+    label: Classical and quantum distance-bounding background and attacks
+    locator: Sections 2-3, PDF pages 4-10
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf#page=4
+  - id: anchor-paper-70-one-way
+    source_id: source-paper-70-local-pdf
+    label: Entanglement-based one-way protocol
+    locator: Section 4, PDF pages 11-13
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf#page=11
+  - id: anchor-paper-70-mutual
+    source_id: source-paper-70-local-pdf
+    label: Mutual protocol, message flow, and efficiency
+    locator: Section 5, PDF pages 13-15
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf#page=13
+  - id: anchor-paper-70-security
+    source_id: source-paper-70-local-pdf
+    label: Informal security analysis and attack probabilities
+    locator: Section 6, PDF pages 16-20
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf#page=16
+  - id: anchor-paper-70-feasibility
+    source_id: source-paper-70-local-pdf
+    label: Feasibility discussion and relation to QKD equipment
+    locator: Section 7, PDF pages 20-21
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf#page=20
+  - id: anchor-paper-70-conclusion
+    source_id: source-paper-70-local-pdf
+    label: Conclusions and open formal and experimental work
+    locator: Section 8, PDF pages 21-22
+    url: /pubs/2024/quantum-distance-bounding-cscml2024.pdf#page=21
+  - id: anchor-paper-70-publication
+    source_id: source-paper-70-official
+    label: Official publication identity
+    locator: CSCML proceedings, DOI 10.1007/978-3-031-76934-4_14
+    url: https://doi.org/10.1007/978-3-031-76934-4_14
+  - id: anchor-paper-70-citation-count
+    source_id: source-paper-70-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex cited_by_count was 2 when accessed 2026-07-11
+    url: https://api.openalex.org/works/W4405464499
 
 nodes:
   - id: paper-70
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Entanglement-Based Mutual Quantum Distance Bounding"
-    summary: "This paper uses entangled qubits for distance bounding and presents a protocol that lets two parties bound their distance mutually in one execution. The constructions resist attacks affecting earlier one-way quantum protocols and remove a final prover-to-verifier communication step."
-    source_anchor_ids: [anchor-paper-70-curated]
+    epistemic_status: published
+    title: Entanglement-based mutual quantum distance bounding
+    summary: A pair of shared-key quantum protocols, culminating in a mutual construction that uses entanglement and timed rapid exchanges to let both endpoints estimate an upper bound on their separation.
+    source_anchor_ids: [anchor-paper-70-problem]
+
   - id: paper-70-question
     kind: question
     parent_id: paper-70
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can two parties mutually bound their distance in one quantum-protocol execution while avoiding attacks and extra communication affecting earlier one-way designs?"
-    source_anchor_ids: [anchor-paper-70-curated]
-  - id: paper-70-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can one quantum execution provide authenticated distance evidence in both directions while avoiding reflection and relay weaknesses of simply composing earlier one-way protocols?
+    source_anchor_ids: [anchor-paper-70-problem, anchor-paper-70-background]
+
+  - id: paper-70-answer
     kind: contribution
     parent_id: paper-70
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports entanglement-based mutual distance-bounding protocols that resist attacks identified for earlier one-way quantum protocols and omit a final prover-to-verifier message."
-    source_anchor_ids: [anchor-paper-70-curated]
-  - id: paper-70-method
-    kind: method
+    epistemic_status: source_asserted
+    title: Central answer
+    summary: The proposed mutual exchange entangles the timing-sensitive responses of both parties and adds a commitment to prevent one side from adapting its hidden random value, allowing each side to time a response within one execution.
+    source_anchor_ids: [anchor-paper-70-mutual, anchor-paper-70-security]
+
+  - id: paper-70-model
+    kind: model
     parent_id: paper-70
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described construction uses entangled qubits and timing-sensitive challenge-response behavior so both participants derive distance bounds in one execution."
-    source_anchor_ids: [anchor-paper-70-curated]
-  - id: paper-70-claims
-    kind: claim_group
+    epistemic_status: informally_defined
+    title: Shared-key quantum distance-bounding setting
+    summary: Parties share a long-term secret and derive per-session bit strings from a PRF and fresh nonces; they can prepare, transmit, and measure entangled quantum states while timing selected message legs.
+    source_anchor_ids: [anchor-paper-70-one-way, anchor-paper-70-mutual]
+
+  - id: paper-70-model-adversaries
+    kind: threat_model
+    parent_id: paper-70-model
+    order: 1
+    epistemic_status: informally_defined
+    title: Fraud classes considered
+    summary: The analysis treats distance fraud by a dishonest endpoint, mafia fraud by a relay, reflection, photon splitting, and terrorist fraud in which a legitimate prover helps an attacker without intending to reveal its long-term key.
+    source_anchor_ids: [anchor-paper-70-background, anchor-paper-70-security]
+
+  - id: paper-70-protocols
+    kind: protocol
     parent_id: paper-70
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports mutual distance bounds, resistance to attacks affecting earlier one-way protocols, and removal of a final prover-to-verifier communication step."
-    source_anchor_ids: [anchor-paper-70-curated]
+    epistemic_status: specified
+    title: Entanglement-based protocol family
+    summary: The paper first gives a one-way primitive and then couples two timing directions in a mutual exchange rather than executing the primitive twice independently.
+    source_anchor_ids: [anchor-paper-70-one-way, anchor-paper-70-mutual]
+
+  - id: paper-70-protocol-one-way
+    kind: protocol_component
+    parent_id: paper-70-protocols
+    order: 1
+    epistemic_status: specified
+    title: One-way entangled challenge
+    summary: The verifier prepares entangled pairs, sends one half as the rapid challenge, keeps the other half, and checks the prover's measurement-dependent response against secret-derived bases while using round-trip time to bound distance.
+    source_anchor_ids: [anchor-paper-70-one-way]
+
+  - id: paper-70-protocol-mutual
+    kind: protocol_component
+    parent_id: paper-70-protocols
+    order: 2
+    epistemic_status: specified
+    title: Mutual timed exchange
+    summary: >-
+      One party commits to a random mask r; the other sends entangled challenges; the first rapid response is masked by r; the challenger returns r in the reverse timing direction; and the commitment opening and check data allow both parties to validate the same execution.
+    source_anchor_ids: [anchor-paper-70-mutual]
+
+  - id: paper-70-protocol-efficiency
+    kind: property
+    parent_id: paper-70-protocols
+    order: 3
+    epistemic_status: analytically_derived
+    title: Fewer rounds than two one-way runs
+    summary: The source reports 25 percent fewer communication rounds and correspondingly less communication than sequentially running two one-way protocols.
+    source_anchor_ids: [anchor-paper-70-mutual]
+
+  - id: paper-70-results
+    kind: claim_group
+    parent_id: paper-70
+    order: 5
+    epistemic_status: informally_analyzed
+    title: Security claims and calculations
+    summary: The paper gives attack-specific probability calculations and qualitative arguments rather than one composable quantum-security theorem.
+    source_anchor_ids: [anchor-paper-70-security]
+
+  - id: paper-70-result-reflection
+    kind: claim
+    parent_id: paper-70-results
+    order: 1
+    epistemic_status: argued
+    title: Reflection is detected
+    summary: Entanglement correlations and distinct secret-derived strings are used to distinguish a reflected challenge from the response expected from a legitimate remote party.
+    source_anchor_ids: [anchor-paper-70-security]
+
+  - id: paper-70-result-distance
+    kind: claim
+    parent_id: paper-70-results
+    order: 2
+    epistemic_status: analytically_derived_under_model
+    title: Distance-fraud probabilities
+    summary: >-
+      The one-way analysis gives success probability 2^(-HD(a,b)). In the mutual protocol the two dishonest-party cases are asymmetric: one endpoint can use unentangled states for a 2^(-HD(b,c)) strategy, while the other has the stated default bound 2^(-n).
+    source_anchor_ids: [anchor-paper-70-security]
+
+  - id: paper-70-result-mafia
+    kind: claim
+    parent_id: paper-70-results
+    order: 3
+    epistemic_status: analytically_derived_under_model
+    title: Mafia-fraud bound
+    summary: The relay analysis gives a per-n-bit success probability of (5/8)^n under the protocol's idealized state-preparation, measurement, and timing assumptions.
+    source_anchor_ids: [anchor-paper-70-security]
+
+  - id: paper-70-result-photon
+    kind: claim
+    parent_id: paper-70-results
+    order: 4
+    epistemic_status: argued
+    title: Photon splitting gives no modeled advantage
+    summary: Under the assumed source and measurement model, the paper argues that splitting photons does not improve the attacker beyond the analyzed mafia-fraud strategy.
+    source_anchor_ids: [anchor-paper-70-security]
+
   - id: paper-70-evidence
     kind: evidence_group
     parent_id: paper-70
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Protocol constructions and security analysis are reported, but definitions, attack models, proofs, physical assumptions, simulations, experiments, and communication counts were not audited."
-    source_anchor_ids: [anchor-paper-70-curated]
-  - id: paper-70-scope
+    order: 6
+    epistemic_status: analytical_not_formal_or_empirical
+    title: Evidence structure
+    summary: The source provides explicit message flows, operation and round comparisons, and informal attack calculations. Feasibility is argued from similarity to QKD components, not shown by a prototype or experiment.
+    source_anchor_ids: [anchor-paper-70-mutual, anchor-paper-70-security, anchor-paper-70-feasibility]
+
+  - id: paper-70-boundaries
     kind: limitation_group
     parent_id: paper-70
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked device trust, entanglement generation, measurement and channel noise, timing resolution, relay and collusion models, loss handling, authentication, or practical implementability."
-    source_anchor_ids: [anchor-paper-70-curated]
-  - id: paper-70-artifacts
+    order: 7
+    epistemic_status: explicitly_bounded
+    title: Scope and open requirements
+    summary: The work is a protocol proposal with idealized analysis; a complete quantum game-based proof, noisy-channel treatment, hardware implementation, and experimental distance measurements remain open.
+    source_anchor_ids: [anchor-paper-70-security, anchor-paper-70-feasibility, anchor-paper-70-conclusion]
+
+  - id: paper-70-boundary-terrorist
+    kind: limitation
+    parent_id: paper-70-boundaries
+    order: 1
+    epistemic_status: acknowledged_gap
+    title: No terrorist-fraud resistance as presented
+    summary: The current PRF-based response structure allows a legitimate prover to help an attacker in the modeled terrorist-fraud setting; the paper sketches a possible modification rather than proving resistance.
+    source_anchor_ids: [anchor-paper-70-security]
+
+  - id: paper-70-boundary-proof
+    kind: limitation
+    parent_id: paper-70-boundaries
+    order: 2
+    epistemic_status: not_formally_proved
+    title: No unified formal security model
+    summary: The probability arguments do not constitute a composable or machine-checked quantum proof covering concurrency, adaptive corruption, noise, device imperfections, and all fraud classes.
+    source_anchor_ids: [anchor-paper-70-security, anchor-paper-70-conclusion]
+
+  - id: paper-70-boundary-experiment
+    kind: limitation
+    parent_id: paper-70-boundaries
+    order: 3
+    epistemic_status: not_evaluated
+    title: No prototype or measured distance bound
+    summary: QKD hardware compatibility is a feasibility argument only; the paper does not report photon loss, detector error, clock resolution, processing delay, or field distance measurements.
+    source_anchor_ids: [anchor-paper-70-feasibility, anchor-paper-70-conclusion]
+
+  - id: paper-70-resources
     kind: artifact_group
     parent_id: paper-70
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-70-curated, anchor-paper-70-official-1, anchor-paper-70-archive-1]
+    order: 8
+    epistemic_status: source_available
+    title: Auditable resources
+    summary: The complete arXiv manuscript is checked into this site with page count and SHA-256, and the official DOI establishes the published CSCML identity. No implementation artifact is claimed.
+    source_anchor_ids: [anchor-paper-70-problem, anchor-paper-70-publication]
+
   - id: paper-70-scrutiny
     kind: scrutiny
     parent_id: paper-70
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 8th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-70-official-1]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: CSCML publication establishes venue review. No public formal proof audit, experimental reproduction, correction, or independent attack analysis was located.
+    source_anchor_ids: [anchor-paper-70-publication]
+
+  - id: paper-70-lineage
+    kind: lineage
+    parent_id: paper-70
+    order: 10
+    epistemic_status: documented
+    title: Protocol lineage
+    summary: The work extends one-way quantum distance-bounding approaches to mutual distance evidence and explicitly compares the single mutual execution with composing two one-way runs.
+    source_anchor_ids: [anchor-paper-70-background, anchor-paper-70-one-way, anchor-paper-70-mutual]
 
 relations:
-  - id: paper-70-relation-question-contribution
-    type: motivates
-    from_id: paper-70-question
-    to_id: paper-70-contribution
-  - id: paper-70-relation-method-contribution
-    type: realizes
-    from_id: paper-70-method
-    to_id: paper-70-contribution
-  - id: paper-70-relation-contribution-claims
-    type: grounds
-    from_id: paper-70-contribution
-    to_id: paper-70-claims
-  - id: paper-70-relation-evidence-claims
-    type: supports
-    from_id: paper-70-evidence
-    to_id: paper-70-claims
-  - id: paper-70-relation-scope-claims
-    type: qualifies
-    from_id: paper-70-scope
-    to_id: paper-70-claims
-  - id: paper-70-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-70-artifacts
-    to_id: paper-70-evidence
-  - id: paper-70-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-70-scrutiny
-    to_id: paper-70-claims
+  - {id: paper-70-rel-answer-question, type: addresses, from_id: paper-70-answer, to_id: paper-70-question}
+  - {id: paper-70-rel-model-answer, type: scopes, from_id: paper-70-model, to_id: paper-70-answer}
+  - {id: paper-70-rel-protocols-answer, type: realizes, from_id: paper-70-protocols, to_id: paper-70-answer}
+  - {id: paper-70-rel-one-way-protocols, type: component_of, from_id: paper-70-protocol-one-way, to_id: paper-70-protocols}
+  - {id: paper-70-rel-mutual-one-way, type: extends, from_id: paper-70-protocol-mutual, to_id: paper-70-protocol-one-way}
+  - {id: paper-70-rel-evidence-results, type: supports, from_id: paper-70-evidence, to_id: paper-70-results}
+  - {id: paper-70-rel-boundaries-results, type: qualifies, from_id: paper-70-boundaries, to_id: paper-70-results}
+  - {id: paper-70-rel-terrorist-results, type: limits, from_id: paper-70-boundary-terrorist, to_id: paper-70-results}
+  - {id: paper-70-rel-resources-evidence, type: enables_audit_of, from_id: paper-70-resources, to_id: paper-70-evidence}
+  - {id: paper-70-rel-lineage-paper, type: contextualizes, from_id: paper-70-lineage, to_id: paper-70}
 
 assessment:
   id: paper-70-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-70-curated, anchor-paper-70-official-1, anchor-paper-70-archive-1]
+      rationale: The full source specifies both protocols and gives attack-specific probability arguments, but lacks a unified formal quantum proof, implementation, and experimental measurements. Medium reflects concrete analytical support with major validation boundaries.
+      basis_source_anchor_ids: [anchor-paper-70-one-way, anchor-paper-70-mutual, anchor-paper-70-security, anchor-paper-70-conclusion]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-70-curated, anchor-paper-70-official-1, anchor-paper-70-archive-1]
+      rationale: A complete checked-in arXiv manuscript with fixity and page count and the official DOI make the protocol flow, assumptions, calculations, and acknowledged limitations directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-70-problem, anchor-paper-70-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-70-curated]
+      rationale: Named authorship, preprint identity, venue, year, and DOI are documented; contributor roles, revision history, tools, and artifact lineage are not.
+      basis_source_anchor_ids: [anchor-paper-70-problem, anchor-paper-70-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-70-official-1]
+      rationale: CSCML publication establishes venue scrutiny, but public reports, formal proof review, experimental reproduction, and correction history were not located.
+      basis_source_anchor_ids: [anchor-paper-70-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-70-curated]
+      level: low
+      rationale: The dated OpenAlex snapshot located 2 citations. Under the author-defined rule, 0 through 8 located citations is Low; counts do not measure validity.
+      basis_source_anchor_ids: [anchor-paper-70-citation-count]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-70-curated]
+      level: high
+      rationale: The source presents the first entanglement-based mutual quantum distance-bounding protocol and reduces rounds relative to two one-way executions, while practical and formal validation remain open.
+      basis_source_anchor_ids: [anchor-paper-70-problem, anchor-paper-70-mutual, anchor-paper-70-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex work lookup by DOI 10.1007/978-3-031-76934-4_14
+  citation_count: 2
+  source_url: https://api.openalex.org/works/W4405464499
+  signals:
+    - OpenAlex reported 2 citing works for the matched publication record.
+  limitation: Citation counts are index- and date-dependent and do not establish security, feasibility, or adoption.

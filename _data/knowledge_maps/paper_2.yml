@@ -18,151 +18,275 @@ labels: ["Applied"]
 authors: ["Karim Eldefrawy", "Magda El Zarki", "Mohamed M. Khairy"]
 keywords: ["cross-layer design", "wireless systems", "protocol architecture"]
 
-research_question: "How can non-adjacent wireless protocol layers exchange adaptation information without abandoning a modular layered architecture?"
-central_answer: "The paper proposes a local cross-layer server that coordinates events, shared state, signaling, and adaptation logic while leaving individual protocol layers modular."
+research_question: >-
+  How can non-adjacent layers in a wireless protocol stack exchange events and state for adaptation without discarding modular layer boundaries or hard-wiring each cross-layer algorithm into the stack?
+central_answer: >-
+  Introduce a local cross-layer coordination server, attach a client to each protocol layer, exchange prioritized TLV event messages through the server, and keep adaptation logic and abstracted layer state inside the clients.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: source extraction, evidence linking, and initial assessment
+  method: >-
+    Source-grounded review of the full paper body exposed by the public CiteSeerX archive and author-upload index, together with the official DOI record. The archive's binary download was unavailable during this run, so local fixity and visual pagination are not claimed.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-drafted, source-linked map awaiting author verification before approval."
 
 sources:
-  - id: source-paper-2-site-record
-    type: curated_record
-    title: "Curated publication record for paper #2"
-    url: /publications/#paper-2
-  - id: source-paper-2-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/1143549.1143580"
-  - id: source-paper-2-archive-1
-    type: manuscript_archive
-    title: "CiteSeerX archive"
+  - id: source-paper-2-full-text
+    type: public_archive_record
+    title: "Proposal for a Cross-Layer Coordination Framework for Next Generation Wireless Systems"
     url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+    version_note: "Full text indexed by CiteSeerX; binary retrieval was blocked by the archive during this audit."
+  - id: source-paper-2-official
+    type: official_publication_record
+    title: "ACM DOI record"
+    url: "https://doi.org/10.1145/1143549.1143580"
+  - id: source-paper-2-citations
+    type: citation_search
+    title: "Dated scholarly-web citation search"
+    url: "https://scholar.google.com/scholar?q=%22Proposal+for+a+Cross-Layer+Coordination+Framework+for+Next+Generation+Wireless+Systems%22"
+    version_note: "Search attempted 2026-07-11; no transparent citation count was retrievable in this environment."
 
 source_anchors:
-  - id: anchor-paper-2-site-record
-    source_id: source-paper-2-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-2
-  - id: anchor-paper-2-official-1
-    source_id: source-paper-2-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1145/1143549.1143580"
-  - id: anchor-paper-2-archive-1
-    source_id: source-paper-2-archive-1
-    label: "CiteSeerX archive"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-2-problem
+    source_id: source-paper-2-full-text
+    label: "Problem, requirements, and contribution"
+    locator: "Abstract, Section 1, and Section 3.1; proceedings pages 141-142"
     url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-architecture
+    source_id: source-paper-2-full-text
+    label: "Local server and per-layer client architecture"
+    locator: "Sections 3.2-3.4 and Figures 2-3; proceedings pages 142-144"
+    url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-client
+    source_id: source-paper-2-full-text
+    label: "Client adaptation module and abstracted layer state"
+    locator: "Sections 3.4.1-3.4.1.2; proceedings page 143"
+    url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-server
+    source_id: source-paper-2-full-text
+    label: "Server control and parameter-management modules"
+    locator: "Sections 3.4.2-3.4.2.2; proceedings pages 143-144"
+    url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-signaling
+    source_id: source-paper-2-full-text
+    label: "Prioritized TLV event-message signaling"
+    locator: "Section 3.4.3 and Figure 4; proceedings page 144"
+    url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-designer
+    source_id: source-paper-2-full-text
+    label: "Protocol-designer obligations"
+    locator: "Section 3.5; proceedings page 144"
+    url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-video
+    source_id: source-paper-2-full-text
+    label: "FGS/PGOP video adaptation example"
+    locator: "Section 4 and Figures 5-6; proceedings pages 144-145"
+    url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-limitations
+    source_id: source-paper-2-full-text
+    label: "Unmodeled event loss, prototype status, and future work"
+    locator: "Sections 4-5; proceedings pages 145-146"
+    url: "https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf"
+  - id: anchor-paper-2-publication
+    source_id: source-paper-2-official
+    label: "Official publication metadata"
+    locator: "DOI 10.1145/1143549.1143580"
+    url: "https://doi.org/10.1145/1143549.1143580"
+  - id: anchor-paper-2-citation-search
+    source_id: source-paper-2-citations
+    label: "Citation search attempted"
+    locator: "Exact-title search, 2026-07-11; no verified count retrieved"
+    url: "https://scholar.google.com/scholar?q=%22Proposal+for+a+Cross-Layer+Coordination+Framework+for+Next+Generation+Wireless+Systems%22"
 
 nodes:
   - id: paper-2
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Proposal for a Cross-Layer Coordination Framework for Next Generation Wireless Systems"
-    summary: "The paper proposes a local coordination framework that lets non-adjacent layers of a wireless protocol stack exchange events and state through a cross-layer server while keeping each layer modular. It organizes adaptation logic, signaling, and shared parameters so new cross-layer schemes can be added systematically without redesigning the stack."
-    source_anchor_ids: [anchor-paper-2-site-record]
+    epistemic_status: published
+    title: "Cross-layer coordination framework"
+    summary: "A host-local protocol architecture for organized event and state exchange between non-adjacent wireless-stack layers while retaining per-layer modules."
+    source_anchor_ids: [anchor-paper-2-problem, anchor-paper-2-publication]
 
   - id: paper-2-question
     kind: question
     parent_id: paper-2
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How can non-adjacent wireless protocol layers exchange adaptation information without abandoning a modular layered architecture?"
-    source_anchor_ids: [anchor-paper-2-site-record]
+    summary: "Can a wireless stack support extensible cross-layer adaptation without uncontrolled direct dependencies between protocol layers?"
+    source_anchor_ids: [anchor-paper-2-problem]
 
   - id: paper-2-answer
     kind: contribution
     parent_id: paper-2
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper proposes a local cross-layer server that coordinates events, shared state, signaling, and adaptation logic while leaving individual protocol layers modular."
-    source_anchor_ids: [anchor-paper-2-site-record]
+    epistemic_status: proposed_design
+    title: "Central answer"
+    summary: "Route cross-layer interactions through a local coordination service and use uniform client, event, parameter, and priority abstractions to isolate adaptation logic from the base stack."
+    source_anchor_ids: [anchor-paper-2-architecture, anchor-paper-2-signaling]
 
-  - id: paper-2-method
-    kind: method
+  - id: paper-2-scope
+    kind: scope
     parent_id: paper-2
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Introduce a coordination framework in which protocol layers publish and consume events and state through a cross-layer server."
-    source_anchor_ids: [anchor-paper-2-site-record]
+    epistemic_status: explicitly_scoped
+    title: "Design requirements and scope"
+    summary: "The framework targets host-internal coordination among application, transport, network, link, and physical layers; its stated requirements are modularity, scalability, and low coordination overhead."
+    source_anchor_ids: [anchor-paper-2-problem]
+
+  - id: paper-2-architecture
+    kind: protocol
+    parent_id: paper-2
+    order: 4
+    epistemic_status: specified_not_implemented
+    title: "Coordination protocol architecture"
+    summary: "Per-layer clients send events to a host-local server, which may forward events, update shared parameters, and schedule concurrent event handling."
+    source_anchor_ids: [anchor-paper-2-architecture]
+
+  - id: paper-2-architecture-client
+    kind: component
+    parent_id: paper-2-architecture
+    order: 1
+    epistemic_status: specified
+    title: "Cross-layer client"
+    summary: "Each layer's client contains the adaptation algorithm, conversion logic for parameters received from other layers, required foreign parameters, and an abstracted representation of local layer state."
+    source_anchor_ids: [anchor-paper-2-client]
+
+  - id: paper-2-architecture-server
+    kind: component
+    parent_id: paper-2-architecture
+    order: 2
+    epistemic_status: specified
+    title: "Cross-layer server"
+    summary: "The server separates a control module (actions plus concurrent-event management) from a parameter repository that stores layer state in forms usable by other clients."
+    source_anchor_ids: [anchor-paper-2-server]
+
+  - id: paper-2-architecture-messages
+    kind: component
+    parent_id: paper-2-architecture
+    order: 3
+    epistemic_status: specified
+    title: "Event messages"
+    summary: "A message can carry one or more events encoded as type-length-value fields, with optional parameters and a priority used by server-side scheduling."
+    source_anchor_ids: [anchor-paper-2-signaling]
+
+  - id: paper-2-method-designer
+    kind: method
+    parent_id: paper-2
+    order: 5
+    epistemic_status: design_procedure
+    title: "How an adaptation is instantiated"
+    summary: "A designer supplies the client-side adaptation algorithm, defines event types and parameters plus actions in each direction, and supplies a policy for ordering simultaneous events."
+    source_anchor_ids: [anchor-paper-2-designer]
+
+  - id: paper-2-example
+    kind: evidence_group
+    parent_id: paper-2
+    order: 6
+    epistemic_status: worked_example
+    title: "Worked video-adaptation example"
+    summary: "The paper maps a real-time FGS/PGOP video adaptation path onto the framework but does not report an implementation or measured evaluation."
+    source_anchor_ids: [anchor-paper-2-video]
+
+  - id: paper-2-example-flow
+    kind: evidence
+    parent_id: paper-2-example
+    order: 1
+    epistemic_status: illustrated
+    title: "Physical-to-application event flow"
+    summary: "The physical layer reports the number X of transportable bits for the next coherence period as a high-priority event; the video packetizer retains the base layer and truncates enhancement bits so payload plus lower-layer headers fits X."
+    source_anchor_ids: [anchor-paper-2-video]
 
   - id: paper-2-claims
     kind: claim_group
     parent_id: paper-2
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The proposed organization is reported to let designers add cross-layer schemes systematically without redesigning the full protocol stack."
-    source_anchor_ids: [anchor-paper-2-site-record]
+    order: 7
+    epistemic_status: design_rationale
+    title: "Principal claims"
+    summary: "The architecture is argued to organize non-adjacent interaction and preserve modularity; scalability and efficiency are requirements rather than empirically established properties."
+    source_anchor_ids: [anchor-paper-2-problem, anchor-paper-2-architecture]
 
-  - id: paper-2-evidence
-    kind: evidence_group
-    parent_id: paper-2
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary documents an architectural proposal and its intended modularity benefits; no implementation, experiment, or comparative evaluation has been source-audited."
-    source_anchor_ids: [anchor-paper-2-site-record]
-
-  - id: paper-2-limitations
+  - id: paper-2-boundaries
     kind: limitation_group
     parent_id: paper-2
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The available record does not resolve coordination overhead, failure handling, security boundaries, deployability, or compatibility across concrete wireless stacks."
-    source_anchor_ids: [anchor-paper-2-site-record]
+    order: 8
+    epistemic_status: material
+    title: "Boundaries and unresolved obligations"
+    summary: "The proposal leaves fault handling, stability across multiple adaptations, performance overhead, and concrete implementation to future work."
+    source_anchor_ids: [anchor-paper-2-limitations]
 
-  - id: paper-2-resources
-    kind: artifact_group
+  - id: paper-2-boundary-event-loss
+    kind: limitation
+    parent_id: paper-2-boundaries
+    order: 1
+    epistemic_status: explicitly_unmodeled
+    title: "Event delivery failure"
+    summary: "The video example does not model loss of the capacity event; the paper only sketches fallbacks such as base-layer-only transmission, reuse of the previous size, or a weighted history."
+    source_anchor_ids: [anchor-paper-2-video]
+
+  - id: paper-2-boundary-validation
+    kind: limitation
+    parent_id: paper-2-boundaries
+    order: 2
+    epistemic_status: future_work
+    title: "No prototype or performance evidence"
+    summary: "The conclusion says a prototype was being implemented and lists multi-algorithm interaction and qualitative performance assessment as future work; no results validate modularity, scalability, latency, or stability."
+    source_anchor_ids: [anchor-paper-2-limitations]
+
+  - id: paper-2-artifacts
+    kind: artifact
     parent_id: paper-2
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; CiteSeerX archive. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-2-official-1, anchor-paper-2-archive-1]
+    order: 9
+    epistemic_status: paper_available_no_implementation
+    title: "Artifacts"
+    summary: "The archived full text and official publication record are public; no source code, prototype, trace, or experimental package was located."
+    source_anchor_ids: [anchor-paper-2-publication, anchor-paper-2-limitations]
 
   - id: paper-2-scrutiny
     kind: scrutiny
     parent_id: paper-2
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at International Conference on Wireless Communications and Mobile Computing (IWCMC). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-2-site-record, anchor-paper-2-official-1]
+    order: 10
+    epistemic_status: peer_reviewed
+    title: "Scrutiny and lineage"
+    summary: "The framework appeared at IWCMC 2006 and builds on earlier cross-layer signaling and architecture proposals; independent implementation or adversarial analysis was not located in this audit."
+    source_anchor_ids: [anchor-paper-2-publication, anchor-paper-2-problem]
 
 relations:
-  - id: paper-2-relation-method-supports-answer
-    type: supports
-    from_id: paper-2-method
+  - id: paper-2-relation-client-component
+    type: component_of
+    from_id: paper-2-architecture-client
+    to_id: paper-2-architecture
+  - id: paper-2-relation-server-component
+    type: component_of
+    from_id: paper-2-architecture-server
+    to_id: paper-2-architecture
+  - id: paper-2-relation-messages-component
+    type: component_of
+    from_id: paper-2-architecture-messages
+    to_id: paper-2-architecture
+  - id: paper-2-relation-architecture-realizes-answer
+    type: realizes
+    from_id: paper-2-architecture
     to_id: paper-2-answer
-  - id: paper-2-relation-evidence-supports-claim
+  - id: paper-2-relation-example-supports-feasibility
     type: supports
-    from_id: paper-2-evidence
-    to_id: paper-2-claims
-  - id: paper-2-relation-limitations-qualify-claim
+    from_id: paper-2-example-flow
+    to_id: paper-2-answer
+  - id: paper-2-relation-event-loss-qualifies-example
     type: qualifies
-    from_id: paper-2-limitations
-    to_id: paper-2-claims
-  - id: paper-2-relation-scrutiny-qualifies-status
+    from_id: paper-2-boundary-event-loss
+    to_id: paper-2-example
+  - id: paper-2-relation-validation-qualifies-claims
     type: qualifies
-    from_id: paper-2-scrutiny
-    to_id: paper-2
+    from_id: paper-2-boundary-validation
+    to_id: paper-2-claims
 
 assessment:
   id: paper-2-assessment-2026-07-11
@@ -172,33 +296,34 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary documents an architectural proposal and its intended modularity benefits; no implementation, experiment, or comparative evaluation has been source-audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-2-site-record]
+      level: low
+      rationale: "The paper gives a detailed architecture and worked message-flow example, but no prototype, proof, trace, benchmark, or empirical validation of its efficiency, modularity, or scalability requirements."
+      basis_source_anchor_ids: [anchor-paper-2-architecture, anchor-paper-2-video, anchor-paper-2-limitations]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-2-official-1, anchor-paper-2-archive-1]
+      rationale: "A public full-text archive exposes the complete proposal, so auditability is high under this site's rubric; binary fixity and implementation artifacts are unavailable."
+      basis_source_anchor_ids: [anchor-paper-2-problem, anchor-paper-2-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-2-site-record]
+      rationale: "Named authorship and the official publication record are documented, but roles, revision history, effort, tool use, and artifact lineage are not."
+      basis_source_anchor_ids: [anchor-paper-2-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in International Conference on Wireless Communications and Mobile Computing (IWCMC), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-2-official-1]
+      rationale: "The paper has an official conference record; review reports, reproduction, implementation evidence, corrections, and independent technical critique were not located."
+      basis_source_anchor_ids: [anchor-paper-2-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-2-site-record]
+      level: low
+      rationale: "A dated exact-title scholarly-web search did not yield a transparent verified citation count in this environment. Under the author's rule, zero located citations maps to low; this is not a claim that the paper has no citations."
+      basis_source_anchor_ids: [anchor-paper-2-citation-search]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The proposed organization is reported to let designers add cross-layer schemes systematically without redesigning the full protocol stack. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-2-site-record]
+      rationale: "The work articulates a concrete modular coordination architecture and protocol message format, but the absence of implementation or evaluation limits the supported significance claim."
+      basis_source_anchor_ids: [anchor-paper-2-problem, anchor-paper-2-architecture, anchor-paper-2-limitations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "Exact-title scholarly-web search; transparent index count unavailable"
+  source: "Google Scholar query route plus general scholarly-web search"
+  citation_count: 0
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "Zero means no citations were verifiably located during this constrained search, not a total bibliometric count; author should replace it with a confirmed index snapshot."

@@ -14,246 +14,261 @@ title: "Theoretical Foundations for Mobile Target Defense: Proactive Secret Shar
 year: 2018
 status: "Published · book chapter"
 venue: "From Database to Cyber Security"
-topic: "secure-encrypted-computation"
-labels: ["Theory"]
+topic: secure-encrypted-computation
+labels: [Theory]
 authors:
-  - "Karim Eldefrawy"
-  - "Rafail Ostrovsky"
-  - "Moti Yung"
-keywords:
-  - "moving-target defense"
-  - "proactive security"
-  - "MPC"
-editorial_summary: "This chapter explains how proactive secret sharing and proactive MPC realize moving-target defense by periodically replacing the information available to a mobile attacker. It surveys dishonest-majority constructions, their resilience guarantees, and open problems in communication, asynchrony, and dynamic participation."
+  - Karim Eldefrawy
+  - Rafail Ostrovsky
+  - Moti Yung
+keywords: [moving-target defense, proactive secret sharing, proactive MPC, mobile adversary, identifiable abort]
 
-research_question: "How do proactive secret sharing and proactive MPC provide a theoretical foundation for moving-target defense against mobile attackers?"
-central_answer: "The chapter explains periodic share and state refresh as a way to replace compromised information and surveys dishonest-majority guarantees and open problems."
+research_question: >-
+  How can moving-target defense in distributed storage and computation be given cryptographic confidentiality and correctness foundations rather than relying only on heuristic relocation or diversity?
+central_answer: >-
+  The chapter presents proactive secret sharing and proactive MPC as a cryptographic realization of moving-target defense: periodic share refresh and node recovery replace a lifetime corruption threshold with a per-period penetration-rate bound. Its exposed abstract illustrates the thesis with the dishonest-majority PSS scheme and its separate passive, active, and mixed thresholds.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: bounded primary-source extraction, cross-paper lineage mapping, and initial assessment
+  method: >-
+    Bounded review of the official Springer chapter record, the author-uploaded ResearchGate page and exposed full abstract, and the checked-in PODC brief for the PSS scheme used as the chapter's central example. Direct author-PDF and Springer-PDF retrieval was blocked or paywalled; the chapter body was not read.
+  source_scope: abstract_and_primary_lineage_only
+  retrieval_note: >-
+    The ResearchGate author page advertises a full-text PDF but returned access-denied code 1020, and Springer returned a no-access HTML page. No alternate legitimate public copy was located on 2026-07-11.
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored bounded map awaiting full author audit. Chapter organization and claims beyond the exposed abstract remain unverified.
 
 sources:
-  - id: source-paper-45-site-record
-    type: curated_site_record
-    title: "Publication #45 metadata and editorial summary"
-    url: /publications/#paper-45
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-45-resource-1
+  - id: source-paper-45-official
     type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-030-04834-1_23"
+    title: "Theoretical Foundations for Mobile Target Defense: Proactive Secret Sharing and Secure Multiparty Computation"
+    url: https://doi.org/10.1007/978-3-030-04834-1_23
     provenance_category: official
-  - id: source-paper-45-resource-2
-    type: author_hosted_copy
-    title: "ResearchGate author-uploaded PDF"
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/324897081_Theoretical_Foundations_for_Mobile_Target_Defense_Proactive_Secret_Sharing_and_Secure_Multiparty_Computation/links/5bf2178ca6fdcc3a8de0e245/Theoretical-Foundations-for-Mobile-Target-Defense-Proactive-Secret-Sharing-and-Secure-Multiparty-Computation.pdf"
+  - id: source-paper-45-author-page
+    type: author_uploaded_landing_page
+    title: ResearchGate author-uploaded publication page
+    url: https://www.researchgate.net/publication/324897081_Theoretical_Foundations_for_Mobile_Target_Defense_Proactive_Secret_Sharing_and_Secure_Multiparty_Computation
     provenance_category: author
+    access_note: Full-text route advertised but PDF payload unavailable to this audit.
+  - id: source-paper-45-example
+    type: primary_predecessor
+    title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf
+    media_type: application/pdf
+    sha256: 66c0484c3ad92a7849bc3bb4613b730f4d73a5ac0f6bce0fcd05d144d7435cba
+    page_count: 3
+  - id: source-paper-45-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2902349212
+    url: https://openalex.org/W2902349212
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-45-editorial
-    source_id: source-paper-45-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-45
-  - id: anchor-paper-45-resource-1
-    source_id: source-paper-45-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1007/978-3-030-04834-1_23"
-  - id: anchor-paper-45-resource-2
-    source_id: source-paper-45-resource-2
-    label: "Author-hosted resource: ResearchGate author-uploaded PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/324897081_Theoretical_Foundations_for_Mobile_Target_Defense_Proactive_Secret_Sharing_and_Secure_Multiparty_Computation/links/5bf2178ca6fdcc3a8de0e245/Theoretical-Foundations-for-Mobile-Target-Defense-Proactive-Secret-Sharing-and-Secure-Multiparty-Computation.pdf"
+  - id: anchor-paper-45-abstract
+    source_id: source-paper-45-official
+    label: MTD framing, PSS/PMPC thesis, and example thresholds
+    locator: "Springer chapter abstract, accessed 2026-07-11"
+    url: https://doi.org/10.1007/978-3-030-04834-1_23
+  - id: anchor-paper-45-author-provenance
+    source_id: source-paper-45-author-page
+    label: Author upload, chapter metadata, and public full-text indication
+    locator: "ResearchGate publication page, accessed 2026-07-11"
+    url: https://www.researchgate.net/publication/324897081_Theoretical_Foundations_for_Mobile_Target_Defense_Proactive_Secret_Sharing_and_Secure_Multiparty_Computation
+  - id: anchor-paper-45-example-model
+    source_id: source-paper-45-example
+    label: Predecessor PSS model and construction blueprint
+    locator: "Sections 2-3, PDF pages 1-3"
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=1
+  - id: anchor-paper-45-example-limits
+    source_id: source-paper-45-example
+    label: Example scheme thresholds, communication, and open problems
+    locator: "Abstract and Section 4, PDF pages 1 and 3"
+    url: /pubs/2016/proactive-secret-sharing-dishonest-majority-podc2016-brief.pdf#page=3
+  - id: anchor-paper-45-publication
+    source_id: source-paper-45-official
+    label: Official book-chapter identity
+    locator: "From Database to Cyber Security, DOI 10.1007/978-3-030-04834-1_23"
+    url: https://doi.org/10.1007/978-3-030-04834-1_23
+  - id: anchor-paper-45-reception
+    source_id: source-paper-45-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 1 citing work on 2026-07-11"
+    url: https://openalex.org/W2902349212
 
 nodes:
   - id: paper-45
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Theoretical Foundations for Mobile Target Defense: Proactive Secret Sharing and Secure Multiparty Computation"
-    summary: "This chapter explains how proactive secret sharing and proactive MPC realize moving-target defense by periodically replacing the information available to a mobile attacker. It surveys dishonest-majority constructions, their resilience guarantees, and open problems in communication, asynchrony, and dynamic participation."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
+    epistemic_status: published_chapter_body_not_audited
+    title: Cryptographic foundations for moving-target defense
+    summary: A theory chapter connecting periodic cryptographic rerandomization and recovery to the moving-target-defense objective, with dishonest-majority PSS as its exposed example.
+    source_anchor_ids: [anchor-paper-45-abstract]
   - id: paper-45-question
     kind: question
     parent_id: paper-45
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "How do proactive secret sharing and proactive MPC provide a theoretical foundation for moving-target defense against mobile attackers?"
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
-  - id: paper-45-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: Can changing a distributed system's cryptographic representation over time ensure that a persistent mobile attacker never accumulates a usable global view?
+    source_anchor_ids: [anchor-paper-45-abstract]
+  - id: paper-45-answer
     kind: contribution
     parent_id: paper-45
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The chapter explains periodic share and state refresh as a way to replace compromised information and surveys dishonest-majority guarantees and open problems."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
-  - id: paper-45-method
-    kind: method
+    epistemic_status: abstract_asserted_synthesis
+    title: Central synthesis
+    summary: >-
+      Proactive refresh replaces a fixed lifetime corruption bound by a rate condition: old shares are rerandomized and erased before the attacker crosses the within-period threshold.
+    source_anchor_ids: [anchor-paper-45-abstract, anchor-paper-45-example-model]
+  - id: paper-45-mtd
+    kind: definition
     parent_id: paper-45
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented method is a conceptual and technical synthesis of proactive secret-sharing and MPC constructions through the lens of moving-target defense."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
+    epistemic_status: conceptual_mapping
+    title: Cryptographic moving-target defense
+    summary: The target that moves is the representation of long-lived secrets and computation state, not necessarily the physical host, address, or software image.
+    source_anchor_ids: [anchor-paper-45-abstract]
+  - id: paper-45-model
+    kind: threat_model
+    parent_id: paper-45
+    order: 4
+    epistemic_status: abstract_defined
+    title: Mobile adversary
+    summary: The adversary may eventually compromise every party, but security requires its corruption set to stay within the appropriate threshold during each refresh period while repaired parties return clean.
+    source_anchor_ids: [anchor-paper-45-abstract, anchor-paper-45-example-model]
+  - id: paper-45-foundations
+    kind: method
+    parent_id: paper-45
+    order: 5
+    epistemic_status: survey_and_synthesis
+    title: PSS and PMPC foundations
+    summary: PSS preserves distributed secrets by refresh and recovery; MPC evaluates functions on shares; PMPC composes these ideas so long-running private computation tolerates a moving corruption set.
+    source_anchor_ids: [anchor-paper-45-abstract]
+  - id: paper-45-example-node
+    kind: scheme
+    parent_id: paper-45-foundations
+    order: 1
+    epistemic_status: predecessor_source_inspected
+    title: Dishonest-majority PSS example
+    summary: The cited example encodes a secret as additive summands shared by increasing-degree polynomials, with share, reconstruct, refresh, and recovery protocols.
+    source_anchor_ids: [anchor-paper-45-example-model]
   - id: paper-45-claims
     kind: claim_group
     parent_id: paper-45
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
-  - id: paper-45-claim-primary
+    order: 6
+    epistemic_status: exposed_abstract_and_predecessor
+    title: Example resilience profile
+    summary: The example separates robust passive resilience from non-robust active and mixed security with identifiable abort; a single scalar threshold would misstate the result.
+    source_anchor_ids: [anchor-paper-45-abstract, anchor-paper-45-example-limits]
+  - id: paper-45-claim-rate
     kind: claim
     parent_id: paper-45-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The editorial summary reports that periodic refresh can realize moving-target defense and organizes known resilience results and open problems involving communication, asynchrony, and dynamic groups."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
+    epistemic_status: conceptual
+    title: Rate-based security interpretation
+    summary: Proactive security constrains attacker penetration relative to refresh and repair speed, even when the adversary's lifetime union of corruptions contains all parties.
+    source_anchor_ids: [anchor-paper-45-abstract]
+  - id: paper-45-claim-thresholds
+    kind: claim
+    parent_id: paper-45-claims
+    order: 2
+    epistemic_status: abstract_asserted
+    title: Dishonest-majority example thresholds
+    summary: The abstract states robust passive security near n parties, non-robust active security below half, and a mixed active/total tradeoff; exact inequalities must be checked against the chapter body.
+    source_anchor_ids: [anchor-paper-45-abstract]
   - id: paper-45-evidence
     kind: evidence_group
     parent_id: paper-45
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
-  - id: paper-45-evidence-reported
-    kind: evidence
-    parent_id: paper-45-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The current record identifies a survey chapter and its organizing topics, but its cited literature, theorem statements, comparisons, and open-problem boundaries were not audited."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
-  - id: paper-45-scope
+    order: 7
+    epistemic_status: bounded
+    title: Evidence boundary
+    summary: The chapter's central framing and example are visible in its abstract, and the predecessor brief exposes the example construction; the chapter's full exposition, comparisons, and any PMPC development were not audited.
+    source_anchor_ids: [anchor-paper-45-abstract, anchor-paper-45-example-model]
+  - id: paper-45-boundaries
     kind: limitation_group
     parent_id: paper-45
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
-  - id: paper-45-scope-boundary
-    kind: limitation
-    parent_id: paper-45-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "This is a book chapter rather than a newly represented single construction. Coverage completeness, historical priority, and applicability depend on the unaudited source and references."
-    source_anchor_ids: ["anchor-paper-45-editorial"]
-
-  - id: paper-45-resources
+    order: 8
+    epistemic_status: material
+    title: Model and audit boundaries
+    summary: Proactive guarantees require periods, repair, secure deletion, and channel/setup assumptions; the example's active mode can abort. The inaccessible chapter prevents certification of its full assumption set and open-problem analysis.
+    source_anchor_ids: [anchor-paper-45-example-model, anchor-paper-45-example-limits, anchor-paper-45-author-provenance]
+  - id: paper-45-artifacts
     kind: artifact_group
     parent_id: paper-45
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-45-resource-1", "anchor-paper-45-resource-2"]
-
-  - id: paper-45-resources-available
-    kind: artifact
-    parent_id: paper-45-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: ResearchGate author-uploaded PDF."
-    source_anchor_ids: ["anchor-paper-45-resource-1", "anchor-paper-45-resource-2"]
-
+    order: 9
+    epistemic_status: partial
+    title: Publication resources
+    summary: Official and author-uploaded landing pages plus a public predecessor brief are available; no locally fixed chapter PDF, code, dataset, or proof artifact was obtained.
+    source_anchor_ids: [anchor-paper-45-author-provenance, anchor-paper-45-publication]
   - id: paper-45-scrutiny
     kind: scrutiny
     parent_id: paper-45
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · book chapter at From Database to Cyber Security. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-45-resource-1"]
+    order: 10
+    epistemic_status: edited_book_chapter
+    title: External scrutiny
+    summary: Publication in an edited Springer volume provides editorial exposure, but the review process, reports, and independent validation are not represented.
+    source_anchor_ids: [anchor-paper-45-publication]
+  - id: paper-45-lineage
+    kind: lineage
+    parent_id: paper-45
+    order: 11
+    epistemic_status: documented
+    title: Position in the proactive-security line
+    summary: The chapter synthesizes the PSS construction represented by papers #31/#32 and anticipates the dishonest-majority PMPC result represented by paper #44.
+    source_anchor_ids: [anchor-paper-45-abstract, anchor-paper-45-example-model]
 
 relations:
-  - id: relation-paper-45-contribution-addresses-question
-    type: addresses
-    from_id: paper-45-contribution
-    to_id: paper-45-question
-  - id: relation-paper-45-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-45-method
-    to_id: paper-45-contribution
-  - id: relation-paper-45-evidence-supports-claim
-    type: supports
-    from_id: paper-45-evidence-reported
-    to_id: paper-45-claim-primary
-  - id: relation-paper-45-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-45-scope-boundary
-    to_id: paper-45-claim-primary
-  - id: relation-paper-45-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-45-resources-available
-    to_id: paper-45-evidence-reported
-  - id: relation-paper-45-status-qualifies-claim
-    type: qualifies
-    from_id: paper-45-scrutiny
-    to_id: paper-45-claim-primary
+  - {id: paper-45-relation-answer-question, type: addresses, from_id: paper-45-answer, to_id: paper-45-question}
+  - {id: paper-45-relation-mtd-answer, type: frames, from_id: paper-45-mtd, to_id: paper-45-answer}
+  - {id: paper-45-relation-model-answer, type: qualifies, from_id: paper-45-model, to_id: paper-45-answer}
+  - {id: paper-45-relation-example-foundations, type: exemplifies, from_id: paper-45-example-node, to_id: paper-45-foundations}
+  - {id: paper-45-relation-foundations-answer, type: supports, from_id: paper-45-foundations, to_id: paper-45-answer}
+  - {id: paper-45-relation-evidence-claims, type: qualifies, from_id: paper-45-evidence, to_id: paper-45-claims}
+  - {id: paper-45-relation-boundaries-claims, type: limits, from_id: paper-45-boundaries, to_id: paper-45-claims}
+  - {id: paper-45-relation-lineage-paper, type: contextualizes, from_id: paper-45-lineage, to_id: paper-45}
 
 assessment:
   id: paper-45-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-45-editorial", "anchor-paper-45-resource-1"]
+      rationale: The official abstract clearly exposes the conceptual mapping and example thresholds, and the predecessor construction is inspectable, but the chapter body was not available.
+      basis_source_anchor_ids: [anchor-paper-45-abstract, anchor-paper-45-example-model]
     - id: auditability
       level: high
-      rationale: "The resource record provides a public author-uploaded full-text route, so the paper is directly inspectable and auditability is high. Local fixity, correspondence with the final published version, and a substantive audit of the paper and supplementary artifacts have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-45-resource-1", "anchor-paper-45-resource-2"]
+      rationale: The resource record includes a public author-uploaded full-text route in addition to the official DOI, which satisfies the site's author-copy rule for High auditability. The route was blocked to this audit client, so source_scope remains bounded and no body-level claim is treated as inspected.
+      basis_source_anchor_ids: [anchor-paper-45-author-provenance, anchor-paper-45-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-45-editorial"]
+      rationale: Authorship, title, edited volume, DOI, date, and author-upload provenance are documented; roles, revisions, and manuscript fixity are not.
+      basis_source_anchor_ids: [anchor-paper-45-author-provenance, anchor-paper-45-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-45-resource-1"]
+      rationale: Springer edited-volume publication establishes editorial scrutiny, but review reports and independent technical evaluation were not located.
+      basis_source_anchor_ids: [anchor-paper-45-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-45-editorial"]
+      level: low
+      rationale: OpenAlex reported 1 citation on 2026-07-11; under the finalized rubric, 0 through 8 located citations is Low.
+      basis_source_anchor_ids: [anchor-paper-45-reception]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a synthesis connecting proactive cryptographic refresh mechanisms to the moving-target-defense paradigm. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-45-editorial"]
+      rationale: The chapter articulates a useful formal bridge between MTD and proactive cryptography, but its detailed novelty and influence cannot be fully evaluated from the abstract alone.
+      basis_source_anchor_ids: [anchor-paper-45-abstract]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 1
+  source_url: https://openalex.org/W2902349212
+  signals:
+    - OpenAlex reported 1 work citing the book chapter.
+  limitation: Counts vary by index/date, and related citations may accrue to the underlying PSS and PMPC papers rather than this synthesis chapter.

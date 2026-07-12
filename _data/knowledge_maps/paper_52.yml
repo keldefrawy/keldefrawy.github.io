@@ -12,258 +12,402 @@ contribution_types: [protocol, scheme]
 
 title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
 year: 2020
-status: "Published"
+status: Published
 venue: "18th International Conference on Applied Cryptography and Network Security (ACNS)"
-topic: "secure-encrypted-computation"
-labels: ["Theory"]
+topic: secure-encrypted-computation
+labels: [Theory]
 authors:
-  - "Karim Eldefrawy"
-  - "Tancrède Lepoint"
-  - "Antonin Leroux"
+  - Karim Eldefrawy
+  - Tancrède Lepoint
+  - Antonin Leroux
 keywords:
-  - "proactive secret sharing"
-  - "dynamic groups"
-  - "dishonest majority"
-editorial_summary: "This paper refreshes long-lived secret shares against a mobile adversary even when group membership changes and a majority may be dishonest. Its batching and bivariate-sharing techniques substantially reduce communication and provide building blocks for later proactive MPC protocols."
+  - proactive secret sharing
+  - dynamic groups
+  - dishonest majority
+  - bivariate polynomials
 
-research_question: "Can proactive secret sharing support dynamic membership and a mobile dishonest majority without prohibitive communication cost?"
-central_answer: "The paper reports batching and bivariate-sharing techniques that refresh long-lived shares under dynamic membership and reduce communication."
+research_question: >-
+  Can proactive secret sharing simultaneously tolerate a mobile dishonest majority, batch many secrets without a linear threshold loss, reduce communication, and redistribute shares as the participant set changes?
+central_answer: >-
+  The paper builds a computationally secure dynamic proactive secret-sharing scheme from bivariate-polynomial batching, gradual reconstruction, and dedicated increase/decrease protocols. For batches of up to n minus 2 secrets it reports O(n squared) amortized communication per secret, while preserving mixed-adversary secrecy and fairness under explicitly stated thresholds.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, formal-claim mapping, and initial assessment
+  method: >-
+    Complete review of the 53-page checked-in manuscript, including its definitions, protocols, theorem statements, supplementary security proofs, and visual inspection of the title page and a protocol/theorem page. Claims below distinguish theorem statements from implementation or deployment evidence, neither of which the paper supplies.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author verification. Threshold transcriptions and interpretations should be checked against the source before approval.
 
 sources:
-  - id: source-paper-52-site-record
-    type: curated_site_record
-    title: "Publication #52 metadata and editorial summary"
-    url: /publications/#paper-52
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-52-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-030-57808-4_1"
-    provenance_category: official
-  - id: source-paper-52-resource-2
-    type: public_archive_record
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2019/1383"
-    provenance_category: archive
-  - id: source-paper-52-resource-3
+  - id: source-paper-52-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf"
+    title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
+    url: /pubs/2020/pssdgdm_acns2020.pdf
     provenance_category: author
+    media_type: application/pdf
+    sha256: 48669813efeca12ddb68c1996e13e475131660748cfeff3512de42fa37a36a54
+    page_count: 53
+  - id: source-paper-52-official
+    type: official_publication_record
+    title: ACNS 2020 publisher record
+    url: https://doi.org/10.1007/978-3-030-57808-4_1
+    provenance_category: official
+  - id: source-paper-52-archive
+    type: public_archive_record
+    title: IACR ePrint 2019/1383
+    url: https://eprint.iacr.org/2019/1383
+    provenance_category: archive
+  - id: source-paper-52-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3003915831
+    url: https://api.openalex.org/works/W3003915831
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-52-editorial
-    source_id: source-paper-52-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-52
-  - id: anchor-paper-52-resource-1
-    source_id: source-paper-52-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1007/978-3-030-57808-4_1"
-  - id: anchor-paper-52-resource-2
-    source_id: source-paper-52-resource-2
-    label: "Archive resource: IACR ePrint"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://eprint.iacr.org/2019/1383"
-  - id: anchor-paper-52-resource-3
-    source_id: source-paper-52-resource-3
-    label: "Author-hosted resource: Author-hosted PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://keldefrawy.github.io/pubs/2020/pssdgdm_acns2020.pdf"
+  - id: anchor-paper-52-problem
+    source_id: source-paper-52-author-pdf
+    label: Problem, contributions, and asymptotic comparison
+    locator: Abstract and Sections 1.2-1.4, PDF pages 1-7
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=1
+  - id: anchor-paper-52-model
+    source_id: source-paper-52-author-pdf
+    label: Network, mixed adversary, and security properties
+    locator: Sections 2.1-2.3, PDF pages 7-10
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=7
+  - id: anchor-paper-52-assumptions
+    source_id: source-paper-52-author-pdf
+    label: Commitments and bivariate-polynomial assumptions
+    locator: Sections 2.4-2.5, PDF pages 10-11
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=10
+  - id: anchor-paper-52-batched-definition
+    source_id: source-paper-52-author-pdf
+    label: Batched and dynamic proactive secret-sharing definitions
+    locator: Section 3, PDF pages 11-14
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=11
+  - id: anchor-paper-52-core-protocols
+    source_id: source-paper-52-author-pdf
+    label: Bivariate Share, Recover, Reconstruct, and Refresh
+    locator: Sections 4.1-4.4, PDF pages 14-20
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=14
+  - id: anchor-paper-52-static-theorems
+    source_id: source-paper-52-author-pdf
+    label: Static batched-PSS correctness, secrecy, and communication
+    locator: Theorems 1-2 and Remarks 2 and 6, PDF pages 15-20
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=15
+  - id: anchor-paper-52-dynamic
+    source_id: source-paper-52-author-pdf
+    label: Increase, Decrease, DecreaseCorrupt, and Redistribute
+    locator: Section 5 and Theorem 3, PDF pages 20-26
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=20
+  - id: anchor-paper-52-proofs
+    source_id: source-paper-52-author-pdf
+    label: Ideal functionalities, simulators, and full proofs
+    locator: Supplementary Material, Appendices A-D, PDF pages 29-52
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=29
+  - id: anchor-paper-52-boundaries
+    source_id: source-paper-52-author-pdf
+    label: Robustness, threshold, batching, and synchrony boundaries
+    locator: Sections 1.3, 2.2, 4.4, 5.4, and related-work comparison, PDF pages 5-10, 19-26, and 52-53
+    url: /pubs/2020/pssdgdm_acns2020.pdf#page=5
+  - id: anchor-paper-52-publication
+    source_id: source-paper-52-official
+    label: Official ACNS publication identity
+    locator: DOI 10.1007/978-3-030-57808-4_1
+    url: https://doi.org/10.1007/978-3-030-57808-4_1
+  - id: anchor-paper-52-citations
+    source_id: source-paper-52-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 0 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3003915831
 
 nodes:
   - id: paper-52
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
-    summary: "This paper refreshes long-lived secret shares against a mobile adversary even when group membership changes and a majority may be dishonest. Its batching and bivariate-sharing techniques substantially reduce communication and provide building blocks for later proactive MPC protocols."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    summary: >-
+      A formally analyzed dynamic PSS construction that batches secrets with bivariate polynomials, supports a mobile mixed adversary and changing membership, and reduces amortized communication relative to earlier dishonest-majority schemes.
+    source_anchor_ids: [anchor-paper-52-problem]
 
   - id: paper-52-question
     kind: question
     parent_id: paper-52
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can proactive secret sharing support dynamic membership and a mobile dishonest majority without prohibitive communication cost?"
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can one combine dishonest-majority proactive security, large batches, fair reconstruction, efficient communication, and dynamic group membership in one secret-sharing scheme?
+    source_anchor_ids: [anchor-paper-52-problem]
 
-  - id: paper-52-contribution
+  - id: paper-52-answer
     kind: contribution
     parent_id: paper-52
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports batching and bivariate-sharing techniques that refresh long-lived shares under dynamic membership and reduce communication."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    epistemic_status: source_asserted
+    title: Central construction
+    summary: >-
+      Encode a batch on the diagonal of a bivariate polynomial, use specialized masking and gradual-reconstruction procedures for proactive maintenance, and change the sharing degree through redistribution protocols when parties join or leave.
+    source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-core-protocols, anchor-paper-52-dynamic]
 
-  - id: paper-52-method
-    kind: method
+  - id: paper-52-scope
+    kind: scope
     parent_id: paper-52
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented construction combines proactive refresh for changing groups with bivariate sharing and batched operations."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    epistemic_status: defined
+    title: System and adversary model
+    summary: >-
+      The parties operate synchronously over pairwise secure channels and authenticated broadcast. A polynomial-time mixed adversary may passively observe and actively control parties within each phase, and its corrupted set may move between refresh periods.
+    source_anchor_ids: [anchor-paper-52-model]
+
+  - id: paper-52-scope-security
+    kind: threat_model
+    parent_id: paper-52-scope
+    order: 1
+    epistemic_status: defined
+    title: Separate secrecy, correctness, fairness, and robustness thresholds
+    summary: >-
+      The paper assigns distinct multi-thresholds to secrecy, correctness, fairness, and robustness; a claim at one threshold must not be read as establishing the others. Robustness is generally limited to one or two active faults.
+    source_anchor_ids: [anchor-paper-52-model, anchor-paper-52-boundaries]
+
+  - id: paper-52-scope-assumptions
+    kind: assumption
+    parent_id: paper-52-scope
+    order: 2
+    epistemic_status: computational_assumption
+    title: Commitment and erasure assumptions
+    summary: >-
+      Active-fault checking uses Pedersen-style homomorphic commitments and computational security under discrete-log hardness; proactive security also relies on phase separation, reset or recovery, and disposal of obsolete state.
+    source_anchor_ids: [anchor-paper-52-assumptions, anchor-paper-52-model]
+
+  - id: paper-52-construction
+    kind: method
+    parent_id: paper-52
+    order: 4
+    epistemic_status: specified
+    title: Batched bivariate proactive sharing
+    summary: >-
+      A degree-d bivariate polynomial stores secrets at public diagonal points. A party holds a univariate slice, enabling the batch to be refreshed, recovered, reconstructed, and redistributed without exposing the embedded secrets.
+    source_anchor_ids: [anchor-paper-52-batched-definition, anchor-paper-52-core-protocols]
+
+  - id: paper-52-construction-batching
+    kind: scheme
+    parent_id: paper-52-construction
+    order: 1
+    epistemic_status: specified
+    title: Sublinear threshold loss under batching
+    summary: >-
+      The bivariate encoding replaces the usual linear loss in corruption tolerance with a square-root dependence on batch size and supports up to n minus 2 embedded secrets in the maximum batch.
+    source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-static-theorems]
+
+  - id: paper-52-construction-maintenance
+    kind: protocol
+    parent_id: paper-52-construction
+    order: 2
+    epistemic_status: specified
+    title: Share, Recover, Reconstruct, and Refresh
+    summary: >-
+      Share distributes polynomial slices; Recover replaces a missing slice with blinded assistance; Reconstruct builds a gradual ladder for fair release; and Refresh adds a zero-encoding random bivariate sharing to rerandomize state.
+    source_anchor_ids: [anchor-paper-52-core-protocols]
+
+  - id: paper-52-construction-membership
+    kind: protocol
+    parent_id: paper-52-construction
+    order: 3
+    epistemic_status: specified
+    title: Dynamic membership protocols
+    summary: >-
+      Increase and Decrease adjust the sharing degree as parties join or cooperate in leaving, while DecreaseCorrupt handles one non-participating failed or corrupted departure; Redistribute composes these operations for group changes.
+    source_anchor_ids: [anchor-paper-52-dynamic]
 
   - id: paper-52-claims
     kind: claim_group
     parent_id: paper-52
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    order: 5
+    epistemic_status: formally_analyzed
+    title: Main stated guarantees
+    summary: >-
+      Theorems establish static and dynamic PSS correctness and secrecy under stated mixed-adversary thresholds, together with fairness and amortized communication results.
+    source_anchor_ids: [anchor-paper-52-static-theorems, anchor-paper-52-dynamic]
 
-  - id: paper-52-claim-primary
+  - id: paper-52-claim-efficiency
     kind: claim
     parent_id: paper-52-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports substantial communication reductions and identifies the techniques as building blocks for later proactive MPC protocols."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    epistemic_status: asymptotic_theorem
+    title: O(n squared) amortized communication
+    summary: >-
+      With a maximum-size batch, the paper reports O(n squared) communication per secret overall, versus O(n cubed) for its single-secret specialization and O(n to the fourth) for the compared prior dishonest-majority construction.
+    source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-static-theorems, anchor-paper-52-dynamic]
+
+  - id: paper-52-claim-security
+    kind: claim
+    parent_id: paper-52-claims
+    order: 2
+    epistemic_status: proved_under_model
+    title: Mixed-adversary security and fairness
+    summary: >-
+      The theorem statements give secrecy and correctness thresholds with a square-root batch-size loss and a separate gradual-reconstruction fairness region; they do not claim robustness at the full dishonest-majority threshold.
+    source_anchor_ids: [anchor-paper-52-static-theorems, anchor-paper-52-proofs, anchor-paper-52-boundaries]
+
+  - id: paper-52-claim-dynamic
+    kind: claim
+    parent_id: paper-52-claims
+    order: 3
+    epistemic_status: proved_under_model
+    title: Dynamic redistribution preserves the shared secret
+    summary: >-
+      Theorem 3 composes the five principal protocols into a dynamic PSS scheme whose new group receives a fresh sharing of the same batch, subject to the old and new phases satisfying the stated thresholds.
+    source_anchor_ids: [anchor-paper-52-dynamic, anchor-paper-52-proofs]
 
   - id: paper-52-evidence
     kind: evidence_group
     parent_id: paper-52
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    order: 6
+    epistemic_status: proof_documented
+    title: Formal evidence
+    summary: >-
+      The source supplies protocol pseudocode, definitions, ideal functionalities, simulators, intermediate lemmas, and proofs for the static and dynamic constructions. This map audits their presence and logical role but does not independently machine-check them.
+    source_anchor_ids: [anchor-paper-52-core-protocols, anchor-paper-52-proofs]
 
-  - id: paper-52-evidence-reported
-    kind: evidence
-    parent_id: paper-52-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies construction techniques and communication claims, but the corruption model, thresholds, proofs, asymptotic and concrete costs, and protocol details were not audited."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
-
-  - id: paper-52-scope
+  - id: paper-52-boundaries
     kind: limitation_group
     parent_id: paper-52
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    order: 7
+    epistemic_status: material
+    title: Boundaries and costs
+    summary: >-
+      The construction is synchronous and computational, assumes secure channels and authenticated broadcast, loses threshold as the batch grows, is not robust against a general active dishonest majority, and offers asymptotic analysis rather than an implementation or deployment evaluation.
+    source_anchor_ids: [anchor-paper-52-model, anchor-paper-52-assumptions, anchor-paper-52-boundaries]
 
-  - id: paper-52-scope-boundary
+  - id: paper-52-boundary-membership
     kind: limitation
-    parent_id: paper-52-scope
+    parent_id: paper-52-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The security and efficiency guarantees depend on group-change rules, mobile-corruption timing, network assumptions, setup, batching regime, and recovery model."
-    source_anchor_ids: ["anchor-paper-52-editorial"]
+    epistemic_status: explicitly_scoped
+    title: Departure constraints
+    summary: >-
+      Cooperative Decrease requires leaving parties to participate, while DecreaseCorrupt handles only one non-participating departure at a time; broader churn behavior is not established by that subprotocol.
+    source_anchor_ids: [anchor-paper-52-dynamic]
 
   - id: paper-52-resources
     kind: artifact_group
     parent_id: paper-52
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-52-resource-1", "anchor-paper-52-resource-2", "anchor-paper-52-resource-3"]
-
-  - id: paper-52-resources-available
-    kind: artifact
-    parent_id: paper-52-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: IACR ePrint; Author-hosted: Author-hosted PDF."
-    source_anchor_ids: ["anchor-paper-52-resource-1", "anchor-paper-52-resource-2", "anchor-paper-52-resource-3"]
+    order: 8
+    epistemic_status: source_available
+    title: Auditable resources
+    summary: >-
+      The complete manuscript is checked into the site with page count and SHA-256, the IACR ePrint supplies an archive identity, and the DOI identifies the ACNS publication. No implementation artifact is claimed.
+    source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-publication]
 
   - id: paper-52-scrutiny
     kind: scrutiny
     parent_id: paper-52
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at 18th International Conference on Applied Cryptography and Network Security (ACNS). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-52-resource-1"]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared at ACNS 2020. Review reports, rebuttal material, independent proof audits, and implementations are not represented in the available record.
+    source_anchor_ids: [anchor-paper-52-publication]
+
+  - id: paper-52-lineage
+    kind: lineage
+    parent_id: paper-52
+    order: 10
+    epistemic_status: documented
+    title: Research lineage
+    summary: >-
+      The work improves the earlier dishonest-majority PSS line with batching and dynamic groups, and its bivariate sharing becomes the PSS substrate for the later proactive-MPC construction mapped as paper #61.
+    source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-dynamic]
 
 relations:
-  - id: relation-paper-52-contribution-addresses-question
+  - id: paper-52-relation-answer-question
     type: addresses
-    from_id: paper-52-contribution
+    from_id: paper-52-answer
     to_id: paper-52-question
-  - id: relation-paper-52-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-52-method
-    to_id: paper-52-contribution
-  - id: relation-paper-52-evidence-supports-claim
+  - id: paper-52-relation-batching-answer
+    type: realizes
+    from_id: paper-52-construction-batching
+    to_id: paper-52-answer
+  - id: paper-52-relation-maintenance-construction
+    type: component_of
+    from_id: paper-52-construction-maintenance
+    to_id: paper-52-construction
+  - id: paper-52-relation-membership-construction
+    type: component_of
+    from_id: paper-52-construction-membership
+    to_id: paper-52-construction
+  - id: paper-52-relation-proof-security
     type: supports
-    from_id: paper-52-evidence-reported
-    to_id: paper-52-claim-primary
-  - id: relation-paper-52-scope-qualifies-claim
+    from_id: paper-52-evidence
+    to_id: paper-52-claim-security
+  - id: paper-52-relation-proof-dynamic
+    type: supports
+    from_id: paper-52-evidence
+    to_id: paper-52-claim-dynamic
+  - id: paper-52-relation-model-claims
     type: qualifies
-    from_id: paper-52-scope-boundary
-    to_id: paper-52-claim-primary
-  - id: relation-paper-52-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-52-resources-available
-    to_id: paper-52-evidence-reported
-  - id: relation-paper-52-status-qualifies-claim
+    from_id: paper-52-scope
+    to_id: paper-52-claims
+  - id: paper-52-relation-boundaries-claims
     type: qualifies
-    from_id: paper-52-scrutiny
-    to_id: paper-52-claim-primary
+    from_id: paper-52-boundaries
+    to_id: paper-52-claims
+  - id: paper-52-relation-lineage-paper
+    type: contextualizes
+    from_id: paper-52-lineage
+    to_id: paper-52
 
 assessment:
   id: paper-52-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-52-editorial", "anchor-paper-52-resource-1"]
+      level: high
+      rationale: >-
+        The complete source gives formal definitions, protocol specifications, threshold statements, ideal functionalities, and full proofs. The rating reflects documented theoretical support, not an independent proof verification or empirical deployment test.
+      basis_source_anchor_ids: [anchor-paper-52-static-theorems, anchor-paper-52-proofs]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-52-resource-1", "anchor-paper-52-resource-2", "anchor-paper-52-resource-3"]
+      rationale: >-
+        A complete checked-in author copy with recorded page count and SHA-256, plus archive and DOI identities, makes assumptions and proof claims directly inspectable from this map.
+      basis_source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-52-editorial"]
+      rationale: >-
+        Authorship, venue, date, official identity, archive version, and author copy are documented; contributor roles, revision history, and tool use are not.
+      basis_source_anchor_ids: [anchor-paper-52-publication, anchor-paper-52-problem]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-52-resource-1"]
+      rationale: >-
+        ACNS publication establishes venue review, while review reports, independent proof checking, and reproduction evidence are unavailable here.
+      basis_source_anchor_ids: [anchor-paper-52-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-52-editorial"]
+      level: low
+      rationale: >-
+        The dated OpenAlex record located 0 citations for the DOI-identified work. Under the author-defined corpus rule, 0 through 8 located citations is Low; counts are index- and date-dependent.
+      basis_source_anchor_ids: [anchor-paper-52-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: communication-efficient proactive secret sharing that combines dynamic groups with dishonest-majority resilience. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-52-editorial"]
+      rationale: >-
+        The source reports a quadratic amortized improvement and a new combination of dishonest-majority batching and dynamic groups, but priority and downstream impact have not been independently established by this map.
+      basis_source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-dynamic]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex exact DOI lookup
+  citation_count: 0
+  source_url: https://api.openalex.org/works/W3003915831
+  signals:
+    - The exact DOI-matched OpenAlex work reported zero citing works.
+  limitation: Citation counts vary across indexes and versions; citations to the IACR ePrint may be merged differently from the proceedings DOI.

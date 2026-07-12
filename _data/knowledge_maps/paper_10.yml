@@ -18,151 +18,252 @@ labels: ["Theory"]
 authors: ["Karim Eldefrawy", "John Solis", "Gene Tsudik"]
 keywords: ["delay-tolerant networks", "social trust", "confidential messaging"]
 
-research_question: "How can intermittently connected users establish confidential messaging relationships when credential lookup and multi-round handshakes are impractical?"
-central_answer: "The proposed schemes derive secure messaging relationships from social affiliations or shared contacts so communication can remain protected across long delays and sparse encounters."
+research_question: >-
+  How can a delay-tolerant-network sender confidentially address a recipient when it shares no key with that recipient, does not know the recipient's public key, and cannot afford an online lookup or multi-round handshake?
+central_answer: >-
+  Route independent pseudorandom masking keys through multiple entities socially affiliated with the recipient. Each affiliated entity translates its key material into a form the recipient can recover, and the recipient removes all masks. Gateways extend the construction across regions; when no affiliated entity is known, a weaker split-message method trades interception probability against delay. Simulations and a social-network sample assess feasibility under an honest-but-curious model.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, evidence linking, and initial assessment
+  method: "Full-source audit of the checked-in author-hosted paper and official IEEE DOI record."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-drafted, source-linked map awaiting author verification before approval."
 
 sources:
-  - id: source-paper-10-site-record
-    type: curated_record
-    title: "Curated publication record for paper #10"
-    url: /publications/#paper-10
-  - id: source-paper-10-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/COMPSAC.2009.43"
-  - id: source-paper-10-author-1
+  - id: source-paper-10-paper
     type: author_copy
+    title: "Leveraging Social Contacts for Message Confidentiality in Delay Tolerant Networks"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf
+    media_type: application/pdf
+    sha256: ed9c55eba1833234e909debc79fbddbdd180ea18c9f9f9d2df7e7bd997273973
+    page_count: 9
+    provenance_category: author
+    version_note: "Author-hosted conference paper; local copy checked 2026-07-11."
+  - id: source-paper-10-author
+    type: author_copy_origin
     title: "Author-hosted PDF"
     url: "https://www.johnsolis.com/publications/dtn_compsac09.pdf"
+  - id: source-paper-10-official
+    type: official_publication_record
+    title: "IEEE DOI record"
+    url: "https://doi.org/10.1109/COMPSAC.2009.43"
+  - id: source-paper-10-citations
+    type: citation_search
+    title: "Dated scholarly-web citation search"
+    url: "https://scholar.google.com/scholar?q=%22Leveraging+Social+Contacts+for+Message+Confidentiality+in+Delay+Tolerant+Networks%22"
+    version_note: "Search attempted 2026-07-11; no transparent citation count was retrievable in this environment."
 
 source_anchors:
-  - id: anchor-paper-10-site-record
-    source_id: source-paper-10-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-10
-  - id: anchor-paper-10-official-1
-    source_id: source-paper-10-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1109/COMPSAC.2009.43"
-  - id: anchor-paper-10-author-1
-    source_id: source-paper-10-author-1
-    label: "Author-hosted PDF"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-10-problem
+    source_id: source-paper-10-paper
+    label: "Motivation, problem, and contribution"
+    locator: "Abstract and Sections I-II, PDF pages 1-2"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=1
+  - id: anchor-paper-10-model
+    source_id: source-paper-10-paper
+    label: "Network model and assumptions"
+    locator: "Section III, PDF pages 2-3"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=2
+  - id: anchor-paper-10-intra
+    source_id: source-paper-10-paper
+    label: "Affiliated-entity intra-region scheme"
+    locator: "Section IV-A, PDF pages 3-4"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=3
+  - id: anchor-paper-10-poor
+    source_id: source-paper-10-paper
+    label: "Fallback split-message approach"
+    locator: "Section IV-B, PDF pages 4-5"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=4
+  - id: anchor-paper-10-inter
+    source_id: source-paper-10-paper
+    label: "Inter-region gateway extension"
+    locator: "Section V, PDF pages 5-6"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=5
+  - id: anchor-paper-10-simulation
+    source_id: source-paper-10-paper
+    label: "ONE simulation design and interception results"
+    locator: "Section VI-A and Tables II-III, PDF pages 6-7"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=6
+  - id: anchor-paper-10-social
+    source_id: source-paper-10-paper
+    label: "Facebook social-reach sample"
+    locator: "Section VI-B and Figures 2-3, PDF pages 7-8"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=7
+  - id: anchor-paper-10-security
+    source_id: source-paper-10-paper
+    label: "Informal security analysis and limitations"
+    locator: "Section VII, PDF pages 7-8"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=7
+  - id: anchor-paper-10-conclusion
+    source_id: source-paper-10-paper
+    label: "Conclusion and future work"
+    locator: "Section IX, PDF page 8"
+    url: /pubs/2009/social-contacts-dtn-compsac2009.pdf#page=8
+  - id: anchor-paper-10-provenance
+    source_id: source-paper-10-author
+    label: "Author-copy provenance"
+    locator: "Public author-hosted PDF"
     url: "https://www.johnsolis.com/publications/dtn_compsac09.pdf"
+  - id: anchor-paper-10-publication
+    source_id: source-paper-10-official
+    label: "Official publication metadata"
+    locator: "DOI 10.1109/COMPSAC.2009.43"
+    url: "https://doi.org/10.1109/COMPSAC.2009.43"
+  - id: anchor-paper-10-citation-search
+    source_id: source-paper-10-citations
+    label: "Citation search attempted"
+    locator: "Exact-title search, 2026-07-11; no verified count retrieved"
+    url: "https://scholar.google.com/scholar?q=%22Leveraging+Social+Contacts+for+Message+Confidentiality+in+Delay+Tolerant+Networks%22"
 
 nodes:
   - id: paper-10
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Leveraging Social Contacts for Message Confidentiality in Delay Tolerant Networks"
-    summary: "The paper addresses key establishment in delay-tolerant networks, where intermittent contact makes credential lookup and multi-round handshakes impractical. Its schemes derive secure messaging relationships from social affiliations or shared contacts so users can protect messages despite long delays and sparse connectivity."
-    source_anchor_ids: [anchor-paper-10-site-record]
-
+    epistemic_status: published
+    title: "Leveraging Social Contacts for Message Confidentiality in DTNs"
+    summary: "A confidential-messaging scheme that substitutes recipient-affiliated intermediaries for unavailable end-to-end key discovery in intermittently connected networks."
+    source_anchor_ids: [anchor-paper-10-problem, anchor-paper-10-publication]
   - id: paper-10-question
     kind: question
     parent_id: paper-10
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How can intermittently connected users establish confidential messaging relationships when credential lookup and multi-round handshakes are impractical?"
-    source_anchor_ids: [anchor-paper-10-site-record]
-
+    summary: "How can a sender encrypt its first message to a recipient with no shared security context and no dependable online infrastructure?"
+    source_anchor_ids: [anchor-paper-10-problem]
   - id: paper-10-answer
     kind: contribution
     parent_id: paper-10
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The proposed schemes derive secure messaging relationships from social affiliations or shared contacts so communication can remain protected across long delays and sparse encounters."
-    source_anchor_ids: [anchor-paper-10-site-record]
-
-  - id: paper-10-method
-    kind: method
+    epistemic_status: proposed_and_simulated
+    title: "Central answer"
+    summary: "Use two or more socially affiliated entities as independent key-translation points, so only the destination can combine all pseudorandom masks and recover the message."
+    source_anchor_ids: [anchor-paper-10-intra, anchor-paper-10-simulation]
+  - id: paper-10-model
+    kind: model
     parent_id: paper-10
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Use pre-existing social relationships and common contacts as inputs to key-establishment mechanisms suited to delay-tolerant communication."
-    source_anchor_ids: [anchor-paper-10-site-record]
-
-  - id: paper-10-claims
-    kind: claim_group
+    epistemic_status: explicitly_scoped
+    title: "Regional DTN model"
+    summary: "Mobile nodes communicate opportunistically within regions; fixed gateways connect regions. Nodes know keys for selected affiliated entities, and those entities are assumed to know or share a key with the destination."
+    source_anchor_ids: [anchor-paper-10-model, anchor-paper-10-intra]
+  - id: paper-10-intra
+    kind: scheme
     parent_id: paper-10
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The schemes are reported to enable confidential messaging despite intermittent connectivity and the absence of timely online credential services."
-    source_anchor_ids: [anchor-paper-10-site-record]
-
+    epistemic_status: specified
+    title: "Intra-region affiliated-entity scheme"
+    summary: "The sender XOR-masks the message with PRF outputs under independent seeds and encrypts one seed to each AE. AEs re-encrypt their seed for the destination; AE traversal order may vary and replicated paths may collectively visit all AEs."
+    source_anchor_ids: [anchor-paper-10-intra]
+  - id: paper-10-inter
+    kind: scheme
+    parent_id: paper-10
+    order: 5
+    epistemic_status: specified
+    title: "Inter-region extension"
+    summary: "Source- and destination-region gateways translate an additional masking seed between regional trust domains, providing a second layer when only one ordinary AE is available."
+    source_anchor_ids: [anchor-paper-10-inter]
+  - id: paper-10-poor
+    kind: fallback
+    parent_id: paper-10
+    order: 6
+    epistemic_status: heuristic
+    title: "Poor Man's Approach"
+    summary: "If no AE is known, the sender separates ciphertext and key shares across different routes and delays. Confidentiality is probabilistic: any intermediary that gathers all components recovers the message."
+    source_anchor_ids: [anchor-paper-10-poor]
+  - id: paper-10-threat
+    kind: threat_model
+    parent_id: paper-10
+    order: 7
+    epistemic_status: explicitly_scoped
+    title: "Honest-but-curious intermediaries"
+    summary: "Nodes follow routing behavior but may retain and correlate messages beyond TTL. Active modification, dropping, and origin authentication are outside the primary model; AE collusion is the central confidentiality threat."
+    source_anchor_ids: [anchor-paper-10-security]
   - id: paper-10-evidence
     kind: evidence_group
     parent_id: paper-10
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary describes the key-establishment objective and social-contact basis; formal security analysis, protocol details, and performance evidence have not been inspected."
-    source_anchor_ids: [anchor-paper-10-site-record]
-
-  - id: paper-10-limitations
+    order: 8
+    epistemic_status: simulation_and_observational_sample
+    title: "Feasibility evidence"
+    summary: "ONE simulations model 250 pedestrians on a Helsinki map with epidemic routing, while samples of 870 Orange County and 900 Egypt Facebook users estimate friend/friend-of-friend reach."
+    source_anchor_ids: [anchor-paper-10-simulation, anchor-paper-10-social]
+  - id: paper-10-result
+    kind: result
+    parent_id: paper-10-evidence
+    order: 1
+    epistemic_status: simulation_supported
+    title: "Delay, path length, and interception"
+    summary: "For the fallback scheme, longer intra-region separation lowers measured interception but raises latency; in inter-region runs, more hops increase exposure and retained copies weaken the benefit of delay."
+    source_anchor_ids: [anchor-paper-10-simulation]
+  - id: paper-10-social-result
+    kind: result
+    parent_id: paper-10-evidence
+    order: 2
+    epistemic_status: observational_sample
+    title: "Social reach"
+    summary: "The sampled public profiles suggest that tens to hundreds of direct contacts can expose thousands of friends-of-friends, but closed profiles are omitted and the two convenience samples do not establish a general population distribution."
+    source_anchor_ids: [anchor-paper-10-social]
+  - id: paper-10-boundaries
     kind: limitation_group
     parent_id: paper-10
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The record does not establish resistance to malicious contacts, social-graph leakage, sparse or changing affiliations, revocation failures, or all delay-tolerant network conditions."
-    source_anchor_ids: [anchor-paper-10-site-record]
-
-  - id: paper-10-resources
-    kind: artifact_group
+    order: 9
+    epistemic_status: material
+    title: "Security and scalability boundaries"
+    summary: "Security is informal; multiple AEs must not collude, the sender must know their keys, and each AE must know the destination key. The paper itself flags the latter assumption as potentially unscalable and leaves formal analysis for future work."
+    source_anchor_ids: [anchor-paper-10-security, anchor-paper-10-conclusion]
+  - id: paper-10-artifacts
+    kind: artifact
     parent_id: paper-10
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; Author-hosted PDF. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-10-official-1, anchor-paper-10-author-1]
-
+    order: 10
+    epistemic_status: paper_available_no_code
+    title: "Artifacts"
+    summary: "A fixed author copy is available locally; ONE configurations, simulation outputs, and the historical social-network sample were not located."
+    source_anchor_ids: [anchor-paper-10-simulation, anchor-paper-10-social, anchor-paper-10-provenance]
   - id: paper-10-scrutiny
     kind: scrutiny
     parent_id: paper-10
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at IEEE Computer Software and Applications Conference (COMPSAC). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-10-site-record, anchor-paper-10-official-1]
+    order: 11
+    epistemic_status: peer_reviewed
+    title: "Scrutiny"
+    summary: "The work appeared at IEEE COMPSAC 2009 and explicitly labels its security assessment preliminary and informal; independent reproduction was not located."
+    source_anchor_ids: [anchor-paper-10-security, anchor-paper-10-publication]
 
 relations:
-  - id: paper-10-relation-method-supports-answer
-    type: supports
-    from_id: paper-10-method
+  - id: paper-10-relation-model-frames-question
+    type: contextualizes
+    from_id: paper-10-model
+    to_id: paper-10-question
+  - id: paper-10-relation-intra-realizes-answer
+    type: realizes
+    from_id: paper-10-intra
     to_id: paper-10-answer
-  - id: paper-10-relation-evidence-supports-claim
-    type: supports
+  - id: paper-10-relation-inter-extends-intra
+    type: extends
+    from_id: paper-10-inter
+    to_id: paper-10-intra
+  - id: paper-10-relation-poor-fallback
+    type: alternative_to
+    from_id: paper-10-poor
+    to_id: paper-10-intra
+  - id: paper-10-relation-threat-qualifies-answer
+    type: qualifies
+    from_id: paper-10-threat
+    to_id: paper-10-answer
+  - id: paper-10-relation-evidence-evaluates-answer
+    type: evaluates
     from_id: paper-10-evidence
-    to_id: paper-10-claims
-  - id: paper-10-relation-limitations-qualify-claim
+    to_id: paper-10-answer
+  - id: paper-10-relation-boundaries-qualify-answer
     type: qualifies
-    from_id: paper-10-limitations
-    to_id: paper-10-claims
-  - id: paper-10-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-10-scrutiny
-    to_id: paper-10
+    from_id: paper-10-boundaries
+    to_id: paper-10-answer
 
 assessment:
   id: paper-10-assessment-2026-07-11
@@ -173,32 +274,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary describes the key-establishment objective and social-contact basis; formal security analysis, protocol details, and performance evidence have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-10-site-record]
+      rationale: "The schemes are specified and evaluated with DTN simulations and a social-network sample, but the security analysis is explicitly informal and the key/collusion assumptions are not experimentally validated."
+      basis_source_anchor_ids: [anchor-paper-10-intra, anchor-paper-10-inter, anchor-paper-10-simulation, anchor-paper-10-security]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-10-official-1, anchor-paper-10-author-1]
+      rationale: "A fixed author-hosted full text is checked in with page count and hash, making the constructions, evaluation, and stated limitations directly inspectable."
+      basis_source_anchor_ids: [anchor-paper-10-provenance, anchor-paper-10-intra, anchor-paper-10-simulation, anchor-paper-10-security]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-10-site-record]
+      rationale: "Named authorship, author-copy provenance, official metadata, and simulation parameters are documented; roles, revision history, and artifact lineage are not."
+      basis_source_anchor_ids: [anchor-paper-10-simulation, anchor-paper-10-provenance, anchor-paper-10-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE Computer Software and Applications Conference (COMPSAC), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-10-official-1]
+      rationale: "The paper has an official full-conference publication record; no public reviews, formal verification, or independent reproduction was located."
+      basis_source_anchor_ids: [anchor-paper-10-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-10-site-record]
+      level: low
+      rationale: "No citations were verifiably located in the constrained dated search. Under the author's 0-8 rule this is low, but it is not a claim that the paper has no citations."
+      basis_source_anchor_ids: [anchor-paper-10-citation-search]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The schemes are reported to enable confidential messaging despite intermittent connectivity and the absence of timely online credential services. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-10-site-record]
+      rationale: "The paper offers a concrete way to bootstrap confidentiality from social structure and studies its operational tradeoffs, but collusion and destination-key scalability constrain the supported claim."
+      basis_source_anchor_ids: [anchor-paper-10-problem, anchor-paper-10-intra, anchor-paper-10-simulation, anchor-paper-10-security]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "Exact-title scholarly-web search; transparent index count unavailable"
+  source: "Google Scholar query route plus general scholarly-web search"
+  citation_count: 0
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "Zero means no citations were verifiably located during this constrained search, not a total bibliometric count; author should replace it with a confirmed index snapshot."

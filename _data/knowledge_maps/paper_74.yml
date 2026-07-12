@@ -16,210 +16,552 @@ year: null
 venue: null
 publication_status: "Under review"
 topic: privacy-identity
-labels:
-  - "Theory"
-  - "Applied"
+labels: [Theory, Applied, System, Implementation]
 availability: "An author-hosted manuscript PDF is available on this site; the work remains under review."
 abstract_kind: Full paper abstract
 abstract_review_status: extracted_from_checked_in_pdf
 abstract_added_at: "2026-07-11"
 abstract_note: "Transcribed from the checked-in author manuscript; mathematical notation was normalized to plain Unicode, and only typography, discretionary hyphenation, and line-break artifacts were otherwise normalized. The source typo 'independet' is retained."
-abstract_source_url: "/pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=1"
+abstract_source_url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=1
 abstract: >-
   Secure and anonymous messaging has many compelling use-cases and is becoming increasingly popular. In this paper, we consider it in the context of delay-and-disruption-prone networks, which are characterized by handicapped network access, disrupted operation, censorship, and intermittent network outages. With such settings in mind, we define and design a Private Identity-Based Bulletin Board (PIB³) scheme, which allows users to anonymously post and retrieve messages to and from a distributed database, and supports communication between users without pre-established setup or pre-exchanged keys. Anyone can encrypt a message for an identity and public epoch, such that only the party with the decryption key for that identity can identify, retrieve, and decrypt the message. Against one corrupted non-colluding PIB³ server, the server learns neither the recipient identity nor the retrieved record indices beyond the leakage explicitly modeled by the scheme: the public epoch, the database size, and the number of retrievals made by the receiver. If retrieval-count privacy is required, retrievals can be padded to a fixed bound. The multi-server construction extends this guarantee to larger server sets, and gives coalition privacy whenever the underlying multi-server PIR scheme is private against the corresponding coalition. Contributions of this work are: (1) formally defining functionality and security requirements for PIB³-s, (2) defining and constructing a Hierarchical Identity-Based Encryption (HIBE) scheme with searchable ciphertexts, which serves as a building block for the proposed PIB³ scheme and may be of independet interest, (3) designing an efficient PIB³ scheme that can be realized with n ≥ 2 servers based on the HIBE scheme with searchable ciphertexts combined with additional primitives, and (4) implementing a functional PIB³ prototype which demonstrates practicality of the entire concept and allows us to assess its performance empirically.
 authors:
-  - "Karim Eldefrawy"
-  - "Stanislaw Jarecki"
-  - "Benjamin Terner"
-  - "Gene Tsudik"
+  - Karim Eldefrawy
+  - Stanislaw Jarecki
+  - Benjamin Terner
+  - Gene Tsudik
 keywords:
-  - "anonymous messaging"
-  - "delay-and-disruption-prone networks"
-  - "identity-based encryption"
-  - "private information retrieval"
-  - "searchable ciphertexts"
+  - anonymous messaging
+  - delay-and-disruption-prone networks
+  - identity-based encryption
+  - searchable HIBE
+  - private information retrieval
+  - metadata privacy
+  - distributed bulletin boards
 
-research_question: "Can a distributed identity-based bulletin board support asynchronous anonymous messaging without pre-established keys while hiding recipient identities and retrieved record indices from corrupted non-colluding servers in delay-and-disruption-prone networks?"
-central_answer: "The abstract defines a Private Identity-Based Bulletin Board scheme that combines anonymous identity-based encryption, searchable hierarchical identity-based encryption, and multi-server private information retrieval; it states single-server and coalition privacy guarantees under explicit leakage and reports a functional prototype."
+research_question: >-
+  Can users who know only one another's identities exchange messages asynchronously through disruption-prone networks while hiding both recipient identity and retrieved record indices from corrupted non-colluding bulletin-board servers?
+central_answer: >-
+  PIB³ combines ciphertext-anonymous IBE for payloads, a new two-level searchable HIBE for identity-and-epoch discovery, token sharing across replicated non-colluding servers, and multi-server PIR for private retrieval. Its formal guarantees expose the public epoch, database size, and unpadded retrieval count, and its prototype reports practical—but linear-in-database-size—search and retrieval costs.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: abstract extraction, source-bounded synthesis, and resource linking
-  method: "AI drafting from the curated metadata and the complete abstract transcribed from the checked-in full-text author manuscript; the PDF title, authors, abstract boundary, page count, and SHA-256 identity were verified, but the body, proofs, implementation, and experiments were not source-audited."
-  source_scope: metadata_and_source_abstract
+      role: full-text extraction, proof-and-protocol mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 44-page checked-in author manuscript, including its definitions, construction, theorem statements and proof sketches, appendices, single-server attack, multi-server extension, prototype setup, and reported measurements. Formal claims are tied to their assumptions and leakage model; prototype measurements are kept separate from theorem evidence and are not treated as independent reproduction.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored abstract-grounded draft awaiting author review. Statements are bounded to what the manuscript abstract reports unless explicitly labeled as editorial synthesis."
+    note: AI-authored source map awaiting full author audit. Cryptographic interpretations, theorem boundaries, experimental readings, and ratings remain provisional until author approval.
 
 sources:
-  - id: source-paper-74-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #74"
-    url: /publications/#paper-74
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
   - id: source-paper-74-author-pdf
     type: author_hosted_copy
-    title: "Private Identity-Based Bulletin Boards author manuscript"
+    title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
     url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf
     media_type: application/pdf
     sha256: 05579c33303df2bbbab58bcb627c8a7ee717fd22a2a802755e1199ab69f4a265
     page_count: 44
     provenance_category: author
+  - id: source-paper-74-curated
+    type: curated_site_record
+    title: Website publication record for Paper #74
+    url: /publications/#paper-74
+    scope_note: Author-supplied bibliographic status and local editorial record.
+  - id: source-paper-74-citation-search
+    type: citation_search_snapshot
+    title: Exact-title scholarly-web search
+    url: "https://www.google.com/search?q=%22Private+Identity-Based+Bulletin+Boards+for+Anonymous+Messaging+and+Other+Online+Services%22"
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-74-curated
-    source_id: source-paper-74-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-74
-  - id: anchor-paper-74-author-abstract
+  - id: anchor-paper-74-abstract
     source_id: source-paper-74-author-pdf
-    label: "Author manuscript abstract"
-    locator: "PDF page 1, complete Abstract section ending immediately before Section 1; title, four authors, abstract boundary, page count, and SHA-256 identity verified."
+    label: Problem, guarantees, four contributions, and prototype claim
+    locator: Abstract and Section 1, PDF pages 1-5
     url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=1
+  - id: anchor-paper-74-model
+    source_id: source-paper-74-author-pdf
+    label: System, network, adversary, anonymous-channel, and leakage model
+    locator: Section 2.1, PDF page 5
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=5
+  - id: anchor-paper-74-overview
+    source_id: source-paper-74-author-pdf
+    label: Record format, discovery mechanism, token sharing, and PIR retrieval
+    locator: Section 2.2, PDF pages 5-7
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=5
+  - id: anchor-paper-74-hibesc-definition
+    source_id: source-paper-74-author-pdf
+    label: Searchable-HIBE syntax, correctness, soundness, and fixed-epoch anonymity
+    locator: Section 5, PDF pages 8-10
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=8
+  - id: anchor-paper-74-hibesc-construction
+    source_id: source-paper-74-author-pdf
+    label: Two-level searchable-HIBE construction
+    locator: Section 6, PDF pages 9-11
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=9
+  - id: anchor-paper-74-pib-definition
+    source_id: source-paper-74-author-pdf
+    label: PIB³ syntax, correctness, and bulletin-board privacy experiment
+    locator: Section 7 and Figure 4, PDF pages 11-13
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=11
+  - id: anchor-paper-74-construction
+    source_id: source-paper-74-author-pdf
+    label: PIB record encoding and two-server query protocol
+    locator: Section 8.1 and Figures 5-6, PDF pages 13-15
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=13
+  - id: anchor-paper-74-security
+    source_id: source-paper-74-author-pdf
+    label: Main bulletin-board privacy theorem and hybrid proof sketch
+    locator: Section 8.2, Theorem 1, PDF pages 14-15
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=14
+  - id: anchor-paper-74-complexity
+    source_id: source-paper-74-author-pdf
+    label: Collision analysis, optimized communication, and round count
+    locator: Appendix A and Section 8.2, PDF pages 15 and 18-19
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=18
+  - id: anchor-paper-74-experiments
+    source_id: source-paper-74-author-pdf
+    label: Prototype setup, search and PIR measurements, latency, and omitted client benchmark
+    locator: Appendix B, PDF pages 19-22
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=19
+  - id: anchor-paper-74-single-server
+    source_id: source-paper-74-author-pdf
+    label: Single-server access-profile leakage and chosen-identity attack
+    locator: Appendix F, PDF pages 29-30
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=29
+  - id: anchor-paper-74-hibesc-proof
+    source_id: source-paper-74-author-pdf
+    label: Searchable-HIBE reductions and fixed-epoch anonymity proof
+    locator: Appendix G, PDF pages 30-35
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=30
+  - id: anchor-paper-74-pib-proof
+    source_id: source-paper-74-author-pdf
+    label: Full PIB privacy hybrid argument
+    locator: Appendix H, PDF pages 35-42
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=35
+  - id: anchor-paper-74-multiserver
+    source_id: source-paper-74-author-pdf
+    label: N-server protocol and conditional coalition-privacy theorem
+    locator: Appendix I, Theorem 2, PDF pages 42-44
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=42
+  - id: anchor-paper-74-status
+    source_id: source-paper-74-curated
+    label: Under-review status
+    locator: Website publication record accessed 2026-07-11
+    url: /publications/#paper-74
+  - id: anchor-paper-74-citations
+    source_id: source-paper-74-citation-search
+    label: Dated exact-title citation search
+    locator: No citing work was verifiably located when searched 2026-07-11
+    url: "https://www.google.com/search?q=%22Private+Identity-Based+Bulletin+Boards+for+Anonymous+Messaging+and+Other+Online+Services%22"
 
 nodes:
   - id: paper-74
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: abstract_grounded_editorial_synthesis
-    title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
-    summary: "The paper defines Private Identity-Based Bulletin Boards for asynchronous anonymous messaging without pre-established keys in censored or disruption-prone networks. It combines anonymous identity-based encryption, searchable HIBE, and multi-server private information retrieval, then reports a functional prototype."
-    source_anchor_ids: [anchor-paper-74-author-abstract]
+    epistemic_status: under_review_manuscript
+    title: Private Identity-Based Bulletin Boards
+    summary: >-
+      A theory-and-systems paper defining metadata-private identity-based bulletin boards, constructing the required searchable-encryption and retrieval protocols, proving privacy under explicit leakage and non-collusion assumptions, and evaluating a functional prototype.
+    source_anchor_ids: [anchor-paper-74-abstract]
+
   - id: paper-74-question
     kind: question
     parent_id: paper-74
     order: 1
-    epistemic_status: abstract_grounded_editorial_synthesis
-    title: "Research question"
-    summary: "Can a distributed identity-based bulletin board support asynchronous anonymous messaging without pre-established keys while hiding recipient identities and retrieved record indices from corrupted non-colluding servers in delay-and-disruption-prone networks?"
-    source_anchor_ids: [anchor-paper-74-author-abstract]
-  - id: paper-74-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can parties who have never exchanged keys post and retrieve messages asynchronously through censored or intermittent networks without revealing recipient identities or requested database indices to the storage service?
+    source_anchor_ids: [anchor-paper-74-abstract]
+
+  - id: paper-74-answer
     kind: contribution
     parent_id: paper-74
     order: 2
-    epistemic_status: abstract_reported_not_body_audited
-    title: "Contribution and central answer"
-    summary: "The abstract defines the PIB³ functionality and security requirements, constructs a searchable-ciphertext HIBE building block, composes it with anonymous IBE and private information retrieval, and reports an efficient multi-server PIB³ construction plus a functional prototype."
-    source_anchor_ids: [anchor-paper-74-author-abstract]
-  - id: paper-74-method
-    kind: method
+    epistemic_status: source_asserted
+    title: PIB³ construction
+    summary: >-
+      The answer combines anonymous IBE, two-level searchable HIBE, randomized token shares, and multi-server PIR so senders need only a receiver identity and public epoch while each allowed corrupted-server coalition sees only the stated leakage.
+    source_anchor_ids: [anchor-paper-74-overview, anchor-paper-74-construction, anchor-paper-74-multiserver]
+
+  - id: paper-74-use-case
+    kind: scope
     parent_id: paper-74
     order: 3
-    epistemic_status: abstract_reported_not_body_audited
-    title: "Method or construction"
-    summary: "The reported construction combines ciphertext-anonymous identity-based encryption for message payloads, a two-level HIBE scheme with searchable ciphertexts for identity-and-epoch discovery, and multi-server PIR for private retrieval."
-    source_anchor_ids: [anchor-paper-74-author-abstract]
+    epistemic_status: explicitly_scoped
+    title: Delay-and-disruption-prone communication
+    summary: >-
+      Clients may be offline at different times and face censorship, rate limits, shutdowns, or intermittent links; replicated bulletin-board servers provide temporary application-layer storage until connectivity returns.
+    source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-model]
+
+  - id: paper-74-model-clients
+    kind: assumption
+    parent_id: paper-74-use-case
+    order: 1
+    epistemic_status: assumed
+    title: Identity knowledge and public setup
+    summary: >-
+      Senders and receivers know pseudonyms for one another and possess a client with public IBE/HIBE parameters, but they need no pairwise pre-shared key or prior synchronous exchange.
+    source_anchor_ids: [anchor-paper-74-model]
+
+  - id: paper-74-model-channel
+    kind: assumption
+    parent_id: paper-74-use-case
+    order: 2
+    epistemic_status: assumed_external_service
+    title: Anonymous client-server channels
+    summary: >-
+      Uploads and queries are assumed to travel through an anonymity network such as Tor; PIB³ does not itself hide the client's network address from a server observing an ordinary identified transport.
+    source_anchor_ids: [anchor-paper-74-model]
+
+  - id: paper-74-model-adversary
+    kind: threat_model
+    parent_id: paper-74-use-case
+    order: 3
+    epistemic_status: defined
+    title: Network and bulletin-board adversary
+    summary: >-
+      A polynomial-time adversary may observe and disrupt links, corrupt a server, control malicious uploaders, adaptively insert records, and participate in retrieval as that server, but cannot violate the stated cryptographic assumptions.
+    source_anchor_ids: [anchor-paper-74-model]
+
+  - id: paper-74-leakage
+    kind: definition
+    parent_id: paper-74-use-case
+    order: 4
+    epistemic_status: explicitly_modeled
+    title: Explicit leakage
+    summary: >-
+      Privacy exposes the public epoch, database size, and number of PIR retrievals. Padding to a fixed bound can hide retrieval count only if the application also specifies dummy retrievals and behavior when real matches exceed that bound.
+    source_anchor_ids: [anchor-paper-74-model, anchor-paper-74-security]
+
+  - id: paper-74-hibesc
+    kind: primitive
+    parent_id: paper-74
+    order: 4
+    epistemic_status: formally_defined_and_constructed
+    title: HIBE with searchable ciphertexts
+    summary: >-
+      HIBESC extends two-level HIBE with CipherGen, Token, and Check. Anyone can create a searchable ciphertext for identity vector (id, epoch), but only the first-level identity-key holder can form the matching epoch token.
+    source_anchor_ids: [anchor-paper-74-hibesc-definition, anchor-paper-74-hibesc-construction]
+
+  - id: paper-74-hibesc-properties
+    kind: security_definition
+    parent_id: paper-74-hibesc
+    order: 1
+    epistemic_status: defined
+    title: Correctness, soundness, and fixed-epoch anonymity
+    summary: >-
+      Correct matching tokens and ciphertexts must accept; mismatched identity or epoch should reject; and ciphertexts for different identities in the same public epoch should be computationally indistinguishable under the specified games.
+    source_anchor_ids: [anchor-paper-74-hibesc-definition]
+
+  - id: paper-74-hibesc-proof
+    kind: proof
+    parent_id: paper-74-hibesc
+    order: 2
+    epistemic_status: reduction_provided
+    title: Searchable-HIBE reduction chain
+    summary: >-
+      The appendices establish an intermediate ciphertext-identity-indifferentiability property and reduce fixed-epoch anonymity to decisional bilinear Diffie-Hellman, with explicit random-oracle programming and abort probability accounting.
+    source_anchor_ids: [anchor-paper-74-hibesc-proof]
+
+  - id: paper-74-record
+    kind: scheme
+    parent_id: paper-74
+    order: 5
+    epistemic_status: specified
+    title: Two-ciphertext bulletin-board record
+    summary: >-
+      Each record contains an anonymous-IBE payload ciphertext and a searchable-HIBE discovery ciphertext for (recipient identity, public epoch). The encrypted plaintext includes a hash of the discovery ciphertext to bind the two components.
+    source_anchor_ids: [anchor-paper-74-overview, anchor-paper-74-construction]
+
+  - id: paper-74-query
+    kind: protocol
+    parent_id: paper-74
+    order: 6
+    epistemic_status: specified
+    title: Two-server private query
+    summary: >-
+      The receiver splits a search token between two replicated, non-colluding servers. Each partially evaluates Check for every record; the receiver combines replies into a matching index set and uses two-server PIR to fetch the corresponding IBE ciphertexts.
+    source_anchor_ids: [anchor-paper-74-overview, anchor-paper-74-construction]
+
+  - id: paper-74-single-server-attack
+    kind: attack
+    parent_id: paper-74-query
+    order: 1
+    epistemic_status: demonstrated_analytically
+    title: Why one server is insufficient
+    summary: >-
+      A single server sees which records share a query token and can upload a probe ciphertext for a chosen identity and epoch, then test future tokens against it. Token sharing removes that direct Check oracle from any one allowed corrupted server.
+    source_anchor_ids: [anchor-paper-74-single-server]
+
+  - id: paper-74-multiserver
+    kind: protocol
+    parent_id: paper-74
+    order: 7
+    epistemic_status: specified
+    title: N-server extension
+    summary: >-
+      The receiver distributes correlated token shares across N servers and combines all partial values before PIR. No server-to-server communication is needed during a query, but every server must hold identically ordered records.
+    source_anchor_ids: [anchor-paper-74-multiserver]
+
   - id: paper-74-claims
     kind: claim_group
     parent_id: paper-74
-    order: 4
-    epistemic_status: abstract_reported_not_body_audited
-    title: "Principal reported claims"
-    summary: "The abstract states that one corrupted non-colluding server learns neither recipient identity nor retrieved indices beyond public epoch, database size, and retrieval count; padding can hide retrieval count, while multi-server coalition privacy follows from the underlying PIR privacy guarantee."
-    source_anchor_ids: [anchor-paper-74-author-abstract]
+    order: 8
+    epistemic_status: formally_supported
+    title: Main claims
+    summary: >-
+      The manuscript claims correctness and privacy for the concrete scheme under the component assumptions and leakage model, conditional coalition privacy for the extension, and practical feasibility for the measured prototype configurations.
+    source_anchor_ids: [anchor-paper-74-security, anchor-paper-74-multiserver, anchor-paper-74-experiments]
+
+  - id: paper-74-claim-privacy
+    kind: claim
+    parent_id: paper-74-claims
+    order: 1
+    epistemic_status: theorem_with_reduction
+    title: Two-server bulletin-board privacy
+    summary: >-
+      Theorem 1 bounds a bulletin-board adversary by two PIR-privacy terms, two searchable-HIBE anonymity terms, two IBE-anonymity terms, and an IBE IND-CPA term, with active probing captured up to retrieval-count leakage.
+    source_anchor_ids: [anchor-paper-74-security, anchor-paper-74-pib-proof]
+
+  - id: paper-74-claim-coalition
+    kind: claim
+    parent_id: paper-74-claims
+    order: 2
+    epistemic_status: conditional_theorem
+    title: Conditional coalition privacy
+    summary: >-
+      Theorem 2 extends privacy to a strict server coalition only when token shares are simulatable for that coalition and the chosen N-server PIR is private against the same coalition, with retrieval count available to its simulator.
+    source_anchor_ids: [anchor-paper-74-multiserver]
+
+  - id: paper-74-claim-complexity
+    kind: claim
+    parent_id: paper-74-claims
+    order: 3
+    epistemic_status: asymptotically_analyzed
+    title: Optimized retrieval communication
+    summary: >-
+      Hash-compressed partial Check values and batched PIR yield four rounds and reported communication O((n + λ) log n + C + G), where n is record count, λ the security parameter, C record size, and G group-element size.
+    source_anchor_ids: [anchor-paper-74-complexity]
+
   - id: paper-74-evidence
     kind: evidence_group
     parent_id: paper-74
-    order: 5
-    epistemic_status: abstract_reported_not_body_audited
-    title: "Reported evidence"
-    summary: "The abstract reports formal functionality and security definitions, a construction from named cryptographic components, and a functional prototype used for empirical performance assessment. The definitions, proofs, implementation, experimental setup, and measurements have not yet been inspected in the paper body."
-    source_anchor_ids: [anchor-paper-74-author-abstract]
-  - id: paper-74-scope
+    order: 9
+    epistemic_status: formal_and_empirical
+    title: Evidence
+    summary: >-
+      Support includes formal syntax and games, reductions for component and composed privacy, an explicit attack on the tempting one-server design, asymptotic analysis, and a prototype benchmark of the heavy server-side search and PIR operations.
+    source_anchor_ids: [anchor-paper-74-hibesc-proof, anchor-paper-74-pib-proof, anchor-paper-74-single-server, anchor-paper-74-experiments]
+
+  - id: paper-74-evidence-setup
+    kind: evidence
+    parent_id: paper-74-evidence
+    order: 1
+    epistemic_status: reported_experiment
+    title: Prototype benchmark setup
+    summary: >-
+      The 128-bit-security prototype ran on an AWS c6a.8xlarge instance with 32 vCPUs. Most configurations were repeated ten times; the largest final PIR row was repeated twice, and reported variance was negligible but omitted.
+    source_anchor_ids: [anchor-paper-74-experiments]
+
+  - id: paper-74-evidence-search
+    kind: evidence
+    parent_id: paper-74-evidence
+    order: 2
+    epistemic_status: reported_measurement
+    title: Linear full-database search
+    summary: >-
+      Server-side pairing search scaled from roughly 0.47-0.48 seconds at 1,000 ciphertexts to about 45 seconds at 100,000 ciphertexts on the test machine.
+    source_anchor_ids: [anchor-paper-74-experiments]
+
+  - id: paper-74-evidence-pir
+    kind: evidence
+    parent_id: paper-74-evidence
+    order: 3
+    epistemic_status: reported_measurement
+    title: PIR and end-to-end server computation
+    summary: >-
+      For 100-kilobit payloads and 100,000 records, reported DPF evaluation is 35.597 seconds and total server computation is just over 80 seconds; smaller records or databases take seconds or fractions of seconds.
+    source_anchor_ids: [anchor-paper-74-experiments]
+
+  - id: paper-74-boundaries
     kind: limitation_group
     parent_id: paper-74
-    order: 6
-    epistemic_status: abstract_grounded_scope_boundary
-    title: "Scope and limitations"
-    summary: "The abstract exposes the principal leakage profile and high-level corruption assumptions, but exact games, proof assumptions, collusion bounds, implementation details, performance measurements, failure handling, and deployment constraints remain pending body-level audit."
-    source_anchor_ids: [anchor-paper-74-author-abstract]
+    order: 10
+    epistemic_status: material
+    title: Scope and limitations
+    summary: >-
+      Privacy is conditional on cryptographic assumptions, anonymous transport, synchronized replicated databases, the allowed non-colluding coalition, and explicit leakage. The prototype is not a deployed censorship-resistance study or independent reproduction.
+    source_anchor_ids: [anchor-paper-74-model, anchor-paper-74-security, anchor-paper-74-experiments, anchor-paper-74-multiserver]
+
+  - id: paper-74-boundary-collusion
+    kind: limitation
+    parent_id: paper-74-boundaries
+    order: 1
+    epistemic_status: theorem_boundary
+    title: Non-collusion and PIR boundary
+    summary: >-
+      Two-server privacy excludes both servers colluding. The N-server claim covers only coalitions for which both token-share simulation and the underlying PIR privacy property hold.
+    source_anchor_ids: [anchor-paper-74-security, anchor-paper-74-multiserver]
+
+  - id: paper-74-boundary-leakage
+    kind: limitation
+    parent_id: paper-74-boundaries
+    order: 2
+    epistemic_status: explicit_leakage
+    title: Epoch, size, and access-count leakage
+    summary: >-
+      The scheme does not hide public epoch, database size, or unpadded retrieval count. Padding shifts rather than eliminates costs and requires an overflow rule when a user has more than the fixed number of matches.
+    source_anchor_ids: [anchor-paper-74-model, anchor-paper-74-security]
+
+  - id: paper-74-boundary-evaluation
+    kind: limitation
+    parent_id: paper-74-boundaries
+    order: 3
+    epistemic_status: experimental_boundary
+    title: Partial prototype evaluation
+    summary: >-
+      The benchmark covers computationally heavy server components, not the complete client path, WAN anonymity-network delay, censorship behavior, database synchronization, availability attacks, or a real multi-user deployment.
+    source_anchor_ids: [anchor-paper-74-experiments]
+
   - id: paper-74-artifacts
     kind: artifact_group
     parent_id: paper-74
-    order: 7
-    epistemic_status: linked_identity_verified_content_not_body_audited
-    title: "Artifacts and resources"
-    summary: "The site stores a 44-page author manuscript PDF with verified title, authors, abstract boundary, and SHA-256 identity. No separate code repository, immutable release, dataset, proof artifact, or archival publication record is represented."
-    source_anchor_ids: [anchor-paper-74-author-abstract]
+    order: 11
+    epistemic_status: manuscript_available_code_pending
+    title: Artifacts and reproducibility
+    summary: >-
+      The 44-page manuscript is checked in with a recorded hash. It states that implementation code will be open-sourced after publication; no repository, benchmark scripts, raw measurements, or environment image is currently linked.
+    source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-experiments]
+
   - id: paper-74-scrutiny
     kind: scrutiny
     parent_id: paper-74
-    order: 8
-    epistemic_status: review_status_reported_not_completed
-    title: "Scrutiny and status"
-    summary: "The manuscript identifies itself as a regular academic track paper and the curated record reports Under review. No completed external review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
-    source_anchor_ids: [anchor-paper-74-curated, anchor-paper-74-author-abstract]
+    order: 12
+    epistemic_status: under_review
+    title: External scrutiny
+    summary: >-
+      The site records the manuscript as under review. No acceptance, public review report, rebuttal, independent cryptographic audit, reproduction, correction, or adversarial follow-up is represented.
+    source_anchor_ids: [anchor-paper-74-status]
 
 relations:
-  - id: paper-74-relation-question-contribution
+  - id: paper-74-relation-answer-question
+    type: addresses
+    from_id: paper-74-answer
+    to_id: paper-74-question
+  - id: paper-74-relation-usecase-question
     type: motivates
-    from_id: paper-74-question
-    to_id: paper-74-contribution
-  - id: paper-74-relation-method-contribution
-    type: realizes
-    from_id: paper-74-method
-    to_id: paper-74-contribution
-  - id: paper-74-relation-contribution-claims
-    type: grounds
-    from_id: paper-74-contribution
-    to_id: paper-74-claims
-  - id: paper-74-relation-evidence-claims
+    from_id: paper-74-use-case
+    to_id: paper-74-question
+  - id: paper-74-relation-hibesc-answer
+    type: component_of
+    from_id: paper-74-hibesc
+    to_id: paper-74-answer
+  - id: paper-74-relation-properties-hibesc
+    type: specifies_security_of
+    from_id: paper-74-hibesc-properties
+    to_id: paper-74-hibesc
+  - id: paper-74-relation-proof-properties
     type: supports
-    from_id: paper-74-evidence
-    to_id: paper-74-claims
-  - id: paper-74-relation-scope-claims
-    type: qualifies
-    from_id: paper-74-scope
-    to_id: paper-74-claims
-  - id: paper-74-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-74-artifacts
+    from_id: paper-74-hibesc-proof
+    to_id: paper-74-hibesc-properties
+  - id: paper-74-relation-record-answer
+    type: component_of
+    from_id: paper-74-record
+    to_id: paper-74-answer
+  - id: paper-74-relation-query-answer
+    type: component_of
+    from_id: paper-74-query
+    to_id: paper-74-answer
+  - id: paper-74-relation-attack-query
+    type: motivates
+    from_id: paper-74-single-server-attack
+    to_id: paper-74-query
+  - id: paper-74-relation-multiserver-answer
+    type: generalizes
+    from_id: paper-74-multiserver
+    to_id: paper-74-query
+  - id: paper-74-relation-privacy-evidence
+    type: supported_by
+    from_id: paper-74-claim-privacy
     to_id: paper-74-evidence
-  - id: paper-74-relation-scrutiny-claims
+  - id: paper-74-relation-coalition-multiserver
+    type: characterizes
+    from_id: paper-74-claim-coalition
+    to_id: paper-74-multiserver
+  - id: paper-74-relation-setup-results
     type: contextualizes
-    from_id: paper-74-scrutiny
+    from_id: paper-74-evidence-setup
+    to_id: paper-74-evidence-search
+  - id: paper-74-relation-search-feasibility
+    type: supports
+    from_id: paper-74-evidence-search
     to_id: paper-74-claims
+  - id: paper-74-relation-pir-feasibility
+    type: supports
+    from_id: paper-74-evidence-pir
+    to_id: paper-74-claims
+  - id: paper-74-relation-collusion-coalition
+    type: limits
+    from_id: paper-74-boundary-collusion
+    to_id: paper-74-claim-coalition
+  - id: paper-74-relation-leakage-privacy
+    type: qualifies
+    from_id: paper-74-boundary-leakage
+    to_id: paper-74-claim-privacy
+  - id: paper-74-relation-evaluation-results
+    type: limits
+    from_id: paper-74-boundary-evaluation
+    to_id: paper-74-evidence-pir
 
 assessment:
   id: paper-74-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The complete manuscript abstract reports formal definitions, a concrete cryptographic construction, stated privacy guarantees, and prototype-based empirical assessment. The paper body, formal games, proofs, implementation, evaluation setup, and results have not yet been audited or independently reproduced, so evidence does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-74-author-abstract]
+      level: high
+      rationale: >-
+        The full manuscript defines the primitive and leakage model, gives concrete constructions, states and proves component and composed privacy results, exhibits a motivating attack, analyzes asymptotic cost, and reports repeated prototype measurements. The work is under review, code and raw data are not yet linked, and no independent proof audit or reproduction was located.
+      basis_source_anchor_ids: [anchor-paper-74-hibesc-definition, anchor-paper-74-security, anchor-paper-74-pib-proof, anchor-paper-74-experiments]
     - id: auditability
       level: high
-      rationale: "A 44-page author-hosted manuscript PDF is stored with this site, and its title, authorship, page count, abstract boundary, and SHA-256 identity are recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, artifact completeness, and independent reproduction remain separate questions."
-      basis_source_anchor_ids: [anchor-paper-74-author-abstract]
+      rationale: >-
+        A complete checked-in author manuscript with recorded SHA-256 and page count, precise source anchors, full definitions and proofs, and detailed experiment tables makes the represented claims directly inspectable. Code, scripts, and raw measurements remain unavailable.
+      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-security, anchor-paper-74-experiments]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-74-curated]
+      rationale: >-
+        Named authorship, affiliations, checked-in manuscript identity, and under-review lifecycle status establish baseline provenance. Contributor roles, revision history, tool use, code-version lineage, and final publication approval are not documented.
+      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-status]
     - id: external_scrutiny
       level: low
-      rationale: "The item is listed as under review or otherwise lacks a represented completed review outcome; no independent scrutiny evidence was audited."
-      basis_source_anchor_ids: [anchor-paper-74-curated]
+      rationale: >-
+        The manuscript is under review and no completed independent review outcome is represented. Public review reports, rebuttal, cryptographic audit, reproduction, and correction history were not located.
+      basis_source_anchor_ids: [anchor-paper-74-status]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-74-curated]
+      level: low
+      rationale: >-
+        A dated exact-title scholarly-web search located 0 citations for this under-review manuscript. Under the author-defined corpus rule, 0 through 8 located citations is Low; this may change after stable publication and indexing.
+      basis_source_anchor_ids: [anchor-paper-74-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The abstract reports a concrete contribution spanning new functionality and security definitions, a searchable-ciphertext HIBE building block, a multi-server PIB³ construction, and a working prototype. Novelty, priority, comparative scope, and field-level impact have not been body-audited, so significance remains provisional at medium."
-      basis_source_anchor_ids: [anchor-paper-74-author-abstract]
+      rationale: >-
+        The work combines a new identity-discovery primitive, a formally analyzed distributed bulletin-board construction, a single-server impossibility-motivating attack, and a functioning prototype for a difficult communication setting. Priority, adoption, peer-review outcome, and broader field impact remain unverified.
+      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-single-server, anchor-paper-74-experiments]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: Exact-title scholarly-web search
+  citation_count: 0
+  source_url: "https://www.google.com/search?q=%22Private+Identity-Based+Bulletin+Boards+for+Anonymous+Messaging+and+Other+Online+Services%22"
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: "The paper is under review and may not yet have a stable public scholarly identity; zero means no verifiable citation was located in this dated search, not that future or unindexed citations are impossible."

@@ -48,6 +48,11 @@ sources:
     title: "Website publication record for Paper #72"
     url: /publications/#paper-72
     scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-72-citation-search
+    type: citation_search_snapshot
+    title: Exact-title scholarly-web search for the distinct full-paper record
+    url: "https://www.google.com/search?q=%22Challenges+in+Timed+Cryptography%3A+A+Position+Paper+%28Full+Paper%29%22"
+    accessed_at: "2026-07-11"
 
 source_anchors:
   - id: anchor-paper-72-curated
@@ -55,6 +60,11 @@ source_anchors:
     label: "Curated metadata and editorial summary"
     locator: "Website publication record. The summary is editorial and has not been checked against full text."
     url: /publications/#paper-72
+  - id: anchor-paper-72-citations
+    source_id: source-paper-72-citation-search
+    label: Dated exact-title citation search
+    locator: Search located no distinct full-paper publication or citing work; results referred to the short paper or IACR ePrint version
+    url: "https://www.google.com/search?q=%22Challenges+in+Timed+Cryptography%3A+A+Position+Paper+%28Full+Paper%29%22"
 
 nodes:
   - id: paper-72
@@ -184,9 +194,9 @@ assessment:
       rationale: "The item is listed as under review or otherwise lacks a represented completed review outcome; no independent scrutiny evidence was audited."
       basis_source_anchor_ids: [anchor-paper-72-curated]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-72-curated]
+      level: low
+      rationale: "A dated exact-title search located no distinct full-paper record or citation; results referred to the short paper or ePrint instead. Under the author-defined corpus rule, 0 through 8 located citations is Low. This is not a claim that no private review or unindexed reference exists."
+      basis_source_anchor_ids: [anchor-paper-72-citations]
     - id: contribution_significance
       level: not_assessed
       rationale: "Only a bibliographic listing and editorially inferred relationship to an earlier position paper are available; this full version's distinct contribution, novelty, priority, and impact cannot yet be assessed."
@@ -194,7 +204,8 @@ assessment:
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: Exact-title scholarly-web search for the distinct full-paper identity
+  citation_count: 0
+  source_url: "https://www.google.com/search?q=%22Challenges+in+Timed+Cryptography%3A+A+Position+Paper+%28Full+Paper%29%22"
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: "No distinct public full-paper identity was located. Zero means no citation was verifiably attributable to this record, not that related short-paper or ePrint versions have no reception."

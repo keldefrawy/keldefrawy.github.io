@@ -89,7 +89,7 @@
   status: Under review
   venue:
   topic: privacy-identity
-  labels: [Theory, Applied]
+  labels: [Theory, Applied, System, Implementation]
   contribution_types: [protocol, scheme]
   title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
   authors: "Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, and Gene Tsudik"
@@ -438,7 +438,7 @@
   status: Published
   venue: 28th USENIX Security Symposium
   topic: secure-systems-networks
-  labels: [Applied]
+  labels: [Applied, System, Implementation, Formal Verification]
   contribution_types: [protocol]
   title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
   authors: "Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Michael Steiner, and Gene Tsudik"
@@ -617,7 +617,7 @@
   status: Published
   venue: IEEE International Conference on Cloud Engineering (IC2E), BAT workshop track
   topic: secure-systems-networks
-  labels: [Applied]
+  labels: [Applied, System, Implementation]
   contribution_types: [protocol]
   title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
   authors: "Tancrède Lepoint, Gabriela F. Ciocarlie, and Karim Eldefrawy"
@@ -651,7 +651,7 @@
   status: Published · experience paper
   venue: 47th IEEE/IFIP International Conference on Dependable Systems and Networks Workshops (DSN-W)
   topic: secure-systems-networks
-  labels: [Applied]
+  labels: [Applied, System, Implementation, Formal Verification]
   contribution_types: [protocol]
   title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
   authors: "Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
@@ -664,7 +664,7 @@
   status: Published
   venue: 10th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec)
   topic: secure-systems-networks
-  labels: [Theory, Applied]
+  labels: [Applied, System, Implementation, Formal Verification]
   contribution_types: [protocol]
   title: "HYDRA: Hybrid Design for Remote Attestation Using a Formally Verified Microkernel"
   authors: "Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"
@@ -678,7 +678,7 @@
   venue: ACM Symposium on Principles of Distributed Computing (PODC)
   topic: secure-encrypted-computation
   labels: [Theory]
-  contribution_types: [protocol, primitive]
+  contribution_types: [protocol, algorithm]
   title: "Brief Announcement: Secure Self-Stabilizing Computation"
   authors: "Shlomi Dolev, Karim Eldefrawy, Juan A. Garay, Muni Venkateswarlu Kumaramangalam, Rafail Ostrovsky, and Moti Yung"
   tags: ["self-stabilization", "secure multiparty computation"]
@@ -703,7 +703,7 @@
   status: Published
   venue: 37th IEEE International Conference on Distributed Computing Systems (ICDCS)
   topic: secure-systems-networks
-  labels: [Theory, Applied]
+  labels: [Theory, Applied, System, Implementation]
   contribution_types: [protocol]
   title: "Proactively Secure Cloud-Enabled Storage"
   authors: "Karim Eldefrawy, Sky Faber, and Tyler Kaczmarek"
@@ -723,7 +723,7 @@
   status: Published
   venue: ACM Asia Conference on Computer and Communications Security (AsiaCCS)
   topic: secure-systems-networks
-  labels: [Theory, Applied]
+  labels: [Applied, System, Implementation]
   contribution_types: [protocol]
   title: "Lightweight Swarm Attestation: A Tale of Two LISA-s"
   authors: "Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik"

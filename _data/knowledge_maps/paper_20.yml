@@ -18,167 +18,279 @@ labels: ["Applied", "Perspective"]
 authors: ["Karim Eldefrawy", "Sky Faber"]
 keywords: ["secure pattern matching", "privacy-preserving search", "survey"]
 
-research_question: "How can secure pattern matching let a requester search private data while hiding the query and revealing only matching records?"
-central_answer: "The article surveys practical secure-pattern-matching constructions and illustrates privacy-preserving search for law-enforcement and health-data sharing."
+research_question: >-
+  Which secure pattern-matching techniques can support practical “blindfolded” searches in which a requester hides the query and a data holder reveals only matching information, and what tradeoffs separate the available constructions?
+central_answer: >-
+  The article organizes secure search around application requirements, adversary strength, supported match types, rounds, computation, and communication. It compares integer-comparison, FFT, matrix-multiplication/5PM, and garbled-circuit approaches and argues that no single construction dominates; expressive functionality, malicious security, concrete efficiency, streaming, and deployable evidence remain open tradeoffs.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; the checked-in full-text PDF's title, authorship, page count, and file identity were verified, but its substantive claims were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, comparative synthesis decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete checked-in IEEE Computer article, its publisher and coauthor records, and a dated targeted citation search. This is mapped as a perspective/synthesis article: descriptions of prior protocols are not recast as new theorems by this paper."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-20-site-record
-    type: curated_record
-    title: "Curated publication record for paper #20"
-    url: /publications/#paper-20
-  - id: source-paper-20-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/MC.2013.73"
-  - id: source-paper-20-author-1
-    type: author_hosted_copy
-    title: "UCI coauthor copy"
-    url: "https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf"
-    provenance_category: author
-  - id: source-paper-20-author-local
-    type: author_hosted_copy
-    title: "Author-hosted PDF"
+  - id: source-paper-20-paper
+    type: scholarly_article
+    title: "Blindfolded Data Search via Secure Pattern Matching"
     url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf
     media_type: application/pdf
     sha256: 112227ea8c75bf197ee3f71a22876cabbfad30d6cc17eab768a2a7c9ec7ece6f
     page_count: 8
     provenance_category: author
     retrieved_at: "2026-07-11"
-    retrieved_from_url: "https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf"
+  - id: source-paper-20-official
+    type: publication_record
+    title: "IEEE Computer publisher record"
+    url: "https://doi.org/10.1109/MC.2013.73"
+  - id: source-paper-20-coauthor
+    type: author_hosted_copy
+    title: "UCI coauthor-hosted copy"
+    url: "https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf"
+    provenance_category: author
+  - id: source-paper-20-citation-search
+    type: citation_index_search
+    title: "Dated ResearchGate and exact-title scholarly-index search"
+    url: "https://www.researchgate.net/publication/260711521_Blindfolded_Data_Search_via_Secure_Pattern_Matching"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-20-site-record
-    source_id: source-paper-20-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-20
-  - id: anchor-paper-20-official-1
-    source_id: source-paper-20-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-20-question
+    source_id: source-paper-20-paper
+    label: "Blindfolded-search motivation and central concept"
+    locator: "Introductory deck and opening section, PDF pages 1-2"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=1
+  - id: anchor-paper-20-applications
+    source_id: source-paper-20-paper
+    label: "Law-enforcement and medical/genomic examples"
+    locator: "The Need for Blindfolded Data Search, PDF pages 1-2"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=1
+  - id: anchor-paper-20-models
+    source_id: source-paper-20-paper
+    label: "Search variants and adversary models"
+    locator: "Background, PDF pages 2-3"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=2
+  - id: anchor-paper-20-comparison
+    source_id: source-paper-20-paper
+    label: "Protocol comparison table"
+    locator: "Table 1, PDF page 4"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=4
+  - id: anchor-paper-20-integer
+    source_id: source-paper-20-paper
+    label: "Integer-comparison protocols"
+    locator: "Survey section, PDF pages 4-5"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=4
+  - id: anchor-paper-20-fft
+    source_id: source-paper-20-paper
+    label: "FFT-based secure matching"
+    locator: "Survey section, PDF pages 5-6"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=5
+  - id: anchor-paper-20-matrix
+    source_id: source-paper-20-paper
+    label: "Matrix-multiplication and 5PM approach"
+    locator: "Survey section and Figures 3-4, PDF pages 6-7"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=6
+  - id: anchor-paper-20-garbled
+    source_id: source-paper-20-paper
+    label: "Garbled-circuit text processing"
+    locator: "Survey section, PDF page 8"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=8
+  - id: anchor-paper-20-gaps
+    source_id: source-paper-20-paper
+    label: "Practical gaps and open directions"
+    locator: "Closing discussion, PDF page 8"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf#page=8
+  - id: anchor-paper-20-publication
+    source_id: source-paper-20-official
+    label: "Official magazine publication record"
+    locator: "IEEE Computer 46(12), pages 68-75, DOI record"
     url: "https://doi.org/10.1109/MC.2013.73"
-  - id: anchor-paper-20-author-1
-    source_id: source-paper-20-author-1
-    label: "UCI coauthor copy"
-    locator: "Public PDF on Gene Tsudik's UCI publication site used to obtain the checked-in copy."
-    url: "https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf"
-  - id: anchor-paper-20-author-local
-    source_id: source-paper-20-author-local
-    label: "Author-hosted PDF"
-    locator: "Checked-in 8-page PDF; title and both authors were verified against the rendered first page, and SHA-256 records file identity."
-    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf
+  - id: anchor-paper-20-citations
+    source_id: source-paper-20-citation-search
+    label: "Citation search snapshot"
+    locator: "ResearchGate and targeted exact-title searches were checked 2026-07-11, but no stable per-paper count was exposed. This is not evidence of zero lifetime citations."
+    url: "https://www.researchgate.net/publication/260711521_Blindfolded_Data_Search_via_Secure_Pattern_Matching"
 
 nodes:
   - id: paper-20
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Blindfolded Data Search via Secure Pattern Matching"
-    summary: "This article explains how secure pattern matching can support blindfolded searches in which a requester hides its query while a data holder reveals only matching records. It surveys practical constructions and illustrates privacy-preserving uses in law-enforcement and health-data sharing while retaining both input privacy and computational correctness."
-    source_anchor_ids: [anchor-paper-20-site-record]
+    epistemic_status: published_perspective
+    title: "Blindfolded data search"
+    summary: "An application-oriented synthesis of secure pattern-matching techniques, their adversary models, and their practical tradeoffs."
+    source_anchor_ids: [anchor-paper-20-question]
 
   - id: paper-20-question
     kind: question
     parent_id: paper-20
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "How can secure pattern matching let a requester search private data while hiding the query and revealing only matching records?"
-    source_anchor_ids: [anchor-paper-20-site-record]
+    epistemic_status: framing_question
+    title: "Organizing question"
+    summary: "How should practitioners choose a secure-search technique when query privacy, database privacy, matching expressiveness, adversary strength, and performance all matter?"
+    source_anchor_ids: [anchor-paper-20-question, anchor-paper-20-models]
 
   - id: paper-20-answer
-    kind: contribution
+    kind: perspective
     parent_id: paper-20
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The article surveys practical secure-pattern-matching constructions and illustrates privacy-preserving search for law-enforcement and health-data sharing."
-    source_anchor_ids: [anchor-paper-20-site-record]
+    epistemic_status: source_synthesis
+    title: "Central synthesis"
+    summary: "There is no universally best protocol: the right construction depends on match semantics, adversary model, rounds, bandwidth, computation, and whether an implementation exists."
+    source_anchor_ids: [anchor-paper-20-comparison, anchor-paper-20-gaps]
 
-  - id: paper-20-method
-    kind: method
+  - id: paper-20-concept
+    kind: definition
     parent_id: paper-20
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Explain cryptographic pattern-matching mechanisms that jointly protect requester input and the data holder's nonmatching records, then apply them to representative use cases."
-    source_anchor_ids: [anchor-paper-20-site-record]
+    epistemic_status: defined
+    title: "Blindfolded search"
+    summary: "A requester learns authorized matches while hiding its pattern, and the provider reveals no unrelated database content; correctness and input/output privacy are both required."
+    source_anchor_ids: [anchor-paper-20-question, anchor-paper-20-models]
 
-  - id: paper-20-claims
-    kind: claim_group
+  - id: paper-20-use-cases
+    kind: application_group
     parent_id: paper-20
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The article reports that blindfolded search can preserve both query privacy and correctness while limiting disclosure to matching records."
-    source_anchor_ids: [anchor-paper-20-site-record]
+    epistemic_status: illustrative
+    title: "Why private matching matters"
+    summary: "Examples include law-enforcement search of passenger manifests and clinician search of patient genomes, where both query sensitivity and data-holder obligations constrain ordinary data sharing."
+    source_anchor_ids: [anchor-paper-20-applications]
+
+  - id: paper-20-scope
+    kind: scope
+    parent_id: paper-20
+    order: 5
+    epistemic_status: comparative_framework
+    title: "Comparison dimensions"
+    summary: "The article distinguishes exact, wildcard, approximate, and substring matching and compares honest-but-curious, covert, and malicious adversaries together with asymptotic costs."
+    source_anchor_ids: [anchor-paper-20-models, anchor-paper-20-comparison]
+
+  - id: paper-20-family-integer
+    kind: method_family
+    parent_id: paper-20
+    order: 6
+    epistemic_status: prior_work_synthesis
+    title: "Integer-comparison family"
+    summary: "Hazay-Toft-style constructions encode patterns and candidate substrings as integers and compare them obliviously, supporting malicious security but incurring costs that vary by exact, wildcard, and approximate functionality."
+    source_anchor_ids: [anchor-paper-20-integer]
+
+  - id: paper-20-family-fft
+    kind: method_family
+    parent_id: paper-20
+    order: 7
+    epistemic_status: prior_work_synthesis
+    title: "FFT family"
+    summary: "Vergnaud's approach uses encrypted polynomial/FFT operations to reduce computation for generalized matching while relying on additive ElGamal and a malicious-security construction."
+    source_anchor_ids: [anchor-paper-20-fft]
+
+  - id: paper-20-family-matrix
+    kind: method_family
+    parent_id: paper-20
+    order: 8
+    epistemic_status: prior_work_synthesis
+    title: "Matrix-multiplication family"
+    summary: "5PM reduces exact, wildcard, and non-binary approximate matching to character-delay-vector and matrix operations, obtaining linear communication in n+m while retaining O(nm)-scale cryptographic computation."
+    source_anchor_ids: [anchor-paper-20-matrix]
+
+  - id: paper-20-family-garbled
+    kind: method_family
+    parent_id: paper-20
+    order: 9
+    epistemic_status: prior_work_synthesis
+    title: "Garbled-circuit family"
+    summary: "General secure computation provides flexible text processing, but the surveyed construction has limitations in malicious security, wildcard/substring support, and pattern-length privacy."
+    source_anchor_ids: [anchor-paper-20-garbled]
 
   - id: paper-20-evidence
     kind: evidence_group
     parent_id: paper-20
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary identifies a survey and application-oriented explanation; no underlying construction, proof, comparative study, or case-study evidence has been inspected."
-    source_anchor_ids: [anchor-paper-20-site-record]
+    order: 10
+    epistemic_status: comparative_literature_synthesis
+    title: "Evidence basis"
+    summary: "Support consists of definitions, worked examples, prior theorem/complexity results, and a comparison table; the article itself introduces no new formal theorem, experiment, or implementation."
+    source_anchor_ids: [anchor-paper-20-comparison, anchor-paper-20-integer, anchor-paper-20-fft, anchor-paper-20-matrix, anchor-paper-20-garbled]
 
-  - id: paper-20-limitations
+  - id: paper-20-gaps
     kind: limitation_group
     parent_id: paper-20
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "As a magazine treatment, the available record does not by itself establish a new protocol guarantee, deployment result, legal compliance property, or performance bound."
-    source_anchor_ids: [anchor-paper-20-site-record]
+    order: 11
+    epistemic_status: source_synthesis
+    title: "Open practical gaps"
+    summary: "Only 5PM among the compared protocols had an accompanying implementation at publication time; concrete cross-system benchmarks, covert-security design, multidimensional queries, and constant-memory streaming search remained underdeveloped."
+    source_anchor_ids: [anchor-paper-20-gaps]
 
-  - id: paper-20-resources
+  - id: paper-20-boundary
+    kind: limitation
+    parent_id: paper-20
+    order: 12
+    epistemic_status: editorial_boundary
+    title: "What the article does not establish"
+    summary: "The perspective does not independently prove the surveyed protocols, reproduce their experiments, or demonstrate an end-to-end deployment in either example domain."
+    source_anchor_ids: [anchor-paper-20-comparison, anchor-paper-20-gaps]
+
+  - id: paper-20-artifacts
     kind: artifact_group
     parent_id: paper-20
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Publisher / DOI; UCI coauthor copy; author-hosted PDF. The checked-in PDF's identity was verified, but its substantive contents and supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-20-official-1, anchor-paper-20-author-1, anchor-paper-20-author-local]
+    order: 13
+    epistemic_status: article_only
+    title: "Artifacts"
+    summary: "A complete author/coauthor-hosted magazine article is public and checked into the site; no new code, dataset, formal proof, or benchmark artifact belongs to this synthesis article."
+    source_anchor_ids: [anchor-paper-20-question, anchor-paper-20-gaps]
 
   - id: paper-20-scrutiny
     kind: scrutiny
     parent_id: paper-20
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · magazine article at IEEE Computer, Volume 46, Number 12. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-20-site-record, anchor-paper-20-official-1]
+    order: 14
+    epistemic_status: magazine_reviewed
+    title: "External scrutiny and reception"
+    summary: "The article appeared in IEEE Computer. A targeted citation search did not expose a stable attributable count during this audit, and citing contexts or teaching use were not reviewed."
+    source_anchor_ids: [anchor-paper-20-publication, anchor-paper-20-citations]
+
+  - id: paper-20-lineage
+    kind: lineage
+    parent_id: paper-20
+    order: 15
+    epistemic_status: documented
+    title: "Research lineage"
+    summary: "The article translates secure-computation results into a practitioner-facing map of private-search choices and uses 5PM as one concrete algebraic design among several families."
+    source_anchor_ids: [anchor-paper-20-question, anchor-paper-20-comparison, anchor-paper-20-matrix]
 
 relations:
-  - id: paper-20-relation-method-supports-answer
-    type: supports
-    from_id: paper-20-method
-    to_id: paper-20-answer
-  - id: paper-20-relation-evidence-supports-claim
+  - id: paper-20-relation-integer-compared-by-scope
+    type: compared_by
+    from_id: paper-20-family-integer
+    to_id: paper-20-scope
+  - id: paper-20-relation-fft-compared-by-scope
+    type: compared_by
+    from_id: paper-20-family-fft
+    to_id: paper-20-scope
+  - id: paper-20-relation-matrix-compared-by-scope
+    type: compared_by
+    from_id: paper-20-family-matrix
+    to_id: paper-20-scope
+  - id: paper-20-relation-garbled-compared-by-scope
+    type: compared_by
+    from_id: paper-20-family-garbled
+    to_id: paper-20-scope
+  - id: paper-20-relation-evidence-supports-answer
     type: supports
     from_id: paper-20-evidence
-    to_id: paper-20-claims
-  - id: paper-20-relation-limitations-qualify-claim
+    to_id: paper-20-answer
+  - id: paper-20-relation-gaps-qualify-answer
     type: qualifies
-    from_id: paper-20-limitations
-    to_id: paper-20-claims
-  - id: paper-20-relation-scrutiny-qualifies-status
+    from_id: paper-20-gaps
+    to_id: paper-20-answer
+  - id: paper-20-relation-boundary-qualifies-evidence
     type: qualifies
-    from_id: paper-20-scrutiny
-    to_id: paper-20
+    from_id: paper-20-boundary
+    to_id: paper-20-evidence
 
 assessment:
   id: paper-20-assessment-2026-07-11
@@ -189,32 +301,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a survey and application-oriented explanation; no underlying construction, proof, comparative study, or case-study evidence has been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-20-site-record]
+      rationale: "The article offers a structured, source-cited comparison with explicit functionality, adversary, and complexity dimensions and worked examples. It is a perspective rather than new theorem or experiment, and the underlying results were not independently revalidated."
+      basis_source_anchor_ids: [anchor-paper-20-models, anchor-paper-20-comparison, anchor-paper-20-gaps]
     - id: auditability
       level: high
-      rationale: "A verified author-hosted PDF is stored with this site, with its source route, page count, and SHA-256 identity recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, supplementary-artifact completeness, and independent reproduction remain separate questions."
-      basis_source_anchor_ids: [anchor-paper-20-official-1, anchor-paper-20-author-1, anchor-paper-20-author-local]
+      rationale: "A complete author-hosted article is checked into the site with page count and SHA-256 identity, and a coauthor copy is public. The comparative claims and references are inspectable; no new executable artifact is expected for this perspective."
+      basis_source_anchor_ids: [anchor-paper-20-question, anchor-paper-20-comparison, anchor-paper-20-gaps]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-20-site-record]
+      rationale: "Named authorship, author/coauthor copies, and the IEEE DOI establish baseline provenance. Contributor roles, drafting history, and selection criteria for surveyed systems are not separately documented."
+      basis_source_anchor_ids: [anchor-paper-20-question, anchor-paper-20-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in IEEE Computer, Volume 46, Number 12, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-20-official-1]
+      rationale: "Publication in IEEE Computer indicates editorial and venue scrutiny, but review reports, corrections, and independent validation of the synthesis were not located."
+      basis_source_anchor_ids: [anchor-paper-20-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-20-site-record]
+      level: low
+      rationale: "The dated targeted search did not expose a stable attributable citation count. Under the rubric, zero located citations falls in the low band; this does not assert that the article has never been cited."
+      basis_source_anchor_ids: [anchor-paper-20-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The article reports that blindfolded search can preserve both query privacy and correctness while limiting disclosure to matching records. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-20-site-record]
+      rationale: "The article makes secure pattern matching accessible through applications and a useful taxonomy, but it is a synthesis and does not itself establish new security or performance results."
+      basis_source_anchor_ids: [anchor-paper-20-question, anchor-paper-20-comparison, anchor-paper-20-gaps]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: targeted_exact_title_researchgate_and_scholarly_index_search
+  citation_count: 0
+  source: "ResearchGate publication page and exact-title scholarly web searches"
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "No stable per-paper count was surfaced. The value records citations located by this audit, not a claim of zero lifetime citations; index coverage, title matching, and author-version merging may differ."

@@ -18,151 +18,300 @@ labels: ["Theory", "Applied"]
 authors: ["Karim Eldefrawy", "Aurélien Francillon", "Daniele Perito", "Gene Tsudik"]
 keywords: ["root of trust", "remote attestation", "microcontrollers"]
 
-research_question: "Can a low-end microcontroller establish an isolated dynamic root of trust with only minimal hardware changes and no separate security coprocessor?"
-central_answer: "SMART combines a small hardware-software architecture with protected code execution and reports AVR and MSP430 implementations requiring limited changes to memory-access logic."
+research_question: >-
+  What is the smallest practical hardware/software change that lets a remote verifier authenticate a low-end microcontroller's memory state and invoke selected code even when all ordinary device software is compromised?
+central_answer: >-
+  SMART places a keyed attestation and optional execution routine in immutable ROM, gates the secret key and routine entry/exit with simple hardware checks, disables interrupts during the trusted operation, and resets on violations. Modified open-source AVR and MSP430 cores plus synthesis and timing measurements suggest modest hardware cost, but the security case is an informal argument over explicit assertions rather than a formal proof, and physical/fault/side-channel attacks are outside scope.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, architecture and security-boundary decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete checked-in NDSS paper, its official record, a later primary VRASED paper for documented lineage, and a dated ResearchGate citation snapshot. Implementation measurements were inspected but not reproduced."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-17-site-record
-    type: curated_record
-    title: "Curated publication record for paper #17"
-    url: /publications/#paper-17
-  - id: source-paper-17-official-1
+  - id: source-paper-17-paper
+    type: scholarly_article
+    title: "SMART: Secure and Minimal Architecture for (Establishing a Dynamic) Root of Trust"
+    url: /pubs/2012/smart-ndss2012.pdf
+    media_type: application/pdf
+    sha256: 56b8d9f0667d999560b4c8b2f8c64a525e5653a86e91a0e24e9321ae1e68a729
+    page_count: 15
+    provenance_category: author
+    retrieved_at: "2026-07-11"
+    retrieved_from_url: "https://ics.uci.edu/~gts/paps/smart.pdf"
+  - id: source-paper-17-official
     type: publication_record
-    title: "NDSS paper page"
+    title: "NDSS 2012 paper page"
     url: "https://www.ndss-symposium.org/ndss2012/ndss-2012-programme/smart-secure-and-minimal-architecture-establishing-dynamic-root-trust/"
-  - id: source-paper-17-author-1
-    type: author_copy
-    title: "UCI author copy"
-    url: "https://ics.uci.edu/~gts/paps/smart.pdf"
+  - id: source-paper-17-vrased
+    type: subsequent_scholarly_article
+    title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+    url: /pubs/2019/vrased_usenixsec2019.pdf
+    media_type: application/pdf
+    year: 2019
+  - id: source-paper-17-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/266178170_SMART_Secure_and_Minimal_Architecture_for_Establishing_a_Dynamic_Root_of_Trust"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-17-site-record
-    source_id: source-paper-17-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-17
-  - id: anchor-paper-17-official-1
-    source_id: source-paper-17-official-1
-    label: "NDSS paper page"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-17-question
+    source_id: source-paper-17-paper
+    label: "Problem, design objective, and contribution"
+    locator: "Abstract and Section 1, PDF pages 1-2"
+    url: /pubs/2012/smart-ndss2012.pdf#page=1
+  - id: anchor-paper-17-goals
+    source_id: source-paper-17-paper
+    label: "Security goals and hardware building blocks"
+    locator: "Section 2, PDF pages 2-3"
+    url: /pubs/2012/smart-ndss2012.pdf#page=2
+  - id: anchor-paper-17-adversary
+    source_id: source-paper-17-paper
+    label: "Software adversary and trusted boundaries"
+    locator: "Sections 2-3, PDF page 3"
+    url: /pubs/2012/smart-ndss2012.pdf#page=3
+  - id: anchor-paper-17-protocol
+    source_id: source-paper-17-paper
+    label: "Attestation and guaranteed-execution protocol"
+    locator: "Section 3, PDF pages 3-5"
+    url: /pubs/2012/smart-ndss2012.pdf#page=3
+  - id: anchor-paper-17-hardware
+    source_id: source-paper-17-paper
+    label: "Hardware access-control and reset logic"
+    locator: "Section 3.3, PDF pages 6-7"
+    url: /pubs/2012/smart-ndss2012.pdf#page=6
+  - id: anchor-paper-17-security
+    source_id: source-paper-17-paper
+    label: "Informal security analysis and assertions A1-A11"
+    locator: "Section 4, PDF pages 6-8"
+    url: /pubs/2012/smart-ndss2012.pdf#page=6
+  - id: anchor-paper-17-applications
+    source_id: source-paper-17-paper
+    label: "Protocols built from SMART"
+    locator: "Section 5, PDF pages 8-9"
+    url: /pubs/2012/smart-ndss2012.pdf#page=8
+  - id: anchor-paper-17-implementation
+    source_id: source-paper-17-paper
+    label: "AVR and MSP430 implementation"
+    locator: "Section 6.1-6.2, PDF pages 9-10"
+    url: /pubs/2012/smart-ndss2012.pdf#page=9
+  - id: anchor-paper-17-evaluation
+    source_id: source-paper-17-paper
+    label: "Timing, code-size, synthesis, and area evaluation"
+    locator: "Section 6.3-6.4 and Tables 1-4, PDF pages 10-12"
+    url: /pubs/2012/smart-ndss2012.pdf#page=10
+  - id: anchor-paper-17-limitations
+    source_id: source-paper-17-paper
+    label: "Limitations and future verification work"
+    locator: "Sections 7-8, PDF pages 12-13"
+    url: /pubs/2012/smart-ndss2012.pdf#page=12
+  - id: anchor-paper-17-publication
+    source_id: source-paper-17-official
+    label: "Official peer-reviewed publication record"
+    locator: "NDSS 2012 paper page"
     url: "https://www.ndss-symposium.org/ndss2012/ndss-2012-programme/smart-secure-and-minimal-architecture-establishing-dynamic-root-trust/"
-  - id: anchor-paper-17-author-1
-    source_id: source-paper-17-author-1
-    label: "UCI author copy"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://ics.uci.edu/~gts/paps/smart.pdf"
+  - id: anchor-paper-17-lineage
+    source_id: source-paper-17-vrased
+    label: "Later paper's account of SMART as a precursor"
+    locator: "VRASED Section 1 and related-work discussion, PDF pages 1-3"
+    url: /pubs/2019/vrased_usenixsec2019.pdf#page=1
+  - id: anchor-paper-17-citations
+    source_id: source-paper-17-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate displayed Citations (395), observed 2026-07-11; coverage and version merging may differ from other indexes."
+    url: "https://www.researchgate.net/publication/266178170_SMART_Secure_and_Minimal_Architecture_for_Establishing_a_Dynamic_Root_of_Trust"
 
 nodes:
   - id: paper-17
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "SMART: Secure and Minimal Architecture for (Establishing a Dynamic) Root of Trust"
-    summary: "SMART is a minimal hardware-software architecture that lets a remote party establish a dynamic root of trust and run isolated code on low-end microcontrollers. AVR and MSP430 implementations show that only small changes to memory-access logic are needed, avoiding the cost of a separate security coprocessor while providing concrete security guarantees."
-    source_anchor_ids: [anchor-paper-17-site-record]
+    epistemic_status: published
+    title: "SMART"
+    summary: "A minimal hardware/software root-of-trust primitive for low-end microcontrollers, accompanied by two modified MCU designs and synthesis results."
+    source_anchor_ids: [anchor-paper-17-question]
 
   - id: paper-17-question
     kind: question
     parent_id: paper-17
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can a low-end microcontroller establish an isolated dynamic root of trust with only minimal hardware changes and no separate security coprocessor?"
-    source_anchor_ids: [anchor-paper-17-site-record]
+    summary: "Can remote attestation and controlled execution be made robust to fully compromised software without adding a separate security coprocessor?"
+    source_anchor_ids: [anchor-paper-17-question]
 
   - id: paper-17-answer
     kind: contribution
     parent_id: paper-17
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "SMART combines a small hardware-software architecture with protected code execution and reports AVR and MSP430 implementations requiring limited changes to memory-access logic."
-    source_anchor_ids: [anchor-paper-17-site-record]
+    epistemic_status: implemented_and_analytically_supported
+    title: "Central answer"
+    summary: "Combine immutable attestation software and secret storage with a small hardware monitor that constrains key access, legal entry and exit, interrupts, DMA, and reset behavior."
+    source_anchor_ids: [anchor-paper-17-protocol, anchor-paper-17-hardware]
 
-  - id: paper-17-method
-    kind: method
+  - id: paper-17-goals
+    kind: scope
     parent_id: paper-17
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Add minimal access-control support around microcontroller memory and execute security-sensitive code in an isolated dynamic root-of-trust environment."
-    source_anchor_ids: [anchor-paper-17-site-record]
+    epistemic_status: explicitly_scoped
+    title: "Security objectives"
+    summary: "SMART targets prover authentication, external verification of an arbitrary memory interval, and optional guaranteed execution of a verifier-selected routine."
+    source_anchor_ids: [anchor-paper-17-goals]
 
-  - id: paper-17-claims
-    kind: claim_group
+  - id: paper-17-adversary
+    kind: threat_model
+    parent_id: paper-17-goals
+    order: 1
+    epistemic_status: defined
+    title: "Software adversary"
+    summary: "The attacker controls all mutable software, memory, and communications and may coordinate multiple devices, but cannot modify ROM or hardware, extract the protected key, or use physical, fault, or side-channel attacks."
+    source_anchor_ids: [anchor-paper-17-adversary, anchor-paper-17-limitations]
+
+  - id: paper-17-assumptions
+    kind: assumption_group
+    parent_id: paper-17-goals
+    order: 2
+    epistemic_status: assumed
+    title: "Provisioning and platform assumptions"
+    summary: "Prover and verifier share a secret provisioned outside the protocol; DMA is disabled during trusted execution, reset and memory erasure work as specified, and the MCU exposes enforceable program-counter and memory-access signals."
+    source_anchor_ids: [anchor-paper-17-goals, anchor-paper-17-hardware]
+
+  - id: paper-17-primitive
+    kind: primitive
     parent_id: paper-17
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The paper reports concrete security guarantees and practical AVR and MSP430 implementations without the cost of a separate security coprocessor."
-    source_anchor_ids: [anchor-paper-17-site-record]
+    epistemic_status: implemented
+    title: "Dynamic root-of-trust primitive"
+    summary: "A verifier sends a nonce, memory bounds, code address, and execution flag; ROM code authenticates the request and memory with a shared-key MAC, erases sensitive state, and optionally transfers control atomically to selected code."
+    source_anchor_ids: [anchor-paper-17-protocol]
 
-  - id: paper-17-evidence
-    kind: evidence_group
+  - id: paper-17-hardware
+    kind: architecture
     parent_id: paper-17
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports two microcontroller implementations and small memory-access-logic changes; security definitions, proofs, hardware cost data, and implementation measurements have not been inspected."
-    source_anchor_ids: [anchor-paper-17-site-record]
+    epistemic_status: implemented
+    title: "Hardware enforcement"
+    summary: "Program-counter-gated key access, restricted ROM entry and exit, interrupt suppression, memory-access checks, and reset-on-violation prevent untrusted code from reusing the key or splicing trusted execution."
+    source_anchor_ids: [anchor-paper-17-hardware]
+
+  - id: paper-17-security
+    kind: security_argument
+    parent_id: paper-17
+    order: 6
+    epistemic_status: informal_conditional_argument
+    title: "Security analysis"
+    summary: "Assertions A1-A11 connect hardware behavior, key isolation, atomic execution, and memory erasure to the three objectives. The paper explicitly presents this as an informal analysis, not a formal proof."
+    source_anchor_ids: [anchor-paper-17-security]
+
+  - id: paper-17-applications
+    kind: application_group
+    parent_id: paper-17
+    order: 7
+    epistemic_status: protocol_sketches
+    title: "Derived uses"
+    summary: "The paper sketches memory attestation, proof of reset, attested sensor readings, and authenticated key establishment as protocols composed from the SMART primitive."
+    source_anchor_ids: [anchor-paper-17-applications]
+
+  - id: paper-17-implementation
+    kind: implementation
+    parent_id: paper-17
+    order: 8
+    epistemic_status: implemented
+    title: "Two MCU realizations"
+    summary: "Open-source AVR and MSP430 cores are modified with fewer than 200 lines of HDL changes, and the trusted ROM routine is roughly 500 C lines compiled into 4-6 KB."
+    source_anchor_ids: [anchor-paper-17-implementation, anchor-paper-17-evaluation]
+
+  - id: paper-17-evidence-runtime
+    kind: empirical_evidence
+    parent_id: paper-17
+    order: 9
+    epistemic_status: measured_in_simulation
+    title: "Attestation runtime"
+    summary: "At 8 MHz, reported HMAC-based times are about 48 ms for 32 bytes, 160 ms for 512 bytes, and 287 ms for 1 KB, making protected-memory size a primary runtime factor."
+    source_anchor_ids: [anchor-paper-17-evaluation]
+
+  - id: paper-17-evidence-area
+    kind: empirical_evidence
+    parent_id: paper-17
+    order: 10
+    epistemic_status: synthesized
+    title: "Hardware overhead"
+    summary: "A 180 nm synthesis reports roughly 10% whole-MCU area overhead for both platforms; isolating core-logic changes gives about 2.6% for AVR and 9.2% for MSP430, with memory-access control dominating."
+    source_anchor_ids: [anchor-paper-17-evaluation]
 
   - id: paper-17-limitations
     kind: limitation_group
     parent_id: paper-17
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The current record does not establish the exact trusted hardware boundary, physical-attack scope, compiler assumptions, secure-boot requirements, or portability to other microcontrollers."
-    source_anchor_ids: [anchor-paper-17-site-record]
+    order: 11
+    epistemic_status: explicitly_reported
+    title: "Proof and deployment boundaries"
+    summary: "The chips were simulated and synthesized rather than fabricated, HMAC cost can be material, physical attacks are excluded, and full formal verification plus broader experiments are identified as future work."
+    source_anchor_ids: [anchor-paper-17-limitations]
 
-  - id: paper-17-resources
+  - id: paper-17-artifacts
     kind: artifact_group
     parent_id: paper-17
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: NDSS paper page; UCI author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-17-official-1, anchor-paper-17-author-1]
+    order: 12
+    epistemic_status: implementation_described_not_released
+    title: "Artifacts"
+    summary: "The paper describes modified HDL cores, C code, synthesis tooling, and benchmarks, but this audit did not locate a public SMART source repository or immutable implementation bundle."
+    source_anchor_ids: [anchor-paper-17-implementation, anchor-paper-17-evaluation]
 
   - id: paper-17-scrutiny
     kind: scrutiny
     parent_id: paper-17
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at Network and Distributed System Security Symposium (NDSS). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-17-site-record, anchor-paper-17-official-1]
+    order: 13
+    epistemic_status: venue_reviewed_and_followed_on
+    title: "External scrutiny and reception"
+    summary: "SMART appeared at NDSS, is explicitly treated as a precursor by later verified-attestation work, and ResearchGate reports 395 citations; review reports and a direct independent reproduction were not audited."
+    source_anchor_ids: [anchor-paper-17-publication, anchor-paper-17-lineage, anchor-paper-17-citations]
+
+  - id: paper-17-lineage
+    kind: lineage
+    parent_id: paper-17
+    order: 14
+    epistemic_status: documented_by_later_primary_work
+    title: "Path to formally verified attestation"
+    summary: "VRASED later retains SMART's minimal hybrid architecture while formalizing properties and model-checking the hardware enforcement path, directly addressing SMART's stated verification gap."
+    source_anchor_ids: [anchor-paper-17-limitations, anchor-paper-17-lineage]
 
 relations:
-  - id: paper-17-relation-method-supports-answer
+  - id: paper-17-relation-hardware-enables-primitive
+    type: enables
+    from_id: paper-17-hardware
+    to_id: paper-17-primitive
+  - id: paper-17-relation-security-supports-answer
     type: supports
-    from_id: paper-17-method
+    from_id: paper-17-security
     to_id: paper-17-answer
-  - id: paper-17-relation-evidence-supports-claim
+  - id: paper-17-relation-implementation-supports-answer
     type: supports
-    from_id: paper-17-evidence
-    to_id: paper-17-claims
-  - id: paper-17-relation-limitations-qualify-claim
+    from_id: paper-17-implementation
+    to_id: paper-17-answer
+  - id: paper-17-relation-runtime-supports-implementation
+    type: supports
+    from_id: paper-17-evidence-runtime
+    to_id: paper-17-implementation
+  - id: paper-17-relation-area-supports-implementation
+    type: supports
+    from_id: paper-17-evidence-area
+    to_id: paper-17-implementation
+  - id: paper-17-relation-limitations-qualify-security
     type: qualifies
     from_id: paper-17-limitations
-    to_id: paper-17-claims
-  - id: paper-17-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-17-scrutiny
-    to_id: paper-17
+    to_id: paper-17-security
+  - id: paper-17-relation-smart-precedes-vrased
+    type: precedes
+    from_id: paper-17
+    to_id: paper-17-lineage
 
 assessment:
   id: paper-17-assessment-2026-07-11
@@ -173,32 +322,35 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports two microcontroller implementations and small memory-access-logic changes; security definitions, proofs, hardware cost data, and implementation measurements have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-17-site-record]
+      rationale: "SMART combines an explicit threat model and security-assertion chain with two HDL implementations, timing measurements, and synthesis results. The security case is informal, the chips were not fabricated, artifacts were not located, and physical attacks are excluded."
+      basis_source_anchor_ids: [anchor-paper-17-security, anchor-paper-17-implementation, anchor-paper-17-evaluation, anchor-paper-17-limitations]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-17-official-1, anchor-paper-17-author-1]
+      rationale: "A complete author copy is checked into the site with source route, page count, and SHA-256 identity. Architecture, assertions, and evaluation tables are inspectable, although implementation source and synthesis scripts were not located."
+      basis_source_anchor_ids: [anchor-paper-17-protocol, anchor-paper-17-security, anchor-paper-17-evaluation]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-17-site-record]
+      rationale: "Named authorship, an author-hosted paper, and the NDSS record establish baseline provenance. Contributor roles, source revisions, synthesis artifacts, and tool versions are not fully documented."
+      basis_source_anchor_ids: [anchor-paper-17-question, anchor-paper-17-publication]
     - id: external_scrutiny
-      level: medium
-      rationale: "The record reports publication in Network and Distributed System Security Symposium (NDSS), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-17-official-1]
+      level: high
+      rationale: "The work passed NDSS review, has an extensive follow-on citation trail, and its verification gap was explicitly addressed by later primary research such as VRASED. Direct review reports and an independent reproduction were not audited."
+      basis_source_anchor_ids: [anchor-paper-17-publication, anchor-paper-17-lineage, anchor-paper-17-citations]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-17-site-record]
+      level: high
+      rationale: "ResearchGate displayed 395 citations on 2026-07-11, far above the rubric's 11-citation high threshold. The count is index-specific and citing contexts were not reviewed."
+      basis_source_anchor_ids: [anchor-paper-17-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete contribution: The paper reports concrete security guarantees and practical AVR and MSP430 implementations without the cost of a separate security coprocessor. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-17-site-record]
+      level: high
+      rationale: "SMART established a widely cited minimal hybrid root-of-trust architecture for low-end devices and became a documented precursor to formally verified remote-attestation systems."
+      basis_source_anchor_ids: [anchor-paper-17-question, anchor-paper-17-lineage, anchor-paper-17-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 395
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate displayed Citations (395)."
+    - "The later VRASED paper identifies SMART as a direct architectural precursor."
+  limitation: "ResearchGate coverage and version merging differ from other indexes; citation contexts, deployed implementations, and independent reproductions were not systematically audited."

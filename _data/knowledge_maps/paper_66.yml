@@ -11,214 +11,339 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [algorithm]
 
 title: "Traffic Analysis by Adversaries with Partial Visibility"
-short_title: "Traffic Analysis by Adversaries with Partial Visibility"
+short_title: Traffic Analysis with Partial Visibility
 year: 2023
 venue: "28th European Symposium on Research in Computer Security (ESORICS 2023)"
 publication_status: "Published · proceedings issued in 2024"
 topic: privacy-identity
-labels:
-  - "Theory"
-  - "Applied"
-ai_ml_labels:
-  - "AI for security"
-authors:
-  - "Iness Ben Guirat"
-  - "Claudia Díaz"
-  - "Karim Eldefrawy"
-  - "Hadas Zeilberger"
+labels: [Theory, Applied]
+ai_ml_labels: [AI for security]
+authors: [Iness Ben Guirat, Claudia Díaz, Karim Eldefrawy, Hadas Zeilberger]
 keywords:
-  - "traffic analysis"
-  - "mix networks"
-  - "Bayesian inference"
+  - traffic analysis
+  - mix networks
+  - partial visibility
+  - Bayesian inference
+  - Metropolis-Hastings sampling
+  - anonymity measurement
 
-research_question: "What can traffic-analysis adversaries infer when each adversary observes only part of a mix network rather than the entire communication graph?"
-central_answer: "The curated editorial summary reports a model of partial visibility that combines Bayesian inference with Metropolis-Hastings sampling to study the information available to differently situated adversaries."
+research_question: >-
+  How can one estimate what a traffic-analysis adversary can infer when the adversary sees or compromises only selected parts of a mix network and the remaining message-flow trace is hidden?
+central_answer: >-
+  The paper models visible and hidden flow matrices, factors an adversary into goal, prior knowledge, and observation or compromise capabilities, and uses Metropolis-Hastings sampling to approximate a posterior distribution over hidden traces. A nine-mix case study demonstrates how different partial-visibility adversaries can be represented and sampled; it is a framework and proof-of-concept evaluation, not a universal de-anonymization rate.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text algorithm extraction, evidence mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 20-page author-hosted manuscript, including visual inspection of the title and evaluation pages, cross-checked against the official DOI.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification; adversary-model interpretation, evaluation readings, and ratings remain provisional.
 
 sources:
-  - id: source-paper-66-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #66"
-    url: /publications/#paper-66
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-66-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-031-51476-0_17"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-66-author-1
-    type: author_resource
-    title: "Author-hosted paper"
-    url: "https://www.esat.kuleuven.be/cosic/publications/article-3637.pdf"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-66-local-pdf
+    type: author_hosted_copy
+    title: "Traffic Analysis by Adversaries with Partial Visibility"
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf
+    provenance_category: author
+    retrieved_from: https://www.esat.kuleuven.be/cosic/publications/article-3637.pdf
+    media_type: application/pdf
+    sha256: ebc2f1971bee7b977274b374f76302ad41e888a6be507d85fed1eddcab348c0a
+    page_count: 20
+  - id: source-paper-66-official
+    type: official_publication_record
+    title: ESORICS 2023 publication record
+    url: https://doi.org/10.1007/978-3-031-51476-0_17
+    provenance_category: official
+  - id: source-paper-66-citations
+    type: citation_index_snapshot
+    title: OpenAlex record W4390698000
+    url: https://api.openalex.org/works/W4390698000
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-66-curated
-    source_id: source-paper-66-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-66
-  - id: anchor-paper-66-official-1
-    source_id: source-paper-66-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-031-51476-0_17"
-  - id: anchor-paper-66-author-1
-    source_id: source-paper-66-author-1
-    label: "Author-hosted paper"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://www.esat.kuleuven.be/cosic/publications/article-3637.pdf"
+  - id: anchor-paper-66-problem
+    source_id: source-paper-66-local-pdf
+    label: Partial-visibility problem and contributions
+    locator: Abstract and Sections 1-2, PDF pages 1-4
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf#page=1
+  - id: anchor-paper-66-adversary
+    source_id: source-paper-66-local-pdf
+    label: Adversary goals, prior knowledge, and capabilities
+    locator: Section 3, PDF pages 4-6
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf#page=4
+  - id: anchor-paper-66-matrices
+    source_id: source-paper-66-local-pdf
+    label: Matrix trace, observations, hidden state, and constraints
+    locator: Section 4, PDF pages 6-9
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf#page=6
+  - id: anchor-paper-66-sampler
+    source_id: source-paper-66-local-pdf
+    label: Metropolis-Hastings inference procedure
+    locator: Section 5, PDF pages 9-12
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf#page=9
+  - id: anchor-paper-66-case-study
+    source_id: source-paper-66-local-pdf
+    label: Nine-mix demonstrator and adversary instantiations
+    locator: Section 6, PDF pages 12-13
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf#page=12
+  - id: anchor-paper-66-evaluation
+    source_id: source-paper-66-local-pdf
+    label: Implementation, sampling experiments, and convergence checks
+    locator: Section 7, PDF pages 13-17
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf#page=13
+  - id: anchor-paper-66-limitations
+    source_id: source-paper-66-local-pdf
+    label: Interpretation, limitations, and future work
+    locator: Sections 8-9, PDF pages 17-18
+    url: /pubs/2023/traffic-analysis-partial-visibility-esorics2023.pdf#page=17
+  - id: anchor-paper-66-publication
+    source_id: source-paper-66-official
+    label: Official publication identity
+    locator: ESORICS 2023 proceedings, DOI 10.1007/978-3-031-51476-0_17
+    url: https://doi.org/10.1007/978-3-031-51476-0_17
+  - id: anchor-paper-66-citation-count
+    source_id: source-paper-66-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex cited_by_count was 0 when accessed 2026-07-11
+    url: https://api.openalex.org/works/W4390698000
 
 nodes:
   - id: paper-66
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Traffic Analysis by Adversaries with Partial Visibility"
-    summary: "This paper models traffic-analysis attackers who can observe only part of a mix network, rather than assuming an unrealistic view of every communication. It combines Bayesian inference with Metropolis-Hastings sampling to study what different partially informed adversaries can still learn."
-    source_anchor_ids: [anchor-paper-66-curated]
+    epistemic_status: published
+    title: Traffic analysis with partial visibility
+    summary: A general inference framework for representing and sampling the hidden parts of a mix-network trace under adversaries with heterogeneous monitoring and compromise capabilities.
+    source_anchor_ids: [anchor-paper-66-problem]
+
   - id: paper-66-question
     kind: question
     parent_id: paper-66
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "What can traffic-analysis adversaries infer when each adversary observes only part of a mix network rather than the entire communication graph?"
-    source_anchor_ids: [anchor-paper-66-curated]
-  - id: paper-66-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: What posterior knowledge about sender-receiver flows is available when an adversary sees only a subset of the network's traffic matrices or internal mappings?
+    source_anchor_ids: [anchor-paper-66-problem, anchor-paper-66-adversary]
+
+  - id: paper-66-answer
     kind: contribution
     parent_id: paper-66
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports a model of partial visibility that combines Bayesian inference with Metropolis-Hastings sampling to study the information available to differently situated adversaries."
-    source_anchor_ids: [anchor-paper-66-curated]
-  - id: paper-66-method
-    kind: method
+    epistemic_status: source_asserted
+    title: Central answer
+    summary: Represent the known and unknown portions of the network as constrained matrices and sample hidden traces from a posterior that combines observations with an adversarial prior.
+    source_anchor_ids: [anchor-paper-66-matrices, anchor-paper-66-sampler]
+
+  - id: paper-66-model
+    kind: model
     parent_id: paper-66
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described analysis defines partial-observation adversaries, forms posterior inferences about communication, and uses Metropolis-Hastings sampling to approximate those inferences."
-    source_anchor_ids: [anchor-paper-66-curated]
+    epistemic_status: defined
+    title: Mix-network and adversary model
+    summary: The communication trace is a sequence of matrices over flows between entities and mixes; an adversary is characterized by its inference goal, prior knowledge, and capability to monitor links or compromise mixes.
+    source_anchor_ids: [anchor-paper-66-adversary, anchor-paper-66-matrices]
+
+  - id: paper-66-model-observation
+    kind: definition
+    parent_id: paper-66-model
+    order: 1
+    epistemic_status: formalized
+    title: Observation and hidden state
+    summary: The trace is partitioned into an observed component O and hidden state HS. Network conservation, observed counts, topology, and compromised mappings constrain the set of feasible hidden matrices.
+    source_anchor_ids: [anchor-paper-66-matrices]
+
+  - id: paper-66-model-capabilities
+    kind: threat_model
+    parent_id: paper-66-model
+    order: 2
+    epistemic_status: defined
+    title: Monitoring and compromise capabilities
+    summary: The framework distinguishes observation of inter-entity traffic matrices from compromise of a mix, which can expose the mix's input-output correspondence under the modeled honest-but-curious behavior.
+    source_anchor_ids: [anchor-paper-66-adversary, anchor-paper-66-matrices]
+
+  - id: paper-66-algorithm
+    kind: algorithm
+    parent_id: paper-66
+    order: 4
+    epistemic_status: specified
+    title: Posterior inference by Metropolis-Hastings
+    summary: A Markov-chain sampler explores feasible hidden traces and estimates adversary-relevant probabilities without enumerating the complete hidden-state space.
+    source_anchor_ids: [anchor-paper-66-sampler]
+
+  - id: paper-66-algorithm-transition
+    kind: algorithm_step
+    parent_id: paper-66-algorithm
+    order: 1
+    epistemic_status: specified
+    title: Feasibility-preserving proposal
+    summary: The transition chooses a hidden matrix and exchanges entries across two columns in a way designed to preserve the trace constraints and produce another feasible candidate state.
+    source_anchor_ids: [anchor-paper-66-sampler]
+
+  - id: paper-66-algorithm-posterior
+    kind: algorithm_step
+    parent_id: paper-66-algorithm
+    order: 2
+    epistemic_status: specified
+    title: Bayesian acceptance and estimation
+    summary: Candidate transitions are accepted according to the Metropolis-Hastings ratio induced by the adversary's prior and observations, after which samples estimate the posterior quantity tied to the attack goal.
+    source_anchor_ids: [anchor-paper-66-sampler]
+
   - id: paper-66-claims
     kind: claim_group
     parent_id: paper-66
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports a framework for comparing what adversaries with different partial views can still learn from mix-network traffic."
-    source_anchor_ids: [anchor-paper-66-curated]
+    order: 5
+    epistemic_status: source_asserted
+    title: Principal claims
+    summary: The authors claim a flexible representation for partial visibility and a sampling method that can instantiate substantially different traffic-analysis adversaries within one framework.
+    source_anchor_ids: [anchor-paper-66-problem, anchor-paper-66-evaluation]
+
+  - id: paper-66-claim-generality
+    kind: claim
+    parent_id: paper-66-claims
+    order: 1
+    epistemic_status: demonstrated
+    title: Common model for different adversaries
+    summary: The case study instantiates both link-monitoring and mix-compromise views, including a global passive adversary and an adversary compromising entry and exit mixes.
+    source_anchor_ids: [anchor-paper-66-case-study, anchor-paper-66-evaluation]
+
+  - id: paper-66-claim-feasibility
+    kind: claim
+    parent_id: paper-66-claims
+    order: 2
+    epistemic_status: experimentally_supported
+    title: Sampling is feasible in the demonstrator
+    summary: The Python implementation generates posterior samples for the evaluated nine-mix, three-layer source-routed topology, and the paper reports convergence diagnostics across generated traces.
+    source_anchor_ids: [anchor-paper-66-case-study, anchor-paper-66-evaluation]
+
   - id: paper-66-evidence
     kind: evidence_group
     parent_id: paper-66
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Model-based and sampling-based results are reported, but priors, likelihoods, convergence diagnostics, datasets or simulations, metrics, and validation were not audited."
-    source_anchor_ids: [anchor-paper-66-curated]
-  - id: paper-66-scope
+    order: 6
+    epistemic_status: documented
+    title: Evidence and checks
+    summary: The paper gives the mathematical representation and sampler, a 2,363-line Python implementation, multiple adversary configurations, repeated traces, and Wilson-score intervals used to assess sampling convergence.
+    source_anchor_ids: [anchor-paper-66-sampler, anchor-paper-66-evaluation]
+
+  - id: paper-66-boundaries
     kind: limitation_group
     parent_id: paper-66
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked the network and traffic model, observation process, prior knowledge, sampler mixing, adversarial adaptivity, ground truth, or how results transfer to deployed mix networks."
-    source_anchor_ids: [anchor-paper-66-curated]
-  - id: paper-66-artifacts
+    order: 7
+    epistemic_status: explicitly_bounded
+    title: Scope and limitations
+    summary: The evaluation demonstrates the framework on one mix-network model and does not establish universal anonymity loss, production scalability, or resistance to active manipulation.
+    source_anchor_ids: [anchor-paper-66-evaluation, anchor-paper-66-limitations]
+
+  - id: paper-66-boundary-adversary
+    kind: limitation
+    parent_id: paper-66-boundaries
+    order: 1
+    epistemic_status: model_bounded
+    title: Compromise is not an active-attack model
+    summary: The compromised mixes reveal internal mappings under the paper's modeled behavior; arbitrary packet dropping, modification, delay attacks, and adaptive malicious control require additional modeling.
+    source_anchor_ids: [anchor-paper-66-adversary, anchor-paper-66-limitations]
+
+  - id: paper-66-boundary-generalization
+    kind: limitation
+    parent_id: paper-66-boundaries
+    order: 2
+    epistemic_status: benchmark_bounded
+    title: Topology and prior dependence
+    summary: Posterior conclusions and convergence depend on the nine-mix topology, source routing, traffic assumptions, prior, capability placement, and attack goal; broader empirical coverage is left for future work.
+    source_anchor_ids: [anchor-paper-66-case-study, anchor-paper-66-limitations]
+
+  - id: paper-66-boundary-computation
+    kind: limitation
+    parent_id: paper-66-boundaries
+    order: 3
+    epistemic_status: scalability_open
+    title: Sampling cost remains a boundary
+    summary: Metropolis-Hastings avoids exhaustive enumeration but may require substantial burn-in and sampling for large hidden spaces; the paper does not provide a general polynomial-time convergence guarantee.
+    source_anchor_ids: [anchor-paper-66-sampler, anchor-paper-66-evaluation, anchor-paper-66-limitations]
+
+  - id: paper-66-resources
     kind: artifact_group
     parent_id: paper-66
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 0 archive, 1 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-66-curated, anchor-paper-66-official-1, anchor-paper-66-author-1]
+    order: 8
+    epistemic_status: source_available
+    title: Auditable resources
+    summary: The complete author copy is checked into this site with page count and SHA-256, and the official DOI establishes the proceedings identity. The paper describes implementation code but this audit did not locate a public repository.
+    source_anchor_ids: [anchor-paper-66-problem, anchor-paper-66-evaluation, anchor-paper-66-publication]
+
   - id: paper-66-scrutiny
     kind: scrutiny
     parent_id: paper-66
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 28th European Symposium on Research in Computer Security (ESORICS 2023). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-66-official-1]
+    order: 9
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: ESORICS publication provides venue-level review. No public review reports, independent reproduction, correction, or comparative re-evaluation was located.
+    source_anchor_ids: [anchor-paper-66-publication]
+
+  - id: paper-66-lineage
+    kind: lineage
+    parent_id: paper-66
+    order: 10
+    epistemic_status: documented
+    title: Methodological lineage
+    summary: The work connects classical mix-network traffic analysis with Bayesian latent-state inference and Markov-chain sampling, explicitly broadening analysis beyond all-seeing global observers.
+    source_anchor_ids: [anchor-paper-66-problem, anchor-paper-66-sampler]
 
 relations:
-  - id: paper-66-relation-question-contribution
-    type: motivates
-    from_id: paper-66-question
-    to_id: paper-66-contribution
-  - id: paper-66-relation-method-contribution
-    type: realizes
-    from_id: paper-66-method
-    to_id: paper-66-contribution
-  - id: paper-66-relation-contribution-claims
-    type: grounds
-    from_id: paper-66-contribution
-    to_id: paper-66-claims
-  - id: paper-66-relation-evidence-claims
-    type: supports
-    from_id: paper-66-evidence
-    to_id: paper-66-claims
-  - id: paper-66-relation-scope-claims
-    type: qualifies
-    from_id: paper-66-scope
-    to_id: paper-66-claims
-  - id: paper-66-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-66-artifacts
-    to_id: paper-66-evidence
-  - id: paper-66-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-66-scrutiny
-    to_id: paper-66-claims
+  - {id: paper-66-rel-answer-question, type: addresses, from_id: paper-66-answer, to_id: paper-66-question}
+  - {id: paper-66-rel-model-answer, type: scopes, from_id: paper-66-model, to_id: paper-66-answer}
+  - {id: paper-66-rel-observation-model, type: component_of, from_id: paper-66-model-observation, to_id: paper-66-model}
+  - {id: paper-66-rel-algorithm-answer, type: realizes, from_id: paper-66-algorithm, to_id: paper-66-answer}
+  - {id: paper-66-rel-transition-algorithm, type: component_of, from_id: paper-66-algorithm-transition, to_id: paper-66-algorithm}
+  - {id: paper-66-rel-posterior-algorithm, type: component_of, from_id: paper-66-algorithm-posterior, to_id: paper-66-algorithm}
+  - {id: paper-66-rel-evidence-generality, type: supports, from_id: paper-66-evidence, to_id: paper-66-claim-generality}
+  - {id: paper-66-rel-evidence-feasibility, type: supports, from_id: paper-66-evidence, to_id: paper-66-claim-feasibility}
+  - {id: paper-66-rel-boundaries-claims, type: qualifies, from_id: paper-66-boundaries, to_id: paper-66-claims}
+  - {id: paper-66-rel-resources-evidence, type: enables_audit_of, from_id: paper-66-resources, to_id: paper-66-evidence}
+  - {id: paper-66-rel-lineage-paper, type: contextualizes, from_id: paper-66-lineage, to_id: paper-66}
 
 assessment:
   id: paper-66-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-66-curated, anchor-paper-66-official-1, anchor-paper-66-author-1]
+      level: high
+      rationale: The full source defines the adversary and latent-state model, specifies the sampler, documents implementation and experiments, and reports convergence checks. Evidence remains bounded to the evaluated topology and assumptions.
+      basis_source_anchor_ids: [anchor-paper-66-adversary, anchor-paper-66-sampler, anchor-paper-66-evaluation]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-66-curated, anchor-paper-66-official-1, anchor-paper-66-author-1]
+      rationale: A complete checked-in author copy with fixity and page count and an official DOI make the assumptions, algorithm, and reported evaluation directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-66-problem, anchor-paper-66-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-66-curated]
+      rationale: Named authorship, venue, DOI, and an author-hosted manuscript are documented; contributor roles, version history, source-code identity, and tool-use provenance are not.
+      basis_source_anchor_ids: [anchor-paper-66-problem, anchor-paper-66-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-66-official-1]
+      rationale: ESORICS publication establishes venue scrutiny, but public reports, independent reproduction, correction history, and adversarial re-analysis were not located.
+      basis_source_anchor_ids: [anchor-paper-66-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-66-curated]
+      level: low
+      rationale: The dated OpenAlex snapshot located 0 citations. Under the author-defined rule, 0 through 8 located citations is Low; a zero in one index is not evidence of no readership.
+      basis_source_anchor_ids: [anchor-paper-66-citation-count]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-66-curated]
+      rationale: The paper supplies a reusable framework for partial-visibility traffic analysis and demonstrates it concretely, while broad applicability and independent uptake remain to be established.
+      basis_source_anchor_ids: [anchor-paper-66-problem, anchor-paper-66-evaluation]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex work lookup by DOI 10.1007/978-3-031-51476-0_17
+  citation_count: 0
+  source_url: https://api.openalex.org/works/W4390698000
+  signals:
+    - OpenAlex reported no citing works for the matched record at the snapshot date.
+  limitation: Citation counts are index- and date-dependent; zero in one index does not prove no reception, and counts do not establish correctness.

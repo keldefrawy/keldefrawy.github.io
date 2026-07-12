@@ -19,160 +19,275 @@ ai_ml_labels: ["AI for security"]
 authors: ["Mishari Al Mishari", "Emiliano De Cristofaro", "Karim Eldefrawy", "Gene Tsudik"]
 keywords: ["web fraud", "TLS certificates", "measurement"]
 
-research_question: "Can fields in SSL certificates distinguish popular legitimate domains from HTTPS phishing and typosquatting sites without using user data?"
-central_answer: "The paper builds a certificate-only classifier from differences in certificate fields and reports high fraud-detection accuracy as a complement to other defenses."
+research_question: >-
+  Do HTTPS certificate fields contain enough stable signal to distinguish popular legitimate domains from phishing, typosquatting, and less-vetted domains without observing a user's browsing history or page content?
+central_answer: >-
+  The study finds strong distributional differences across certificate datasets and trains classical machine-learning classifiers on derived X.509 features. Ten-fold cross-validation reports high positive-class recall and precision in the sampled data, but lower negative recall in some formulations; the authors therefore position the classifier as one input to a broader anti-fraud system rather than a standalone detector.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, dataset and classifier decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete checked-in journal article, including all dataset and classifier tables, plus its public source routes and a dated ResearchGate citation snapshot. Reported experiments were not rerun because data and code were not located."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-16-site-record
-    type: curated_record
-    title: "Curated publication record for paper #16"
-    url: /publications/#paper-16
-  - id: source-paper-16-official-1
+  - id: source-paper-16-paper
     type: scholarly_article
-    title: "Journal PDF"
+    title: "Harvesting SSL Certificate Data to Identify Web-Fraud"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf
+    media_type: application/pdf
+    sha256: 3fd3d47fb60314a65d9cc3a311aeb3272090871d609c31734eeb0811b15eb7ba
+    page_count: 15
+    provenance_category: author
+    retrieved_at: "2026-07-11"
+    retrieved_from_url: "https://emilianodc.com/PAPERS/IJSN12.pdf"
+  - id: source-paper-16-official
+    type: publication_record
+    title: "International Journal of Network Security PDF record"
     url: "http://ijns.jalaxy.com.tw/contents/ijns-v14-n6/ijns-2012-v14-n6-p324-338.pdf"
-  - id: source-paper-16-archive-1
-    type: manuscript_archive
-    title: "arXiv"
+  - id: source-paper-16-preprint
+    type: preprint_record
+    title: "arXiv preprint record"
     url: "https://arxiv.org/abs/0909.3688"
-  - id: source-paper-16-author-1
-    type: author_copy
-    title: "Author-hosted PDF"
-    url: "https://emilianodc.com/PAPERS/IJSN12.pdf"
+  - id: source-paper-16-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/45873637_Harvesting_SSL_Certificate_Data_to_Identify_Web-Fraud"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-16-site-record
-    source_id: source-paper-16-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-16
-  - id: anchor-paper-16-official-1
-    source_id: source-paper-16-official-1
-    label: "Journal PDF"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-16-question
+    source_id: source-paper-16-paper
+    label: "Problem and certificate-only detection proposal"
+    locator: "Abstract and Section 1, PDF pages 1-2"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=1
+  - id: anchor-paper-16-collection
+    source_id: source-paper-16-paper
+    label: "Collection periods and domain sampling"
+    locator: "Section 3.1, PDF pages 2-4"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=2
+  - id: anchor-paper-16-datasets
+    source_id: source-paper-16-paper
+    label: "Dataset sizes and unique-certificate counts"
+    locator: "Tables 1-2, PDF page 3"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=3
+  - id: anchor-paper-16-features
+    source_id: source-paper-16-paper
+    label: "X.509 feature extraction and distribution analysis"
+    locator: "Section 3.2 and Tables 3-7, PDF pages 4-8"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=4
+  - id: anchor-paper-16-classifiers
+    source_id: source-paper-16-paper
+    label: "Classifier families, metrics, and ten-fold validation"
+    locator: "Section 4.1, PDF page 9"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=9
+  - id: anchor-paper-16-results
+    source_id: source-paper-16-paper
+    label: "Primary classifier results"
+    locator: "Section 4.2 and Tables 8-9, PDF pages 9-10"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=9
+  - id: anchor-paper-16-robustness
+    source_id: source-paper-16-paper
+    label: "Dataset-size and issuer-only feature experiments"
+    locator: "Sections 4.3-4.4 and Tables 10-11, PDF pages 10-12"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=10
+  - id: anchor-paper-16-limitations
+    source_id: source-paper-16-paper
+    label: "Deployment limitations, adversarial adaptation, and integration"
+    locator: "Section 5, PDF pages 11-12"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=11
+  - id: anchor-paper-16-conclusion
+    source_id: source-paper-16-paper
+    label: "Conclusions and claimed novelty"
+    locator: "Section 7, PDF pages 13-14"
+    url: /pubs/2012/ssl-certificate-web-fraud-ijns2012.pdf#page=13
+  - id: anchor-paper-16-publication
+    source_id: source-paper-16-official
+    label: "Official journal record"
+    locator: "International Journal of Network Security 14(6), pages 324-338"
     url: "http://ijns.jalaxy.com.tw/contents/ijns-v14-n6/ijns-2012-v14-n6-p324-338.pdf"
-  - id: anchor-paper-16-archive-1
-    source_id: source-paper-16-archive-1
-    label: "arXiv"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://arxiv.org/abs/0909.3688"
-  - id: anchor-paper-16-author-1
-    source_id: source-paper-16-author-1
-    label: "Author-hosted PDF"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://emilianodc.com/PAPERS/IJSN12.pdf"
+  - id: anchor-paper-16-citations
+    source_id: source-paper-16-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate displayed Citations (21), observed 2026-07-11; coverage and version merging may differ from other indexes."
+    url: "https://www.researchgate.net/publication/45873637_Harvesting_SSL_Certificate_Data_to_Identify_Web-Fraud"
 
 nodes:
   - id: paper-16
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Harvesting SSL Certificate Data to Identify Web-Fraud"
-    summary: "The paper studies how SSL certificate fields differ between popular legitimate domains and HTTPS-enabled phishing or typosquatting sites. It builds and validates a certificate-only classifier that detects fraudulent domains with high accuracy without relying on user data, making it complementary to other anti-fraud tools."
-    source_anchor_ids: [anchor-paper-16-site-record]
+    epistemic_status: published
+    title: "Certificate-based web-fraud classification"
+    summary: "An Internet measurement and machine-learning study using only server X.509 certificate data to flag potentially fraudulent domains."
+    source_anchor_ids: [anchor-paper-16-question]
 
   - id: paper-16-question
     kind: question
     parent_id: paper-16
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can fields in SSL certificates distinguish popular legitimate domains from HTTPS phishing and typosquatting sites without using user data?"
-    source_anchor_ids: [anchor-paper-16-site-record]
+    summary: "Can certificate metadata distinguish HTTPS-enabled web fraud without collecting user-specific navigation history?"
+    source_anchor_ids: [anchor-paper-16-question]
 
   - id: paper-16-answer
     kind: contribution
     parent_id: paper-16
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper builds a certificate-only classifier from differences in certificate fields and reports high fraud-detection accuracy as a complement to other defenses."
-    source_anchor_ids: [anchor-paper-16-site-record]
+    epistemic_status: empirically_supported
+    title: "Central answer"
+    summary: "Certificate fields provide useful statistical signal in the sampled datasets, and classical classifiers can combine those signals into an anti-fraud feature; false positives and incomplete HTTPS coverage prevent treating the output as a definitive verdict."
+    source_anchor_ids: [anchor-paper-16-results, anchor-paper-16-limitations]
 
-  - id: paper-16-method
-    kind: method
+  - id: paper-16-scope
+    kind: scope
     parent_id: paper-16
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Collect certificate data for legitimate and fraudulent domains, derive certificate-field features, train a classifier, and validate its ability to separate the classes."
-    source_anchor_ids: [anchor-paper-16-site-record]
+    epistemic_status: explicitly_scoped
+    title: "Measurement scope"
+    summary: "Certificates were collected in September-October 2009 and March-October 2010 from popular, random .com/.net, phishing, and typosquatting domain lists that responded on HTTPS."
+    source_anchor_ids: [anchor-paper-16-collection]
 
-  - id: paper-16-claims
-    kind: claim_group
+  - id: paper-16-data
+    kind: dataset
     parent_id: paper-16
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The reported classifier detects fraudulent HTTPS domains with high accuracy using certificate information alone and without relying on user data."
-    source_anchor_ids: [anchor-paper-16-site-record]
+    epistemic_status: described_not_released
+    title: "Four certificate datasets"
+    summary: "The article reports 2,984 Alexa certificates, 22,063 random .com/.net certificates, 5,175 phishing certificates, and 486 typosquatting certificates, with substantial duplicate rates in several sets."
+    source_anchor_ids: [anchor-paper-16-datasets]
 
-  - id: paper-16-evidence
-    kind: evidence_group
+  - id: paper-16-data-labels
+    kind: assumption
+    parent_id: paper-16-data
+    order: 1
+    epistemic_status: operationalized
+    title: "Label construction"
+    summary: "Alexa ranking is used as a popular/legitimate proxy, PhishTank supplies phishing domains, and typosquatting candidates are derived from random domains using typo correction plus a parked-domain classifier."
+    source_anchor_ids: [anchor-paper-16-collection]
+
+  - id: paper-16-features
+    kind: method
     parent_id: paper-16
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports a built and validated classifier; dataset composition, sampling dates, feature engineering, splits, metrics, uncertainty, and external validation have not been inspected."
-    source_anchor_ids: [anchor-paper-16-site-record]
+    epistemic_status: implemented
+    title: "Certificate feature extraction"
+    summary: "The system derives boolean, categorical, and duration features from certificate issuer, subject, host-name similarity, signing, and validity information, including pairwise popularity indicators."
+    source_anchor_ids: [anchor-paper-16-features]
+
+  - id: paper-16-algorithm
+    kind: algorithm
+    parent_id: paper-16
+    order: 6
+    epistemic_status: implemented
+    title: "Classifier ensemble comparison"
+    summary: "Random Forest, Decision Tree, bagged and boosted trees, and Nearest Neighbor are trained and compared using positive/negative precision and recall under ten-fold cross-validation."
+    source_anchor_ids: [anchor-paper-16-classifiers]
+
+  - id: paper-16-evidence-phishing
+    kind: empirical_evidence
+    parent_id: paper-16
+    order: 7
+    epistemic_status: cross_validated
+    title: "Phishing versus popular certificates"
+    summary: "Across classifiers, positive recall is about 0.935-0.94 and positive precision about 0.877-0.881, while negative recall is about 0.773-0.780; the asymmetry matters for deployment false positives."
+    source_anchor_ids: [anchor-paper-16-results]
+
+  - id: paper-16-evidence-suspicious
+    kind: empirical_evidence
+    parent_id: paper-16
+    order: 8
+    epistemic_status: cross_validated
+    title: "Random-or-phishing versus popular certificates"
+    summary: "When random .com/.net and phishing certificates form the positive class, reported positive recall reaches about 0.975 and precision about 0.960, but negative recall remains only about 0.598-0.631."
+    source_anchor_ids: [anchor-paper-16-results]
+
+  - id: paper-16-evidence-robustness
+    kind: empirical_evidence
+    parent_id: paper-16
+    order: 9
+    epistemic_status: sensitivity_analysis
+    title: "Training-size and feature sensitivity"
+    summary: "Increasing the phishing training set improves positive precision and recall, and an issuer-only feature set remains informative, supporting—but not proving—some resilience to easily forged subject fields."
+    source_anchor_ids: [anchor-paper-16-robustness]
+
+  - id: paper-16-deployment
+    kind: implication
+    parent_id: paper-16
+    order: 10
+    epistemic_status: source_recommendation
+    title: "Intended deployment role"
+    summary: "The classifier is proposed as a privacy-preserving signal combined with URL, content, blacklist, or browser defenses, not as a standalone blocking oracle."
+    source_anchor_ids: [anchor-paper-16-limitations]
 
   - id: paper-16-limitations
     kind: limitation_group
     parent_id: paper-16
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The draft does not establish robustness to certificate-issuance changes, adaptive attackers, class imbalance, concept drift, deployment thresholds, or fraud types outside the collected data."
-    source_anchor_ids: [anchor-paper-16-site-record]
+    order: 11
+    epistemic_status: explicitly_reported
+    title: "Generalization and adversarial limits"
+    summary: "The labels and Internet sample are time- and source-dependent, many fraudulent domains do not use HTTPS, false positives remain, larger geographically diverse datasets are needed, and attackers can imitate forgeable certificate fields."
+    source_anchor_ids: [anchor-paper-16-limitations]
 
-  - id: paper-16-resources
+  - id: paper-16-artifacts
     kind: artifact_group
     parent_id: paper-16
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Journal PDF; arXiv; Author-hosted PDF. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-16-official-1, anchor-paper-16-archive-1, anchor-paper-16-author-1]
+    order: 12
+    epistemic_status: paper_only
+    title: "Artifacts"
+    summary: "The journal paper records datasets, features, metrics, and results in detail, but this audit did not locate the harvested certificates, labels, feature code, trained models, or evaluation scripts."
+    source_anchor_ids: [anchor-paper-16-datasets, anchor-paper-16-classifiers]
 
   - id: paper-16-scrutiny
     kind: scrutiny
     parent_id: paper-16
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · journal article at International Journal of Network Security, Volume 14, Number 6. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-16-site-record, anchor-paper-16-official-1]
+    order: 13
+    epistemic_status: journal_reviewed
+    title: "External scrutiny and reception"
+    summary: "The work appeared in the International Journal of Network Security and ResearchGate reports 21 citations; this audit did not inspect review reports, citing contexts, or a modern replication."
+    source_anchor_ids: [anchor-paper-16-publication, anchor-paper-16-citations]
+
+  - id: paper-16-lineage
+    kind: lineage
+    parent_id: paper-16
+    order: 14
+    epistemic_status: source_asserted
+    title: "Research lineage"
+    summary: "The paper is an early AI-for-security use of public TLS certificate structure as a privacy-preserving classification signal for phishing and typosquatting."
+    source_anchor_ids: [anchor-paper-16-question, anchor-paper-16-conclusion]
 
 relations:
-  - id: paper-16-relation-method-supports-answer
+  - id: paper-16-relation-data-enables-features
+    type: enables
+    from_id: paper-16-data
+    to_id: paper-16-features
+  - id: paper-16-relation-features-enable-algorithm
+    type: enables
+    from_id: paper-16-features
+    to_id: paper-16-algorithm
+  - id: paper-16-relation-phishing-supports-answer
     type: supports
-    from_id: paper-16-method
+    from_id: paper-16-evidence-phishing
     to_id: paper-16-answer
-  - id: paper-16-relation-evidence-supports-claim
+  - id: paper-16-relation-suspicious-supports-answer
     type: supports
-    from_id: paper-16-evidence
-    to_id: paper-16-claims
-  - id: paper-16-relation-limitations-qualify-claim
+    from_id: paper-16-evidence-suspicious
+    to_id: paper-16-answer
+  - id: paper-16-relation-robustness-qualifies-algorithm
+    type: qualifies
+    from_id: paper-16-evidence-robustness
+    to_id: paper-16-algorithm
+  - id: paper-16-relation-limitations-qualify-answer
     type: qualifies
     from_id: paper-16-limitations
-    to_id: paper-16-claims
-  - id: paper-16-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-16-scrutiny
-    to_id: paper-16
+    to_id: paper-16-answer
 
 assessment:
   id: paper-16-assessment-2026-07-11
@@ -183,32 +298,34 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports a built and validated classifier; dataset composition, sampling dates, feature engineering, splits, metrics, uncertainty, and external validation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-16-site-record]
+      rationale: "The study uses large observational datasets, explicit features, multiple classifiers, ten-fold validation, and sensitivity checks. Labels are proxy-based, the sample is historically bounded, negative-class recall is weak in some formulations, and no data/code or modern independent replication was located."
+      basis_source_anchor_ids: [anchor-paper-16-datasets, anchor-paper-16-classifiers, anchor-paper-16-results, anchor-paper-16-robustness, anchor-paper-16-limitations]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-16-official-1, anchor-paper-16-archive-1, anchor-paper-16-author-1]
+      rationale: "The complete journal version is checked into the site with source route, page count, and SHA-256 identity. Dataset construction, features, metrics, and tables are inspectable, though the underlying data and code are unavailable."
+      basis_source_anchor_ids: [anchor-paper-16-datasets, anchor-paper-16-results, anchor-paper-16-limitations]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-16-site-record]
+      rationale: "Named authorship, journal and preprint records, and an author-hosted journal PDF establish baseline provenance. Contributor roles, dataset snapshots, code versions, and revision history are not documented."
+      basis_source_anchor_ids: [anchor-paper-16-question, anchor-paper-16-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in International Journal of Network Security, Volume 14, Number 6, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-16-official-1]
+      rationale: "Journal publication and follow-on citations provide external attention, but review reports, corrections, data reuse, and independent classifier reproduction were not audited."
+      basis_source_anchor_ids: [anchor-paper-16-publication, anchor-paper-16-citations]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-16-site-record]
+      level: high
+      rationale: "ResearchGate displayed 21 citations on 2026-07-11, exceeding the rubric's 11-citation high threshold. The count is index-specific and citing contexts were not reviewed."
+      basis_source_anchor_ids: [anchor-paper-16-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The reported classifier detects fraudulent HTTPS domains with high accuracy using certificate information alone and without relying on user data. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-16-site-record]
+      rationale: "The work presents an early, privacy-conscious certificate-based machine-learning detector and a substantive Internet measurement, but its data are historically bounded and the classifier is explicitly not a standalone solution."
+      basis_source_anchor_ids: [anchor-paper-16-question, anchor-paper-16-results, anchor-paper-16-limitations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 21
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate displayed Citations (21)."
+  limitation: "ResearchGate coverage and merging of preprint and journal versions may differ from other indexes; citation contexts, polarity, dataset reuse, and deployed adoption were not audited."

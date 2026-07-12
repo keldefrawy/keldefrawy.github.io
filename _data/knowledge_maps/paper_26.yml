@@ -12,158 +12,193 @@ contribution_types: [protocol]
 
 title: "Founding Digital Currency on Secure Computation"
 year: 2014
+status: "Published"
 venue: "ACM Conference on Computer and Communications Security (CCS)"
 topic: secure-encrypted-computation
 labels: ["Theory"]
 authors: ["Karim Eldefrawy", "Joshua Lampkins"]
 keywords: ["digital currency", "secure computation", "distributed ledger"]
 
-research_question: "Can secure computation support a digital currency ledger that protects account and transaction data over time while retaining distributed accountability?"
-central_answer: "The paper designs a proactively secure ledger based on secret sharing and secure computation, positioned between a centralized bank and a fully decentralized currency."
+abstract: >-
+  Most current digital currency schemes and associated ledgers are either centralized or completely distributed similar to the design adopted by Bitcoin. Centralized schemes enable accountability, but leave the privacy of users' identities and transactions in the hands of one organization. Distributed schemes can ensure better privacy but provide little accountability. In this paper we design a privacy-preserving proactively-secure distributed ledger and associated transaction protocols that can be used to implement an accountable digital currency that inherits the ledger's privacy and security features. One of the main technical challenges that we address is dealing with the increase in ledger size over time, an unavoidable aspect as the currency spreads and the ledger is required to be maintained for a long time in the future. We accomplish this by reducing the distributed (secret-shared) storage footprint and the required bandwidth and computation for proactively refreshing the ledger to ensure long-term confidentiality and security.
+
+research_question: >-
+  Can a digital currency combine centralized-style accountability with transaction and identity privacy while preserving a growing ledger against mobile long-term compromise?
+central_answer: >-
+  The source abstract reports a privacy-preserving, proactively secure secret-shared ledger and transaction protocols, with techniques intended to reduce storage and proactive-refresh costs as the ledger grows; the manuscript body was not retrievable in this audit, so its exact parties, games, thresholds, constructions, and proofs remain pending.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: abstract-grounded claim decomposition, provenance search, and initial assessment
+  method: "Conservative mapping of the complete abstract previously transcribed from the public ResearchGate author-uploaded PDF, plus the ACM publication record. Direct retrieval was blocked by the public host, and no alternative legitimate author/archive copy was located; the paper body was not audited."
+  source_scope: metadata_and_source_abstract
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored abstract-grounded map awaiting author verification and full manuscript audit."
 
 sources:
-  - id: source-paper-26-site-record
-    type: curated_record
-    title: "Curated publication record for paper #26"
-    url: /publications/#paper-26
-  - id: source-paper-26-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/2660267.2660293"
-  - id: source-paper-26-author-1
-    type: author_hosted_copy
+  - id: source-paper-26-author
+    type: author_full_text_route
     title: "ResearchGate author-uploaded PDF"
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/285835450_Founding_Digital_Currency_on_Secure_Computation/links/573dee9a08ae9f741b2ffd5a/Founding-Digital-Currency-on-Secure-Computation.pdf"
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/285835450_Founding_Digital_Currency_on_Secure_Computation/links/573dee9a08ae9f741b2ffd5a/Founding-Digital-Currency-on-Secure-Computation.pdf
     provenance_category: author
+    scope_note: "Complete abstract is transcribed in this map; body retrieval was blocked during this audit."
+  - id: source-paper-26-official
+    type: publication_record
+    title: "ACM CCS publication record"
+    url: https://doi.org/10.1145/2660267.2660293
+  - id: source-paper-26-citations
+    type: scholarly_index
+    title: "OpenAlex work record for paper #26"
+    url: https://openalex.org/W2163898713
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-26-site-record
-    source_id: source-paper-26-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-26
-  - id: anchor-paper-26-official-1
-    source_id: source-paper-26-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1145/2660267.2660293"
-  - id: anchor-paper-26-author-1
-    source_id: source-paper-26-author-1
-    label: "Author-hosted resource: ResearchGate author-uploaded PDF"
-    locator: "Public author-uploaded full-text route recorded in the local resource data; local fixity, correspondence to the published version, and substantive content have not been audited for this draft."
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/285835450_Founding_Digital_Currency_on_Secure_Computation/links/573dee9a08ae9f741b2ffd5a/Founding-Digital-Currency-on-Secure-Computation.pdf"
+  - id: anchor-paper-26-abstract
+    source_id: source-paper-26-author
+    label: "Complete author-uploaded source abstract"
+    locator: "Abstract transcribed from author-uploaded PDF; body not audited"
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/285835450_Founding_Digital_Currency_on_Secure_Computation/links/573dee9a08ae9f741b2ffd5a/Founding-Digital-Currency-on-Secure-Computation.pdf
+  - id: anchor-paper-26-publication
+    source_id: source-paper-26-official
+    label: "Official ACM publication record"
+    locator: "CCS 2014, pages 1-14"
+    url: https://doi.org/10.1145/2660267.2660293
+  - id: anchor-paper-26-citations
+    source_id: source-paper-26-citations
+    label: "Dated OpenAlex citation snapshot"
+    locator: "cited_by_count = 24, accessed 2026-07-11"
+    url: https://openalex.org/W2163898713
 
 nodes:
   - id: paper-26
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published_abstract_audited
     title: "Founding Digital Currency on Secure Computation"
-    summary: "The paper designs a privacy-preserving, proactively secure distributed ledger for a digital currency that sits between a fully centralized bank and a fully decentralized system such as Bitcoin. Secret sharing and secure computation protect account and transaction data over time while still allowing a qualified group of servers to enforce accountability."
-    source_anchor_ids: [anchor-paper-26-site-record]
+    summary: "An abstract-grounded design for an accountable digital currency whose ledger remains secret-shared and proactively refreshed."
+    source_anchor_ids: [anchor-paper-26-abstract]
 
   - id: paper-26-question
     kind: question
     parent_id: paper-26
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question_from_abstract
     title: "Research question"
-    summary: "Can secure computation support a digital currency ledger that protects account and transaction data over time while retaining distributed accountability?"
-    source_anchor_ids: [anchor-paper-26-site-record]
+    summary: "Can ledger confidentiality and user privacy coexist with enforceable accountability and long-lived proactive security?"
+    source_anchor_ids: [anchor-paper-26-abstract]
 
   - id: paper-26-answer
     kind: contribution
     parent_id: paper-26
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper designs a proactively secure ledger based on secret sharing and secure computation, positioned between a centralized bank and a fully decentralized currency."
-    source_anchor_ids: [anchor-paper-26-site-record]
+    epistemic_status: source_abstract_asserted
+    title: "Central answer"
+    summary: "Maintain the ledger through distributed secret sharing and secure computation, attach privacy-preserving transaction protocols, and optimize storage and refresh as the ledger expands."
+    source_anchor_ids: [anchor-paper-26-abstract]
+
+  - id: paper-26-scope
+    kind: scope
+    parent_id: paper-26
+    order: 3
+    epistemic_status: abstract_level
+    title: "Privacy-accountability design space"
+    summary: "The abstract positions the design between one accountable but privacy-concentrating organization and a fully distributed system with less accountability."
+    source_anchor_ids: [anchor-paper-26-abstract]
+
+  - id: paper-26-scope-adversary
+    kind: threat_model
+    parent_id: paper-26-scope
+    order: 1
+    epistemic_status: incompletely_specified
+    title: "Long-term mobile compromise"
+    summary: "Proactive refresh implies security against changing corruptions over time, but the abstract does not state server count, corruption threshold, synchrony, erasures, authorization, or accountability trigger."
+    source_anchor_ids: [anchor-paper-26-abstract]
 
   - id: paper-26-method
     kind: method
     parent_id: paper-26
-    order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Distribute ledger state across a qualified server group, protect it through secret sharing, and evaluate authorized ledger operations through secure computation."
-    source_anchor_ids: [anchor-paper-26-site-record]
+    order: 4
+    epistemic_status: source_abstract_asserted
+    title: "Secret-shared ledger and transaction protocols"
+    summary: "Ledger state is distributed in secret-shared form and processed through secure protocols, while storage footprint and periodic refresh cost are reduced for long-term growth."
+    source_anchor_ids: [anchor-paper-26-abstract]
 
   - id: paper-26-claims
     kind: claim_group
     parent_id: paper-26
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The proposed design is reported to preserve account and transaction privacy over time while allowing a qualified server group to enforce accountability."
-    source_anchor_ids: [anchor-paper-26-site-record]
+    order: 5
+    epistemic_status: abstract_only
+    title: "Abstract-level claims"
+    summary: "The source claims privacy-preserving proactive security, accountability, and lower distributed storage, bandwidth, and computation for refresh; no exact bounds are visible in the abstract."
+    source_anchor_ids: [anchor-paper-26-abstract]
 
   - id: paper-26-evidence
     kind: evidence_group
     parent_id: paper-26
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports a cryptographic ledger design and intended privacy, proactive-security, and accountability properties; formal models, proofs, performance, and implementation have not been inspected."
-    source_anchor_ids: [anchor-paper-26-site-record]
+    order: 6
+    epistemic_status: not_body_audited
+    title: "Evidence presently visible"
+    summary: "The complete abstract and venue record were audited, but protocols, formal definitions, proofs, complexity derivations, and any experiments were not inspected."
+    source_anchor_ids: [anchor-paper-26-abstract, anchor-paper-26-publication]
 
-  - id: paper-26-limitations
+  - id: paper-26-boundaries
     kind: limitation_group
     parent_id: paper-26
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The available record does not establish assumptions about server corruption, consensus and availability, membership changes, monetary policy, audit access, or performance at production scale."
-    source_anchor_ids: [anchor-paper-26-site-record]
+    order: 7
+    epistemic_status: material_source_gap
+    title: "Unverified boundaries"
+    summary: "The map cannot yet specify who can de-anonymize or regulate transactions, how double spending and consistency are handled, what mobile-adversary threshold holds, or which complexity improvements are proved."
+    source_anchor_ids: [anchor-paper-26-abstract]
 
-  - id: paper-26-resources
+  - id: paper-26-artifacts
     kind: artifact_group
     parent_id: paper-26
-    order: 7
-    epistemic_status: linked_not_content_audited
+    order: 8
+    epistemic_status: public_route_not_locally_fixed
     title: "Artifacts and resources"
-    summary: "The curated record exposes 2 linked resources: Publisher / DOI; ResearchGate author-uploaded PDF. Their contents, persistence, version correspondence, and any supplementary artifacts have not been substantively audited."
-    source_anchor_ids: [anchor-paper-26-official-1, anchor-paper-26-author-1]
+    summary: "An ACM record and author-uploaded PDF route exist, but no locally fixed manuscript, code, or dataset was added because the host denied direct retrieval."
+    source_anchor_ids: [anchor-paper-26-abstract, anchor-paper-26-publication]
 
   - id: paper-26-scrutiny
     kind: scrutiny
     parent_id: paper-26
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at ACM Conference on Computer and Communications Security (CCS). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-26-site-record, anchor-paper-26-official-1]
+    order: 9
+    epistemic_status: publication_recorded
+    title: "External scrutiny"
+    summary: "The paper was published at ACM CCS 2014; reviews, proof audits, and later evaluations were not inspected."
+    source_anchor_ids: [anchor-paper-26-publication]
+
+  - id: paper-26-lineage
+    kind: lineage
+    parent_id: paper-26
+    order: 10
+    epistemic_status: source_abstract_asserted
+    title: "Research direction"
+    summary: "The design applies proactive MPC and secret-sharing techniques to a semi-centralized accountable-currency ledger."
+    source_anchor_ids: [anchor-paper-26-abstract]
 
 relations:
-  - id: paper-26-relation-method-supports-answer
-    type: supports
+  - id: relation-paper-26-answer-addresses-question
+    type: addresses
+    from_id: paper-26-answer
+    to_id: paper-26-question
+  - id: relation-paper-26-method-realizes-answer
+    type: realizes
     from_id: paper-26-method
     to_id: paper-26-answer
-  - id: paper-26-relation-evidence-supports-claim
+  - id: relation-paper-26-evidence-supports-claims
     type: supports
     from_id: paper-26-evidence
     to_id: paper-26-claims
-  - id: paper-26-relation-limitations-qualify-claim
+  - id: relation-paper-26-boundaries-qualify-claims
     type: qualifies
-    from_id: paper-26-limitations
+    from_id: paper-26-boundaries
     to_id: paper-26-claims
-  - id: paper-26-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-26-scrutiny
-    to_id: paper-26
 
 assessment:
   id: paper-26-assessment-2026-07-11
@@ -173,33 +208,34 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary reports a cryptographic ledger design and intended privacy, proactive-security, and accountability properties; formal models, proofs, performance, and implementation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-26-site-record]
+      level: low
+      rationale: "The complete source abstract identifies the construction and intended efficiency gains, but exact models, protocols, proofs, and evidence were not body-audited."
+      basis_source_anchor_ids: [anchor-paper-26-abstract]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable author-uploaded full-text route. This makes the paper's assumptions, evidence, and stated methods directly inspectable, so auditability is high; local fixity, correspondence to the published version, and a substantive content audit have not been verified."
-      basis_source_anchor_ids: [anchor-paper-26-official-1, anchor-paper-26-author-1]
+      rationale: "A public author-uploaded full-text route exists, satisfying the site's author-copy rule; direct body retrieval and local fixity were not achieved in this audit."
+      basis_source_anchor_ids: [anchor-paper-26-abstract]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-26-site-record]
+      rationale: "Named authorship, an author-uploaded route, and an ACM record establish baseline provenance; roles, revisions, and artifact lineage are unknown."
+      basis_source_anchor_ids: [anchor-paper-26-abstract, anchor-paper-26-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in ACM Conference on Computer and Communications Security (CCS), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-26-official-1]
+      rationale: "The paper has an ACM CCS publication record, but reviews and independent validation were not inspected."
+      basis_source_anchor_ids: [anchor-paper-26-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-26-site-record]
+      level: high
+      rationale: "OpenAlex reports 24 located citations as of 2026-07-11, meeting the site's 11+ high threshold. The index-specific count does not itself establish correctness or adoption."
+      basis_source_anchor_ids: [anchor-paper-26-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The proposed design is reported to preserve account and transaction privacy over time while allowing a qualified server group to enforce accountability. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-26-site-record]
+      rationale: "The abstract presents a substantive privacy/accountability ledger construction, but theorem strength, priority, and impact were not independently source-audited."
+      basis_source_anchor_ids: [anchor-paper-26-abstract]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "OpenAlex DOI work record cited_by_count"
+  source_url: https://openalex.org/W2163898713
+  citation_count: 24
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "OpenAlex coverage, deduplication, and version merging are imperfect; this is a dated located-citation snapshot."

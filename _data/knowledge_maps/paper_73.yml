@@ -16,8 +16,7 @@ year: 2025
 venue: "9th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML)"
 publication_status: "Published"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
+labels: [Theory]
 authors:
   - "Karim Eldefrawy"
   - "Sashidhar Jakkamsetti"
@@ -36,8 +35,8 @@ curation:
     - actor_type: ai
       name: OpenAI Codex
       role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+  method: "Source-grounded audit of the complete publisher abstract and official proceedings metadata, supplemented by the related 2023/439 ePrint lineage record. No public copy of the CSCML chapter itself was located, so algorithms, thresholds, assumptions, and proofs remain unaudited."
+  source_scope: official_abstract_and_metadata
   approval:
     status: pending
     note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
@@ -52,7 +51,17 @@ sources:
     type: official_publication_resource
     title: "Publisher / DOI"
     url: "https://doi.org/10.1007/978-3-032-10759-6_5"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+    scope_note: "Official chapter record and abstract; full chapter text was not publicly accessible in this audit."
+  - id: source-paper-73-related-eprint
+    type: related_preprint
+    title: "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition"
+    url: https://eprint.iacr.org/2023/439
+    scope_note: "Earlier work by the same four authors and the ePrint named in the older site listing. Its different title and abstract show that it is related lineage, not established here as the author manuscript of Paper #73."
+  - id: source-paper-73-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W4416558403
+    url: https://openalex.org/W4416558403
+    accessed_at: "2026-07-11"
 
 source_anchors:
   - id: anchor-paper-73-curated
@@ -63,58 +72,73 @@ source_anchors:
   - id: anchor-paper-73-official-1
     source_id: source-paper-73-official-1
     label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+    locator: "Official abstract and proceedings pages 68-85."
     url: "https://doi.org/10.1007/978-3-032-10759-6_5"
+  - id: anchor-paper-73-abstract
+    source_id: source-paper-73-official-1
+    label: Motivation, MTP contribution, quorum property, and TMPC application
+    locator: Publisher abstract
+    url: "https://doi.org/10.1007/978-3-032-10759-6_5"
+  - id: anchor-paper-73-lineage
+    source_id: source-paper-73-related-eprint
+    label: Related standard-model timed-cryptography work by the same authors
+    locator: ePrint 2023/439 title, abstract, authorship, and metadata
+    url: https://eprint.iacr.org/2023/439
+  - id: anchor-paper-73-citations
+    source_id: source-paper-73-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 0 citing works when accessed 2026-07-11
+    url: https://openalex.org/W4416558403
 
 nodes:
   - id: paper-73
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published_abstract_audited
     title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
     summary: "This paper introduces time-lock puzzles whose secret is generated and controlled collectively, preventing any one participant from revealing it early. It gives a practical protocol and uses it to construct timed multiparty computation with a time-locked output."
-    source_anchor_ids: [anchor-paper-73-curated]
+    source_anchor_ids: [anchor-paper-73-abstract]
   - id: paper-73-question
     kind: question
     parent_id: paper-73
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: abstract_grounded_question
     title: "Research question"
     summary: "Can a quorum jointly generate and control a time-lock puzzle so that no single participant can reveal its secret early or become a single point of failure?"
-    source_anchor_ids: [anchor-paper-73-curated]
+    source_anchor_ids: [anchor-paper-73-abstract]
   - id: paper-73-contribution
     kind: contribution
     parent_id: paper-73
     order: 2
-    epistemic_status: reported_not_independently_audited
+    epistemic_status: abstract_reported
     title: "Proposed contribution"
     summary: "The curated editorial summary reports a multi-party time-lock-puzzle protocol with collective secret control and an application to multiparty computation whose output remains time locked."
-    source_anchor_ids: [anchor-paper-73-curated]
+    source_anchor_ids: [anchor-paper-73-abstract]
   - id: paper-73-method
     kind: method
     parent_id: paper-73
     order: 3
-    epistemic_status: reported_not_independently_audited
+    epistemic_status: abstract_reported
     title: "Method or construction"
     summary: "The described construction distributes puzzle generation and control across multiple parties, then uses the resulting delayed-release mechanism within a timed MPC application."
-    source_anchor_ids: [anchor-paper-73-curated]
+    source_anchor_ids: [anchor-paper-73-abstract]
   - id: paper-73-claims
     kind: claim_group
     parent_id: paper-73
     order: 4
-    epistemic_status: reported_not_independently_audited
+    epistemic_status: abstract_reported
     title: "Principal reported claims"
     summary: "The summary reports quorum-controlled delayed release without unilateral early disclosure and a construction of timed MPC with a time-locked output."
-    source_anchor_ids: [anchor-paper-73-curated]
+    source_anchor_ids: [anchor-paper-73-abstract]
   - id: paper-73-evidence
     kind: evidence_group
     parent_id: paper-73
     order: 5
-    epistemic_status: reported_not_independently_audited
+    epistemic_status: abstract_level_evidence_only
     title: "Reported evidence"
     summary: "A practical protocol and cryptographic application are reported, but algorithms, threat model, setup, proofs, timing assumptions, quorum thresholds, implementation, and measurements were not audited."
-    source_anchor_ids: [anchor-paper-73-curated]
+    source_anchor_ids: [anchor-paper-73-abstract]
   - id: paper-73-scope
     kind: limitation_group
     parent_id: paper-73
@@ -139,6 +163,42 @@ nodes:
     title: "Scrutiny and status"
     summary: "The curated record lists this work in 9th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
     source_anchor_ids: [anchor-paper-73-official-1]
+
+  - id: paper-73-motivation
+    kind: threat_model
+    parent_id: paper-73
+    order: 9
+    epistemic_status: abstract_reported
+    title: Malicious or compromised committer boundary
+    summary: "Classical time-lock puzzles let one committer know the secret and therefore assume that party will not selectively disclose it early. MTP distributes generation so premature recovery requires compromising a quorum rather than one party."
+    source_anchor_ids: [anchor-paper-73-abstract]
+
+  - id: paper-73-primitive
+    kind: primitive
+    parent_id: paper-73
+    order: 10
+    epistemic_status: abstract_reported_definition
+    title: Multi-party time-lock puzzle
+    summary: "The abstract characterizes MTP as a new primitive with distributed puzzle generation and a threshold-controlled early-reconstruction condition. The exact interface, threshold, setup, and security experiment require full-text audit."
+    source_anchor_ids: [anchor-paper-73-abstract]
+
+  - id: paper-73-application
+    kind: protocol
+    parent_id: paper-73
+    order: 11
+    epistemic_status: abstract_reported_construction
+    title: Timed multi-party computation
+    summary: "The paper reports using MTP to construct TMPC, modeled as multiparty computation with a single time-locked output. No stronger fairness, availability, or multiple-output claim is inferred from the abstract."
+    source_anchor_ids: [anchor-paper-73-abstract]
+
+  - id: paper-73-lineage
+    kind: lineage
+    parent_id: paper-73
+    order: 12
+    epistemic_status: bibliographic_relationship_not_version_equivalence
+    title: Relation to ePrint 2023/439
+    summary: "The older site listing linked ePrint 2023/439 by the same authors. That record develops standard-model definitions and composition under a different title; this map treats it as related foundations, not as a verified full-text version of the MTP chapter."
+    source_anchor_ids: [anchor-paper-73-lineage]
 
 relations:
   - id: paper-73-relation-question-contribution
@@ -169,6 +229,22 @@ relations:
     type: contextualizes
     from_id: paper-73-scrutiny
     to_id: paper-73-claims
+  - id: paper-73-relation-motivation-question
+    type: motivates
+    from_id: paper-73-motivation
+    to_id: paper-73-question
+  - id: paper-73-relation-primitive-contribution
+    type: realizes
+    from_id: paper-73-primitive
+    to_id: paper-73-contribution
+  - id: paper-73-relation-primitive-application
+    type: enables
+    from_id: paper-73-primitive
+    to_id: paper-73-application
+  - id: paper-73-relation-lineage-contribution
+    type: contextualizes
+    from_id: paper-73-lineage
+    to_id: paper-73-contribution
 
 assessment:
   id: paper-73-assessment-2026-07-11
@@ -179,8 +255,8 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-73-curated, anchor-paper-73-official-1]
+      rationale: "The official abstract states a new primitive, practical protocol, quorum security goal, and TMPC application, and the official record fixes the publication identity. Full definitions, construction, assumptions, proofs, and any performance evidence were unavailable, so the rating does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-73-abstract, anchor-paper-73-official-1]
     - id: auditability
       level: medium
       rationale: "The resource record provides only official publication metadata and no archive or author-hosted copy; full-text assumptions, evidence, and version identity are not readily auditable from this map. Auditability is therefore medium."
@@ -194,9 +270,9 @@ assessment:
       rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
       basis_source_anchor_ids: [anchor-paper-73-official-1]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-73-curated]
+      level: low
+      rationale: "OpenAlex reported 0 citations for the published chapter on 2026-07-11. Under the author-defined corpus rule, 0 through 8 located citations is Low; this is an index-specific snapshot and does not merge citations to related ePrint 2023/439."
+      basis_source_anchor_ids: [anchor-paper-73-citations]
     - id: contribution_significance
       level: medium
       rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
@@ -204,7 +280,8 @@ assessment:
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: OpenAlex DOI lookup
+  citation_count: 0
+  source_url: https://openalex.org/W4416558403
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: "The chapter is recent, and index coverage may lag. Zero means no citing works were present in this dated OpenAlex record; citations to the differently titled 2023/439 ePrint are not merged without a verified version relationship."

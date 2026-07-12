@@ -14,255 +14,293 @@ title: "Opinion: Advancing Remote Attestation via Computer-Aided Formal Verifica
 year: 2019
 status: "Published · opinion paper"
 venue: "12th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec)"
-topic: "secure-systems-networks"
-labels: ["Perspective"]
+topic: secure-systems-networks
+labels: [Perspective]
 authors:
-  - "Karim Eldefrawy"
-  - "Gene Tsudik"
-keywords:
-  - "remote attestation"
-  - "formal verification"
-  - "program synthesis"
-editorial_summary: "This position paper argues that remote-attestation designs and implementations need computer-aided verification and correct-by-construction synthesis. Examples from prior systems illustrate how manual reasoning can miss processor-level details that invalidate apparently simple security arguments."
+  - Karim Eldefrawy
+  - Gene Tsudik
+keywords: [remote attestation, formal verification, program synthesis, trusted computing, research agenda]
 
-research_question: "How should remote-attestation research reduce the gap between high-level security arguments and processor-level executable behavior?"
-central_answer: "The opinion paper advocates computer-aided formal verification of designs and correct-by-construction synthesis of executables."
+research_question: >-
+  What must the remote-attestation community add to manual protocol reasoning and ad hoc implementation to obtain stronger confidence in claimed security, safety, and robustness?
+central_answer: >-
+  The position paper argues for computer-aided specification and verification of RA protocols and hardware/software architectures, followed by correct-by-construction synthesis of executable components. It supports the agenda with concrete prior-design failures and identifies open obligations in property completeness, end-to-end verification, synthesis, and group attestation.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text argument mapping and initial assessment
+  method: >-
+    Source-grounded review of the complete four-page opinion paper, including visual inspection of its first and research-agenda pages. The map distinguishes recommendations and case studies from proved technical results.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Interpretation of the agenda and significance ratings remains provisional.
 
 sources:
-  - id: source-paper-47-site-record
-    type: curated_site_record
-    title: "Publication #47 metadata and editorial summary"
-    url: /publications/#paper-47
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-47-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3317549.3323403"
-    provenance_category: official
-  - id: source-paper-47-resource-2
-    type: public_archive_record
-    title: "NSF Public Access"
-    url: "https://par.nsf.gov/servlets/purl/10121392"
-    provenance_category: archive
-  - id: source-paper-47-resource-3
+  - id: source-paper-47-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2019/ra-opinion_wisec2019.pdf"
+    title: "Opinion: Advancing Remote Attestation via Computer-Aided Formal Verification of Designs and Synthesis of Executables"
+    url: /pubs/2019/ra-opinion_wisec2019.pdf
     provenance_category: author
+    media_type: application/pdf
+    sha256: 8783d63cfbc287967fe23e65a708f59c1ca1345409ccda52c9d0ad9444463df3
+    page_count: 4
+  - id: source-paper-47-official
+    type: official_publication_record
+    title: ACM WiSec 2019 publication record
+    url: https://doi.org/10.1145/3317549.3323403
+    provenance_category: official
+  - id: source-paper-47-archive
+    type: public_archive_copy
+    title: NSF Public Access copy
+    url: https://par.nsf.gov/servlets/purl/10121392
+    provenance_category: archive
+  - id: source-paper-47-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2946516862
+    url: https://openalex.org/W2946516862
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-47-editorial
-    source_id: source-paper-47-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-47
-  - id: anchor-paper-47-resource-1
-    source_id: source-paper-47-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/3317549.3323403"
-  - id: anchor-paper-47-resource-2
-    source_id: source-paper-47-resource-2
-    label: "Archive resource: NSF Public Access"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://par.nsf.gov/servlets/purl/10121392"
-  - id: anchor-paper-47-resource-3
-    source_id: source-paper-47-resource-3
-    label: "Author-hosted resource: Author-hosted PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://keldefrawy.github.io/pubs/2019/ra-opinion_wisec2019.pdf"
+  - id: anchor-paper-47-thesis
+    source_id: source-paper-47-author-pdf
+    label: Opinion thesis, motivation, and claimed objective
+    locator: "Abstract and Section 1, PDF page 1"
+    url: /pubs/2019/ra-opinion_wisec2019.pdf#page=1
+  - id: anchor-paper-47-model
+    source_id: source-paper-47-author-pdf
+    label: RA protocol, remote adversary, and scope of desired verification
+    locator: "Section 2.1, PDF pages 1-2"
+    url: /pubs/2019/ra-opinion_wisec2019.pdf#page=1
+  - id: anchor-paper-47-landscape
+    source_id: source-paper-47-author-pdf
+    label: Software, hardware, and hybrid RA comparison
+    locator: "Section 2.2, PDF page 2"
+    url: /pubs/2019/ra-opinion_wisec2019.pdf#page=2
+  - id: anchor-paper-47-methods
+    source_id: source-paper-47-author-pdf
+    label: Existing verification efforts, HYDRA, and VRASED boundaries
+    locator: "Section 3.1, PDF page 3"
+    url: /pubs/2019/ra-opinion_wisec2019.pdf#page=3
+  - id: anchor-paper-47-cases
+    source_id: source-paper-47-author-pdf
+    label: Temporal-consistency, interrupt atomicity, and availability case studies
+    locator: "Section 3.2, PDF page 3"
+    url: /pubs/2019/ra-opinion_wisec2019.pdf#page=3
+  - id: anchor-paper-47-agenda
+    source_id: source-paper-47-author-pdf
+    label: Four-part research agenda
+    locator: "Section 4, PDF pages 3-4"
+    url: /pubs/2019/ra-opinion_wisec2019.pdf#page=3
+  - id: anchor-paper-47-publication
+    source_id: source-paper-47-official
+    label: Official opinion-paper publication identity
+    locator: "WiSec 2019, DOI 10.1145/3317549.3323403"
+    url: https://doi.org/10.1145/3317549.3323403
+  - id: anchor-paper-47-reception
+    source_id: source-paper-47-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 1 citing work on 2026-07-11"
+    url: https://openalex.org/W2946516862
 
 nodes:
   - id: paper-47
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "Opinion: Advancing Remote Attestation via Computer-Aided Formal Verification of Designs and Synthesis of Executables"
-    summary: "This position paper argues that remote-attestation designs and implementations need computer-aided verification and correct-by-construction synthesis. Examples from prior systems illustrate how manual reasoning can miss processor-level details that invalidate apparently simple security arguments."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
+    epistemic_status: published_opinion
+    title: A formal-methods agenda for remote attestation
+    summary: A position paper arguing that RA security claims need machine-assisted models, proofs, and synthesized implementations, supported by failure case studies and a four-part agenda.
+    source_anchor_ids: [anchor-paper-47-thesis]
   - id: paper-47-question
     kind: question
     parent_id: paper-47
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "How should remote-attestation research reduce the gap between high-level security arguments and processor-level executable behavior?"
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-contribution
-    kind: contribution
+    epistemic_status: research_agenda_question
+    title: Research question
+    summary: How can RA move from plausible manual arguments to implementations whose architecture-level obligations are explicit and mechanically checked?
+    source_anchor_ids: [anchor-paper-47-thesis]
+  - id: paper-47-answer
+    kind: perspective
     parent_id: paper-47
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The opinion paper advocates computer-aided formal verification of designs and correct-by-construction synthesis of executables."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-method
-    kind: method
+    epistemic_status: argued_position
+    title: Central position
+    summary: Specify RA requirements and threat models precisely, verify protocol and hardware/software components with computer aid, prove their composition, and synthesize executable artifacts from checked descriptions.
+    source_anchor_ids: [anchor-paper-47-thesis, anchor-paper-47-methods, anchor-paper-47-agenda]
+  - id: paper-47-scope
+    kind: scope
     parent_id: paper-47
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The represented method is an argument from examples in prior systems, used to motivate a verification-and-synthesis research agenda."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-claims
-    kind: claim_group
+    epistemic_status: explicit
+    title: Scope of the argument
+    summary: The discussion focuses on challenge-response measurement against a remote software adversary; completeness of the initial security definition itself and physical adversaries are explicitly orthogonal or excluded.
+    source_anchor_ids: [anchor-paper-47-model]
+  - id: paper-47-premise
+    kind: premise
     parent_id: paper-47
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-claim-primary
-    kind: claim
-    parent_id: paper-47-claims
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports that manual reasoning can miss processor-level details and argues that verification and synthesis should become central to remote-attestation design."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-evidence
+    epistemic_status: argued
+    title: Why RA is a tractable first target
+    summary: RA has only a few messages and basic primitives such as HMAC, yet hybrid implementations expose processor, memory, interrupt, and control-flow details that manual abstractions routinely miss.
+    source_anchor_ids: [anchor-paper-47-model, anchor-paper-47-methods]
+  - id: paper-47-cases-node
     kind: evidence_group
     parent_id: paper-47
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-evidence-reported
+    epistemic_status: case_based_argument
+    title: Failure case studies
+    summary: Three examples illustrate how omitted machine details can undermine a security or correctness story.
+    source_anchor_ids: [anchor-paper-47-cases]
+  - id: paper-47-case-consistency
     kind: evidence
-    parent_id: paper-47-evidence
+    parent_id: paper-47-cases-node
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The current record notes illustrative prior-system examples, but the cases, causal analysis, tool capabilities, and proposed workflow were not audited."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-scope
-    kind: limitation_group
+    epistemic_status: literature_case
+    title: Temporal consistency
+    summary: Interruptible hashing may combine bytes from states that never coexisted, invalidating the implicit static-input premise and enabling relocating malware.
+    source_anchor_ids: [anchor-paper-47-cases]
+  - id: paper-47-case-atomicity
+    kind: evidence
+    parent_id: paper-47-cases-node
+    order: 2
+    epistemic_status: architecture_case
+    title: Non-instantaneous interrupt control
+    summary: On some MCUs, enabling or disabling interrupts spans cycles and can itself be interrupted, so a paper assumption of instantaneous atomicity may block formal verification or security.
+    source_anchor_ids: [anchor-paper-47-cases]
+  - id: paper-47-case-availability
+    kind: evidence
+    parent_id: paper-47-cases-node
+    order: 3
+    epistemic_status: design_case
+    title: Self-attestation denial of service
+    summary: A return-address API can point back to attestation entry and combine with enforced atomicity to trap a device in an endless attestation loop; a termination proof would expose the corner case.
+    source_anchor_ids: [anchor-paper-47-cases]
+  - id: paper-47-agenda-node
+    kind: agenda
     parent_id: paper-47
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-scope-boundary
-    kind: limitation
-    parent_id: paper-47-scope
+    epistemic_status: proposed
+    title: Four-part research program
+    summary: The paper separates property completeness, design verification, implementation synthesis, and heterogeneous/group attestation as distinct obligations.
+    source_anchor_ids: [anchor-paper-47-agenda]
+  - id: paper-47-agenda-properties
+    kind: open_problem
+    parent_id: paper-47-agenda-node
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "This is an opinion paper and research agenda, not by itself a proof that a particular toolchain eliminates implementation gaps."
-    source_anchor_ids: ["anchor-paper-47-editorial"]
-
-  - id: paper-47-resources
-    kind: artifact_group
+    epistemic_status: proposed
+    title: Prove completeness and minimality
+    summary: Establish that the chosen properties/components are sufficient and no unnecessary hardware remains, especially for minimalist hybrid RA.
+    source_anchor_ids: [anchor-paper-47-agenda]
+  - id: paper-47-agenda-verification
+    kind: open_problem
+    parent_id: paper-47-agenda-node
+    order: 2
+    epistemic_status: proposed
+    title: End-to-end computer-aided proofs
+    summary: Verify protocols and HW/SW co-designs in compatible frameworks and prove composition rather than relying on separately checked components plus manual glue.
+    source_anchor_ids: [anchor-paper-47-agenda]
+  - id: paper-47-agenda-synthesis
+    kind: open_problem
+    parent_id: paper-47-agenda-node
+    order: 3
+    epistemic_status: proposed
+    title: Correct-by-construction executables
+    summary: Extend synthesis beyond small hardware monitors and inherited HMAC binaries to the complete attestation executable and services built on it.
+    source_anchor_ids: [anchor-paper-47-agenda]
+  - id: paper-47-agenda-groups
+    kind: open_problem
+    parent_id: paper-47-agenda-node
+    order: 4
+    epistemic_status: proposed
+    title: Group and heterogeneous RA
+    summary: Derive and verify properties for multiple, possibly heterogeneous provers instead of assuming single-prover requirements compose unchanged.
+    source_anchor_ids: [anchor-paper-47-agenda]
+  - id: paper-47-boundaries
+    kind: limitation_group
     parent_id: paper-47
     order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-47-resource-1", "anchor-paper-47-resource-2", "anchor-paper-47-resource-3"]
-
-  - id: paper-47-resources-available
-    kind: artifact
-    parent_id: paper-47-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: NSF Public Access; Author-hosted: Author-hosted PDF."
-    source_anchor_ids: ["anchor-paper-47-resource-1", "anchor-paper-47-resource-2", "anchor-paper-47-resource-3"]
-
+    epistemic_status: explicit
+    title: Evidentiary boundary
+    summary: This is an agenda and case-based argument, not a new protocol, proof, synthesized toolchain, implementation, or empirical evaluation; feasibility is illustrated by prior systems.
+    source_anchor_ids: [anchor-paper-47-thesis, anchor-paper-47-methods]
+  - id: paper-47-artifacts
+    kind: artifact_group
+    parent_id: paper-47
+    order: 8
+    epistemic_status: publication_only
+    title: Publication resources
+    summary: Author, NSF, and DOI copies are public with local fixity. No new code or dataset is claimed by the opinion paper.
+    source_anchor_ids: [anchor-paper-47-thesis, anchor-paper-47-publication]
   - id: paper-47-scrutiny
     kind: scrutiny
     parent_id: paper-47
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · opinion paper at 12th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-47-resource-1"]
+    order: 9
+    epistemic_status: venue_reviewed_opinion
+    title: External scrutiny
+    summary: WiSec publication and shepherd acknowledgment establish venue exposure, but the normative agenda has not been independently validated as a theorem or standard.
+    source_anchor_ids: [anchor-paper-47-publication]
+  - id: paper-47-lineage
+    kind: lineage
+    parent_id: paper-47
+    order: 10
+    epistemic_status: documented
+    title: VRASED/HYDRA/PURE context
+    summary: HYDRA illustrates verified-component reuse, VRASED advances model-checked co-design, and PURE extends it to remediation; the paper argues the broader end-to-end agenda remains unfinished.
+    source_anchor_ids: [anchor-paper-47-methods, anchor-paper-47-agenda]
 
 relations:
-  - id: relation-paper-47-contribution-addresses-question
-    type: addresses
-    from_id: paper-47-contribution
-    to_id: paper-47-question
-  - id: relation-paper-47-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-47-method
-    to_id: paper-47-contribution
-  - id: relation-paper-47-evidence-supports-claim
-    type: supports
-    from_id: paper-47-evidence-reported
-    to_id: paper-47-claim-primary
-  - id: relation-paper-47-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-47-scope-boundary
-    to_id: paper-47-claim-primary
-  - id: relation-paper-47-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-47-resources-available
-    to_id: paper-47-evidence-reported
-  - id: relation-paper-47-status-qualifies-claim
-    type: qualifies
-    from_id: paper-47-scrutiny
-    to_id: paper-47-claim-primary
+  - {id: paper-47-relation-answer-question, type: addresses, from_id: paper-47-answer, to_id: paper-47-question}
+  - {id: paper-47-relation-premise-answer, type: motivates, from_id: paper-47-premise, to_id: paper-47-answer}
+  - {id: paper-47-relation-cases-answer, type: supports, from_id: paper-47-cases-node, to_id: paper-47-answer}
+  - {id: paper-47-relation-consistency-cases, type: component_of, from_id: paper-47-case-consistency, to_id: paper-47-cases-node}
+  - {id: paper-47-relation-atomicity-cases, type: component_of, from_id: paper-47-case-atomicity, to_id: paper-47-cases-node}
+  - {id: paper-47-relation-availability-cases, type: component_of, from_id: paper-47-case-availability, to_id: paper-47-cases-node}
+  - {id: paper-47-relation-agenda-answer, type: operationalizes, from_id: paper-47-agenda-node, to_id: paper-47-answer}
+  - {id: paper-47-relation-scope-answer, type: qualifies, from_id: paper-47-scope, to_id: paper-47-answer}
+  - {id: paper-47-relation-boundaries-answer, type: qualifies, from_id: paper-47-boundaries, to_id: paper-47-answer}
+  - {id: paper-47-relation-lineage-paper, type: contextualizes, from_id: paper-47-lineage, to_id: paper-47}
 
 assessment:
   id: paper-47-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-47-editorial", "anchor-paper-47-resource-1"]
+      rationale: The complete paper gives concrete architecture-level case studies and a logically separated agenda, but it is explicitly an opinion paper without new formal or experimental validation.
+      basis_source_anchor_ids: [anchor-paper-47-cases, anchor-paper-47-agenda]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-47-resource-1", "anchor-paper-47-resource-2", "anchor-paper-47-resource-3"]
+      rationale: A complete checked-in author copy with hash/page count, NSF archive copy, precise anchors, and DOI makes every represented argument inspectable.
+      basis_source_anchor_ids: [anchor-paper-47-thesis, anchor-paper-47-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-47-editorial"]
+      rationale: Authors, venue, DOI, shepherd acknowledgment, and manuscript are documented; contribution roles, revision history, and drafting process are not.
+      basis_source_anchor_ids: [anchor-paper-47-thesis, anchor-paper-47-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-47-resource-1"]
+      rationale: WiSec publication establishes editorial and venue scrutiny, but public review reports or consensus validation of the proposed agenda were not located.
+      basis_source_anchor_ids: [anchor-paper-47-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-47-editorial"]
+      level: low
+      rationale: OpenAlex reported 1 citation on 2026-07-11; under the finalized rubric, 0 through 8 located citations is Low.
+      basis_source_anchor_ids: [anchor-paper-47-reception]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a concrete agenda for connecting remote-attestation specifications to verified or synthesized executables. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-47-editorial"]
+      rationale: The agenda identifies concrete, consequential gaps and links them to known failures, but downstream adoption is limited in the dated citation snapshot.
+      basis_source_anchor_ids: [anchor-paper-47-cases, anchor-paper-47-agenda, anchor-paper-47-reception]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 1
+  source_url: https://openalex.org/W2946516862
+  signals:
+    - OpenAlex reported 1 work citing the WiSec opinion paper.
+  limitation: Citation counts vary by index/date and may undercount influence expressed through citations to VRASED, HYDRA, PURE, or the underlying case-study papers.

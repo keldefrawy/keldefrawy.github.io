@@ -11,215 +11,391 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [algorithm]
 
 title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
-short_title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+short_title: F1
 year: 2021
+status: Extended version of the MICRO 2021 paper
 venue: "54th IEEE/ACM International Symposium on Microarchitecture (MICRO)"
-publication_status: "Extended version of the MICRO 2021 paper"
 topic: secure-encrypted-computation
-labels:
-  - "Applied"
+labels: [Applied]
 authors:
-  - "Axel Feldmann"
-  - "Nikola Samardzic"
-  - "Aleksandar Krastev"
-  - "Srini Devadas"
-  - "Ronald G. Dreslinski"
-  - "Karim Eldefrawy"
-  - "Nicholas Genise"
-  - "Chris Peikert"
-  - "Daniel Sánchez"
+  - Axel Feldmann
+  - Nikola Samardzic
+  - Aleksandar Krastev
+  - Srini Devadas
+  - Ronald G. Dreslinski
+  - Karim Eldefrawy
+  - Nicholas Genise
+  - Chris Peikert
+  - Daniel Sánchez
 keywords:
-  - "fully homomorphic encryption"
-  - "hardware acceleration"
+  - fully homomorphic encryption
+  - hardware acceleration
+  - compiler scheduling
+  - vector architecture
 
-research_question: "Can a programmable hardware accelerator execute complete fully homomorphic encryption programs efficiently instead of accelerating only isolated kernels?"
-central_answer: "The curated editorial summary reports that F1 combines specialized vector units, an explicitly managed memory hierarchy, and a scheduling compiler to accelerate complete FHE workloads."
+research_question: >-
+  Can one programmable hardware architecture accelerate complete fully homomorphic encryption programs, rather than isolated cryptographic kernels, enough to offset most software overhead?
+central_answer: >-
+  F1 combines wide FHE-specific vector units, static compiler scheduling, and an explicitly managed memory hierarchy designed around data movement. RTL synthesis and cycle-accurate simulation across seven full workloads report a 5,432-fold geometric-mean speedup over a multicore CPU, with important simulation, scheme-support, and control-flow boundaries.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, architecture-and-evaluation mapping, and initial assessment
+  method: >-
+    Complete review of the 15-page arXiv extended version, including FHE model, architecture, compiler, RTL methodology, workloads, performance tables, sensitivity studies, functional simulator, and visual inspection of title and evaluation pages. All performance results are labeled as synthesis or simulation rather than measurements from fabricated silicon.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Hardware parameters, benchmark values, and version lineage should be checked before approval.
 
 sources:
-  - id: source-paper-59-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #59"
-    url: /publications/#paper-59
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-59-official-1
-    type: official_publication_resource
-    title: "Related conference version"
-    url: "https://doi.org/10.1145/3466752.3480070"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-59-archive-1
-    type: archive_resource
-    title: "arXiv"
-    url: "https://arxiv.org/abs/2109.05371"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-59-archive-pdf
+    type: public_archive_copy
+    title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf
+    provenance_category: archive
+    retrieved_from: https://arxiv.org/pdf/2109.05371
+    media_type: application/pdf
+    sha256: b637400c0a5ee59a593a588cf151521708152613e299b9f4a625848a5a5f2f4b
+    page_count: 15
+  - id: source-paper-59-official
+    type: related_official_publication_record
+    title: MICRO 2021 conference version
+    url: https://doi.org/10.1145/3466752.3480070
+    provenance_category: official
+  - id: source-paper-59-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3207326900
+    url: https://api.openalex.org/works/W3207326900
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-59-curated
-    source_id: source-paper-59-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-59
-  - id: anchor-paper-59-official-1
-    source_id: source-paper-59-official-1
-    label: "Related conference version"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1145/3466752.3480070"
-  - id: anchor-paper-59-archive-1
-    source_id: source-paper-59-archive-1
-    label: "arXiv"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://arxiv.org/abs/2109.05371"
+  - id: anchor-paper-59-problem
+    source_id: source-paper-59-archive-pdf
+    label: Problem, architecture thesis, and headline results
+    locator: Abstract and Section 1, PDF pages 1-2
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=1
+  - id: anchor-paper-59-fhe-model
+    source_id: source-paper-59-archive-pdf
+    label: FHE programming model, operations, and security parameters
+    locator: Section 2, PDF pages 2-4
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=2
+  - id: anchor-paper-59-architecture
+    source_id: source-paper-59-archive-pdf
+    label: Vector architecture and managed hierarchy
+    locator: Section 3, PDF pages 4-5
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=4
+  - id: anchor-paper-59-compiler
+    source_id: source-paper-59-archive-pdf
+    label: Dataflow translation and static scheduling compiler
+    locator: Section 4, PDF pages 5-7
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=5
+  - id: anchor-paper-59-units
+    source_id: source-paper-59-archive-pdf
+    label: Automorphism and four-step NTT units
+    locator: Section 5, PDF pages 7-9
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=7
+  - id: anchor-paper-59-rtl
+    source_id: source-paper-59-archive-pdf
+    label: RTL synthesis, area, frequency, and power model
+    locator: Section 6 and Table 2, PDF pages 9-10
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=9
+  - id: anchor-paper-59-methodology
+    source_id: source-paper-59-archive-pdf
+    label: Cycle-accurate methodology, workloads, and baselines
+    locator: Section 7, PDF pages 10-11
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=10
+  - id: anchor-paper-59-performance
+    source_id: source-paper-59-archive-pdf
+    label: Full-program and microbenchmark performance
+    locator: Section 8.1 and Tables 3-4, PDF pages 11-12
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=11
+  - id: anchor-paper-59-analysis
+    source_id: source-paper-59-archive-pdf
+    label: Data movement, sensitivity, scalability, and functional simulation
+    locator: Sections 8.2-8.5, PDF pages 12-13
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=12
+  - id: anchor-paper-59-boundaries
+    source_id: source-paper-59-archive-pdf
+    label: Scheme, branching, and evidence boundaries
+    locator: Sections 1, 2.1, 2.5, 6-8, PDF pages 1-4 and 9-13
+    url: /pubs/2021/f1-fhe-accelerator-extended.pdf#page=1
+  - id: anchor-paper-59-publication
+    source_id: source-paper-59-official
+    label: Related MICRO publication identity
+    locator: DOI 10.1145/3466752.3480070; this map represents the distinct arXiv extended version
+    url: https://doi.org/10.1145/3466752.3480070
+  - id: anchor-paper-59-citations
+    source_id: source-paper-59-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 262 citations for the DOI-identified MICRO work when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3207326900
 
 nodes:
   - id: paper-59
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
-    summary: "F1 is a programmable hardware accelerator designed to execute complete fully homomorphic encryption programs rather than isolated kernels. Specialized vector units, an explicitly managed memory hierarchy, and a scheduling compiler yield several-thousand-fold average speedups over software."
-    source_anchor_ids: [anchor-paper-59-curated]
+    epistemic_status: extended_version
+    title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption"
+    summary: >-
+      A synthesized programmable FHE accelerator and scheduling compiler evaluated by cycle-accurate simulation on complete encrypted workloads.
+    source_anchor_ids: [anchor-paper-59-problem]
+
   - id: paper-59-question
     kind: question
     parent_id: paper-59
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can a programmable hardware accelerator execute complete fully homomorphic encryption programs efficiently instead of accelerating only isolated kernels?"
-    source_anchor_ids: [anchor-paper-59-curated]
-  - id: paper-59-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can architecture and compiler co-design accelerate complete parameter-diverse FHE dataflow graphs while keeping their massive data movement manageable?
+    source_anchor_ids: [anchor-paper-59-problem]
+
+  - id: paper-59-answer
     kind: contribution
     parent_id: paper-59
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports that F1 combines specialized vector units, an explicitly managed memory hierarchy, and a scheduling compiler to accelerate complete FHE workloads."
-    source_anchor_ids: [anchor-paper-59-curated]
-  - id: paper-59-method
-    kind: method
+    epistemic_status: simulated_and_synthesized
+    title: Central answer
+    summary: >-
+      Specialize high-throughput vector units to FHE primitives, expose all data movement to a static compiler, and prioritize reuse through scratchpads and distributed register files rather than relying on a host for unsupported operations.
+    source_anchor_ids: [anchor-paper-59-architecture, anchor-paper-59-compiler, anchor-paper-59-units]
+
+  - id: paper-59-scope
+    kind: scope
     parent_id: paper-59
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described architecture co-designs vector computation, data movement, and compile-time scheduling around the operations and memory behavior of FHE programs."
-    source_anchor_ids: [anchor-paper-59-curated]
-  - id: paper-59-claims
-    kind: claim_group
+    epistemic_status: explicitly_scoped
+    title: FHE workload model
+    summary: >-
+      FHE programs are known-ahead-of-time dataflow DAGs over large encrypted vectors. F1 supports the common ciphertext operations needed by BGV, GSW, and CKKS; data-dependent branching is unavailable and B/FV is not directly supported by this design.
+    source_anchor_ids: [anchor-paper-59-fhe-model, anchor-paper-59-boundaries]
+
+  - id: paper-59-architecture-node
+    kind: system
     parent_id: paper-59
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports several-thousand-fold average speedups over software across the evaluated workloads."
-    source_anchor_ids: [anchor-paper-59-curated]
-  - id: paper-59-evidence
-    kind: evidence_group
+    epistemic_status: rtl_implemented
+    title: F1 architecture
+    summary: >-
+      Sixteen compute clusters combine NTT, automorphism, modular multiply and add units with local registers, a banked 64 MB scratchpad, three crossbar networks, and dual HBM2 interfaces.
+    source_anchor_ids: [anchor-paper-59-architecture, anchor-paper-59-units, anchor-paper-59-rtl]
+
+  - id: paper-59-architecture-vector
+    kind: mechanism
+    parent_id: paper-59-architecture-node
+    order: 1
+    epistemic_status: rtl_implemented
+    title: FHE-specific wide-vector units
+    summary: >-
+      Dedicated four-step NTT and automorphism pipelines handle the structured permutations that do not map well to ordinary element-wise SIMD, while modular units provide high arithmetic throughput.
+    source_anchor_ids: [anchor-paper-59-units]
+
+  - id: paper-59-architecture-memory
+    kind: mechanism
+    parent_id: paper-59-architecture-node
+    order: 2
+    epistemic_status: rtl_implemented
+    title: Data-movement-first hierarchy
+    summary: >-
+      Explicit register files and scratchpad storage, decoupled loads, and high-throughput interconnects are designed to reuse key-switch hints and ciphertexts and hide off-chip latency.
+    source_anchor_ids: [anchor-paper-59-architecture, anchor-paper-59-analysis]
+
+  - id: paper-59-compiler
+    kind: algorithm
     parent_id: paper-59
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Architecture simulation or implementation evaluation and comparative performance are implied by the summary, but workloads, baselines, parameters, methodology, area, power, and raw results were not audited."
-    source_anchor_ids: [anchor-paper-59-curated]
-  - id: paper-59-scope
-    kind: limitation_group
+    epistemic_status: implemented
+    title: Static scheduling compiler
+    summary: >-
+      The compiler lowers homomorphic operations to primitive dataflows, chooses operation variants, assigns compute and storage, schedules transfers far ahead of use, and emits cycle-level instructions with fixed component latencies.
+    source_anchor_ids: [anchor-paper-59-compiler]
+
+  - id: paper-59-implementation
+    kind: evidence_group
     parent_id: paper-59
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "The draft does not establish how the extended version differs from the conference paper, which FHE schemes and security parameters are supported, or how performance changes with memory, bandwidth, area, and workload structure."
-    source_anchor_ids: [anchor-paper-59-curated]
-  - id: paper-59-artifacts
-    kind: artifact_group
+    epistemic_status: rtl_synthesized
+    title: Implementation evidence
+    summary: >-
+      Components are implemented in RTL and synthesized in a commercial 14/12 nm flow. The modeled 151.4 square millimeter design runs most logic at 1 GHz, double-pumps SRAM at 2 GHz, and has a reported 180.4 W thermal design power.
+    source_anchor_ids: [anchor-paper-59-rtl]
+
+  - id: paper-59-evaluation
+    kind: evidence_group
     parent_id: paper-59
     order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-59-curated, anchor-paper-59-official-1, anchor-paper-59-archive-1]
+    epistemic_status: cycle_accurate_simulation
+    title: Evaluation design
+    summary: >-
+      A cycle-accurate simulator and RTL-derived activity energies evaluate logistic regression, two LoLa networks with weight variants, encrypted database lookup, and BGV and CKKS bootstrapping against a four-core Xeon baseline; HEAX is used for operation-level comparison.
+    source_anchor_ids: [anchor-paper-59-methodology]
+
+  - id: paper-59-claim-speedup
+    kind: claim
+    parent_id: paper-59-evaluation
+    order: 1
+    epistemic_status: simulated_measurement
+    title: 5,432-fold geometric-mean full-program speedup
+    summary: >-
+      Across seven workloads the reported speedups range from 1,195-fold to 17,412-fold over the CPU, with LoLa-CIFAR falling from about 20 minutes to 241 ms in the model.
+    source_anchor_ids: [anchor-paper-59-performance]
+
+  - id: paper-59-claim-prior-accelerator
+    kind: claim
+    parent_id: paper-59-evaluation
+    order: 2
+    epistemic_status: simulated_microbenchmark
+    title: Operation-level speedups over HEAX extension
+    summary: >-
+      NTT, automorphism, homomorphic multiplication, and permutation microbenchmarks report roughly 172-fold to 1,866-fold speedups over an augmented HEAX design across selected parameter sets.
+    source_anchor_ids: [anchor-paper-59-performance]
+
+  - id: paper-59-evidence-analysis
+    kind: evidence
+    parent_id: paper-59-evaluation
+    order: 3
+    epistemic_status: sensitivity_study
+    title: Data movement and ablation analysis
+    summary: >-
+      Traffic breakdowns show key-switch hints dominate high-depth workloads, while alternate low-throughput units and a generic capacity-aware scheduler substantially slow the design, supporting the paper's co-design rationale.
+    source_anchor_ids: [anchor-paper-59-analysis]
+
+  - id: paper-59-functional
+    kind: artifact
+    parent_id: paper-59
+    order: 8
+    epistemic_status: internal_simulator_described
+    title: Functional simulator
+    summary: >-
+      A C++ simulator built on NTL checks FHE-level input-output behavior and produces dataflow graphs for supported parameter ranges, but its internal algorithms are not the same as the RTL functional units.
+    source_anchor_ids: [anchor-paper-59-analysis]
+
+  - id: paper-59-boundaries
+    kind: limitation_group
+    parent_id: paper-59
+    order: 9
+    epistemic_status: material
+    title: Boundaries
+    summary: >-
+      Results come from RTL synthesis and cycle-accurate simulation, not fabricated silicon; the architecture assumes static branch-free FHE DAGs, omits direct B/FV support, compares to a particular CPU and augmented prior accelerator, and does not expose a reproduction artifact in this map.
+    source_anchor_ids: [anchor-paper-59-fhe-model, anchor-paper-59-methodology, anchor-paper-59-boundaries]
+
+  - id: paper-59-resources
+    kind: artifact_group
+    parent_id: paper-59
+    order: 10
+    epistemic_status: source_available
+    title: Versioned paper resources
+    summary: >-
+      The complete extended version is checked in with fixity metadata. The DOI identifies the related, distinct MICRO conference version; this map does not treat the two author lists or texts as byte-identical.
+    source_anchor_ids: [anchor-paper-59-problem, anchor-paper-59-publication]
+
   - id: paper-59-scrutiny
     kind: scrutiny
     parent_id: paper-59
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The extended version is linked through arXiv, while the official DOI identifies a related MICRO conference version. This documents venue exposure for the related conference paper, but review or equivalence of the extended version was not audited."
-    source_anchor_ids: [anchor-paper-59-official-1]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The related F1 paper appeared at MICRO 2021 and the extended manuscript exposes more detail. Review reports and independent hardware reproduction are not linked.
+    source_anchor_ids: [anchor-paper-59-publication]
+
+  - id: paper-59-lineage
+    kind: lineage
+    parent_id: paper-59
+    order: 12
+    epistemic_status: documented
+    title: From kernel accelerators to complete programs
+    summary: >-
+      F1 positions itself against host-assisted accelerators for isolated FHE operations by supporting all operations of complete selected programs in one compiler-controlled architecture.
+    source_anchor_ids: [anchor-paper-59-problem, anchor-paper-59-performance]
 
 relations:
-  - id: paper-59-relation-question-contribution
-    type: motivates
-    from_id: paper-59-question
-    to_id: paper-59-contribution
-  - id: paper-59-relation-method-contribution
+  - id: paper-59-relation-answer-question
+    type: addresses
+    from_id: paper-59-answer
+    to_id: paper-59-question
+  - id: paper-59-relation-vector-architecture
+    type: component_of
+    from_id: paper-59-architecture-vector
+    to_id: paper-59-architecture-node
+  - id: paper-59-relation-memory-architecture
+    type: component_of
+    from_id: paper-59-architecture-memory
+    to_id: paper-59-architecture-node
+  - id: paper-59-relation-compiler-answer
     type: realizes
-    from_id: paper-59-method
-    to_id: paper-59-contribution
-  - id: paper-59-relation-contribution-claims
-    type: grounds
-    from_id: paper-59-contribution
-    to_id: paper-59-claims
-  - id: paper-59-relation-evidence-claims
+    from_id: paper-59-compiler
+    to_id: paper-59-answer
+  - id: paper-59-relation-architecture-answer
+    type: realizes
+    from_id: paper-59-architecture-node
+    to_id: paper-59-answer
+  - id: paper-59-relation-evaluation-speedup
     type: supports
-    from_id: paper-59-evidence
-    to_id: paper-59-claims
-  - id: paper-59-relation-scope-claims
+    from_id: paper-59-evaluation
+    to_id: paper-59-claim-speedup
+  - id: paper-59-relation-analysis-memory
+    type: supports
+    from_id: paper-59-evidence-analysis
+    to_id: paper-59-architecture-memory
+  - id: paper-59-relation-boundaries-speedup
     type: qualifies
-    from_id: paper-59-scope
-    to_id: paper-59-claims
-  - id: paper-59-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-59-artifacts
-    to_id: paper-59-evidence
-  - id: paper-59-relation-scrutiny-claims
+    from_id: paper-59-boundaries
+    to_id: paper-59-claim-speedup
+  - id: paper-59-relation-lineage-paper
     type: contextualizes
-    from_id: paper-59-scrutiny
-    to_id: paper-59-claims
+    from_id: paper-59-lineage
+    to_id: paper-59
 
 assessment:
   id: paper-59-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-59-curated, anchor-paper-59-official-1, anchor-paper-59-archive-1]
+      level: high
+      rationale: >-
+        The source documents RTL synthesis, a cycle-level model, complete workloads, multiple baselines, traffic analysis, sensitivity studies, and functional checking. The absence of fabricated-silicon measurements remains an explicit boundary.
+      basis_source_anchor_ids: [anchor-paper-59-rtl, anchor-paper-59-methodology, anchor-paper-59-performance, anchor-paper-59-analysis]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-59-curated, anchor-paper-59-official-1, anchor-paper-59-archive-1]
+      rationale: >-
+        The complete extended PDF is checked in with page count and SHA-256 and is linked to its arXiv source and related official DOI. No public code or simulator artifact is represented.
+      basis_source_anchor_ids: [anchor-paper-59-problem, anchor-paper-59-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-59-curated]
+      rationale: >-
+        Authors, extended-version date, synthesis process, benchmark systems, and related conference DOI are documented, but exact source, RTL, compiler, and simulator revisions are not public in this record.
+      basis_source_anchor_ids: [anchor-paper-59-rtl, anchor-paper-59-methodology, anchor-paper-59-publication]
     - id: external_scrutiny
-      level: low
-      rationale: "The extended version is linked through arXiv; the official DOI identifies the related MICRO conference version. This documents scrutiny of the related conference paper, but review or equivalence of the extended version was not audited."
-      basis_source_anchor_ids: [anchor-paper-59-official-1]
-    - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-59-curated]
-    - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-59-curated]
+      rationale: >-
+        MICRO publication establishes strong venue scrutiny, but review reports and an independently reproducible hardware artifact are not linked.
+      basis_source_anchor_ids: [anchor-paper-59-publication]
+    - id: reception
+      level: high
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 262 citations. Under the author-defined rule, 11 or more located citations is High; the count is index- and date-dependent.
+      basis_source_anchor_ids: [anchor-paper-59-citations]
+    - id: contribution_significance
+      level: high
+      rationale: >-
+        The work advances from operation kernels to full programmable FHE workloads and has substantial measured scholarly reception. This rating does not validate every benchmark assumption or confer correctness.
+      basis_source_anchor_ids: [anchor-paper-59-problem, anchor-paper-59-performance, anchor-paper-59-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup for the related MICRO conference work
+  citation_count: 262
+  source_url: https://api.openalex.org/works/W3207326900
+  signals:
+    - The exact DOI-matched OpenAlex work reported 262 citing works.
+  limitation: The citation record is for the conference DOI and may aggregate attention to the arXiv extended version; this map explicitly represents the extended text.

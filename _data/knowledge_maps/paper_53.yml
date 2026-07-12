@@ -11,221 +11,420 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [algorithm]
 
 title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
-short_title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
+short_title: ALICE
 year: 2020
+status: Published
 venue: "18th International Conference on Applied Cryptography and Network Security (ACNS)"
-publication_status: "Published"
 topic: secure-systems-networks
-labels:
-  - "Applied"
+labels: [Applied]
 authors:
-  - "Karim Eldefrawy"
-  - "Michael E. Locasto"
-  - "Norrathep Rattanavipanon"
-  - "Hassen Saïdi"
+  - Karim Eldefrawy
+  - Michael E. Locasto
+  - Norrathep Rattanavipanon
+  - Hassen Saïdi
 keywords:
-  - "binary instrumentation"
-  - "legacy cryptography"
-  - "automation"
+  - binary instrumentation
+  - legacy cryptography
+  - cryptographic migration
+  - dynamic taint analysis
 
-research_question: "Can weak cryptographic primitives in legacy executables be located and replaced automatically when source code and debugging symbols are unavailable?"
-central_answer: "The curated editorial summary reports that ALICE identifies target primitives in binaries and instruments the executables to redirect calls to stronger replacements while seeking to preserve program behavior."
+research_question: >-
+  Can weak cryptographic routines in legacy executables be identified, scoped, and replaced with stronger primitives when source code and debugging symbols are unavailable?
+central_answer: >-
+  ALICE combines static feature and call-graph analysis, offline dynamic execution, dynamic taint tracking, and static binary rewriting. Its prototype replaces several hash-function implementations in ELF x86-64 binaries and largely preserves tested behavior, while retaining explicit manual and platform limitations.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, experimental-evidence mapping, and initial assessment
+  method: >-
+    Complete review of the 29-page arXiv extended version, including design, experiments, appendices, stated limitations, and visual inspection of the title and evaluation pages. Experimental statements are tied to the tested binaries and do not imply semantic equivalence for arbitrary programs.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Tool behavior, experiment transcriptions, and ratings remain provisional until author approval.
 
 sources:
-  - id: source-paper-53-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #53"
-    url: /publications/#paper-53
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-53-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-030-57878-7_18"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-53-archive-1
-    type: archive_resource
-    title: "arXiv extended version"
-    url: "https://arxiv.org/abs/2004.09713"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-53-author-1
-    type: author_resource
-    title: "UCI author copy"
-    url: "https://sprout.ics.uci.edu/pubs/augmented2020.pdf"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-53-archive-pdf
+    type: public_archive_copy
+    title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables: Extended Version"
+    url: /pubs/2020/alice-acns2020-extended.pdf
+    provenance_category: archive
+    retrieved_from: https://arxiv.org/pdf/2004.09713
+    media_type: application/pdf
+    sha256: 9f4139bcbc3b7a7c0f6034b9988391df099b78262c833e0f9c1d493ee52fde8c
+    page_count: 29
+  - id: source-paper-53-official
+    type: official_publication_record
+    title: ACNS 2020 publisher record
+    url: https://doi.org/10.1007/978-3-030-57878-7_18
+    provenance_category: official
+  - id: source-paper-53-code
+    type: source_code_repository
+    title: ALICE source code
+    url: https://github.com/SRI-CSL/ALICE
+    provenance_category: artifact
+  - id: source-paper-53-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3081940522
+    url: https://api.openalex.org/works/W3081940522
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-53-curated
-    source_id: source-paper-53-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-53
-  - id: anchor-paper-53-official-1
-    source_id: source-paper-53-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-030-57878-7_18"
-  - id: anchor-paper-53-archive-1
-    source_id: source-paper-53-archive-1
-    label: "arXiv extended version"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://arxiv.org/abs/2004.09713"
-  - id: anchor-paper-53-author-1
-    source_id: source-paper-53-author-1
-    label: "UCI author copy"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://sprout.ics.uci.edu/pubs/augmented2020.pdf"
+  - id: anchor-paper-53-problem
+    source_id: source-paper-53-archive-pdf
+    label: Problem, ALICE goals, and contribution summary
+    locator: Abstract and Section 1, PDF pages 1-3
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=1
+  - id: anchor-paper-53-scope
+    source_id: source-paper-53-archive-pdf
+    label: Target platform and explicit scope
+    locator: Section 3, Goal and Scope, PDF pages 4-6
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=4
+  - id: anchor-paper-53-identification
+    source_id: source-paper-53-archive-pdf
+    label: Primitive identification pipeline
+    locator: Section 4.1, PDF pages 6-8
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=6
+  - id: anchor-paper-53-scoping
+    source_id: source-paper-53-archive-pdf
+    label: Change classes and dynamic-taint scoping
+    locator: Section 4.2, PDF pages 8-11
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=8
+  - id: anchor-paper-53-rewriting
+    source_id: source-paper-53-archive-pdf
+    label: Binary augmentation and static rewriting
+    locator: Section 4.3, PDF pages 11-12
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=11
+  - id: anchor-paper-53-experiment-design
+    source_id: source-paper-53-archive-pdf
+    label: Experimental setup, datasets, and correctness criteria
+    locator: Section 5.1, PDF pages 12-13
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=12
+  - id: anchor-paper-53-library-results
+    source_id: source-paper-53-archive-pdf
+    label: Cryptographic-library results
+    locator: Section 5.2, Table 1, and Figure 3, PDF pages 13-15
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=13
+  - id: anchor-paper-53-application-results
+    source_id: source-paper-53-archive-pdf
+    label: Real-world-binary results and manual-effort analysis
+    locator: Section 5.3, Tables 2-3 and Figures 4-5, PDF pages 15-17
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=15
+  - id: anchor-paper-53-limitations
+    source_id: source-paper-53-archive-pdf
+    label: Limitations and future work
+    locator: Section 6, PDF pages 17-18
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=17
+  - id: anchor-paper-53-conclusion
+    source_id: source-paper-53-archive-pdf
+    label: Conclusion and bounded claim
+    locator: Section 7, PDF page 18
+    url: /pubs/2020/alice-acns2020-extended.pdf#page=18
+  - id: anchor-paper-53-code
+    source_id: source-paper-53-code
+    label: Public ALICE repository
+    locator: Repository linked by the paper; repository state was not independently reproduced in this audit
+    url: https://github.com/SRI-CSL/ALICE
+  - id: anchor-paper-53-publication
+    source_id: source-paper-53-official
+    label: Official ACNS publication identity
+    locator: DOI 10.1007/978-3-030-57878-7_18
+    url: https://doi.org/10.1007/978-3-030-57878-7_18
+  - id: anchor-paper-53-citations
+    source_id: source-paper-53-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 2 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3081940522
 
 nodes:
   - id: paper-53
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
-    summary: "This paper presents ALICE, a toolchain that locates weak cryptographic primitives in binaries and replaces them without requiring source code or debugging symbols. Experiments show that it can replace insecure hash functions in real programs while preserving behavior and adding little runtime overhead."
-    source_anchor_ids: [anchor-paper-53-curated]
+    summary: >-
+      ALICE is an implemented binary-analysis and rewriting toolchain for replacing weak hash functions in legacy executables without source code or debugging symbols.
+    source_anchor_ids: [anchor-paper-53-problem]
+
   - id: paper-53-question
     kind: question
     parent_id: paper-53
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can weak cryptographic primitives in legacy executables be located and replaced automatically when source code and debugging symbols are unavailable?"
-    source_anchor_ids: [anchor-paper-53-curated]
-  - id: paper-53-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Is automatic cryptographic migration at the binary level practically feasible when maintainers cannot recompile or inspect original source?
+    source_anchor_ids: [anchor-paper-53-problem]
+
+  - id: paper-53-answer
     kind: contribution
     parent_id: paper-53
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports that ALICE identifies target primitives in binaries and instruments the executables to redirect calls to stronger replacements while seeking to preserve program behavior."
-    source_anchor_ids: [anchor-paper-53-curated]
-  - id: paper-53-method
-    kind: method
+    epistemic_status: demonstrated_on_tested_scope
+    title: Central answer
+    summary: >-
+      For a bounded class of non-obfuscated ELF x86-64 binaries, ALICE identifies hash routines, propagates digest-size changes through affected buffers, injects a replacement routine, and redirects calls with low measured overhead.
+    source_anchor_ids: [anchor-paper-53-scope, anchor-paper-53-identification, anchor-paper-53-rewriting]
+
+  - id: paper-53-scope
+    kind: scope
     parent_id: paper-53
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described method is a binary-analysis and instrumentation toolchain that detects implementations of cryptographic primitives and rewrites call paths without relying on source-level information."
-    source_anchor_ids: [anchor-paper-53-curated]
-  - id: paper-53-claims
-    kind: claim_group
+    epistemic_status: explicitly_scoped
+    title: Target environment
+    summary: >-
+      The prototype targets ELF-format x86-64 binaries produced from C, assumes ordinary defensive software rather than malware, and requires neither source code nor debugging symbols.
+    source_anchor_ids: [anchor-paper-53-scope]
+
+  - id: paper-53-scope-boundary
+    kind: assumption
+    parent_id: paper-53-scope
+    order: 1
+    epistemic_status: assumed
+    title: Non-malicious and unobfuscated input
+    summary: >-
+      Correctness of the workflow depends on the binary being non-obfuscated and on underlying disassembly, symbolic execution, assembly, and rewriting tools behaving adequately on the encountered instructions.
+    source_anchor_ids: [anchor-paper-53-scope, anchor-paper-53-limitations]
+
+  - id: paper-53-pipeline
+    kind: method
     parent_id: paper-53
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The curated summary reports successful replacement of insecure hash functions in real programs, preservation of behavior, and little added runtime overhead."
-    source_anchor_ids: [anchor-paper-53-curated]
+    epistemic_status: implemented
+    title: Three-phase ALICE pipeline
+    summary: >-
+      ALICE identifies target cryptography, scopes affected state, and then augments and rewrites the executable. The paper separates these phases so failures and manual obligations remain visible.
+    source_anchor_ids: [anchor-paper-53-identification, anchor-paper-53-scoping, anchor-paper-53-rewriting]
+
+  - id: paper-53-pipeline-identify
+    kind: algorithm
+    parent_id: paper-53-pipeline
+    order: 1
+    epistemic_status: implemented
+    title: Identify hash routines
+    summary: >-
+      The tool scans for known constants, follows the binary call graph to collect candidates, enumerates plausible calling conventions, and executes candidates offline on known inputs to remove false positives and recover parameter order.
+    source_anchor_ids: [anchor-paper-53-identification]
+
+  - id: paper-53-pipeline-scope
+    kind: algorithm
+    parent_id: paper-53-pipeline
+    order: 2
+    epistemic_status: implemented
+    title: Scope propagated buffer changes
+    summary: >-
+      Dynamic taint analysis marks the target digest output and tracks affected memory buffers so a larger replacement digest can be accommodated. It handles routine replacement and buffer resizing, not arbitrary semantic logic changes.
+    source_anchor_ids: [anchor-paper-53-scoping]
+
+  - id: paper-53-pipeline-rewrite
+    kind: algorithm
+    parent_id: paper-53-pipeline
+    order: 3
+    epistemic_status: implemented
+    title: Inject and redirect
+    summary: >-
+      ALICE appends replacement code, rewrites affected stack and memory references, and redirects calls statically, minimizing runtime instrumentation overhead.
+    source_anchor_ids: [anchor-paper-53-rewriting]
+
   - id: paper-53-evidence
     kind: evidence_group
     parent_id: paper-53
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The summary reports experiments on real executables and runtime measurements; the tested programs, architectures, replacement coverage, failure cases, and measurements were not audited for this draft."
-    source_anchor_ids: [anchor-paper-53-curated]
-  - id: paper-53-scope
-    kind: limitation_group
+    epistemic_status: empirical
+    title: Experimental evidence
+    summary: >-
+      The prototype is evaluated across multiple cryptographic libraries, compiler optimization levels, and six real applications, with explicit functional tests, code-size measurements, instruction counts, and tool runtime.
+    source_anchor_ids: [anchor-paper-53-experiment-design, anchor-paper-53-library-results, anchor-paper-53-application-results]
+
+  - id: paper-53-evidence-libraries
+    kind: evidence
+    parent_id: paper-53-evidence
+    order: 1
+    epistemic_status: measured
+    title: Library corpus
+    summary: >-
+      Tests cover hash implementations from OpenSSL, libgcrypt, mbedTLS, and FreeBL across common compiler optimization settings. The rewritten library binaries add little executed-instruction overhead relative to manually rebuilt baselines.
+    source_anchor_ids: [anchor-paper-53-experiment-design, anchor-paper-53-library-results]
+
+  - id: paper-53-evidence-applications
+    kind: evidence
+    parent_id: paper-53-evidence
+    order: 2
+    epistemic_status: measured_with_failure
+    title: Real-world application corpus
+    summary: >-
+      The paper tests md5sum, sha1sum, smd5_mkpass, ssha_mkpass, curl, and lighttpd. Most rewritten binaries pass project tests and the target hash behavior, but one misidentified routine and an O3 curl case expose concrete failure modes.
+    source_anchor_ids: [anchor-paper-53-application-results]
+
+  - id: paper-53-claim-functionality
+    kind: claim
     parent_id: paper-53
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "The available editorial summary does not establish supported executable formats, architectural assumptions, semantic-equivalence criteria, detection completeness, or the security of each replacement and integration path."
-    source_anchor_ids: [anchor-paper-53-curated]
+    epistemic_status: demonstrated_on_corpus
+    title: Functionality preservation on tested binaries
+    summary: >-
+      For the successful cases, rewritten applications pass the available original test suites and produce the expected stronger-hash behavior. This is test-based evidence, not a proof of semantic equivalence.
+    source_anchor_ids: [anchor-paper-53-application-results]
+
+  - id: paper-53-claim-overhead
+    kind: claim
+    parent_id: paper-53
+    order: 7
+    epistemic_status: measured
+    title: Low measured runtime and code-size overhead
+    summary: >-
+      Library experiments add about 300 executed instructions on average, and application runs remain below roughly five percent instruction overhead; rewritten real binaries add about 4-11 KB. Tool execution ranges from under a minute on simple cases to about five minutes on the largest tested program.
+    source_anchor_ids: [anchor-paper-53-library-results, anchor-paper-53-application-results]
+
+  - id: paper-53-claim-automation
+    kind: claim
+    parent_id: paper-53
+    order: 8
+    epistemic_status: measured_on_corpus
+    title: Reduced manual rewriting effort
+    summary: >-
+      On the reported O2 application set, ALICE automatically rewrites 99.87 percent of counted changed instructions when routine and buffer changes are included; excluding routine identification, it handles about 70.17 percent of buffer-plus-logic changes.
+    source_anchor_ids: [anchor-paper-53-application-results]
+
+  - id: paper-53-boundaries
+    kind: limitation_group
+    parent_id: paper-53
+    order: 9
+    epistemic_status: material
+    title: Limitations
+    summary: >-
+      The prototype does not automatically infer arbitrary control-logic changes, does not replace primitives inside dynamic libraries, does not support obfuscated programs, and inherits unsoundness or unsupported-instruction risks from angr, Keystone, and other components.
+    source_anchor_ids: [anchor-paper-53-scoping, anchor-paper-53-limitations]
+
+  - id: paper-53-boundary-generality
+    kind: limitation
+    parent_id: paper-53-boundaries
+    order: 1
+    epistemic_status: explicitly_scoped
+    title: Demonstrated only for hash replacement
+    summary: >-
+      Although the architecture is presented as extensible, the concrete evaluation replaces hash functions; it does not establish automated migration for arbitrary encryption, signature, protocol, or post-quantum primitives.
+    source_anchor_ids: [anchor-paper-53-scope, anchor-paper-53-conclusion]
+
   - id: paper-53-artifacts
     kind: artifact_group
     parent_id: paper-53
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 3 resources (1 official, 1 archive, 1 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-53-curated, anchor-paper-53-official-1, anchor-paper-53-archive-1, anchor-paper-53-author-1]
+    order: 10
+    epistemic_status: publicly_available
+    title: Paper and code
+    summary: >-
+      The extended manuscript is checked in with fixity metadata and the authors link a public ALICE repository. This audit confirmed the repository link but did not rebuild or reproduce the toolchain.
+    source_anchor_ids: [anchor-paper-53-code, anchor-paper-53-publication]
+
   - id: paper-53-scrutiny
     kind: scrutiny
     parent_id: paper-53
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 18th International Conference on Applied Cryptography and Network Security (ACNS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-53-official-1]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The conference paper appeared at ACNS 2020 and the extended source exposes its experiments and limitations. Review reports and an independent reproduction are not represented.
+    source_anchor_ids: [anchor-paper-53-publication, anchor-paper-53-limitations]
+
+  - id: paper-53-lineage
+    kind: lineage
+    parent_id: paper-53
+    order: 12
+    epistemic_status: documented
+    title: Role in cryptographic migration
+    summary: >-
+      ALICE extends binary cryptographic identification from detection toward replacement, while leaving semantic logic repair and broader primitive support as subsequent work.
+    source_anchor_ids: [anchor-paper-53-problem, anchor-paper-53-limitations]
 
 relations:
-  - id: paper-53-relation-question-contribution
-    type: motivates
-    from_id: paper-53-question
-    to_id: paper-53-contribution
-  - id: paper-53-relation-method-contribution
-    type: realizes
-    from_id: paper-53-method
-    to_id: paper-53-contribution
-  - id: paper-53-relation-contribution-claims
-    type: grounds
-    from_id: paper-53-contribution
-    to_id: paper-53-claims
-  - id: paper-53-relation-evidence-claims
+  - id: paper-53-relation-answer-question
+    type: addresses
+    from_id: paper-53-answer
+    to_id: paper-53-question
+  - id: paper-53-relation-identify-pipeline
+    type: component_of
+    from_id: paper-53-pipeline-identify
+    to_id: paper-53-pipeline
+  - id: paper-53-relation-scope-pipeline
+    type: component_of
+    from_id: paper-53-pipeline-scope
+    to_id: paper-53-pipeline
+  - id: paper-53-relation-rewrite-pipeline
+    type: component_of
+    from_id: paper-53-pipeline-rewrite
+    to_id: paper-53-pipeline
+  - id: paper-53-relation-evidence-functionality
     type: supports
     from_id: paper-53-evidence
-    to_id: paper-53-claims
-  - id: paper-53-relation-scope-claims
+    to_id: paper-53-claim-functionality
+  - id: paper-53-relation-evidence-overhead
+    type: supports
+    from_id: paper-53-evidence
+    to_id: paper-53-claim-overhead
+  - id: paper-53-relation-scope-answer
     type: qualifies
     from_id: paper-53-scope
-    to_id: paper-53-claims
-  - id: paper-53-relation-artifacts-evidence
+    to_id: paper-53-answer
+  - id: paper-53-relation-boundaries-functionality
+    type: qualifies
+    from_id: paper-53-boundaries
+    to_id: paper-53-claim-functionality
+  - id: paper-53-relation-artifact-evidence
     type: enables_audit_of
     from_id: paper-53-artifacts
     to_id: paper-53-evidence
-  - id: paper-53-relation-scrutiny-claims
+  - id: paper-53-relation-lineage-paper
     type: contextualizes
-    from_id: paper-53-scrutiny
-    to_id: paper-53-claims
+    from_id: paper-53-lineage
+    to_id: paper-53
 
 assessment:
   id: paper-53-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-53-curated, anchor-paper-53-official-1, anchor-paper-53-archive-1, anchor-paper-53-author-1]
+      level: high
+      rationale: >-
+        The full source documents an implemented pipeline, explicit success criteria, multiple datasets, measured overheads, observed failures, and limitations. Generalization beyond the tested platform and hashes remains unsupported.
+      basis_source_anchor_ids: [anchor-paper-53-experiment-design, anchor-paper-53-library-results, anchor-paper-53-application-results, anchor-paper-53-limitations]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-53-curated, anchor-paper-53-official-1, anchor-paper-53-archive-1, anchor-paper-53-author-1]
+      rationale: >-
+        A checked-in complete archive copy with page count and SHA-256, the official DOI, and a public source repository make the principal evidence inspectable, although this audit did not reproduce the experiments.
+      basis_source_anchor_ids: [anchor-paper-53-problem, anchor-paper-53-code, anchor-paper-53-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-53-curated]
+      rationale: >-
+        Named authors, venue, archive version, DOI, and repository are documented; contributor roles, exact experimental environment capture, commit-to-paper correspondence, and revision workflow are not fully recorded.
+      basis_source_anchor_ids: [anchor-paper-53-publication, anchor-paper-53-code]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-53-official-1]
+      rationale: >-
+        ACNS publication and public code provide external exposure, but review reports and independent reproduction are not represented.
+      basis_source_anchor_ids: [anchor-paper-53-publication, anchor-paper-53-code]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-53-curated]
+      level: low
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 2 citations. Under the author-defined rule, 0 through 8 located citations is Low; the count is index- and date-dependent.
+      basis_source_anchor_ids: [anchor-paper-53-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-53-curated]
+      rationale: >-
+        The paper moves from primitive identification to executable rewriting and publishes a prototype, but broader adoption and durable downstream impact are not established by this audit.
+      basis_source_anchor_ids: [anchor-paper-53-problem, anchor-paper-53-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup
+  citation_count: 2
+  source_url: https://api.openalex.org/works/W3081940522
+  signals:
+    - The exact DOI-matched OpenAlex work reported two citing works.
+  limitation: Citation counts vary by index and may split the conference and arXiv extended versions.

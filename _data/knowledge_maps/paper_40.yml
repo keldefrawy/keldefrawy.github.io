@@ -12,248 +12,464 @@ contribution_types: [protocol]
 
 title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
 year: 2018
-status: "Published"
+status: Published
 venue: "IEEE International Conference on Cloud Engineering (IC2E), BAT workshop track"
-topic: "secure-systems-networks"
-labels: ["Applied"]
+topic: secure-systems-networks
+labels: [Applied, System, Implementation]
 authors:
-  - "Tancrède Lepoint"
-  - "Gabriela F. Ciocarlie"
-  - "Karim Eldefrawy"
+  - Tancrède Lepoint
+  - Gabriela F. Ciocarlie
+  - Karim Eldefrawy
 keywords:
-  - "cyber insurance"
-  - "blockchain"
-  - "security monitoring"
-editorial_summary: "BlockCIS uses a permissioned blockchain to create an auditable feedback loop among insured organizations, insurers, third-party security services, and auditors. Its Hyperledger prototype supports continuous security monitoring, immutable evidence, and insurance terms that can respond to an organization's changing security posture."
+  - cyber insurance
+  - permissioned blockchain
+  - continuous security monitoring
+  - smart contracts
+  - Hyperledger Fabric
+  - selective disclosure
 
-research_question: "Can a permissioned ledger coordinate auditable security evidence and adaptive cyber-insurance relationships among organizations, insurers, service providers, and auditors?"
-central_answer: "BlockCIS reports a Hyperledger-based system for continuous security monitoring, immutable evidence recording, and insurance terms responsive to security posture."
+research_question: >-
+  Can a permissioned distributed ledger connect insured organizations, insurers, third-party security services, and auditors in a continuous, auditable cyber-risk feedback loop rather than relying only on static questionnaires and coarse premium formulas?
+central_answer: >-
+  BlockCIS specifies a four-party architecture in which entity-local nodes collect or process security evidence and exchange authorized transactions through a permissioned blockchain. The paper instantiates the design with Hyperledger and discusses smart-contract automation, incentives, and confidentiality options, but leaves operational deployment and validation of computed cyber-risk scores to future work.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, technical claim mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete public author-uploaded paper text and figures, cross-checked against the official DOI record. Architecture, prototype, motivation, proposed privacy mechanisms, and future-work boundaries are represented separately so that a design instantiation is not mistaken for an evaluated deployment or a proved security guarantee.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Architectural interpretations, implementation characterization, and ratings remain provisional until author approval.
 
 sources:
-  - id: source-paper-40-site-record
-    type: curated_site_record
-    title: "Publication #40 metadata and editorial summary"
-    url: /publications/#paper-40
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-40-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1109/IC2E.2018.00072"
-    provenance_category: official
-  - id: source-paper-40-resource-2
+  - id: source-paper-40-author-copy
     type: author_hosted_copy
-    title: "ResearchGate author-uploaded PDF"
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System/links/5b43d703aca2728a0d6896db/BlockCIS-A-Blockchain-Based-Cyber-Insurance-System.pdf"
+    title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
     provenance_category: author
+    media_type: application/pdf
+    scope_note: Public full text uploaded by Karim Eldefrawy; a stable local binary and file hash have not yet been recorded.
+  - id: source-paper-40-official
+    type: official_publication_record
+    title: IEEE IC2E 2018 publication record
+    url: https://doi.org/10.1109/IC2E.2018.00072
+    provenance_category: official
+  - id: source-paper-40-coauthor-listing
+    type: coauthor_bibliography
+    title: Tancrède Lepoint publication listing
+    url: https://tancre.de/publications/
+    provenance_category: author
+  - id: source-paper-40-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2804424079
+    url: https://openalex.org/W2804424079
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-40-editorial
-    source_id: source-paper-40-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-40
-  - id: anchor-paper-40-resource-1
-    source_id: source-paper-40-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1109/IC2E.2018.00072"
-  - id: anchor-paper-40-resource-2
-    source_id: source-paper-40-resource-2
-    label: "Author-hosted resource: ResearchGate author-uploaded PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System/links/5b43d703aca2728a0d6896db/BlockCIS-A-Blockchain-Based-Cyber-Insurance-System.pdf"
+  - id: anchor-paper-40-abstract
+    source_id: source-paper-40-author-copy
+    label: Problem statement, system objective, and prototype overview
+    locator: Abstract and Introduction
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-background
+    source_id: source-paper-40-author-copy
+    label: Cyber-insurance and permissioned-blockchain background
+    locator: Section II
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-entities
+    source_id: source-paper-40-author-copy
+    label: Insured, insurer, third-party-service, and auditor roles
+    locator: Section III-A and Figure 1
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-framework
+    source_id: source-paper-40-author-copy
+    label: BlockCIS node placement, transaction flow, and entity-local processing
+    locator: Section III-B and Figures 2-4
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-incentives
+    source_id: source-paper-40-author-copy
+    label: Participation incentives and insurance-use cases
+    locator: Section III-C
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-privacy
+    source_id: source-paper-40-author-copy
+    label: Confidentiality and selective-disclosure design options
+    locator: Section III, privacy discussion
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-implementation
+    source_id: source-paper-40-author-copy
+    label: Hyperledger design instantiation
+    locator: Section IV
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-conclusion
+    source_id: source-paper-40-author-copy
+    label: Conclusions, supported scope, and future validation
+    locator: Conclusion
+    url: "https://www.researchgate.net/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System"
+  - id: anchor-paper-40-publication
+    source_id: source-paper-40-official
+    label: Official publication identity
+    locator: IC2E 2018, pages 378-384, DOI 10.1109/IC2E.2018.00072
+    url: https://doi.org/10.1109/IC2E.2018.00072
+  - id: anchor-paper-40-coauthor
+    source_id: source-paper-40-coauthor-listing
+    label: Independent coauthor-hosted publication listing
+    locator: 2018 publications, BlockCIS entry
+    url: https://tancre.de/publications/
+  - id: anchor-paper-40-citations
+    source_id: source-paper-40-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 31 citing works when accessed 2026-07-11
+    url: https://openalex.org/W2804424079
 
 nodes:
   - id: paper-40
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
-    summary: "BlockCIS uses a permissioned blockchain to create an auditable feedback loop among insured organizations, insurers, third-party security services, and auditors. Its Hyperledger prototype supports continuous security monitoring, immutable evidence, and insurance terms that can respond to an organization's changing security posture."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    summary: >-
+      A systems-and-protocol paper proposing a permissioned-blockchain infrastructure for continuously collecting and processing cyber-risk information shared among an insured organization, insurer, specialized third parties, and auditors, with an example Hyperledger implementation.
+    source_anchor_ids: [anchor-paper-40-abstract]
 
   - id: paper-40-question
     kind: question
     parent_id: paper-40
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can a permissioned ledger coordinate auditable security evidence and adaptive cyber-insurance relationships among organizations, insurers, service providers, and auditors?"
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      How can cyber insurance move from static, technically shallow questionnaires and coarse pricing formulas toward a continuously updated and auditable view of an organization's changing security posture?
+    source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-background]
 
-  - id: paper-40-contribution
+  - id: paper-40-answer
     kind: contribution
     parent_id: paper-40
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "BlockCIS reports a Hyperledger-based system for continuous security monitoring, immutable evidence recording, and insurance terms responsive to security posture."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    epistemic_status: source_asserted
+    title: Permissioned-ledger feedback architecture
+    summary: >-
+      BlockCIS places a ledger node at each participating organization and uses authorized transactions and insurer-side smart-contract logic to build an automated, real-time, immutable feedback loop while retaining role-specific control over what each participant can read or write.
+    source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-framework]
+
+  - id: paper-40-problem
+    kind: motivation
+    parent_id: paper-40
+    order: 3
+    epistemic_status: source_asserted
+    title: Three cyber-insurance data problems
+    summary: >-
+      The paper identifies three linked barriers: no standardized way to rate cyber risk, insufficient relevant technical data for premiums, and security postures that change much faster than conventional insurance assessments.
+    source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-background]
+
+  - id: paper-40-model
+    kind: system_model
+    parent_id: paper-40
+    order: 4
+    epistemic_status: specified
+    title: Four-party permissioned setting
+    summary: >-
+      The system connects an insured entity, its insurer, specialized third-party services, and potential auditors. Participation, consensus, ledger maintenance, and transaction access occur in a restricted permissioned network rather than an open public cryptocurrency.
+    source_anchor_ids: [anchor-paper-40-background, anchor-paper-40-entities]
+
+  - id: paper-40-insured
+    kind: actor
+    parent_id: paper-40-model
+    order: 1
+    epistemic_status: specified
+    title: Insured organization
+    summary: >-
+      An enterprise-local BlockCIS node interfaces with services such as DNS, web, database, storage, and firewall logs, performs analytics, and submits selected reports or events to the shared system.
+    source_anchor_ids: [anchor-paper-40-entities, anchor-paper-40-framework]
+
+  - id: paper-40-insurer
+    kind: actor
+    parent_id: paper-40-model
+    order: 2
+    epistemic_status: specified
+    title: Insurer
+    summary: >-
+      The insurer consumes authorized evidence, runs analytics and smart-contract logic, records insurance-contract events, and can adjust risk assessment or premiums as the insured party's posture changes.
+    source_anchor_ids: [anchor-paper-40-entities, anchor-paper-40-framework]
+
+  - id: paper-40-third-parties
+    kind: actor
+    parent_id: paper-40-model
+    order: 3
+    epistemic_status: specified
+    title: Third-party security services
+    summary: >-
+      Specialized providers can combine external sources—such as vulnerability reports, open-web or dark-web information, news, and forums—with authorized enterprise evidence and contribute analyses that are difficult for either principal to produce alone.
+    source_anchor_ids: [anchor-paper-40-entities, anchor-paper-40-framework]
+
+  - id: paper-40-auditor
+    kind: actor
+    parent_id: paper-40-model
+    order: 4
+    epistemic_status: specified
+    title: Auditor
+    summary: >-
+      An auditor receives policy-controlled read access to records needed to examine the relationship, claims, or compliance without necessarily gaining unrestricted access to all underlying enterprise data.
+    source_anchor_ids: [anchor-paper-40-entities, anchor-paper-40-framework]
 
   - id: paper-40-method
     kind: method
     parent_id: paper-40
-    order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported method designs a multi-party workflow on a permissioned blockchain and implements a Hyperledger prototype."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    order: 5
+    epistemic_status: specified
+    title: Continuous monitoring and processing workflow
+    summary: >-
+      BlockCIS couples entity-local data collection and analytics with a shared append-only transaction history. The ledger coordinates mutually interested parties, while smart contracts encode insurer-side business logic; blockchain payment is expressly decoupled from the design.
+    source_anchor_ids: [anchor-paper-40-framework]
+
+  - id: paper-40-incentives
+    kind: mechanism
+    parent_id: paper-40-method
+    order: 1
+    epistemic_status: proposed
+    title: Participation incentives
+    summary: >-
+      Insurers gain more current technical evidence for tailoring premiums, while insured organizations gain a record with which to demonstrate posture changes and whether an incident falls within agreed coverage.
+    source_anchor_ids: [anchor-paper-40-incentives]
+
+  - id: paper-40-privacy
+    kind: mechanism
+    parent_id: paper-40-method
+    order: 2
+    epistemic_status: design_options
+    title: Confidentiality and selective disclosure
+    summary: >-
+      The paper discusses access policy, encryption, and homomorphic-encryption techniques as options for limiting disclosure or enabling computation over protected evidence; these are architectural options, not a single formally analyzed end-to-end privacy construction.
+    source_anchor_ids: [anchor-paper-40-privacy]
+
+  - id: paper-40-implementation
+    kind: implementation
+    parent_id: paper-40
+    order: 6
+    epistemic_status: prototyped
+    title: Hyperledger instantiation
+    summary: >-
+      The authors prototype the design using the open-source Hyperledger ecosystem, whose permissioned membership, replicated transaction processing, modular components, and chaincode smart contracts match the intended multi-organization setting.
+    source_anchor_ids: [anchor-paper-40-implementation]
 
   - id: paper-40-claims
     kind: claim_group
     parent_id: paper-40
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    order: 7
+    epistemic_status: source_asserted
+    title: Main claims
+    summary: >-
+      The source claims architectural feasibility and a useful cyber-insurance feedback structure. It does not report an operational deployment, statistically validate a risk-scoring model, or prove that every proposed privacy and security property holds in a complete implementation.
+    source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-conclusion]
 
-  - id: paper-40-claim-primary
+  - id: paper-40-claim-feasibility
     kind: claim
     parent_id: paper-40-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The editorial summary reports that the prototype supports an auditable feedback loop, continuous monitoring, immutable evidence, and adaptive insurance terms."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    epistemic_status: supported_by_design_instantiation
+    title: Framework feasibility
+    summary: >-
+      A permissioned ledger can represent the four-party workflow and automate selected transactions and insurer logic, as illustrated by the Hyperledger instantiation.
+    source_anchor_ids: [anchor-paper-40-framework, anchor-paper-40-implementation]
+
+  - id: paper-40-claim-audit-loop
+    kind: claim
+    parent_id: paper-40-claims
+    order: 2
+    epistemic_status: architectural_claim
+    title: Shared audit trail
+    summary: >-
+      Authorized parties can use a common immutable transaction history to support continuous posture reporting and later auditing, conditional on the ledger's governance, consensus, identity, and access-control configuration.
+    source_anchor_ids: [anchor-paper-40-framework, anchor-paper-40-privacy]
 
   - id: paper-40-evidence
     kind: evidence_group
     parent_id: paper-40
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    order: 8
+    epistemic_status: design_and_prototype
+    title: Evidence
+    summary: >-
+      Evidence consists of a role-and-data-flow architecture, use-case and incentive analysis, privacy-design alternatives, and an example Hyperledger prototype. The paper does not present a production deployment, controlled performance study, or independently reproduced artifact.
+    source_anchor_ids: [anchor-paper-40-framework, anchor-paper-40-incentives, anchor-paper-40-implementation, anchor-paper-40-conclusion]
 
-  - id: paper-40-evidence-reported
+  - id: paper-40-evidence-design
     kind: evidence
     parent_id: paper-40-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The current record identifies a Hyperledger prototype, but its architecture, consensus assumptions, threat model, evaluation, privacy properties, and deployment evidence were not audited."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    epistemic_status: design_artifact
+    title: Explicit component and data-flow model
+    summary: >-
+      Figures and prose identify where BlockCIS nodes run, which enterprise and external sources feed them, what each actor reads or writes, and where smart-contract execution occurs.
+    source_anchor_ids: [anchor-paper-40-entities, anchor-paper-40-framework]
 
-  - id: paper-40-scope
+  - id: paper-40-evidence-prototype
+    kind: evidence
+    parent_id: paper-40-evidence
+    order: 2
+    epistemic_status: implementation_report
+    title: Open-source-platform instantiation
+    summary: >-
+      The Hyperledger construction shows how the design could be instantiated on a permissioned blockchain platform, but this map located no archived BlockCIS code, deployment recipe, test data, or benchmark package tied to the publication.
+    source_anchor_ids: [anchor-paper-40-implementation]
+
+  - id: paper-40-boundaries
     kind: limitation_group
     parent_id: paper-40
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    order: 9
+    epistemic_status: material
+    title: Scope and limitations
+    summary: >-
+      The ledger can preserve submitted transactions but cannot by itself establish that sensors, logs, analytics, external feeds, or risk scores are truthful. Organizational governance, privacy configuration, and insurance validity remain separate concerns.
+    source_anchor_ids: [anchor-paper-40-framework, anchor-paper-40-privacy, anchor-paper-40-conclusion]
 
-  - id: paper-40-scope-boundary
+  - id: paper-40-boundary-input
     kind: limitation
-    parent_id: paper-40-scope
+    parent_id: paper-40-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Ledger immutability does not establish the correctness of input evidence. Governance, oracle trust, confidentiality, performance, and legal or insurance validity remain outside this draft."
-    source_anchor_ids: ["anchor-paper-40-editorial"]
+    epistemic_status: inferred_system_boundary
+    title: Immutability is not input correctness
+    summary: >-
+      An immutable ledger can make a submitted record difficult to alter later; it does not certify the integrity, completeness, calibration, or semantics of evidence before submission. Those properties require trusted collection and analytic mechanisms outside consensus alone.
+    source_anchor_ids: [anchor-paper-40-framework]
 
-  - id: paper-40-resources
+  - id: paper-40-boundary-validation
+    kind: limitation
+    parent_id: paper-40-boundaries
+    order: 2
+    epistemic_status: author_identified_future_work
+    title: Deployment and risk-score validation remain future work
+    summary: >-
+      The conclusion explicitly leaves operational deployment and measurement of how well computed cyber-risk scores predict attacks or breaches for future work, so the paper does not establish actuarial accuracy or real-world effectiveness.
+    source_anchor_ids: [anchor-paper-40-conclusion]
+
+  - id: paper-40-artifacts
     kind: artifact_group
     parent_id: paper-40
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-40-resource-1", "anchor-paper-40-resource-2"]
-
-  - id: paper-40-resources-available
-    kind: artifact
-    parent_id: paper-40-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: ResearchGate author-uploaded PDF."
-    source_anchor_ids: ["anchor-paper-40-resource-1", "anchor-paper-40-resource-2"]
+    order: 10
+    epistemic_status: partially_available
+    title: Artifacts and reproducibility
+    summary: >-
+      The full paper and official record are public, and the prototype is described against an open-source platform. No publication-specific source repository, chaincode archive, configuration, dataset, or executable reproduction bundle was located.
+    source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-implementation, anchor-paper-40-publication]
 
   - id: paper-40-scrutiny
     kind: scrutiny
     parent_id: paper-40
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at IEEE International Conference on Cloud Engineering (IC2E), BAT workshop track. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-40-resource-1"]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared in the IC2E BAT workshop proceedings and has an official IEEE record. Review reports, rebuttal, independent security analysis, reproduction, deployment audit, and correction history are not represented here.
+    source_anchor_ids: [anchor-paper-40-publication, anchor-paper-40-coauthor]
 
 relations:
-  - id: relation-paper-40-contribution-addresses-question
+  - id: paper-40-relation-answer-question
     type: addresses
-    from_id: paper-40-contribution
+    from_id: paper-40-answer
     to_id: paper-40-question
-  - id: relation-paper-40-method-describes-contribution
-    type: describes_approach_to
+  - id: paper-40-relation-problem-question
+    type: motivates
+    from_id: paper-40-problem
+    to_id: paper-40-question
+  - id: paper-40-relation-model-answer
+    type: scopes
+    from_id: paper-40-model
+    to_id: paper-40-answer
+  - id: paper-40-relation-insured-model
+    type: component_of
+    from_id: paper-40-insured
+    to_id: paper-40-model
+  - id: paper-40-relation-insurer-model
+    type: component_of
+    from_id: paper-40-insurer
+    to_id: paper-40-model
+  - id: paper-40-relation-third-model
+    type: component_of
+    from_id: paper-40-third-parties
+    to_id: paper-40-model
+  - id: paper-40-relation-auditor-model
+    type: component_of
+    from_id: paper-40-auditor
+    to_id: paper-40-model
+  - id: paper-40-relation-method-answer
+    type: implements
     from_id: paper-40-method
-    to_id: paper-40-contribution
-  - id: relation-paper-40-evidence-supports-claim
+    to_id: paper-40-answer
+  - id: paper-40-relation-incentive-method
+    type: supports_adoption_of
+    from_id: paper-40-incentives
+    to_id: paper-40-method
+  - id: paper-40-relation-privacy-method
+    type: qualifies
+    from_id: paper-40-privacy
+    to_id: paper-40-method
+  - id: paper-40-relation-implementation-feasibility
     type: supports
-    from_id: paper-40-evidence-reported
-    to_id: paper-40-claim-primary
-  - id: relation-paper-40-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-40-scope-boundary
-    to_id: paper-40-claim-primary
-  - id: relation-paper-40-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-40-resources-available
-    to_id: paper-40-evidence-reported
-  - id: relation-paper-40-status-qualifies-claim
-    type: qualifies
-    from_id: paper-40-scrutiny
-    to_id: paper-40-claim-primary
+    from_id: paper-40-evidence-prototype
+    to_id: paper-40-claim-feasibility
+  - id: paper-40-relation-design-audit
+    type: supports
+    from_id: paper-40-evidence-design
+    to_id: paper-40-claim-audit-loop
+  - id: paper-40-relation-input-audit
+    type: limits
+    from_id: paper-40-boundary-input
+    to_id: paper-40-claim-audit-loop
+  - id: paper-40-relation-validation-feasibility
+    type: limits
+    from_id: paper-40-boundary-validation
+    to_id: paper-40-claim-feasibility
 
 assessment:
   id: paper-40-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-40-editorial", "anchor-paper-40-resource-1"]
+      rationale: >-
+        The paper supplies an explicit architecture, role and data-flow model, proposed privacy options, and a Hyperledger instantiation. It does not report an operational deployment, controlled performance evaluation, validated risk model, formal end-to-end security proof, or independently reproduced artifact.
+      basis_source_anchor_ids: [anchor-paper-40-framework, anchor-paper-40-implementation, anchor-paper-40-conclusion]
     - id: auditability
       level: high
-      rationale: "The resource record provides a public author-uploaded full-text route, so the paper is directly inspectable and auditability is high. Local fixity, correspondence with the final published version, and a substantive audit of the paper and supplementary artifacts have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-40-resource-1", "anchor-paper-40-resource-2"]
+      rationale: >-
+        A public author-uploaded full-text copy and the official DOI make the paper's architecture, assumptions, and future-work boundaries directly inspectable. A stable local binary, hash, implementation repository, configuration, and experimental data are not represented.
+      basis_source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-40-editorial"]
+      rationale: >-
+        Named authorship, affiliations, venue, date, DOI, and author/coauthor publication routes establish a baseline human and lifecycle provenance trail. Contributor roles, revision history, tool use, implementation lineage, and explicit final approval have not been audited.
+      basis_source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-publication, anchor-paper-40-coauthor]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-40-resource-1"]
+      rationale: >-
+        Publication in the IC2E BAT workshop proceedings establishes external venue exposure, but review reports, rebuttal, independent security analysis, reproduction, operational audit, and correction history were not located.
+      basis_source_anchor_ids: [anchor-paper-40-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-40-editorial"]
+      level: high
+      rationale: >-
+        OpenAlex reported 31 citations on 2026-07-11. Under the author-defined corpus rule, 11 or more located citations is High. The count is index- and date-dependent and is not evidence of correctness, deployment, or actuarial validity.
+      basis_source_anchor_ids: [anchor-paper-40-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a prototype architecture linking continuous security evidence with cyber-insurance administration. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-40-editorial"]
+      rationale: >-
+        The paper connects continuous technical posture evidence, permissioned ledgers, and cyber-insurance administration in one concrete architecture and the dated citation record shows follow-on attention. Priority, operational adoption, and validated insurance impact were not independently established.
+      basis_source_anchor_ids: [anchor-paper-40-abstract, anchor-paper-40-conclusion, anchor-paper-40-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 31
+  source_url: https://openalex.org/W2804424079
+  signals:
+    - OpenAlex reported 31 works citing the IC2E paper.
+    - Later cyber-insurance and privacy-preserving insurance systems cite BlockCIS as a permissioned-blockchain precursor.
+  limitation: Citation counts vary by index and date, may include self-citations, and do not establish correctness, independent reproduction, deployment, or validated cyber-risk prediction.

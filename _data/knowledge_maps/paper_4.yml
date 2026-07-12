@@ -18,160 +18,205 @@ labels: ["Applied", "Perspective"]
 authors: ["Karim Eldefrawy", "Magda El Zarki", "Gene Tsudik"]
 keywords: ["cooperative networking", "personal-area networks", "connectivity sharing", "incentive mechanisms"]
 
-research_question: "How can nearby personal-area networks share connectivity securely while giving resource owners an incentive to participate?"
-central_answer: "The paper sketches a framework for short-term connectivity sharing and identifies the policy, authentication, privacy, accounting, and incentive requirements that a complete design would need to satisfy."
+research_question: >-
+  How could one user's wireless personal-area network obtain short-lived connectivity through another user's devices while preserving policy control, accountability, privacy, and an incentive to share resources?
+central_answer: >-
+  Treat each multi-device WPAN as a negotiating entity: gateways discover peer providers, exchange credentials, negotiate policy-constrained contracts, use escrowed anonymity and guest access controls, and settle service through micropayments. The paper outlines this architecture and its open design questions rather than implementing or experimentally validating it.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, evidence linking, and initial assessment
+  method: "Full-source audit of the checked-in author-hosted paper and official ACM DOI record."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-drafted, source-linked map awaiting author verification before approval."
 
 sources:
-  - id: source-paper-4-site-record
-    type: curated_record
-    title: "Curated publication record for paper #4"
-    url: /publications/#paper-4
-  - id: source-paper-4-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/1247694.1247706"
-  - id: source-paper-4-archive-1
-    type: manuscript_archive
-    title: "CiteSeerX archive"
-    url: "https://citeseerx.ist.psu.edu/document?doi=6d922a7deb8b99f108b5f1a4ccda0f94e7172db2&repid=rep1&type=pdf"
-  - id: source-paper-4-author-1
+  - id: source-paper-4-paper
     type: author_copy
+    title: "Incentive-Based Cooperative and Secure Inter-Personal Networking"
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf
+    media_type: application/pdf
+    sha256: 6731baf7194145837211b27b6ede1b646d60591407dd2f497f36ecdd070ad514
+    page_count: 5
+    provenance_category: author
+    version_note: "Author-hosted conference paper; local copy checked 2026-07-11."
+  - id: source-paper-4-official
+    type: official_publication_record
+    title: "ACM DOI record"
+    url: "https://doi.org/10.1145/1247694.1247706"
+  - id: source-paper-4-author
+    type: author_copy_origin
     title: "UCI author copy"
     url: "https://ics.uci.edu/~gts/paps/ezt07.pdf"
+  - id: source-paper-4-citations
+    type: citation_search
+    title: "Dated scholarly-web citation search"
+    url: "https://scholar.google.com/scholar?q=%22Incentive-Based+Cooperative+and+Secure+Inter-Personal+Networking%22"
+    version_note: "Search attempted 2026-07-11; no transparent citation count was retrievable in this environment."
 
 source_anchors:
-  - id: anchor-paper-4-site-record
-    source_id: source-paper-4-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-4
-  - id: anchor-paper-4-official-1
-    source_id: source-paper-4-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://doi.org/10.1145/1247694.1247706"
-  - id: anchor-paper-4-archive-1
-    source_id: source-paper-4-archive-1
-    label: "CiteSeerX archive"
-    locator: "Archive resource linked from the curated site record; content not independently audited for this draft."
-    url: "https://citeseerx.ist.psu.edu/document?doi=6d922a7deb8b99f108b5f1a4ccda0f94e7172db2&repid=rep1&type=pdf"
-  - id: anchor-paper-4-author-1
-    source_id: source-paper-4-author-1
-    label: "UCI author copy"
-    locator: "Author-hosted resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-4-problem
+    source_id: source-paper-4-paper
+    label: "Motivation and contribution"
+    locator: "Abstract and Section 1, PDF pages 1-2 (printed pages 57-58)"
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf#page=1
+  - id: anchor-paper-4-operation
+    source_id: source-paper-4-paper
+    label: "Framework overview and negotiation sequence"
+    locator: "Sections 2 and 2.1, PDF page 2 (printed page 58)"
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf#page=2
+  - id: anchor-paper-4-security
+    source_id: source-paper-4-paper
+    label: "Escrowed anonymity and group-signature proposal"
+    locator: "Section 3.1, PDF page 3 (printed page 59)"
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf#page=3
+  - id: anchor-paper-4-policy
+    source_id: source-paper-4-paper
+    label: "Authentication, access control, and policy questions"
+    locator: "Section 3.3, PDF pages 3-4 (printed pages 59-60)"
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf#page=3
+  - id: anchor-paper-4-incentives
+    source_id: source-paper-4-paper
+    label: "Billing, reputation, and micropayments"
+    locator: "Section 3.4, PDF page 4 (printed page 60)"
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf#page=4
+  - id: anchor-paper-4-conclusion
+    source_id: source-paper-4-paper
+    label: "Scope of the paper's result"
+    locator: "Section 4, PDF page 4 (printed page 60)"
+    url: /pubs/2007/incentive-cooperative-interpersonal-mobiopp2007.pdf#page=4
+  - id: anchor-paper-4-provenance
+    source_id: source-paper-4-author
+    label: "Author-copy provenance"
+    locator: "Public UCI author-hosted PDF"
     url: "https://ics.uci.edu/~gts/paps/ezt07.pdf"
+  - id: anchor-paper-4-publication
+    source_id: source-paper-4-official
+    label: "Official publication metadata"
+    locator: "DOI 10.1145/1247694.1247706"
+    url: "https://doi.org/10.1145/1247694.1247706"
+  - id: anchor-paper-4-citation-search
+    source_id: source-paper-4-citations
+    label: "Citation search attempted"
+    locator: "Exact-title search, 2026-07-11; no verified count retrieved"
+    url: "https://scholar.google.com/scholar?q=%22Incentive-Based+Cooperative+and+Secure+Inter-Personal+Networking%22"
 
 nodes:
   - id: paper-4
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "Incentive-Based Cooperative and Secure Inter-Personal Networking"
-    summary: "This paper outlines a framework in which a stranded user's personal-area network buys or barters connectivity through a nearby user's devices under short-term service contracts. It identifies policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments as requirements for making resource sharing secure and worthwhile."
-    source_anchor_ids: [anchor-paper-4-site-record]
-
+    summary: "A perspective and architecture paper for policy-controlled, incentive-compatible connectivity sharing between users' multi-device WPANs."
+    source_anchor_ids: [anchor-paper-4-problem, anchor-paper-4-publication]
   - id: paper-4-question
     kind: question
     parent_id: paper-4
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "How can nearby personal-area networks share connectivity securely while giving resource owners an incentive to participate?"
-    source_anchor_ids: [anchor-paper-4-site-record]
-
+    summary: "How can a stranded user's WPAN negotiate secure temporary access through a nearby user's WPAN?"
+    source_anchor_ids: [anchor-paper-4-problem]
   - id: paper-4-answer
     kind: contribution
     parent_id: paper-4
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The paper sketches short-term service contracts and identifies policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments as components of purchased or bartered connectivity."
-    source_anchor_ids: [anchor-paper-4-site-record]
-
-  - id: paper-4-method
-    kind: method
+    epistemic_status: architectural_proposal
+    title: "Proposed framework"
+    summary: "WPANs act as entities that discover peers, exchange certificates, negotiate short contracts under owner policies, enforce limited guest access, and exchange micropayments."
+    source_anchor_ids: [anchor-paper-4-operation, anchor-paper-4-policy, anchor-paper-4-incentives]
+  - id: paper-4-workflow
+    kind: mechanism
     parent_id: paper-4
     order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Outline how connectivity could be brokered through selected nearby gateways under explicit short-term policies and payment arrangements, with authentication and conditional identity protection."
-    source_anchor_ids: [anchor-paper-4-site-record]
-
-  - id: paper-4-claims
-    kind: claim_group
+    epistemic_status: outlined
+    title: "Negotiation workflow"
+    summary: "Devices coordinate interface information, select a gateway and peer provider, mutually authenticate, establish trust metrics and contractual terms, then initiate payment for the delivered service."
+    source_anchor_ids: [anchor-paper-4-operation]
+  - id: paper-4-security
+    kind: design
     parent_id: paper-4
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The proposed requirements are intended to make interpersonal resource sharing both secure and economically worthwhile for the parties."
-    source_anchor_ids: [anchor-paper-4-site-record]
-
-  - id: paper-4-evidence
-    kind: evidence_group
+    epistemic_status: proposed
+    title: "Escrowed anonymity"
+    summary: "Group signatures are proposed to authenticate customers and traders anonymously while allowing a group manager to reveal a signer during a dispute."
+    source_anchor_ids: [anchor-paper-4-security]
+  - id: paper-4-policy
+    kind: design
     parent_id: paper-4
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary describes the proposed components and intended security and incentive properties; no protocol proof, deployment, or economic evaluation has been audited."
-    source_anchor_ids: [anchor-paper-4-site-record]
-
+    epistemic_status: requirements_and_open_questions
+    title: "Access control and policy"
+    summary: "Guest profiles should constrain relayed traffic, but policy authoring, distribution, adaptation, device failure, and traffic attribution remain design questions."
+    source_anchor_ids: [anchor-paper-4-policy]
+  - id: paper-4-incentives
+    kind: design
+    parent_id: paper-4
+    order: 6
+    epistemic_status: proposed
+    title: "Micropayments and reputation"
+    summary: "Small incremental payments are intended to reduce losses from a misbehaving provider and reward users for resale of connectivity; a scalable cheat-resistant billing system is not supplied."
+    source_anchor_ids: [anchor-paper-4-incentives]
+  - id: paper-4-scope
+    kind: scope
+    parent_id: paper-4
+    order: 7
+    epistemic_status: explicitly_scoped
+    title: "System boundary"
+    summary: "The unit of cooperation is a changing, multi-device WPAN rather than a single handset; the architecture assumes service-provider participation and trusted infrastructure for credentials, group management, and eventual settlement."
+    source_anchor_ids: [anchor-paper-4-problem, anchor-paper-4-security, anchor-paper-4-incentives]
   - id: paper-4-limitations
     kind: limitation_group
     parent_id: paper-4
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The record does not establish the trust model for escrow, payment disputes, collusion, service quality, privacy leakage, or real-world incentive compatibility."
-    source_anchor_ids: [anchor-paper-4-site-record]
-
-  - id: paper-4-resources
-    kind: artifact_group
+    order: 8
+    epistemic_status: material
+    title: "Unvalidated components"
+    summary: "The paper outlines a framework. It provides no complete protocol, security definition or proof, implementation, performance measurements, usability study, or deployment evidence."
+    source_anchor_ids: [anchor-paper-4-security, anchor-paper-4-policy, anchor-paper-4-conclusion]
+  - id: paper-4-artifacts
+    kind: artifact
     parent_id: paper-4
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Publisher / DOI; CiteSeerX archive; UCI author copy. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-4-official-1, anchor-paper-4-archive-1, anchor-paper-4-author-1]
-
+    order: 9
+    epistemic_status: paper_available_no_code
+    title: "Artifacts"
+    summary: "A fixed local author copy is available; no code, prototype, policy language, payment implementation, or dataset was located."
+    source_anchor_ids: [anchor-paper-4-provenance, anchor-paper-4-conclusion]
   - id: paper-4-scrutiny
     kind: scrutiny
     parent_id: paper-4
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published · workshop paper at ACM MobiOpp. Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-4-site-record, anchor-paper-4-official-1]
+    order: 10
+    epistemic_status: peer_reviewed
+    title: "Scrutiny and positioning"
+    summary: "The framework appeared at MobiOpp 2007 and is explicitly positioned beyond single-device connectivity markets; independent implementation or validation was not located."
+    source_anchor_ids: [anchor-paper-4-operation, anchor-paper-4-publication]
 
 relations:
-  - id: paper-4-relation-method-supports-answer
-    type: supports
-    from_id: paper-4-method
+  - id: paper-4-relation-workflow-realizes-answer
+    type: realizes
+    from_id: paper-4-workflow
     to_id: paper-4-answer
-  - id: paper-4-relation-evidence-supports-claim
-    type: supports
-    from_id: paper-4-evidence
-    to_id: paper-4-claims
-  - id: paper-4-relation-limitations-qualify-claim
+  - id: paper-4-relation-security-component
+    type: component_of
+    from_id: paper-4-security
+    to_id: paper-4-answer
+  - id: paper-4-relation-policy-component
+    type: component_of
+    from_id: paper-4-policy
+    to_id: paper-4-answer
+  - id: paper-4-relation-incentive-component
+    type: component_of
+    from_id: paper-4-incentives
+    to_id: paper-4-answer
+  - id: paper-4-relation-limits-qualify-answer
     type: qualifies
     from_id: paper-4-limitations
-    to_id: paper-4-claims
-  - id: paper-4-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-4-scrutiny
-    to_id: paper-4
+    to_id: paper-4-answer
 
 assessment:
   id: paper-4-assessment-2026-07-11
@@ -181,33 +226,34 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary describes the proposed components and intended security and incentive properties; no protocol proof, deployment, or economic evaluation has been audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-4-site-record]
+      level: low
+      rationale: "The architecture and unresolved questions are stated clearly, but the paper contains no implemented protocol, proof, experiment, or deployment evaluation."
+      basis_source_anchor_ids: [anchor-paper-4-operation, anchor-paper-4-security, anchor-paper-4-policy, anchor-paper-4-conclusion]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-4-official-1, anchor-paper-4-archive-1, anchor-paper-4-author-1]
+      rationale: "A fixed author-hosted full text is checked in with page count and hash, making the proposal and its boundaries directly inspectable."
+      basis_source_anchor_ids: [anchor-paper-4-provenance, anchor-paper-4-conclusion]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-4-site-record]
+      rationale: "Named authorship, an author-origin copy, and official metadata are documented; roles, revision history, effort, and tool use are not."
+      basis_source_anchor_ids: [anchor-paper-4-provenance, anchor-paper-4-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in ACM MobiOpp, providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-4-official-1]
+      rationale: "The paper has an official peer-reviewed workshop publication record, but no review reports or independent implementation were located."
+      basis_source_anchor_ids: [anchor-paper-4-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-4-site-record]
+      level: low
+      rationale: "No citations were verifiably located in the constrained dated search. Under the author's 0-8 rule this is low, but it is not a claim that the paper has no citations."
+      basis_source_anchor_ids: [anchor-paper-4-citation-search]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete perspective: the proposed requirements are intended to make interpersonal resource sharing both secure and economically worthwhile for the parties. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-4-site-record]
+      rationale: "The paper integrates connectivity barter, multi-device WPANs, privacy, policy, and incentives into a coherent agenda, while leaving feasibility and security unvalidated."
+      basis_source_anchor_ids: [anchor-paper-4-problem, anchor-paper-4-operation, anchor-paper-4-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
+  method: "Exact-title scholarly-web search; transparent index count unavailable"
+  source: "Google Scholar query route plus general scholarly-web search"
+  citation_count: 0
   signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  limitation: "Zero means no citations were verifiably located during this constrained search, not a total bibliometric count; author should replace it with a confirmed index snapshot."

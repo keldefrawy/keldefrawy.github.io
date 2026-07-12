@@ -11,210 +11,383 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol]
 
 title: "The Key Lattice Framework for Concurrent Group Messaging"
-short_title: "The Key Lattice Framework for Concurrent Group Messaging"
+short_title: Key Lattice Group Messaging
 year: 2024
 venue: "22nd International Conference on Applied Cryptography and Network Security (ACNS)"
-publication_status: "Published"
+publication_status: Published
 topic: privacy-identity
-labels:
-  - "Theory"
-authors:
-  - "Kelong Cong"
-  - "Karim Eldefrawy"
-  - "Nigel P. Smart"
-  - "Ben Terner"
+labels: [Theory]
+authors: [Kelong Cong, Karim Eldefrawy, Nigel P. Smart, Ben Terner]
 keywords:
-  - "group messaging"
-  - "key management"
+  - concurrent group messaging
+  - key lattice
+  - forward secrecy
+  - post-compromise security
+  - asynchronous delivery
+  - group random messaging
 
-research_question: "Can concurrent group-key evolution be modeled without global epochs while expressing forward secrecy and post-compromise security in one structure?"
-central_answer: "The curated editorial summary reports a key-lattice abstraction in which the two security directions share a common representation, together with a dynamic-group protocol having constant payload overhead and linear update cost."
+research_question: >-
+  Can asynchronous concurrent group messaging express forward secrecy and post-compromise security without imposing a single global epoch or a total order on concurrent updates?
+central_answer: >-
+  The paper indexes evolving keys by points in an n-dimensional lattice, one dimension per participant, so forward secrecy and post-compromise recovery become directional reachability properties. It constructs a group-messaging protocol from initial group key agreement, group random messaging, and AEAD, proving security and O(1) payload plus O(n) update cost for the static group model. Dynamic membership is sketched separately and is not covered by a corresponding re-proof in the represented body.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text model and theorem extraction, boundary analysis, and initial assessment
+  method: >-
+    Source-grounded review of the complete author-uploaded manuscript and IACR record, cross-checked against the ACNS DOI. The map distinguishes the proved static-group construction from the informal dynamic-membership extension.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting author verification; verify theorem notation, cost interpretation, dynamic-group boundary, and ratings before approval.
 
 sources:
-  - id: source-paper-69-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #69"
-    url: /publications/#paper-69
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-69-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-031-54773-7_6"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-69-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2022/1531"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-69-eprint
+    type: public_preprint
+    title: "The Key Lattice Framework for Concurrent Group Messaging"
+    url: https://eprint.iacr.org/2022/1531
+    provenance_category: archive
+  - id: source-paper-69-author-copy
+    type: author_hosted_copy
+    title: ResearchGate author-uploaded full text
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+    provenance_category: author
+  - id: source-paper-69-official
+    type: official_publication_record
+    title: ACNS 2024 publication record
+    url: https://doi.org/10.1007/978-3-031-54773-7_6
+    provenance_category: official
+  - id: source-paper-69-citations
+    type: citation_index_snapshot
+    title: OpenAlex record W4392529045
+    url: https://api.openalex.org/works/W4392529045
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-69-curated
-    source_id: source-paper-69-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-69
-  - id: anchor-paper-69-official-1
-    source_id: source-paper-69-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-031-54773-7_6"
-  - id: anchor-paper-69-archive-1
-    source_id: source-paper-69-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2022/1531"
+  - id: anchor-paper-69-problem
+    source_id: source-paper-69-eprint
+    label: Concurrency problem, lattice idea, contributions, and costs
+    locator: Abstract and Section 1
+    url: https://eprint.iacr.org/2022/1531.pdf
+  - id: anchor-paper-69-model
+    source_id: source-paper-69-author-copy
+    label: Concurrent group-messaging syntax and security setting
+    locator: Preliminaries and formal model, Sections 2-3
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+  - id: anchor-paper-69-lattice
+    source_id: source-paper-69-author-copy
+    label: Key lattice, local views, KeyRoll, and directional security
+    locator: Key-lattice framework, Section 4
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+  - id: anchor-paper-69-grm
+    source_id: source-paper-69-author-copy
+    label: Group random messaging primitive and construction
+    locator: Section 5, including Theorem 5.1
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+  - id: anchor-paper-69-group-protocol
+    source_id: source-paper-69-author-copy
+    label: Concurrent group-messaging construction
+    locator: Section 6
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+  - id: anchor-paper-69-security
+    source_id: source-paper-69-author-copy
+    label: Group-messaging reduction and concrete advantage bound
+    locator: Section 6, including Theorem 6.1
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+  - id: anchor-paper-69-window
+    source_id: source-paper-69-author-copy
+    label: Out-of-order delivery, buffering, and bounded-window tradeoff
+    locator: Correctness and concurrency discussion, Section 7
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+  - id: anchor-paper-69-dynamic
+    source_id: source-paper-69-author-copy
+    label: Informal dynamic-membership extension
+    locator: Section 8
+    url: https://www.researchgate.net/publication/378588233_The_Key_Lattice_Framework_for_Concurrent_Group_Messaging
+  - id: anchor-paper-69-publication
+    source_id: source-paper-69-official
+    label: Official publication identity
+    locator: ACNS 2024, DOI 10.1007/978-3-031-54773-7_6
+    url: https://doi.org/10.1007/978-3-031-54773-7_6
+  - id: anchor-paper-69-citation-count
+    source_id: source-paper-69-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex cited_by_count was 1 when accessed 2026-07-11
+    url: https://api.openalex.org/works/W4392529045
 
 nodes:
   - id: paper-69
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "The Key Lattice Framework for Concurrent Group Messaging"
-    summary: "This paper represents concurrent group-key evolution as a lattice, making forward secrecy and post-compromise security directional versions of one abstraction without relying on global epochs. Its dynamic-group protocol supports concurrent updates with constant payload overhead and linear update cost."
-    source_anchor_ids: [anchor-paper-69-curated]
+    epistemic_status: published
+    title: Key lattice for concurrent group messaging
+    summary: A framework and protocol that replace globally synchronized messaging epochs with partially ordered per-participant key evolution while formalizing forward and post-compromise security.
+    source_anchor_ids: [anchor-paper-69-problem]
+
   - id: paper-69-question
     kind: question
     parent_id: paper-69
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can concurrent group-key evolution be modeled without global epochs while expressing forward secrecy and post-compromise security in one structure?"
-    source_anchor_ids: [anchor-paper-69-curated]
-  - id: paper-69-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: How can a group evolve keys securely when members issue updates concurrently and messages arrive out of order, so that no universally agreed current epoch exists?
+    source_anchor_ids: [anchor-paper-69-problem, anchor-paper-69-model]
+
+  - id: paper-69-answer
     kind: contribution
     parent_id: paper-69
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports a key-lattice abstraction in which the two security directions share a common representation, together with a dynamic-group protocol having constant payload overhead and linear update cost."
-    source_anchor_ids: [anchor-paper-69-curated]
-  - id: paper-69-method
-    kind: method
+    epistemic_status: proved_conditionally
+    title: Central answer
+    summary: Place each key state at a lattice coordinate, advance the sender's coordinate with a commutative KeyRoll operation, and define security through which coordinates a compromised view can or cannot traverse.
+    source_anchor_ids: [anchor-paper-69-lattice, anchor-paper-69-group-protocol]
+
+  - id: paper-69-model
+    kind: model
     parent_id: paper-69
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described framework represents key states and concurrent updates as a lattice and derives a dynamic group-messaging protocol from that state structure."
-    source_anchor_ids: [anchor-paper-69-curated]
-  - id: paper-69-claims
-    kind: claim_group
+    epistemic_status: formalized
+    title: Concurrent static-group model
+    summary: The core theorem treats a fixed set of n participants exchanging application messages and update messages over an asynchronous network with possible reordering and concurrent sender updates.
+    source_anchor_ids: [anchor-paper-69-model, anchor-paper-69-group-protocol]
+
+  - id: paper-69-model-adversary
+    kind: threat_model
+    parent_id: paper-69-model
+    order: 1
+    epistemic_status: defined
+    title: Adaptive compromise and freshness
+    summary: Security games expose evolving participant state and message transcripts; freshness is expressed relative to compromise and recovery paths through the lattice rather than by one global epoch number.
+    source_anchor_ids: [anchor-paper-69-model, anchor-paper-69-lattice]
+
+  - id: paper-69-framework
+    kind: framework
     parent_id: paper-69
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports directional unification of forward secrecy and post-compromise security without global epochs, constant payload overhead, and linear update cost."
-    source_anchor_ids: [anchor-paper-69-curated]
+    epistemic_status: constructed
+    title: n-dimensional key lattice
+    summary: A point in the integer lattice records how many key rolls are known along each participant's dimension, and each receiver maintains a local view sufficient to process reachable updates and messages.
+    source_anchor_ids: [anchor-paper-69-lattice]
+
+  - id: paper-69-framework-fs
+    kind: security_goal
+    parent_id: paper-69-framework
+    order: 1
+    epistemic_status: formalized
+    title: Forward secrecy as backward non-traversability
+    summary: Deleting obsolete state should prevent a later compromise at a newer coordinate from traversing backward to derive protected earlier keys.
+    source_anchor_ids: [anchor-paper-69-lattice]
+
+  - id: paper-69-framework-pcs
+    kind: security_goal
+    parent_id: paper-69-framework
+    order: 2
+    epistemic_status: formalized
+    title: Post-compromise security as forward recovery
+    summary: A fresh honest update moves key state in a direction the adversary cannot traverse from compromised coordinates, restoring secrecy for later reachable states.
+    source_anchor_ids: [anchor-paper-69-lattice]
+
+  - id: paper-69-protocol
+    kind: protocol
+    parent_id: paper-69
+    order: 5
+    epistemic_status: constructed
+    title: Concurrent group-messaging protocol
+    summary: The construction composes an initial group key agreement, a group-random-messaging update layer, and AEAD-protected application payloads.
+    source_anchor_ids: [anchor-paper-69-grm, anchor-paper-69-group-protocol]
+
+  - id: paper-69-protocol-gka
+    kind: protocol_component
+    parent_id: paper-69-protocol
+    order: 1
+    epistemic_status: assumed_primitive
+    title: Initial group key agreement
+    summary: A secure asynchronous GKA establishes the initial shared state; its security is assumed by the group-messaging reduction rather than reconstructed by the key-lattice layer.
+    source_anchor_ids: [anchor-paper-69-model, anchor-paper-69-security]
+
+  - id: paper-69-protocol-grm
+    kind: protocol_component
+    parent_id: paper-69-protocol
+    order: 2
+    epistemic_status: constructed
+    title: Group random messaging update
+    summary: The concrete GRM sends evolving ephemeral public-key material and authenticated encrypted randomness, erasing obsolete decryption keys so updates can refresh the appropriate lattice direction.
+    source_anchor_ids: [anchor-paper-69-grm]
+
+  - id: paper-69-protocol-payload
+    kind: protocol_component
+    parent_id: paper-69-protocol
+    order: 3
+    epistemic_status: constructed_from_primitive
+    title: AEAD payload protection
+    summary: Application messages use the key at the relevant local lattice point and carry coordinate information needed for receivers to select or derive the matching state.
+    source_anchor_ids: [anchor-paper-69-group-protocol]
+
+  - id: paper-69-results
+    kind: claim_group
+    parent_id: paper-69
+    order: 6
+    epistemic_status: theorem_backed
+    title: Security and cost results
+    summary: The source proves security by reductions to GKA, GRM, and AEAD and analytically derives constant payload and linear update overhead.
+    source_anchor_ids: [anchor-paper-69-security, anchor-paper-69-problem]
+
+  - id: paper-69-result-grm
+    kind: theorem
+    parent_id: paper-69-results
+    order: 1
+    epistemic_status: proved_conditionally
+    title: GRM security
+    summary: Theorem 5.1 reduces security of the concrete evolving-key GRM construction to the stated public-key encryption, authenticated-encryption or MAC, and deletion assumptions.
+    source_anchor_ids: [anchor-paper-69-grm]
+
+  - id: paper-69-result-group
+    kind: theorem
+    parent_id: paper-69-results
+    order: 2
+    epistemic_status: proved_conditionally
+    title: Group-messaging reduction
+    summary: >-
+      Theorem 6.1 bounds the group-messaging adversary by 2 nS times GKA advantage, plus 2 nS n times GRM advantage, plus nS nq times AEAD CCA advantage, with nS and nq denoting the theorem's session and query bounds.
+    source_anchor_ids: [anchor-paper-69-security]
+
+  - id: paper-69-result-cost
+    kind: claim
+    parent_id: paper-69-results
+    order: 3
+    epistemic_status: analytically_derived
+    title: Constant payload, linear update
+    summary: Application-message overhead is O(1) in group size and update-message overhead is O(n); the paper argues these asymptotics are optimal for the modeled functionality.
+    source_anchor_ids: [anchor-paper-69-problem, anchor-paper-69-group-protocol]
+
   - id: paper-69-evidence
     kind: evidence_group
     parent_id: paper-69
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "A formal framework, protocol, security analysis, and complexity claims are reported, but definitions, proofs, concurrency semantics, algorithms, and cost accounting were not audited."
-    source_anchor_ids: [anchor-paper-69-curated]
-  - id: paper-69-scope
+    order: 7
+    epistemic_status: formal
+    title: Formal evidence
+    summary: The evidence consists of syntax and security games, lattice definitions, concrete constructions, reduction theorems, and asymptotic communication analysis; no implementation benchmark is presented.
+    source_anchor_ids: [anchor-paper-69-model, anchor-paper-69-lattice, anchor-paper-69-grm, anchor-paper-69-security]
+
+  - id: paper-69-boundaries
     kind: limitation_group
     parent_id: paper-69
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked the adversary and compromise model, delivery and ordering assumptions, membership operations, merge behavior, security after concurrent forks, or constants and storage costs beyond payload and update complexity."
-    source_anchor_ids: [anchor-paper-69-curated]
-  - id: paper-69-artifacts
+    order: 8
+    epistemic_status: explicitly_bounded
+    title: Scope and tradeoffs
+    summary: The core proof covers a static group and relies on secure primitives, key deletion, and state handling; fully asynchronous delivery creates an unavoidable correctness-versus-forward-secrecy storage tradeoff.
+    source_anchor_ids: [anchor-paper-69-window, anchor-paper-69-dynamic]
+
+  - id: paper-69-boundary-window
+    kind: limitation
+    parent_id: paper-69-boundaries
+    order: 1
+    epistemic_status: explicit_tradeoff
+    title: Out-of-order window
+    summary: Retaining every obsolete key allows arbitrarily delayed decryption but defeats forward deletion; bounding the receive window preserves deletion but may make sufficiently delayed messages undecryptable.
+    source_anchor_ids: [anchor-paper-69-window]
+
+  - id: paper-69-boundary-dynamic
+    kind: limitation
+    parent_id: paper-69-boundaries
+    order: 2
+    epistemic_status: informal_extension
+    title: Dynamic membership is not re-proved
+    summary: Section 8 sketches joins and removals as an extension, but the represented body does not restate and prove the full security theorem for dynamic groups; the formal core should therefore be read as static-group security.
+    source_anchor_ids: [anchor-paper-69-dynamic]
+
+  - id: paper-69-boundary-implementation
+    kind: limitation
+    parent_id: paper-69-boundaries
+    order: 3
+    epistemic_status: not_evaluated
+    title: No implementation or operational evaluation
+    summary: The source does not measure latency, storage growth, failed deliveries, state rollback, side channels, or deployment behavior under real messaging workloads.
+    source_anchor_ids: [anchor-paper-69-group-protocol, anchor-paper-69-window]
+
+  - id: paper-69-resources
     kind: artifact_group
     parent_id: paper-69
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-69-curated, anchor-paper-69-official-1, anchor-paper-69-archive-1]
+    order: 9
+    epistemic_status: source_available
+    title: Auditable resources
+    summary: IACR and author-uploaded full-text routes expose the model and proofs, and the DOI establishes publication identity. No code artifact is claimed.
+    source_anchor_ids: [anchor-paper-69-problem, anchor-paper-69-publication]
+
   - id: paper-69-scrutiny
     kind: scrutiny
     parent_id: paper-69
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 22nd International Conference on Applied Cryptography and Network Security (ACNS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-69-official-1]
+    order: 10
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: ACNS publication establishes venue review; no public proof audit, implementation reproduction, correction, or independent adversarial analysis was located.
+    source_anchor_ids: [anchor-paper-69-publication]
+
+  - id: paper-69-lineage
+    kind: lineage
+    parent_id: paper-69
+    order: 11
+    epistemic_status: documented
+    title: Conceptual lineage
+    summary: The key lattice generalizes epoch-based forward-secure and post-compromise-secure messaging into a partial order suited to concurrent senders and locally observed state.
+    source_anchor_ids: [anchor-paper-69-problem, anchor-paper-69-lattice]
 
 relations:
-  - id: paper-69-relation-question-contribution
-    type: motivates
-    from_id: paper-69-question
-    to_id: paper-69-contribution
-  - id: paper-69-relation-method-contribution
-    type: realizes
-    from_id: paper-69-method
-    to_id: paper-69-contribution
-  - id: paper-69-relation-contribution-claims
-    type: grounds
-    from_id: paper-69-contribution
-    to_id: paper-69-claims
-  - id: paper-69-relation-evidence-claims
-    type: supports
-    from_id: paper-69-evidence
-    to_id: paper-69-claims
-  - id: paper-69-relation-scope-claims
-    type: qualifies
-    from_id: paper-69-scope
-    to_id: paper-69-claims
-  - id: paper-69-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-69-artifacts
-    to_id: paper-69-evidence
-  - id: paper-69-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-69-scrutiny
-    to_id: paper-69-claims
+  - {id: paper-69-rel-answer-question, type: addresses, from_id: paper-69-answer, to_id: paper-69-question}
+  - {id: paper-69-rel-framework-answer, type: realizes, from_id: paper-69-framework, to_id: paper-69-answer}
+  - {id: paper-69-rel-fs-framework, type: formalized_by, from_id: paper-69-framework-fs, to_id: paper-69-framework}
+  - {id: paper-69-rel-pcs-framework, type: formalized_by, from_id: paper-69-framework-pcs, to_id: paper-69-framework}
+  - {id: paper-69-rel-protocol-answer, type: instantiates, from_id: paper-69-protocol, to_id: paper-69-answer}
+  - {id: paper-69-rel-grm-protocol, type: component_of, from_id: paper-69-protocol-grm, to_id: paper-69-protocol}
+  - {id: paper-69-rel-group-result-protocol, type: supports, from_id: paper-69-result-group, to_id: paper-69-protocol}
+  - {id: paper-69-rel-grm-result-component, type: supports, from_id: paper-69-result-grm, to_id: paper-69-protocol-grm}
+  - {id: paper-69-rel-evidence-results, type: supports, from_id: paper-69-evidence, to_id: paper-69-results}
+  - {id: paper-69-rel-boundaries-results, type: qualifies, from_id: paper-69-boundaries, to_id: paper-69-results}
+  - {id: paper-69-rel-dynamic-result, type: does_not_extend_automatically_to, from_id: paper-69-boundary-dynamic, to_id: paper-69-result-group}
+  - {id: paper-69-rel-resources-evidence, type: enables_audit_of, from_id: paper-69-resources, to_id: paper-69-evidence}
+  - {id: paper-69-rel-lineage-paper, type: contextualizes, from_id: paper-69-lineage, to_id: paper-69}
 
 assessment:
   id: paper-69-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-69-curated, anchor-paper-69-official-1, anchor-paper-69-archive-1]
+      level: high
+      rationale: The full source gives formal syntax, security games, constructions, reduction theorems, and cost analysis. High applies to the static-group conditional claims and does not extend to the informal dynamic-membership sketch.
+      basis_source_anchor_ids: [anchor-paper-69-model, anchor-paper-69-lattice, anchor-paper-69-grm, anchor-paper-69-security]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-69-curated, anchor-paper-69-official-1, anchor-paper-69-archive-1]
+      rationale: Public IACR and author-uploaded full text plus the official DOI make assumptions, definitions, theorem statements, and proof arguments directly inspectable.
+      basis_source_anchor_ids: [anchor-paper-69-problem, anchor-paper-69-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-69-curated]
+      rationale: Named authorship, public manuscript routes, venue, year, and DOI are documented; contributor roles, revision history, proof-development tools, and artifact lineage are not.
+      basis_source_anchor_ids: [anchor-paper-69-problem, anchor-paper-69-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-69-official-1]
+      rationale: ACNS publication establishes venue scrutiny, but public review reports, independent proof checking, implementation replication, and correction history were not located.
+      basis_source_anchor_ids: [anchor-paper-69-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-69-curated]
+      level: low
+      rationale: The dated OpenAlex snapshot located 1 citation. Under the author-defined rule, 0 through 8 located citations is Low; counts do not determine correctness.
+      basis_source_anchor_ids: [anchor-paper-69-citation-count]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-69-curated]
+      level: high
+      rationale: The lattice formulation supplies a new abstraction for concurrent key evolution and unifies directional views of forward and post-compromise security with a proved protocol instantiation.
+      basis_source_anchor_ids: [anchor-paper-69-problem, anchor-paper-69-lattice, anchor-paper-69-security]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex work lookup by DOI 10.1007/978-3-031-54773-7_6
+  citation_count: 1
+  source_url: https://api.openalex.org/works/W4392529045
+  signals:
+    - OpenAlex reported one citing work for the matched publication record.
+  limitation: Citation counts are index- and date-dependent and do not establish validity, novelty, or real-world use.

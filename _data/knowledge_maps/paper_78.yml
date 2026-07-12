@@ -11,13 +11,12 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: []
 
 title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-short_title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
+short_title: "Composing Timed Cryptographic Protocols"
 year: 2024
 venue: "IACR Cryptology ePrint Archive"
 publication_status: "Preprint · under review"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
+labels: ["Theory"]
 authors:
   - "Karim Eldefrawy"
   - "Ben Terner"
@@ -26,148 +25,553 @@ keywords:
   - "timed cryptography"
   - "protocol composition"
 
-research_question: "How can timed cryptographic components be composed while explicitly accounting for the residual computational work and security that remain before their protections expire?"
-central_answer: "The curated editorial summary reports a fine-grained residual-complexity framework, composition results for timed multiparty protocols, and an auction application."
+research_question: >-
+  How can cryptographic protocols soundly compose components whose secrecy expires within feasible polynomial time, while accounting for leakage, simulator cost, adversary depth, and the time at which each guarantee ceases to be meaningful?
+central_answer: >-
+  The paper defines residual complexity and a critical time for leaky timed primitives, embeds them in a depth-bounded real/ideal MPC framework parameterized by adversary, simulator, and environment depth, and proves composition theorems with explicit security degradation. It adds a one-random-oracle compiler for leaky algebraic puzzles and applies the framework to time-lock-puzzle auctions, including a simultaneous multi-round auction whose parameters are retuned for composition loss.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, definition and theorem decomposition, proof-evidence linking, protocol analysis, and initial assessment
+  method: >-
+    Source-grounded audit of the complete 43-page IACR ePrint, its archive metadata, the author-site record, and a dated citation search. Definitions, theorem parameters, proof locations, application assumptions, and stated limitations are separated; self-reported novelty is not converted into an independently verified priority claim.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: "AI-authored source-linked map awaiting full author audit; mathematical summaries and ratings may be revised before approval."
 
 sources:
+  - id: source-paper-78-paper
+    type: scholarly_preprint
+    title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
+    url: "https://eprint.iacr.org/2024/676.pdf"
+    media_type: application/pdf
+    page_count: 43
+    provenance_category: public_archive
+    retrieved_at: "2026-07-11"
+    scope_note: "Complete IACR ePrint used for the technical audit; no machine-checked proof artifact or implementation accompanies the represented source."
+  - id: source-paper-78-archive
+    type: archive_record
+    title: "IACR ePrint 2024/676 record"
+    url: "https://eprint.iacr.org/2024/676"
+    scope_note: "Public archive landing record for the audited preprint."
   - id: source-paper-78-curated
     type: curated_site_record
     title: "Website publication record for Paper #78"
     url: /publications/#paper-78
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-78-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2024/676"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+    scope_note: "Author-site bibliographic identity and under-review status."
+  - id: source-paper-78-dblp
+    type: bibliographic_record
+    title: "DBLP record for IACR ePrint 2024/676"
+    url: "https://dblp.org/rec/journals/iacr/EldefrawyTY24"
+    scope_note: "Independent bibliographic record; not peer review or evidence for the paper's theorems."
+  - id: source-paper-78-citation-search
+    type: citation_search_snapshot
+    title: "Exact-title scholarly-web citation search"
+    url: "https://www.google.com/search?q=%22Composing+Timed+Cryptographic+Protocols%3A+Foundations+and+Applications%22"
+    accessed_at: "2026-07-11"
+    scope_note: "Three distinct downstream scholarly references were located; this is a conservative lower bound, not a normalized citation-index total."
 
 source_anchors:
-  - id: anchor-paper-78-curated
-    source_id: source-paper-78-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-78
-  - id: anchor-paper-78-archive-1
-    source_id: source-paper-78-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
+  - id: anchor-paper-78-problem
+    source_id: source-paper-78-paper
+    label: "Problem, contributions, and claimed scope"
+    locator: "Abstract and Section 1, PDF pages 1–5"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=1"
+  - id: anchor-paper-78-leakage-motivation
+    source_id: source-paper-78-paper
+    label: "Leaky algebraic solving and fine-grained motivation"
+    locator: "Section 2, PDF pages 5–7"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=5"
+  - id: anchor-paper-78-residual
+    source_id: source-paper-78-paper
+    label: "Residual complexity and critical time"
+    locator: "Informal Definition 1 and formal Definition 7, PDF pages 6–7 and 13"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=6"
+  - id: anchor-paper-78-depth-model
+    source_id: source-paper-78-paper
+    label: "Depth-bounded circuits and indistinguishability"
+    locator: "Definitions 3–4, PDF page 12"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=12"
+  - id: anchor-paper-78-depth-mpc
+    source_id: source-paper-78-paper
+    label: "Depth-bounded real/ideal MPC"
+    locator: "Section 5 and Definitions 8–9, PDF pages 13–17"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=13"
+  - id: anchor-paper-78-temporary-privacy
+    source_id: source-paper-78-paper
+    label: "Leaky functionalities and temporary privacy"
+    locator: "Section 5.4, PDF pages 16–17"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=16"
+  - id: anchor-paper-78-concurrent
+    source_id: source-paper-78-paper
+    label: "Concurrent composition theorem"
+    locator: "Theorem 3 and proof, PDF pages 18–20"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=18"
+  - id: anchor-paper-78-sequential
+    source_id: source-paper-78-paper
+    label: "Sequential and lockstep composition"
+    locator: "Theorem 4 and Corollaries 1–2, PDF pages 20–21; deferred proof in Appendix C, PDF pages 34–37"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=20"
+  - id: anchor-paper-78-arbitrary-poly
+    source_id: source-paper-78-paper
+    label: "Boundary with arbitrary-polynomial MPC"
+    locator: "Section 6.4, Corollaries 3–4 and Lemma 2, PDF pages 21–22"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=21"
+  - id: anchor-paper-78-compiler
+    source_id: source-paper-78-paper
+    label: "One-random-oracle compiler"
+    locator: "Section 7.1, Figure 2, Theorem 5 and Lemma 3, PDF pages 22–24"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=22"
+  - id: anchor-paper-78-equivocation
+    source_id: source-paper-78-paper
+    label: "Simulation-equivocation and temporary-privacy boundary"
+    locator: "Section 7.2, PDF page 24"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=24"
+  - id: anchor-paper-78-auction
+    source_id: source-paper-78-paper
+    label: "Single-round auction functionality and protocol"
+    locator: "Section 8.1, Figures 3–4 and Theorem 6, PDF pages 25–27"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=25"
+  - id: anchor-paper-78-smra
+    source_id: source-paper-78-paper
+    label: "Simultaneous multi-round auction composition"
+    locator: "Section 8.2 and Theorem 7, PDF pages 27–28"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=27"
+  - id: anchor-paper-78-appendices
+    source_id: source-paper-78-paper
+    label: "Deferred model details and proofs"
+    locator: "Appendices A–F, PDF pages 32–43"
+    url: "https://eprint.iacr.org/2024/676.pdf#page=32"
+  - id: anchor-paper-78-archive
+    source_id: source-paper-78-archive
+    label: "Public ePrint record"
+    locator: "IACR ePrint 2024/676 landing page"
     url: "https://eprint.iacr.org/2024/676"
+  - id: anchor-paper-78-bibliography
+    source_id: source-paper-78-dblp
+    label: "Independent bibliographic identity"
+    locator: "DBLP record Eldefrawy–Terner–Yung, 2024"
+    url: "https://dblp.org/rec/journals/iacr/EldefrawyTY24"
+  - id: anchor-paper-78-citations
+    source_id: source-paper-78-citation-search
+    label: "Dated lower-bound citation snapshot"
+    locator: "Exact-title search located three distinct citing works when accessed 2026-07-11"
+    url: "https://www.google.com/search?q=%22Composing+Timed+Cryptographic+Protocols%3A+Foundations+and+Applications%22"
 
 nodes:
   - id: paper-78
     kind: paper
-    parent_id: null
+    parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-    summary: "This work develops a fine-grained complexity framework for reasoning about cryptographic components whose security expires over time. It introduces residual complexity, proves composition results for timed multiparty protocols, and demonstrates the framework with an auction application."
-    source_anchor_ids: [anchor-paper-78-curated]
+    epistemic_status: public_preprint_pending_author_audit
+    title: "A compositional foundation for expiring security"
+    summary: >-
+      A 43-page theory preprint that models timed cryptographic security with fine-grained circuit depth, makes leakage explicit through residual complexity, proves composition rules with quantified degradation, and demonstrates the framework through timed auction protocols.
+    source_anchor_ids: [anchor-paper-78-problem, anchor-paper-78-archive]
+
   - id: paper-78-question
     kind: question
     parent_id: paper-78
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: explicitly_stated
     title: "Research question"
-    summary: "How can timed cryptographic components be composed while explicitly accounting for the residual computational work and security that remain before their protections expire?"
-    source_anchor_ids: [anchor-paper-78-curated]
-  - id: paper-78-contribution
-    kind: contribution
+    summary: >-
+      How can a larger MPC protocol use time-lock primitives whose secrecy expires in feasible time without hiding leakage, giving the simulator unrealistic power, or assuming composition preserves an undegraded guarantee?
+    source_anchor_ids: [anchor-paper-78-problem, anchor-paper-78-leakage-motivation]
+
+  - id: paper-78-diagnosis
+    kind: problem_analysis
     parent_id: paper-78
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports a fine-grained residual-complexity framework, composition results for timed multiparty protocols, and an auction application."
-    source_anchor_ids: [anchor-paper-78-curated]
-  - id: paper-78-method
-    kind: method
+    epistemic_status: source_argued
+    title: "Why conventional idealization is insufficient"
+    summary: >-
+      The paper argues that existing approaches lack composability, consistent analysis, or required functionality when algebraic time-lock solving is modeled as opaque or random-oracle-like at every step despite possible intermediate leakage.
+    source_anchor_ids: [anchor-paper-78-problem, anchor-paper-78-leakage-motivation]
+
+  - id: paper-78-framework
+    kind: contribution
     parent_id: paper-78
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described theoretical approach assigns residual-complexity information to timed components and uses it to analyze composition, then instantiates the framework in timed MPC and an auction."
-    source_anchor_ids: [anchor-paper-78-curated]
-  - id: paper-78-claims
-    kind: claim_group
+    epistemic_status: formally_defined
+    title: "Depth-bounded timed-cryptography framework"
+    summary: >-
+      The framework parameterizes adversary, simulator, and environment by polynomial circuit depth and represents a timed primitive's changing hardness rather than treating it as perfectly hidden until an instantaneous expiry.
+    source_anchor_ids: [anchor-paper-78-residual, anchor-paper-78-depth-model, anchor-paper-78-depth-mpc]
+
+  - id: paper-78-residual-complexity
+    kind: definition
+    parent_id: paper-78-framework
+    order: 1
+    epistemic_status: formally_defined
+    title: "Residual complexity"
+    summary: >-
+      A puzzle has residual complexity (d, r) when every depth-d adversary guesses a random puzzle solution with probability at most r; the paper calls 1−r the remaining hardness and uses the curve across depths as a leakage profile.
+    source_anchor_ids: [anchor-paper-78-residual]
+
+  - id: paper-78-critical-time
+    kind: definition
+    parent_id: paper-78-framework
+    order: 2
+    epistemic_status: formally_defined_and_designer_parameterized
+    title: "Critical time"
+    summary: >-
+      Given a designer-chosen unacceptable guessing threshold, the critical time is the first depth at which residual complexity crosses it. Timed privacy is claimed only before that point, which may conservatively precede honest completion.
+    source_anchor_ids: [anchor-paper-78-residual]
+
+  - id: paper-78-falsifiability
+    kind: methodological_property
+    parent_id: paper-78-framework
+    order: 3
+    epistemic_status: explicitly_argued
+    title: "Falsifiable leakage assumptions"
+    summary: >-
+      Rather than asserting an opaque generic step, the framework's depth-indexed guessing bounds can in principle be falsified by a sampling and guessing algorithm that outperforms the assumed residual-complexity curve.
+    source_anchor_ids: [anchor-paper-78-leakage-motivation, anchor-paper-78-residual]
+
+  - id: paper-78-depth-machines
+    kind: definition_group
+    parent_id: paper-78-framework
+    order: 4
+    epistemic_status: formally_defined
+    title: "Depth-bounded machines and indistinguishability"
+    summary: >-
+      The model bounds circuit depth while retaining polynomial size, extends this accounting to interactive circuits, and defines indistinguishability relative to a depth-bounded distinguisher.
+    source_anchor_ids: [anchor-paper-78-depth-model]
+
+  - id: paper-78-depth-mpc
+    kind: security_definition
+    parent_id: paper-78-framework
+    order: 5
+    epistemic_status: formally_defined
+    title: "(d_a, d_s, d_e)-depth-secure MPC"
+    summary: >-
+      A protocol is depth-secure when a d_s-depth simulator makes real and ideal executions indistinguishable to every d_a-depth adversary and d_e-depth environment; the paper gives a concurrent UC-like model and a separate sequential model.
+    source_anchor_ids: [anchor-paper-78-depth-mpc]
+
+  - id: paper-78-simulator-budget
+    kind: modeling_constraint
+    parent_id: paper-78-depth-mpc
+    order: 1
+    epistemic_status: explicitly_justified
+    title: "Simulator budget is security-critical"
+    summary: >-
+      Constraining simulator depth prevents a vacuous proof in which the simulator solves a time-lock puzzle to learn information unavailable to the real adversary; meaningful parameters require the simulation budget to remain below relevant adversary and environment depths.
+    source_anchor_ids: [anchor-paper-78-depth-mpc, anchor-paper-78-sequential]
+
+  - id: paper-78-temporary-privacy
+    kind: security_property
+    parent_id: paper-78-depth-mpc
+    order: 2
+    epistemic_status: formally_modeled
+    title: "Temporary privacy with matched leakage"
+    summary: >-
+      Leaky ideal functionalities reveal information in phases so that a simulator learns no more than the adversary at the corresponding depth; outputs may become public after the timed protection has served its purpose.
+    source_anchor_ids: [anchor-paper-78-temporary-privacy]
+
+  - id: paper-78-composition
+    kind: theorem_group
     parent_id: paper-78
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports foundational composition results for timed protocols and demonstrates their use in a timed multiparty-computation application."
-    source_anchor_ids: [anchor-paper-78-curated]
-  - id: paper-78-evidence
-    kind: evidence_group
+    epistemic_status: formally_proved
+    title: "Composition with explicit degradation"
+    summary: >-
+      The paper tracks how simulator work reduces the adversary depth covered by the result, increases the composite simulator budget, and limits the environment to the weaker component bound.
+    source_anchor_ids: [anchor-paper-78-concurrent, anchor-paper-78-sequential]
+
+  - id: paper-78-concurrent-theorem
+    kind: theorem
+    parent_id: paper-78-composition
+    order: 1
+    epistemic_status: proved
+    title: "Concurrent composition (Theorem 3)"
+    summary: >-
+      If π is (d_a,d_s,d_e)-secure and ρ is (d'_a,d'_s,d'_e)-secure, their concurrent composition is (d_a−d'_s, d_s+d'_s, min(d_e,d'_e))-secure, under the theorem's meaningful-depth conditions.
+    source_anchor_ids: [anchor-paper-78-concurrent]
+
+  - id: paper-78-sequential-theorem
+    kind: theorem
+    parent_id: paper-78-composition
+    order: 2
+    epistemic_status: proved
+    title: "Sequential composition (Theorem 4)"
+    summary: >-
+      When π invokes ρ sequentially, the general bound is (d_a−d'_s, d_s·d'_s, min(d_e,d'_e)); if the caller's simulator never rewinds across the invocation, Corollary 1 improves the simulator term to d_s+d'_s.
+    source_anchor_ids: [anchor-paper-78-sequential]
+
+  - id: paper-78-lockstep
+    kind: corollary
+    parent_id: paper-78-composition
+    order: 3
+    epistemic_status: proved_or_claimed_as_specified
+    title: "Lockstep and serial structure"
+    summary: >-
+      Lockstep execution lets multiple subprotocol simulators run in parallel so degradation depends on the largest relevant simulator depth rather than summing all of them. For serially separated executions, the paper states that independent analyses need not degrade one another.
+    source_anchor_ids: [anchor-paper-78-sequential, anchor-paper-78-arbitrary-poly]
+
+  - id: paper-78-arbitrary-poly-boundary
+    kind: boundary
+    parent_id: paper-78-composition
+    order: 4
+    epistemic_status: explicitly_characterized
+    title: "Boundary with standard arbitrary-polynomial MPC"
+    summary: >-
+      Depth-bounded protocols may use or run beside standard MPC through the stated composition bounds. The reverse direction has no general black-box theorem; it is supported in the special case where the timed subprotocol's inputs and outputs may all be revealed when it terminates.
+    source_anchor_ids: [anchor-paper-78-arbitrary-poly]
+
+  - id: paper-78-compiler
+    kind: construction
     parent_id: paper-78
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Theoretical definitions, proofs, and an application are reported, and an ePrint link is represented; the manuscript, hypotheses, proof chain, and application analysis were not audited."
-    source_anchor_ids: [anchor-paper-78-curated]
-  - id: paper-78-scope
-    kind: limitation_group
+    epistemic_status: proposed_and_analyzed
+    title: "One-random-oracle compiler for leaky algebraic puzzles"
+    summary: >-
+      Generate an algebraic puzzle Z with random solution r, mask the intended solution χ as γ=H(r) xor χ, and publish (Z,γ). Solving recovers r and then χ; only the final masking step uses the random oracle.
+    source_anchor_ids: [anchor-paper-78-compiler]
+
+  - id: paper-78-compiler-theorem
+    kind: theorem
+    parent_id: paper-78-compiler
+    order: 1
+    epistemic_status: proved
+    title: "Compiler guarantee (Theorem 5)"
+    summary: >-
+      The compiled construction's critical time is no earlier than the last point at which the base algebraic solution still hides on the order of the security parameter in bits; the proof links this hidden information to negligible guessing probability.
+    source_anchor_ids: [anchor-paper-78-compiler]
+
+  - id: paper-78-equivocation
+    kind: simulation_technique
+    parent_id: paper-78-compiler
+    order: 2
+    epistemic_status: analyzed_in_random_oracle_model
+    title: "Late equivocation"
+    summary: >-
+      A simulator can initially use a random puzzle solution and later program the random oracle so the puzzle opens to the required value. This requires a small timing advantage and guarantees privacy only until the critical time.
+    source_anchor_ids: [anchor-paper-78-equivocation]
+
+  - id: paper-78-auction-application
+    kind: application
     parent_id: paper-78
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft has not checked the complexity model, quantifier order, adversary resources, timing and leakage assumptions, exact composition theorem, security-loss accounting, auction functionality, or efficiency."
-    source_anchor_ids: [anchor-paper-78-curated]
+    epistemic_status: formally_specified
+    title: "Timed auction application"
+    summary: >-
+      The paper uses auctions to demonstrate how temporary privacy, non-malleability, simulator budgeting, and composition loss interact in a concrete multi-party protocol.
+    source_anchor_ids: [anchor-paper-78-auction, anchor-paper-78-smra]
+
+  - id: paper-78-single-auction
+    kind: protocol
+    parent_id: paper-78-auction-application
+    order: 1
+    epistemic_status: specified_and_proved_under_assumptions
+    title: "Single-round single-item auction"
+    summary: >-
+      Each party unfair-broadcasts a time-lock puzzle containing its bid before t_bid, solves all timely puzzles in parallel by t_end, and outputs all bids and the maximum. Puzzle parameters require the critical time to follow the bid deadline.
+    source_anchor_ids: [anchor-paper-78-auction]
+
+  - id: paper-78-auction-security
+    kind: theorem
+    parent_id: paper-78-single-auction
+    order: 1
+    epistemic_status: proved_under_named_assumptions
+    title: "Single-auction security (Theorem 6)"
+    summary: >-
+      Given an equivocable, non-malleable time-lock puzzle and a bounded unfair-broadcast simulator, the protocol realizes the auction functionality with adversary depth reduced by the broadcast-simulation cost and simulator depth covering puzzle generation plus equivocation.
+    source_anchor_ids: [anchor-paper-78-auction, anchor-paper-78-appendices]
+
+  - id: paper-78-nonmalleability
+    kind: assumption
+    parent_id: paper-78-single-auction
+    order: 2
+    epistemic_status: explicitly_required
+    title: "Non-malleability blocks bid adaptation"
+    summary: >-
+      The proof requires a corrupt bidder not to transform honest parties' unsolved puzzles into related bid puzzles. Appendix F reduces indistinguishability of real and simulated executions to concurrent puzzle non-malleability, with a CCA-based alternative discussed.
+    source_anchor_ids: [anchor-paper-78-auction, anchor-paper-78-appendices]
+
+  - id: paper-78-smra
+    kind: protocol
+    parent_id: paper-78-auction-application
+    order: 2
+    epistemic_status: specified_and_composition_analyzed
+    title: "Simultaneous multi-round auction"
+    summary: >-
+      A round runs one single-item auction per item in lockstep, and rounds are then composed serially. Because concurrent composition weakens the adversary-depth guarantee, the bid deadline and puzzle hardness must be retuned.
+    source_anchor_ids: [anchor-paper-78-smra]
+
+  - id: paper-78-smra-theorem
+    kind: theorem
+    parent_id: paper-78-smra
+    order: 1
+    epistemic_status: proved
+    title: "SMRA security (Theorem 7)"
+    summary: >-
+      If the single-auction protocol is (d_a,d_s,d_e)-secure, one lockstep SMRA round is (d_a−d_s,2d_s,d_e)-secure; with appropriate parameterization and end-of-round revelation, the full serial SMRA implements its functionality in the arbitrary-polynomial regime.
+    source_anchor_ids: [anchor-paper-78-smra]
+
+  - id: paper-78-proof-evidence
+    kind: formal_evidence
+    parent_id: paper-78
+    order: 7
+    epistemic_status: human_written_proofs_present
+    title: "Formal evidence"
+    summary: >-
+      The preprint contains formal definitions, theorem statements, reductions and simulation arguments, with deferred composition, residual-hardness, non-malleability, and auction proofs in the appendices. No proof is represented as machine checked.
+    source_anchor_ids: [anchor-paper-78-concurrent, anchor-paper-78-sequential, anchor-paper-78-compiler, anchor-paper-78-appendices]
+
+  - id: paper-78-empirical-evidence
+    kind: evidence_boundary
+    parent_id: paper-78
+    order: 8
+    epistemic_status: not_claimed
+    title: "No empirical system evaluation"
+    summary: >-
+      The evidence is definitional and proof-based. The represented preprint does not provide an implementation, measured puzzle leakage curve, benchmark, deployment study, or machine-checked formalization.
+    source_anchor_ids: [anchor-paper-78-problem, anchor-paper-78-appendices]
+
+  - id: paper-78-limitations
+    kind: limitation_group
+    parent_id: paper-78
+    order: 9
+    epistemic_status: source_reported_and_audit_inferred
+    title: "Technical boundaries"
+    summary: >-
+      Composition analysis is black-box and not proven tight; the critical time depends on a designer's hardness belief and threshold; the compiler uses the random-oracle model; auction security requires equivocation, non-malleability, unfair broadcast, parameter retuning, and eventual revelation of all bids.
+    source_anchor_ids: [anchor-paper-78-residual, anchor-paper-78-sequential, anchor-paper-78-compiler, anchor-paper-78-auction, anchor-paper-78-smra]
+
   - id: paper-78-artifacts
     kind: artifact_group
     parent_id: paper-78
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 1 resource (0 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-78-curated, anchor-paper-78-archive-1]
+    order: 10
+    epistemic_status: public_full_text_only
+    title: "Artifacts"
+    summary: >-
+      The complete 43-page ePrint and stable archive/bibliographic records are public. No code, dataset, proof-assistant development, immutable local copy, or experimental artifact is represented.
+    source_anchor_ids: [anchor-paper-78-archive, anchor-paper-78-bibliography, anchor-paper-78-appendices]
+
   - id: paper-78-scrutiny
     kind: scrutiny
     parent_id: paper-78
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record gives the status Preprint · under review. No completed external review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
-    source_anchor_ids: [anchor-paper-78-curated]
+    order: 11
+    epistemic_status: public_preprint_under_review
+    title: "Scrutiny and reception"
+    summary: >-
+      The work is publicly archived and independently indexed but remains listed as under review. Three downstream scholarly references were located; no acceptance, public review, independent proof audit, correction, or implementation was located.
+    source_anchor_ids: [anchor-paper-78-archive, anchor-paper-78-bibliography, anchor-paper-78-citations]
 
 relations:
-  - id: paper-78-relation-question-contribution
+  - id: paper-78-relation-diagnosis-motivates-framework
     type: motivates
-    from_id: paper-78-question
-    to_id: paper-78-contribution
-  - id: paper-78-relation-method-contribution
-    type: realizes
-    from_id: paper-78-method
-    to_id: paper-78-contribution
-  - id: paper-78-relation-contribution-claims
-    type: grounds
-    from_id: paper-78-contribution
-    to_id: paper-78-claims
-  - id: paper-78-relation-evidence-claims
-    type: supports
-    from_id: paper-78-evidence
-    to_id: paper-78-claims
-  - id: paper-78-relation-scope-claims
+    from_id: paper-78-diagnosis
+    to_id: paper-78-framework
+  - id: paper-78-relation-framework-answers-question
+    type: answers
+    from_id: paper-78-framework
+    to_id: paper-78-question
+  - id: paper-78-relation-residual-defines-critical
+    type: parameterizes
+    from_id: paper-78-residual-complexity
+    to_id: paper-78-critical-time
+  - id: paper-78-relation-falsifiability-qualifies-residual
     type: qualifies
-    from_id: paper-78-scope
-    to_id: paper-78-claims
-  - id: paper-78-relation-artifacts-evidence
+    from_id: paper-78-falsifiability
+    to_id: paper-78-residual-complexity
+  - id: paper-78-relation-machines-enable-mpc
+    type: enables
+    from_id: paper-78-depth-machines
+    to_id: paper-78-depth-mpc
+  - id: paper-78-relation-simulator-qualifies-mpc
+    type: qualifies
+    from_id: paper-78-simulator-budget
+    to_id: paper-78-depth-mpc
+  - id: paper-78-relation-critical-bounds-privacy
+    type: bounds
+    from_id: paper-78-critical-time
+    to_id: paper-78-temporary-privacy
+  - id: paper-78-relation-mpc-enables-composition
+    type: enables
+    from_id: paper-78-depth-mpc
+    to_id: paper-78-composition
+  - id: paper-78-relation-concurrent-instantiates-composition
+    type: instantiates
+    from_id: paper-78-concurrent-theorem
+    to_id: paper-78-composition
+  - id: paper-78-relation-sequential-instantiates-composition
+    type: instantiates
+    from_id: paper-78-sequential-theorem
+    to_id: paper-78-composition
+  - id: paper-78-relation-lockstep-refines-composition
+    type: refines
+    from_id: paper-78-lockstep
+    to_id: paper-78-composition
+  - id: paper-78-relation-arbitrary-qualifies-composition
+    type: qualifies
+    from_id: paper-78-arbitrary-poly-boundary
+    to_id: paper-78-composition
+  - id: paper-78-relation-compiler-theorem-supports-compiler
+    type: supports
+    from_id: paper-78-compiler-theorem
+    to_id: paper-78-compiler
+  - id: paper-78-relation-compiler-enables-equivocation
+    type: enables
+    from_id: paper-78-compiler
+    to_id: paper-78-equivocation
+  - id: paper-78-relation-equivocation-realizes-temporary
+    type: helps_realize
+    from_id: paper-78-equivocation
+    to_id: paper-78-temporary-privacy
+  - id: paper-78-relation-auction-applies-framework
+    type: applies
+    from_id: paper-78-auction-application
+    to_id: paper-78-framework
+  - id: paper-78-relation-single-instantiates-auction
+    type: instantiates
+    from_id: paper-78-single-auction
+    to_id: paper-78-auction-application
+  - id: paper-78-relation-nonmalleability-supports-auction
+    type: supports
+    from_id: paper-78-nonmalleability
+    to_id: paper-78-auction-security
+  - id: paper-78-relation-auction-security-supports-single
+    type: supports
+    from_id: paper-78-auction-security
+    to_id: paper-78-single-auction
+  - id: paper-78-relation-smra-composes-single
+    type: composes
+    from_id: paper-78-smra
+    to_id: paper-78-single-auction
+  - id: paper-78-relation-smra-theorem-supports-smra
+    type: supports
+    from_id: paper-78-smra-theorem
+    to_id: paper-78-smra
+  - id: paper-78-relation-composition-supports-smra
+    type: supports
+    from_id: paper-78-composition
+    to_id: paper-78-smra-theorem
+  - id: paper-78-relation-proof-supports-framework
+    type: supports
+    from_id: paper-78-proof-evidence
+    to_id: paper-78-framework
+  - id: paper-78-relation-empirical-qualifies-evidence
+    type: qualifies
+    from_id: paper-78-empirical-evidence
+    to_id: paper-78-proof-evidence
+  - id: paper-78-relation-limitations-qualify-paper
+    type: qualifies
+    from_id: paper-78-limitations
+    to_id: paper-78
+  - id: paper-78-relation-artifacts-enable-audit
     type: enables_audit_of
     from_id: paper-78-artifacts
-    to_id: paper-78-evidence
-  - id: paper-78-relation-scrutiny-claims
+    to_id: paper-78-proof-evidence
+  - id: paper-78-relation-scrutiny-contextualizes-paper
     type: contextualizes
     from_id: paper-78-scrutiny
-    to_id: paper-78-claims
+    to_id: paper-78
 
 assessment:
   id: paper-78-assessment-2026-07-11
@@ -177,33 +581,37 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-78-curated, anchor-paper-78-archive-1]
+      level: high
+      rationale: "The complete preprint contains explicit definitions, quantified theorem statements, reductions, deferred proofs, and a fully specified auction application. Evidence is formal and human-written rather than empirical or machine checked."
+      basis_source_anchor_ids: [anchor-paper-78-residual, anchor-paper-78-depth-mpc, anchor-paper-78-concurrent, anchor-paper-78-sequential, anchor-paper-78-compiler, anchor-paper-78-auction, anchor-paper-78-appendices]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-78-curated, anchor-paper-78-archive-1]
+      rationale: "A complete 43-page public ePrint exposes the assumptions, definitions, theorem statements, proofs, protocol, and limitations for direct inspection. No code, proof-assistant artifact, or immutable checked-in copy is represented."
+      basis_source_anchor_ids: [anchor-paper-78-archive, anchor-paper-78-problem, anchor-paper-78-appendices]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-78-curated]
+      rationale: "Named authorship, a stable ePrint identity, independent bibliographic indexing, and under-review status provide baseline provenance. Contributor roles, revision history, AI or tool use, proof-review history, and explicit final author approval remain unaudited."
+      basis_source_anchor_ids: [anchor-paper-78-archive, anchor-paper-78-bibliography]
     - id: external_scrutiny
       level: low
-      rationale: "The item is listed as under review or otherwise lacks a represented completed review outcome; no independent scrutiny evidence was audited."
-      basis_source_anchor_ids: [anchor-paper-78-curated]
+      rationale: "Public archiving and downstream citation create exposure, but the site lists the paper as under review and no completed venue decision, public review, independent proof audit, or reproduction was located."
+      basis_source_anchor_ids: [anchor-paper-78-archive, anchor-paper-78-citations]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-78-curated]
+      level: low
+      rationale: "The dated search located 3 distinct citing works. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; 3 is a conservative lower bound rather than a normalized total."
+      basis_source_anchor_ids: [anchor-paper-78-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-78-curated]
+      rationale: "The source presents a new model, explicit composition degradation, a compiler, and a nontrivial protocol application. Priority, tightness, adoption, and breakthrough status are not independently established, so significance remains provisional."
+      basis_source_anchor_ids: [anchor-paper-78-problem, anchor-paper-78-concurrent, anchor-paper-78-compiler, anchor-paper-78-smra]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: "Exact-title scholarly-web search; conservative distinct-work count"
+  citation_count: 3
+  source_url: "https://www.google.com/search?q=%22Composing+Timed+Cryptographic+Protocols%3A+Foundations+and+Applications%22"
+  signals:
+    - "Improved Rate for Non-Malleable Codes and Time-Lock Puzzles cites ePrint 2024/676."
+    - "A dissertation on scaling verifiable computations cites the work."
+    - "Expanding the Toolbox: Coercion and Cast-as-Intended Verifiability cites the work."
+  limitation: "The three located references are a lower bound from open-web searching, not a normalized Google Scholar, Scopus, Web of Science, or OpenAlex total; additional citations may be unindexed or omitted."

@@ -12,259 +12,493 @@ contribution_types: [protocol]
 
 title: "Lightweight Swarm Attestation: A Tale of Two LISA-s"
 year: 2017
-status: "Published"
+status: Published
 venue: "ACM Asia Conference on Computer and Communications Security (AsiaCCS)"
-topic: "secure-systems-networks"
-labels: ["Theory", "Applied"]
+topic: secure-systems-networks
+labels: [Applied, System, Implementation]
 authors:
-  - "Xavier Carpent"
-  - "Karim Eldefrawy"
-  - "Norrathep Rattanavipanon"
-  - "Gene Tsudik"
+  - Xavier Carpent
+  - Karim Eldefrawy
+  - Norrathep Rattanavipanon
+  - Gene Tsudik
 keywords:
-  - "swarm attestation"
-  - "IoT"
-  - "embedded systems"
-editorial_summary: "The paper brings remote attestation from one embedded device to a mobile swarm by defining Quality of Swarm Attestation, a metric for how much integrity information a protocol reveals. It then designs two lightweight LISA protocols with different assurance and cost tradeoffs, analyzes their security, and validates them with prototypes and experiments."
+  - swarm attestation
+  - remote attestation
+  - Internet of Things
+  - embedded systems
+  - mobile swarms
+  - Quality of Swarm Attestation
 
-research_question: "How can a verifier obtain useful integrity information about a mobile swarm while balancing assurance against communication and computation cost?"
-central_answer: "The paper reports a Quality of Swarm Attestation metric and two lightweight LISA protocols occupying different assurance-cost points."
+research_question: >-
+  How can a verifier attest a connected, possibly mobile swarm of low-end devices and choose how much per-device or topology information to receive, without imposing the cost of independent single-device attestation on every prover?
+central_answer: >-
+  The paper defines Quality of Swarm Attestation (QoSA) and constructs two SMART+-based protocols: asynchronous LISA-alpha forwards individual authenticated reports for list-level detail, while synchronous LISA-s aggregates authenticated descendant reports along a temporary spanning tree and can expose binary through full topology-aware QoSA. Their assurance and efficiency claims are bounded by quasi-static connectivity, an honest verifier, protected attestation code and state, and the exclusion of physical compromise and lower-layer denial of service.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, technical claim mapping, and initial assessment
+  method: >-
+    Source-grounded review of the complete 15-page author-hosted AsiaCCS paper, including visual inspection of the title/abstract page and technical pages. Protocol specifications, assumptions, informal arguments, and emulation results are separated so that construction claims are not confused with formal proof or independent reproduction.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Protocol interpretations, experimental readings, and ratings remain provisional until author approval.
 
 sources:
-  - id: source-paper-33-site-record
-    type: curated_site_record
-    title: "Publication #33 metadata and editorial summary"
-    url: /publications/#paper-33
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-33-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/3052973.3053010"
-    provenance_category: official
-  - id: source-paper-33-resource-2
-    type: public_archive_record
-    title: "NSF Public Access"
-    url: "https://par.nsf.gov/servlets/purl/10063091"
-    provenance_category: archive
-  - id: source-paper-33-resource-3
+  - id: source-paper-33-author-pdf
     type: author_hosted_copy
-    title: "UCI author copy"
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/lisa.pdf"
+    title: "Lightweight Swarm Attestation: A Tale of Two LISA-s"
+    url: /pubs/2017/lisa-asiaccs2017.pdf
     provenance_category: author
+    retrieved_from: https://sprout.ics.uci.edu/projects/attestation/papers/lisa.pdf
+    media_type: application/pdf
+    sha256: ace6f97b7992868e74175ae572ea03aa9652e0213f5d63b55997922c73e38ad3
+    page_count: 15
+  - id: source-paper-33-official
+    type: official_publication_record
+    title: ACM AsiaCCS 2017 publication record
+    url: https://doi.org/10.1145/3052973.3053010
+    provenance_category: official
+  - id: source-paper-33-openalex
+    type: citation_index_snapshot
+    title: OpenAlex record W2602856088
+    url: https://openalex.org/W2602856088
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-33-editorial
-    source_id: source-paper-33-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-33
-  - id: anchor-paper-33-resource-1
-    source_id: source-paper-33-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1145/3052973.3053010"
-  - id: anchor-paper-33-resource-2
-    source_id: source-paper-33-resource-2
-    label: "Archive resource: NSF Public Access"
-    locator: "Archive link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://par.nsf.gov/servlets/purl/10063091"
-  - id: anchor-paper-33-resource-3
-    source_id: source-paper-33-resource-3
-    label: "Author-hosted resource: UCI author copy"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://sprout.ics.uci.edu/projects/attestation/papers/lisa.pdf"
+  - id: anchor-paper-33-problem-contributions
+    source_id: source-paper-33-author-pdf
+    label: Motivation, QoSA contribution, and two-protocol overview
+    locator: Abstract and Sections 1.2-1.3, PDF pages 1-3
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=1
+  - id: anchor-paper-33-model
+    source_id: source-paper-33-author-pdf
+    label: Swarm, connectivity, adversary, and verifier model
+    locator: Sections 2.1, 2.2, and 2.7, PDF pages 3-5
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=3
+  - id: anchor-paper-33-smart-plus
+    source_id: source-paper-33-author-pdf
+    label: SMART+ hybrid attestation basis and memory-access rules
+    locator: Section 2.3 and Figure 1, PDF pages 3-4
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=3
+  - id: anchor-paper-33-qosa
+    source_id: source-paper-33-author-pdf
+    label: Binary, list, intermediate, and full Quality of Swarm Attestation
+    locator: Section 2.4, PDF pages 4-5
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=4
+  - id: anchor-paper-33-lisa-alpha
+    source_id: source-paper-33-author-pdf
+    label: LISA-alpha protocol, state machines, QoSA, and complexity
+    locator: Section 3.1 and Algorithms 1-2, PDF pages 5-8
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=5
+  - id: anchor-paper-33-lisa-s
+    source_id: source-paper-33-author-pdf
+    label: LISA-s aggregation protocol, state machines, QoSA, and complexity
+    locator: Section 3.2 and Algorithms 3-4, PDF pages 8-10
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=8
+  - id: anchor-paper-33-security
+    source_id: source-paper-33-author-pdf
+    label: Attack vectors and informal security analysis
+    locator: Section 4, PDF pages 10-11
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=10
+  - id: anchor-paper-33-experiments
+    source_id: source-paper-33-author-pdf
+    label: CORE implementation, experimental setup, metrics, and results
+    locator: Section 5 and Figure 4, PDF pages 11-12
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=11
+  - id: anchor-paper-33-keying
+    source_id: source-paper-33-author-pdf
+    label: Cryptographic choices and physical-compromise tradeoffs
+    locator: Section 6, PDF pages 12-13
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=12
+  - id: anchor-paper-33-conclusion
+    source_id: source-paper-33-author-pdf
+    label: Conclusions and future work
+    locator: Section 8, PDF page 13
+    url: /pubs/2017/lisa-asiaccs2017.pdf#page=13
+  - id: anchor-paper-33-publication
+    source_id: source-paper-33-official
+    label: Official AsiaCCS publication identity
+    locator: AsiaCCS 2017, pages 86-100, DOI 10.1145/3052973.3053010
+    url: https://doi.org/10.1145/3052973.3053010
+  - id: anchor-paper-33-citations
+    source_id: source-paper-33-openalex
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 75 citing works when accessed 2026-07-11
+    url: https://openalex.org/W2602856088
 
 nodes:
   - id: paper-33
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
+    epistemic_status: published
     title: "Lightweight Swarm Attestation: A Tale of Two LISA-s"
-    summary: "The paper brings remote attestation from one embedded device to a mobile swarm by defining Quality of Swarm Attestation, a metric for how much integrity information a protocol reveals. It then designs two lightweight LISA protocols with different assurance and cost tradeoffs, analyzes their security, and validates them with prototypes and experiments."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    summary: >-
+      A protocol-and-systems paper that defines an information-quality vocabulary for swarm attestation, specifies two lightweight collective-attestation protocols, informally analyzes attacks, and evaluates Python implementations in an emulated mobile network.
+    source_anchor_ids: [anchor-paper-33-problem-contributions]
 
   - id: paper-33-question
     kind: question
     parent_id: paper-33
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "How can a verifier obtain useful integrity information about a mobile swarm while balancing assurance against communication and computation cost?"
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      How can a verifier collectively assess a low-end device swarm while controlling the granularity of the returned integrity information and the communication, computation, and trusted-state cost?
+    source_anchor_ids: [anchor-paper-33-problem-contributions]
 
-  - id: paper-33-contribution
+  - id: paper-33-answer
     kind: contribution
     parent_id: paper-33
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "The paper reports a Quality of Swarm Attestation metric and two lightweight LISA protocols occupying different assurance-cost points."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    epistemic_status: source_asserted
+    title: QoSA plus two protocol points
+    summary: >-
+      QoSA separates what a verifier learns from how attestation is performed; LISA-alpha prioritizes minimal changes and individual reports, whereas LISA-s adds protected state and authenticated aggregation to reduce communication and support richer aggregate outcomes.
+    source_anchor_ids: [anchor-paper-33-qosa, anchor-paper-33-lisa-alpha, anchor-paper-33-lisa-s]
 
-  - id: paper-33-method
-    kind: method
+  - id: paper-33-model-scope
+    kind: scope
     parent_id: paper-33
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported approach defines an information-quality metric, constructs two swarm-attestation protocols, analyzes their security, and evaluates prototypes experimentally."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    epistemic_status: explicitly_scoped
+    title: Operating model
+    summary: >-
+      The swarm contains a known number n of low-end devices and an honest verifier. Its communication graph must remain connected and quasi-static during an attestation session; mobility is allowed only when it does not disrupt the protocol's message propagation.
+    source_anchor_ids: [anchor-paper-33-model]
+
+  - id: paper-33-model-adversary
+    kind: threat_model
+    parent_id: paper-33-model-scope
+    order: 1
+    epistemic_status: defined
+    title: Remote and local adversary
+    summary: >-
+      The adversary may alter unprotected software and state and fully control communication by eavesdropping, injection, deletion, delay, or modification. Physical non-intrusive and intrusive attacks are expressly outside the security model.
+    source_anchor_ids: [anchor-paper-33-model, anchor-paper-33-security]
+
+  - id: paper-33-model-root
+    kind: assumption
+    parent_id: paper-33-model-scope
+    order: 2
+    epistemic_status: assumed
+    title: SMART+ root-of-trust assumptions
+    summary: >-
+      Each prover supplies immutable attestation code, protected keys and variables, controlled entry/exit, interrupt handling, and memory-protection rules sufficient to keep malware from invoking the key outside AttCode or modifying protected protocol state.
+    source_anchor_ids: [anchor-paper-33-smart-plus]
+
+  - id: paper-33-model-timing
+    kind: assumption
+    parent_id: paper-33-model-scope
+    order: 3
+    epistemic_status: assumed
+    title: Timing and state assumptions
+    summary: >-
+      The verifier selects a swarm-size-dependent overall timeout, knows every device identity and expected measurement, and assumes only static or predictably changing attested memory; dynamic runtime integrity is not established.
+    source_anchor_ids: [anchor-paper-33-model, anchor-paper-33-lisa-alpha]
+
+  - id: paper-33-qosa
+    kind: definition
+    parent_id: paper-33
+    order: 4
+    epistemic_status: defined
+    title: Quality of Swarm Attestation
+    summary: >-
+      QoSA describes the information returned to the verifier: B-QoSA is a swarm-wide bit, L-QoSA identifies successfully attested devices, I-QoSA supplies an intermediate statistic such as a count, and F-QoSA also exposes connectivity or topology.
+    source_anchor_ids: [anchor-paper-33-qosa]
+
+  - id: paper-33-methods
+    kind: method
+    parent_id: paper-33
+    order: 5
+    epistemic_status: specified
+    title: Collective-attestation construction
+    summary: >-
+      Both protocols flood an authenticated fresh request, derive a parent relation, invoke protected single-device attestation, and route authenticated results back toward the verifier; they differ in whether devices merely forward reports or verify and aggregate them.
+    source_anchor_ids: [anchor-paper-33-lisa-alpha, anchor-paper-33-lisa-s]
+
+  - id: paper-33-lisa-alpha
+    kind: protocol
+    parent_id: paper-33-methods
+    order: 1
+    epistemic_status: specified
+    title: LISA-alpha asynchronous forwarding
+    summary: >-
+      A device authenticates a fresh request, records the sender as its parent, rebroadcasts the request, measures its memory, and sends an authenticated individual report upward. Intermediate devices forward current-session reports without authenticating them.
+    source_anchor_ids: [anchor-paper-33-lisa-alpha]
+
+  - id: paper-33-lisa-alpha-output
+    kind: output
+    parent_id: paper-33-lisa-alpha
+    order: 1
+    epistemic_status: specified
+    title: List-level outcome and optional topology
+    summary: >-
+      The verifier partitions known identifiers into attested, failed, and no-report sets, giving L-QoSA. Parent fields can expose topology only after extra authentication; the basic parent value is not trustworthy enough for reliable F-QoSA.
+    source_anchor_ids: [anchor-paper-33-lisa-alpha]
+
+  - id: paper-33-lisa-s
+    kind: protocol
+    parent_id: paper-33-methods
+    order: 2
+    epistemic_status: specified
+    title: LISA-s synchronous aggregation
+    summary: >-
+      Devices establish children during a bounded request phase, attest locally, authenticate child reports, aggregate descendant identifiers or results, and send one authenticated report to the parent. Verification before aggregation suppresses forged-report propagation.
+    source_anchor_ids: [anchor-paper-33-lisa-s]
+
+  - id: paper-33-lisa-s-output
+    kind: output
+    parent_id: paper-33-lisa-s
+    order: 1
+    epistemic_status: specified
+    title: Configurable aggregate QoSA
+    summary: >-
+      Changing what each aggregate carries supports outcomes from B-QoSA through lists, counts, and a recursively encoded descendant tree for F-QoSA, trading information granularity against payload size and protected state.
+    source_anchor_ids: [anchor-paper-33-qosa, anchor-paper-33-lisa-s]
 
   - id: paper-33-claims
     kind: claim_group
     parent_id: paper-33
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    order: 6
+    epistemic_status: source_asserted
+    title: Main claims
+    summary: >-
+      The source argues protocol-level authenticity and freshness under its root-of-trust and MAC assumptions and reports distinct resource tradeoffs; these are not claims of physical security, lower-layer availability, or fully formal verification.
+    source_anchor_ids: [anchor-paper-33-security, anchor-paper-33-experiments]
 
-  - id: paper-33-claim-primary
+  - id: paper-33-claim-security
     kind: claim
     parent_id: paper-33-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports that the two LISA designs expose distinct assurance and cost tradeoffs and that prototype experiments support feasibility."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    epistemic_status: informally_analyzed
+    title: Resistance to report and request forgery
+    summary: >-
+      Accepted forged reports or requests would require MAC forgery, disclosure of protected key K, or modification of protected state; the analysis relies on SMART+ isolation, freshness counters, and a secure MAC rather than a game-based proof.
+    source_anchor_ids: [anchor-paper-33-security]
+
+  - id: paper-33-claim-connectivity
+    kind: claim
+    parent_id: paper-33-claims
+    order: 2
+    epistemic_status: conditional_claim
+    title: Best effort under connectivity change
+    summary: >-
+      If quasi-static connectivity fails, healthy devices may be omitted and produce a false-negative or no-report outcome, but the paper states that affected devices are not positively attested merely because links change.
+    source_anchor_ids: [anchor-paper-33-model]
+
+  - id: paper-33-claim-cost
+    kind: claim
+    parent_id: paper-33-claims
+    order: 3
+    epistemic_status: analyzed_and_measured
+    title: Communication-computation tradeoff
+    summary: >-
+      LISA-alpha imposes little extra attestation logic but can forward n reports per device in the worst case; LISA-s adds report verification, timing, child state, and aggregation while reducing transmitted reports and payload growth.
+    source_anchor_ids: [anchor-paper-33-lisa-alpha, anchor-paper-33-lisa-s, anchor-paper-33-experiments]
 
   - id: paper-33-evidence
     kind: evidence_group
     parent_id: paper-33
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    order: 7
+    epistemic_status: mixed_analytical_and_empirical
+    title: Evidence
+    summary: >-
+      Evidence consists of executable pseudocode and state machines, an informal attack-by-attack security analysis, asymptotic complexity discussion, and experiments with Python implementations in the CORE network emulator.
+    source_anchor_ids: [anchor-paper-33-lisa-alpha, anchor-paper-33-lisa-s, anchor-paper-33-security, anchor-paper-33-experiments]
 
-  - id: paper-33-evidence-reported
+  - id: paper-33-evidence-security
     kind: evidence
     parent_id: paper-33-evidence
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies security analysis, prototypes, and experiments, but definitions, threat models, measurements, and proof steps were not audited."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    epistemic_status: informal_argument
+    title: Security-analysis coverage
+    summary: >-
+      The analysis considers report forgery, request forgery, attestation-layer denial of service, and lower-layer denial of service separately for both protocols, tracing accepted forgeries to cryptographic or protected-state failures.
+    source_anchor_ids: [anchor-paper-33-security]
 
-  - id: paper-33-scope
+  - id: paper-33-evidence-experiment
+    kind: evidence
+    parent_id: paper-33-evidence
+    order: 2
+    epistemic_status: reported_experiment
+    title: CORE emulation study
+    summary: >-
+      Random connected topologies in a 1,500 by 800 area use a 200-unit link threshold, 802.11, OLSR, and cryptographic delays derived from a laptop and Raspberry Pi 2. Each plotted point averages 30 generated scenarios while varying swarm and attested-memory size.
+    source_anchor_ids: [anchor-paper-33-experiments]
+
+  - id: paper-33-evidence-results
+    kind: evidence
+    parent_id: paper-33-evidence
+    order: 3
+    epistemic_status: reported_measurement
+    title: Reported performance pattern
+    summary: >-
+      Average device CPU time is similar because memory hashing dominates, whereas LISA-alpha bandwidth is higher; at 40 nodes the reported payload difference reaches about threefold, and bandwidth grows roughly linearly with swarm size.
+    source_anchor_ids: [anchor-paper-33-experiments]
+
+  - id: paper-33-boundaries
     kind: limitation_group
     parent_id: paper-33
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    order: 8
+    epistemic_status: material
+    title: Limitations and exclusions
+    summary: >-
+      The results are conditional on protected SMART+ execution, an honest verifier, known membership, suitable timeouts, quasi-static connected topology, static-memory measurement, and absence of physical compromise; the experiments are emulations rather than a deployed hardware swarm.
+    source_anchor_ids: [anchor-paper-33-model, anchor-paper-33-smart-plus, anchor-paper-33-experiments, anchor-paper-33-keying]
 
-  - id: paper-33-scope-boundary
+  - id: paper-33-boundary-physical
     kind: limitation
-    parent_id: paper-33-scope
+    parent_id: paper-33-boundaries
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "The result depends on the swarm, mobility, communication, compromise, and timing models used in the paper; these conditions and experiment scale were not inspected."
-    source_anchor_ids: ["anchor-paper-33-editorial"]
+    epistemic_status: explicitly_out_of_scope
+    title: Shared-key physical-compromise boundary
+    summary: >-
+      With one swarm-wide master key, physical compromise of one device exposes the key and permits impersonation of devices and verifier. Per-device symmetric keys or public-key designs reduce that blast radius but change computation, bandwidth, and neighbor-authentication costs.
+    source_anchor_ids: [anchor-paper-33-keying]
 
-  - id: paper-33-resources
+  - id: paper-33-boundary-dos
+    kind: limitation
+    parent_id: paper-33-boundaries
+    order: 2
+    epistemic_status: explicitly_out_of_scope
+    title: Availability boundary
+    summary: >-
+      Radio jamming, packet dropping, and other network-, link-, or physical-layer denial of service are not prevented; protocol timeouts bound waiting but cannot distinguish every adversarial omission from natural loss or mobility.
+    source_anchor_ids: [anchor-paper-33-security]
+
+  - id: paper-33-artifacts
     kind: artifact_group
     parent_id: paper-33
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "3 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-33-resource-1", "anchor-paper-33-resource-2", "anchor-paper-33-resource-3"]
-
-  - id: paper-33-resources-available
-    kind: artifact
-    parent_id: paper-33-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Archive: NSF Public Access; Author-hosted: UCI author copy."
-    source_anchor_ids: ["anchor-paper-33-resource-1", "anchor-paper-33-resource-2", "anchor-paper-33-resource-3"]
+    order: 9
+    epistemic_status: paper_described
+    title: Artifacts and reproducibility
+    summary: >-
+      The paper reports Python implementations and the open-source CORE emulator, but this map located no archived code, scenario bundle, measurement data, or executable reproduction package tied to the publication.
+    source_anchor_ids: [anchor-paper-33-experiments]
 
   - id: paper-33-scrutiny
     kind: scrutiny
     parent_id: paper-33
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published at ACM Asia Conference on Computer and Communications Security (AsiaCCS). Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-33-resource-1"]
+    order: 10
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared at ACM AsiaCCS. The public record establishes venue scrutiny, while review reports, rebuttal, independent protocol verification, replication, and correction history are not represented here.
+    source_anchor_ids: [anchor-paper-33-publication]
+
+  - id: paper-33-future
+    kind: lineage
+    parent_id: paper-33
+    order: 11
+    epistemic_status: author_identified_future_work
+    title: Open development path
+    summary: >-
+      The conclusion identifies formal security proofs and implementation and evaluation on a real device swarm as future work, marking the boundary between the paper's informal/emulated evidence and stronger validation.
+    source_anchor_ids: [anchor-paper-33-conclusion]
 
 relations:
-  - id: relation-paper-33-contribution-addresses-question
+  - id: paper-33-relation-answer-question
     type: addresses
-    from_id: paper-33-contribution
+    from_id: paper-33-answer
     to_id: paper-33-question
-  - id: relation-paper-33-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-33-method
-    to_id: paper-33-contribution
-  - id: relation-paper-33-evidence-supports-claim
+  - id: paper-33-relation-qosa-answer
+    type: defines
+    from_id: paper-33-qosa
+    to_id: paper-33-answer
+  - id: paper-33-relation-alpha-method
+    type: component_of
+    from_id: paper-33-lisa-alpha
+    to_id: paper-33-methods
+  - id: paper-33-relation-alpha-output
+    type: produces
+    from_id: paper-33-lisa-alpha
+    to_id: paper-33-lisa-alpha-output
+  - id: paper-33-relation-s-method
+    type: component_of
+    from_id: paper-33-lisa-s
+    to_id: paper-33-methods
+  - id: paper-33-relation-s-output
+    type: produces
+    from_id: paper-33-lisa-s
+    to_id: paper-33-lisa-s-output
+  - id: paper-33-relation-security-claim
     type: supports
-    from_id: paper-33-evidence-reported
-    to_id: paper-33-claim-primary
-  - id: relation-paper-33-scope-qualifies-claim
+    from_id: paper-33-evidence-security
+    to_id: paper-33-claim-security
+  - id: paper-33-relation-experiment-cost
+    type: supports
+    from_id: paper-33-evidence-experiment
+    to_id: paper-33-claim-cost
+  - id: paper-33-relation-results-cost
+    type: supports
+    from_id: paper-33-evidence-results
+    to_id: paper-33-claim-cost
+  - id: paper-33-relation-model-security
     type: qualifies
-    from_id: paper-33-scope-boundary
-    to_id: paper-33-claim-primary
-  - id: relation-paper-33-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-33-resources-available
-    to_id: paper-33-evidence-reported
-  - id: relation-paper-33-status-qualifies-claim
-    type: qualifies
-    from_id: paper-33-scrutiny
-    to_id: paper-33-claim-primary
+    from_id: paper-33-model-scope
+    to_id: paper-33-claim-security
+  - id: paper-33-relation-physical-security
+    type: limits
+    from_id: paper-33-boundary-physical
+    to_id: paper-33-claim-security
+  - id: paper-33-relation-dos-security
+    type: limits
+    from_id: paper-33-boundary-dos
+    to_id: paper-33-claim-security
+  - id: paper-33-relation-future-evidence
+    type: contextualizes
+    from_id: paper-33-future
+    to_id: paper-33-evidence
 
 assessment:
   id: paper-33-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-33-editorial", "anchor-paper-33-resource-1"]
+      level: high
+      rationale: >-
+        The complete paper specifies two protocols, their state machines and assumptions, provides an attack-structured security analysis, and reports a 30-scenario-per-point emulation study. This is substantial mixed analytical and empirical support, although the security reasoning is informal and no independent reproduction was located.
+      basis_source_anchor_ids: [anchor-paper-33-lisa-alpha, anchor-paper-33-lisa-s, anchor-paper-33-security, anchor-paper-33-experiments]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-33-resource-1", "anchor-paper-33-resource-2", "anchor-paper-33-resource-3"]
+      rationale: >-
+        A checked-in author-hosted full paper with recorded SHA-256 and page count, plus the official DOI and precise section/page anchors, makes the represented claims and assumptions directly inspectable. Code and raw experimental data were not located.
+      basis_source_anchor_ids: [anchor-paper-33-problem-contributions, anchor-paper-33-publication, anchor-paper-33-experiments]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-33-editorial"]
+      rationale: >-
+        Named authorship, affiliations, venue, date, DOI, funding acknowledgments, and an author-hosted manuscript are documented. Contributor roles, revision history, tool use, and artifact-version lineage have not been audited.
+      basis_source_anchor_ids: [anchor-paper-33-problem-contributions, anchor-paper-33-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-33-resource-1"]
+      rationale: >-
+        AsiaCCS publication establishes external venue review, but review reports, rebuttal, independent formal verification, reproduction, and correction history are not represented in the audited sources.
+      basis_source_anchor_ids: [anchor-paper-33-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-33-editorial"]
+      level: high
+      rationale: >-
+        OpenAlex reported 75 citations on 2026-07-11. Under the author-defined corpus rule, more than 10 located citations is High. The count is index- and date-dependent and is not evidence of correctness by itself.
+      basis_source_anchor_ids: [anchor-paper-33-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The curated summary indicates a substantive contribution: a structured assurance metric and two lightweight protocols for extending attestation from individual devices to swarms. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-33-editorial"]
+      level: high
+      rationale: >-
+        The paper introduces an explicit vocabulary for swarm-attestation information quality and two contrasting protocol designs, and the dated citation record shows substantial follow-on attention. Priority and real-world adoption have not been independently established.
+      basis_source_anchor_ids: [anchor-paper-33-problem-contributions, anchor-paper-33-qosa, anchor-paper-33-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 75
+  source_url: https://openalex.org/W2602856088
+  signals:
+    - OpenAlex reported 75 works citing this AsiaCCS paper.
+    - Later literature continues to use LISA and QoSA as comparison points for swarm-attestation protocols.
+  limitation: Citation counts vary by index and date, may include self-citations, and do not establish technical correctness, deployment, or independent reproduction.

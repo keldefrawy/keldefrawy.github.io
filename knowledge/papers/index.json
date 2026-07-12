@@ -4,6 +4,7 @@ permalink: /knowledge/papers/index.json
 ---
 {
   "schema_version": "0.1",
+  "assessment_rubric": {{ site.data.knowledge_axes | jsonify }},
   "contribution_type_vocabulary": {{ site.data.contribution_types | jsonify }},
   "count": {{ site.data.publications | size }},
   "papers": [

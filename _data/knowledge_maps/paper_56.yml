@@ -11,210 +11,368 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: [scheme]
 
 title: "Optimizing Registration Based Encryption"
-short_title: "Optimizing Registration Based Encryption"
 year: 2021
+status: Published
 venue: "18th IMA International Conference on Cryptography and Coding (IMACC)"
-publication_status: "Published"
 topic: algorithms-foundations
-labels:
-  - "Theory"
-  - "Applied"
+labels: [Theory, Applied]
 authors:
-  - "Kelong Cong"
-  - "Karim Eldefrawy"
-  - "Nigel P. Smart"
+  - Kelong Cong
+  - Karim Eldefrawy
+  - Nigel P. Smart
 keywords:
-  - "registration-based encryption"
-  - "key escrow"
+  - registration-based encryption
+  - key escrow
+  - crit-bit trees
+  - hash garbling
 
-research_question: "Can registration-based encryption retain its no-key-escrow goal while substantially reducing concrete ciphertext and decryption costs?"
-central_answer: "The curated editorial summary reports that replacing Merkle trees with crit-bit trees and adjusting public parameters reduces ciphertext size and decryption work."
+research_question: >-
+  Can registration-based encryption preserve its no-key-escrow and asymptotic efficiency goals while reducing the enormous concrete ciphertext and decryption costs of existing constructions?
+central_answer: >-
+  Replacing Merkle trees with authenticated crit-bit trees shortens garbled inputs, and publishing a small square-root-sized identity filter lets encryptors skip roughly half the tree snapshots. The paper analytically estimates a 57.5 percent combined ciphertext reduction, proves standard RBE security for the crit-bit construction, and states important remaining security and practicality gaps.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, theorem-and-cost mapping, and initial assessment
+  method: >-
+    Complete review of the 28-page IACR ePrint PDF through the public archive and the author-uploaded ResearchGate full text. Direct local download attempts were blocked by anti-bot responses, so no local hash is claimed. Cost reductions are recorded as analytical estimates, not benchmark measurements.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Security scope, performance arithmetic, and tradeoff interpretations should be checked before approval.
 
 sources:
-  - id: source-paper-56-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #56"
-    url: /publications/#paper-56
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-56-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-030-92641-0_7"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-56-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2021/499"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-56-archive-pdf
+    type: public_archive_copy
+    title: "Optimizing Registration Based Encryption"
+    url: https://eprint.iacr.org/2021/499.pdf
+    provenance_category: archive
+    media_type: application/pdf
+    page_count: 28
+  - id: source-paper-56-author-copy
+    type: author_hosted_copy
+    title: ResearchGate author-uploaded full text
+    url: https://www.researchgate.net/publication/354783718_Optimizing_Registration_Based_Encryption
+    provenance_category: author
+  - id: source-paper-56-official
+    type: official_publication_record
+    title: IMACC 2021 publisher record
+    url: https://doi.org/10.1007/978-3-030-92641-0_7
+    provenance_category: official
+  - id: source-paper-56-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3158584413
+    url: https://api.openalex.org/works/W3158584413
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-56-curated
-    source_id: source-paper-56-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-56
-  - id: anchor-paper-56-official-1
-    source_id: source-paper-56-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-030-92641-0_7"
-  - id: anchor-paper-56-archive-1
-    source_id: source-paper-56-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2021/499"
+  - id: anchor-paper-56-problem
+    source_id: source-paper-56-archive-pdf
+    label: RBE motivation, baseline cost, and contributions
+    locator: Abstract and Sections 1.1-1.2, PDF pages 1-3
+    url: https://eprint.iacr.org/2021/499.pdf#page=1
+  - id: anchor-paper-56-author-copy
+    source_id: source-paper-56-author-copy
+    label: Author-uploaded full text
+    locator: ResearchGate public full-text record uploaded by Karim Eldefrawy on 2021-09-29
+    url: https://www.researchgate.net/publication/354783718_Optimizing_Registration_Based_Encryption
+  - id: anchor-paper-56-model
+    source_id: source-paper-56-archive-pdf
+    label: RBE roles, algorithms, efficiency, and message-hiding definition
+    locator: Sections 2 and 3.5, PDF pages 4-12
+    url: https://eprint.iacr.org/2021/499.pdf#page=4
+  - id: anchor-paper-56-assumptions
+    source_id: source-paper-56-archive-pdf
+    label: Hash garbling, hash encryption, and cryptographic assumptions
+    locator: Sections 3.3-3.4 and Appendix A, PDF pages 9-10 and 25-28
+    url: https://eprint.iacr.org/2021/499.pdf#page=9
+  - id: anchor-paper-56-critbit
+    source_id: source-paper-56-archive-pdf
+    label: Authenticated crit-bit tree
+    locator: Sections 3.6 and 4.1, PDF pages 12-14
+    url: https://eprint.iacr.org/2021/499.pdf#page=12
+  - id: anchor-paper-56-construction
+    source_id: source-paper-56-archive-pdf
+    label: Compact-parameter optimized RBE construction
+    locator: Sections 4.2-4.3, PDF pages 14-17
+    url: https://eprint.iacr.org/2021/499.pdf#page=14
+  - id: anchor-paper-56-security
+    source_id: source-paper-56-archive-pdf
+    label: Single-user and general RBE security proofs
+    locator: Section 4.4, Theorems 1-2, PDF pages 17-19
+    url: https://eprint.iacr.org/2021/499.pdf#page=17
+  - id: anchor-paper-56-cost
+    source_id: source-paper-56-archive-pdf
+    label: Analytical cost reduction
+    locator: Section 4.5, PDF page 19
+    url: https://eprint.iacr.org/2021/499.pdf#page=19
+  - id: anchor-paper-56-verifiability
+    source_id: source-paper-56-archive-pdf
+    label: Verifiability argument and proof boundary
+    locator: Section 4.6, PDF pages 19-20
+    url: https://eprint.iacr.org/2021/499.pdf#page=19
+  - id: anchor-paper-56-larger-pp
+    source_id: source-paper-56-archive-pdf
+    label: Larger-public-parameter optimization
+    locator: Section 5, PDF pages 20-23
+    url: https://eprint.iacr.org/2021/499.pdf#page=20
+  - id: anchor-paper-56-boundaries
+    source_id: source-paper-56-archive-pdf
+    label: CCA, implementation, and compactness boundaries
+    locator: Sections 1.2, 4.5-4.6, and 5, PDF pages 3 and 19-23
+    url: https://eprint.iacr.org/2021/499.pdf#page=3
+  - id: anchor-paper-56-publication
+    source_id: source-paper-56-official
+    label: Official IMACC publication identity
+    locator: DOI 10.1007/978-3-030-92641-0_7
+    url: https://doi.org/10.1007/978-3-030-92641-0_7
+  - id: anchor-paper-56-citations
+    source_id: source-paper-56-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 0 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3158584413
 
 nodes:
   - id: paper-56
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "Optimizing Registration Based Encryption"
-    summary: "Registration-based encryption removes identity-based encryption's key-escrow authority but originally had prohibitive concrete ciphertext costs. This work replaces Merkle trees with crit-bit trees and adjusts public parameters, reducing ciphertext size by 57.5 percent while also lowering decryption cost."
-    source_anchor_ids: [anchor-paper-56-curated]
+    summary: >-
+      An optimized RBE scheme using authenticated crit-bit trees and a public-parameter tradeoff to reduce the concrete cost of garbled public-key operations.
+    source_anchor_ids: [anchor-paper-56-problem]
+
   - id: paper-56-question
     kind: question
     parent_id: paper-56
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can registration-based encryption retain its no-key-escrow goal while substantially reducing concrete ciphertext and decryption costs?"
-    source_anchor_ids: [anchor-paper-56-curated]
-  - id: paper-56-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      Can RBE's attractive asymptotics be retained while shrinking ciphertext and decryption costs enough to move toward practice?
+    source_anchor_ids: [anchor-paper-56-problem]
+
+  - id: paper-56-answer
     kind: contribution
     parent_id: paper-56
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports that replacing Merkle trees with crit-bit trees and adjusting public parameters reduces ciphertext size and decryption work."
-    source_anchor_ids: [anchor-paper-56-curated]
-  - id: paper-56-method
-    kind: method
+    epistemic_status: construction_and_estimate
+    title: Central answer
+    summary: >-
+      Compress authenticated tree paths with crit-bit nodes, then optionally disclose a square-root-sized set of identities so encryption traverses fewer snapshots; both changes reduce the number of costly public-key operations inside garbled circuits.
+    source_anchor_ids: [anchor-paper-56-critbit, anchor-paper-56-cost, anchor-paper-56-larger-pp]
+
+  - id: paper-56-scope
+    kind: scope
     parent_id: paper-56
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described optimization changes the authenticated dictionary structure used by registration-based encryption and tunes public parameters for better concrete costs."
-    source_anchor_ids: [anchor-paper-56-curated]
-  - id: paper-56-claims
-    kind: claim_group
+    epistemic_status: defined
+    title: RBE model
+    summary: >-
+      Users generate their own keys; a key curator holds no secret and maintains registrations, auxiliary state, and short public parameters; an encryptor uses recipient identity plus public parameters, and a decryptor combines its secret key with periodically updated supporting information.
+    source_anchor_ids: [anchor-paper-56-model]
+
+  - id: paper-56-scope-security
+    kind: threat_model
+    parent_id: paper-56-scope
+    order: 1
+    epistemic_status: explicitly_scoped
+    title: Message-hiding, not chosen-ciphertext security
+    summary: >-
+      The proof targets the standard RBE message-hiding definition used by prior work and does not provide a decryption oracle; active chosen-ciphertext security remains open.
+    source_anchor_ids: [anchor-paper-56-model, anchor-paper-56-boundaries]
+
+  - id: paper-56-scheme
+    kind: scheme
     parent_id: paper-56
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports a 57.5 percent ciphertext-size reduction and lower decryption cost relative to the referenced earlier design."
-    source_anchor_ids: [anchor-paper-56-curated]
+    epistemic_status: specified
+    title: Crit-bit-tree RBE
+    summary: >-
+      Authenticated crit-bit trees replace balanced Merkle trees in snapshot-based registration. Each internal node stores a critical bit and two hash pointers, shortening the garbled input while preserving searchable authenticated paths.
+    source_anchor_ids: [anchor-paper-56-critbit, anchor-paper-56-construction]
+
+  - id: paper-56-scheme-security
+    kind: claim
+    parent_id: paper-56-scheme
+    order: 1
+    epistemic_status: proved_under_assumptions
+    title: Standard RBE security
+    summary: >-
+      A single-user argument combines hash-garbling simulation with semantic PKE security; the general theorem replaces path programs through hybrids and concludes message-hiding for the crit-bit construction.
+    source_anchor_ids: [anchor-paper-56-assumptions, anchor-paper-56-security]
+
+  - id: paper-56-scheme-compact
+    kind: claim
+    parent_id: paper-56-scheme
+    order: 2
+    epistemic_status: analytical_estimate
+    title: Compact-parameter reduction
+    summary: >-
+      For the paper's two-billion-user, 256-bit example, shorter tree nodes are estimated to reduce encryptor public-key operations and ciphertext size by about 15 percent and decryptor work by about 30 percent on average.
+    source_anchor_ids: [anchor-paper-56-cost]
+
+  - id: paper-56-scheme-largepp
+    kind: method
+    parent_id: paper-56
+    order: 5
+    epistemic_status: specified_tradeoff
+    title: Larger public parameter
+    summary: >-
+      Publishing membership information for a square-root-sized minority of snapshot users lets encryption ignore roughly half the trees. A cuckoo filter is proposed to represent that set compactly.
+    source_anchor_ids: [anchor-paper-56-larger-pp]
+
+  - id: paper-56-claim-combined
+    kind: claim
+    parent_id: paper-56-scheme-largepp
+    order: 1
+    epistemic_status: analytical_estimate
+    title: 57.5 percent combined ciphertext reduction
+    summary: >-
+      Combining the 15 percent crit-bit reduction with a further one-half encryptor reduction yields the stated 57.5 percent decrease; the larger-parameter example adds about 187 KB for two billion users.
+    source_anchor_ids: [anchor-paper-56-problem, anchor-paper-56-larger-pp]
+
   - id: paper-56-evidence
     kind: evidence_group
     parent_id: paper-56
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "A concrete efficiency comparison is reported, but the baseline configuration, parameter sets, implementation, benchmarks, and preservation of the original security proof were not audited."
-    source_anchor_ids: [anchor-paper-56-curated]
-  - id: paper-56-scope
-    kind: limitation_group
-    parent_id: paper-56
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft does not establish the operating assumptions, security reductions, registration dynamics, public-parameter tradeoffs, or whether the reported improvement generalizes beyond the evaluated settings."
-    source_anchor_ids: [anchor-paper-56-curated]
-  - id: paper-56-artifacts
-    kind: artifact_group
+    epistemic_status: formal_and_analytical
+    title: Evidence boundary
+    summary: >-
+      Security is supported by definitions and hybrid proofs, while performance is supported by operation counts and asymptotic tree-depth facts. The paper does not implement or benchmark an RBE system.
+    source_anchor_ids: [anchor-paper-56-security, anchor-paper-56-cost]
+
+  - id: paper-56-verifiability
+    kind: claim
     parent_id: paper-56
     order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-56-curated, anchor-paper-56-official-1, anchor-paper-56-archive-1]
+    epistemic_status: argued_not_fully_proved
+    title: Verifiable registration compatibility
+    summary: >-
+      Adjacent authenticated paths support non-membership and unique-membership proof sketches, but the paper explicitly does not provide the full verification algorithm or prove its soundness and completeness.
+    source_anchor_ids: [anchor-paper-56-verifiability]
+
+  - id: paper-56-boundaries
+    kind: limitation_group
+    parent_id: paper-56
+    order: 8
+    epistemic_status: material
+    title: Limitations
+    summary: >-
+      The optimized ciphertext remains extremely large in the motivating regime, performance is estimated rather than measured, chosen-ciphertext security is absent, the verifiability extension is incomplete, and the second optimization weakens public-parameter compactness from polylogarithmic in users to square-root dependence.
+    source_anchor_ids: [anchor-paper-56-problem, anchor-paper-56-boundaries]
+
+  - id: paper-56-resources
+    kind: artifact_group
+    parent_id: paper-56
+    order: 9
+    epistemic_status: full_text_available
+    title: Publication resources
+    summary: >-
+      The IACR archive, author-uploaded full text, and official DOI make the construction and proofs inspectable. No implementation or benchmark artifact is represented.
+    source_anchor_ids: [anchor-paper-56-problem, anchor-paper-56-publication]
+
   - id: paper-56-scrutiny
     kind: scrutiny
     parent_id: paper-56
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 18th IMA International Conference on Cryptography and Coding (IMACC). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-56-official-1]
+    order: 10
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The paper appeared at IMACC 2021. Review reports and independent implementation or proof audits are not linked.
+    source_anchor_ids: [anchor-paper-56-publication]
+
+  - id: paper-56-lineage
+    kind: lineage
+    parent_id: paper-56
+    order: 11
+    epistemic_status: documented
+    title: Optimization of prior RBE blueprints
+    summary: >-
+      The work retains the hash-garbling and snapshot approach of earlier RBE and verifiable-RBE constructions while changing authenticated data structures and the public-parameter tradeoff.
+    source_anchor_ids: [anchor-paper-56-problem, anchor-paper-56-construction]
 
 relations:
-  - id: paper-56-relation-question-contribution
-    type: motivates
-    from_id: paper-56-question
-    to_id: paper-56-contribution
-  - id: paper-56-relation-method-contribution
+  - id: paper-56-relation-answer-question
+    type: addresses
+    from_id: paper-56-answer
+    to_id: paper-56-question
+  - id: paper-56-relation-scheme-answer
     type: realizes
-    from_id: paper-56-method
-    to_id: paper-56-contribution
-  - id: paper-56-relation-contribution-claims
-    type: grounds
-    from_id: paper-56-contribution
-    to_id: paper-56-claims
-  - id: paper-56-relation-evidence-claims
+    from_id: paper-56-scheme
+    to_id: paper-56-answer
+  - id: paper-56-relation-largepp-answer
+    type: extends
+    from_id: paper-56-scheme-largepp
+    to_id: paper-56-answer
+  - id: paper-56-relation-evidence-security
     type: supports
     from_id: paper-56-evidence
-    to_id: paper-56-claims
-  - id: paper-56-relation-scope-claims
+    to_id: paper-56-scheme-security
+  - id: paper-56-relation-evidence-compact
+    type: supports
+    from_id: paper-56-evidence
+    to_id: paper-56-scheme-compact
+  - id: paper-56-relation-scope-security
     type: qualifies
     from_id: paper-56-scope
-    to_id: paper-56-claims
-  - id: paper-56-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-56-artifacts
-    to_id: paper-56-evidence
-  - id: paper-56-relation-scrutiny-claims
+    to_id: paper-56-scheme-security
+  - id: paper-56-relation-boundaries-combined
+    type: qualifies
+    from_id: paper-56-boundaries
+    to_id: paper-56-claim-combined
+  - id: paper-56-relation-lineage-scheme
     type: contextualizes
-    from_id: paper-56-scrutiny
-    to_id: paper-56-claims
+    from_id: paper-56-lineage
+    to_id: paper-56-scheme
 
 assessment:
   id: paper-56-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-56-curated, anchor-paper-56-official-1, anchor-paper-56-archive-1]
+      rationale: >-
+        The construction and standard-security proof are detailed, but the paper's central concrete-efficiency claims are analytical estimates without an implementation, and verifiability is only sketched.
+      basis_source_anchor_ids: [anchor-paper-56-security, anchor-paper-56-cost, anchor-paper-56-verifiability, anchor-paper-56-boundaries]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-56-curated, anchor-paper-56-official-1, anchor-paper-56-archive-1]
+      rationale: >-
+        Full archive and author-uploaded copies plus the DOI expose the definitions, proofs, and arithmetic. Anti-bot controls prevented recording a local byte hash in this pass.
+      basis_source_anchor_ids: [anchor-paper-56-author-copy, anchor-paper-56-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-56-curated]
+      rationale: >-
+        Authorship, venue, DOI, archive, and author upload are documented; revision history, roles, and tool use are not.
+      basis_source_anchor_ids: [anchor-paper-56-publication, anchor-paper-56-problem]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-56-official-1]
+      rationale: >-
+        IMACC publication establishes venue review, but no public review report, artifact evaluation, or independent proof audit is represented.
+      basis_source_anchor_ids: [anchor-paper-56-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-56-curated]
+      level: low
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 0 citations. Under the author-defined rule, 0 through 8 located citations is Low; counts vary across indexes and dates.
+      basis_source_anchor_ids: [anchor-paper-56-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-56-curated]
+      rationale: >-
+        The work materially reduces an identified concrete bottleneck in the prior blueprint, but the resulting construction remains impractical and downstream impact is not established here.
+      basis_source_anchor_ids: [anchor-paper-56-problem, anchor-paper-56-boundaries]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup
+  citation_count: 0
+  source_url: https://api.openalex.org/works/W3158584413
+  signals:
+    - The exact DOI-matched OpenAlex work reported zero citing works.
+  limitation: Other indexes may merge the ePrint and proceedings versions differently; the count is a dated snapshot, not a quality measure.

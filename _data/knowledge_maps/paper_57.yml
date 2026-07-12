@@ -11,210 +11,383 @@ contribution_type_vocabulary_version: "0.1"
 contribution_types: []
 
 title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
-short_title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
 year: 2021
+status: Published
 venue: "23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS)"
-publication_status: "Published"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
+labels: [Theory]
 authors:
-  - "Karim Eldefrawy"
-  - "Nicholas Genise"
-  - "Rutuja Kshirsagar"
-  - "Moti Yung"
+  - Karim Eldefrawy
+  - Nicholas Genise
+  - Rutuja Kshirsagar
+  - Moti Yung
 keywords:
-  - "proactive secret sharing"
-  - "regenerating codes"
+  - proactive secret sharing
+  - regenerating codes
+  - leakage
+  - generalized decoding
 
-research_question: "What formal relationships connect proactive secret sharing and regenerating codes, and what security implications follow when repair information can leak?"
-central_answer: "The curated editorial summary reports conditional connections between the two notions, identifies partial-leakage weaknesses, and introduces generalized-decoding regenerating codes."
+research_question: >-
+  What formal relationships connect proactive secret sharing and regenerating codes, and what new efficiency opportunities, leakage risks, and coding notions follow from those relationships?
+central_answer: >-
+  The paper gives conditional translations in both directions, uses Reed-Solomon repair methods to expose partial-leakage attacks and an alternative recovery procedure, and transfers general adversary structures into a new generalized-decoding regenerating-code definition with an existence theorem.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, theorem mapping, and initial assessment
+  method: >-
+    Complete review of the 19-page IACR ePrint PDF through the public archive and author-uploaded full text, including definitions, propositions, theorems, proofs, and future-work boundaries. Direct local download was blocked by archive anti-bot controls, so no local hash is claimed.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: AI-authored source map awaiting full author verification. Parameter correspondences and leakage interpretations should be checked before approval.
 
 sources:
-  - id: source-paper-57-curated
-    type: curated_site_record
-    title: "Website publication record for Paper #57"
-    url: /publications/#paper-57
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
-  - id: source-paper-57-official-1
-    type: official_publication_resource
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1007/978-3-030-91081-5_23"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
-  - id: source-paper-57-archive-1
-    type: archive_resource
-    title: "IACR ePrint"
-    url: "https://eprint.iacr.org/2022/096"
-    scope_note: "Represented from the curated resource data; content was not inspected in this AI draft."
+  - id: source-paper-57-archive-pdf
+    type: public_archive_copy
+    title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
+    url: https://eprint.iacr.org/2022/096.pdf
+    provenance_category: archive
+    media_type: application/pdf
+    page_count: 19
+  - id: source-paper-57-author-copy
+    type: author_hosted_copy
+    title: ResearchGate author-uploaded full text
+    url: https://www.researchgate.net/publication/356008654_On_Regenerating_Codes_and_Proactive_Secret_Sharing_Relationships_and_Implications
+    provenance_category: author
+  - id: source-paper-57-official
+    type: official_publication_record
+    title: SSS 2021 publisher record
+    url: https://doi.org/10.1007/978-3-030-91081-5_23
+    provenance_category: official
+  - id: source-paper-57-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W3211377169
+    url: https://api.openalex.org/works/W3211377169
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-57-curated
-    source_id: source-paper-57-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
-    url: /publications/#paper-57
-  - id: anchor-paper-57-official-1
-    source_id: source-paper-57-official-1
-    label: "Publisher / DOI"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://doi.org/10.1007/978-3-030-91081-5_23"
-  - id: anchor-paper-57-archive-1
-    source_id: source-paper-57-archive-1
-    label: "IACR ePrint"
-    locator: "Linked resource; no page, section, or passage locator was audited in this AI draft."
-    url: "https://eprint.iacr.org/2022/096"
+  - id: anchor-paper-57-problem
+    source_id: source-paper-57-archive-pdf
+    label: Motivation, contributions, and claimed relationships
+    locator: Abstract and Section 1, PDF pages 1-4
+    url: https://eprint.iacr.org/2022/096.pdf#page=1
+  - id: anchor-paper-57-author-copy
+    source_id: source-paper-57-author-copy
+    label: Author-uploaded full text
+    locator: ResearchGate public full-text record
+    url: https://www.researchgate.net/publication/356008654_On_Regenerating_Codes_and_Proactive_Secret_Sharing_Relationships_and_Implications
+  - id: anchor-paper-57-models
+    source_id: source-paper-57-archive-pdf
+    label: Reed-Solomon repair, regenerating codes, and PSS definitions
+    locator: Sections 2.1-2.3, PDF pages 4-6
+    url: https://eprint.iacr.org/2022/096.pdf#page=4
+  - id: anchor-paper-57-leakage-model
+    source_id: source-paper-57-archive-pdf
+    label: Full-field and subfield leakage model
+    locator: Section 2.4, PDF pages 6-7
+    url: https://eprint.iacr.org/2022/096.pdf#page=6
+  - id: anchor-paper-57-leakage-results
+    source_id: source-paper-57-archive-pdf
+    label: Static and dynamic leakage attacks
+    locator: Section 4 and Propositions 1-2, PDF pages 8-10
+    url: https://eprint.iacr.org/2022/096.pdf#page=8
+  - id: anchor-paper-57-equivalence
+    source_id: source-paper-57-archive-pdf
+    label: PSS-to-RC and RC-to-PSS translations
+    locator: Section 5, Theorems 1-2 and Corollary 1, PDF pages 10-11
+    url: https://eprint.iacr.org/2022/096.pdf#page=10
+  - id: anchor-paper-57-grc
+    source_id: source-paper-57-archive-pdf
+    label: Generalized-decoding regenerating codes
+    locator: Section 6, Definition 10 and Theorem 3, PDF pages 11-14
+    url: https://eprint.iacr.org/2022/096.pdf#page=11
+  - id: anchor-paper-57-conclusion
+    source_id: source-paper-57-archive-pdf
+    label: Conclusions and open directions
+    locator: Section 7, PDF page 14
+    url: https://eprint.iacr.org/2022/096.pdf#page=14
+  - id: anchor-paper-57-proofs
+    source_id: source-paper-57-archive-pdf
+    label: Repair background and missing proofs
+    locator: Appendices A-B, PDF pages 16-19
+    url: https://eprint.iacr.org/2022/096.pdf#page=16
+  - id: anchor-paper-57-publication
+    source_id: source-paper-57-official
+    label: Official SSS publication identity
+    locator: DOI 10.1007/978-3-030-91081-5_23
+    url: https://doi.org/10.1007/978-3-030-91081-5_23
+  - id: anchor-paper-57-citations
+    source_id: source-paper-57-citations
+    label: Dated citation-count snapshot
+    locator: OpenAlex reported 2 citations when accessed 2026-07-11
+    url: https://api.openalex.org/works/W3211377169
 
 nodes:
   - id: paper-57
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: published
     title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
-    summary: "This paper systematically relates proactive secret sharing, which refreshes and repairs shares under mobile attacks, to regenerating codes, which repair distributed storage efficiently. It identifies partial-leakage weaknesses, proves conditional connections between the two notions, and introduces generalized-decoding regenerating codes."
-    source_anchor_ids: [anchor-paper-57-curated]
+    summary: >-
+      A theory paper relating two self-repairing representations, deriving leakage implications and conditional translations, and defining generalized-decoding regenerating codes.
+    source_anchor_ids: [anchor-paper-57-problem]
+
   - id: paper-57-question
     kind: question
     parent_id: paper-57
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "What formal relationships connect proactive secret sharing and regenerating codes, and what security implications follow when repair information can leak?"
-    source_anchor_ids: [anchor-paper-57-curated]
-  - id: paper-57-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: >-
+      When do PSS recovery and regenerating-code repair represent the same mathematical capability, and what transfers across the two domains?
+    source_anchor_ids: [anchor-paper-57-problem]
+
+  - id: paper-57-answer
     kind: contribution
     parent_id: paper-57
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "The curated editorial summary reports conditional connections between the two notions, identifies partial-leakage weaknesses, and introduces generalized-decoding regenerating codes."
-    source_anchor_ids: [anchor-paper-57-curated]
-  - id: paper-57-method
-    kind: method
+    epistemic_status: theorem_supported
+    title: Central answer
+    summary: >-
+      Match PSS sharing, reconstruction, recovery, and refresh to coding encode, decode, and repair; under additional linear-MDS conditions the mapping reverses, enabling repair-bandwidth insights and general adversary structures to cross domains.
+    source_anchor_ids: [anchor-paper-57-equivalence, anchor-paper-57-grc]
+
+  - id: paper-57-scope
+    kind: scope
     parent_id: paper-57
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "The described approach compares the definitions and repair mechanisms of proactive sharing and regenerating codes, then derives conditional implications and a generalized decoding formulation."
-    source_anchor_ids: [anchor-paper-57-curated]
-  - id: paper-57-claims
-    kind: claim_group
+    epistemic_status: defined
+    title: Mathematical setting
+    summary: >-
+      The central comparison uses finite-field secret sharing, Shamir-based proactive protocols, Reed-Solomon repair, and regenerating-code parameters for storage per node, contacted helpers, and repair bandwidth.
+    source_anchor_ids: [anchor-paper-57-models]
+
+  - id: paper-57-leakage
+    kind: threat_model
     parent_id: paper-57
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The summary reports weaknesses under partial leakage, conditional relationships between security notions, and a new generalized-decoding code concept."
-    source_anchor_ids: [anchor-paper-57-curated]
+    epistemic_status: defined
+    title: Partial leakage across epochs
+    summary: >-
+      Nodes may leak whole field elements or collections of smaller-subfield elements. Static leakage repeats one linear view, while dynamic leakage can change transformations between refresh epochs, including through incomplete erasure of intermediate state.
+    source_anchor_ids: [anchor-paper-57-leakage-model, anchor-paper-57-leakage-results]
+
+  - id: paper-57-claim-static-leakage
+    kind: claim
+    parent_id: paper-57-leakage
+    order: 1
+    epistemic_status: proved_under_model
+    title: Static partial leakage defeats a whole-share threshold
+    summary: >-
+      Proposition 1 quantifies how full-share and subfield leakage reduce the remaining Reed-Solomon repair information needed to reconstruct the secret, even when fewer than the nominal threshold of whole shares leak in an epoch.
+    source_anchor_ids: [anchor-paper-57-leakage-results, anchor-paper-57-proofs]
+
+  - id: paper-57-claim-dynamic-leakage
+    kind: claim
+    parent_id: paper-57-leakage
+    order: 2
+    epistemic_status: proved_under_strong_model
+    title: Dynamic leakage accumulates across epochs
+    summary: >-
+      Proposition 2 gives an efficient adversary that gathers enough subfield information across epochs to reconstruct the secret when leakage functions vary and affected nodes store nonzero values; the paper labels this a strong but plausible implementation model.
+    source_anchor_ids: [anchor-paper-57-leakage-results, anchor-paper-57-proofs]
+
+  - id: paper-57-equivalence
+    kind: claim_group
+    parent_id: paper-57
+    order: 5
+    epistemic_status: proved_with_conditions
+    title: Conditional PSS-RC correspondence
+    summary: >-
+      Two theorems preserve storage and repair parameters across translations, but the reverse direction requires a linear MDS regenerating code and the baseline forward encoding has a low rate unless linearity or batching is exploited.
+    source_anchor_ids: [anchor-paper-57-equivalence]
+
+  - id: paper-57-equivalence-forward
+    kind: claim
+    parent_id: paper-57-equivalence
+    order: 1
+    epistemic_status: proved
+    title: PSS implies an erasure regenerating code
+    summary: >-
+      A (t,n) PSS storing alpha bits per node and recovering through d helpers sending beta bits yields an erasure regenerating code with n nodes, reconstruction dimension t plus 1, and the same storage and repair parameters.
+    source_anchor_ids: [anchor-paper-57-equivalence, anchor-paper-57-proofs]
+
+  - id: paper-57-equivalence-reverse
+    kind: claim
+    parent_id: paper-57-equivalence
+    order: 2
+    epistemic_status: proved_with_conditions
+    title: Linear MDS RC implies PSS
+    summary: >-
+      Every specified linear MDS regenerating code with n plus 1 nodes and dimension k plus 1 yields a (k,n) PSS whose recovery contacts the same d helpers for beta bits each.
+    source_anchor_ids: [anchor-paper-57-equivalence, anchor-paper-57-proofs]
+
+  - id: paper-57-recovery
+    kind: analytical_result
+    parent_id: paper-57
+    order: 6
+    epistemic_status: corollary
+    title: Subfield-based Shamir recovery
+    summary: >-
+      Combining the reverse translation with Guruswami-Wootters repair yields an alternative Shamir recovery that contacts n minus 1 nodes and receives smaller-subfield symbols, under the corollary's field-degree conditions and without leakage.
+    source_anchor_ids: [anchor-paper-57-equivalence]
+
+  - id: paper-57-grc
+    kind: definition
+    parent_id: paper-57
+    order: 7
+    epistemic_status: introduced
+    title: Generalized-decoding regenerating code
+    summary: >-
+      GRC replaces one uniform threshold with monotone decoding sets and allowed error patterns, requiring Decode to correct every permitted error set and every erasure pattern leaving some decoding set intact.
+    source_anchor_ids: [anchor-paper-57-grc]
+
+  - id: paper-57-claim-grc
+    kind: claim
+    parent_id: paper-57-grc
+    order: 1
+    epistemic_status: existence_theorem
+    title: Linear GRC existence for Q2 error structures
+    summary: >-
+      Theorem 3 maps a Q2 general adversary structure into a linear GRC over a finite field, while explicitly leaving parameter optimization and achievable rates open.
+    source_anchor_ids: [anchor-paper-57-grc]
+
   - id: paper-57-evidence
     kind: evidence_group
     parent_id: paper-57
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Theoretical analyses and proofs are reported, but their hypotheses, parameter regimes, reductions, counterexamples, and decoding guarantees were not audited in this draft."
-    source_anchor_ids: [anchor-paper-57-curated]
-  - id: paper-57-scope
+    order: 8
+    epistemic_status: proof_documented
+    title: Formal evidence
+    summary: >-
+      Definitions, propositions, parameter-preserving reductions, an existence theorem, and appendical proofs support the analysis. There is no prototype, benchmark, or deployed storage-system evaluation.
+    source_anchor_ids: [anchor-paper-57-equivalence, anchor-paper-57-grc, anchor-paper-57-proofs]
+
+  - id: paper-57-boundaries
     kind: limitation_group
     parent_id: paper-57
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "The exact leakage model, mobile-adversary timing, repair bandwidth, threshold parameters, error model, and directions in which the stated implications hold remain unaudited."
-    source_anchor_ids: [anchor-paper-57-curated]
-  - id: paper-57-artifacts
+    order: 9
+    epistemic_status: material
+    title: Boundaries and open problems
+    summary: >-
+      The equivalence is conditional, the basic PSS-to-RC rate can be only 1/n, the dynamic leakage attack uses a strong model, and GRC is an unoptimized existence result. Efficient GRCs, generalized repair sets, dynamic groups, and verifiable RC remain future work.
+    source_anchor_ids: [anchor-paper-57-leakage-results, anchor-paper-57-equivalence, anchor-paper-57-grc, anchor-paper-57-conclusion]
+
+  - id: paper-57-resources
     kind: artifact_group
     parent_id: paper-57
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data links 2 resources (1 official, 1 archive, 0 author-hosted). Their content, version identity, fixity, and correspondence to the summarized work were not audited."
-    source_anchor_ids: [anchor-paper-57-curated, anchor-paper-57-official-1, anchor-paper-57-archive-1]
+    order: 10
+    epistemic_status: full_text_available
+    title: Publication resources
+    summary: >-
+      Archive and author-uploaded full texts expose the proofs, and the DOI identifies the SSS chapter. No code or data artifact is claimed.
+    source_anchor_ids: [anchor-paper-57-problem, anchor-paper-57-publication]
+
   - id: paper-57-scrutiny
     kind: scrutiny
     parent_id: paper-57
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record lists this work in 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS). That publication status supplies venue-level scrutiny, but no review reports, independent reproductions, corrections, or adversarial analyses were audited."
-    source_anchor_ids: [anchor-paper-57-official-1]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: External scrutiny
+    summary: >-
+      The work appeared at SSS 2021. Public review reports and independent theorem checking are not represented.
+    source_anchor_ids: [anchor-paper-57-publication]
+
+  - id: paper-57-lineage
+    kind: lineage
+    parent_id: paper-57
+    order: 12
+    epistemic_status: documented
+    title: Bridge between cryptography and coding theory
+    summary: >-
+      The paper imports repair-bandwidth methods into proactive sharing and exports general adversary structures into regenerating codes, framing a bidirectional research program rather than a deployed system.
+    source_anchor_ids: [anchor-paper-57-problem, anchor-paper-57-conclusion]
 
 relations:
-  - id: paper-57-relation-question-contribution
+  - id: paper-57-relation-answer-question
+    type: addresses
+    from_id: paper-57-answer
+    to_id: paper-57-question
+  - id: paper-57-relation-forward-equivalence
+    type: component_of
+    from_id: paper-57-equivalence-forward
+    to_id: paper-57-equivalence
+  - id: paper-57-relation-reverse-equivalence
+    type: component_of
+    from_id: paper-57-equivalence-reverse
+    to_id: paper-57-equivalence
+  - id: paper-57-relation-equivalence-answer
+    type: supports
+    from_id: paper-57-equivalence
+    to_id: paper-57-answer
+  - id: paper-57-relation-equivalence-recovery
+    type: enables
+    from_id: paper-57-equivalence
+    to_id: paper-57-recovery
+  - id: paper-57-relation-equivalence-grc
     type: motivates
-    from_id: paper-57-question
-    to_id: paper-57-contribution
-  - id: paper-57-relation-method-contribution
-    type: realizes
-    from_id: paper-57-method
-    to_id: paper-57-contribution
-  - id: paper-57-relation-contribution-claims
-    type: grounds
-    from_id: paper-57-contribution
-    to_id: paper-57-claims
-  - id: paper-57-relation-evidence-claims
+    from_id: paper-57-equivalence
+    to_id: paper-57-grc
+  - id: paper-57-relation-evidence-equivalence
     type: supports
     from_id: paper-57-evidence
-    to_id: paper-57-claims
-  - id: paper-57-relation-scope-claims
+    to_id: paper-57-equivalence
+  - id: paper-57-relation-leakage-recovery
     type: qualifies
-    from_id: paper-57-scope
-    to_id: paper-57-claims
-  - id: paper-57-relation-artifacts-evidence
-    type: enables_audit_of
-    from_id: paper-57-artifacts
-    to_id: paper-57-evidence
-  - id: paper-57-relation-scrutiny-claims
-    type: contextualizes
-    from_id: paper-57-scrutiny
-    to_id: paper-57-claims
+    from_id: paper-57-leakage
+    to_id: paper-57-recovery
+  - id: paper-57-relation-boundaries-answer
+    type: qualifies
+    from_id: paper-57-boundaries
+    to_id: paper-57-answer
 
 assessment:
   id: paper-57-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-57-curated, anchor-paper-57-official-1, anchor-paper-57-archive-1]
+      level: high
+      rationale: >-
+        The source gives precise models, parameterized propositions, two conditional translation theorems, a new definition, an existence theorem, and proofs, while clearly marking strong assumptions and open optimization questions.
+      basis_source_anchor_ids: [anchor-paper-57-leakage-results, anchor-paper-57-equivalence, anchor-paper-57-grc, anchor-paper-57-proofs]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: [anchor-paper-57-curated, anchor-paper-57-official-1, anchor-paper-57-archive-1]
+      rationale: >-
+        Complete archive and author-uploaded copies expose the full argument, and the DOI fixes the publication identity. Archive anti-bot controls prevented a local hash in this pass.
+      basis_source_anchor_ids: [anchor-paper-57-author-copy, anchor-paper-57-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-57-curated]
+      rationale: >-
+        Authors, venue, DOI, archive, and author copy are documented; revision history, contributor roles, and tooling are not.
+      basis_source_anchor_ids: [anchor-paper-57-publication, anchor-paper-57-problem]
     - id: external_scrutiny
       level: medium
-      rationale: "The curated record reports publication and links official metadata, providing evidence of venue-level external exposure. Review policy, review reports, independent replication, criticism, correction history, and adversarial analysis were not audited."
-      basis_source_anchor_ids: [anchor-paper-57-official-1]
+      rationale: >-
+        SSS publication establishes venue review, but public reports or independent formal checking are unavailable.
+      basis_source_anchor_ids: [anchor-paper-57-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-57-curated]
+      level: low
+      rationale: >-
+        The dated exact-DOI OpenAlex record located 2 citations. Under the author-defined rule, 0 through 8 located citations is Low; counts vary across indexes and dates.
+      basis_source_anchor_ids: [anchor-paper-57-citations]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete research contribution, supporting a provisional medium rating; novelty, comparative baselines, and downstream importance were not independently audited."
-      basis_source_anchor_ids: [anchor-paper-57-curated]
+      rationale: >-
+        The paper opens a useful cross-domain correspondence and a generalized coding notion, but the low-rate and unoptimized existence boundaries mean broader impact should be assessed separately.
+      basis_source_anchor_ids: [anchor-paper-57-problem, anchor-paper-57-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
-  signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  method: OpenAlex exact DOI lookup
+  citation_count: 2
+  source_url: https://api.openalex.org/works/W3211377169
+  signals:
+    - The exact DOI-matched OpenAlex work reported two citing works.
+  limitation: Citation counts are index- and date-dependent and may handle the later-dated ePrint separately from the 2021 proceedings chapter.

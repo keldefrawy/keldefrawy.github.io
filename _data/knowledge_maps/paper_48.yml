@@ -14,246 +14,333 @@ title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment 
 year: 2019
 status: "Published · journal article"
 venue: "Future Generation Computer Systems, Volume 98"
-topic: "privacy-identity"
-labels: ["Theory", "Applied"]
+topic: privacy-identity
+labels: [Theory, Applied]
 authors:
-  - "Ivan De Oliveira Nunes"
-  - "Karim Eldefrawy"
-  - "Tancrède Lepoint"
-keywords:
-  - "biometrics"
-  - "secure computation"
-  - "re-enrollment"
-editorial_summary: "SNUSE distributes biometric templates across re-enrollment servers and uses secure computation to refresh authentication material without storing a complete template at any one server. Its fingerprint and iris prototypes re-enroll thousands of users in seconds without materially reducing matching accuracy."
+  - Ivan De Oliveira Nunes
+  - Karim Eldefrawy
+  - Tancrède Lepoint
+keywords: [biometric authentication, re-enrollment, fuzzy vault, MPC, secret sharing, prototype]
 
-research_question: "Can biometric authentication material be refreshed for thousands of users without centralizing complete biometric templates or requiring users to enroll again?"
-central_answer: "SNUSE reportedly distributes templates across servers and uses secure computation to refresh authentication material, with fingerprint and iris prototypes."
+research_question: >-
+  Can enterprise-scale biometric credentials be refreshed automatically after compromise, policy change, or helper-data loss without collecting users again and without centralizing their biometric templates?
+central_answer: >-
+  SNUSE stores threshold shares of each biometric template on mostly offline re-enrollment servers and MPC-computes new fuzzy-vault helper data on demand. Precomputing exponentiations shifts work to enrollment, enabling rapid bulk refresh; the fingerprint/iris prototype and security analysis expose both feasibility and collusion/reusability limits.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: "metadata synthesis, conservative claim mapping, and initial assessment"
-  method: "AI editorial synthesis of the curated site record and linked resource provenance; no paper full text, proof, dataset, code, or experiment was audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, evidence linking, and initial assessment
+  method: >-
+    Source-grounded review of the complete checked-in 17-page journal manuscript, including visual inspection of title, protocol, evaluation, and security pages. The design, optimization, datasets, measurements, storage analysis, and limits were read; code and experiments were not independently reproduced.
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. Every substantive statement remains provisional until checked against the underlying paper and artifacts."
+    note: AI-authored source map awaiting full author audit. Technical interpretations, version-lineage statements, and ratings remain provisional.
 
 sources:
-  - id: source-paper-48-site-record
-    type: curated_site_record
-    title: "Publication #48 metadata and editorial summary"
-    url: /publications/#paper-48
-    scope_note: "Local editorial record; not a substitute for the paper full text."
-  - id: source-paper-48-resource-1
-    type: official_publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1016/j.future.2019.03.051"
-    provenance_category: official
-  - id: source-paper-48-resource-2
+  - id: source-paper-48-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted PDF"
-    url: "https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf"
+    title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
+    url: /pubs/2019/snuse_fgcs2019.pdf
     provenance_category: author
+    media_type: application/pdf
+    sha256: 009da76a8753d57a38b7e27439030cc6de4ab1ff2827bd813bc77ad922ddf3cb
+    page_count: 17
+  - id: source-paper-48-official
+    type: official_publication_record
+    title: Future Generation Computer Systems publication record
+    url: https://doi.org/10.1016/j.future.2019.03.051
+    provenance_category: official
+  - id: source-paper-48-citations
+    type: citation_index_snapshot
+    title: OpenAlex work W2930399968
+    url: https://openalex.org/W2930399968
+    accessed_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-48-editorial
-    source_id: source-paper-48-site-record
-    label: "Curated publication metadata and editorial summary"
-    locator: "Local site record; the summary is editorial and has not been checked against full text."
-    url: /publications/#paper-48
-  - id: anchor-paper-48-resource-1
-    source_id: source-paper-48-resource-1
-    label: "Official resource: Publisher / DOI"
-    locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://doi.org/10.1016/j.future.2019.03.051"
-  - id: anchor-paper-48-resource-2
-    source_id: source-paper-48-resource-2
-    label: "Author-hosted resource: Author-hosted PDF"
-    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
-    url: "https://keldefrawy.github.io/pubs/2019/snuse_fgcs2019.pdf"
+  - id: anchor-paper-48-problem
+    source_id: source-paper-48-author-pdf
+    label: Problem, SNUSE contribution, enterprise setting, and claimed novelty
+    locator: "Abstract and Sections 1-1.1, PDF pages 1-3"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=1
+  - id: anchor-paper-48-model
+    source_id: source-paper-48-author-pdf
+    label: BIA, threshold sharing, MPC, and fuzzy-vault assumptions
+    locator: "Section 2, PDF pages 3-5"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=3
+  - id: anchor-paper-48-architecture
+    source_id: source-paper-48-author-pdf
+    label: Parties, lifecycle, and data placement
+    locator: "Section 4, PDF page 6"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=6
+  - id: anchor-paper-48-protocols
+    source_id: source-paper-48-author-pdf
+    label: Enrollment, authentication, and re-enrollment protocols
+    locator: "Sections 4.1-4.3, PDF pages 7-8"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=7
+  - id: anchor-paper-48-mpc
+    source_id: source-paper-48-author-pdf
+    label: MPC helper-data computation, three multiplication strategies, and secret handling
+    locator: "Sections 4.4-4.5, PDF pages 8-10"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=8
+  - id: anchor-paper-48-implementation
+    source_id: source-paper-48-author-pdf
+    label: NTL implementation and fingerprint/iris template extraction
+    locator: "Sections 5-5.2, PDF pages 10-12"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=10
+  - id: anchor-paper-48-accuracy
+    source_id: source-paper-48-author-pdf
+    label: GAR/FAR experiments and public datasets
+    locator: "Section 5.3 and Figure 6, PDF pages 12-13"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=12
+  - id: anchor-paper-48-performance
+    source_id: source-paper-48-author-pdf
+    label: Timing, scale, and storage evaluation
+    locator: "Section 6, Table 1 and Figure 7, PDF pages 13-15"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=13
+  - id: anchor-paper-48-security
+    source_id: source-paper-48-author-pdf
+    label: Stored and execution confidentiality, collusion leakage, and reusability
+    locator: "Section 7, PDF pages 14-15"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=14
+  - id: anchor-paper-48-conclusion
+    source_id: source-paper-48-author-pdf
+    label: Conclusion, measured result, and open directions
+    locator: "Section 8, PDF page 15"
+    url: /pubs/2019/snuse_fgcs2019.pdf#page=15
+  - id: anchor-paper-48-publication
+    source_id: source-paper-48-official
+    label: Official journal publication identity
+    locator: "FGCS 98, DOI 10.1016/j.future.2019.03.051"
+    url: https://doi.org/10.1016/j.future.2019.03.051
+  - id: anchor-paper-48-reception
+    source_id: source-paper-48-citations
+    label: Dated citation-count snapshot
+    locator: "OpenAlex reported 6 citing works on 2026-07-11"
+    url: https://openalex.org/W2930399968
 
 nodes:
   - id: paper-48
     kind: paper
-    parent_id:
+    parent_id: null
     order: 1
-    epistemic_status: published_metadata_with_editorial_synthesis
-    title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
-    summary: "SNUSE distributes biometric templates across re-enrollment servers and uses secure computation to refresh authentication material without storing a complete template at any one server. Its fingerprint and iris prototypes re-enroll thousands of users in seconds without materially reducing matching accuracy."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
+    epistemic_status: published_journal_article
+    title: SNUSE journal paper
+    summary: An expanded protocol, optimization, prototype, evaluation, and security treatment of large-scale non-interactive biometric re-enrollment.
+    source_anchor_ids: [anchor-paper-48-problem]
   - id: paper-48-question
     kind: question
     parent_id: paper-48
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can biometric authentication material be refreshed for thousands of users without centralizing complete biometric templates or requiring users to enroll again?"
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
-  - id: paper-48-contribution
+    epistemic_status: research_question
+    title: Research question
+    summary: How can an organization refresh many biometric-bound credentials while neither storing full templates centrally nor requiring every user to return?
+    source_anchor_ids: [anchor-paper-48-problem]
+  - id: paper-48-answer
     kind: contribution
     parent_id: paper-48
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Central contribution"
-    summary: "SNUSE reportedly distributes templates across servers and uses secure computation to refresh authentication material, with fingerprint and iris prototypes."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
-  - id: paper-48-method
-    kind: method
+    epistemic_status: implemented
+    title: Central answer
+    summary: Store Shamir shares at re-enrollment servers, keep only helper data at the authentication server, and MPC-generate new fuzzy vaults from those shares.
+    source_anchor_ids: [anchor-paper-48-architecture, anchor-paper-48-protocols]
+  - id: paper-48-model-node
+    kind: scope
     parent_id: paper-48
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Reported method"
-    summary: "The reported design combines distributed template shares, secure re-enrollment computation, and experiments measuring batch throughput and matching accuracy."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
+    epistemic_status: defined
+    title: Deployment model
+    summary: One trusted reader samples templates, one AS serves routine authentication, and configurable RESs remain offline except during enrollment/re-enrollment; secure channels are assumed.
+    source_anchor_ids: [anchor-paper-48-architecture, anchor-paper-48-protocols]
+  - id: paper-48-adversary
+    kind: threat_model
+    parent_id: paper-48
+    order: 4
+    epistemic_status: honest_but_curious
+    title: Adversary and threshold
+    summary: The implementation targets honest-but-curious parties. A (K,N) sharing threshold protects stored templates against fewer than K RES compromises, with stronger simultaneous-compromise caveats during computation.
+    source_anchor_ids: [anchor-paper-48-model, anchor-paper-48-security]
+  - id: paper-48-assumptions
+    kind: assumption
+    parent_id: paper-48
+    order: 5
+    epistemic_status: cryptographic_and_operational
+    title: Required assumptions
+    summary: Security depends on Shamir privacy, fuzzy-vault security, authenticated channels, trustworthy sampling, correct implementations, and enough non-colluding RESs.
+    source_anchor_ids: [anchor-paper-48-model, anchor-paper-48-security]
+  - id: paper-48-protocol-group
+    kind: protocol_group
+    parent_id: paper-48
+    order: 6
+    epistemic_status: specified_and_implemented
+    title: Three-phase SNUSE protocol
+    summary: Initial enrollment distributes template shares and creates helper data; routine authentication opens the vault locally; re-enrollment regenerates helper data without the user.
+    source_anchor_ids: [anchor-paper-48-protocols]
+  - id: paper-48-protocol-enroll
+    kind: protocol
+    parent_id: paper-48-protocol-group
+    order: 1
+    epistemic_status: implemented
+    title: Initial enrollment
+    summary: The reader samples and shares BT; RESs choose credential material and MPC-compute helper-data shares; AS reconstructs helper data, never BT.
+    source_anchor_ids: [anchor-paper-48-protocols]
+  - id: paper-48-protocol-auth
+    kind: protocol
+    parent_id: paper-48-protocol-group
+    order: 2
+    epistemic_status: implemented
+    title: Routine authentication
+    summary: A new biometric sample and stored helper data run fuzzy-vault opening at the reader; RESs are not online.
+    source_anchor_ids: [anchor-paper-48-protocols]
+  - id: paper-48-protocol-refresh
+    kind: protocol
+    parent_id: paper-48-protocol-group
+    order: 3
+    epistemic_status: implemented
+    title: Non-interactive re-enrollment
+    summary: RESs operate on their persistent shares to compute a vault for fresh credential material, then AS reconstructs the new helper data.
+    source_anchor_ids: [anchor-paper-48-protocols]
+  - id: paper-48-optimization
+    kind: algorithm
+    parent_id: paper-48
+    order: 7
+    epistemic_status: implemented_and_compared
+    title: MPC multiplication optimization
+    summary: Three strategies trade interactive multiplications against enrollment-time precomputation and share storage; precomputing template powers minimizes online rounds and enables fast bulk refresh.
+    source_anchor_ids: [anchor-paper-48-mpc]
+  - id: paper-48-implementation-node
+    kind: implementation
+    parent_id: paper-48
+    order: 8
+    epistemic_status: prototype
+    title: Two-modality prototype
+    summary: NTL over GF(2^24), TCP processes, NBIS fingerprint minutiae, OSIRIS iris codes, polynomial fuzzy vaults, and configurable RES counts implement the full lifecycle.
+    source_anchor_ids: [anchor-paper-48-implementation]
   - id: paper-48-claims
     kind: claim_group
     parent_id: paper-48
-    order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Main claims"
-    summary: "The current map represents claims from the local editorial summary; it does not certify their wording, assumptions, proof, or empirical support."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
-  - id: paper-48-claim-primary
+    order: 9
+    epistemic_status: mixed
+    title: Principal claims
+    summary: SNUSE protects backend template storage below threshold, keeps regular authentication simple, and makes server-side bulk credential refresh feasible without altering the base biometric matching decision.
+    source_anchor_ids: [anchor-paper-48-security, anchor-paper-48-performance, anchor-paper-48-accuracy]
+  - id: paper-48-claim-security
     kind: claim
     parent_id: paper-48-claims
     order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Primary reported claim"
-    summary: "The summary reports re-enrollment of thousands of users in seconds without materially reducing fingerprint or iris matching accuracy."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
+    epistemic_status: conditional_security_argument
+    title: Distributed biometric confidentiality
+    summary: Compromising AS yields helper data but not BT under fuzzy-vault security; fewer than K RESs yield insufficient shares; the template remains unreconstructed during normal execution.
+    source_anchor_ids: [anchor-paper-48-security]
+  - id: paper-48-claim-scale
+    kind: claim
+    parent_id: paper-48-claims
+    order: 2
+    epistemic_status: experimentally_supported_and_extrapolated
+    title: Large-scale refresh
+    summary: The reported setup averages 13.2 ms for one re-enrollment and scales linearly; 100,000 users with nine RESs are projected under five minutes and one million under one hour.
+    source_anchor_ids: [anchor-paper-48-performance]
+  - id: paper-48-claim-accuracy
+    kind: claim
+    parent_id: paper-48-claims
+    order: 3
+    epistemic_status: dataset_supported
+    title: Biometric matching behavior
+    summary: The prototype reports over 90% GAR and under 5% FAR for selected parameters; accuracy comes from feature/vault choices, while SNUSE's re-enrollment uses the same helper-data semantics.
+    source_anchor_ids: [anchor-paper-48-accuracy, anchor-paper-48-conclusion]
   - id: paper-48-evidence
     kind: evidence_group
     parent_id: paper-48
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "Evidence descriptions are editorial extractions pending inspection of the full paper and any underlying artifacts."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
-  - id: paper-48-evidence-reported
-    kind: evidence
-    parent_id: paper-48-evidence
-    order: 1
-    epistemic_status: reported_not_independently_audited
-    title: "Evidence represented in the site summary"
-    summary: "The editorial record identifies two prototypes and performance/accuracy results, but datasets, threat model, protocol, implementation, metrics, and statistical analyses were not audited."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
-  - id: paper-48-scope
+    order: 10
+    epistemic_status: prototype_experiments_and_analysis
+    title: Evidence stack
+    summary: Detailed protocol algorithms, implementation parameters, three public biometric datasets, all-pairs GAR/FAR experiments, 100-run timings, scaling trials, storage calculations, and a dedicated security section support the paper.
+    source_anchor_ids: [anchor-paper-48-protocols, anchor-paper-48-implementation, anchor-paper-48-accuracy, anchor-paper-48-performance, anchor-paper-48-security]
+  - id: paper-48-boundaries
     kind: limitation_group
     parent_id: paper-48
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "This draft separates what the site summary reports from conditions that still require source-level verification."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
-  - id: paper-48-scope-boundary
-    kind: limitation
-    parent_id: paper-48-scope
-    order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Unverified boundaries"
-    summary: "Privacy depends on server-collusion assumptions and the biometric representation. Results may vary by modality, dataset, matcher, deployment, and security parameters."
-    source_anchor_ids: ["anchor-paper-48-editorial"]
-
-  - id: paper-48-resources
+    order: 11
+    epistemic_status: explicit
+    title: Security and scope limits
+    summary: AS plus one RES compromised simultaneously during a run can expose that run's BT when k is visible; ordinary fuzzy vaults are cross-instance linkable; malicious/covert MPC, other modalities, and reusable FE/FV support remain future work.
+    source_anchor_ids: [anchor-paper-48-security, anchor-paper-48-conclusion]
+  - id: paper-48-artifacts
     kind: artifact_group
     parent_id: paper-48
-    order: 7
-    epistemic_status: resource_metadata_recorded
-    title: "Artifacts and resources"
-    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-48-resource-1", "anchor-paper-48-resource-2"]
-
-  - id: paper-48-resources-available
-    kind: artifact
-    parent_id: paper-48-resources
-    order: 1
-    epistemic_status: linked_not_content_audited
-    title: "Available links"
-    summary: "Official: Publisher / DOI; Author-hosted: Author-hosted PDF."
-    source_anchor_ids: ["anchor-paper-48-resource-1", "anchor-paper-48-resource-2"]
-
+    order: 12
+    epistemic_status: partial
+    title: Reproducibility resources
+    summary: Full manuscript, algorithms, parameters, environment, and public dataset names are available. Version-pinned code, processed data, raw results, and independent reproduction were not located.
+    source_anchor_ids: [anchor-paper-48-implementation, anchor-paper-48-performance]
   - id: paper-48-scrutiny
     kind: scrutiny
     parent_id: paper-48
-    order: 8
-    epistemic_status: publication_status_recorded_not_audited
-    title: "Scrutiny and status"
-    summary: "The local record lists this work as Published · journal article at Future Generation Computer Systems, Volume 98. Review criteria, reports, rebuttals, reproductions, corrections, and later independent scrutiny were not audited."
-    source_anchor_ids: ["anchor-paper-48-resource-1"]
+    order: 13
+    epistemic_status: journal_reviewed
+    title: External scrutiny
+    summary: FGCS journal publication provides external review exposure; reports, artifact evaluation, and independent replication are not represented.
+    source_anchor_ids: [anchor-paper-48-publication]
+  - id: paper-48-lineage
+    kind: lineage
+    parent_id: paper-48
+    order: 14
+    epistemic_status: expanded_version
+    title: Relation to the CSCML paper
+    summary: This journal article expands paper #43 with reorganized design exposition, an explicit protocol-optimization contribution, and integrated implementation, evaluation, and security analysis.
+    source_anchor_ids: [anchor-paper-48-problem, anchor-paper-48-mpc]
 
 relations:
-  - id: relation-paper-48-contribution-addresses-question
-    type: addresses
-    from_id: paper-48-contribution
-    to_id: paper-48-question
-  - id: relation-paper-48-method-describes-contribution
-    type: describes_approach_to
-    from_id: paper-48-method
-    to_id: paper-48-contribution
-  - id: relation-paper-48-evidence-supports-claim
-    type: supports
-    from_id: paper-48-evidence-reported
-    to_id: paper-48-claim-primary
-  - id: relation-paper-48-scope-qualifies-claim
-    type: qualifies
-    from_id: paper-48-scope-boundary
-    to_id: paper-48-claim-primary
-  - id: relation-paper-48-resources-enable-evidence-audit
-    type: provides_access_for_audit_of
-    from_id: paper-48-resources-available
-    to_id: paper-48-evidence-reported
-  - id: relation-paper-48-status-qualifies-claim
-    type: qualifies
-    from_id: paper-48-scrutiny
-    to_id: paper-48-claim-primary
+  - {id: paper-48-relation-answer-question, type: addresses, from_id: paper-48-answer, to_id: paper-48-question}
+  - {id: paper-48-relation-enroll-group, type: component_of, from_id: paper-48-protocol-enroll, to_id: paper-48-protocol-group}
+  - {id: paper-48-relation-auth-group, type: component_of, from_id: paper-48-protocol-auth, to_id: paper-48-protocol-group}
+  - {id: paper-48-relation-refresh-group, type: component_of, from_id: paper-48-protocol-refresh, to_id: paper-48-protocol-group}
+  - {id: paper-48-relation-optimization-refresh, type: accelerates, from_id: paper-48-optimization, to_id: paper-48-protocol-refresh}
+  - {id: paper-48-relation-assumptions-security, type: qualifies, from_id: paper-48-assumptions, to_id: paper-48-claim-security}
+  - {id: paper-48-relation-adversary-security, type: qualifies, from_id: paper-48-adversary, to_id: paper-48-claim-security}
+  - {id: paper-48-relation-evidence-claims, type: supports, from_id: paper-48-evidence, to_id: paper-48-claims}
+  - {id: paper-48-relation-boundaries-claims, type: qualifies, from_id: paper-48-boundaries, to_id: paper-48-claims}
+  - {id: paper-48-relation-lineage-paper, type: contextualizes, from_id: paper-48-lineage, to_id: paper-48}
 
 assessment:
   id: paper-48-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
-  note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
+  note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
-      level: medium
-      rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
-      basis_source_anchor_ids: ["anchor-paper-48-editorial", "anchor-paper-48-resource-1"]
+      level: high
+      rationale: The complete journal paper supplies protocols, optimization alternatives, a working prototype, public-dataset accuracy tests, performance/storage evaluation, and explicit security analysis and limits.
+      basis_source_anchor_ids: [anchor-paper-48-protocols, anchor-paper-48-accuracy, anchor-paper-48-performance, anchor-paper-48-security]
     - id: auditability
       level: high
-      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
-      basis_source_anchor_ids: ["anchor-paper-48-resource-1", "anchor-paper-48-resource-2"]
+      rationale: A checked-in full author copy with SHA-256/page count, precise page anchors, and DOI makes the complete represented paper inspectable; code and raw results are not fixed here.
+      basis_source_anchor_ids: [anchor-paper-48-problem, anchor-paper-48-publication]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: ["anchor-paper-48-editorial"]
+      rationale: Authors, journal, DOI, libraries, datasets, parameters, hardware, and experiment procedure are documented; roles, revisions, exact code version, and raw-run lineage are not.
+      basis_source_anchor_ids: [anchor-paper-48-publication, anchor-paper-48-implementation, anchor-paper-48-performance]
     - id: external_scrutiny
       level: medium
-      rationale: "The work has a published venue record, indicating external editorial or review exposure, but review criteria, reports, rebuttals, independent reproduction, criticism, and correction history were not audited."
-      basis_source_anchor_ids: ["anchor-paper-48-resource-1"]
+      rationale: Journal publication establishes external review, but public reports, artifact evaluation, and independent reproduction were not located.
+      basis_source_anchor_ids: [anchor-paper-48-publication]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or follow-on-use audit has been performed, so reception is intentionally not assessed."
-      basis_source_anchor_ids: ["anchor-paper-48-editorial"]
+      level: low
+      rationale: OpenAlex reported 6 citations on 2026-07-11; under the finalized rubric, 0 through 8 located citations is Low.
+      basis_source_anchor_ids: [anchor-paper-48-reception]
     - id: contribution_significance
       level: medium
-      rationale: "The curated summary indicates a substantive contribution: a large-scale secure-computation design for refreshing biometric authentication material without reconstructing a full template at one server. Novelty priority, comparative importance, and downstream impact were not independently audited."
-      basis_source_anchor_ids: ["anchor-paper-48-editorial"]
+      rationale: The work develops and validates a concrete response to a real deployment bottleneck, while security remains bounded by honest-but-curious MPC, collusion, and fuzzy-vault reusability.
+      basis_source_anchor_ids: [anchor-paper-48-problem, anchor-paper-48-security, anchor-paper-48-conclusion]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No dated reception or uptake audit has been performed; linked publication resources were not inspected for citation, deployment, replication, teaching, standards, or follow-on-use evidence."
+  method: OpenAlex DOI lookup
+  citation_count: 6
+  source_url: https://openalex.org/W2930399968
+  signals:
+    - OpenAlex reported 6 works citing the FGCS journal article.
+  limitation: The count varies by index/date and may be split with the CSCML version; it does not establish security, deployment, or reproduction.

@@ -42,6 +42,11 @@ axes:
     label: Reception
     short_label: Reception
     description: Dated evidence of independent use, extension, discussion, replication, teaching, or research lineage.
+    citation_count_rule:
+      low: 0 through 8 located citations, including a documented search that locates none.
+      medium: 9 or 10 located citations.
+      high: 11 or more located citations.
+      snapshot_required: Record the count, source or search method, date, and known coverage limitations; counts are time-dependent observations rather than intrinsic paper quality.
   - id: contribution_significance
     label: Contribution significance
     short_label: Significance

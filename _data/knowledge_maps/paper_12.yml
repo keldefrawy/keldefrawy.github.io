@@ -18,38 +18,27 @@ labels: ["Applied"]
 authors: ["Boris Danev", "Heinrich Luecken", "Srdjan Čapkun", "Karim Eldefrawy"]
 keywords: ["device fingerprinting", "physical-layer security", "impersonation"]
 
-research_question: "Can an attacker impersonate a wireless device by replaying selected radio-frequency fingerprint features or complete captured waveforms?"
-central_answer: "The reported experiments show reliable forgery of modulation-based fingerprints, while transient-based fingerprints are harder to reproduce because recording depends on channel and antenna conditions."
+research_question: >-
+  Can an attacker impersonate an enrolled wireless device by reproducing either the selected radio-frequency features used by a fingerprinter or the target's complete captured waveform?
+central_answer: >-
+  In the evaluated laboratory settings, feature manipulation and radio-frequency replay make modulation-based fingerprints highly forgeable, while transient fingerprints can be replayed accurately over a cable but are harder to capture and reproduce over the air because antenna and channel effects alter the signal.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; the checked-in full-text PDF's title, authorship, page count, and file identity were verified, but its substantive claims were not source-audited."
-  source_scope: metadata_and_editorial_summary
+      role: full-text extraction, experiment decomposition, evidence linking, and initial assessment
+  method: "Source-grounded review of the complete checked-in paper, its institutional and publisher records, and a dated ResearchGate citation snapshot. Reported measurements were inspected but not independently reproduced."
+  source_scope: full_source_audit
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review; claims, relations, and ratings may change after source audit."
+    note: "AI-authored source-linked map awaiting author verification; technical summaries and ratings may be revised before approval."
 
 sources:
-  - id: source-paper-12-site-record
-    type: curated_record
-    title: "Curated publication record for paper #12"
-    url: /publications/#paper-12
-  - id: source-paper-12-official-1
-    type: publication_record
-    title: "Publisher / DOI"
-    url: "https://doi.org/10.1145/1741866.1741882"
-  - id: source-paper-12-archive-1
-    type: archived_institutional_copy
-    title: "Archived ETH institutional copy"
-    url: "https://web.archive.org/web/20120120122917id_/http://www.syssec.ethz.ch/research/wisec10-attks.pdf"
-    provenance_category: archive
-  - id: source-paper-12-author-local
-    type: author_hosted_copy
-    title: "Author-hosted PDF"
+  - id: source-paper-12-paper
+    type: scholarly_article
+    title: "Attacks on Physical-Layer Identification"
     url: /pubs/2010/physical-layer-identification-wisec2010.pdf
     media_type: application/pdf
     sha256: c1d64593f5d41d0fe9cc8af5f857f5547ca2f3b243d2c95283fd0d07c49f1cbb
@@ -57,128 +46,242 @@ sources:
     provenance_category: author
     retrieved_at: "2026-07-11"
     retrieved_from_url: "https://web.archive.org/web/20120120122917id_/http://www.syssec.ethz.ch/research/wisec10-attks.pdf"
+  - id: source-paper-12-official
+    type: publication_record
+    title: "ACM WiSec 2010 publisher record"
+    url: "https://doi.org/10.1145/1741866.1741882"
+  - id: source-paper-12-institutional
+    type: institutional_record
+    title: "ETH Research Collection record"
+    url: "https://www.research-collection.ethz.ch/handle/20.500.11850/20502"
+  - id: source-paper-12-citations
+    type: citation_index_snapshot
+    title: "ResearchGate citation snapshot"
+    url: "https://www.researchgate.net/publication/221551483_Attacks_on_physical-layer_identification"
+    retrieved_at: "2026-07-11"
 
 source_anchors:
-  - id: anchor-paper-12-site-record
-    source_id: source-paper-12-site-record
-    label: "Curated publication record and editorial summary"
-    locator: "Curated site publication record; summary is editorial, not the paper abstract."
-    url: /publications/#paper-12
-  - id: anchor-paper-12-official-1
-    source_id: source-paper-12-official-1
-    label: "Publisher / DOI"
-    locator: "Official resource linked from the curated site record; content not independently audited for this draft."
+  - id: anchor-paper-12-question
+    source_id: source-paper-12-paper
+    label: "Problem, attack classes, and contribution"
+    locator: "Abstract and Section 1, PDF page 1"
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf#page=1
+  - id: anchor-paper-12-model
+    source_id: source-paper-12-paper
+    label: "Identification system and attacker knowledge"
+    locator: "Section 2, PDF pages 2-3"
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf#page=2
+  - id: anchor-paper-12-feature-replay
+    source_id: source-paper-12-paper
+    label: "Modulation-feature replay design and implementation"
+    locator: "Section 3, PDF pages 3-5"
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf#page=3
+  - id: anchor-paper-12-signal-replay
+    source_id: source-paper-12-paper
+    label: "Whole-signal replay and measurement setup"
+    locator: "Section 4, PDF page 5"
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf#page=5
+  - id: anchor-paper-12-modulation-results
+    source_id: source-paper-12-paper
+    label: "Modulation-fingerprint attack results"
+    locator: "Section 5.1 and Tables 1-4, PDF pages 6 and 8"
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf#page=6
+  - id: anchor-paper-12-transient-results
+    source_id: source-paper-12-paper
+    label: "Transient-fingerprint replay results"
+    locator: "Section 5.2, PDF page 7"
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf#page=7
+  - id: anchor-paper-12-limitations
+    source_id: source-paper-12-paper
+    label: "Application implications, limitations, and open defenses"
+    locator: "Sections 6 and 8, PDF pages 8-9"
+    url: /pubs/2010/physical-layer-identification-wisec2010.pdf#page=8
+  - id: anchor-paper-12-publication
+    source_id: source-paper-12-official
+    label: "Official peer-reviewed publication record"
+    locator: "ACM WiSec 2010, DOI record"
     url: "https://doi.org/10.1145/1741866.1741882"
-  - id: anchor-paper-12-archive-1
-    source_id: source-paper-12-archive-1
-    label: "Archived ETH institutional copy"
-    locator: "Internet Archive capture of the ETH System Security Group PDF used to obtain the checked-in copy."
-    url: "https://web.archive.org/web/20120120122917id_/http://www.syssec.ethz.ch/research/wisec10-attks.pdf"
-  - id: anchor-paper-12-author-local
-    source_id: source-paper-12-author-local
-    label: "Author-hosted PDF"
-    locator: "Checked-in 10-page PDF; title and all four authors were verified against the rendered first page, and SHA-256 records file identity."
-    url: /pubs/2010/physical-layer-identification-wisec2010.pdf
+  - id: anchor-paper-12-institutional
+    source_id: source-paper-12-institutional
+    label: "Institutional metadata and preserved full text"
+    locator: "ETH Research Collection, handle 20.500.11850/20502"
+    url: "https://www.research-collection.ethz.ch/handle/20.500.11850/20502"
+  - id: anchor-paper-12-citations
+    source_id: source-paper-12-citations
+    label: "Citation-count snapshot"
+    locator: "ResearchGate displayed Citations (250), observed 2026-07-11; coverage and version merging may differ from other indexes."
+    url: "https://www.researchgate.net/publication/221551483_Attacks_on_physical-layer_identification"
 
 nodes:
   - id: paper-12
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Attacks on Physical-Layer Identification"
-    summary: "The authors demonstrate impersonation attacks against radio-frequency fingerprinting by replaying either selected signal features or entire captured waveforms. Experiments show modulation-based fingerprints can be forged very reliably, while transient-based fingerprints are harder to reproduce because recording depends on the channel and antenna."
-    source_anchor_ids: [anchor-paper-12-site-record]
+    epistemic_status: published
+    title: "Attacks on physical-layer identification"
+    summary: "An experimental security study showing that radio fingerprints treated as device identities can be imitated with feature-level or whole-waveform replay."
+    source_anchor_ids: [anchor-paper-12-question]
 
   - id: paper-12-question
     kind: question
     parent_id: paper-12
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: research_question
     title: "Research question"
-    summary: "Can an attacker impersonate a wireless device by replaying selected radio-frequency fingerprint features or complete captured waveforms?"
-    source_anchor_ids: [anchor-paper-12-site-record]
+    summary: "Do modulation and turn-on-transient fingerprints remain reliable identifiers when the transmitter is actively trying to impersonate an enrolled device?"
+    source_anchor_ids: [anchor-paper-12-question, anchor-paper-12-model]
 
   - id: paper-12-answer
     kind: contribution
     parent_id: paper-12
     order: 2
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Contribution and central answer"
-    summary: "The reported experiments show reliable forgery of modulation-based fingerprints, while transient-based fingerprints are harder to reproduce because recording depends on channel and antenna conditions."
-    source_anchor_ids: [anchor-paper-12-site-record]
+    epistemic_status: experimentally_supported
+    title: "Central answer"
+    summary: "The tested modulation features are reproducible with high success, and even transient signals are replayable under controlled acquisition; channel-dependent capture makes the over-air transient attack more demanding, not categorically impossible."
+    source_anchor_ids: [anchor-paper-12-modulation-results, anchor-paper-12-transient-results]
+
+  - id: paper-12-scope
+    kind: scope
+    parent_id: paper-12
+    order: 3
+    epistemic_status: explicitly_scoped
+    title: "System and adversary model"
+    summary: "A fingerprinter stores reference fingerprints for enrolled devices and returns only accept or reject; the attacker's objective is to transmit frames classified as a target."
+    source_anchor_ids: [anchor-paper-12-model]
+
+  - id: paper-12-adversary-feature
+    kind: threat_model
+    parent_id: paper-12-scope
+    order: 1
+    epistemic_status: defined
+    title: "Feature-replay attacker"
+    summary: "The feature attacker knows the features, extraction, matching, and decision procedure and can modify relevant radio parameters before transmission."
+    source_anchor_ids: [anchor-paper-12-model, anchor-paper-12-feature-replay]
+
+  - id: paper-12-adversary-signal
+    kind: threat_model
+    parent_id: paper-12-scope
+    order: 2
+    epistemic_status: defined
+    title: "Signal-replay attacker"
+    summary: "The signal attacker records and retransmits a target waveform without needing the internal fingerprint definition, but success depends on acquisition and replay fidelity."
+    source_anchor_ids: [anchor-paper-12-model, anchor-paper-12-signal-replay]
 
   - id: paper-12-method
     kind: method
     parent_id: paper-12
-    order: 3
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Reported method"
-    summary: "Capture and replay either selected signal features or complete waveforms, then test the resulting impersonation against physical-layer identification methods."
-    source_anchor_ids: [anchor-paper-12-site-record]
-
-  - id: paper-12-claims
-    kind: claim_group
-    parent_id: paper-12
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claim"
-    summary: "The paper reports that modulation-based radio fingerprints can be forged reliably and that transient-based fingerprints present greater replay difficulty in the tested setup."
-    source_anchor_ids: [anchor-paper-12-site-record]
+    epistemic_status: implemented
+    title: "Attack implementation"
+    summary: "The study manipulates three modulation features on software-defined radios and separately captures and retransmits complete RF frames with laboratory instrumentation."
+    source_anchor_ids: [anchor-paper-12-feature-replay, anchor-paper-12-signal-replay]
 
-  - id: paper-12-evidence
-    kind: evidence_group
+  - id: paper-12-method-setup
+    kind: implementation
+    parent_id: paper-12-method
+    order: 1
+    epistemic_status: documented
+    title: "Hardware and evaluation setup"
+    summary: "Three USRPs act as genuine devices, another USRP as an attacker, an Agilent analyzer as fingerprinter, and a Tektronix AWG7000B as a high-fidelity replay attacker."
+    source_anchor_ids: [anchor-paper-12-feature-replay, anchor-paper-12-signal-replay]
+
+  - id: paper-12-evidence-modulation
+    kind: empirical_evidence
     parent_id: paper-12
     order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "The curated summary reports experimental impersonation results; radio hardware, datasets, classifiers, channels, success metrics, and statistical uncertainty have not been inspected."
-    source_anchor_ids: [anchor-paper-12-site-record]
+    epistemic_status: measured
+    title: "Modulation-fingerprint results"
+    summary: "With 80 frames per device, four-fold cross-validation, and threshold plus classifier tests, replaying frequency, I/Q-origin, and phase features achieved near-target distributions; reported 5-NN and SVM classification reached 100% in the tested cases."
+    source_anchor_ids: [anchor-paper-12-modulation-results]
+
+  - id: paper-12-evidence-signal
+    kind: empirical_evidence
+    parent_id: paper-12
+    order: 6
+    epistemic_status: measured
+    title: "Whole-signal replay results"
+    summary: "For modulation fingerprints, RF-replayed frames become nearly indistinguishable from genuine frames under the chosen similarity measure."
+    source_anchor_ids: [anchor-paper-12-modulation-results]
+
+  - id: paper-12-evidence-transient
+    kind: empirical_evidence
+    parent_id: paper-12
+    order: 7
+    epistemic_status: measured_with_boundary
+    title: "Transient-fingerprint boundary"
+    summary: "Transient waveforms from three Tmote Sky devices were reproduced accurately over a cable; attempts from a changed over-air location failed because the channel and antennas altered the captured signal."
+    source_anchor_ids: [anchor-paper-12-transient-results]
+
+  - id: paper-12-implication
+    kind: implication
+    parent_id: paper-12
+    order: 8
+    epistemic_status: source_interpretation
+    title: "Security implication"
+    summary: "Physical-layer fingerprints alone should not authorize access in adversarial settings; they require additional authentication or replay-detection measures."
+    source_anchor_ids: [anchor-paper-12-limitations]
 
   - id: paper-12-limitations
     kind: limitation_group
     parent_id: paper-12
-    order: 6
-    epistemic_status: source_scope_limitation
-    title: "Scope and limitations"
-    summary: "The results are bounded by the tested devices, antennas, channels, fingerprint extractors, and replay equipment; transfer to other deployments has not been audited."
-    source_anchor_ids: [anchor-paper-12-site-record]
+    order: 9
+    epistemic_status: explicitly_reported
+    title: "Limitations and transfer boundary"
+    summary: "The device sample is small, equipment is specialized, and outcomes depend on feature choice, classifier, threshold, antenna, channel, and attacker placement; transfer to commodity Wi-Fi hardware was left for future work."
+    source_anchor_ids: [anchor-paper-12-limitations]
 
-  - id: paper-12-resources
+  - id: paper-12-artifacts
     kind: artifact_group
     parent_id: paper-12
-    order: 7
-    epistemic_status: linked_not_content_audited
-    title: "Artifacts and resources"
-    summary: "The curated record exposes 3 linked resources: Publisher / DOI; archived ETH institutional copy; author-hosted PDF. The checked-in PDF's identity was verified, but its substantive contents and supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-12-official-1, anchor-paper-12-archive-1, anchor-paper-12-author-local]
+    order: 10
+    epistemic_status: paper_and_measurements_described
+    title: "Artifacts"
+    summary: "The paper fully describes equipment, sample counts, features, and evaluation metrics, but this audit did not locate released waveforms, analysis code, or hardware-control scripts."
+    source_anchor_ids: [anchor-paper-12-feature-replay, anchor-paper-12-modulation-results]
 
   - id: paper-12-scrutiny
     kind: scrutiny
     parent_id: paper-12
-    order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
-    title: "Scrutiny and status"
-    summary: "The site record reports published at ACM Conference on Wireless Network Security (WiSec). Review materials, independent reproductions, corrections, and later adversarial analyses have not been audited for this draft."
-    source_anchor_ids: [anchor-paper-12-site-record, anchor-paper-12-official-1]
+    order: 11
+    epistemic_status: venue_reviewed
+    title: "External scrutiny and reception"
+    summary: "The work appeared at ACM WiSec and has a substantial ResearchGate citation trail; this map did not inspect each citing context or locate an independent experimental replication."
+    source_anchor_ids: [anchor-paper-12-publication, anchor-paper-12-citations]
+
+  - id: paper-12-lineage
+    kind: lineage
+    parent_id: paper-12
+    order: 12
+    epistemic_status: source_asserted_and_reception_supported
+    title: "Research lineage"
+    summary: "The paper reframes radio fingerprinting from a passive classification problem into an active-adversary authentication problem and supplies concrete attack semantics and measurements."
+    source_anchor_ids: [anchor-paper-12-question, anchor-paper-12-citations]
 
 relations:
-  - id: paper-12-relation-method-supports-answer
+  - id: paper-12-relation-method-supports-modulation
     type: supports
     from_id: paper-12-method
-    to_id: paper-12-answer
-  - id: paper-12-relation-evidence-supports-claim
+    to_id: paper-12-evidence-modulation
+  - id: paper-12-relation-modulation-supports-answer
     type: supports
-    from_id: paper-12-evidence
-    to_id: paper-12-claims
-  - id: paper-12-relation-limitations-qualify-claim
+    from_id: paper-12-evidence-modulation
+    to_id: paper-12-answer
+  - id: paper-12-relation-signal-supports-answer
+    type: supports
+    from_id: paper-12-evidence-signal
+    to_id: paper-12-answer
+  - id: paper-12-relation-transient-qualifies-answer
+    type: qualifies
+    from_id: paper-12-evidence-transient
+    to_id: paper-12-answer
+  - id: paper-12-relation-limitations-qualify-answer
     type: qualifies
     from_id: paper-12-limitations
-    to_id: paper-12-claims
-  - id: paper-12-relation-scrutiny-qualifies-status
-    type: qualifies
-    from_id: paper-12-scrutiny
-    to_id: paper-12
+    to_id: paper-12-answer
+  - id: paper-12-relation-answer-motivates-implication
+    type: motivates
+    from_id: paper-12-answer
+    to_id: paper-12-implication
 
 assessment:
   id: paper-12-assessment-2026-07-11
@@ -189,32 +292,34 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: medium
-      rationale: "The curated summary reports experimental impersonation results; radio hardware, datasets, classifiers, channels, success metrics, and statistical uncertainty have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
-      basis_source_anchor_ids: [anchor-paper-12-site-record]
+      rationale: "The paper implements two attack classes and reports controlled measurements with documented equipment, samples, metrics, and classifiers. The device sample and deployment conditions are narrow, raw data and code were not located, and no independent reproduction was audited."
+      basis_source_anchor_ids: [anchor-paper-12-feature-replay, anchor-paper-12-signal-replay, anchor-paper-12-modulation-results, anchor-paper-12-transient-results]
     - id: auditability
       level: high
-      rationale: "A verified author-hosted PDF is stored with this site, with its source route, page count, and SHA-256 identity recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, supplementary-artifact completeness, and independent reproduction remain separate questions."
-      basis_source_anchor_ids: [anchor-paper-12-official-1, anchor-paper-12-archive-1, anchor-paper-12-author-local]
+      rationale: "A complete author/institutional copy is checked into the site with source route, page count, and SHA-256 identity. Experimental design and reported results are inspectable, although raw measurements and scripts are unavailable."
+      basis_source_anchor_ids: [anchor-paper-12-institutional, anchor-paper-12-modulation-results]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-12-site-record]
+      rationale: "Named authorship, institutional preservation, and the publication record provide baseline provenance. Contributor roles, data lineage, laboratory logs, and revision history are not documented in the map."
+      basis_source_anchor_ids: [anchor-paper-12-question, anchor-paper-12-institutional, anchor-paper-12-publication]
     - id: external_scrutiny
       level: medium
-      rationale: "The record reports publication in ACM Conference on Wireless Network Security (WiSec), providing evidence of external venue scrutiny. Review reports, acceptance history, reproductions, corrections, and independent adversarial analysis have not been audited."
-      basis_source_anchor_ids: [anchor-paper-12-official-1]
+      rationale: "Publication at ACM WiSec provides venue scrutiny and later citations show continued attention, but this audit did not locate review reports, corrections, or an independent reproduction of the experiments."
+      basis_source_anchor_ids: [anchor-paper-12-publication, anchor-paper-12-citations]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, or follow-on-use snapshot has been audited; publication status alone is not treated as reception evidence."
-      basis_source_anchor_ids: [anchor-paper-12-site-record]
+      level: high
+      rationale: "ResearchGate displayed 250 citations on 2026-07-11, which exceeds the rubric's 11-citation high threshold. The count is index-specific and citation polarity or use was not audited."
+      basis_source_anchor_ids: [anchor-paper-12-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The editorial summary describes a concrete contribution: The paper reports that modulation-based radio fingerprints can be forged reliably and that transient-based fingerprints present greater replay difficulty in the tested setup. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
-      basis_source_anchor_ids: [anchor-paper-12-site-record]
+      level: high
+      rationale: "The work supplies an early concrete demonstration that physical-layer fingerprints can be adversarially replayed and has a large citation trail, while still carefully bounding its claims to tested techniques and equipment."
+      basis_source_anchor_ids: [anchor-paper-12-question, anchor-paper-12-limitations, anchor-paper-12-citations]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count:
-  signals: []
-  limitation: "No citation, adoption, replication, teaching, or follow-on-use audit was performed for this AI draft."
+  method: researchgate_publication_page
+  citation_count: 250
+  source: "ResearchGate publication page"
+  signals:
+    - "ResearchGate displayed Citations (250)."
+  limitation: "ResearchGate coverage and version merging can differ from Google Scholar, OpenAlex, Scopus, and Web of Science; citing contexts and citation polarity were not reviewed."

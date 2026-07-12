@@ -30,6 +30,168 @@
   width: 1px;
 }
 
+.sidebar-curiosity {
+  color: var(--publication-ink);
+  margin-top: 1.15rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  width: 250px;
+}
+
+.sidebar-curiosity[data-curiosity-ready="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sidebar-curiosity__scene {
+  margin: 0;
+}
+
+.sidebar-curiosity__scene[hidden] {
+  display: none !important;
+}
+
+.sidebar-curiosity__viewport {
+  background: #fff;
+  border: 1px solid var(--publication-line);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(31, 35, 40, 0.06);
+  height: 188px;
+  overflow: hidden;
+  position: relative;
+  width: 248px;
+}
+
+.sidebar-curiosity__viewport::after {
+  border-radius: inherit;
+  box-shadow: inset 0 -18px 20px -22px rgba(31, 35, 40, 0.55);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.sidebar-curiosity__image {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  transform: translateY(-4px);
+  width: 224px;
+}
+
+.sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__image {
+  animation: sidebar-curiosity-pan 10.5s cubic-bezier(0.45, 0, 0.55, 1) both;
+}
+
+.sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__viewport {
+  animation: sidebar-curiosity-pulse 2.1s ease-in-out 5;
+}
+
+.sidebar-curiosity__content {
+  margin-top: 0.55rem;
+}
+
+.sidebar-curiosity__title {
+  color: var(--publication-ink);
+  font-size: 0.84rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.sidebar-curiosity__tagline {
+  color: var(--publication-accent);
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  margin: 0.14rem 0 0;
+  text-transform: uppercase;
+}
+
+.sidebar-curiosity__cast,
+.sidebar-curiosity__caption {
+  color: var(--publication-muted);
+  font-size: 0.64rem;
+  line-height: 1.42;
+}
+
+.sidebar-curiosity__cast {
+  margin: 0.42rem 0 0;
+}
+
+.sidebar-curiosity__cast-label {
+  color: var(--publication-ink);
+  font-weight: 700;
+}
+
+.sidebar-curiosity__caption {
+  font-style: italic;
+  margin: 0.38rem 0 0;
+}
+
+.sidebar-curiosity__replay {
+  appearance: none;
+  background: #fff;
+  border: 1px solid var(--publication-line);
+  border-radius: 999px;
+  color: #0550ae;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.64rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 0.52rem;
+  padding: 0.42rem 0.68rem;
+}
+
+.sidebar-curiosity__replay:hover {
+  background: var(--publication-accent-soft);
+  border-color: var(--publication-accent);
+}
+
+.sidebar-curiosity__replay:focus-visible {
+  outline: 2px solid var(--publication-accent);
+  outline-offset: 2px;
+}
+
+.sidebar-curiosity__status {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@keyframes sidebar-curiosity-pan {
+  0%,
+  100% {
+    transform: translateY(-4px);
+  }
+
+  44%,
+  58% {
+    transform: translateY(calc(-100% + 192px));
+  }
+}
+
+@keyframes sidebar-curiosity-pulse {
+  0%,
+  100% {
+    border-color: var(--publication-line);
+    box-shadow: 0 6px 18px rgba(31, 35, 40, 0.06);
+  }
+
+  50% {
+    border-color: rgba(9, 105, 218, 0.55);
+    box-shadow: 0 6px 22px rgba(9, 105, 218, 0.14);
+  }
+}
+
 .publication-browser {
   color: var(--publication-ink);
 }
@@ -1376,5 +1538,33 @@ body.quick-abstract-dialog-open {
 
   .publication-abstract-dialog h2 {
     font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 960px), screen and (max-height: 680px) {
+  .sidebar-curiosity {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-curiosity {
+    transform: none;
+    transition: none;
+  }
+
+  .sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__image,
+  .sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__viewport {
+    animation: none;
+  }
+
+  .sidebar-curiosity__replay {
+    display: none;
+  }
+}
+
+@media print {
+  .sidebar-curiosity {
+    display: none;
   }
 }

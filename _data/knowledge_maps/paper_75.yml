@@ -16,8 +16,7 @@ year: null
 venue: null
 publication_status: "Under review"
 topic: secure-encrypted-computation
-labels:
-  - "Theory"
+labels: ["Theory"]
 availability: "Public manuscript not found; this work is listed as under review."
 authors:
   - "Kelong Cong"
@@ -28,138 +27,205 @@ keywords:
   - "secure multiparty computation"
   - "malicious security"
 
-research_question: "Can a secure multiparty computation be decomposed into reusable or independently handled pieces while retaining security against malicious participants?"
-central_answer: "Based only on the working title and editorial listing, the proposed direction is a decomposable MPC framework designed for adversaries who may deviate arbitrarily from the protocol."
+research_question: >-
+  Can secure multiparty computation be decomposed into separately handled components while retaining a meaningful security guarantee against malicious parties?
+central_answer: >-
+  The title identifies this as the intended research direction, but no public manuscript was located. The map therefore does not assert a decomposition definition, construction, malicious-security theorem, composition rule, or efficiency result.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: metadata verification, bounded concept mapping, public-source searching, and uncertainty documentation
+  method: >-
+    AI drafting from the curated author-site record followed by exact-title, author-title, archive, index, and coauthor-profile searches. No public manuscript or stable scholarly record was located, so technical content is deliberately limited to what the title and status establish.
+  source_scope: metadata_and_documented_public_source_search
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: "AI-authored bounded map awaiting full author audit; no manuscript-level technical claim is treated as established."
 
 sources:
   - id: source-paper-75-curated
     type: curated_site_record
     title: "Website publication record for Paper #75"
     url: /publications/#paper-75
-    scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+    scope_note: "Author-site title, authorship, and under-review status plus an editorial summary; not a manuscript or technical source."
+  - id: source-paper-75-manuscript-search
+    type: source_search_record
+    title: "Public-manuscript search for Paper #75"
+    url: "https://www.google.com/search?q=%22Decomposable+MPC+with+Security+Against+Malicious+Adversaries%22"
+    accessed_at: "2026-07-11"
+    scope_note: >-
+      Exact-title and author-title variants were checked across the open web, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, and discoverable author or coauthor pages. No paper-specific public manuscript, abstract, DOI, ePrint identifier, or stable index record was located.
+  - id: source-paper-75-citation-search
+    type: citation_search_snapshot
+    title: "Exact-title scholarly-web citation search"
+    url: "https://www.google.com/search?q=%22Decomposable+MPC+with+Security+Against+Malicious+Adversaries%22"
+    accessed_at: "2026-07-11"
+    scope_note: "No citing scholarly work attributable to this exact paper identity was located."
 
 source_anchors:
-  - id: anchor-paper-75-curated
+  - id: anchor-paper-75-metadata
     source_id: source-paper-75-curated
-    label: "Curated metadata and editorial summary"
-    locator: "Website publication record. The summary is editorial and has not been checked against full text."
+    label: "Author-site metadata"
+    locator: "Paper #75 title, named authors, topic labels, and Under review status"
     url: /publications/#paper-75
+  - id: anchor-paper-75-search-gap
+    source_id: source-paper-75-manuscript-search
+    label: "Documented full-text search gap"
+    locator: >-
+      Search completed 2026-07-11 across exact-title and author-title web queries, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, and discoverable author/coauthor pages; no primary full text or stable paper record found
+    url: "https://www.google.com/search?q=%22Decomposable+MPC+with+Security+Against+Malicious+Adversaries%22"
+  - id: anchor-paper-75-citations
+    source_id: source-paper-75-citation-search
+    label: "Dated exact-title citation search"
+    locator: "No citing scholarly work verifiably located when searched 2026-07-11"
+    url: "https://www.google.com/search?q=%22Decomposable+MPC+with+Security+Against+Malicious+Adversaries%22"
 
 nodes:
   - id: paper-75
     kind: paper
-    parent_id: null
+    parent_id:
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: metadata_only_pending_author_audit
     title: "Decomposable MPC with Security Against Malicious Adversaries"
-    summary: "Based on its working title, this paper studies how a secure multiparty computation can be split into reusable or independently handled pieces without losing security. The design targets malicious participants, who may deviate arbitrarily from the protocol rather than merely observe it."
-    source_anchor_ids: [anchor-paper-75-curated]
+    summary: >-
+      An under-review theory paper whose public title joins two technical commitments—decomposability and malicious security—but for which no public manuscript or abstract was located.
+    source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
+
   - id: paper-75-question
     kind: question
     parent_id: paper-75
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Research question"
-    summary: "Can a secure multiparty computation be decomposed into reusable or independently handled pieces while retaining security against malicious participants?"
-    source_anchor_ids: [anchor-paper-75-curated]
-  - id: paper-75-contribution
-    kind: contribution
+    epistemic_status: title_inferred
+    title: "Research direction"
+    summary: >-
+      The title motivates asking whether an MPC execution or functionality can be divided into components without losing security when corrupted parties may deviate arbitrarily.
+    source_anchor_ids: [anchor-paper-75-metadata]
+
+  - id: paper-75-decomposable
+    kind: concept
     parent_id: paper-75
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "Based only on the working title and editorial listing, the proposed direction is a decomposable MPC framework designed for adversaries who may deviate arbitrarily from the protocol."
-    source_anchor_ids: [anchor-paper-75-curated]
-  - id: paper-75-method
-    kind: method
+    epistemic_status: term_present_definition_unavailable
+    title: "Decomposable MPC"
+    summary: >-
+      “Decomposable” is part of the title, but the available sources do not define what is decomposed: functionality, protocol phases, parties, state, preprocessing and online work, or some other object.
+    source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
+
+  - id: paper-75-malicious
+    kind: threat_model
     parent_id: paper-75
     order: 3
-    epistemic_status: reported_not_independently_audited
-    title: "Method or construction"
-    summary: "No public manuscript is represented. Decomposition, composition interfaces, and malicious-security mechanisms are editorial inferences from the working title rather than audited technical content."
-    source_anchor_ids: [anchor-paper-75-curated]
-  - id: paper-75-claims
-    kind: claim_group
+    epistemic_status: term_present_model_unavailable
+    title: "Malicious-adversary target"
+    summary: >-
+      The title explicitly targets malicious adversaries. Corruption timing, threshold, adaptivity, setup, network model, fairness, abort, robustness, and composability framework are not publicly specified.
+    source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
+
+  - id: paper-75-construction
+    kind: construction
     parent_id: paper-75
     order: 4
-    epistemic_status: reported_not_independently_audited
-    title: "Principal reported claims"
-    summary: "The listing supports only a research aim: preserve malicious security while decomposing MPC. It does not establish a construction, theorem, efficiency bound, or composability guarantee."
-    source_anchor_ids: [anchor-paper-75-curated]
+    epistemic_status: not_available_for_audit
+    title: "Construction not publicly auditable"
+    summary: >-
+      No protocol, compiler, sharing method, decomposition interface, simulator, or ideal functionality can be extracted from the located sources.
+    source_anchor_ids: [anchor-paper-75-search-gap]
+
+  - id: paper-75-theorem
+    kind: theorem_group
+    parent_id: paper-75
+    order: 5
+    epistemic_status: not_available_for_audit
+    title: "Security theorem not publicly auditable"
+    summary: >-
+      The sources do not establish that a construction exists or state its assumptions, quantifiers, security loss, failure probability, round complexity, or communication and computation costs.
+    source_anchor_ids: [anchor-paper-75-search-gap]
+
   - id: paper-75-evidence
     kind: evidence_group
     parent_id: paper-75
-    order: 5
-    epistemic_status: reported_not_independently_audited
-    title: "Reported evidence"
-    summary: "No public manuscript, completed publication record, formal proof, implementation, experiment, or artifact is represented in the resource data."
-    source_anchor_ids: [anchor-paper-75-curated]
-  - id: paper-75-scope
+    order: 6
+    epistemic_status: no_public_evidence_located
+    title: "Evidence status"
+    summary: >-
+      No proof, formalization, implementation, benchmark, experiment, or linked artifact was located. Under-review status is process metadata, not evidence for the technical result.
+    source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
+
+  - id: paper-75-unknowns
     kind: limitation_group
     parent_id: paper-75
-    order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scope and limitations"
-    summary: "The decomposition notion, security framework, setup, corruption model, composition theorem, supported functionalities, efficiency, fairness, robustness, and relation to prior MPC work remain unknown."
-    source_anchor_ids: [anchor-paper-75-curated]
+    order: 7
+    epistemic_status: explicit_unknowns
+    title: "Information needed for a substantive map"
+    summary: >-
+      A manuscript audit must recover the decomposition object and interface, security definition, adversary and setup, construction, proof architecture, composition claim, efficiency bounds, comparison baseline, and any artifact lineage.
+    source_anchor_ids: [anchor-paper-75-search-gap]
+
+  - id: paper-75-search
+    kind: audit_record
+    parent_id: paper-75
+    order: 8
+    epistemic_status: documented_search
+    title: "Public-source search"
+    summary: >-
+      The audit checked exact-title and author-title variants across general search, major cryptography and preprint archives, bibliographic indexes, and discoverable author/coauthor pages without locating a public technical source.
+    source_anchor_ids: [anchor-paper-75-search-gap]
+
   - id: paper-75-artifacts
     kind: artifact_group
     parent_id: paper-75
-    order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Artifacts and resources"
-    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
-    source_anchor_ids: [anchor-paper-75-curated]
+    order: 9
+    epistemic_status: metadata_only
+    title: "Available artifacts"
+    summary: "Only the author-site bibliographic listing is represented; no manuscript or supplementary artifact is linked."
+    source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
+
   - id: paper-75-scrutiny
     kind: scrutiny
     parent_id: paper-75
-    order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Scrutiny and status"
-    summary: "The curated record gives the status Under review. No completed external review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
-    source_anchor_ids: [anchor-paper-75-curated]
+    order: 10
+    epistemic_status: review_outcome_unavailable
+    title: "Scrutiny and reception"
+    summary: >-
+      The item is listed as under review, but no acceptance, venue identity, public review, reproduction, correction, or citation was located.
+    source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-citations]
 
 relations:
-  - id: paper-75-relation-question-contribution
-    type: motivates
+  - id: paper-75-relation-question-decomposable
+    type: frames
     from_id: paper-75-question
-    to_id: paper-75-contribution
-  - id: paper-75-relation-method-contribution
-    type: realizes
-    from_id: paper-75-method
-    to_id: paper-75-contribution
-  - id: paper-75-relation-contribution-claims
-    type: grounds
-    from_id: paper-75-contribution
-    to_id: paper-75-claims
-  - id: paper-75-relation-evidence-claims
-    type: supports
-    from_id: paper-75-evidence
-    to_id: paper-75-claims
-  - id: paper-75-relation-scope-claims
+    to_id: paper-75-decomposable
+  - id: paper-75-relation-malicious-qualifies-question
     type: qualifies
-    from_id: paper-75-scope
-    to_id: paper-75-claims
-  - id: paper-75-relation-artifacts-evidence
-    type: enables_audit_of
+    from_id: paper-75-malicious
+    to_id: paper-75-question
+  - id: paper-75-relation-construction-would-answer-question
+    type: would_answer
+    from_id: paper-75-construction
+    to_id: paper-75-question
+  - id: paper-75-relation-theorem-would-support-construction
+    type: would_support
+    from_id: paper-75-theorem
+    to_id: paper-75-construction
+  - id: paper-75-relation-search-limits-construction
+    type: limits_audit_of
+    from_id: paper-75-search
+    to_id: paper-75-construction
+  - id: paper-75-relation-unknowns-qualify-paper
+    type: qualifies
+    from_id: paper-75-unknowns
+    to_id: paper-75
+  - id: paper-75-relation-artifacts-limit-evidence
+    type: limits_audit_of
     from_id: paper-75-artifacts
     to_id: paper-75-evidence
-  - id: paper-75-relation-scrutiny-claims
+  - id: paper-75-relation-scrutiny-contextualizes-paper
     type: contextualizes
     from_id: paper-75-scrutiny
-    to_id: paper-75-claims
+    to_id: paper-75
 
 assessment:
   id: paper-75-assessment-2026-07-11
@@ -170,32 +236,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: low
-      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
-      basis_source_anchor_ids: [anchor-paper-75-curated]
+      rationale: "Only author-site metadata supports the map; no manuscript, abstract, theorem, proof, or artifact was located."
+      basis_source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
     - id: auditability
       level: low
-      rationale: "No paper-specific official publication record, public archive, or author-hosted copy is represented; full-text assumptions, evidence, artifacts, and version identity cannot presently be audited from this map. Auditability is therefore low."
-      basis_source_anchor_ids: [anchor-paper-75-curated]
+      rationale: "No paper-specific official publication record, public archive, or author-hosted copy was located; assumptions, evidence, and version identity cannot be audited from this map."
+      basis_source_anchor_ids: [anchor-paper-75-search-gap]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
-      basis_source_anchor_ids: [anchor-paper-75-curated]
+      rationale: "Named authorship and under-review status provide baseline human and lifecycle provenance. Contributor roles, revision history, AI or tool use, artifact lineage, and final author approval remain unaudited."
+      basis_source_anchor_ids: [anchor-paper-75-metadata]
     - id: external_scrutiny
       level: low
-      rationale: "The item is listed as under review or otherwise lacks a represented completed review outcome; no independent scrutiny evidence was audited."
-      basis_source_anchor_ids: [anchor-paper-75-curated]
+      rationale: "Under-review status records a pending process; no completed review outcome or independent technical scrutiny was located."
+      basis_source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
     - id: reception
-      level: not_assessed
-      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
-      basis_source_anchor_ids: [anchor-paper-75-curated]
+      level: low
+      rationale: "The dated exact-title search located 0 citations. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High."
+      basis_source_anchor_ids: [anchor-paper-75-citations]
     - id: contribution_significance
       level: not_assessed
-      rationale: "Only a working title, bibliographic listing, and editorially inferred research aim are available; contribution, novelty, priority, and impact cannot yet be assessed."
-      basis_source_anchor_ids: [anchor-paper-75-curated]
+      rationale: "The title identifies a potentially substantive objective, but novelty, result strength, and impact cannot be assessed without a technical source."
+      basis_source_anchor_ids: [anchor-paper-75-metadata, anchor-paper-75-search-gap]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: not_assessed
-  citation_count: null
+  method: "Exact-title scholarly-web search"
+  citation_count: 0
+  source_url: "https://www.google.com/search?q=%22Decomposable+MPC+with+Security+Against+Malicious+Adversaries%22"
   signals: []
-  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."
+  limitation: "No public manuscript or stable index record was located. Zero means no verifiable citation was attributable to this exact work in the dated search, not that no private or future reference exists."
