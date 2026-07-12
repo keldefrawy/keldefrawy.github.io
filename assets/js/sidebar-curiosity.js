@@ -11,18 +11,12 @@
     tour: {
       playing: "The one-bit grand tour is underway.",
       finished: "The bit has completed its grand tour."
+    },
+    cipher: {
+      playing: "The ciphertext is moving through the great cipher relay.",
+      finished: "The ciphertext has completed the great cipher relay."
     }
   };
-
-  function randomSceneIndex() {
-    if (window.crypto && typeof window.crypto.getRandomValues === "function") {
-      var randomValue = new Uint32Array(1);
-      window.crypto.getRandomValues(randomValue);
-      return randomValue[0] & 1;
-    }
-
-    return Math.random() < 0.5 ? 0 : 1;
-  }
 
   function frameUrlsFor(image) {
     var frameList = image.getAttribute("data-curiosity-frames") || "";
@@ -74,41 +68,15 @@
     return pattern.length > 0 ? pattern : [0];
   }
 
-  function initializeCuriosity(wrapper) {
-    if (wrapper.getAttribute("data-curiosity-ready") === "true") {
+  function initializeScene(scene) {
+    if (scene.getAttribute("data-curiosity-scene-ready") === "true") {
       return;
     }
 
-    var scenes = Array.prototype.slice.call(
-      wrapper.querySelectorAll("[data-curiosity-scene]")
-    );
-    var sceneNames = ["hotel", "tour"];
-    var chosenName = sceneNames[randomSceneIndex()];
-    var chosenScene = scenes.find(function (scene) {
-      return scene.getAttribute("data-curiosity-scene") === chosenName;
-    });
-
-    if (!chosenScene) {
-      return;
-    }
-
-    scenes.forEach(function (scene) {
-      var isChosen = scene === chosenScene;
-      scene.hidden = !isChosen;
-
-      if (isChosen) {
-        scene.setAttribute("data-selected", "true");
-      } else {
-        scene.removeAttribute("data-selected");
-        scene.removeAttribute("data-animating");
-      }
-    });
-
-    wrapper.setAttribute("data-curiosity-ready", "true");
-
-    var status = wrapper.querySelector("[data-curiosity-status]");
-    var replayButton = chosenScene.querySelector("[data-curiosity-replay]");
-    var sceneImage = chosenScene.querySelector("[data-curiosity-frames]");
+    var sceneName = scene.getAttribute("data-curiosity-scene");
+    var status = scene.querySelector("[data-curiosity-status]");
+    var replayButton = scene.querySelector("[data-curiosity-replay]");
+    var sceneImage = scene.querySelector("[data-curiosity-frames]");
     var motionQuery = window.matchMedia ?
       window.matchMedia("(prefers-reduced-motion: reduce)") : null;
     var animationFrame = null;
@@ -145,7 +113,7 @@
         frameTimer = null;
       }
 
-      chosenScene.removeAttribute("data-animating");
+      scene.removeAttribute("data-animating");
 
       if (resetFrame) {
         setFrame(0);
@@ -161,11 +129,9 @@
       }
 
       preloadPromise = Promise.all(frameUrls.map(preloadFrame)).then(function (results) {
-        loadedFrames = results.filter(Boolean);
-
-        if (loadedFrames.length === 0) {
-          loadedFrames = frameUrls.slice(0, 1);
-        }
+        loadedFrames = results.map(function (result) {
+          return result || frameUrls[0];
+        });
 
         return loadedFrames;
       });
@@ -173,15 +139,23 @@
       return preloadPromise;
     }
 
-    function startScene(announce) {
-      var messages = sceneMessages[chosenName];
+    function startScene(announce, requestId) {
+      var messages = sceneMessages[sceneName] || {
+        playing: "The animation is playing.",
+        finished: "The animation has finished."
+      };
       var pattern = framePattern(loadedFrames.length);
       var patternIndex = 0;
 
       stopScene(true);
       animationFrame = window.requestAnimationFrame(function () {
         animationFrame = null;
-        chosenScene.setAttribute("data-animating", "true");
+
+        if (requestId !== playRequest) {
+          return;
+        }
+
+        scene.setAttribute("data-animating", "true");
 
         if (announce && status) {
           status.textContent = messages.playing;
@@ -189,12 +163,20 @@
 
         if (pattern.length > 1) {
           frameTimer = window.setInterval(function () {
+            if (requestId !== playRequest) {
+              return;
+            }
+
             patternIndex = (patternIndex + 1) % pattern.length;
             setFrame(pattern[patternIndex]);
           }, FRAME_INTERVAL);
         }
 
         animationTimer = window.setTimeout(function () {
+          if (requestId !== playRequest) {
+            return;
+          }
+
           stopScene(true);
 
           if (announce && status) {
@@ -217,7 +199,7 @@
 
       ensureFrames().then(function () {
         if (currentRequest === playRequest && !prefersReducedMotion()) {
-          startScene(announce);
+          startScene(announce, currentRequest);
         }
       });
     }
@@ -243,9 +225,28 @@
       }
     }
 
-    if (!prefersReducedMotion()) {
+    if (!prefersReducedMotion() && scene.getClientRects().length > 0) {
       playScene(false);
     }
+
+    scene.removeAttribute("hidden");
+    scene.setAttribute("data-curiosity-scene-ready", "true");
+  }
+
+  function initializeCuriosity(wrapper) {
+    if (wrapper.getAttribute("data-curiosity-ready") === "true") {
+      return;
+    }
+
+    var scenes = Array.prototype.slice.call(
+      wrapper.querySelectorAll("[data-curiosity-scene]")
+    );
+
+    scenes.forEach(function (scene) {
+      initializeScene(scene);
+    });
+
+    wrapper.setAttribute("data-curiosity-ready", "true");
   }
 
   function initializeAllCuriosities() {
