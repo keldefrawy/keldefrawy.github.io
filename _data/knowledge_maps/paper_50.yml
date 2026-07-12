@@ -6,7 +6,7 @@ slug: vrased
 canonical_path: /knowledge/papers/paper-50/
 machine_path: /knowledge/papers/paper-50.json
 root_node_id: paper-50
-stage: mapped_draft
+stage: author_approved
 contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol]
 
@@ -16,7 +16,6 @@ year: 2019
 venue: 28th USENIX Security Symposium
 topic: secure-systems-networks
 labels:
-  - Theory
   - Applied
 authors:
   - Ivan De Oliveira Nunes
@@ -30,6 +29,8 @@ keywords:
   - embedded systems
   - model checking
   - hardware/software co-design
+  - verified system
+  - FPGA implementation
 
 research_question: >-
   Can a low-end embedded device obtain strong, formally stated remote-attestation guarantees with only a small amount of additional hardware?
@@ -45,8 +46,13 @@ curation:
   method: Source-grounded review of the checked-in paper, its public artifact repository, the official publication record, and a later independent adversarial analysis.
   source_scope: full_source_audit
   approval:
-    status: pending
-    note: AI-authored draft awaiting author review. Ratings and summaries may change after review.
+    status: approved
+    approved_at: "2026-07-11"
+    approved_by:
+      actor_type: human
+      name: Karim Eldefrawy
+      role: author
+    note: Reviewed and approved by the author for publication on this website.
 
 sources:
   - id: source-vrased-paper
@@ -431,7 +437,7 @@ assessment:
   id: paper-50-assessment-2026-07-11
   rubric_version: "0.2"
   assessed_at: "2026-07-11"
-  status: ai_draft_author_review_pending
+  status: author_approved
   note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence

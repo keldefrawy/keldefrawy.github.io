@@ -9,7 +9,7 @@ knowledge_hub: true
 {% assign pilot = site.data.knowledge_maps.paper_50 %}
 
 <div class="knowledge-hub">
-  <p class="knowledge-eyebrow">AI-assisted scientific publishing · pilot</p>
+  <p class="knowledge-eyebrow">AI-assisted scientific knowledge presentation · experimental</p>
   <h1>Scientific Knowledge Maps</h1>
   <p class="knowledge-hub-intro">A paper should be readable at several depths: a research question and central answer in seconds, a hierarchy of claims and assumptions in minutes, and a source-linked evidence trail when verification matters.</p>
 
@@ -29,8 +29,8 @@ knowledge_hub: true
   </div>
 
   <aside class="knowledge-review-status" role="note">
-    <strong>Simple publishing model:</strong>
-    <span>AI drafts each map and profile; a human reviews and revises it before approval. VRASED is the full-source exemplar. The other corpus entries begin as clearly labeled summary- or abstract-bounded drafts and must not be mistaken for completed source audits. The website remains static and uses no automated ingestion, scoring pipeline, or GitHub Actions workflow.</span>
+    <strong>Process:</strong>
+    <span>AI drafts each map and profile; the author reviews and revises it before publishing it here. VRASED is the full-source exemplar. The other corpus entries begin as clearly labeled summary- or abstract-bounded drafts and must not be mistaken for completed source audits. The website remains static and uses no automated ingestion, scoring pipeline, or GitHub Actions workflow.</span>
   </aside>
 
   <section class="knowledge-pilot" aria-labelledby="knowledge-pilot-heading">
@@ -39,7 +39,7 @@ knowledge_hub: true
     <p>{{ pilot.central_answer | escape }}</p>
     <ul>
       <li>Stage: {{ pilot.stage | replace: '_', ' ' }}</li>
-      <li>Curation: {{ pilot.curation.approval.status }} author approval</li>
+      <li>Curation: {% if pilot.curation.approval.status == "approved" %}approved by the author{% else %}pending author approval{% endif %}</li>
       <li>{{ pilot.nodes | size }} stable map nodes</li>
       <li>{{ pilot.source_anchors | size }} source anchors</li>
     </ul>
@@ -49,7 +49,7 @@ knowledge_hub: true
   <section class="knowledge-catalog" aria-labelledby="knowledge-catalog-heading">
     <p class="knowledge-section-label">Complete Phase 1 catalog</p>
     <h2 id="knowledge-catalog-heading">All {{ site.papers | size }} paper entries</h2>
-    <p>Every publication now has a stable AI-drafted map and six-axis profile. Summary- and abstract-bounded maps expose their incomplete source-audit status directly; VRASED demonstrates the deeper target with page-level evidence and post-publication scrutiny.</p>
+    <p>Every publication now has a stable map and six-axis profile. Summary- and abstract-bounded maps expose their incomplete source-audit status directly; VRASED is the author-reviewed, source-linked exemplar with page-level evidence and post-publication scrutiny.</p>
 
     {% for domain in site.data.publication_domains %}
       <section class="knowledge-catalog-domain" aria-labelledby="catalog-{{ domain.slug }}">

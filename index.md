@@ -6,9 +6,9 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 
 # Publications, Patents, and Writings
 * Publications ({{ site.data.publications | size }}):
-    * [Browse by Research Area](https://keldefrawy.github.io/publications/) (brief summaries and tags)
     * See [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F7q-GqI53DXmoBIjiwmtgnu75VPKmwt3OmWxFkR6fIsDEBoFY4aY3AW3KFD2fi5AqKsA7lETPZGPC1p3b_1fbs75S5nYF9EQYUHyWIaHOSivsS9xgM&user=e9UP75IAAAAJ) & [ResearchGate](https://www.researchgate.net/profile/Karim-Eldefrawy-2)
-* Scientific Knowledge Maps: [explore AI-assisted, source-linked paper maps](https://keldefrawy.github.io/knowledge/)
+    * [Browse by Research Area](https://keldefrawy.github.io/publications/)
+    * Papers as Scientific Knowledge Maps: [explore AI-assisted, source-linked paper maps](https://keldefrawy.github.io/knowledge/)
 * Patents (31) listed [here](https://keldefrawy.github.io/patents.html)
 * Short informal articles listed [here](https://keldefrawy.github.io/thoughts.html)
 
@@ -43,8 +43,6 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 * **Research:** {firstname_dot_lastname} + {@} + {sri_dot_com}
 * **Personal:** {lastname} + {@} + {email_of_most_famous_search_engine}
 * **Personal Encrypted (if you use it too):** {lastname} + {@} + {positive_particle_in_atomic_nuclei_email_service}
-
-
 
 
 

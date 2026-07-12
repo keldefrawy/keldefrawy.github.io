@@ -35,18 +35,20 @@ layout: default
     {% endfor %}
   </ul>
 
-  <aside class="knowledge-review-status" role="note">
-    <strong>AI-drafted map; author review pending.</strong>
-    {% if record.curation.source_scope == "full_source_audit" %}
-      <span>This source-linked draft is not yet author-approved. It separates formal-model guarantees from concrete-system evidence and can be revised without changing the paper.</span>
-    {% elsif record.curation.source_scope == "metadata_and_author_supplied_abstract" %}
-      <span>This first pass is grounded in an author-supplied abstract. The manuscript, formal theorem statements, hypotheses, and proofs have not yet been audited; technical claims are reported from the abstract, not independently verified.</span>
-    {% elsif record.curation.source_scope == "metadata_and_source_abstract" %}
-      <span>This first pass is grounded in the complete abstract transcribed from a source manuscript. The paper body, formal statements, proofs, implementation, and experiments have not yet been audited; technical claims are reported from the abstract, not independently verified.</span>
-    {% else %}
-      <span>This first pass is derived from the existing editorial summary and resource record. Full-text claim, evidence, assumption, and limitation auditing is still pending; the map does not present those editorial inferences as verified paper claims.</span>
-    {% endif %}
-  </aside>
+  {% unless record.curation.approval.status == "approved" %}
+    <aside class="knowledge-review-status" role="note">
+      <strong>AI-drafted map; author review pending.</strong>
+      {% if record.curation.source_scope == "full_source_audit" %}
+        <span>This source-linked draft is not yet author-approved. It separates formal-model guarantees from concrete-system evidence and can be revised without changing the paper.</span>
+      {% elsif record.curation.source_scope == "metadata_and_author_supplied_abstract" %}
+        <span>This first pass is grounded in an author-supplied abstract. The manuscript, formal theorem statements, hypotheses, and proofs have not yet been audited; technical claims are reported from the abstract, not independently verified.</span>
+      {% elsif record.curation.source_scope == "metadata_and_source_abstract" %}
+        <span>This first pass is grounded in the complete abstract transcribed from a source manuscript. The paper body, formal statements, proofs, implementation, and experiments have not yet been audited; technical claims are reported from the abstract, not independently verified.</span>
+      {% else %}
+        <span>This first pass is derived from the existing editorial summary and resource record. Full-text claim, evidence, assumption, and limitation auditing is still pending; the map does not present those editorial inferences as verified paper claims.</span>
+      {% endif %}
+    </aside>
+  {% endunless %}
 
   <div class="knowledge-question-answer">
     <section aria-labelledby="knowledge-question-heading">
@@ -114,10 +116,12 @@ layout: default
       </dl>
     </div>
 
-    <p class="knowledge-assessment-provenance">
-      <strong>Assessment:</strong> {{ record.assessment.status | replace: '_', ' ' | capitalize }} · {{ record.assessment.assessed_at }} · rubric {{ record.assessment.rubric_version }}.
-      {{ record.assessment.note | escape }}
-    </p>
+    {% unless record.curation.approval.status == "approved" %}
+      <p class="knowledge-assessment-provenance">
+        <strong>Assessment:</strong> {{ record.assessment.status | replace: '_', ' ' | capitalize }} · {{ record.assessment.assessed_at }} · rubric {{ record.assessment.rubric_version }}.
+        {{ record.assessment.note | escape }}
+      </p>
+    {% endunless %}
   </section>
 
   <section id="paper-map" aria-labelledby="paper-map-heading">
