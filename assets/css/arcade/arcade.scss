@@ -1161,3 +1161,645 @@
     overflow: visible;
   }
 }
+
+/* Phase 3 presentation settings and the two initial original themes. Theme
+   selectors consume semantic state only; no theme changes game geometry,
+   timing, random draws, controls, or scoring. */
+.arcade-settings {
+  background: var(--arcade-paper, #fffef9);
+  border: 1px solid var(--arcade-rule, #c9c4b8);
+  margin: -0.5rem 0 1.5rem;
+}
+
+.arcade-settings > summary {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-weight: 900;
+  gap: 0.8rem;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0.7rem 0.85rem;
+}
+
+.arcade-settings > summary small {
+  color: var(--arcade-muted, #5d655f);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 750;
+  text-align: right;
+}
+
+.arcade-settings[open] > summary {
+  border-bottom: 1px solid var(--arcade-rule, #c9c4b8);
+}
+
+.arcade-settings__form {
+  padding: 0.9rem;
+}
+
+.arcade-settings__intro {
+  color: var(--arcade-muted, #5d655f);
+  line-height: 1.5;
+  margin: 0 0 0.85rem;
+  max-width: 72rem;
+}
+
+.arcade-settings__grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.arcade-settings__grid label {
+  display: grid;
+  font-size: 0.7rem;
+  font-weight: 900;
+  gap: 0.3rem;
+  letter-spacing: 0.035em;
+  min-width: 0;
+  text-transform: uppercase;
+}
+
+.arcade-settings select,
+.arcade-settings input,
+.arcade-settings button {
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.arcade-settings select,
+.arcade-settings input[type="range"] {
+  accent-color: var(--arcade-accent, #8c2431);
+  background: var(--arcade-paper, #fffef9);
+  border: 2px solid var(--arcade-ink, #17201c);
+  min-height: 44px;
+  padding: 0.45rem 0.55rem;
+  width: 100%;
+}
+
+.arcade-settings input[type="range"] {
+  border-width: 1px;
+  min-height: 34px;
+  padding: 0 0.3rem;
+}
+
+.arcade-settings__volume span {
+  align-items: center;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: minmax(0, 1fr) 3.2rem;
+  min-height: 44px;
+}
+
+.arcade-settings__volume output {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.arcade-settings__actions {
+  align-items: center;
+  border-top: 1px solid var(--arcade-rule, #c9c4b8);
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+}
+
+.arcade-settings__actions button {
+  appearance: none;
+  background: transparent;
+  border: 2px solid var(--arcade-ink, #17201c);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 900;
+  min-height: 44px;
+  padding: 0.58rem 0.72rem;
+  text-transform: uppercase;
+}
+
+.arcade-settings__actions button:hover {
+  background: var(--arcade-ink, #17201c);
+  color: var(--arcade-paper, #fffef9);
+}
+
+.arcade-settings__actions p {
+  color: var(--arcade-muted, #5d655f);
+  font-size: 0.76rem;
+  margin: 0;
+  text-align: right;
+}
+
+.arcade-settings select:focus-visible,
+.arcade-settings input:focus-visible,
+.arcade-settings button:focus-visible,
+.arcade-settings > summary:focus-visible {
+  outline: 3px solid var(--arcade-focus, #1d69a7);
+  outline-offset: 3px;
+}
+
+html[data-arcade-text-size="large"] {
+  font-size: 112.5%;
+}
+
+html[data-arcade-text-size="extra-large"] {
+  font-size: 125%;
+}
+
+/* Paper Lab is the reference presentation. These values intentionally match
+   the Phase 1/2 visual baseline instead of restyling it. */
+[data-arcade-theme="paper-lab"] {
+  --arcade-bg: #f4f1e8;
+  --arcade-surface: #fffef9;
+  --arcade-ink: #17201c;
+  --arcade-muted: #5d655f;
+  --arcade-focus: #1d69a7;
+  --arcade-safe: #2f602d;
+  --arcade-warning: #835d0c;
+  --arcade-danger: #9f2734;
+  --arcade-grid: #c9c4b8;
+  --arcade-shadow: 7px 7px 0 #d7d2c5;
+  --arcade-radius: 0.25rem;
+  --arcade-motion-fast: 120ms;
+}
+
+/* Classic Cabinet is an original CSS-only cabinet/CRT treatment. It uses no
+   third-party artwork, copied marques, proprietary fonts, sprites, or audio. */
+.arcade-page[data-arcade-theme="classic-cabinet"] {
+  background-color: #07110b;
+  background-image:
+    linear-gradient(rgba(107, 255, 133, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 255, 133, 0.018) 1px, transparent 1px);
+  background-size: 4px 4px, 20px 20px;
+  color: #e3ffd9;
+}
+
+.arcade-page[data-arcade-theme="classic-cabinet"] .wrapper > header,
+.arcade-page[data-arcade-theme="classic-cabinet"] .wrapper > footer {
+  border-color: #31563b;
+}
+
+.arcade-page[data-arcade-theme="classic-cabinet"] .wrapper > header a,
+.arcade-page[data-arcade-theme="classic-cabinet"] .wrapper > header p,
+.arcade-page[data-arcade-theme="classic-cabinet"] .wrapper > footer {
+  color: #e3ffd9;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] {
+  --arcade-paper: #0d1c11;
+  --arcade-ink: #e3ffd9;
+  --arcade-muted: #9abf9d;
+  --arcade-rule: #31563b;
+  --arcade-accent: #6bff85;
+  --arcade-accent-dark: #b1ff7a;
+  --arcade-research: #7ab8ff;
+  --arcade-classic: #ffd166;
+  --arcade-security: #6bff85;
+  --arcade-bg: #07110b;
+  --arcade-surface: #0d1c11;
+  --arcade-focus: #fff56b;
+  --arcade-safe: #6bff85;
+  --arcade-warning: #ffd166;
+  --arcade-danger: #ff5f6d;
+  --arcade-grid: #31563b;
+  --arcade-shadow: 0 0 1.25rem rgba(107, 255, 133, 0.18);
+  --arcade-radius: 0;
+  --arcade-motion-fast: 100ms;
+  color: var(--arcade-ink);
+  font-family: "Courier New", Courier, ui-monospace, monospace;
+  position: relative;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"]::before {
+  border: 1px solid rgba(107, 255, 133, 0.2);
+  box-shadow: inset 0 0 2.4rem rgba(0, 0, 0, 0.45);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-wordmark,
+.arcade-shell[data-arcade-theme="classic-cabinet"] h1,
+.arcade-shell[data-arcade-theme="classic-cabinet"] h2,
+.arcade-shell[data-arcade-theme="classic-cabinet"] h3 {
+  color: #e3ffd9;
+  font-family: "Courier New", Courier, ui-monospace, monospace;
+  letter-spacing: 0.015em;
+  text-shadow: 0 0 0.45rem rgba(107, 255, 133, 0.22);
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-shell__header p,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-game-profile__promise,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-card > p,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-page-intro > p:not(.arcade-kicker) {
+  color: #b6d4ba;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-nav {
+  background: #07110b;
+  border-color: #6bff85;
+  border-width: 2px;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-nav a {
+  border-color: #31563b;
+  color: #e3ffd9;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-nav a:hover {
+  background: #17301d;
+  color: #fff56b;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-hero,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-page-intro,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-game-profile__hero,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-card,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-game-stage,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-limitations,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-source-panel,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-profile-grid > section,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-notice,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-source-index {
+  background-color: #0d1c11;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(227, 255, 217, 0.018) 0,
+    rgba(227, 255, 217, 0.018) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  border: 2px solid #31563b;
+  box-shadow: 5px 5px 0 #020704;
+  color: #e3ffd9;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-card,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-game-profile__hero {
+  border-top-color: #6bff85;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-badge {
+  background: #07110b;
+  color: #8ad8ff;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-badge--status {
+  color: #ffd166;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-action {
+  background: #e3ffd9;
+  border: 3px double #e3ffd9;
+  box-shadow: 3px 3px 0 #31563b;
+  color: #07110b !important;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-action--secondary {
+  background: #07110b;
+  color: #e3ffd9 !important;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-kicker {
+  color: #ffd166;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-source-list li,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-card__facts,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-fact-list,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings[open] > summary,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings__actions {
+  border-color: #31563b;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings select,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings input[type="range"] {
+  background: #07110b;
+  border-color: #6bff85;
+  color: #e3ffd9;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings__actions button {
+  background: #07110b;
+  border: 3px double #6bff85;
+  color: #e3ffd9;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings__actions button:hover {
+  background: #e3ffd9;
+  color: #07110b;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh {
+  --outrefresh-bg: #08140c;
+  --outrefresh-panel: #0d1c11;
+  --outrefresh-ink: #e3ffd9;
+  --outrefresh-muted: #9abf9d;
+  --outrefresh-line: #31563b;
+  --outrefresh-safe: #6bff85;
+  --outrefresh-warning: #ffd166;
+  --outrefresh-danger: #ff5f6d;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(227, 255, 217, 0.025) 0,
+    rgba(227, 255, 217, 0.025) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  border: 4px double #6bff85;
+  box-shadow: 8px 8px 0 #020704, 0 0 1.2rem rgba(107, 255, 133, 0.12);
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh__graph {
+  background-color: #07110b;
+  background-image:
+    linear-gradient(rgba(107, 255, 133, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107, 255, 133, 0.08) 1px, transparent 1px);
+  border-color: #6bff85;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh__edges line {
+  stroke: #9abf9d;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh__node rect {
+  fill: #07110b;
+  stroke: #e3ffd9;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh__node text {
+  fill: #e3ffd9;
+}
+
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh__node[data-state="exposed"] rect,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh__node[data-state="compromised"] rect,
+.arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh__node[data-state="active"] rect {
+  fill: #2c0d12;
+  stroke: #ff5f6d;
+}
+
+/* Semantic specimens carry text, glyph, border-style, and pattern cues so no
+   state depends on hue alone. */
+.arcade-theme-semantic-specimen {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.arcade-theme-semantic-specimen > [data-risk] {
+  --arcade-specimen-state: var(--arcade-unknown, #5c5570);
+  background-color: var(--arcade-surface, var(--arcade-paper, #fffef9));
+  border-color: var(--arcade-specimen-state);
+  border-style: solid;
+  border-width: 2px 2px 2px 0.55rem;
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.85rem;
+}
+
+.arcade-theme-semantic-specimen > [data-risk] strong::before {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  margin-right: 0.35rem;
+  text-align: center;
+  width: 1.1em;
+}
+
+.arcade-theme-semantic-specimen > [data-risk] span {
+  color: var(--arcade-muted, #5d655f);
+}
+
+.arcade-theme-semantic-specimen > [data-risk="safe"] {
+  --arcade-specimen-state: var(--arcade-safe, #17633a);
+  border-style: solid;
+}
+
+.arcade-theme-semantic-specimen > [data-risk="safe"] strong::before {
+  content: "✓";
+}
+
+.arcade-theme-semantic-specimen > [data-risk="warning"] {
+  --arcade-specimen-state: var(--arcade-warning, #8a4d00);
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 7px,
+    color-mix(in srgb, var(--arcade-specimen-state) 10%, transparent) 7px,
+    color-mix(in srgb, var(--arcade-specimen-state) 10%, transparent) 9px
+  );
+  border-style: dashed;
+}
+
+.arcade-theme-semantic-specimen > [data-risk="warning"] strong::before {
+  content: "!";
+}
+
+.arcade-theme-semantic-specimen > [data-risk="danger"] {
+  --arcade-specimen-state: var(--arcade-danger, #9d1c2f);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 5px,
+    color-mix(in srgb, var(--arcade-specimen-state) 11%, transparent) 5px,
+    color-mix(in srgb, var(--arcade-specimen-state) 11%, transparent) 8px
+  );
+  border-style: double;
+  border-width: 5px 5px 5px 0.65rem;
+}
+
+.arcade-theme-semantic-specimen > [data-risk="danger"] strong::before {
+  content: "×";
+}
+
+.arcade-theme-semantic-specimen > [data-risk="offline"] {
+  --arcade-specimen-state: var(--arcade-offline, #686f6a);
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    color-mix(in srgb, var(--arcade-specimen-state) 18%, transparent) 1px,
+    transparent 1.5px
+  );
+  background-size: 8px 8px;
+  border-style: dotted;
+}
+
+.arcade-theme-semantic-specimen > [data-risk="offline"] strong::before {
+  content: "—";
+}
+
+/* Accessibility profiles override themes. */
+.arcade-page[data-arcade-contrast="high"],
+.arcade-page[data-arcade-contrast="high"] .arcade-shell,
+.arcade-page[data-arcade-effective-contrast="high"],
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-shell {
+  --arcade-paper: #000;
+  --arcade-ink: #fff;
+  --arcade-muted: #fff;
+  --arcade-rule: #fff;
+  --arcade-accent: #ff0;
+  --arcade-accent-dark: #ff0;
+  --arcade-focus: #0ff;
+  --outrefresh-bg: #000;
+  --outrefresh-panel: #000;
+  --outrefresh-ink: #fff;
+  --outrefresh-muted: #fff;
+  --outrefresh-line: #fff;
+  background: #000;
+  color: #fff;
+}
+
+.arcade-page[data-arcade-contrast="high"] .arcade-shell *,
+.arcade-page[data-arcade-contrast="high"] .arcade-outrefresh *,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-shell *,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-outrefresh * {
+  text-shadow: none;
+}
+
+.arcade-page[data-arcade-contrast="high"] .arcade-card,
+.arcade-page[data-arcade-contrast="high"] .arcade-hero,
+.arcade-page[data-arcade-contrast="high"] .arcade-page-intro,
+.arcade-page[data-arcade-contrast="high"] .arcade-game-profile__hero,
+.arcade-page[data-arcade-contrast="high"] .arcade-game-stage,
+.arcade-page[data-arcade-contrast="high"] .arcade-limitations,
+.arcade-page[data-arcade-contrast="high"] .arcade-source-panel,
+.arcade-page[data-arcade-contrast="high"] .arcade-profile-grid > section,
+.arcade-page[data-arcade-contrast="high"] .arcade-settings,
+.arcade-page[data-arcade-contrast="high"] .arcade-outrefresh,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-card,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-hero,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-page-intro,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-game-profile__hero,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-game-stage,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-limitations,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-source-panel,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-profile-grid > section,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-settings,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-outrefresh {
+  background: #000;
+  border-color: #fff;
+  box-shadow: none;
+  color: #fff;
+}
+
+.arcade-page[data-arcade-contrast="high"] a,
+.arcade-page[data-arcade-contrast="high"] .arcade-kicker,
+.arcade-page[data-arcade-effective-contrast="high"] a,
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-kicker {
+  color: #ff0 !important;
+}
+
+.arcade-page[data-arcade-contrast="high"] :focus-visible,
+.arcade-page[data-arcade-effective-contrast="high"] :focus-visible {
+  outline-color: #0ff !important;
+}
+
+.arcade-page[data-arcade-motion="reduced"],
+.arcade-page[data-arcade-motion="reduced"] *,
+.arcade-page[data-arcade-effective-motion="reduced"],
+.arcade-page[data-arcade-effective-motion="reduced"] * {
+  scroll-behavior: auto !important;
+}
+
+.arcade-page[data-arcade-motion="reduced"] .arcade-shell::before,
+.arcade-page[data-arcade-motion="reduced"] .arcade-card,
+.arcade-page[data-arcade-motion="reduced"] .arcade-game-profile__hero,
+.arcade-page[data-arcade-motion="reduced"] .arcade-outrefresh,
+.arcade-page[data-arcade-effective-motion="reduced"] .arcade-shell::before,
+.arcade-page[data-arcade-effective-motion="reduced"] .arcade-card,
+.arcade-page[data-arcade-effective-motion="reduced"] .arcade-game-profile__hero,
+.arcade-page[data-arcade-effective-motion="reduced"] .arcade-outrefresh {
+  background-image: none;
+  text-shadow: none;
+}
+
+.arcade-page[data-arcade-contrast="high"] .arcade-theme-semantic-specimen > [data-risk],
+.arcade-page[data-arcade-effective-contrast="high"] .arcade-theme-semantic-specimen > [data-risk] {
+  background-color: #000;
+  border-color: #fff;
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  .arcade-settings__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arcade-theme-semantic-specimen {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .arcade-settings > summary,
+  .arcade-settings__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .arcade-settings > summary small,
+  .arcade-settings__actions p {
+    text-align: left;
+  }
+
+  .arcade-settings__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arcade-settings__actions button {
+    width: 100%;
+  }
+
+  .arcade-theme-semantic-specimen {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arcade-page .arcade-shell::before,
+  .arcade-page .arcade-card,
+  .arcade-page .arcade-game-profile__hero,
+  .arcade-page .arcade-outrefresh {
+    background-image: none;
+    text-shadow: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .arcade-settings,
+  .arcade-settings select,
+  .arcade-settings input,
+  .arcade-settings button,
+  .arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-settings,
+  .arcade-shell[data-arcade-theme="classic-cabinet"] .arcade-outrefresh {
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  .arcade-theme-semantic-specimen > [data-risk] {
+    background: Canvas;
+    border-color: CanvasText;
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  .arcade-shell[data-arcade-theme="classic-cabinet"]::before {
+    display: none;
+  }
+}
+
+@media print {
+  .arcade-settings {
+    display: none;
+  }
+}

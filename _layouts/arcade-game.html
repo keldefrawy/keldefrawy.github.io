@@ -4,12 +4,18 @@ layout: default
 {% assign arcade_game_id = page.game_id | default: page.slug %}
 {% assign arcade_game_matches = site.data.arcade_games | where: 'id', arcade_game_id %}
 {% assign arcade_game = arcade_game_matches | first %}
-<main class="arcade-shell arcade-shell--game" data-arcade-page data-arcade-game-page="{{ arcade_game_id }}">
+<main
+  class="arcade-shell arcade-shell--game"
+  data-arcade-page
+  data-arcade-game-page="{{ arcade_game_id }}"
+  data-arcade-supported-themes="{% if arcade_game and arcade_game.supported_themes %}{{ arcade_game.supported_themes | join: ' ' | escape }}{% else %}paper-lab classic-cabinet{% endif %}"
+>
   <header class="arcade-shell__header">
     <a class="arcade-wordmark" href="{{ '/arcade/' | relative_url }}">Cryptography Arcade</a>
     <p>One rules catalog, many future presentation systems.</p>
   </header>
   {% include arcade/navigation.html %}
+  {% include arcade/theme-settings.html %}
   {% if arcade_game %}
     {% assign arcade_promise = arcade_game.player_promise | default: arcade_game.promise %}
     <article class="arcade-game-profile">

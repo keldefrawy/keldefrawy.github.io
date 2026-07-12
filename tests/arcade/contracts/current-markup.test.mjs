@@ -4,6 +4,7 @@ import { countOccurrences, readRepositoryFile } from "../helpers/repository.mjs"
 
 let markup;
 let styles;
+let loveScript;
 
 function elementWithAttribute(tag, attribute) {
   return markup.match(new RegExp(`<${tag}\\b[^>]*${attribute}[^>]*>`, "i"))?.[0] || "";
@@ -25,9 +26,10 @@ function optionRecords(selectAttribute) {
 
 describe("Phase 0.5 current arcade markup and style contracts", () => {
   beforeAll(async () => {
-    [markup, styles] = await Promise.all([
+    [markup, styles, loveScript] = await Promise.all([
       readRepositoryFile("_includes", "home-adversary-game.html"),
-      readRepositoryFile("assets", "css", "adversary-game.scss")
+      readRepositoryFile("assets", "css", "adversary-game.scss"),
+      readRepositoryFile("assets", "js", "arcade-love.js")
     ]);
   });
 
@@ -237,5 +239,29 @@ describe("Phase 0.5 current arcade markup and style contracts", () => {
     expect(styles).toContain("@media screen and (max-width: 900px)");
     expect(styles).toContain("@media screen and (max-width: 620px)");
     expect(styles).toContain("@media (prefers-reduced-motion: reduce)");
+  });
+
+  it("M29 provides two synchronized, accessible heart controls when GoatCounter is configured", () => {
+    const heartButtons = [...markup.matchAll(/<button\b[\s\S]*?data-arcade-love[\s\S]*?<\/button>/g)]
+      .map((match) => match[0]);
+
+    expect(heartButtons).toHaveLength(2);
+    for (const button of heartButtons) {
+      expect(button).toContain('type="button"');
+      expect(button).toContain('aria-pressed="false"');
+      expect(button).toContain('aria-label="Love the Cryptography Arcade; count loading"');
+      expect(button).toContain("data-arcade-love-count");
+    }
+    expect(countOccurrences(markup, 'id="arcade-love-status"')).toBe(1);
+    expect(markup).toContain("arcade_goatcounter_code != empty");
+  });
+
+  it("M30 keeps the heart counter explicit, device-local, and independent of pageview tracking", () => {
+    expect(loveScript).toContain('STORAGE_PREFIX = "cryptography-arcade-love:v1:"');
+    expect(loveScript).toContain("window.localStorage");
+    expect(loveScript).toContain('goatcounter.com/count"');
+    expect(loveScript).toContain('goatcounter.com/counter/"');
+    expect(loveScript).not.toContain("gc.zgo.at/count.js");
+    expect(styles).toContain('.arcade-love[aria-pressed="true"]');
   });
 });

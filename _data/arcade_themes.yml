@@ -1,0 +1,311 @@
+# Original Cryptography Arcade presentation themes. Game rules and replay data
+# never depend on these records. Tokens are inline until dedicated CSS bundles
+# are introduced; empty asset/cue arrays explicitly mean no external assets.
+
+- schema_version: 1
+  id: paper-lab
+  name: Paper Lab
+  status: shipped
+  direction: High-legibility research notebook with restrained color and diagram-first surfaces.
+  layout_preset: clean-lab
+  token_source: manifest-inline
+  token_file: null
+  tokens:
+    bg: "#f4f0e6"
+    surface: "#fffdf8"
+    ink: "#17201c"
+    muted: "#505953"
+    focus: "#005fcc"
+    safe: "#17633a"
+    warning: "#8a4d00"
+    danger: "#9d1c2f"
+    unknown: "#5c5570"
+    ciphertext: "#284f8f"
+    public_data: "#315f9f"
+    secret_data: "#702b70"
+    authenticated: "#17633a"
+    tampered: "#9d1c2f"
+    fresh: "#08717a"
+    replayed: "#735c0f"
+    verified: "#17633a"
+    offline: "#686f6a"
+    grid: "#c9c4b8"
+    shadow: "0 0.25rem 1rem rgb(23 32 28 / 0.14)"
+    radius: "0.25rem"
+    motion_fast: "120ms"
+  font_stack: [Georgia, Times New Roman, serif]
+  asset_pack: {id: paper-lab-core, status: shipped, assets: []}
+  audio_pack: {id: paper-lab-audio, status: none, cues: []}
+  accessibility_profiles: [reduced-motion, high-contrast, large-text, relaxed-timing, sound-off]
+  author: {name: Cryptography Arcade project, role: original theme design}
+  license:
+    id: LicenseRef-Cryptography-Arcade-Original
+    holder: Karim Eldefrawy
+    terms: Original project-owned theme tokens; redistribution terms follow the website repository license when one is adopted.
+  attribution: Original project theme using only system fonts and CSS-rendered surfaces; no third-party visual or audio assets.
+  originality: Original research-notebook art direction; no franchise branding, copied interface, or third-party trade dress.
+  review_status: token-reviewed
+
+- schema_version: 1
+  id: classic-cabinet
+  name: Classic Cabinet
+  status: shipped
+  direction: Monochrome pixel-and-CRT lineage with chunky controls and optional static scanline texture.
+  layout_preset: arcade-cabinet
+  token_source: manifest-inline
+  token_file: null
+  tokens:
+    bg: "#07110b"
+    surface: "#0d1c11"
+    ink: "#e3ffd9"
+    muted: "#9abf9d"
+    focus: "#fff56b"
+    safe: "#6bff85"
+    warning: "#ffd166"
+    danger: "#ff5f6d"
+    unknown: "#b5a7d8"
+    ciphertext: "#7ab8ff"
+    public_data: "#8ad8ff"
+    secret_data: "#e78cff"
+    authenticated: "#6bff85"
+    tampered: "#ff5f6d"
+    fresh: "#5ff2df"
+    replayed: "#ffd166"
+    verified: "#b1ff7a"
+    offline: "#829187"
+    grid: "#31563b"
+    shadow: "0 0 1.25rem rgb(107 255 133 / 0.18)"
+    radius: "0rem"
+    motion_fast: "100ms"
+  font_stack: [Courier New, Courier, monospace]
+  asset_pack: {id: classic-cabinet-core, status: shipped, assets: []}
+  audio_pack: {id: classic-cabinet-audio, status: planned, cues: []}
+  accessibility_profiles: [reduced-motion, high-contrast, large-text, relaxed-timing, sound-off]
+  author: {name: Cryptography Arcade project, role: original theme design}
+  license:
+    id: LicenseRef-Cryptography-Arcade-Original
+    holder: Karim Eldefrawy
+    terms: Original project-owned theme tokens; redistribution terms follow the website repository license when one is adopted.
+  attribution: Original project theme using system monospace fonts and CSS effects; no third-party cabinet art, music, or samples.
+  originality: Original arcade-cabinet direction without copied cabinet marques, game sprites, sound recordings, or franchise names.
+  review_status: token-reviewed
+
+- schema_version: 1
+  id: ink-circuit
+  name: Ink Circuit
+  status: planned
+  direction: Original manga-like composition using halftone, speed lines, black and white, and one electric spot color.
+  layout_preset: comic-panels
+  token_source: manifest-inline
+  token_file: null
+  tokens:
+    bg: "#f7f3e8"
+    surface: "#fffdf6"
+    ink: "#151515"
+    muted: "#565656"
+    focus: "#005fcc"
+    safe: "#17633a"
+    warning: "#7a4b00"
+    danger: "#b0003a"
+    unknown: "#62566d"
+    ciphertext: "#004fa3"
+    public_data: "#1d66b0"
+    secret_data: "#8c145d"
+    authenticated: "#17633a"
+    tampered: "#b0003a"
+    fresh: "#007a77"
+    replayed: "#7a4b00"
+    verified: "#17633a"
+    offline: "#696969"
+    grid: "#b9b4aa"
+    shadow: "0.3rem 0.3rem 0 #151515"
+    radius: "0rem"
+    motion_fast: "90ms"
+  font_stack: [Arial Black, Arial, sans-serif]
+  asset_pack: {id: ink-circuit-core, status: planned, assets: []}
+  audio_pack: {id: ink-circuit-audio, status: planned, cues: []}
+  accessibility_profiles: [reduced-motion, high-contrast, large-text, relaxed-timing, sound-off]
+  author: {name: Cryptography Arcade project, role: original theme design}
+  license:
+    id: LicenseRef-Cryptography-Arcade-Original
+    holder: Karim Eldefrawy
+    terms: Original project-owned theme tokens; redistribution terms follow the website repository license when one is adopted.
+  attribution: Planned original CSS and project-drawn ink assets; no third-party manga panels, characters, fonts, or sound samples are included.
+  originality: Original ink-and-circuit visual grammar; canonical cryptographic terms remain visible and no recognizable character or franchise interface is used.
+  review_status: design-draft
+
+- schema_version: 1
+  id: neon-terminal
+  name: Neon Terminal
+  status: planned
+  direction: Abstract phosphor terminal with original circuit glyph flow, layered consoles, and low-saturation neon accents.
+  layout_preset: mission-console
+  token_source: manifest-inline
+  token_file: null
+  tokens:
+    bg: "#030b08"
+    surface: "#081612"
+    ink: "#c8ffe1"
+    muted: "#83b69b"
+    focus: "#fff36b"
+    safe: "#52f08a"
+    warning: "#ffc857"
+    danger: "#ff667a"
+    unknown: "#c0a7ff"
+    ciphertext: "#69b9ff"
+    public_data: "#70e0e8"
+    secret_data: "#e488ff"
+    authenticated: "#52f08a"
+    tampered: "#ff667a"
+    fresh: "#52e3d4"
+    replayed: "#ffc857"
+    verified: "#a5ff74"
+    offline: "#72857c"
+    grid: "#174b37"
+    shadow: "0 0 1.5rem rgb(82 240 138 / 0.2)"
+    radius: "0.2rem"
+    motion_fast: "100ms"
+  font_stack: [IBM Plex Mono, Courier New, monospace]
+  asset_pack: {id: neon-terminal-core, status: planned, assets: []}
+  audio_pack: {id: neon-terminal-audio, status: planned, cues: []}
+  accessibility_profiles: [reduced-motion, high-contrast, large-text, relaxed-timing, sound-off]
+  author: {name: Cryptography Arcade project, role: original theme design}
+  license:
+    id: LicenseRef-Cryptography-Arcade-Original
+    holder: Karim Eldefrawy
+    terms: Original project-owned theme tokens; redistribution terms follow the website repository license when one is adopted.
+  attribution: Planned original abstract glyphs and synthesized cues; system-font fallbacks are mandatory and no recordings are bundled.
+  originality: Original cyber-terminal treatment without copied falling-code sequences, film glyphs, proprietary console layouts, or franchise naming.
+  review_status: design-draft
+
+- schema_version: 1
+  id: techno-noir-city
+  name: Techno-Noir City
+  status: planned
+  direction: Original cel-like urban HUD with rain layers, restrained holographic depth, and muted neon lighting.
+  layout_preset: cinematic-widescreen
+  token_source: manifest-inline
+  token_file: null
+  tokens:
+    bg: "#090b14"
+    surface: "#111726"
+    ink: "#e8eefc"
+    muted: "#9ca9c2"
+    focus: "#ffe66d"
+    safe: "#62d59a"
+    warning: "#f4bd5b"
+    danger: "#ff6b82"
+    unknown: "#ab9fe8"
+    ciphertext: "#6ba8ff"
+    public_data: "#6fd4e8"
+    secret_data: "#d68be8"
+    authenticated: "#62d59a"
+    tampered: "#ff6b82"
+    fresh: "#66d9cf"
+    replayed: "#f4bd5b"
+    verified: "#9ee57d"
+    offline: "#788398"
+    grid: "#29344e"
+    shadow: "0 0.5rem 2rem rgb(0 0 0 / 0.4)"
+    radius: "0.4rem"
+    motion_fast: "140ms"
+  font_stack: [Inter, Helvetica Neue, Arial, sans-serif]
+  asset_pack: {id: techno-noir-city-core, status: planned, assets: []}
+  audio_pack: {id: techno-noir-city-audio, status: planned, cues: []}
+  accessibility_profiles: [reduced-motion, high-contrast, large-text, relaxed-timing, sound-off]
+  author: {name: Cryptography Arcade project, role: original theme design}
+  license:
+    id: LicenseRef-Cryptography-Arcade-Original
+    holder: Karim Eldefrawy
+    terms: Original project-owned theme tokens; redistribution terms follow the website repository license when one is adopted.
+  attribution: Planned project-created city silhouettes, HUD elements, and synthesized ambience; no external art or recordings are included.
+  originality: Original techno-noir environment with no recognizable franchise silhouettes, vehicles, interface frames, logos, or character designs.
+  review_status: design-draft
+
+- schema_version: 1
+  id: command-grid
+  name: Command Grid
+  status: planned
+  direction: Original command-table strategy interface with radar geometry, unit cards, and industrial labels.
+  layout_preset: command-table
+  token_source: manifest-inline
+  token_file: null
+  tokens:
+    bg: "#11150f"
+    surface: "#20271c"
+    ink: "#f2f0d8"
+    muted: "#adb19c"
+    focus: "#ffe75e"
+    safe: "#85cc67"
+    warning: "#e9b949"
+    danger: "#ed5d52"
+    unknown: "#9f96bc"
+    ciphertext: "#72a7d8"
+    public_data: "#6fbfc0"
+    secret_data: "#c285b7"
+    authenticated: "#85cc67"
+    tampered: "#ed5d52"
+    fresh: "#70c9a9"
+    replayed: "#e9b949"
+    verified: "#b2dc6d"
+    offline: "#85897c"
+    grid: "#48513e"
+    shadow: "0 0.35rem 1.2rem rgb(0 0 0 / 0.35)"
+    radius: "0.15rem"
+    motion_fast: "110ms"
+  font_stack: [Arial Narrow, Arial, sans-serif]
+  asset_pack: {id: command-grid-core, status: planned, assets: []}
+  audio_pack: {id: command-grid-audio, status: planned, cues: []}
+  accessibility_profiles: [reduced-motion, high-contrast, large-text, relaxed-timing, sound-off]
+  author: {name: Cryptography Arcade project, role: original theme design}
+  license:
+    id: LicenseRef-Cryptography-Arcade-Original
+    holder: Karim Eldefrawy
+    terms: Original project-owned theme tokens; redistribution terms follow the website repository license when one is adopted.
+  attribution: Planned fictional symbols and synthesized radio-style cues created for this project; no faction marks or samples are bundled.
+  originality: Original command-room design without copied strategy-game chrome, real military insignia, proprietary unit art, or franchise terminology.
+  review_status: design-draft
+
+- schema_version: 1
+  id: xenocrypt
+  name: Xenocrypt
+  status: planned
+  direction: Alien bio-circuitry, unknown signal textures, organic panels, and quiet cosmic depth without jump scares.
+  layout_preset: organism-console
+  token_source: manifest-inline
+  token_file: null
+  tokens:
+    bg: "#071014"
+    surface: "#102126"
+    ink: "#e2f8ee"
+    muted: "#9db8af"
+    focus: "#f5f06a"
+    safe: "#73d99c"
+    warning: "#e7b85c"
+    danger: "#ef6e83"
+    unknown: "#b29cdb"
+    ciphertext: "#68aee3"
+    public_data: "#65c8c5"
+    secret_data: "#c888c9"
+    authenticated: "#73d99c"
+    tampered: "#ef6e83"
+    fresh: "#64d5b4"
+    replayed: "#e7b85c"
+    verified: "#a4df7e"
+    offline: "#758b86"
+    grid: "#28504e"
+    shadow: "0 0 1.8rem rgb(85 211 180 / 0.16)"
+    radius: "0.8rem"
+    motion_fast: "160ms"
+  font_stack: [Trebuchet MS, Verdana, sans-serif]
+  asset_pack: {id: xenocrypt-core, status: planned, assets: []}
+  audio_pack: {id: xenocrypt-audio, status: planned, cues: []}
+  accessibility_profiles: [reduced-motion, high-contrast, large-text, relaxed-timing, sound-off]
+  author: {name: Cryptography Arcade project, role: original theme design}
+  license:
+    id: LicenseRef-Cryptography-Arcade-Original
+    holder: Karim Eldefrawy
+    terms: Original project-owned theme tokens; redistribution terms follow the website repository license when one is adopted.
+  attribution: Planned project-created bio-circuit textures, abstract glyphs, and synthesized nonverbal cues; no external assets are included.
+  originality: Original alien-interface design; abstract glyphs never replace canonical terms and no known creature, language, or franchise imagery is used.
+  review_status: design-draft

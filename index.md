@@ -7,12 +7,12 @@ title: Home
 <div class="home-page-content" markdown="1">
 
 <figure class="home-research-banner">
-  <img src="{{ '/assets/images/home-research-ribbon-banner.png' | relative_url }}" alt="" width="1983" height="793" fetchpriority="high">
+  <img src="{{ '/assets/images/home-research-ribbon-banner.png' | relative_url }}" alt="" width="1981" height="794" fetchpriority="high">
   <figcaption class="home-research-banner__stats" aria-label="Selected research figures">
-    <a href="{{ '/publications/' | relative_url }}"><strong>{{ site.data.publications | size }}</strong><span>mapped papers</span></a>
+    <a href="{{ '/publications/' | relative_url }}"><strong>79</strong><span>peer-reviewed publications</span></a>
     <a href="{{ '/patents.html' | relative_url }}"><strong>31</strong><span>granted patents</span></a>
-    <a href="{{ '/projects.html' | relative_url }}"><strong>12</strong><span>funded R&amp;D projects</span></a>
-    <a href="https://scholar.google.com/citations?user=e9UP75IAAAAJ&amp;hl=en"><strong>2.5K+</strong><span>scholarly citations</span></a>
+    <a href="{{ '/projects.html' | relative_url }}"><strong>13</strong><span>funded R&amp;D projects</span></a>
+    <a href="https://scholar.google.com/citations?user=e9UP75IAAAAJ&amp;hl=en"><strong>5.1K+</strong><span>Google Scholar citations</span></a>
   </figcaption>
 </figure>
 
@@ -68,15 +68,6 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 ## Commercial Transitions
 
 * Co-founder & CTO of [Confidencial.io](https://www.confidencial.io/)
-
-</article>
-
-<article class="home-card home-card--arcade" markdown="1">
-
-## Cryptography Arcade
-
-* [Enter the Arcade lobby]({{ '/arcade/' | relative_url }}) for generic Cryptography Classics, paper-derived Research Arcade games, and the Security Side Arcade.
-* Browse [game-to-paper sources]({{ '/arcade/sources/' | relative_url }}) or launch the current Outrefresh prototype below.
 
 </article>
 

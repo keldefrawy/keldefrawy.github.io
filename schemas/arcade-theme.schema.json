@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://keldefrawy.github.io/schemas/arcade-theme.schema.json",
+  "title": "Cryptography Arcade theme registry",
+  "type": "array",
+  "minItems": 7,
+  "maxItems": 7,
+  "items": { "$ref": "#/$defs/theme" },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 80
+    },
+    "safeText": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 1000,
+      "pattern": "^[^<>{}]+$"
+    },
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$"
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "holder", "terms"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(?:LicenseRef-)?[A-Za-z0-9][A-Za-z0-9.-]{1,79}$"
+        },
+        "holder": { "$ref": "#/$defs/safeText" },
+        "terms": { "$ref": "#/$defs/safeText" }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "type", "author", "license", "attribution"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "path": {
+          "type": "string",
+          "pattern": "^/assets/arcade/[a-zA-Z0-9/_-]+\\.(?:svg|png|webp|woff2|json)$"
+        },
+        "type": { "enum": ["image", "texture", "icon", "font", "data"] },
+        "author": { "$ref": "#/$defs/safeText" },
+        "license": { "$ref": "#/$defs/license" },
+        "attribution": { "$ref": "#/$defs/safeText" }
+      }
+    },
+    "cue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "source", "author", "license", "attribution"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "label": { "$ref": "#/$defs/safeText" },
+        "source": { "const": "synthesized" },
+        "author": { "$ref": "#/$defs/safeText" },
+        "license": { "$ref": "#/$defs/license" },
+        "attribution": { "$ref": "#/$defs/safeText" }
+      }
+    },
+    "pack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "assets"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "status": { "enum": ["shipped", "planned", "none"] },
+        "assets": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/asset" }
+        }
+      }
+    },
+    "audioPack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "cues"],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "status": { "enum": ["shipped", "planned", "none"] },
+        "cues": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/cue" }
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bg", "surface", "ink", "muted", "focus", "safe", "warning",
+        "danger", "unknown", "ciphertext", "public_data", "secret_data",
+        "authenticated", "tampered", "fresh", "replayed", "verified",
+        "offline", "grid", "shadow", "radius", "motion_fast"
+      ],
+      "properties": {
+        "bg": { "$ref": "#/$defs/color" },
+        "surface": { "$ref": "#/$defs/color" },
+        "ink": { "$ref": "#/$defs/color" },
+        "muted": { "$ref": "#/$defs/color" },
+        "focus": { "$ref": "#/$defs/color" },
+        "safe": { "$ref": "#/$defs/color" },
+        "warning": { "$ref": "#/$defs/color" },
+        "danger": { "$ref": "#/$defs/color" },
+        "unknown": { "$ref": "#/$defs/color" },
+        "ciphertext": { "$ref": "#/$defs/color" },
+        "public_data": { "$ref": "#/$defs/color" },
+        "secret_data": { "$ref": "#/$defs/color" },
+        "authenticated": { "$ref": "#/$defs/color" },
+        "tampered": { "$ref": "#/$defs/color" },
+        "fresh": { "$ref": "#/$defs/color" },
+        "replayed": { "$ref": "#/$defs/color" },
+        "verified": { "$ref": "#/$defs/color" },
+        "offline": { "$ref": "#/$defs/color" },
+        "grid": { "$ref": "#/$defs/color" },
+        "shadow": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 120,
+          "pattern": "^[^;{}<>]+$"
+        },
+        "radius": { "type": "string", "pattern": "^(?:0|[0-9]+(?:\\.[0-9]+)?)(?:rem|px)$" },
+        "motion_fast": { "type": "string", "pattern": "^[0-9]+(?:\\.[0-9]+)?ms$" }
+      }
+    },
+    "theme": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version", "id", "name", "status", "direction", "layout_preset",
+        "token_source", "token_file", "tokens", "font_stack", "asset_pack",
+        "audio_pack", "accessibility_profiles", "author", "license", "attribution",
+        "originality", "review_status"
+      ],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "id": {
+          "enum": [
+            "paper-lab", "classic-cabinet", "ink-circuit", "neon-terminal",
+            "techno-noir-city", "command-grid", "xenocrypt"
+          ]
+        },
+        "name": { "type": "string", "minLength": 3, "maxLength": 60 },
+        "status": { "enum": ["shipped", "planned"] },
+        "direction": { "$ref": "#/$defs/safeText" },
+        "layout_preset": {
+          "enum": [
+            "clean-lab", "arcade-cabinet", "comic-panels", "mission-console",
+            "cinematic-widescreen", "command-table", "organism-console"
+          ]
+        },
+        "token_source": { "const": "manifest-inline" },
+        "token_file": {
+          "oneOf": [
+            { "type": "null" },
+            { "type": "string", "pattern": "^/assets/css/arcade/[a-zA-Z0-9/_-]+\\.css$" }
+          ]
+        },
+        "tokens": { "$ref": "#/$defs/tokens" },
+        "font_stack": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 60,
+            "pattern": "^[^;{}<>]+$"
+          }
+        },
+        "asset_pack": { "$ref": "#/$defs/pack" },
+        "audio_pack": { "$ref": "#/$defs/audioPack" },
+        "accessibility_profiles": {
+          "type": "array",
+          "minItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["reduced-motion", "high-contrast", "large-text", "relaxed-timing", "sound-off"]
+          }
+        },
+        "author": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "role"],
+          "properties": {
+            "name": { "$ref": "#/$defs/safeText" },
+            "role": { "$ref": "#/$defs/safeText" }
+          }
+        },
+        "license": { "$ref": "#/$defs/license" },
+        "attribution": { "$ref": "#/$defs/safeText" },
+        "originality": { "$ref": "#/$defs/safeText" },
+        "review_status": {
+          "enum": ["design-draft", "token-reviewed", "accessibility-reviewed", "release-reviewed"]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "shipped" } }, "required": ["status"] },
+          "then": {
+            "properties": {
+              "review_status": { "enum": ["token-reviewed", "accessibility-reviewed", "release-reviewed"] },
+              "asset_pack": {
+                "type": "object",
+                "properties": { "status": { "const": "shipped" } }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

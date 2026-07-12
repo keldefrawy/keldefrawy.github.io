@@ -1,12 +1,13 @@
 ---
 layout: default
 ---
-<main class="arcade-shell" data-arcade-page>
+<main class="arcade-shell" data-arcade-page data-arcade-supported-themes="paper-lab classic-cabinet">
   <header class="arcade-shell__header">
     <a class="arcade-wordmark" href="{{ '/arcade/' | relative_url }}">Cryptography Arcade</a>
     <p>Playable ideas from cryptography, privacy, networks, and secure systems.</p>
   </header>
   {% include arcade/navigation.html %}
+  {% include arcade/theme-settings.html %}
   <div class="arcade-shell__content">
     {{ content }}
   </div>

@@ -25,7 +25,7 @@ A cabinet begins with observable state, hidden state, actions, transition rules,
 
 ## Presentation bundles
 
-The long-term design supports Paper Lab, Classic Cabinet, Ink Circuit, Neon Terminal, Techno-Noir City, Command Grid, and Xenocrypt. These are original presentation systems inspired by broad genres. They do not copy franchise characters, symbols, distinctive interfaces, music, or trade dress.
+The long-term design supports Paper Lab, Classic Cabinet, Ink Circuit, Neon Terminal, Techno-Noir City, Command Grid, and Xenocrypt. These are original presentation systems inspired by broad genres. They do not copy franchise characters, symbols, distinctive interfaces, music, or trade dress. Inspect the shipped token and licensing contracts in the [theme specimen gallery]({{ '/arcade/themes/' | relative_url }}).
 
 ## Credits and licenses
 

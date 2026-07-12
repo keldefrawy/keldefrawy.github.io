@@ -1,4 +1,13 @@
-<div class="adversary-game-arcade" data-adversary-arcade>
+{% assign arcade_goatcounter_code = site.goatcounter.code | default: "" %}
+{% assign arcade_love_path = site.goatcounter.arcade_love_path | default: "/arcade-love" %}
+<div
+  class="adversary-game-arcade"
+  data-adversary-arcade
+  {% if arcade_goatcounter_code != empty %}
+    data-goatcounter-code="{{ arcade_goatcounter_code | escape }}"
+    data-goatcounter-path="{{ arcade_love_path | escape }}"
+  {% endif %}
+>
   <p class="adversary-game-launch">
     <a
       href="#cryptography-arcade-dialog"
@@ -6,7 +15,32 @@
       aria-haspopup="dialog"
       aria-controls="cryptography-arcade-dialog"
     >&copy; Cryptography Arcade<sup>&trade;</sup></a>
+    {% if arcade_goatcounter_code != empty %}
+      <button
+        class="arcade-love"
+        type="button"
+        data-arcade-love
+        aria-label="Love the Cryptography Arcade; count loading"
+        aria-pressed="false"
+        aria-describedby="arcade-love-status"
+        disabled
+      >
+        <span class="arcade-love__heart" data-arcade-love-heart aria-hidden="true">♡</span>
+        <span class="arcade-love__count" data-arcade-love-count aria-hidden="true">…</span>
+      </button>
+    {% endif %}
   </p>
+
+  {% if arcade_goatcounter_code != empty %}
+    <span
+      class="sr-only"
+      id="arcade-love-status"
+      data-arcade-love-status
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></span>
+  {% endif %}
 
   <dialog
     class="adversary-game-dialog"
@@ -17,7 +51,23 @@
   >
     <div class="adversary-game-dialog__shell">
       <div class="adversary-game-dialog__topbar">
-        <span id="cryptography-arcade-dialog-label">&copy; Cryptography Arcade&trade;</span>
+        <div class="adversary-game-dialog__identity">
+          <span id="cryptography-arcade-dialog-label">&copy; Cryptography Arcade&trade;</span>
+          {% if arcade_goatcounter_code != empty %}
+            <button
+              class="arcade-love arcade-love--dialog"
+              type="button"
+              data-arcade-love
+              aria-label="Love the Cryptography Arcade; count loading"
+              aria-pressed="false"
+              aria-describedby="arcade-love-status"
+              disabled
+            >
+              <span class="arcade-love__heart" data-arcade-love-heart aria-hidden="true">♡</span>
+              <span class="arcade-love__count" data-arcade-love-count aria-hidden="true">…</span>
+            </button>
+          {% endif %}
+        </div>
         <button type="button" data-game-close>CLOSE</button>
       </div>
 

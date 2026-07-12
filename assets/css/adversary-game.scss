@@ -8,6 +8,11 @@
 }
 
 .adversary-game-launch {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
   margin: 0.2rem 0 0;
 }
 
@@ -23,6 +28,58 @@
   font-size: 0.58em;
   margin-left: 0.08em;
   vertical-align: super;
+}
+
+.arcade-love {
+  align-items: center;
+  appearance: none;
+  background: #fff;
+  border: 1px solid #d8a1aa;
+  border-radius: 999px;
+  color: #9f2132;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.72rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  gap: 0.24rem;
+  justify-content: center;
+  line-height: 1;
+  min-height: 32px;
+  min-width: 48px;
+  padding: 0.3rem 0.48rem;
+}
+
+.arcade-love:hover:not(:disabled),
+.arcade-love:focus-visible {
+  background: #fff0f2;
+  border-color: #9f2132;
+}
+
+.arcade-love:focus-visible {
+  outline: 3px solid rgba(159, 33, 50, 0.28);
+  outline-offset: 2px;
+}
+
+.arcade-love:disabled {
+  cursor: default;
+  opacity: 0.58;
+}
+
+.arcade-love[aria-pressed="true"] {
+  background: #fff0f2;
+  border-color: #9f2132;
+  opacity: 1;
+}
+
+.arcade-love__heart {
+  font-size: 0.95rem;
+  line-height: 0.8;
+}
+
+.arcade-love__count {
+  min-width: 1ch;
 }
 
 .home-last-updated {
@@ -87,7 +144,15 @@
   width: auto;
 }
 
-.adversary-game-dialog__topbar button {
+.adversary-game-dialog__identity {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.adversary-game-dialog__topbar [data-game-close] {
   appearance: none;
   background: #fff;
   border: 2px solid #fff;
@@ -99,9 +164,26 @@
   text-transform: uppercase;
 }
 
-.adversary-game-dialog__topbar button:hover {
+.adversary-game-dialog__topbar [data-game-close]:hover {
   background: #151515;
   color: #fff;
+}
+
+.adversary-game-dialog .arcade-love {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #ff9aaa;
+  min-height: 28px;
+  padding-bottom: 0.22rem;
+  padding-top: 0.22rem;
+}
+
+.adversary-game-dialog .arcade-love:hover:not(:disabled),
+.adversary-game-dialog .arcade-love:focus-visible,
+.adversary-game-dialog .arcade-love[aria-pressed="true"] {
+  background: #fff;
+  border-color: #fff;
+  color: #9f2132;
 }
 
 .adversary-game-dialog__body {

@@ -6,6 +6,12 @@ baseurl: ""
 timezone: America/Los_Angeles
 theme: jekyll-theme-minimal
 
+# Hosted GoatCounter site code (the prefix in CODE.goatcounter.com).
+# Leave blank until the GoatCounter site exists and public visitor counts are enabled.
+goatcounter:
+  code: ""
+  arcade_love_path: "/arcade-love"
+
 plugins:
   - jekyll-sitemap
 
