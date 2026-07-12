@@ -9,7 +9,9 @@
   var EPSILON = 0.01;
   var HISTORY_STEP_MS = 500;
   var MAX_HISTORY_SNAPSHOTS = 240;
-  var SPLASH_DURATION_MS = 1900;
+  var SPLASH_DURATION_MS = 2000;
+  var CADENCE_VALUES = [1600, 2400, 3400, 4800];
+  var CADENCE_LABELS = ["FAST", "BALANCED", "SLOW", "VERY SLOW"];
   var EDGES = [
     [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0],
     [6, 0], [6, 2], [6, 4]
@@ -90,8 +92,14 @@
     var closeButton;
     var splash;
     var splashSkipButton;
-    var cadenceSelect;
-    var batchSelect;
+    var splashMenu;
+    var splashState;
+    var splashContinueButton;
+    var splashResetButton;
+    var cadenceRange;
+    var cadenceValue;
+    var batchRange;
+    var batchValue;
     var scheduleControls;
     var forecast;
     var timeValue;
@@ -118,7 +126,6 @@
     var activeDialogTrigger = null;
     var announcementTimer = null;
     var splashTimer = null;
-    var splashSeen = false;
     var gameState = "idle";
     var pauseReasons = {};
     var runId = 0;
@@ -164,8 +171,14 @@
     closeButton = gameDialog ? gameDialog.querySelector("[data-game-close]") : null;
     splash = gameDialog ? gameDialog.querySelector("[data-game-splash]") : null;
     splashSkipButton = splash ? splash.querySelector("[data-game-splash-skip]") : null;
-    cadenceSelect = root.querySelector("[data-game-cadence]");
-    batchSelect = root.querySelector("[data-game-batch]");
+    splashMenu = splash ? splash.querySelector("[data-game-splash-menu]") : null;
+    splashState = splash ? splash.querySelector("[data-game-splash-state]") : null;
+    splashContinueButton = splash ? splash.querySelector("[data-game-splash-continue]") : null;
+    splashResetButton = splash ? splash.querySelector("[data-game-splash-reset]") : null;
+    cadenceRange = root.querySelector("[data-game-cadence]");
+    cadenceValue = root.querySelector("[data-game-cadence-value]");
+    batchRange = root.querySelector("[data-game-batch]");
+    batchValue = root.querySelector("[data-game-batch-value]");
     scheduleControls = root.querySelector("[data-game-schedule-controls]");
     forecast = root.querySelector("[data-game-forecast]");
     timeValue = root.querySelector("[data-game-time]");
@@ -188,7 +201,8 @@
     historySummary = root.querySelector("[data-game-history-summary]");
 
     if (!arcade || !gameDialog || !openButton || !closeButton || !splash || !splashSkipButton ||
-        !cadenceSelect || !batchSelect ||
+        !splashMenu || !splashState || !splashContinueButton || !splashResetButton ||
+        !cadenceRange || !cadenceValue || !batchRange || !batchValue ||
         !scheduleControls || !forecast || !timeValue ||
         !epochValue || !exposureValue || !onlineValue || !exposureCard || !onlineCard ||
         !phaseValue || !canvas || !message || !announcer || !toggleButton || !resetButton ||
@@ -220,10 +234,34 @@
     }
 
     function scheduleValues() {
+      var cadenceIndex = parseInt(cadenceRange.value, 10);
+      var batch = parseInt(batchRange.value, 10);
+
+      if (!Number.isFinite(cadenceIndex)) {
+        cadenceIndex = 1;
+      }
+      if (!Number.isFinite(batch)) {
+        batch = 2;
+      }
+      cadenceIndex = Math.max(0, Math.min(CADENCE_VALUES.length - 1, cadenceIndex));
+      batch = Math.max(1, Math.min(4, batch));
       return {
-        cadence: parseInt(cadenceSelect.value, 10) || 2400,
-        batch: parseInt(batchSelect.value, 10) || 2
+        cadence: CADENCE_VALUES[cadenceIndex],
+        cadenceIndex: cadenceIndex,
+        batch: batch
       };
+    }
+
+    function syncScheduleControls() {
+      var values = scheduleValues();
+      var partyLabel = values.batch === 1 ? "1 PARTY" : values.batch + " PARTIES";
+
+      cadenceRange.value = String(values.cadenceIndex);
+      cadenceRange.setAttribute("aria-valuetext", CADENCE_LABELS[values.cadenceIndex]);
+      cadenceValue.textContent = CADENCE_LABELS[values.cadenceIndex];
+      batchRange.value = String(values.batch);
+      batchRange.setAttribute("aria-valuetext", partyLabel);
+      batchValue.textContent = partyLabel;
     }
 
     function isRecovering(index) {
@@ -304,8 +342,9 @@
           " distinct parties into recovery—enough to lose the 4-party quorum.";
       } else if (values.cadence >= 3400) {
         level = "warning";
-        text = "Comfortable recovery headroom, but a " + (values.cadence / 1000).toFixed(1) +
-          "-second epoch gives the accelerating adversary a long window to collect compatible shares.";
+        text = "Comfortable recovery headroom, but the " +
+          CADENCE_LABELS[values.cadenceIndex].toLowerCase() +
+          " refresh tempo gives the accelerating adversary a long window to collect compatible shares.";
       } else if (headroom === 0) {
         text = "No spare recovery slot: one worst-case overlap remains within quorum, but any fourth outage would stop the computation.";
       } else {
@@ -632,6 +671,7 @@
       stopFrame();
       gameState = "idle";
       scheduleControls.disabled = false;
+      syncScheduleControls();
       resetModel();
       committedCadence = scheduleValues().cadence;
       committedBatch = scheduleValues().batch;
@@ -1366,18 +1406,48 @@
       }
     }
 
-    function revealGameAfterSplash(focusGame) {
+    function hasCurrentRun() {
+      return gameState !== "idle" || historySnapshots.length > 0;
+    }
+
+    function showSplashMenu(focusMenu) {
+      var currentRun = hasCurrentRun();
+      var shouldMoveFocus = focusMenu && document.activeElement === splashSkipButton;
+
       clearSplashTimer();
-      splashSeen = true;
+      splash.setAttribute("data-splash-phase", "menu");
+      splashSkipButton.hidden = true;
+      splashMenu.hidden = false;
+      splashContinueButton.textContent = currentRun ? "CONTINUE CURRENT RUN" : "ENTER ARCADE";
+      splashState.textContent = currentRun ?
+        "CURRENT RUN RETAINED // CONTINUE OR RESET THE ARCADE" :
+        "NO ACTIVE RUN // ENTER OR RESET THE ARCADE";
+      if (shouldMoveFocus) {
+        splashContinueButton.focus();
+      }
+    }
+
+    function revealGameAfterSplash(focusTarget) {
+      clearSplashTimer();
       splash.hidden = true;
+      splash.removeAttribute("data-splash-phase");
+      splashSkipButton.hidden = false;
+      splashMenu.hidden = true;
       gameDialog.removeAttribute("data-splash-active");
       root.hidden = false;
       root.removeAttribute("inert");
       root.removeAttribute("aria-hidden");
+      resumeGame("arcade");
+      gameDialog.scrollTop = 0;
+      // Force one backing-store synchronization in the same task that makes
+      // the canvas visible. ResizeObserver and the next frame remain useful
+      // for later layout changes, but neither should leave a newly revealed
+      // high-DPR canvas temporarily stretched from its markup dimensions.
+      resizeCanvas();
       window.requestAnimationFrame(function () {
         resizeCanvas();
-        if (focusGame && gameDialog.open) {
-          toggleButton.focus();
+        if (focusTarget && gameDialog.open) {
+          focusTarget.focus();
         }
       });
     }
@@ -1385,19 +1455,25 @@
     function showSplash() {
       clearSplashTimer();
       gameDialog.setAttribute("data-splash-active", "true");
+      splash.setAttribute("data-splash-phase", "intro");
       splash.hidden = false;
+      splashSkipButton.hidden = false;
+      splashMenu.hidden = true;
       root.hidden = true;
       root.setAttribute("inert", "");
       root.setAttribute("aria-hidden", "true");
       splashSkipButton.focus();
       splashTimer = window.setTimeout(function () {
-        revealGameAfterSplash(true);
-      }, reducedMotion ? 900 : SPLASH_DURATION_MS);
+        showSplashMenu(true);
+      }, SPLASH_DURATION_MS);
     }
 
     function cancelSplash() {
       clearSplashTimer();
       splash.hidden = true;
+      splash.removeAttribute("data-splash-phase");
+      splashSkipButton.hidden = false;
+      splashMenu.hidden = true;
       gameDialog.removeAttribute("data-splash-active");
       root.hidden = false;
       root.removeAttribute("inert");
@@ -1419,14 +1495,7 @@
         gameDialog.setAttribute("open", "");
       }
       document.body.classList.add("adversary-game-dialog-open");
-      resumeGame("arcade");
-      if (!splashSeen && gameState === "idle") {
-        showSplash();
-      } else {
-        splash.hidden = true;
-        closeButton.focus();
-        window.requestAnimationFrame(resizeCanvas);
-      }
+      showSplash();
     }
 
     function cleanupGameDialog() {
@@ -1448,13 +1517,26 @@
       }
     }
 
-    cadenceSelect.addEventListener("change", resetPreview);
-    batchSelect.addEventListener("change", resetPreview);
+    cadenceRange.addEventListener("input", resetPreview);
+    batchRange.addEventListener("input", resetPreview);
 
     openButton.addEventListener("click", showGameDialog);
     closeButton.addEventListener("click", closeGameDialog);
     splashSkipButton.addEventListener("click", function () {
-      revealGameAfterSplash(true);
+      showSplashMenu(true);
+    });
+    splashContinueButton.addEventListener("click", function () {
+      revealGameAfterSplash(hasCurrentRun() ? toggleButton : cadenceRange);
+    });
+    splashResetButton.addEventListener("click", function () {
+      cadenceRange.value = "1";
+      batchRange.value = "2";
+      resetPreview();
+      setMessage(
+        "ARCADE RESET // REPROGRAM SCHEDULE // NEW ATTACK PATH HIDDEN",
+        "Arcade reset. Choose a schedule for a new run."
+      );
+      revealGameAfterSplash(cadenceRange);
     });
     gameDialog.addEventListener("click", function (event) {
       if (event.target === gameDialog) {
@@ -1480,7 +1562,7 @@
         "Game reset. Choose a schedule for a new run."
       );
       renderAll();
-      cadenceSelect.focus();
+      cadenceRange.focus();
     });
 
     historyToggleButton.addEventListener("click", function () {

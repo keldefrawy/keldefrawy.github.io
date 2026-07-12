@@ -16,7 +16,7 @@ permalink: /awards.html
     <div class="awards-section-heading">
       <div>
         <p class="awards-section-kicker">From research to real-world impact</p>
-        <h2 id="awards-timeline-title">Recognition over time</h2>
+        <h2 id="awards-timeline-title">Recognition Over Time</h2>
       </div>
       <p class="awards-timeline-hint">Chronological · left to right</p>
     </div>
@@ -31,7 +31,9 @@ permalink: /awards.html
         {% for award in site.data.awards %}
           <li class="awards-timeline__item">
             <time datetime="{{ award.year }}">{{ award.year }}</time>
-            <span class="awards-timeline__marker award-icon--{{ award.icon }}" aria-hidden="true"></span>
+            <span class="awards-timeline__marker" aria-hidden="true">
+              {% include award-icon.html name=award.icon %}
+            </span>
             <a href="#award-{{ award.year }}">{{ award.short_title | escape }}</a>
             <span class="awards-timeline__organization">{{ award.organization | escape }}</span>
           </li>

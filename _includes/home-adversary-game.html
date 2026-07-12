@@ -90,6 +90,15 @@
             <time datetime="2026-07-12">CONCEIVED + IMPLEMENTED // JULY 12, 2026</time>
           </p>
           <button type="button" data-game-splash-skip>PRESS START</button>
+          <div class="adversary-game-splash__menu" data-game-splash-menu hidden>
+            <p data-game-splash-state role="status" aria-live="polite" aria-atomic="true">
+              NO ACTIVE RUN // ENTER OR RESET THE ARCADE
+            </p>
+            <div class="adversary-game-splash__actions" role="group" aria-label="Arcade launch choices">
+              <button type="button" data-game-splash-continue>ENTER ARCADE</button>
+              <button type="button" data-game-splash-reset>RESET ARCADE</button>
+            </div>
+          </div>
         </div>
 
         <section
@@ -116,26 +125,46 @@
 
             <fieldset class="adversary-game__schedule" data-game-schedule-controls>
               <legend>SET REJUVENATION SCHEDULE</legend>
-              <label for="adversary-game-cadence">
-                REFRESH PULSE
-                <select id="adversary-game-cadence" data-game-cadence>
-                  <option value="1600">1.6 SECONDS</option>
-                  <option value="2400" selected>2.4 SECONDS</option>
-                  <option value="3400">3.4 SECONDS</option>
-                  <option value="4800">4.8 SECONDS</option>
-                </select>
+              <label class="adversary-game__schedule-control" for="adversary-game-cadence">
+                <span class="adversary-game__schedule-label">
+                  <span>REFRESH TEMPO</span>
+                  <output for="adversary-game-cadence" data-game-cadence-value aria-hidden="true">BALANCED</output>
+                </span>
+                <input
+                  id="adversary-game-cadence"
+                  data-game-cadence
+                  type="range"
+                  min="0"
+                  max="3"
+                  step="1"
+                  value="1"
+                  aria-valuetext="Balanced"
+                >
+                <span class="adversary-game__range-scale adversary-game__range-scale--tempo" aria-hidden="true">
+                  <span>FAST</span><span>BALANCED</span><span>SLOW</span><span>VERY SLOW</span>
+                </span>
               </label>
-              <label for="adversary-game-batch">
-                PARTIES PER DRAW
-                <select id="adversary-game-batch" data-game-batch>
-                  <option value="1">1 PARTY</option>
-                  <option value="2" selected>2 PARTIES</option>
-                  <option value="3">3 PARTIES</option>
-                  <option value="4">4 PARTIES</option>
-                </select>
+              <label class="adversary-game__schedule-control" for="adversary-game-batch">
+                <span class="adversary-game__schedule-label">
+                  <span>PARTIES PER DRAW</span>
+                  <output for="adversary-game-batch" data-game-batch-value aria-hidden="true">2 PARTIES</output>
+                </span>
+                <input
+                  id="adversary-game-batch"
+                  data-game-batch
+                  type="range"
+                  min="1"
+                  max="4"
+                  step="1"
+                  value="2"
+                  aria-valuetext="2 parties"
+                >
+                <span class="adversary-game__range-scale" aria-hidden="true">
+                  <span>1</span><span>2</span><span>3</span><span>4</span>
+                </span>
               </label>
               <p class="adversary-game__schedule-note">
-                RANDOM DRAW // NO DUPLICATES // REJUVENATION TIME 2.2S
+                RANDOM DRAW // NO DUPLICATES // RECOVERY MAY OVERLAP THE NEXT PULSE
               </p>
             </fieldset>
           </header>

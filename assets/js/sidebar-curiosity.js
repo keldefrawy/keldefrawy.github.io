@@ -3,7 +3,8 @@
 
   var DEFAULT_ANIMATION_DURATION = 10500;
   var DEFAULT_FRAME_INTERVAL = 350;
-  var AUTO_DELAY_BANDS = [[150, 650], [1150, 1850], [2250, 3100]];
+  var AUTO_LOOP_DELAY_MIN = 5000;
+  var AUTO_LOOP_DELAY_MAX = 15000;
   var AUTO_DURATION_BANDS = [[9300, 10100], [10600, 11300], [11800, 12500]];
   var AUTO_FRAME_INTERVAL_BANDS = [[300, 340], [370, 410], [440, 480]];
   var motionQuery = window.matchMedia ?
@@ -64,21 +65,17 @@
   }
 
   function sidebarTimingProfiles(count) {
-    var delayBands = shuffled(AUTO_DELAY_BANDS);
     var durationBands = shuffled(AUTO_DURATION_BANDS);
     var frameIntervalBands = shuffled(AUTO_FRAME_INTERVAL_BANDS);
     var profiles = [];
     var index;
-    var delayBand;
     var durationBand;
     var frameIntervalBand;
 
     for (index = 0; index < count; index += 1) {
-      delayBand = delayBands[index % delayBands.length];
       durationBand = durationBands[index % durationBands.length];
       frameIntervalBand = frameIntervalBands[index % frameIntervalBands.length];
       profiles.push({
-        delayMs: randomInteger(delayBand[0], delayBand[1]),
         durationMs: randomInteger(durationBand[0], durationBand[1]),
         frameIntervalMs: randomInteger(frameIntervalBand[0], frameIntervalBand[1])
       });
@@ -219,7 +216,7 @@
       return preloadPromise;
     }
 
-    function begin(announce, currentRequest) {
+    function begin(announce, currentRequest, onComplete) {
       var messages = sceneMessages[sceneName] || {
         playing: "The animation is playing.",
         finished: "The animation has finished."
@@ -262,11 +259,14 @@
           if (announce && status) {
             status.textContent = messages.finished;
           }
+          if (typeof onComplete === "function") {
+            onComplete();
+          }
         }, animationDuration);
       });
     }
 
-    function play(announce, delayMs) {
+    function play(announce, delayMs, onComplete) {
       var currentRequest;
       var startDelay = Math.max(0, Number(delayMs) || 0);
 
@@ -283,10 +283,10 @@
           if (startDelay > 0) {
             startTimer = window.setTimeout(function () {
               startTimer = null;
-              begin(Boolean(announce), currentRequest);
+              begin(Boolean(announce), currentRequest, onComplete);
             }, startDelay);
           } else {
-            begin(Boolean(announce), currentRequest);
+            begin(Boolean(announce), currentRequest, onComplete);
           }
         }
       });
@@ -327,6 +327,190 @@
     };
   }
 
+  function createSidebarLoop(wrapper, scenes) {
+    var nextTimer = null;
+    var activeScene = null;
+    var lastScene = null;
+    var sceneQueue = [];
+    var pauseReasons = {};
+    var destroyed = false;
+
+    function hasPauseReasons() {
+      return Object.keys(pauseReasons).some(function (reason) {
+        return pauseReasons[reason];
+      });
+    }
+
+    function clearNextTimer() {
+      if (nextTimer !== null) {
+        window.clearTimeout(nextTimer);
+        nextTimer = null;
+      }
+      wrapper.removeAttribute("data-curiosity-next-delay-ms");
+    }
+
+    function stopActiveScene() {
+      if (activeScene && activeScene.curiosityPlayer) {
+        activeScene.curiosityPlayer.stop(true);
+      }
+      activeScene = null;
+      wrapper.removeAttribute("data-curiosity-auto-scene");
+    }
+
+    function canRun() {
+      return !destroyed &&
+        !hasPauseReasons() &&
+        !prefersReducedMotion() &&
+        !document.hidden &&
+        wrapper.getClientRects().length > 0;
+    }
+
+    function chooseNextScene() {
+      var availableScenes;
+      var swapIndex;
+      var temporary;
+
+      if (sceneQueue.length === 0) {
+        availableScenes = scenes.filter(function (scene) {
+          return Boolean(scene.curiosityPlayer);
+        });
+        sceneQueue = shuffled(availableScenes);
+
+        if (lastScene && sceneQueue.length > 1 && sceneQueue[0] === lastScene) {
+          swapIndex = randomInteger(1, sceneQueue.length - 1);
+          temporary = sceneQueue[0];
+          sceneQueue[0] = sceneQueue[swapIndex];
+          sceneQueue[swapIndex] = temporary;
+        }
+      }
+
+      return sceneQueue.shift() || null;
+    }
+
+    function scheduleNext() {
+      var delayMs;
+
+      clearNextTimer();
+      if (!canRun() || activeScene) {
+        return;
+      }
+
+      delayMs = randomInteger(AUTO_LOOP_DELAY_MIN, AUTO_LOOP_DELAY_MAX);
+      wrapper.setAttribute("data-curiosity-next-delay-ms", String(delayMs));
+      nextTimer = window.setTimeout(function () {
+        var scene;
+        var sceneName;
+
+        nextTimer = null;
+        wrapper.removeAttribute("data-curiosity-next-delay-ms");
+        if (!canRun()) {
+          return;
+        }
+
+        scene = chooseNextScene();
+        if (!scene || !scene.curiosityPlayer) {
+          scheduleNext();
+          return;
+        }
+
+        activeScene = scene;
+        lastScene = scene;
+        sceneName = scene.getAttribute("data-curiosity-scene") || "curiosity";
+        wrapper.setAttribute("data-curiosity-auto-scene", sceneName);
+        scene.curiosityPlayer.play(false, 0, function () {
+          if (destroyed || activeScene !== scene) {
+            return;
+          }
+
+          activeScene = null;
+          wrapper.removeAttribute("data-curiosity-auto-scene");
+          scheduleNext();
+        });
+      }, delayMs);
+    }
+
+    function pause(reason) {
+      pauseReasons[reason || "manual"] = true;
+      clearNextTimer();
+      stopActiveScene();
+    }
+
+    function resume(reason) {
+      delete pauseReasons[reason || "manual"];
+      scheduleNext();
+    }
+
+    function handleMotionChange(event) {
+      if (event.matches) {
+        clearNextTimer();
+        stopActiveScene();
+      } else {
+        scheduleNext();
+      }
+    }
+
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        clearNextTimer();
+        stopActiveScene();
+      } else {
+        scheduleNext();
+      }
+    }
+
+    function handlePageHide() {
+      pause("page");
+    }
+
+    function handlePageShow() {
+      resume("page");
+    }
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("pagehide", handlePageHide);
+    window.addEventListener("pageshow", handlePageShow);
+    if (motionQuery) {
+      if (typeof motionQuery.addEventListener === "function") {
+        motionQuery.addEventListener("change", handleMotionChange);
+      } else if (typeof motionQuery.addListener === "function") {
+        motionQuery.addListener(handleMotionChange);
+      }
+    }
+
+    wrapper.setAttribute("data-curiosity-auto-loop", "true");
+
+    return {
+      destroy: function () {
+        if (destroyed) {
+          return;
+        }
+
+        clearNextTimer();
+        stopActiveScene();
+        scenes.forEach(function (scene) {
+          if (scene.curiosityPlayer) {
+            scene.curiosityPlayer.destroy();
+          }
+        });
+        document.removeEventListener("visibilitychange", handleVisibilityChange);
+        window.removeEventListener("pagehide", handlePageHide);
+        window.removeEventListener("pageshow", handlePageShow);
+        if (motionQuery) {
+          if (typeof motionQuery.removeEventListener === "function") {
+            motionQuery.removeEventListener("change", handleMotionChange);
+          } else if (typeof motionQuery.removeListener === "function") {
+            motionQuery.removeListener(handleMotionChange);
+          }
+        }
+        wrapper.removeAttribute("data-curiosity-auto-loop");
+        destroyed = true;
+      },
+      pause: pause,
+      resume: resume,
+      scheduleNext: scheduleNext
+    };
+  }
+
   function initializeScene(scene, timing) {
     if (scene.getAttribute("data-curiosity-scene-ready") === "true") {
       return;
@@ -337,7 +521,6 @@
     var replayButton = scene.querySelector("[data-curiosity-replay]");
     var player;
     var profile = timing || {
-      delayMs: 0,
       durationMs: DEFAULT_ANIMATION_DURATION,
       frameIntervalMs: DEFAULT_FRAME_INTERVAL
     };
@@ -355,7 +538,6 @@
       frameInterval: profile.frameIntervalMs
     });
     scene.curiosityPlayer = player;
-    scene.setAttribute("data-curiosity-start-delay-ms", String(profile.delayMs));
     scene.setAttribute("data-curiosity-duration-ms", String(profile.durationMs));
     scene.setAttribute("data-curiosity-frame-interval-ms", String(profile.frameIntervalMs));
 
@@ -363,10 +545,6 @@
       replayButton.addEventListener("click", function () {
         player.play(true);
       });
-    }
-
-    if (!prefersReducedMotion() && scene.getClientRects().length > 0) {
-      player.play(false, profile.delayMs);
     }
 
     scene.removeAttribute("hidden");
@@ -384,7 +562,9 @@
     scenes.forEach(function (scene, index) {
       initializeScene(scene, timingProfiles[index]);
     });
+    wrapper.curiosityLoop = createSidebarLoop(wrapper, scenes);
     wrapper.setAttribute("data-curiosity-ready", "true");
+    wrapper.curiosityLoop.resume();
   }
 
   function parseConnectionsData() {
@@ -972,6 +1152,9 @@
         return;
       }
 
+      if (wrapper.curiosityLoop) {
+        wrapper.curiosityLoop.pause("dialog");
+      }
       activeTrigger = trigger;
       setConnectionsOpen(false, false);
       populateDialog(scene, sceneName);
@@ -995,6 +1178,9 @@
       stopModalPlayer();
       setConnectionsOpen(false, false);
       document.body.classList.remove("curiosity-dialog-open");
+      if (wrapper.curiosityLoop) {
+        wrapper.curiosityLoop.resume("dialog");
+      }
       if (resizeFrame !== null) {
         window.cancelAnimationFrame(resizeFrame);
         resizeFrame = null;

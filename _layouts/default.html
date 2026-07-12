@@ -8,6 +8,7 @@
   {% assign landing_publication_matches = site.data.publications | where: "id", page.paper_id %}
   {% assign landing_publication = landing_publication_matches | first %}
 {% endif %}
+{% assign asset_version = site.time | date: "%Y%m%d%H%M%S" %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -96,9 +97,9 @@
     {% elsif page.publications_browser %}
     <link rel="alternate" type="application/json" href="{{ '/knowledge/papers/index.json' | absolute_url }}" title="Machine-readable publication and knowledge-map index">
     {% endif %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: asset_version | relative_url }}">
     {% if page.homepage %}
-    <link rel="stylesheet" href="{{ "/assets/css/adversary-game.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/adversary-game.css?v=" | append: asset_version | relative_url }}">
     {% endif %}
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -147,11 +148,11 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/sidebar-curiosity.js?v=" | append: site.github.build_revision | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/sidebar-curiosity.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% if page.homepage %}
-    <script src="{{ "/assets/js/adversary-game.js?v=" | append: site.github.build_revision | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/adversary-game.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% if site.goatcounter.code and site.goatcounter.code != empty %}
-    <script src="{{ "/assets/js/arcade-love.js?v=" | append: site.github.build_revision | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/arcade-love.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% endif %}
     {% endif %}
     {% if page.publications_browser %}
