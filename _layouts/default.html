@@ -97,6 +97,9 @@
     <link rel="alternate" type="application/json" href="{{ '/knowledge/papers/index.json' | absolute_url }}" title="Machine-readable publication and knowledge-map index">
     {% endif %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% if page.homepage %}
+    <link rel="stylesheet" href="{{ "/assets/css/adversary-game.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% endif %}
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -144,8 +147,14 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script src="{{ "/assets/js/sidebar-curiosity.js?v=" | append: site.github.build_revision | relative_url }}" defer></script>
+    {% if page.homepage %}
+    <script src="{{ "/assets/js/adversary-game.js?v=" | append: site.github.build_revision | relative_url }}" defer></script>
+    {% endif %}
     {% if page.publications_browser %}
     <script src="{{ "/assets/js/publication-abstracts.js" | relative_url }}" defer></script>
+    {% endif %}
+    {% if page.knowledge_hub %}
+    <script src="{{ "/assets/js/knowledge-hub.js" | relative_url }}" defer></script>
     {% endif %}
     {% if knowledge_record %}
     <script src="{{ "/assets/js/knowledge-map.js" | relative_url }}" defer></script>

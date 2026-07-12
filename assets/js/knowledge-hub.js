@@ -1,0 +1,795 @@
+(function () {
+  "use strict";
+
+  var PAPER_PREVIEW_LIMIT = 6;
+  var TOPIC_PREVIEW_LIMIT = 14;
+
+  function toArray(collection) {
+    return Array.prototype.slice.call(collection || []);
+  }
+
+  function clear(element) {
+    if (element) {
+      element.textContent = "";
+    }
+  }
+
+  function parseJSON(value, fallback) {
+    try {
+      return JSON.parse(value || "");
+    } catch (error) {
+      return fallback;
+    }
+  }
+
+  function normalized(value) {
+    return String(value || "").trim().toLocaleLowerCase();
+  }
+
+  function initializeLandscape() {
+    var root = document.querySelector("[data-knowledge-landscape]");
+
+    if (!root || root.getAttribute("data-knowledge-ready") === "true") {
+      return;
+    }
+
+    var controls = toArray(root.querySelectorAll("[data-knowledge-area-control]"));
+    var catalogPapers = toArray(document.querySelectorAll("[data-knowledge-paper]"));
+    var detail = root.querySelector("[data-knowledge-area-detail]");
+    var selectedDomain = root.querySelector("[data-knowledge-selected-domain]");
+    var selectedName = root.querySelector("[data-knowledge-selected-name]");
+    var selectedDescription = root.querySelector("[data-knowledge-selected-description]");
+    var subtopics = root.querySelector("[data-knowledge-subtopics]");
+    var topicCloud = root.querySelector("[data-knowledge-topic-cloud]");
+    var topicsMore = root.querySelector("[data-knowledge-topics-more]");
+    var paperPreview = root.querySelector("[data-knowledge-paper-preview]");
+    var paperStatus = root.querySelector("[data-knowledge-paper-status]");
+    var papersMore = root.querySelector("[data-knowledge-papers-more]");
+    var catalogLink = root.querySelector("[data-knowledge-catalog-link]");
+    var activeControl = null;
+    var activeTag = null;
+    var showAllPapers = false;
+    var showAllTopics = false;
+    var records;
+
+    if (!controls.length || !catalogPapers.length || !detail || !topicCloud || !paperPreview) {
+      return;
+    }
+
+    records = catalogPapers.map(function (item) {
+      var link = item.querySelector("div > a");
+      var meta = item.querySelector(".knowledge-catalog-meta");
+
+      return {
+        element: item,
+        id: item.getAttribute("data-paper-id") || "",
+        link: link ? link.getAttribute("href") : "#",
+        meta: meta ? meta.textContent.trim() : "",
+        tags: parseJSON(item.getAttribute("data-tags"), []),
+        title: link ? link.textContent.trim() : "Untitled paper",
+        topic: item.getAttribute("data-topic") || ""
+      };
+    });
+
+    function recordsForActiveArea() {
+      var slug = activeControl ? activeControl.getAttribute("data-knowledge-area-control") : "";
+
+      return records.filter(function (record) {
+        return record.topic === slug;
+      });
+    }
+
+    function topicRecords(areaRecords) {
+      var topicsByKey = {};
+
+      areaRecords.forEach(function (record) {
+        var seen = {};
+
+        (record.tags || []).forEach(function (label) {
+          var key = normalized(label);
+
+          if (!key || seen[key]) {
+            return;
+          }
+          seen[key] = true;
+          if (!topicsByKey[key]) {
+            topicsByKey[key] = { count: 0, key: key, label: String(label) };
+          }
+          topicsByKey[key].count += 1;
+        });
+      });
+
+      return Object.keys(topicsByKey).map(function (key) {
+        return topicsByKey[key];
+      }).sort(function (left, right) {
+        if (left.count !== right.count) {
+          return right.count - left.count;
+        }
+        return left.label.localeCompare(right.label);
+      });
+    }
+
+    function topicWeight(count) {
+      if (count >= 4) {
+        return "3";
+      }
+      if (count >= 2) {
+        return "2";
+      }
+      return "1";
+    }
+
+    function createTopicButton(label, count, key) {
+      var button = document.createElement("button");
+      var countLabel = document.createElement("span");
+      var isAll = key === "";
+      var isPressed = isAll ? activeTag === null : activeTag === key;
+
+      button.type = "button";
+      button.setAttribute("aria-pressed", isPressed ? "true" : "false");
+      button.setAttribute("data-weight", isAll ? "1" : topicWeight(count));
+      button.appendChild(document.createTextNode(label));
+      countLabel.textContent = String(count);
+      button.appendChild(countLabel);
+      button.setAttribute("aria-label", label + ", " + count + (count === 1 ? " paper" : " papers"));
+      button.addEventListener("click", function () {
+        activeTag = isAll || activeTag === key ? null : key;
+        showAllPapers = activeTag !== null;
+        renderTopics();
+        renderPapers();
+      });
+
+      return button;
+    }
+
+    function renderTopics() {
+      var areaRecords = recordsForActiveArea();
+      var topics = topicRecords(areaRecords);
+      var visibleTopics = showAllTopics ? topics : topics.slice(0, TOPIC_PREVIEW_LIMIT);
+
+      clear(topicCloud);
+      topicCloud.appendChild(createTopicButton("All papers", areaRecords.length, ""));
+      visibleTopics.forEach(function (topic) {
+        topicCloud.appendChild(createTopicButton(topic.label, topic.count, topic.key));
+      });
+
+      if (topicsMore) {
+        topicsMore.hidden = topics.length <= TOPIC_PREVIEW_LIMIT;
+        topicsMore.textContent = showAllTopics ? "Show fewer topics" : "Show all " + topics.length + " topics";
+        topicsMore.setAttribute("aria-expanded", showAllTopics ? "true" : "false");
+      }
+    }
+
+    function paperMatchesTag(record) {
+      if (activeTag === null) {
+        return true;
+      }
+
+      return (record.tags || []).some(function (tag) {
+        return normalized(tag) === activeTag;
+      });
+    }
+
+    function createPaperPreview(record) {
+      var item = document.createElement("li");
+      var link = document.createElement("a");
+      var meta = document.createElement("span");
+
+      link.href = record.link;
+      link.textContent = record.title;
+      meta.textContent = "#" + record.id + (record.meta ? " · " + record.meta : "");
+      item.appendChild(link);
+      item.appendChild(meta);
+      return item;
+    }
+
+    function renderPapers() {
+      var areaRecords = recordsForActiveArea();
+      var matchingRecords = areaRecords.filter(paperMatchesTag);
+      var visibleRecords = activeTag !== null || showAllPapers ?
+        matchingRecords : matchingRecords.slice(0, PAPER_PREVIEW_LIMIT);
+      var selectedTopic;
+
+      clear(paperPreview);
+      visibleRecords.forEach(function (record) {
+        paperPreview.appendChild(createPaperPreview(record));
+      });
+
+      if (paperStatus) {
+        if (activeTag !== null) {
+          selectedTopic = topicRecords(areaRecords).filter(function (topic) {
+            return topic.key === activeTag;
+          })[0];
+          paperStatus.textContent = matchingRecords.length +
+            (matchingRecords.length === 1 ? " paper" : " papers") +
+            " tagged “" + (selectedTopic ? selectedTopic.label : activeTag) + "”";
+        } else if (visibleRecords.length < matchingRecords.length) {
+          paperStatus.textContent = "Showing " + visibleRecords.length + " of " + matchingRecords.length;
+        } else {
+          paperStatus.textContent = matchingRecords.length +
+            (matchingRecords.length === 1 ? " paper" : " papers");
+        }
+      }
+
+      if (papersMore) {
+        papersMore.hidden = activeTag !== null || matchingRecords.length <= PAPER_PREVIEW_LIMIT;
+        papersMore.textContent = showAllPapers ?
+          "Show fewer papers" : "Show all " + matchingRecords.length + " papers";
+        papersMore.setAttribute("aria-expanded", showAllPapers ? "true" : "false");
+      }
+    }
+
+    function renderSubtopics(control) {
+      var themes = parseJSON(control.getAttribute("data-area-subtopics"), []);
+
+      clear(subtopics);
+      themes.forEach(function (theme) {
+        var item = document.createElement("li");
+
+        item.textContent = theme;
+        subtopics.appendChild(item);
+      });
+    }
+
+    function updateHash(slug) {
+      var hash = "#knowledge-area-" + slug;
+
+      if (window.location.hash === hash) {
+        return;
+      }
+      if (window.history && typeof window.history.pushState === "function") {
+        window.history.pushState(null, "", hash);
+      } else {
+        window.location.hash = hash;
+      }
+    }
+
+    function selectArea(control, shouldUpdateHash) {
+      var slug;
+
+      if (!control) {
+        return;
+      }
+
+      activeControl = control;
+      activeTag = null;
+      showAllPapers = false;
+      showAllTopics = false;
+      slug = control.getAttribute("data-knowledge-area-control");
+
+      controls.forEach(function (candidate) {
+        if (candidate === control) {
+          candidate.setAttribute("aria-current", "true");
+        } else {
+          candidate.removeAttribute("aria-current");
+        }
+      });
+
+      if (selectedDomain) {
+        selectedDomain.textContent = control.getAttribute("data-area-domain") || "";
+      }
+      if (selectedName) {
+        selectedName.textContent = control.getAttribute("data-area-name") || "";
+      }
+      if (selectedDescription) {
+        selectedDescription.textContent = control.getAttribute("data-area-description") || "";
+      }
+      if (catalogLink) {
+        catalogLink.href = "#catalog-topic-" + slug;
+      }
+
+      renderSubtopics(control);
+      renderTopics();
+      renderPapers();
+      detail.hidden = false;
+
+      if (shouldUpdateHash) {
+        updateHash(slug);
+      }
+    }
+
+    function controlFromHash() {
+      var hash = window.location.hash.replace(/^#/, "");
+      var prefixes = ["knowledge-area-", "catalog-topic-"];
+      var slug = "";
+
+      prefixes.some(function (prefix) {
+        if (hash.indexOf(prefix) === 0) {
+          slug = hash.slice(prefix.length);
+          return true;
+        }
+        return false;
+      });
+
+      return controls.filter(function (control) {
+        return control.getAttribute("data-knowledge-area-control") === slug;
+      })[0] || null;
+    }
+
+    controls.forEach(function (control) {
+      control.addEventListener("click", function (event) {
+        event.preventDefault();
+        selectArea(control, true);
+      });
+    });
+
+    if (topicsMore) {
+      topicsMore.addEventListener("click", function () {
+        showAllTopics = !showAllTopics;
+        renderTopics();
+      });
+    }
+
+    if (papersMore) {
+      papersMore.addEventListener("click", function () {
+        showAllPapers = !showAllPapers;
+        renderPapers();
+      });
+    }
+
+    window.addEventListener("hashchange", function () {
+      var control = controlFromHash();
+
+      if (control && control !== activeControl) {
+        selectArea(control, false);
+      }
+    });
+    window.addEventListener("popstate", function () {
+      var control = controlFromHash();
+
+      if (control && control !== activeControl) {
+        selectArea(control, false);
+      }
+    });
+
+    selectArea(controlFromHash() || controls[0], false);
+    root.setAttribute("data-knowledge-ready", "true");
+  }
+
+  function initializeLineages() {
+    var root = document.querySelector("[data-knowledge-lineages]");
+    var dataScript = document.querySelector("[data-curiosity-connections-data]");
+
+    if (!root || !dataScript || root.getAttribute("data-knowledge-lineages-ready") === "true") {
+      return;
+    }
+
+    var source = parseJSON(dataScript.textContent, {});
+    var scenes = source.scenes || source;
+    var sceneButtons = toArray(root.querySelectorAll("[data-knowledge-lineage-scene]"));
+    var title = root.querySelector("[data-knowledge-lineage-title]");
+    var description = root.querySelector("[data-knowledge-lineage-description]");
+    var graph = root.querySelector("[data-knowledge-lineage-graph]");
+    var canvas = root.querySelector("[data-knowledge-lineage-lines]");
+    var peopleLane = root.querySelector("[data-knowledge-lineage-people]");
+    var ideasLane = root.querySelector("[data-knowledge-lineage-ideas]");
+    var workLane = root.querySelector("[data-knowledge-lineage-work]");
+    var notesPanel = root.querySelector("[data-knowledge-lineage-notes]");
+    var detail = root.querySelector("[data-knowledge-lineage-detail]");
+    var activeScene = null;
+    var activeSceneName = null;
+    var selectedNodeId = null;
+    var nodeRecords = {};
+    var relatedGraph = null;
+    var drawFrame = null;
+
+    if (!sceneButtons.length || !graph || !canvas || !peopleLane || !ideasLane || !workLane) {
+      return;
+    }
+
+    function addText(parent, text, small) {
+      var element = document.createElement(small ? "small" : "span");
+
+      element.textContent = text;
+      parent.appendChild(element);
+    }
+
+    function clearLineage() {
+      [peopleLane, ideasLane, workLane].forEach(clear);
+      nodeRecords = {};
+      selectedNodeId = null;
+      relatedGraph = null;
+      if (detail) {
+        clear(detail);
+        var paragraph = document.createElement("p");
+        paragraph.textContent = "Select a person, idea, paper, or patent to follow its connections.";
+        detail.appendChild(paragraph);
+      }
+    }
+
+    function connectionTargets(nodeId) {
+      var connections = [];
+
+      (activeScene.links || []).forEach(function (link) {
+        var otherId = null;
+
+        if (link.from === nodeId) {
+          otherId = link.to;
+        } else if (link.to === nodeId) {
+          otherId = link.from;
+        }
+        if (otherId && nodeRecords[otherId]) {
+          connections.push({
+            label: link.label || (source.link_types && source.link_types[link.type] ? source.link_types[link.type].label : "Connection"),
+            target: nodeRecords[otherId].data.label || nodeRecords[otherId].data.title || otherId
+          });
+        }
+      });
+
+      return connections;
+    }
+
+    function updateLineageDetail(record) {
+      var paragraph;
+      var connections;
+      var list;
+
+      if (!detail || !record) {
+        return;
+      }
+
+      clear(detail);
+      paragraph = document.createElement("p");
+      paragraph.textContent = record.data.note ?
+        (record.data.label || record.data.title) + ": " + record.data.note :
+        (record.data.label || record.data.title || record.data.id) + ".";
+      detail.appendChild(paragraph);
+
+      if (record.data.scope === "all_work") {
+        paragraph = document.createElement("p");
+        paragraph.textContent = "Scope shown: every work item in this view.";
+        detail.appendChild(paragraph);
+        return;
+      }
+
+      connections = connectionTargets(record.data.id);
+      if (!connections.length) {
+        return;
+      }
+
+      list = document.createElement("ul");
+      connections.forEach(function (connection) {
+        var item = document.createElement("li");
+
+        item.textContent = connection.label + " → " + connection.target;
+        list.appendChild(item);
+      });
+      detail.appendChild(list);
+    }
+
+    function includeAllWork(record, nodes) {
+      if (!record || record.data.scope !== "all_work") {
+        return;
+      }
+
+      Object.keys(nodeRecords).forEach(function (id) {
+        var kind = nodeRecords[id].kind;
+
+        if (kind === "paper" || kind === "patent") {
+          nodes[id] = true;
+        }
+      });
+    }
+
+    function linkedSubgraph(nodeId, kind) {
+      var nodes = {};
+      var links = {};
+      var firstHop = [];
+
+      nodes[nodeId] = true;
+      includeAllWork(nodeRecords[nodeId], nodes);
+      (activeScene.links || []).forEach(function (link, index) {
+        if (link.from === nodeId || link.to === nodeId) {
+          var other = link.from === nodeId ? link.to : link.from;
+          nodes[other] = true;
+          links[index] = true;
+          firstHop.push(other);
+        }
+      });
+
+      if (kind === "person" || kind === "paper" || kind === "patent") {
+        firstHop.forEach(function (intermediateId) {
+          var intermediate = nodeRecords[intermediateId];
+
+          if (!intermediate || intermediate.kind !== "idea") {
+            return;
+          }
+          includeAllWork(intermediate, nodes);
+          (activeScene.links || []).forEach(function (link, index) {
+            if (link.from === intermediateId || link.to === intermediateId) {
+              nodes[link.from] = true;
+              nodes[link.to] = true;
+              links[index] = true;
+            }
+          });
+        });
+      }
+
+      return { links: links, nodes: nodes };
+    }
+
+    function selectNode(nodeId, forceSelection) {
+      var record = nodeRecords[nodeId];
+
+      if (!record) {
+        return;
+      }
+
+      selectedNodeId = !forceSelection && selectedNodeId === nodeId ? null : nodeId;
+      relatedGraph = selectedNodeId ? linkedSubgraph(selectedNodeId, record.kind) : null;
+
+      Object.keys(nodeRecords).forEach(function (id) {
+        var current = nodeRecords[id];
+        var isSelected = id === selectedNodeId;
+        var isRelated = Boolean(relatedGraph && relatedGraph.nodes[id] && !isSelected);
+
+        current.element.classList.toggle("is-active", isSelected);
+        current.element.classList.toggle("is-related", isRelated);
+        current.element.classList.toggle("is-muted", Boolean(relatedGraph && !relatedGraph.nodes[id]));
+        if (current.element.tagName === "BUTTON") {
+          current.element.setAttribute("aria-pressed", isSelected ? "true" : "false");
+        }
+      });
+
+      if (selectedNodeId) {
+        updateLineageDetail(nodeRecords[selectedNodeId]);
+      } else {
+        clear(detail);
+        var paragraph = document.createElement("p");
+        paragraph.textContent = "Select a person, idea, paper, or patent to follow its connections.";
+        detail.appendChild(paragraph);
+      }
+      scheduleDraw();
+    }
+
+    function createNode(node, kind, lane) {
+      var item = document.createElement("li");
+      var element = kind === "paper" || kind === "patent" ?
+        document.createElement("a") : document.createElement("button");
+
+      if (!node || !node.id) {
+        return;
+      }
+
+      if (element.tagName === "BUTTON") {
+        element.type = "button";
+        element.setAttribute("aria-pressed", "false");
+      } else {
+        element.href = node.url || "#";
+      }
+      element.className = "knowledge-lineage-node knowledge-lineage-node--" + kind;
+      if (node.foundation) {
+        element.classList.add("is-foundation");
+      }
+      element.setAttribute("data-lineage-node-id", node.id);
+      addText(element, node.label || node.title || node.id, false);
+      if (node.status) {
+        addText(element, node.status, true);
+      }
+
+      item.appendChild(element);
+      lane.appendChild(item);
+      nodeRecords[node.id] = { data: node, element: element, kind: kind };
+
+      if (element.tagName === "BUTTON") {
+        element.addEventListener("click", function () {
+          selectNode(node.id, false);
+        });
+      } else {
+        element.addEventListener("focus", function () {
+          selectNode(node.id, true);
+        });
+      }
+    }
+
+    function renderNotes(notes) {
+      var heading;
+      var list;
+
+      clear(notesPanel);
+      if (!notesPanel || !notes || !notes.length) {
+        if (notesPanel) {
+          notesPanel.hidden = true;
+        }
+        return;
+      }
+
+      heading = document.createElement("strong");
+      heading.textContent = "Foundational layer across this map";
+      notesPanel.appendChild(heading);
+      list = document.createElement("ul");
+      notes.forEach(function (note) {
+        var item = document.createElement("li");
+        var label = document.createElement("strong");
+        var text = document.createElement("span");
+
+        label.textContent = note.label || "Foundation";
+        text.textContent = note.text || "";
+        item.appendChild(label);
+        item.appendChild(text);
+        list.appendChild(item);
+      });
+      notesPanel.appendChild(list);
+      notesPanel.hidden = false;
+    }
+
+    function lineColor(styles, type) {
+      if (type === "uses") {
+        return styles.getPropertyValue("--knowledge-line-uses").trim() || "#738496";
+      }
+      if (type === "lineage") {
+        return styles.getPropertyValue("--knowledge-line-lineage").trim() || "#8250df";
+      }
+      return styles.getPropertyValue("--knowledge-line-direct").trim() || "#8c959f";
+    }
+
+    function drawLines() {
+      var rect = graph.getBoundingClientRect();
+      var context = canvas.getContext("2d");
+      var ratio = Math.min(window.devicePixelRatio || 1, 2);
+      var styles = window.getComputedStyle(root.querySelector(".knowledge-lineage-map"));
+
+      drawFrame = null;
+      if (!rect.width || !rect.height || window.getComputedStyle(canvas).display === "none") {
+        return;
+      }
+
+      canvas.width = Math.round(rect.width * ratio);
+      canvas.height = Math.round(rect.height * ratio);
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      context.clearRect(0, 0, rect.width, rect.height);
+
+      (activeScene.links || []).forEach(function (link, index) {
+        var sourceRecord = nodeRecords[link.from];
+        var targetRecord = nodeRecords[link.to];
+        var sourceRect;
+        var targetRect;
+        var x1;
+        var x2;
+        var y1;
+        var y2;
+        var bend;
+        var isRelated;
+
+        if (!sourceRecord || !targetRecord) {
+          return;
+        }
+
+        sourceRect = sourceRecord.element.getBoundingClientRect();
+        targetRect = targetRecord.element.getBoundingClientRect();
+        x1 = sourceRect.right - rect.left;
+        x2 = targetRect.left - rect.left;
+        y1 = sourceRect.top + sourceRect.height / 2 - rect.top;
+        y2 = targetRect.top + targetRect.height / 2 - rect.top;
+        bend = Math.max(16, Math.abs(x2 - x1) * 0.42);
+        isRelated = !relatedGraph || Boolean(relatedGraph.links[index]);
+
+        context.save();
+        context.globalAlpha = isRelated ? 0.86 : 0.1;
+        context.strokeStyle = relatedGraph && isRelated ?
+          (styles.getPropertyValue("--knowledge-line-active").trim() || "#0969da") :
+          lineColor(styles, link.type);
+        context.lineWidth = relatedGraph && isRelated ? 2.5 : (link.type === "direct" ? 1.7 : 1.35);
+        context.lineCap = "round";
+        if (link.type === "lineage") {
+          context.setLineDash([5, 5]);
+        }
+        context.beginPath();
+        context.moveTo(x1, y1);
+        context.bezierCurveTo(x1 + bend, y1, x2 - bend, y2, x2, y2);
+        context.stroke();
+        context.restore();
+      });
+    }
+
+    function scheduleDraw() {
+      if (drawFrame !== null) {
+        window.cancelAnimationFrame(drawFrame);
+      }
+      drawFrame = window.requestAnimationFrame(drawLines);
+    }
+
+    function commaSeparatedSet(value) {
+      var result = {};
+
+      String(value || "").split(",").forEach(function (entry) {
+        var key = entry.trim();
+
+        if (key) {
+          result[key] = true;
+        }
+      });
+      return result;
+    }
+
+    function scientificScene(scene, button) {
+      var excludedNodes = commaSeparatedSet(button.getAttribute("data-knowledge-lineage-exclude"));
+      var excludedNoteKinds = commaSeparatedSet(button.getAttribute("data-knowledge-lineage-exclude-notes"));
+
+      function visibleNodes(nodes) {
+        return (nodes || []).filter(function (node) {
+          return !excludedNodes[node.id];
+        });
+      }
+
+      return {
+        ideas: visibleNodes(scene.ideas),
+        links: (scene.links || []).filter(function (link) {
+          return !excludedNodes[link.from] && !excludedNodes[link.to];
+        }),
+        notes: (scene.notes || []).filter(function (note) {
+          return !excludedNoteKinds[note.kind];
+        }),
+        papers: visibleNodes(scene.papers),
+        patents: visibleNodes(scene.patents),
+        people: visibleNodes(scene.people)
+      };
+    }
+
+    function renderScene(sceneName) {
+      var scene = scenes[sceneName];
+      var selectedButton = sceneButtons.filter(function (button) {
+        return button.getAttribute("data-knowledge-lineage-scene") === sceneName;
+      })[0];
+
+      if (!scene || !selectedButton) {
+        return;
+      }
+
+      activeScene = scientificScene(scene, selectedButton);
+      activeSceneName = sceneName;
+      clearLineage();
+      if (title) {
+        title.textContent = selectedButton.getAttribute("data-knowledge-lineage-map-title") ||
+          scene.map_title || scene.title || "Ideas map";
+      }
+      if (description) {
+        description.textContent = selectedButton.getAttribute("data-knowledge-lineage-map-description") ||
+          scene.description || "";
+      }
+      activeScene.people.forEach(function (node) {
+        createNode(node, "person", peopleLane);
+      });
+      activeScene.ideas.forEach(function (node) {
+        createNode(node, "idea", ideasLane);
+      });
+      activeScene.papers.forEach(function (node) {
+        createNode(node, "paper", workLane);
+      });
+      activeScene.patents.forEach(function (node) {
+        createNode(node, "patent", workLane);
+      });
+      renderNotes(activeScene.notes);
+      sceneButtons.forEach(function (button) {
+        button.setAttribute("aria-pressed",
+          button.getAttribute("data-knowledge-lineage-scene") === activeSceneName ? "true" : "false");
+      });
+      scheduleDraw();
+    }
+
+    sceneButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        renderScene(button.getAttribute("data-knowledge-lineage-scene"));
+      });
+    });
+
+    window.addEventListener("resize", scheduleDraw);
+    if (typeof window.ResizeObserver === "function") {
+      new window.ResizeObserver(scheduleDraw).observe(graph);
+    }
+
+    renderScene(sceneButtons[0].getAttribute("data-knowledge-lineage-scene"));
+    root.setAttribute("data-knowledge-lineages-ready", "true");
+  }
+
+  function initializeKnowledgeHub() {
+    initializeLandscape();
+    initializeLineages();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeKnowledgeHub, { once: true });
+  } else {
+    initializeKnowledgeHub();
+  }
+}());
