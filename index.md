@@ -49,7 +49,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 
 ## Commercial Transitions
 
-* Co-founder and CTO of [Confidencial.io](https://www.confidencial.io/)
+* Co-founder & CTO of [Confidencial.io](https://www.confidencial.io/)
 
 </article>
 
@@ -85,7 +85,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder and CTO of Confidencial.io. Prior to t
 * **Startup:** {firstname_dot_lastname} + {@} + {name_of_my_startup_dot_io}
 * **Research:** {firstname_dot_lastname} + {@} + {sri_dot_com}
 * **Personal:** {lastname} + {@} + {email_of_most_famous_search_engine}
-* **Personal Encrypted:** {lastname} + {@} + {positive_particle_in_atomic_nuclei_email_service}
+* **Personal Encrypted:** {lastname} + {@} + {proton_email}
 
 </article>
 

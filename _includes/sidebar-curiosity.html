@@ -1,31 +1,53 @@
 <aside class="sidebar-curiosity" data-sidebar-curiosity aria-label="Mathematical and cryptographic curiosities">
   <figure
     class="sidebar-curiosity__scene"
-    data-curiosity-scene="hotel"
-    aria-labelledby="curiosity-hotel-title"
-    aria-describedby="curiosity-hotel-tagline curiosity-hotel-caption"
+    data-curiosity-scene="cipher"
+    aria-labelledby="curiosity-cipher-title"
+    aria-describedby="curiosity-cipher-tagline curiosity-cipher-caption"
   >
-    <div class="sidebar-curiosity__viewport">
+    <button
+      class="sidebar-curiosity__viewport sidebar-curiosity__open"
+      type="button"
+      data-curiosity-open
+      data-curiosity-initial-panel="animation"
+      aria-haspopup="dialog"
+      aria-controls="curiosity-dialog"
+      aria-label="View The Great Cipher Relay animation larger"
+    >
       <img
         class="sidebar-curiosity__image"
-        src="{{ '/assets/images/sidebar/hilbert-margin-hotel.webp' | relative_url }}"
-        data-curiosity-frames="{{ '/assets/images/sidebar/hilbert-margin-hotel.webp' | relative_url }}|{{ '/assets/images/sidebar/hilbert-margin-hotel-frame-2.webp' | relative_url }}|{{ '/assets/images/sidebar/hilbert-margin-hotel-frame-3.webp' | relative_url }}|{{ '/assets/images/sidebar/hilbert-margin-hotel-frame-4.webp' | relative_url }}"
-        alt="Hilbert welcomes Cantor, Gödel, Turing, von Neumann, and Karim as they shift rooms in an infinite hotel."
+        src="{{ '/assets/images/sidebar/great-cipher-relay.webp' | relative_url }}"
+        data-curiosity-frames="{{ '/assets/images/sidebar/great-cipher-relay.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-2.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-3.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-4.webp' | relative_url }}"
+        alt="A cryptographic relay carries a glowing ciphertext from Turing and Shannon through Diffie, Hellman, Rivest, Shamir, Adleman, Goldwasser, Micali, Miller, Gentry, and Karim."
         width="460"
         height="853"
         loading="lazy"
         decoding="async"
       >
-    </div>
+      <span class="sidebar-curiosity__open-label" aria-hidden="true">Open larger</span>
+    </button>
     <figcaption class="sidebar-curiosity__content">
-      <h2 class="sidebar-curiosity__title" id="curiosity-hotel-title">Hilbert’s Margin Hotel</h2>
-      <p class="sidebar-curiosity__tagline" id="curiosity-hotel-tagline">Vacancies: ∞</p>
-      <p class="sidebar-curiosity__caption" id="curiosity-hotel-caption">
-        There is always room for one more idea.
+      <h2 class="sidebar-curiosity__title" id="curiosity-cipher-title">The Great Cipher Relay</h2>
+      <p class="sidebar-curiosity__tagline" id="curiosity-cipher-tagline">From Enigma to encrypted computation</p>
+      <p class="sidebar-curiosity__caption" id="curiosity-cipher-caption">
+        Nearly a century of cryptography, passed hand to hand—plaintext not included.
       </p>
-      <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
-        Make room
-      </button>
+      <div class="sidebar-curiosity__actions">
+        <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
+          Pass the ciphertext
+        </button>
+        <button
+          class="sidebar-curiosity__ideas"
+          type="button"
+          data-curiosity-ideas
+          data-curiosity-initial-panel="connections"
+          aria-haspopup="dialog"
+          aria-controls="curiosity-dialog"
+          aria-label="Explore the ideas connected to The Great Cipher Relay"
+        >
+          Ideas map
+        </button>
+      </div>
     </figcaption>
     <p
       class="sidebar-curiosity__status"
@@ -42,7 +64,15 @@
     aria-labelledby="curiosity-tour-title"
     aria-describedby="curiosity-tour-tagline curiosity-tour-caption"
   >
-    <div class="sidebar-curiosity__viewport">
+    <button
+      class="sidebar-curiosity__viewport sidebar-curiosity__open"
+      type="button"
+      data-curiosity-open
+      data-curiosity-initial-panel="animation"
+      aria-haspopup="dialog"
+      aria-controls="curiosity-dialog"
+      aria-label="View The One-Bit Grand Tour animation larger"
+    >
       <img
         class="sidebar-curiosity__image"
         src="{{ '/assets/images/sidebar/one-bit-grand-tour.webp' | relative_url }}"
@@ -53,16 +83,30 @@
         loading="lazy"
         decoding="async"
       >
-    </div>
+      <span class="sidebar-curiosity__open-label" aria-hidden="true">Open larger</span>
+    </button>
     <figcaption class="sidebar-curiosity__content">
       <h2 class="sidebar-curiosity__title" id="curiosity-tour-title">The One-Bit Grand Tour</h2>
       <p class="sidebar-curiosity__tagline" id="curiosity-tour-tagline">From entropy to qubits</p>
       <p class="sidebar-curiosity__caption" id="curiosity-tour-caption">
-        Please allow 8–12 seconds for the history of computation.
+        One bit walks into information theory and comes out entangled.
       </p>
-      <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
-        Send one bit
-      </button>
+      <div class="sidebar-curiosity__actions">
+        <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
+          Send one bit
+        </button>
+        <button
+          class="sidebar-curiosity__ideas"
+          type="button"
+          data-curiosity-ideas
+          data-curiosity-initial-panel="connections"
+          aria-haspopup="dialog"
+          aria-controls="curiosity-dialog"
+          aria-label="Explore the ideas connected to The One-Bit Grand Tour"
+        >
+          Ideas map
+        </button>
+      </div>
     </figcaption>
     <p
       class="sidebar-curiosity__status"
@@ -75,31 +119,53 @@
 
   <figure
     class="sidebar-curiosity__scene"
-    data-curiosity-scene="cipher"
-    aria-labelledby="curiosity-cipher-title"
-    aria-describedby="curiosity-cipher-tagline curiosity-cipher-caption"
+    data-curiosity-scene="hotel"
+    aria-labelledby="curiosity-hotel-title"
+    aria-describedby="curiosity-hotel-tagline curiosity-hotel-caption"
   >
-    <div class="sidebar-curiosity__viewport">
+    <button
+      class="sidebar-curiosity__viewport sidebar-curiosity__open"
+      type="button"
+      data-curiosity-open
+      data-curiosity-initial-panel="animation"
+      aria-haspopup="dialog"
+      aria-controls="curiosity-dialog"
+      aria-label="View Hilbert’s Margin Hotel animation larger"
+    >
       <img
         class="sidebar-curiosity__image"
-        src="{{ '/assets/images/sidebar/great-cipher-relay.webp' | relative_url }}"
-        data-curiosity-frames="{{ '/assets/images/sidebar/great-cipher-relay.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-2.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-3.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-4.webp' | relative_url }}"
-        alt="A cryptographic relay carries a glowing ciphertext from Turing and Shannon through Diffie, Hellman, Rivest, Shamir, Adleman, Goldwasser, Micali, Miller, Gentry, and Karim."
+        src="{{ '/assets/images/sidebar/hilbert-margin-hotel.webp' | relative_url }}"
+        data-curiosity-frames="{{ '/assets/images/sidebar/hilbert-margin-hotel.webp' | relative_url }}|{{ '/assets/images/sidebar/hilbert-margin-hotel-frame-2.webp' | relative_url }}|{{ '/assets/images/sidebar/hilbert-margin-hotel-frame-3.webp' | relative_url }}|{{ '/assets/images/sidebar/hilbert-margin-hotel-frame-4.webp' | relative_url }}"
+        alt="Hilbert welcomes Cantor, Gödel, Turing, von Neumann, and Karim as they shift rooms in an infinite hotel."
         width="460"
         height="853"
         loading="lazy"
         decoding="async"
       >
-    </div>
+      <span class="sidebar-curiosity__open-label" aria-hidden="true">Open larger</span>
+    </button>
     <figcaption class="sidebar-curiosity__content">
-      <h2 class="sidebar-curiosity__title" id="curiosity-cipher-title">The Great Cipher Relay</h2>
-      <p class="sidebar-curiosity__tagline" id="curiosity-cipher-tagline">From Enigma to encrypted computation</p>
-      <p class="sidebar-curiosity__caption" id="curiosity-cipher-caption">
-        Nearly a century of cryptography, passed hand to hand—plaintext not included.
+      <h2 class="sidebar-curiosity__title" id="curiosity-hotel-title">Hilbert’s Margin Hotel</h2>
+      <p class="sidebar-curiosity__tagline" id="curiosity-hotel-tagline">Vacancies: ∞</p>
+      <p class="sidebar-curiosity__caption" id="curiosity-hotel-caption">
+        There is always room for one more idea.
       </p>
-      <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
-        Pass the ciphertext
-      </button>
+      <div class="sidebar-curiosity__actions">
+        <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
+          Make room
+        </button>
+        <button
+          class="sidebar-curiosity__ideas"
+          type="button"
+          data-curiosity-ideas
+          data-curiosity-initial-panel="connections"
+          aria-haspopup="dialog"
+          aria-controls="curiosity-dialog"
+          aria-label="Explore the ideas connected to Hilbert’s Margin Hotel"
+        >
+          Ideas map
+        </button>
+      </div>
     </figcaption>
     <p
       class="sidebar-curiosity__status"
@@ -110,3 +176,162 @@
     ></p>
   </figure>
 </aside>
+
+<dialog
+  class="curiosity-dialog"
+  id="curiosity-dialog"
+  data-curiosity-dialog
+  aria-labelledby="curiosity-dialog-title"
+  aria-describedby="curiosity-dialog-caption"
+  aria-modal="true"
+>
+  <div class="curiosity-dialog__shell">
+    <div class="curiosity-dialog__header">
+      <div class="curiosity-dialog__heading">
+        <p class="curiosity-dialog__tagline" data-curiosity-dialog-tagline></p>
+        <h2 class="curiosity-dialog__title" id="curiosity-dialog-title" data-curiosity-dialog-title>
+          Scientific curiosity
+        </h2>
+      </div>
+      <button class="curiosity-dialog__close" type="button" data-curiosity-dialog-close>
+        Close
+      </button>
+    </div>
+
+    <div class="curiosity-dialog__body">
+      <section
+        class="curiosity-dialog__animation"
+        data-curiosity-dialog-scene
+        data-curiosity-scene=""
+        aria-labelledby="curiosity-dialog-title"
+      >
+        <div class="curiosity-dialog__viewport">
+          <img
+            class="curiosity-dialog__image"
+            data-curiosity-dialog-image
+            data-curiosity-frames=""
+            alt=""
+            width="460"
+            height="853"
+            decoding="async"
+          >
+        </div>
+        <p class="curiosity-dialog__caption" id="curiosity-dialog-caption" data-curiosity-dialog-caption></p>
+        <div class="curiosity-dialog__actions">
+          <button
+            class="curiosity-dialog__replay"
+            type="button"
+            data-curiosity-dialog-replay
+            data-curiosity-replay
+          >
+            Replay animation
+          </button>
+          <button
+            class="curiosity-dialog__connections-toggle"
+            type="button"
+            data-curiosity-connections-toggle
+            aria-expanded="false"
+            aria-controls="curiosity-connections-panel"
+          >
+            Explore the connections
+          </button>
+        </div>
+        <p
+          class="curiosity-dialog__status"
+          data-curiosity-dialog-status
+          data-curiosity-status
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+      </section>
+
+      <section
+        class="curiosity-connections"
+        id="curiosity-connections-panel"
+        data-curiosity-connections
+        aria-labelledby="curiosity-connections-title"
+        hidden
+      >
+        <div class="curiosity-connections__header">
+          <div>
+            <p class="curiosity-connections__eyebrow">Scientific ideas map</p>
+            <h3
+              class="curiosity-connections__title"
+              id="curiosity-connections-title"
+              data-curiosity-connections-title
+              tabindex="-1"
+            >
+              Explore the connections
+            </h3>
+            <p class="curiosity-connections__description" data-curiosity-connections-description></p>
+          </div>
+          <button
+            class="curiosity-connections__close"
+            type="button"
+            data-curiosity-connections-close
+          >
+            Back to animation
+          </button>
+        </div>
+
+        <div class="curiosity-connections__graph" data-curiosity-graph>
+          <svg
+            class="curiosity-connections__lines"
+            data-curiosity-map-edges
+            aria-hidden="true"
+            focusable="false"
+            preserveAspectRatio="none"
+          ></svg>
+
+          <div class="curiosity-connections__columns" data-curiosity-map-columns>
+            <section class="curiosity-connections__lane" aria-labelledby="curiosity-map-scientists-title">
+              <h4 id="curiosity-map-scientists-title">Scientists</h4>
+              <ol class="curiosity-connections__nodes" data-curiosity-map-people></ol>
+            </section>
+
+            <section class="curiosity-connections__lane" aria-labelledby="curiosity-map-ideas-title">
+              <h4 id="curiosity-map-ideas-title">Ideas</h4>
+              <ol class="curiosity-connections__nodes" data-curiosity-map-ideas></ol>
+            </section>
+
+            <section class="curiosity-connections__lane" aria-labelledby="curiosity-map-work-title">
+              <h4 id="curiosity-map-work-title">Karim’s work</h4>
+              <ol class="curiosity-connections__nodes" data-curiosity-map-papers></ol>
+            </section>
+          </div>
+        </div>
+
+        <div class="curiosity-connections__legend" aria-label="Connection types">
+          <p>Connections</p>
+          <ul data-curiosity-map-legend>
+            <li data-curiosity-link-type="direct"><span aria-hidden="true"></span>Direct</li>
+            <li data-curiosity-link-type="uses"><span aria-hidden="true"></span>Uses or applies</li>
+            <li data-curiosity-link-type="lineage"><span aria-hidden="true"></span>Conceptual lineage</li>
+          </ul>
+        </div>
+
+        <div
+          class="curiosity-connections__detail"
+          data-curiosity-map-detail
+          aria-live="polite"
+          aria-atomic="false"
+          tabindex="-1"
+        >
+          <p>Select a scientist, idea, paper, or patent to follow its connections.</p>
+        </div>
+
+        <p class="curiosity-connections__qualification">
+          These are thematic connections, not claims of direct collaboration or a complete intellectual lineage.
+        </p>
+        <p class="curiosity-connections__knowledge-link">
+          <a href="{{ '/knowledge/' | relative_url }}">Explore all scientific knowledge maps</a>
+        </p>
+      </section>
+    </div>
+  </div>
+</dialog>
+
+<script type="application/json" data-curiosity-connections-data>
+  {{ site.data.curiosity_connections | jsonify }}
+</script>

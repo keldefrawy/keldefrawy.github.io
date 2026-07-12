@@ -1,0 +1,455 @@
+schema_version: "1.0"
+
+evidence_note: >-
+  These maps show conceptual connections, not claims of citation or direct
+  intellectual influence. Dashed lineage links are deliberately broader than
+  direct paper-topic links.
+
+link_types:
+  direct:
+    label: Direct connection
+    description: A well-established person-to-idea relationship or a work that centrally studies the linked idea.
+  uses:
+    label: Uses
+    description: The work employs the linked idea or primitive as a component rather than its main contribution.
+  lineage:
+    label: Conceptual lineage
+    description: A historical or conceptual bridge that does not assert citation or direct influence.
+
+scenes:
+  hotel:
+    title: "Hilbert’s Margin Hotel"
+    map_title: "From Foundations to Verified Cryptography"
+    description: "How foundational questions about infinity, proof, computation, and machines reappear in modern cryptographic research."
+    people:
+      - id: hotel-hilbert
+        label: David Hilbert
+      - id: hotel-cantor
+        label: Georg Cantor
+      - id: hotel-godel
+        label: Kurt Gödel
+      - id: hotel-turing
+        label: Alan Turing
+      - id: hotel-von-neumann
+        label: John von Neumann
+    ideas:
+      - id: hotel-infinity
+        label: Infinity and set theory
+      - id: hotel-formal-methods
+        label: Formal systems and machine-checked proof
+      - id: hotel-resource-bounds
+        label: Resource-bounded computation
+      - id: hotel-architecture
+        label: Computer architecture
+    papers:
+      - id: hotel-paper-51
+        publication_id: 51
+        label: "#51 · Machine-checked MPC"
+        title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
+        url: /knowledge/papers/paper-51/
+        note: "Formalizes MPC in EasyCrypt and extracts executable code from verified specifications."
+      - id: hotel-paper-58
+        publication_id: 58
+        label: "#58 · Machine-checked zero knowledge"
+        title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+        url: /knowledge/papers/paper-58/
+        note: "Machine-checks a general transformation from secure computation to zero-knowledge proofs."
+      - id: hotel-paper-78
+        publication_id: 78
+        label: "#78 · Timed-protocol composition"
+        title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
+        url: /knowledge/papers/paper-78/
+        note: "Models residual complexity across adversarial depth and proves timed-protocol composition results."
+      - id: hotel-paper-59
+        publication_id: 59
+        label: "#59 · F1 FHE accelerator"
+        title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+        url: /knowledge/papers/paper-59/
+        note: "Co-designs a programmable architecture and compiler for complete FHE programs."
+    patents: []
+    links:
+      - from: hotel-cantor
+        to: hotel-infinity
+        type: direct
+        label: founded modern set theory
+      - from: hotel-hilbert
+        to: hotel-infinity
+        type: lineage
+        label: the infinite-hotel thought experiment
+      - from: hotel-hilbert
+        to: hotel-formal-methods
+        type: direct
+        label: formalization and the decision problem
+      - from: hotel-godel
+        to: hotel-formal-methods
+        type: direct
+        label: limits of formal proof
+      - from: hotel-turing
+        to: hotel-formal-methods
+        type: lineage
+        label: mechanized reasoning
+      - from: hotel-turing
+        to: hotel-resource-bounds
+        type: lineage
+        label: models of computation
+      - from: hotel-von-neumann
+        to: hotel-architecture
+        type: direct
+        label: stored-program architecture
+      - from: hotel-formal-methods
+        to: hotel-paper-51
+        type: direct
+        label: verified MPC
+      - from: hotel-formal-methods
+        to: hotel-paper-58
+        type: direct
+        label: verified zero knowledge
+      - from: hotel-resource-bounds
+        to: hotel-paper-78
+        type: direct
+        label: depth-indexed residual complexity
+      - from: hotel-architecture
+        to: hotel-paper-59
+        type: direct
+        label: specialized cryptographic architecture
+
+  tour:
+    title: "The One-Bit Grand Tour"
+    map_title: "From Capacity to Qubits"
+    description: "A bit travels through information theory, public-key cryptography, and quantum computation."
+    people:
+      - id: tour-shannon
+        label: Claude Shannon
+      - id: tour-diffie-hellman
+        label: Whitfield Diffie and Martin Hellman
+      - id: tour-rsa
+        label: Rivest, Shamir, and Adleman
+      - id: tour-feynman
+        label: Richard Feynman
+      - id: tour-shor
+        label: Peter Shor
+    ideas:
+      - id: tour-capacity-coding
+        label: Channel capacity and coding
+      - id: tour-key-exchange
+        label: Public-key agreement
+      - id: tour-public-key
+        label: Public-key encryption
+      - id: tour-timed-release
+        label: Rivest–Shamir–Wagner time-lock puzzles
+      - id: tour-quantum
+        label: Quantum algorithms and protocols
+      - id: tour-post-quantum
+        label: Post-quantum cryptography
+    papers:
+      - id: tour-paper-11
+        publication_id: 11
+        label: "#11 · Encryption and channel capacity"
+        title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
+        url: /knowledge/papers/paper-11/
+        note: "Directly studies how encryption changes achievable multicast capacity in wireless network coding."
+      - id: tour-paper-22
+        publication_id: 22
+        label: "#22 · Network-coding throughput"
+        title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
+        url: /knowledge/papers/paper-22/
+        note: "Studies how link-key group size and assignment trade compromise exposure against wireless network-coding throughput."
+      - id: tour-paper-57
+        publication_id: 57
+        label: "#57 · Regenerating codes and secret sharing"
+        title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
+        url: /knowledge/papers/paper-57/
+        note: "Relates distributed-storage coding to proactive secret sharing and repair."
+      - id: tour-paper-68
+        publication_id: 68
+        label: "#68 · Covert authenticated key exchange"
+        title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+        url: /knowledge/papers/paper-68/
+        note: "Constructs a modern authenticated key-exchange protocol with covert, concurrent transcripts."
+      - id: tour-paper-56
+        publication_id: 56
+        label: "#56 · Registration-based encryption"
+        title: "Optimizing Registration Based Encryption"
+        url: /knowledge/papers/paper-56/
+        note: "Optimizes a public-key-encryption model that removes identity-based encryption's key escrow."
+      - id: tour-paper-73
+        publication_id: 73
+        label: "#73 · Multi-party time-lock puzzles"
+        title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
+        url: /knowledge/papers/paper-73/
+        note: "Distributes control of delayed release across a quorum."
+      - id: tour-paper-60
+        publication_id: 60
+        label: "#60 · Quantum optimization"
+        title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
+        url: /knowledge/papers/paper-60/
+        note: "Develops and simulates shallow QAOA-style heuristics for constrained optimization."
+      - id: tour-paper-70
+        publication_id: 70
+        label: "#70 · Quantum distance bounding"
+        title: "Entanglement-Based Mutual Quantum Distance Bounding"
+        url: /knowledge/papers/paper-70/
+        note: "Uses entangled states in a mutual distance-bounding protocol."
+      - id: tour-paper-77
+        publication_id: 77
+        label: "#77 · Post-quantum point obfuscation"
+        title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+        url: /knowledge/papers/paper-77/
+        status: Ongoing work
+        note: "An ongoing post-quantum project; no public manuscript is currently linked."
+    patents: []
+    links:
+      - from: tour-shannon
+        to: tour-capacity-coding
+        type: direct
+        label: information and communication limits
+      - from: tour-capacity-coding
+        to: tour-paper-11
+        type: direct
+        label: encrypted network-coding capacity
+      - from: tour-capacity-coding
+        to: tour-paper-22
+        type: direct
+        label: key-constrained network-coding throughput
+      - from: tour-capacity-coding
+        to: tour-paper-57
+        type: direct
+        label: coding and distributed repair
+      - from: tour-diffie-hellman
+        to: tour-key-exchange
+        type: direct
+        label: public-key agreement
+      - from: tour-key-exchange
+        to: tour-paper-68
+        type: direct
+        label: authenticated key exchange
+      - from: tour-rsa
+        to: tour-public-key
+        type: direct
+        label: public-key encryption
+      - from: tour-public-key
+        to: tour-paper-56
+        type: direct
+        label: modern public-key encryption
+      - from: tour-rsa
+        to: tour-timed-release
+        type: lineage
+        label: Rivest–Shamir–Wagner lineage
+        note: "The classical time-lock-puzzle lineage is Rivest–Shamir–Wagner; this edge does not attribute it to Adleman."
+      - from: tour-timed-release
+        to: tour-paper-73
+        type: direct
+        label: quorum-controlled delay
+      - from: tour-feynman
+        to: tour-quantum
+        type: lineage
+        label: quantum computation
+      - from: tour-shor
+        to: tour-quantum
+        type: direct
+        label: quantum algorithms
+      - from: tour-quantum
+        to: tour-paper-60
+        type: direct
+        label: quantum optimization
+      - from: tour-quantum
+        to: tour-paper-70
+        type: direct
+        label: entanglement-based protocol
+      - from: tour-shor
+        to: tour-post-quantum
+        type: lineage
+        label: quantum threat to classical public keys
+      - from: tour-post-quantum
+        to: tour-paper-77
+        type: direct
+        label: post-quantum obfuscation
+
+  cipher:
+    title: "The Great Cipher Relay"
+    map_title: "A Century of Cryptographic Ideas"
+    description: "From cryptanalysis and perfect secrecy to zero knowledge, elliptic curves, and encrypted computation."
+    people:
+      - id: cipher-turing
+        label: Alan Turing
+      - id: cipher-shannon
+        label: Claude Shannon
+      - id: cipher-diffie-hellman
+        label: Whitfield Diffie and Martin Hellman
+      - id: cipher-rsa
+        label: Rivest, Shamir, and Adleman
+      - id: cipher-goldwasser
+        label: Shafi Goldwasser
+      - id: cipher-micali
+        label: Silvio Micali
+      - id: cipher-miller
+        label: Victor Miller
+      - id: cipher-gentry
+        label: Craig Gentry
+    ideas:
+      - id: cipher-formal-computation
+        label: Cryptanalysis and formal computation
+      - id: cipher-information
+        label: Perfect secrecy and information limits
+      - id: cipher-key-exchange
+        label: Authenticated key exchange
+      - id: cipher-public-key
+        label: Public-key encryption
+      - id: cipher-timed-release
+        label: Rivest–Shamir–Wagner timed cryptography
+      - id: cipher-provable-zk
+        label: Probabilistic encryption and zero knowledge
+      - id: cipher-mpc
+        label: Secure multiparty computation
+      - id: cipher-ecc
+        label: Elliptic-curve cryptography
+      - id: cipher-fhe
+        label: Fully homomorphic encryption
+    papers:
+      - id: cipher-paper-51
+        publication_id: 51
+        label: "#51 · Machine-checked MPC"
+        title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
+        url: /knowledge/papers/paper-51/
+        note: "Carries formal reasoning into machine-checked cryptographic implementations."
+      - id: cipher-paper-11
+        publication_id: 11
+        label: "#11 · Encryption and capacity"
+        title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
+        url: /knowledge/papers/paper-11/
+        note: "Studies the security-throughput tradeoff created by encryption in coded wireless networks."
+      - id: cipher-paper-68
+        publication_id: 68
+        label: "#68 · Covert authenticated key exchange"
+        title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+        url: /knowledge/papers/paper-68/
+        note: "Builds a concurrent authenticated key exchange using DDH-group and pairing-curve components."
+      - id: cipher-paper-56
+        publication_id: 56
+        label: "#56 · Registration-based encryption"
+        title: "Optimizing Registration Based Encryption"
+        url: /knowledge/papers/paper-56/
+        note: "A modern public-key-encryption construction focused on eliminating key escrow and reducing cost."
+      - id: cipher-paper-73
+        publication_id: 73
+        label: "#73 · Multi-party time-lock puzzles"
+        title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
+        url: /knowledge/papers/paper-73/
+        note: "Extends timed release from a single committer to quorum-controlled generation."
+      - id: cipher-paper-58
+        publication_id: 58
+        label: "#58 · Machine-checked zero knowledge"
+        title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+        url: /knowledge/papers/paper-58/
+        note: "Mechanizes a transformation from MPC to zero-knowledge proofs."
+      - id: cipher-paper-44
+        publication_id: 44
+        label: "#44 · Proactive MPC"
+        title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
+        url: /knowledge/papers/paper-44/
+        note: "Studies secure computation against a mobile adversary that may control a dishonest majority over time."
+      - id: cipher-paper-59
+        publication_id: 59
+        label: "#59 · F1 FHE accelerator"
+        title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+        url: /knowledge/papers/paper-59/
+        note: "Accelerates complete FHE programs with specialized hardware and compiler scheduling."
+      - id: cipher-paper-65
+        publication_id: 65
+        label: "#65 · Hardness of FHE scheme switching"
+        title: "On the Hardness of Scheme-Switching Between SIMD FHE Schemes"
+        url: /knowledge/papers/paper-65/
+        note: "Shows that broadly useful exact/approximate FHE switching would imply expensive bootstrapping capabilities."
+    patents:
+      - id: cipher-patent-11
+        patent_number: US9489522
+        label: "Patent #11 · Proactive ECDSA"
+        title: "Method for Secure and Resilient Distributed Generation of Elliptic Curve Digital Signature Algorithm (ECDSA) Based Digital Signatures with Proactive Security"
+        url: /patents.html
+        note: "The strongest locally documented direct connection to elliptic-curve cryptography."
+    links:
+      - from: cipher-turing
+        to: cipher-formal-computation
+        type: direct
+        label: cryptanalysis and models of computation
+      - from: cipher-formal-computation
+        to: cipher-paper-51
+        type: lineage
+        label: machine-checked cryptography
+      - from: cipher-shannon
+        to: cipher-information
+        type: direct
+        label: perfect secrecy and channel capacity
+      - from: cipher-information
+        to: cipher-paper-11
+        type: direct
+        label: encrypted channel capacity
+      - from: cipher-diffie-hellman
+        to: cipher-key-exchange
+        type: direct
+        label: public-key agreement
+      - from: cipher-key-exchange
+        to: cipher-paper-68
+        type: direct
+        label: covert authenticated exchange
+      - from: cipher-rsa
+        to: cipher-public-key
+        type: direct
+        label: public-key encryption
+      - from: cipher-public-key
+        to: cipher-paper-56
+        type: direct
+        label: registration-based encryption
+      - from: cipher-rsa
+        to: cipher-timed-release
+        type: lineage
+        label: Rivest–Shamir–Wagner lineage
+        note: "The classical time-lock-puzzle lineage is Rivest–Shamir–Wagner; this edge does not attribute it to Adleman."
+      - from: cipher-timed-release
+        to: cipher-paper-73
+        type: direct
+        label: quorum-controlled delay
+      - from: cipher-goldwasser
+        to: cipher-provable-zk
+        type: direct
+        label: probabilistic encryption; zero knowledge with Micali and Rackoff
+      - from: cipher-micali
+        to: cipher-provable-zk
+        type: direct
+        label: probabilistic encryption; zero knowledge with Goldwasser and Rackoff
+      - from: cipher-micali
+        to: cipher-mpc
+        type: direct
+        label: foundational secure computation with Goldreich and Wigderson
+      - from: cipher-provable-zk
+        to: cipher-paper-58
+        type: direct
+        label: verified zero knowledge
+      - from: cipher-mpc
+        to: cipher-paper-44
+        type: direct
+        label: proactive secure computation
+      - from: cipher-miller
+        to: cipher-ecc
+        type: direct
+        label: elliptic-curve cryptography
+      - from: cipher-ecc
+        to: cipher-patent-11
+        type: direct
+        label: distributed proactive ECDSA
+      - from: cipher-ecc
+        to: cipher-paper-68
+        type: uses
+        label: pairing-curve components
+      - from: cipher-gentry
+        to: cipher-fhe
+        type: direct
+        label: fully homomorphic encryption
+      - from: cipher-fhe
+        to: cipher-paper-59
+        type: direct
+        label: FHE acceleration
+      - from: cipher-fhe
+        to: cipher-paper-65
+        type: direct
+        label: FHE scheme-switching barriers
