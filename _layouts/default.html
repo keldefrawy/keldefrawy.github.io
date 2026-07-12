@@ -100,15 +100,11 @@
     {% if page.homepage %}
     <link rel="stylesheet" href="{{ "/assets/css/adversary-game.css?v=" | append: site.github.build_revision | relative_url }}">
     {% endif %}
-    {% if page.arcade_page %}
-    <link rel="stylesheet" href="{{ "/assets/css/arcade/arcade.css?v=" | append: site.github.build_revision | relative_url }}">
-    <script type="application/json" id="arcade-theme-manifest">{{ site.data.arcade_themes | jsonify }}</script>
-    {% endif %}
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
   </head>
-  <body{% if page.homepage %} class="home-page"{% elsif page.arcade_page %} class="arcade-page"{% elsif page.publications_browser %} class="publications-page"{% elsif page.knowledge_map or page.knowledge_hub or page.paper_id %} class="knowledge-map-page"{% endif %}>
+  <body{% if page.homepage %} class="home-page"{% elsif page.publications_browser %} class="publications-page"{% elsif page.knowledge_map or page.knowledge_hub or page.paper_id %} class="knowledge-map-page"{% endif %}>
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
@@ -142,12 +138,6 @@
 
       {{ content }}
 
-      {% if page.arcade_page %}
-      <noscript>
-        <p class="arcade-notice">JavaScript is unavailable. Paper Lab remains active, while the Arcade catalog, rules summaries, limitations, and source trails remain fully readable.</p>
-      </noscript>
-      {% endif %}
-
       </section>
       <footer>
         {% if site.github.is_project_page %}
@@ -172,9 +162,6 @@
     {% endif %}
     {% if knowledge_record %}
     <script src="{{ "/assets/js/knowledge-map.js" | relative_url }}" defer></script>
-    {% endif %}
-    {% if page.arcade_page %}
-    <script type="module" src="{{ "/assets/js/arcade/loader.js?v=" | append: site.github.build_revision | relative_url }}"></script>
     {% endif %}
     {% if site.google_analytics %}
     <script>
