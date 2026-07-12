@@ -7,10 +7,14 @@ canonical_path: /knowledge/papers/paper-13/
 machine_path: /knowledge/papers/paper-13.json
 root_node_id: paper-13
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [protocol, primitive]
 
 title: "Group Distance Bounding Protocols (Short Paper)"
 year: 2011
 venue: "4th International Conference on Trust and Trustworthy Computing (TRUST)"
+topic: secure-systems-networks
+labels: ["Theory"]
 authors: ["Srdjan Čapkun", "Karim Eldefrawy", "Gene Tsudik"]
 keywords: ["distance bounding", "proximity", "authentication"]
 
@@ -23,7 +27,7 @@ curation:
     - actor_type: ai
       name: OpenAI Codex
       role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; the checked-in full-text PDF's title, authorship, page count, and file identity were verified, but its substantive claims were not source-audited."
   source_scope: metadata_and_editorial_summary
   approval:
     status: pending
@@ -38,6 +42,21 @@ sources:
     type: publication_record
     title: "Publisher / DOI"
     url: "https://doi.org/10.1007/978-3-642-21599-5_23"
+  - id: source-paper-13-archive-1
+    type: archived_author_copy
+    title: "Archived UCI author copy"
+    url: "https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf"
+    provenance_category: archive
+  - id: source-paper-13-author-local
+    type: author_hosted_copy
+    title: "Author-hosted PDF"
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf
+    media_type: application/pdf
+    sha256: 8cc3cb818ed21bd4772fea76b12a01d54b336e6019f0f847c6a9e08887665503
+    page_count: 8
+    provenance_category: author
+    retrieved_at: "2026-07-11"
+    retrieved_from_url: "https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf"
 
 source_anchors:
   - id: anchor-paper-13-site-record
@@ -50,6 +69,16 @@ source_anchors:
     label: "Publisher / DOI"
     locator: "Official resource linked from the curated site record; content not independently audited for this draft."
     url: "https://doi.org/10.1007/978-3-642-21599-5_23"
+  - id: anchor-paper-13-archive-1
+    source_id: source-paper-13-archive-1
+    label: "Archived UCI author copy"
+    locator: "Internet Archive capture of Karim El Defrawy's UCI-hosted short-paper PDF used to obtain the checked-in copy."
+    url: "https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf"
+  - id: anchor-paper-13-author-local
+    source_id: source-paper-13-author-local
+    label: "Author-hosted PDF"
+    locator: "Checked-in 8-page PDF explicitly labeled Short Paper; title and all three authors were verified against the rendered first page, and SHA-256 records file identity."
+    url: /pubs/2011/group-distance-bounding-trust2011.pdf
 
 nodes:
   - id: paper-13
@@ -121,8 +150,8 @@ nodes:
     order: 7
     epistemic_status: linked_not_content_audited
     title: "Artifacts and resources"
-    summary: "The curated record exposes 1 linked resource: Publisher / DOI. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-13-official-1]
+    summary: "The curated record exposes 3 linked resources: Publisher / DOI; archived UCI author copy; author-hosted PDF. The checked-in short-paper PDF's identity was verified, but its substantive contents and supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-13-official-1, anchor-paper-13-archive-1, anchor-paper-13-author-local]
 
   - id: paper-13-scrutiny
     kind: scrutiny
@@ -153,7 +182,7 @@ relations:
 
 assessment:
   id: paper-13-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -163,12 +192,12 @@ assessment:
       rationale: "The curated summary reports protocol contributions and comparative benefits; security models, timing assumptions, proofs, and implementation evidence have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-13-site-record]
     - id: auditability
-      level: low
-      rationale: "Only an official publication resource is linked (Publisher / DOI), and this draft has not inspected its full text, supplementary artifacts, or reproduction path; claim-level auditability is therefore low."
-      basis_source_anchor_ids: [anchor-paper-13-official-1]
+      level: high
+      rationale: "A verified author-hosted short-paper PDF is stored with this site, with its source route, page count, and SHA-256 identity recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, supplementary-artifact completeness, and independent reproduction remain separate questions."
+      basis_source_anchor_ids: [anchor-paper-13-official-1, anchor-paper-13-archive-1, anchor-paper-13-author-local]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-13-site-record]
     - id: external_scrutiny
       level: medium

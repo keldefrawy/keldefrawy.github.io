@@ -7,11 +7,17 @@ canonical_path: /knowledge/papers/paper-50/
 machine_path: /knowledge/papers/paper-50.json
 root_node_id: paper-50
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [protocol]
 
 title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
 short_title: VRASED
 year: 2019
 venue: 28th USENIX Security Symposium
+topic: secure-systems-networks
+labels:
+  - Theory
+  - Applied
 authors:
   - Ivan De Oliveira Nunes
   - Karim Eldefrawy
@@ -423,7 +429,7 @@ relations:
 
 assessment:
   id: paper-50-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
@@ -433,12 +439,12 @@ assessment:
       rationale: Strong formal and empirical evidence supports the stated model, but crucial transfer steps to the concrete compiler, MCU, and integration are assumed; later adversarial work found implementation-level gaps.
       basis_source_anchor_ids: [anchor-paper-verification-method, anchor-paper-formal-proofs, anchor-paper-evaluation, anchor-mind-gap-attacks]
     - id: auditability
-      level: medium
-      rationale: The paper, implementation, verification specifications, scripts, and proof material are public and documented, but this map has not pinned an immutable revision or recorded an independent full reproduction.
+      level: high
+      rationale: "An author-hosted paper, implementation, verification specifications, scripts, and proof material are public and documented, making the work directly inspectable; auditability is high. The map has not pinned an immutable repository revision or recorded an independent full reproduction."
       basis_source_anchor_ids: [anchor-repository-artifacts, anchor-paper-evaluation]
     - id: production_provenance
-      level: low
-      rationale: Conventional authorship, institutions, tools, and implementation details are visible, but no versioned production trace, contributor-role matrix, effort history, AI-use record, or explicit final-approval log is public.
+      level: medium
+      rationale: The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance.
       basis_source_anchor_ids: [anchor-paper-problem-novelty, anchor-repository-artifacts]
     - id: external_scrutiny
       level: high

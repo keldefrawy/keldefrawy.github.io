@@ -22,12 +22,27 @@ layout: default
   <p class="knowledge-eyebrow">Scientific knowledge map · Paper #{{ record.publication_id }}</p>
   <h1>{{ record.title | escape }}</h1>
   <p class="knowledge-authors">{% if publication.authors %}{{ publication.authors | escape }}{% else %}{{ record.authors | join: ", " | escape }}{% endif %}</p>
-  <p class="knowledge-venue">{{ record.year }} · {{ record.venue | escape }}</p>
+  <p class="knowledge-venue">{{ record.year }} · {% if publication.venue_url %}<a href="{{ publication.venue_url | escape }}">{{ record.venue | escape }}</a>{% else %}{{ record.venue | escape }}{% endif %}</p>
+  <ul class="publication-labels knowledge-map-labels" aria-label="Paper classifications and contribution types">
+    {% for label in publication.labels %}
+      <li class="publication-label-{{ label | slugify }}">{{ label | escape }}</li>
+    {% endfor %}
+    {% for label in publication.ai_ml_labels %}
+      <li class="publication-label-ai-focus">{{ label | escape }}</li>
+    {% endfor %}
+    {% for contribution_type in publication.contribution_types %}
+      <li class="publication-label-contribution">{{ contribution_type | escape }}</li>
+    {% endfor %}
+  </ul>
 
   <aside class="knowledge-review-status" role="note">
     <strong>AI-drafted map; author review pending.</strong>
     {% if record.curation.source_scope == "full_source_audit" %}
       <span>This source-linked draft is not yet author-approved. It separates formal-model guarantees from concrete-system evidence and can be revised without changing the paper.</span>
+    {% elsif record.curation.source_scope == "metadata_and_author_supplied_abstract" %}
+      <span>This first pass is grounded in an author-supplied abstract. The manuscript, formal theorem statements, hypotheses, and proofs have not yet been audited; technical claims are reported from the abstract, not independently verified.</span>
+    {% elsif record.curation.source_scope == "metadata_and_source_abstract" %}
+      <span>This first pass is grounded in the complete abstract transcribed from a source manuscript. The paper body, formal statements, proofs, implementation, and experiments have not yet been audited; technical claims are reported from the abstract, not independently verified.</span>
     {% else %}
       <span>This first pass is derived from the existing editorial summary and resource record. Full-text claim, evidence, assumption, and limitation auditing is still pending; the map does not present those editorial inferences as verified paper claims.</span>
     {% endif %}
@@ -47,11 +62,23 @@ layout: default
   </div>
 
   <nav class="knowledge-page-index" aria-label="On this page">
+    {% if publication.abstract %}<a href="#paper-abstract">Abstract</a>{% endif %}
     <a href="#evidence-profile">Six-axis profile</a>
     <a href="#paper-map">Hierarchical map</a>
     <a href="#source-index">Source index</a>
     <a href="{{ record.machine_path | relative_url }}">Machine-readable JSON</a>
   </nav>
+
+  {% if publication.abstract %}
+  <section class="knowledge-paper-abstract" id="paper-abstract" aria-labelledby="paper-abstract-heading">
+    <p class="knowledge-section-label">{{ publication.abstract_kind | default: "Abstract" | escape }}</p>
+    <h2 id="paper-abstract-heading">Abstract</h2>
+    <p class="knowledge-paper-abstract-text">{{ publication.abstract | escape }}</p>
+    {% if publication.abstract_note %}
+      <p class="knowledge-paper-abstract-note"><strong>Provenance:</strong> {{ publication.abstract_note | escape }}</p>
+    {% endif %}
+  </section>
+  {% endif %}
 
   <section class="knowledge-profile" id="evidence-profile" aria-labelledby="evidence-profile-heading">
     <div class="knowledge-section-heading">
@@ -177,7 +204,7 @@ layout: default
     <div class="knowledge-section-heading">
       <p class="knowledge-section-label">Audit trail</p>
       <h2 id="source-index-heading">Source index</h2>
-      <p>Locators state the depth of the current audit. PDF page numbers, where present, are one-based file pages; summary-only records explicitly identify that limitation.</p>
+      <p>Locators state the depth of the current audit. PDF page numbers, where present, are one-based file pages; metadata-, summary-, and abstract-bounded records explicitly identify their limitations.</p>
     </div>
     <ol>
       {% for source_anchor in record.source_anchors %}
@@ -194,6 +221,10 @@ layout: default
     <h2>Same record, structured as JSON</h2>
     {% if record.curation.source_scope == "full_source_audit" %}
       <p>The machine view contains the profile, map nodes, typed relations, source anchors, curation status, and the exact PDF hash represented on this page.</p>
+    {% elsif record.curation.source_scope == "metadata_and_author_supplied_abstract" %}
+      <p>The machine view contains the author-supplied abstract, AI-drafted profile, map nodes, typed relations, source anchors, and explicit markers that manuscript and formal-proof auditing remain pending.</p>
+    {% elsif record.curation.source_scope == "metadata_and_source_abstract" %}
+      <p>The machine view contains an abstract-grounded AI draft, map nodes, typed relations, source anchors, and explicit markers that paper-body, artifact, and formal-proof auditing remain pending.</p>
     {% else %}
       <p>The machine view contains the AI-drafted profile, map nodes, typed relations, current resource anchors, and an explicit marker that full-text source auditing remains pending.</p>
     {% endif %}

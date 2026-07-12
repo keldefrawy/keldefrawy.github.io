@@ -7,13 +7,15 @@ canonical_path: /knowledge/papers/paper-39/
 machine_path: /knowledge/papers/paper-39.json
 root_node_id: paper-39
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: []
 
 title: "Security Threats, Defenses, and Recommended Practices for Enterprise Mobility"
 year: 2018
 status: "Published · public full text not located"
 venue: "Information Systems Security Association (ISSA) Journal, Volume 16, Number 5"
 topic: "secure-systems-networks"
-labels: ["Applied"]
+labels: ["Perspective"]
 authors:
   - "Karim Eldefrawy"
   - "Vincent Sritapan"
@@ -208,7 +210,7 @@ relations:
 
 assessment:
   id: paper-39-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
@@ -218,12 +220,12 @@ assessment:
       rationale: "Only a title-based editorial inference and bibliographic record are represented; no full text or substantive evidence was available for audit, so epistemic support is limited."
       basis_source_anchor_ids: ["anchor-paper-39-editorial", "anchor-paper-39-resource-1"]
     - id: auditability
-      level: low
-      rationale: "The record provides only an official publisher or bibliographic link and no archive or author-hosted copy; access to substantive evidence and reproducibility materials was not verified."
+      level: medium
+      rationale: "The resource record provides only official publication metadata and no archive or author-hosted copy; full-text assumptions, evidence, and version identity are not readily auditable from this map. Auditability is therefore medium."
       basis_source_anchor_ids: ["anchor-paper-39-resource-1"]
     - id: production_provenance
-      level: low
-      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: ["anchor-paper-39-editorial"]
     - id: external_scrutiny
       level: medium

@@ -7,6 +7,8 @@ canonical_path: /knowledge/papers/paper-77/
 machine_path: /knowledge/papers/paper-77.json
 root_node_id: paper-77
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: []
 
 title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
 short_title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
@@ -162,7 +164,7 @@ relations:
 
 assessment:
   id: paper-77-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -173,11 +175,11 @@ assessment:
       basis_source_anchor_ids: [anchor-paper-77-curated]
     - id: auditability
       level: low
-      rationale: "No official, archive, or author-hosted resource is represented, so assumptions, evidence, artifacts, and version identity cannot presently be audited from this map."
+      rationale: "No paper-specific official publication record, public archive, or author-hosted copy is represented; full-text assumptions, evidence, artifacts, and version identity cannot presently be audited from this map. Auditability is therefore low."
       basis_source_anchor_ids: [anchor-paper-77-curated]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-77-curated]
     - id: external_scrutiny
       level: not_assessed

@@ -1,4 +1,8 @@
 ---
+- id: 79
+  official: []
+  archive: []
+  author: []
 - id: 78
   official: []
   archive:
@@ -20,7 +24,9 @@
 - id: 74
   official: []
   archive: []
-  author: []
+  author:
+  - label: Author-hosted manuscript PDF
+    url: https://keldefrawy.github.io/pubs/2026/private-identity-bulletin-boards-cscml2026.pdf
 - id: 73
   official:
   - label: Publisher / DOI
@@ -262,13 +268,17 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1007/978-3-030-04834-1_23
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author-uploaded PDF
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/324897081_Theoretical_Foundations_for_Mobile_Target_Defense_Proactive_Secret_Sharing_and_Secure_Multiparty_Computation/links/5bf2178ca6fdcc3a8de0e245/Theoretical-Foundations-for-Mobile-Target-Defense-Proactive-Secret-Sharing-and-Secure-Multiparty-Computation.pdf
 - id: 44
   official:
   - label: Publisher / DOI
     url: https://doi.org/10.1007/978-3-319-98113-0_11
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author-uploaded PDF
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325722786_Proactive_Secure_Multiparty_Computation_with_a_Dishonest_Majority/links/5b2f64a00f7e9b0df5c35611/Proactive-Secure-Multiparty-Computation-with-a-Dishonest-Majority.pdf
 - id: 43
   official:
   - label: Publisher / DOI
@@ -300,7 +310,9 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1109/IC2E.2018.00072
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author-uploaded PDF
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System/links/5b43d703aca2728a0d6896db/BlockCIS-A-Blockchain-Based-Cyber-Insurance-System.pdf
 - id: 39
   official:
   - label: Publisher bibliography
@@ -348,7 +360,9 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1109/ICDCS.2017.293
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author full text
+    url: https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage
 - id: 33
   official:
   - label: Publisher / DOI
@@ -380,7 +394,9 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1109/COMPSAC.2016.68
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author-uploaded PDF
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/303252585_Automated_Identification_of_Network_Service_Dependencies_via_Transfer_Entropy/links/573dee7808ae9ace84112561/Automated-Identification-of-Network-Service-Dependencies-via-Transfer-Entropy.pdf
 - id: 29
   official:
   - label: Publisher / DOI
@@ -410,7 +426,9 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1145/2660267.2660293
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author-uploaded PDF
+    url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/285835450_Founding_Digital_Currency_on_Secure_Computation/links/573dee9a08ae9f741b2ffd5a/Founding-Digital-Currency-on-Secure-Computation.pdf
 - id: 25
   official:
   - label: Publisher / DOI
@@ -430,7 +448,9 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1109/THS.2013.6699036
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author full text
+    url: https://www.researchgate.net/publication/261054497_An_architecture_for_a_resilient_cloud_computing_infrastructure
 - id: 22
   official:
   - label: Publisher / DOI
@@ -454,7 +474,11 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1109/MC.2013.73
   archive: []
-  author: []
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2013/blindfolded-data-search-ieee-computer2013.pdf
+  - label: UCI coauthor copy
+    url: https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf
 - id: 19
   official:
   - label: Publisher / DOI
@@ -468,7 +492,9 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1109/THS.2012.6459917
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author full text
+    url: https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs
 - id: 17
   official:
   - label: NDSS paper page
@@ -491,8 +517,12 @@
   official:
   - label: Publisher / DOI
     url: https://doi.org/10.1109/JSAC.2011.111203
-  archive: []
-  author: []
+  archive:
+  - label: Archived UCI author copy
+    url: https://web.archive.org/web/20150703110555id_/http://www.ics.uci.edu/~keldefra/papers/jsac11.pdf
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2011/privacy-preserving-routing-jsac2011.pdf
 - id: 14
   official:
   - label: Publisher / DOI
@@ -505,14 +535,22 @@
   official:
   - label: Publisher / DOI
     url: https://doi.org/10.1007/978-3-642-21599-5_23
-  archive: []
-  author: []
+  archive:
+  - label: Archived UCI author copy
+    url: https://web.archive.org/web/20150703110554id_/http://www.ics.uci.edu/~keldefra/papers/trust11.pdf
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2011/group-distance-bounding-trust2011.pdf
 - id: 12
   official:
   - label: Publisher / DOI
     url: https://doi.org/10.1145/1741866.1741882
-  archive: []
-  author: []
+  archive:
+  - label: Archived ETH institutional copy
+    url: https://web.archive.org/web/20120120122917id_/http://www.syssec.ethz.ch/research/wisec10-attks.pdf
+  author:
+  - label: Author-hosted PDF
+    url: https://keldefrawy.github.io/pubs/2010/physical-layer-identification-wisec2010.pdf
 - id: 11
   official:
   - label: Publisher / DOI
@@ -604,4 +642,6 @@
   - label: Publisher / DOI
     url: https://doi.org/10.1109/ICCES.2006.320475
   archive: []
-  author: []
+  author:
+  - label: ResearchGate author full text
+    url: https://www.researchgate.net/publication/251829226_SubCarrier_Allocation_using_Channel_Prediction_for_OFDMA_systems_based_on_IEEE_80216_Standard

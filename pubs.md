@@ -1,26 +1,29 @@
-# (Last Updated: May 2025)
+# (Last Updated: July 2026)
 (Email me if you are having problems finidng a PDF of one of my papers)
 
 
 # Pre-prints, Under Review, and Ongoing Work
 
 
+79- Karim Eldefrawy, "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases", under review at the 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026). [[CSCML 2026]](https://www.cscml.org/)
+
+
 78- Karim Eldefrawy, Ben Terner, and Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. [PDF] [[eprint]](https://eprint.iacr.org/2024/676)
 
-77- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. [PDF]
+77- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work.
 
-76- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. [PDF]
+76- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work.
 
-75- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. [PDF] 
+75- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review.
 
-74- Karim Eldefrawy, Stanislaw Jarecki, Ben Terner, Gene Tsudik, "Private Identity-based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks", under review. [PDF]
+74- Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, Gene Tsudik, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)", under review. [[PDF]](https://keldefrawy.github.io/pubs/2026/private-identity-bulletin-boards-cscml2026.pdf)
 
 
 # 2025
 
-73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-party Time-lock Puzzles: Quorum Controlled Delays without a Single Point of Failure", to appear in proceedings of the 9th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2025. [PDF]
+73- Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, Moti Yung, "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure", in proceedings of the 9th International Symposium on Cyber Security, Cryptology, and Machine Learning (CSCML), 2025. [[Publisher]](https://doi.org/10.1007/978-3-032-10759-6_5)
 
-72- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Full Paper)", under review at  the Springer journal specisl issue in Cryptography and Communications of CSCML'24. [PDF] 
+72- Karim Eldefrawy, Ben Terner, and Moti Yung, "Challenges in Timed-Cryptography: A Position Paper (Full Paper)", under review at the Springer journal special issue in Cryptography and Communications of CSCML'24.
 
 
 # 2024
@@ -98,9 +101,9 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 
 
 # 2018
-45- (Book Chapter) Karim Eldefrawy, Rafail Ostrovsky, Moti Yung, “Theoretical Foundations of Moving Target Defense: Proactive Secret Sharing and Secure Multiparty Computation,” From Database to Cyber Security, Springer International Publishing, 2018. [[PDF]](https://)
+45- (Book Chapter) Karim Eldefrawy, Rafail Ostrovsky, Moti Yung, “Theoretical Foundations for Mobile Target Defense: Proactive Secret Sharing and Secure Multiparty Computation,” From Database to Cyber Security, Springer International Publishing, 2018. [[PDF]](https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/324897081_Theoretical_Foundations_for_Mobile_Target_Defense_Proactive_Secret_Sharing_and_Secure_Multiparty_Computation/links/5bf2178ca6fdcc3a8de0e245/Theoretical-Foundations-for-Mobile-Target-Defense-Proactive-Secret-Sharing-and-Secure-Multiparty-Computation.pdf)
 
-44- Karim Eldefrawy, Rafail Ostrovsky, Sunoo Park, Moti Yung, “Proactive Secure Computation with a Dishonest Majority,” in proceedings of the 11th Conference Security and Cryptography in Networks (SCN), 2018. [[PDF]](https://)
+44- Karim Eldefrawy, Rafail Ostrovsky, Sunoo Park, Moti Yung, “Proactive Secure Multiparty Computation with a Dishonest Majority,” in proceedings of the 11th Conference Security and Cryptography in Networks (SCN), 2018. [[PDF]](https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325722786_Proactive_Secure_Multiparty_Computation_with_a_Dishonest_Majority/links/5b2f64a00f7e9b0df5c35611/Proactive-Secure-Multiparty-Computation-with-a-Dishonest-Majority.pdf)
 
 43- Ivan De Olivera Nunes, Karim Eldefrawy, Tancrede Lepoint, “Non-interactive User Re-enrollment in Cryptographically Secured Biometrics-based Identification and Authentication Systems,” in proceedings of the 2018 International Symposium on Cyber Security Cryptography and Machine Learning (CSCML), 2018. [[PDF]](https://keldefrawy.github.io/pubs/2018/snuse_cscml2018.pdf)
 
@@ -108,9 +111,9 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 
 41- Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik, “Temporal Consistency of Integrity-Ensuring Computations and Applications to Embedded Systems Security,” in proceedings of ACM Asia Conference on Computer and Communications Security (AsiaCCS), 2018. [[PDF]](https://)
 
-40- Gabriela Ciocarlie, Karim Eldefrawy, Tancrede Lepoint, “BlockCIS - A Blockchain-based Cyber Insurance System,” 1st IEEE Workshop on Blockchain Applications and Technologies (BAT), 2018. [[PDF]](https://)
+40- Gabriela Ciocarlie, Karim Eldefrawy, Tancrede Lepoint, “BlockCIS: A Blockchain-Based Cyber Insurance System,” 1st IEEE Workshop on Blockchain Applications and Technologies (BAT), 2018. [[PDF]](https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325207891_BlockCIS-A_Blockchain-Based_Cyber_Insurance_System/links/5b43d703aca2728a0d6896db/BlockCIS-A-Blockchain-Based-Cyber-Insurance-System.pdf)
 
-39- Karim Eldefrawy and Vincent Sritapan, “Security Threats, Defenses, and Recommended Practices for Enterprise Mobility,” Information Systems Security Association (ISSA) Journal, Vol. 16 No. 5, May 2018. [[PDF]](https://)
+39- Karim Eldefrawy and Vincent Sritapan, “Security Threats, Defenses, and Recommended Practices for Enterprise Mobility,” Information Systems Security Association (ISSA) Journal, Vol. 16 No. 5, May 2018. [[Publisher bibliography]](https://www.members.issa.org/page/journal-authors-2018)
 
 
 # 2017
@@ -122,7 +125,7 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 
 35- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Jonathan Katz, “Efficient, Reusable Fuzzy Extractors from LWE,” in proceedings of the 2017 International Symposium on Cyber Security Cryptography and Machine Learning (CSCML), 2017. [[PDF]](https://)
 
-34- Karim Eldefrawy, Sky Faber, Tyler Kazcmarek, “Proactively Secure Cloud-enabled Storage,” in proceedings of the 37th IEEE International Conference on Distributed Computing Systems (ICDCS), 2017. [[PDF]](https://)
+34- Karim Eldefrawy, Sky Faber, Tyler Kaczmarek, “Proactively Secure Cloud-Enabled Storage,” in proceedings of the 37th IEEE International Conference on Distributed Computing Systems (ICDCS), 2017. [[Full text]](https://www.researchgate.net/publication/315452578_Proactively_Secure_Cloud-Enabled_Storage)
 
 33- Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, Gene Tsudik, “LIghtweight Swarm Attestation: a Tale of Two LISA-s,” in proceedings of ACM Asia Conference on Computer and Com- munications Security (ASIACCS), 2017. [[PDF]](https://)
 
@@ -132,7 +135,7 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 
 31- Shlomi Dolev, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, Moti Yung, “Brief Announcement: Proactive Secret Sharing with a Dishonest Majority,” in proceedings of the ACM Symposium on Principles of Distributed Computing (PODC), 2016. [[PDF]](https://)
 
-30- Karim Eldefrawy, Tiffany Kim, Pape Sylla, “Automated Identification of Network Service Dependencies via Transfer Entropy,” in proceedings of the 40th IEEE Computer Society International Conference on Computers, Software & Applications (COMPSAC’16), ADMNET: The 4th IEEE International Workshop on Architecture, Design, Deployment and Management of Networks and Applications, 2016. [[PDF]](https://)
+30- Karim Eldefrawy, Tiffany Kim, Pape Sylla, “Automated Inference of Dependencies of Network Services and Applications via Transfer Entropy,” in proceedings of the 40th IEEE Computer Society International Conference on Computers, Software & Applications (COMPSAC’16), ADMNET: The 4th IEEE International Workshop on Architecture, Design, Deployment and Management of Networks and Applications, 2016. [[PDF]](https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/303252585_Automated_Identification_of_Network_Service_Dependencies_via_Transfer_Entropy/links/573dee7808ae9ace84112561/Automated-Identification-of-Network-Service-Dependencies-via-Transfer-Entropy.pdf)
 
 29- Karim Eldefrawy, Tyler Kazcmarek, “Byzantine Fault Tolerant Software-Defined Network (SDN) Controllers,” in proceedings of the 40th IEEE Computer Society International Conference on Computers, Software & Applications (COMPSAC’16), MidCCI: The 2nd IEEE International Workshop on Middleware for Cyber Security, Cloud Computing and Internetworking, 2016. [[PDF]](https://)
 
@@ -142,26 +145,26 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 27- Karim Eldefrawy, Gavin Holland, Gene Tsudik, “(Extended Abstract) Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case” presented at the Embedded Security in Cars USA (escar USA) Workshop, 2015. [[PDF]](https://)
 
 # 2014
-26- Karim Eldefrawy, Joshua Lampkins, “Founding Digital Currency on Secure Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2014. [[PDF]](https://)
+26- Karim Eldefrawy, Joshua Lampkins, “Founding Digital Currency on Secure Computation”, in proceedings of the ACM Conference on Computer and Communications Security (CCS), 2014. [[PDF]](https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/285835450_Founding_Digital_Currency_on_Secure_Computation/links/573dee9a08ae9f741b2ffd5a/Founding-Digital-Currency-on-Secure-Computation.pdf)
 
 25- Joshua Baron, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, “How to Withstand Mobile Virus Attacks, Revisited”, in proceedings of the ACM Symposium on Principles of Distributed Computing (PODC), 2014. [[PDF]](https://)
 
-24- Karim Eldefrawy, Joshua Lampkins, “Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet Via Privacy-preserving AppCoins” in proceedings of the Ninth Workshop on Secure Network Protocols (NPSec), 2014. [[PDF]](https://)
+24- Karim Eldefrawy, Joshua Lampkins, “Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet Via Privacy-preserving AppCoins” in proceedings of the Ninth Workshop on Secure Network Protocols (NPSec), 2014. [[Publisher]](https://doi.org/10.1109/ICNP.2014.100)
 
 # 2013
-23- Joshua Baron, Karim Eldefrawy, Aleksey Nogin, Rafail Ostrovsky, “An Architecture for Resilient Cloud Operations” in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2013. [[PDF]](https://)
+23- Joshua Baron, Karim Eldefrawy, Aleksey Nogin, Rafail Ostrovsky, “An Architecture for a Resilient Cloud Computing Infrastructure” in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2013. [[Full text]](https://www.researchgate.net/publication/261054497_An_architecture_for_a_resilient_cloud_computing_infrastructure)
 
 22- Martin Strohmeier, Ivan Martinovic, Utz Roedig, Karim Eldefrawy, Jens Schmitt “Neighborhood Watch: On Network Coding Throughput and Key Sharing”, in proceedings of the IEEE Global Communications Conference (GLOBECOM), 2013. [[PDF]](https://)
 
 21- Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, Eric Tressler, “5PM: Secure Pattern Matching”, Journal of Computer Security (JCS), Vol. 21 No. 5, September 2013. [[PDF]](https://)
 
-20- Karim Eldefrawy, Sky Faber, “Blindfolded Searching of Data via Secure Pattern Matching”, in IEEE Computer Magazine, Vol. 46 No.12 , December 2013. [[PDF]](https://)
+20- Karim Eldefrawy, Sky Faber, “Blindfolded Searching of Data via Secure Pattern Matching”, in IEEE Computer Magazine, Vol. 46 No.12 , December 2013. [[PDF]](https://keldefrawy.github.io/pubs/2013/blindfolded-data-search-ieee-computer2013.pdf)
 
 
 # 2012
 19- Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, Eric Tressler, “5PM: Secure Pattern Matching”, in proceedings of the 8th conference on Security and Cryptography for Networks (SCN), 2012. [[PDF]](https://)
 
-18- Karim Eldefrawy, Gavin Holland, “Secure and Privcay-preserving Querying of Content in MANETs”, in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2012. [[PDF]](https://)
+18- Karim Eldefrawy, Gavin Holland, “Secure and Privacy-Preserving Querying of Content in MANETs”, in proceedings of the IEEE International Conference on Technologies for Homeland Security (HST), 2012. [[Full text]](https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs)
 
 17- Karim Eldefrawy, Aurelien Francillon, Daniele Perito, Gene Tsudik, “SMART: Secure and Minimal Architecture for (Establishing Dynamic) Root of Trust”, in proceedings of Network & Distributed System Security Symposium (NDSS), 2012. [[PDF]](https://)
 
@@ -169,15 +172,15 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 
 
 # 2011
-15- Karim Eldefrawy, GeneTsudik, “Privacy-Preserving Location-Based On-Demand Routing in MANETs”, IEEE Journal of Selected Areas of Communication (IEEE JSAC), Vol. 29 No. 10, December 2011. [[PDF]](https://)
+15- Karim Eldefrawy, GeneTsudik, “Privacy-Preserving Location-Based On-Demand Routing in MANETs”, IEEE Journal of Selected Areas of Communication (IEEE JSAC), Vol. 29 No. 10, December 2011. [[PDF]](https://keldefrawy.github.io/pubs/2011/privacy-preserving-routing-jsac2011.pdf)
 
 14- Karim Eldefrawy, Gene Tsudik, “Anonymous Location Aided Routing in Suspicious MANETs”, IEEE Transactions on Mobile Computing (IEEE TMC), Vol. 10 No. 9, September 2011. [[PDF]](https://)
 
-13- Srdjan Capkun, Karim Eldefrawy, Gene Tsudik, “Group Distance Bounding Protocols”, in proceedings of the 4th International Conference on Trust and Trustworthy Computing (TRUST), 2011. [[PDF]](https://)
+13- Srdjan Capkun, Karim Eldefrawy, Gene Tsudik, “Group Distance Bounding Protocols”, in proceedings of the 4th International Conference on Trust and Trustworthy Computing (TRUST), 2011. [[PDF]](https://keldefrawy.github.io/pubs/2011/group-distance-bounding-trust2011.pdf)
 
 
 # 2010 - 2006 (Graduate School)
-12- Boris Danev, Heinrich Luecken, Srdjan Capkun, Karim Eldefrawy, “Attacks on Physical-layer Identification”, in proceedings of the ACM Conference on Wireless Network Security (WiSec), 2010. [[PDF]](https://)
+12- Boris Danev, Heinrich Luecken, Srdjan Capkun, Karim Eldefrawy, “Attacks on Physical-layer Identification”, in proceedings of the ACM Conference on Wireless Network Security (WiSec), 2010. [[PDF]](https://keldefrawy.github.io/pubs/2010/physical-layer-identification-wisec2010.pdf)
 
 11- Claude Catellucia, Karim Eldefrawy, Gene Tsudik, “Link-Layer Encryption Effect on the Capacity of Network Coding in Wireless Networks”, in proceedings of IEEE INFOCOM Work in Progress, 2010. [[PDF]](https://)
 
@@ -199,4 +202,4 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 
 2- Karim Eldefrawy, Magda El Zarki , Mohamed Khairy, “Proposal for a cross-layer coordination framework for next generation wireless systems”, in proceedings of the International Conference on Communications and Mobile Computing (IWCMC), 2006. [[PDF]](https://)
 
-1- Karim Eldefrawy, Mohamed Khairy, Amin Nassar, “Sub-Carrier Allocation using Channel Prediction for OFDMA systems based on IEEE 802.16 Standard”, in proceedings International Conference on Computer Engineering and Systems (ICCES), 2006. [[PDF]](https://)
+1- Karim Eldefrawy, Mohamed Khairy, Amin Nassar, “Sub-Carrier Allocation Using Channel Prediction for OFDMA Systems Based on IEEE 802.16 Standard”, in proceedings International Conference on Computer Engineering and Systems (ICCES), 2006. [[Full text]](https://www.researchgate.net/publication/251829226_SubCarrier_Allocation_using_Channel_Prediction_for_OFDMA_systems_based_on_IEEE_80216_Standard)

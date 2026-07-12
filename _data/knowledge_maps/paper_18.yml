@@ -7,10 +7,14 @@ canonical_path: /knowledge/papers/paper-18/
 machine_path: /knowledge/papers/paper-18.json
 root_node_id: paper-18
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [protocol]
 
 title: "Secure and Privacy-Preserving Querying of Content in MANETs"
 year: 2012
 venue: "IEEE International Conference on Technologies for Homeland Security (HST)"
+topic: privacy-identity
+labels: ["Theory"]
 authors: ["Karim Eldefrawy", "Gavin Holland"]
 keywords: ["private search", "MANETs", "access control"]
 
@@ -38,6 +42,11 @@ sources:
     type: publication_record
     title: "Publisher / DOI"
     url: "https://doi.org/10.1109/THS.2012.6459917"
+  - id: source-paper-18-author-1
+    type: author_hosted_copy
+    title: "ResearchGate author full text"
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
+    provenance_category: author
 
 source_anchors:
   - id: anchor-paper-18-site-record
@@ -50,6 +59,11 @@ source_anchors:
     label: "Publisher / DOI"
     locator: "Official resource linked from the curated site record; content not independently audited for this draft."
     url: "https://doi.org/10.1109/THS.2012.6459917"
+  - id: anchor-paper-18-author-1
+    source_id: source-paper-18-author-1
+    label: "Author-hosted resource: ResearchGate author full text"
+    locator: "Public author-uploaded full-text route recorded in the local resource data; local fixity, correspondence to the published version, and substantive content have not been audited for this draft."
+    url: "https://www.researchgate.net/publication/261493217_Secure_and_privacy-preserving_querying_of_content_in_MANETs"
 
 nodes:
   - id: paper-18
@@ -121,8 +135,8 @@ nodes:
     order: 7
     epistemic_status: linked_not_content_audited
     title: "Artifacts and resources"
-    summary: "The curated record exposes 1 linked resource: Publisher / DOI. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-18-official-1]
+    summary: "The curated record exposes 2 linked resources: Publisher / DOI; ResearchGate author full text. Their contents, persistence, version correspondence, and any supplementary artifacts have not been substantively audited."
+    source_anchor_ids: [anchor-paper-18-official-1, anchor-paper-18-author-1]
 
   - id: paper-18-scrutiny
     kind: scrutiny
@@ -153,7 +167,7 @@ relations:
 
 assessment:
   id: paper-18-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -163,12 +177,12 @@ assessment:
       rationale: "The curated summary reports cryptographic protocol constructions and intended privacy properties; formal games, proofs, complexity, implementation, and measurements have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-18-site-record]
     - id: auditability
-      level: low
-      rationale: "Only an official publication resource is linked (Publisher / DOI), and this draft has not inspected its full text, supplementary artifacts, or reproduction path; claim-level auditability is therefore low."
-      basis_source_anchor_ids: [anchor-paper-18-official-1]
+      level: high
+      rationale: "The resource record provides a publicly inspectable author-uploaded full-text route. This makes the paper's assumptions, evidence, and stated methods directly inspectable, so auditability is high; local fixity, correspondence to the published version, and a substantive content audit have not been verified."
+      basis_source_anchor_ids: [anchor-paper-18-official-1, anchor-paper-18-author-1]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-18-site-record]
     - id: external_scrutiny
       level: medium

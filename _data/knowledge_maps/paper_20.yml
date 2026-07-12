@@ -7,12 +7,16 @@ canonical_path: /knowledge/papers/paper-20/
 machine_path: /knowledge/papers/paper-20.json
 root_node_id: paper-20
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: []
 
 title: "Blindfolded Data Search via Secure Pattern Matching"
 year: 2013
 venue: "IEEE Computer, Volume 46, Number 12"
+topic: secure-encrypted-computation
+labels: ["Applied", "Perspective"]
 authors: ["Karim Eldefrawy", "Sky Faber"]
-keywords: ["secure search", "pattern matching", "privacy"]
+keywords: ["secure pattern matching", "privacy-preserving search", "survey"]
 
 research_question: "How can secure pattern matching let a requester search private data while hiding the query and revealing only matching records?"
 central_answer: "The article surveys practical secure-pattern-matching constructions and illustrates privacy-preserving search for law-enforcement and health-data sharing."
@@ -23,7 +27,7 @@ curation:
     - actor_type: ai
       name: OpenAI Codex
       role: metadata-grounded editorial synthesis and initial assessment
-  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; linked full texts were not source-audited."
+  method: "AI draft derived conservatively from the existing curated publication metadata, editorial summary, and resource-link inventory; the checked-in full-text PDF's title, authorship, page count, and file identity were verified, but its substantive claims were not source-audited."
   source_scope: metadata_and_editorial_summary
   approval:
     status: pending
@@ -38,6 +42,21 @@ sources:
     type: publication_record
     title: "Publisher / DOI"
     url: "https://doi.org/10.1109/MC.2013.73"
+  - id: source-paper-20-author-1
+    type: author_hosted_copy
+    title: "UCI coauthor copy"
+    url: "https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf"
+    provenance_category: author
+  - id: source-paper-20-author-local
+    type: author_hosted_copy
+    title: "Author-hosted PDF"
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf
+    media_type: application/pdf
+    sha256: 112227ea8c75bf197ee3f71a22876cabbfad30d6cc17eab768a2a7c9ec7ece6f
+    page_count: 8
+    provenance_category: author
+    retrieved_at: "2026-07-11"
+    retrieved_from_url: "https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf"
 
 source_anchors:
   - id: anchor-paper-20-site-record
@@ -50,6 +69,16 @@ source_anchors:
     label: "Publisher / DOI"
     locator: "Official resource linked from the curated site record; content not independently audited for this draft."
     url: "https://doi.org/10.1109/MC.2013.73"
+  - id: anchor-paper-20-author-1
+    source_id: source-paper-20-author-1
+    label: "UCI coauthor copy"
+    locator: "Public PDF on Gene Tsudik's UCI publication site used to obtain the checked-in copy."
+    url: "https://sprout.ics.uci.edu/pubs/secure_pattern_matching.pdf"
+  - id: anchor-paper-20-author-local
+    source_id: source-paper-20-author-local
+    label: "Author-hosted PDF"
+    locator: "Checked-in 8-page PDF; title and both authors were verified against the rendered first page, and SHA-256 records file identity."
+    url: /pubs/2013/blindfolded-data-search-ieee-computer2013.pdf
 
 nodes:
   - id: paper-20
@@ -121,8 +150,8 @@ nodes:
     order: 7
     epistemic_status: linked_not_content_audited
     title: "Artifacts and resources"
-    summary: "The curated record exposes 1 linked resource: Publisher / DOI. Their contents, version identities, and any supplementary artifacts have not been audited."
-    source_anchor_ids: [anchor-paper-20-official-1]
+    summary: "The curated record exposes 3 linked resources: Publisher / DOI; UCI coauthor copy; author-hosted PDF. The checked-in PDF's identity was verified, but its substantive contents and supplementary artifacts have not been audited."
+    source_anchor_ids: [anchor-paper-20-official-1, anchor-paper-20-author-1, anchor-paper-20-author-local]
 
   - id: paper-20-scrutiny
     kind: scrutiny
@@ -153,7 +182,7 @@ relations:
 
 assessment:
   id: paper-20-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -163,12 +192,12 @@ assessment:
       rationale: "The curated summary identifies a survey and application-oriented explanation; no underlying construction, proof, comparative study, or case-study evidence has been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-20-site-record]
     - id: auditability
-      level: low
-      rationale: "Only an official publication resource is linked (Publisher / DOI), and this draft has not inspected its full text, supplementary artifacts, or reproduction path; claim-level auditability is therefore low."
-      basis_source_anchor_ids: [anchor-paper-20-official-1]
+      level: high
+      rationale: "A verified author-hosted PDF is stored with this site, with its source route, page count, and SHA-256 identity recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, supplementary-artifact completeness, and independent reproduction remain separate questions."
+      basis_source_anchor_ids: [anchor-paper-20-official-1, anchor-paper-20-author-1, anchor-paper-20-author-local]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-20-site-record]
     - id: external_scrutiny
       level: medium

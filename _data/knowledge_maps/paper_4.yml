@@ -7,15 +7,19 @@ canonical_path: /knowledge/papers/paper-4/
 machine_path: /knowledge/papers/paper-4.json
 root_node_id: paper-4
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: []
 
 title: "Incentive-Based Cooperative and Secure Inter-Personal Networking"
 year: 2007
 venue: "ACM MobiOpp"
+topic: secure-systems-networks
+labels: ["Applied", "Perspective"]
 authors: ["Karim Eldefrawy", "Magda El Zarki", "Gene Tsudik"]
-keywords: ["cooperative networking", "micropayments", "anonymity"]
+keywords: ["cooperative networking", "personal-area networks", "connectivity sharing", "incentive mechanisms"]
 
 research_question: "How can nearby personal-area networks share connectivity securely while giving resource owners an incentive to participate?"
-central_answer: "The proposed framework combines short-term service contracts, policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments for purchased or bartered connectivity."
+central_answer: "The paper sketches a framework for short-term connectivity sharing and identifies the policy, authentication, privacy, accounting, and incentive requirements that a complete design would need to satisfy."
 
 curation:
   drafted_at: "2026-07-11"
@@ -76,7 +80,7 @@ nodes:
     order: 1
     epistemic_status: editorial_synthesis_pending_source_audit
     title: "Incentive-Based Cooperative and Secure Inter-Personal Networking"
-    summary: "This paper outlines a framework in which a stranded user's personal-area network buys or barters connectivity through a nearby user's devices under short-term service contracts. It combines policy-based gateway selection with mutual authentication, escrowed anonymity, and micropayments to make resource sharing secure and worthwhile."
+    summary: "This paper outlines a framework in which a stranded user's personal-area network buys or barters connectivity through a nearby user's devices under short-term service contracts. It identifies policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments as requirements for making resource sharing secure and worthwhile."
     source_anchor_ids: [anchor-paper-4-site-record]
 
   - id: paper-4-question
@@ -94,7 +98,7 @@ nodes:
     order: 2
     epistemic_status: editorial_synthesis_pending_source_audit
     title: "Contribution and central answer"
-    summary: "The proposed framework combines short-term service contracts, policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments for purchased or bartered connectivity."
+    summary: "The paper sketches short-term service contracts and identifies policy-based gateway selection, mutual authentication, escrowed anonymity, and micropayments as components of purchased or bartered connectivity."
     source_anchor_ids: [anchor-paper-4-site-record]
 
   - id: paper-4-method
@@ -103,7 +107,7 @@ nodes:
     order: 3
     epistemic_status: editorial_synthesis_pending_source_audit
     title: "Reported method"
-    summary: "Broker connectivity through selected nearby gateways under explicit short-term policies and payment arrangements, with authentication and conditional identity protection."
+    summary: "Outline how connectivity could be brokered through selected nearby gateways under explicit short-term policies and payment arrangements, with authentication and conditional identity protection."
     source_anchor_ids: [anchor-paper-4-site-record]
 
   - id: paper-4-claims
@@ -112,7 +116,7 @@ nodes:
     order: 4
     epistemic_status: reported_not_independently_audited
     title: "Principal reported claim"
-    summary: "The framework is intended to make interpersonal resource sharing both secure and economically worthwhile for the parties."
+    summary: "The proposed requirements are intended to make interpersonal resource sharing both secure and economically worthwhile for the parties."
     source_anchor_ids: [anchor-paper-4-site-record]
 
   - id: paper-4-evidence
@@ -171,7 +175,7 @@ relations:
 
 assessment:
   id: paper-4-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -181,12 +185,12 @@ assessment:
       rationale: "The curated summary describes the proposed components and intended security and incentive properties; no protocol proof, deployment, or economic evaluation has been audited. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-4-site-record]
     - id: auditability
-      level: medium
-      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; CiteSeerX archive; UCI author copy). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      level: high
+      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
       basis_source_anchor_ids: [anchor-paper-4-official-1, anchor-paper-4-archive-1, anchor-paper-4-author-1]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-4-site-record]
     - id: external_scrutiny
       level: medium
@@ -198,7 +202,7 @@ assessment:
       basis_source_anchor_ids: [anchor-paper-4-site-record]
     - id: contribution_significance
       level: medium
-      rationale: "The editorial summary describes a concrete contribution: The framework is intended to make interpersonal resource sharing both secure and economically worthwhile for the parties. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
+      rationale: "The editorial summary describes a concrete perspective: the proposed requirements are intended to make interpersonal resource sharing both secure and economically worthwhile for the parties. Novelty, priority, and field-level impact have not been source-audited, so significance remains a provisional medium rating."
       basis_source_anchor_ids: [anchor-paper-4-site-record]
 
 reception_snapshot:

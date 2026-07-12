@@ -1,0 +1,25 @@
+schema_version: "0.1"
+field: contribution_types
+controlled_values:
+  - id: protocol
+    label: protocol
+    definition: An interactive or distributed procedure among parties, nodes, devices, or services.
+  - id: primitive
+    label: primitive
+    definition: A named foundational cryptographic or security functionality introduced, defined, or realized by the work.
+  - id: scheme
+    label: scheme
+    definition: A construction specified through a family of algorithms or interfaces, including encryption, secret-sharing, coding, and obfuscation schemes.
+  - id: algorithm
+    label: algorithm
+    definition: A computational, inference, optimization, allocation, or transformation procedure whose principal operation is not interactive.
+policy:
+  multi_value: true
+  scope: Types identify principal constructive contributions or substantive protocol content; merely using an existing protocol, primitive, scheme, or algorithm is not sufficient.
+  theory_only: A Theory-only record without a contribution type is reserved for non-constructive definitions, impossibility or separation results, hardness or reduction results, analytical results, or records whose available evidence is insufficient to assert a construction.
+  audit_method: AI-assisted review of all 79 curated titles, summaries, tags, resource boundaries, and knowledge-map records, with author corrections incorporated for theory-oriented records.
+  audited_at: "2026-07-11"
+  author_corrections:
+    - corrected_at: "2026-07-11"
+      paper_ids: [57, 63, 71, 72, 75, 77, 78]
+      correction: Treat these records as theory-oriented without a protocol, primitive, scheme, or algorithm contribution tag; retain Perspective as an additional orientation for the two timed-cryptography position papers.

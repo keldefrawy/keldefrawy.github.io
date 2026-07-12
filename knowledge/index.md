@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Scientific Knowledge Maps
-description: Human- and machine-readable maps of research questions, claims, evidence, limitations, artifacts, scrutiny, and source-bounded epistemic profiles for 78 papers.
+description: Human- and machine-readable maps of research questions, claims, evidence, limitations, artifacts, scrutiny, and source-bounded epistemic profiles for 79 papers.
 permalink: /knowledge/
 knowledge_hub: true
 ---
@@ -30,7 +30,7 @@ knowledge_hub: true
 
   <aside class="knowledge-review-status" role="note">
     <strong>Simple publishing model:</strong>
-    <span>AI drafts each map and profile; a human reviews and revises it before approval. VRASED is the full-source exemplar. The other corpus entries begin as clearly labeled summary-based drafts and must not be mistaken for completed source audits. The website remains static and uses no automated ingestion, scoring pipeline, or GitHub Actions workflow.</span>
+    <span>AI drafts each map and profile; a human reviews and revises it before approval. VRASED is the full-source exemplar. The other corpus entries begin as clearly labeled summary- or abstract-bounded drafts and must not be mistaken for completed source audits. The website remains static and uses no automated ingestion, scoring pipeline, or GitHub Actions workflow.</span>
   </aside>
 
   <section class="knowledge-pilot" aria-labelledby="knowledge-pilot-heading">
@@ -49,7 +49,7 @@ knowledge_hub: true
   <section class="knowledge-catalog" aria-labelledby="knowledge-catalog-heading">
     <p class="knowledge-section-label">Complete Phase 1 catalog</p>
     <h2 id="knowledge-catalog-heading">All {{ site.papers | size }} paper entries</h2>
-    <p>Every publication now has a stable AI-drafted map and six-axis profile. Summary-based maps expose their incomplete source-audit status directly; VRASED demonstrates the deeper target with page-level evidence and post-publication scrutiny.</p>
+    <p>Every publication now has a stable AI-drafted map and six-axis profile. Summary- and abstract-bounded maps expose their incomplete source-audit status directly; VRASED demonstrates the deeper target with page-level evidence and post-publication scrutiny.</p>
 
     {% for domain in site.data.publication_domains %}
       <section class="knowledge-catalog-domain" aria-labelledby="catalog-{{ domain.slug }}">
@@ -69,8 +69,9 @@ knowledge_hub: true
                   <div>
                     <a href="{{ landing.url | relative_url }}">{{ paper.title | escape }}</a>
                     <span class="knowledge-catalog-meta">{{ paper.year }} · {{ paper.status | escape }}</span>
+                    {% if paper.contribution_types != empty %}<span class="knowledge-catalog-types">{{ paper.contribution_types | join: " · " | escape }}</span>{% endif %}
                   </div>
-                  <span class="paper-stage paper-stage-mapped">{% if mapped_record.curation.source_scope == "full_source_audit" %}Source-linked map{% else %}AI map draft{% endif %}</span>
+                  <span class="paper-stage paper-stage-mapped">{% if mapped_record.curation.source_scope == "full_source_audit" %}Source-linked map{% elsif mapped_record.curation.source_scope == "metadata_and_author_supplied_abstract" or mapped_record.curation.source_scope == "metadata_and_source_abstract" %}Abstract-grounded map{% else %}AI map draft{% endif %}</span>
                 </li>
               {% endfor %}
             </ol>
@@ -91,8 +92,11 @@ knowledge_hub: true
         </div>
       {% endfor %}
     </dl>
+    <p><strong>Auditability</strong> follows the paper resources represented on this site: High when a publicly inspectable full-text copy is linked through an archive or author-hosted route, Medium when only official publication metadata is linked, and Low when no paper-specific resource is represented. A High rating means the paper can be inspected; it does not by itself establish artifact completeness, exact version correspondence, or independent reproduction.</p>
+    <p><strong>Production provenance</strong> defaults to Medium when named authorship and publication or review status establish a baseline lifecycle trail. That default remains provisional when contributor roles, revision and effort history, AI or tool use, artifact-version lineage, or explicit final approval have not been audited.</p>
     <p><strong>Contribution significance</strong> captures first-of-kind capabilities, breakthroughs, and important resolutions without conflating them with correctness, reception, or scrutiny.</p>
+    <p><strong>Contribution types</strong> are a separate controlled vocabulary: protocol for interactive procedures, primitive for foundational security functionality, scheme for algorithm/interface families, and algorithm for non-interactive computational procedures. Multiple types may apply.</p>
   </section>
 
-  <p class="knowledge-json-index"><a href="{{ '/knowledge/papers/index.json' | relative_url }}">Machine-readable index of all 78 paper entries</a> · <a href="{{ '/knowledge/index.json' | relative_url }}">Machine-readable index of deep knowledge maps</a></p>
+  <p class="knowledge-json-index"><a href="{{ '/knowledge/papers/index.json' | relative_url }}">Machine-readable index of all {{ site.data.publications | size }} paper entries</a> · <a href="{{ '/knowledge/index.json' | relative_url }}">Machine-readable index of deep knowledge maps</a></p>
 </div>

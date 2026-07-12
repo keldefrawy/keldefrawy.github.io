@@ -7,6 +7,8 @@ canonical_path: /knowledge/papers/paper-49/
 machine_path: /knowledge/papers/paper-49.json
 root_node_id: paper-49
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [algorithm]
 
 title: "Longitudinal Analysis of Misuse of Bitcoin"
 year: 2019
@@ -219,7 +221,7 @@ relations:
 
 assessment:
   id: paper-49-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
@@ -229,12 +231,12 @@ assessment:
       rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
       basis_source_anchor_ids: ["anchor-paper-49-editorial", "anchor-paper-49-resource-1"]
     - id: auditability
-      level: medium
-      rationale: "At least one archive or author-hosted copy is linked, improving inspectability, but file identity, completeness, version alignment, artifact availability, and reproducibility were not checked."
+      level: high
+      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
       basis_source_anchor_ids: ["anchor-paper-49-resource-1", "anchor-paper-49-resource-2"]
     - id: production_provenance
-      level: low
-      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: ["anchor-paper-49-editorial"]
     - id: external_scrutiny
       level: medium

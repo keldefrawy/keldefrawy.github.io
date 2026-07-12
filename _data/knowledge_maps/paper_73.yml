@@ -7,6 +7,8 @@ canonical_path: /knowledge/papers/paper-73/
 machine_path: /knowledge/papers/paper-73.json
 root_node_id: paper-73
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [protocol, primitive]
 
 title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
 short_title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
@@ -170,7 +172,7 @@ relations:
 
 assessment:
   id: paper-73-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -180,12 +182,12 @@ assessment:
       rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-73-curated, anchor-paper-73-official-1]
     - id: auditability
-      level: low
-      rationale: "The resource record provides only official publication metadata and no archive or author-hosted copy; full-text assumptions, evidence, and version identity are not readily auditable from this map."
+      level: medium
+      rationale: "The resource record provides only official publication metadata and no archive or author-hosted copy; full-text assumptions, evidence, and version identity are not readily auditable from this map. Auditability is therefore medium."
       basis_source_anchor_ids: [anchor-paper-73-curated, anchor-paper-73-official-1]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-73-curated]
     - id: external_scrutiny
       level: medium

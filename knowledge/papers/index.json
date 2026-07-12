@@ -4,6 +4,7 @@ permalink: /knowledge/papers/index.json
 ---
 {
   "schema_version": "0.1",
+  "contribution_type_vocabulary": {{ site.data.contribution_types | jsonify }},
   "count": {{ site.data.publications | size }},
   "papers": [
     {% assign ordered_papers = site.data.publications | sort: "id" %}
@@ -23,10 +24,18 @@ permalink: /knowledge/papers/index.json
         "year": {{ paper.year | jsonify }},
         "status": {{ paper.status | jsonify }},
         "venue": {{ paper.venue | jsonify }},
+        "venue_url": {{ paper.venue_url | jsonify }},
         "topic": {{ paper.topic | jsonify }},
         "labels": {{ paper.labels | jsonify }},
         "ai_ml_labels": {{ paper.ai_ml_labels | jsonify }},
+        "contribution_types": {{ paper.contribution_types | jsonify }},
         "tags": {{ paper.tags | jsonify }},
+        "abstract": {{ paper.abstract | jsonify }},
+        "abstract_kind": {{ paper.abstract_kind | jsonify }},
+        "abstract_review_status": {{ paper.abstract_review_status | jsonify }},
+        "abstract_added_at": {{ paper.abstract_added_at | jsonify }},
+        "abstract_note": {{ paper.abstract_note | jsonify }},
+        "abstract_source_url": {{ paper.abstract_source_url | jsonify }},
         "summary": {{ paper.summary | jsonify }},
         "availability": {{ paper.availability | jsonify }},
         "resources": {{ resources | jsonify }},

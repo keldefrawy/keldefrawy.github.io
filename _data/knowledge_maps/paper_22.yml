@@ -7,10 +7,14 @@ canonical_path: /knowledge/papers/paper-22/
 machine_path: /knowledge/papers/paper-22.json
 root_node_id: paper-22
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [algorithm]
 
 title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
 year: 2013
 venue: "IEEE Global Communications Conference (GLOBECOM)"
+topic: algorithms-foundations
+labels: ["Theory", "Applied"]
 authors: ["Martin Strohmeier", "Ivan Martinovic", "Utz Roedig", "Karim Eldefrawy", "Jens Schmitt"]
 keywords: ["network coding", "key sharing", "wireless networks"]
 
@@ -162,7 +166,7 @@ relations:
 
 assessment:
   id: paper-22-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -172,12 +176,12 @@ assessment:
       rationale: "The curated summary reports an optimization formulation and quantitative topology experiments; threat assumptions, objective function, algorithms, datasets, and statistical variation have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-22-site-record]
     - id: auditability
-      level: medium
-      rationale: "The curated record links at least one archive, author copy, or directly accessible paper resource (Publisher / DOI; Oxford author copy). The linked contents, versions, supplementary artifacts, and reproduction path have not been audited, so auditability remains medium."
+      level: high
+      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
       basis_source_anchor_ids: [anchor-paper-22-official-1, anchor-paper-22-author-1]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-22-site-record]
     - id: external_scrutiny
       level: medium

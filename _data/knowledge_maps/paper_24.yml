@@ -7,10 +7,14 @@ canonical_path: /knowledge/papers/paper-24/
 machine_path: /knowledge/papers/paper-24.json
 root_node_id: paper-24
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [protocol, scheme]
 
 title: "Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet via Privacy-Preserving AppCoins"
 year: 2014
 venue: "Ninth Workshop on Secure Network Protocols (NPSec), co-located with IEEE ICNP"
+topic: privacy-identity
+labels: ["Theory", "Applied"]
 authors: ["Karim Eldefrawy", "Joshua Lampkins"]
 keywords: ["micropayments", "incentives", "privacy"]
 
@@ -153,7 +157,7 @@ relations:
 
 assessment:
   id: paper-24-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -163,12 +167,12 @@ assessment:
       rationale: "The curated summary reports protocol security properties and commodity-hardware cost results; definitions, proofs, implementations, measurements, and economic experiments have not been inspected. This evidence description comes only from the curated editorial summary, and no result has been independently reproduced; the rating therefore does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-24-site-record]
     - id: auditability
-      level: low
-      rationale: "Only an official publication resource is linked (Publisher / DOI), and this draft has not inspected its full text, supplementary artifacts, or reproduction path; claim-level auditability is therefore low."
+      level: medium
+      rationale: "The resource record provides only official publication metadata and no archive or author-hosted copy; full-text assumptions, evidence, and version identity are not readily auditable from this map. Auditability is therefore medium."
       basis_source_anchor_ids: [anchor-paper-24-official-1]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authorship and venue, but provides no contributor-role matrix, revision history, effort record, tool or AI-use disclosure, or final-approval trace for the paper; this draft does not infer that missing provenance."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-24-site-record]
     - id: external_scrutiny
       level: medium

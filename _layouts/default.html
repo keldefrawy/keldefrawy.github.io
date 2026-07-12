@@ -31,6 +31,7 @@
 {% seo %}
 {% endif %}
     {% if knowledge_record %}
+    {% assign knowledge_keywords = knowledge_record.keywords | concat: knowledge_record.contribution_types %}
     <link rel="alternate" type="application/json" href="{{ knowledge_record.machine_path | absolute_url }}" title="Machine-readable scientific knowledge map">
     <script type="application/ld+json">
     {
@@ -41,16 +42,19 @@
       "url": {{ knowledge_record.canonical_path | absolute_url | jsonify }},
       "name": {{ knowledge_record.title | jsonify }},
       "description": {{ landing_publication.summary | default: knowledge_record.central_answer | jsonify }},
+      {% if landing_publication.abstract %}
+      "abstract": {{ landing_publication.abstract | jsonify }},
+      {% endif %}
       {% if knowledge_record.year %}
       "datePublished": {{ knowledge_record.year | append: "" | jsonify }},
       {% endif %}
       {% if knowledge_record.venue %}
-      "isPartOf": {"@type": "CreativeWork", "name": {{ knowledge_record.venue | jsonify }}},
+      "isPartOf": {"@type": "CreativeWork", "name": {{ knowledge_record.venue | jsonify }}{% if landing_publication.venue_url %}, "url": {{ landing_publication.venue_url | jsonify }}{% endif %}},
       {% endif %}
       "author": [
         {% for author in knowledge_record.authors %}{"@type": "Person", "name": {{ author | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}
       ],
-      "keywords": {{ knowledge_record.keywords | jsonify }},
+      "keywords": {{ knowledge_keywords | jsonify }},
       "creativeWorkStatus": {{ landing_publication.status | default: knowledge_record.stage | jsonify }},
       "mainEntityOfPage": {{ knowledge_record.canonical_path | absolute_url | jsonify }},
       "encoding": {
@@ -61,6 +65,7 @@
     }
     </script>
     {% elsif landing_publication %}
+    {% assign landing_keywords = landing_publication.tags | concat: landing_publication.contribution_types %}
     <link rel="alternate" type="application/json" href="{{ '/knowledge/papers/index.json' | absolute_url }}" title="Machine-readable paper index">
     <script type="application/ld+json">
     {
@@ -75,11 +80,14 @@
       "datePublished": {{ landing_publication.year | append: "" | jsonify }},
       {% endif %}
       {% if landing_publication.venue %}
-      "isPartOf": {"@type": "CreativeWork", "name": {{ landing_publication.venue | jsonify }}},
+      "isPartOf": {"@type": "CreativeWork", "name": {{ landing_publication.venue | jsonify }}{% if landing_publication.venue_url %}, "url": {{ landing_publication.venue_url | jsonify }}{% endif %}},
       {% endif %}
       "description": {{ landing_publication.summary | jsonify }},
+      {% if landing_publication.abstract %}
+      "abstract": {{ landing_publication.abstract | jsonify }},
+      {% endif %}
       "creativeWorkStatus": {{ landing_publication.status | jsonify }},
-      "keywords": {{ landing_publication.tags | jsonify }}
+      "keywords": {{ landing_keywords | jsonify }}
     }
     </script>
     {% elsif page.knowledge_hub %}
@@ -133,6 +141,9 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    {% if page.publications_browser %}
+    <script src="{{ "/assets/js/publication-abstracts.js" | relative_url }}" defer></script>
+    {% endif %}
     {% if knowledge_record %}
     <script src="{{ "/assets/js/knowledge-map.js" | relative_url }}" defer></script>
     {% endif %}

@@ -7,39 +7,52 @@ canonical_path: /knowledge/papers/paper-74/
 machine_path: /knowledge/papers/paper-74.json
 root_node_id: paper-74
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [protocol, scheme]
 
-title: "Private Identity-Based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks"
-short_title: "Private Identity-Based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks"
+title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
+short_title: "Private Identity-Based Bulletin Boards"
 year: null
 venue: null
 publication_status: "Under review"
 topic: privacy-identity
 labels:
   - "Theory"
-availability: "Public manuscript not found; this work is listed as under review."
+  - "Applied"
+availability: "An author-hosted manuscript PDF is available on this site; the work remains under review."
+abstract_kind: Full paper abstract
+abstract_review_status: extracted_from_checked_in_pdf
+abstract_added_at: "2026-07-11"
+abstract_note: "Transcribed from the checked-in author manuscript; mathematical notation was normalized to plain Unicode, and only typography, discretionary hyphenation, and line-break artifacts were otherwise normalized. The source typo 'independet' is retained."
+abstract_source_url: "/pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=1"
+abstract: >-
+  Secure and anonymous messaging has many compelling use-cases and is becoming increasingly popular. In this paper, we consider it in the context of delay-and-disruption-prone networks, which are characterized by handicapped network access, disrupted operation, censorship, and intermittent network outages. With such settings in mind, we define and design a Private Identity-Based Bulletin Board (PIB³) scheme, which allows users to anonymously post and retrieve messages to and from a distributed database, and supports communication between users without pre-established setup or pre-exchanged keys. Anyone can encrypt a message for an identity and public epoch, such that only the party with the decryption key for that identity can identify, retrieve, and decrypt the message. Against one corrupted non-colluding PIB³ server, the server learns neither the recipient identity nor the retrieved record indices beyond the leakage explicitly modeled by the scheme: the public epoch, the database size, and the number of retrievals made by the receiver. If retrieval-count privacy is required, retrievals can be padded to a fixed bound. The multi-server construction extends this guarantee to larger server sets, and gives coalition privacy whenever the underlying multi-server PIR scheme is private against the corresponding coalition. Contributions of this work are: (1) formally defining functionality and security requirements for PIB³-s, (2) defining and constructing a Hierarchical Identity-Based Encryption (HIBE) scheme with searchable ciphertexts, which serves as a building block for the proposed PIB³ scheme and may be of independet interest, (3) designing an efficient PIB³ scheme that can be realized with n ≥ 2 servers based on the HIBE scheme with searchable ciphertexts combined with additional primitives, and (4) implementing a functional PIB³ prototype which demonstrates practicality of the entire concept and allows us to assess its performance empirically.
 authors:
   - "Karim Eldefrawy"
   - "Stanislaw Jarecki"
-  - "Ben Terner"
+  - "Benjamin Terner"
   - "Gene Tsudik"
 keywords:
   - "anonymous messaging"
-  - "delay-tolerant networks"
+  - "delay-and-disruption-prone networks"
+  - "identity-based encryption"
+  - "private information retrieval"
+  - "searchable ciphertexts"
 
-research_question: "Can an identity-based bulletin-board design support secure anonymous messaging when networks experience long delay, outages, or deliberate disruption?"
-central_answer: "Based only on the working title and editorial listing, the proposed direction is to use private identity-based bulletin boards so protected messages do not require simultaneous sender, recipient, or network availability."
+research_question: "Can a distributed identity-based bulletin board support asynchronous anonymous messaging without pre-established keys while hiding recipient identities and retrieved record indices from corrupted non-colluding servers in delay-and-disruption-prone networks?"
+central_answer: "The abstract defines a Private Identity-Based Bulletin Board scheme that combines anonymous identity-based encryption, searchable hierarchical identity-based encryption, and multi-server private information retrieval; it states single-server and coalition privacy guarantees under explicit leakage and reports a functional prototype."
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata synthesis, conservative claim mapping, and resource linking
-  method: "AI drafting from the curated site metadata, editorial summary, and represented resource links; no full-text source audit was performed."
-  source_scope: metadata_and_editorial_summary
+      role: abstract extraction, source-bounded synthesis, and resource linking
+  method: "AI drafting from the curated metadata and the complete abstract transcribed from the checked-in full-text author manuscript; the PDF title, authors, abstract boundary, page count, and SHA-256 identity were verified, but the body, proofs, implementation, and experiments were not source-audited."
+  source_scope: metadata_and_source_abstract
   approval:
     status: pending
-    note: "AI-authored draft awaiting author review. The local summary is editorial, and all technical claims and ratings remain provisional until source audit."
+    note: "AI-authored abstract-grounded draft awaiting author review. Statements are bounded to what the manuscript abstract reports unless explicitly labeled as editorial synthesis."
 
 sources:
   - id: source-paper-74-curated
@@ -47,6 +60,14 @@ sources:
     title: "Website publication record for Paper #74"
     url: /publications/#paper-74
     scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
+  - id: source-paper-74-author-pdf
+    type: author_hosted_copy
+    title: "Private Identity-Based Bulletin Boards author manuscript"
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf
+    media_type: application/pdf
+    sha256: 05579c33303df2bbbab58bcb627c8a7ee717fd22a2a802755e1199ab69f4a265
+    page_count: 44
+    provenance_category: author
 
 source_anchors:
   - id: anchor-paper-74-curated
@@ -54,80 +75,85 @@ source_anchors:
     label: "Curated metadata and editorial summary"
     locator: "Website publication record. The summary is editorial and has not been checked against full text."
     url: /publications/#paper-74
+  - id: anchor-paper-74-author-abstract
+    source_id: source-paper-74-author-pdf
+    label: "Author manuscript abstract"
+    locator: "PDF page 1, complete Abstract section ending immediately before Section 1; title, four authors, abstract boundary, page count, and SHA-256 identity verified."
+    url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=1
 
 nodes:
   - id: paper-74
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
-    title: "Private Identity-Based Bulletin Boards: Secure Anonymous Messaging over Delay-and-Disruption-Prone Networks"
-    summary: "Based on its working title, this paper develops identity-based bulletin boards for anonymous communication in networks with long delays, outages, or deliberate disruption. It aims to let users exchange protected messages without requiring both parties or the underlying network to be continuously available."
-    source_anchor_ids: [anchor-paper-74-curated]
+    epistemic_status: abstract_grounded_editorial_synthesis
+    title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
+    summary: "The paper defines Private Identity-Based Bulletin Boards for asynchronous anonymous messaging without pre-established keys in censored or disruption-prone networks. It combines anonymous identity-based encryption, searchable HIBE, and multi-server private information retrieval, then reports a functional prototype."
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-question
     kind: question
     parent_id: paper-74
     order: 1
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: abstract_grounded_editorial_synthesis
     title: "Research question"
-    summary: "Can an identity-based bulletin-board design support secure anonymous messaging when networks experience long delay, outages, or deliberate disruption?"
-    source_anchor_ids: [anchor-paper-74-curated]
+    summary: "Can a distributed identity-based bulletin board support asynchronous anonymous messaging without pre-established keys while hiding recipient identities and retrieved record indices from corrupted non-colluding servers in delay-and-disruption-prone networks?"
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-contribution
     kind: contribution
     parent_id: paper-74
     order: 2
-    epistemic_status: reported_not_independently_audited
-    title: "Proposed contribution"
-    summary: "Based only on the working title and editorial listing, the proposed direction is to use private identity-based bulletin boards so protected messages do not require simultaneous sender, recipient, or network availability."
-    source_anchor_ids: [anchor-paper-74-curated]
+    epistemic_status: abstract_reported_not_body_audited
+    title: "Contribution and central answer"
+    summary: "The abstract defines the PIB³ functionality and security requirements, constructs a searchable-ciphertext HIBE building block, composes it with anonymous IBE and private information retrieval, and reports an efficient multi-server PIB³ construction plus a functional prototype."
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-method
     kind: method
     parent_id: paper-74
     order: 3
-    epistemic_status: reported_not_independently_audited
+    epistemic_status: abstract_reported_not_body_audited
     title: "Method or construction"
-    summary: "No public manuscript is represented. The apparent bulletin-board, identity-based, and delay-tolerant mechanism is an editorial inference from the working title, not an audited construction."
-    source_anchor_ids: [anchor-paper-74-curated]
+    summary: "The reported construction combines ciphertext-anonymous identity-based encryption for message payloads, a two-level HIBE scheme with searchable ciphertexts for identity-and-epoch discovery, and multi-server PIR for private retrieval."
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-claims
     kind: claim_group
     parent_id: paper-74
     order: 4
-    epistemic_status: reported_not_independently_audited
+    epistemic_status: abstract_reported_not_body_audited
     title: "Principal reported claims"
-    summary: "The listing supports only a research aim: anonymous, protected messaging over delay- and disruption-prone networks. It does not yet support a specific security or performance guarantee."
-    source_anchor_ids: [anchor-paper-74-curated]
+    summary: "The abstract states that one corrupted non-colluding server learns neither recipient identity nor retrieved indices beyond public epoch, database size, and retrieval count; padding can hide retrieval count, while multi-server coalition privacy follows from the underlying PIR privacy guarantee."
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-evidence
     kind: evidence_group
     parent_id: paper-74
     order: 5
-    epistemic_status: reported_not_independently_audited
+    epistemic_status: abstract_reported_not_body_audited
     title: "Reported evidence"
-    summary: "No public manuscript, publication record, proof, implementation, experiment, or artifact is represented in the resource data."
-    source_anchor_ids: [anchor-paper-74-curated]
+    summary: "The abstract reports formal functionality and security definitions, a construction from named cryptographic components, and a functional prototype used for empirical performance assessment. The definitions, proofs, implementation, experimental setup, and measurements have not yet been inspected in the paper body."
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-scope
     kind: limitation_group
     parent_id: paper-74
     order: 6
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: abstract_grounded_scope_boundary
     title: "Scope and limitations"
-    summary: "Identity privacy, sender and receiver anonymity, metadata leakage, authentication, key management, disruption tolerance, delivery guarantees, adversary model, complexity, and all formal claims remain unknown pending author review."
-    source_anchor_ids: [anchor-paper-74-curated]
+    summary: "The abstract exposes the principal leakage profile and high-level corruption assumptions, but exact games, proof assumptions, collusion bounds, implementation details, performance measurements, failure handling, and deployment constraints remain pending body-level audit."
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-artifacts
     kind: artifact_group
     parent_id: paper-74
     order: 7
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: linked_identity_verified_content_not_body_audited
     title: "Artifacts and resources"
-    summary: "The resource data contains no official, archive, or author-hosted link for this item, so this draft cannot expose a manuscript or artifact audit path."
-    source_anchor_ids: [anchor-paper-74-curated]
+    summary: "The site stores a 44-page author manuscript PDF with verified title, authors, abstract boundary, and SHA-256 identity. No separate code repository, immutable release, dataset, proof artifact, or archival publication record is represented."
+    source_anchor_ids: [anchor-paper-74-author-abstract]
   - id: paper-74-scrutiny
     kind: scrutiny
     parent_id: paper-74
     order: 8
-    epistemic_status: editorial_synthesis_pending_source_audit
+    epistemic_status: review_status_reported_not_completed
     title: "Scrutiny and status"
-    summary: "The curated record gives the status Under review. No completed external review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
-    source_anchor_ids: [anchor-paper-74-curated]
+    summary: "The manuscript identifies itself as a regular academic track paper and the curated record reports Under review. No completed external review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
+    source_anchor_ids: [anchor-paper-74-curated, anchor-paper-74-author-abstract]
 
 relations:
   - id: paper-74-relation-question-contribution
@@ -161,22 +187,22 @@ relations:
 
 assessment:
   id: paper-74-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: low
-      rationale: "Only curated metadata and an editorial summary support this draft; no public manuscript is represented, so the proposed method, claims, and evidence have not been source-audited."
-      basis_source_anchor_ids: [anchor-paper-74-curated]
+      level: medium
+      rationale: "The complete manuscript abstract reports formal definitions, a concrete cryptographic construction, stated privacy guarantees, and prototype-based empirical assessment. The paper body, formal games, proofs, implementation, evaluation setup, and results have not yet been audited or independently reproduced, so evidence does not exceed medium."
+      basis_source_anchor_ids: [anchor-paper-74-author-abstract]
     - id: auditability
-      level: low
-      rationale: "No official, archive, or author-hosted resource is represented, so assumptions, evidence, artifacts, and version identity cannot presently be audited from this map."
-      basis_source_anchor_ids: [anchor-paper-74-curated]
+      level: high
+      rationale: "A 44-page author-hosted manuscript PDF is stored with this site, and its title, authorship, page count, abstract boundary, and SHA-256 identity are recorded. The full text is directly inspectable, so auditability is high; substantive claim checking, artifact completeness, and independent reproduction remain separate questions."
+      basis_source_anchor_ids: [anchor-paper-74-author-abstract]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-74-curated]
     - id: external_scrutiny
       level: low
@@ -187,9 +213,9 @@ assessment:
       rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
       basis_source_anchor_ids: [anchor-paper-74-curated]
     - id: contribution_significance
-      level: not_assessed
-      rationale: "Only a working title, bibliographic listing, and editorially inferred research aim are available; contribution, novelty, priority, and impact cannot yet be assessed."
-      basis_source_anchor_ids: [anchor-paper-74-curated]
+      level: medium
+      rationale: "The abstract reports a concrete contribution spanning new functionality and security definitions, a searchable-ciphertext HIBE building block, a multi-server PIB³ construction, and a working prototype. Novelty, priority, comparative scope, and field-level impact have not been body-audited, so significance remains provisional at medium."
+      basis_source_anchor_ids: [anchor-paper-74-author-abstract]
 
 reception_snapshot:
   as_of: "2026-07-11"

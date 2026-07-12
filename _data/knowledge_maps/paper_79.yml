@@ -1,0 +1,239 @@
+schema_version: "0.1"
+map_id: paper-79-map
+publication_id: 79
+publication_anchor: paper-79
+slug: paper-79
+canonical_path: /knowledge/papers/paper-79/
+machine_path: /knowledge/papers/paper-79.json
+root_node_id: paper-79
+stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: []
+
+title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
+short_title: "Can Composing Generative Models Avoid Hallucinations?"
+year: 2026
+venue: "10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026)"
+venue_url: "https://www.cscml.org/"
+publication_status: "Under review"
+topic: ai-machine-learning
+labels:
+  - "Theory"
+ai_ml_labels:
+  - "Foundations"
+  - "AI for security"
+availability: "Public manuscript not yet linked; an author-supplied abstract and the CSCML 2026 venue website are represented."
+abstract_kind: "Author-supplied abstract"
+abstract_review_status: author_supplied_not_manuscript_audited
+abstract_added_at: "2026-07-11"
+abstract_note: "Supplied by the author for this website; the manuscript and theorem proofs have not been independently audited."
+abstract_source_url: /knowledge/papers/paper-79/#paper-abstract
+abstract: |-
+  Today’s AI-powered enterprise systems are increasingly combining multiple models with pre- and post-processing, score aggregation, routing to expert models, and model-as-judge mechanisms. This raises a natural theoretical question with immediate practical implications: can compositions of models and pre- and post-processing techniques reduce hallucination rates inherent in single models?
+
+  We answer this question for the calibrated core of systems composing multiple models with pre- and post-processing techniques. Calibration in this context means that among all claims assigned score z, the average truth rate is z. Kalai and Vempala (KV) proved a limitation for a single calibrated fact-level generator: it must hallucinate monofacts (facts appearing once in training data) at a rate lower-bounded by the Good–Turing missing-mass estimate minus calibration error.
+
+  We show that calibration is preserved by three natural and common composition operators: (1) deterministic semantic post-processing, (2) Bayesian-compatible score aggregation, and (3) routing to one of many expert models (sometimes called a mixture of experts). The KV hallucination floor thus survives compositions built from these operators. A combined system that beats this floor must therefore either be miscalibrated as a final composite or violate one of our closure theorems. We give two counterexamples showing that, when the conditions of our theorems are violated, the overall system may not be calibrated: marginally calibrated experts need not average to a calibrated ensemble, and globally calibrated expert models need not remain calibrated under routing to one of the expert models.
+
+  We map our results to cybersecurity-relevant settings; in such settings, composed systems powered by generative models discover vulnerabilities, review code, generate code and test cases, analyze logs, triage alerts, and summarize incidents. In cybersecurity, “facts” are operational claims whose tail can be viewed as the monofact regime. Such claims can concern, for example, vulnerability existence, exploitability, patch safety, alert validity, or incident attribution. Vulnerability discovery also marks the theorem’s boundary: a model-generated claim that a rare bug exists is monofact-like when supported only by model confidence, while a concrete exploit, proof certificate, or execution trace is a checkable witness. Thus, our theorems apply to pre-verification composition; verified witnesses provide an escape by changing the evidence state.
+
+  We conclude with an evaluation procedure for auditing composed systems powered by generative models acting as a cybersecurity AI assistant or automated pipeline addressing specific tasks in such settings. The evaluation procedure enables one to explain whether, and by which mechanism, an observed hallucination reduction is compatible with our analysis.
+authors:
+  - "Karim Eldefrawy"
+keywords:
+  - "generative models"
+  - "model composition"
+  - "hallucinations"
+  - "cybersecurity AI"
+
+research_question: "Does calibration—and therefore the Kalai–Vempala monofact hallucination lower bound—persist when fact-level generators are composed using deterministic semantic post-processing, Bayesian-compatible score aggregation, or routing to expert models?"
+central_answer: "The author-supplied abstract reports that, under the paper’s closure conditions, calibration is preserved by all three operators, so the Kalai–Vempala hallucination floor persists for calibrated composites. Beating the floor requires final miscalibration, violation of a closure condition, or a changed evidence state such as a verified witness."
+
+curation:
+  drafted_at: "2026-07-11"
+  drafted_by:
+    - actor_type: ai
+      name: OpenAI Codex
+      role: abstract-grounded synthesis, conservative claim mapping, and venue linking
+  method: "AI drafting from author-supplied bibliographic metadata and abstract plus the supplied venue URL; no paper full text, formal theorem statement, proof, review record, dataset, code, or experiment was audited."
+  source_scope: metadata_and_author_supplied_abstract
+  approval:
+    status: pending
+    note: "The author supplied the abstract. The AI-authored map remains pending author review; technical claims reflect the abstract, while formal theorem statements, hypotheses, and proofs remain unaudited."
+
+sources:
+  - id: source-paper-79-curated
+    type: curated_site_record
+    title: "Website publication record for Paper #79"
+    url: /publications/#paper-79
+    scope_note: "Author-supplied title, authorship, under-review status, venue, and topical characterization, plus an AI editorial summary. Technical claims are grounded separately in the author-supplied abstract."
+  - id: source-paper-79-author-abstract
+    type: author_supplied_abstract
+    title: "Author-supplied abstract for Paper #79"
+    url: /knowledge/papers/paper-79/#paper-abstract
+    scope_note: "Abstract supplied directly by the author for this website; it reports the paper's results but is not a substitute for auditing the manuscript, theorem statements, hypotheses, or proofs."
+  - id: source-paper-79-venue
+    type: official_venue_resource
+    title: "CSCML 2026 venue website"
+    url: "https://www.cscml.org/"
+    scope_note: "Author-supplied venue homepage. It supports venue-level context only and is not a paper-specific listing, acceptance notice, manuscript, or source for technical claims."
+
+source_anchors:
+  - id: anchor-paper-79-curated
+    source_id: source-paper-79-curated
+    label: "Author-supplied metadata and editorial summary"
+    locator: "Website publication record. The title, authorship, status, venue, and topical characterization were supplied by the author; the concise summary is editorial."
+    url: /publications/#paper-79
+  - id: anchor-paper-79-author-abstract
+    source_id: source-paper-79-author-abstract
+    label: "Author-supplied abstract"
+    locator: "Full abstract rendered on the Paper #79 knowledge-map landing page. The manuscript, formal theorem statements, hypotheses, and proofs were not inspected."
+    url: /knowledge/papers/paper-79/#paper-abstract
+  - id: anchor-paper-79-venue
+    source_id: source-paper-79-venue
+    label: "CSCML 2026 venue website"
+    locator: "Venue homepage only. It is not a paper-specific page, acceptance notice, manuscript, review record, or source for technical claims."
+    url: "https://www.cscml.org/"
+
+nodes:
+  - id: paper-79
+    kind: paper
+    parent_id: null
+    order: 1
+    epistemic_status: author_supplied_abstract_pending_full_text_audit
+    title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
+    summary: "The author-supplied abstract reports that a Kalai–Vempala hallucination lower bound persists under deterministic semantic post-processing, Bayesian-compatible score aggregation, and expert-model routing when the resulting system remains calibrated. It identifies counterexamples outside these closure conditions, connects the theory to cybersecurity workflows, distinguishes unverified model claims from checkable witnesses, and proposes an audit procedure for explaining apparent hallucination reductions."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-question
+    kind: question
+    parent_id: paper-79
+    order: 1
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Research question"
+    summary: "Does calibration—and therefore the Kalai–Vempala monofact hallucination lower bound—persist when fact-level generators are composed using deterministic semantic post-processing, Bayesian-compatible score aggregation, or routing to expert models?"
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-contribution
+    kind: contribution
+    parent_id: paper-79
+    order: 2
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Reported contribution"
+    summary: "The abstract reports three calibration-closure theorems for common composition operators, two counterexamples outside their conditions, a cybersecurity interpretation, and an evaluation procedure for explaining apparent hallucination reductions."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-method
+    kind: method
+    parent_id: paper-79
+    order: 3
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Method or construction"
+    summary: "The abstract reports closure theorems, under the paper’s conditions, for deterministic semantic post-processing, Bayesian-compatible score aggregation, and expert routing. It also reports two calibration counterexamples and separates confidence-only claims from claims backed by checkable witnesses. Exact formal definitions and hypotheses remain unavailable without the manuscript."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-claims
+    kind: claim_group
+    parent_id: paper-79
+    order: 4
+    epistemic_status: reported_in_author_abstract_not_independently_audited
+    title: "Principal reported claims"
+    summary: "The abstract reports that calibrated compositions built from the three covered operators retain the Kalai–Vempala monofact hallucination floor; a system that beats it must be finally miscalibrated, violate a closure condition, or change the evidence state through verification."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-evidence
+    kind: evidence_group
+    parent_id: paper-79
+    order: 5
+    epistemic_status: source_scope_limitation
+    title: "Reported evidence"
+    summary: "The author-supplied abstract identifies the operators, reported closure results, two counterexamples, cybersecurity boundary, and evaluation procedure. The manuscript, formal definitions, theorem statements, proofs, examples, and any evaluation results were not audited."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-scope
+    kind: limitation_group
+    parent_id: paper-79
+    order: 6
+    epistemic_status: author_supplied_abstract_pending_full_text_audit
+    title: "Scope and limitations"
+    summary: "The reported theorems concern the calibrated fact-level core, the three named operators, and pre-verification composition. They do not claim that every composition preserves calibration or that verified witnesses remain in the same evidence state; exact hypotheses, definitions, and theorem boundaries require manuscript audit."
+    source_anchor_ids: [anchor-paper-79-author-abstract]
+  - id: paper-79-artifacts
+    kind: artifact_group
+    parent_id: paper-79
+    order: 7
+    epistemic_status: linked_not_content_audited
+    title: "Artifacts and resources"
+    summary: "The site represents an author-supplied abstract and the venue homepage, but no manuscript, formal proof, code, dataset, evaluation artifact, immutable version, or paper-specific public URL."
+    source_anchor_ids: [anchor-paper-79-curated, anchor-paper-79-author-abstract, anchor-paper-79-venue]
+  - id: paper-79-scrutiny
+    kind: scrutiny
+    parent_id: paper-79
+    order: 8
+    epistemic_status: publication_status_reported_not_independently_audited
+    title: "Scrutiny and status"
+    summary: "The work is described as under review. That records a pending process, not acceptance, a completed review outcome, or validation; no review report, reproduction, correction, or adversarial analysis is represented."
+    source_anchor_ids: [anchor-paper-79-curated, anchor-paper-79-venue]
+
+relations:
+  - id: paper-79-relation-question-contribution
+    type: motivates
+    from_id: paper-79-question
+    to_id: paper-79-contribution
+  - id: paper-79-relation-method-contribution
+    type: realizes
+    from_id: paper-79-method
+    to_id: paper-79-contribution
+  - id: paper-79-relation-contribution-claims
+    type: grounds
+    from_id: paper-79-contribution
+    to_id: paper-79-claims
+  - id: paper-79-relation-evidence-claims
+    type: supports
+    from_id: paper-79-evidence
+    to_id: paper-79-claims
+  - id: paper-79-relation-scope-claims
+    type: qualifies
+    from_id: paper-79-scope
+    to_id: paper-79-claims
+  - id: paper-79-relation-artifacts-evidence
+    type: enables_audit_of
+    from_id: paper-79-artifacts
+    to_id: paper-79-evidence
+  - id: paper-79-relation-scrutiny-claims
+    type: contextualizes
+    from_id: paper-79-scrutiny
+    to_id: paper-79-claims
+
+assessment:
+  id: paper-79-assessment-2026-07-11
+  rubric_version: "0.2"
+  assessed_at: "2026-07-11"
+  status: ai_draft_author_review_pending
+  note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
+  axes:
+    - id: epistemic_evidence
+      level: medium
+      rationale: "The author-supplied abstract precisely reports the calibration definition, covered operators, closure results, counterexamples, cybersecurity boundary, and audit procedure. The formal statements, hypotheses, and proofs remain unaudited because the manuscript is not represented."
+      basis_source_anchor_ids: [anchor-paper-79-author-abstract]
+    - id: auditability
+      level: low
+      rationale: "The author-supplied abstract is inspectable, but no paper-specific official publication record, public archive, or author-hosted manuscript is represented; full-text assumptions, evidence, artifacts, and version identity cannot presently be audited from this map. Auditability is therefore low."
+      basis_source_anchor_ids: [anchor-paper-79-author-abstract, anchor-paper-79-venue]
+    - id: production_provenance
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
+      basis_source_anchor_ids: [anchor-paper-79-curated, anchor-paper-79-author-abstract]
+    - id: external_scrutiny
+      level: low
+      rationale: "Under-review status records a pending process. No acceptance, completed review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
+      basis_source_anchor_ids: [anchor-paper-79-curated]
+    - id: reception
+      level: not_assessed
+      rationale: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed for this map."
+      basis_source_anchor_ids: [anchor-paper-79-curated]
+    - id: contribution_significance
+      level: medium
+      rationale: "The abstract reports a theoretical closure limitation with direct cybersecurity implications, counterexamples, an evidence-state boundary, and an audit procedure. Novelty comparisons, formal proofs, and downstream impact remain unaudited, so this is a provisional significance assessment rather than a breakthrough claim."
+      basis_source_anchor_ids: [anchor-paper-79-author-abstract]
+
+reception_snapshot:
+  as_of: "2026-07-11"
+  method: not_assessed
+  citation_count: null
+  signals: []
+  limitation: "No dated citation, adoption, replication, teaching, standards, deployment, or independent-uptake audit has been performed."

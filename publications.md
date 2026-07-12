@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publications by Research Area
-description: Browse 78 publications by research area, with stable paper identifiers, resource links, plain-language summaries, and human- and machine-readable scientific knowledge maps.
+description: Browse 79 publications by research area, with stable paper identifiers, resource links, plain-language summaries, and human- and machine-readable scientific knowledge maps.
 permalink: /publications/
 publications_browser: true
 ---
@@ -35,10 +35,11 @@ publications_browser: true
     {% endfor %}
   </nav>
 
-  <p class="publication-note">The summaries are short editorial descriptions, not paper abstracts. <strong>Theory</strong> and <strong>Applied</strong> describe research orientation and may appear together; <strong>Perspective</strong> marks opinion or position papers. Resource links always prefer the official publication, followed by a public archive and then an author-hosted copy. Resource types that could not be located remain visible in gray.</p>
+  <p class="publication-note">Abstract popups use the complete paper abstract when one has been transcribed from a source or supplied by the author. Papers without a source abstract show a clearly labeled editorial overview instead. Each popup identifies that provenance explicitly. <strong>Theory</strong>, <strong>Applied</strong>, and <strong>Perspective</strong> describe research orientation. Lowercase <strong>protocol</strong>, <strong>primitive</strong>, <strong>scheme</strong>, and <strong>algorithm</strong> tags identify substantive constructive content and may appear alongside Theory. Theory without one of those tags is reserved for non-constructive results or records with insufficient evidence to assert a construction. AI focus labels are cross-cutting: a paper may have a primary research area outside AI &amp; Machine Learning while still using AI for security. Resource links always prefer the official publication, followed by a public archive and then an author-hosted copy. Resource types that could not be located remain visible in gray.</p>
 
-  {% for domain in site.data.publication_domains %}
-    <section class="publication-domain" aria-labelledby="{{ domain.slug }}">
+  <div class="publication-domain-grid">
+    {% for domain in site.data.publication_domains %}
+      <section class="publication-domain" aria-labelledby="{{ domain.slug }}">
       <div class="publication-domain-heading">
         <p class="publication-eyebrow">Research domain</p>
         <h2 id="{{ domain.slug }}">{{ domain.name | escape }}</h2>
@@ -72,6 +73,20 @@ publications_browser: true
                 {% assign primary_resource = resources.author | first %}
               {% endif %}
 
+              {% if paper.abstract and paper.abstract != empty %}
+                {% assign quick_abstract = paper.abstract %}
+                {% assign quick_abstract_kind = paper.abstract_kind | default: "Source abstract" %}
+                {% assign quick_abstract_note = paper.abstract_note | default: "This abstract is stored separately from the editorial summary." %}
+                {% assign quick_abstract_source = paper.abstract_source_url %}
+                {% assign abstract_action_label = "Abstract" %}
+              {% else %}
+                {% assign quick_abstract = paper.summary %}
+                {% assign quick_abstract_kind = "Plain-language editorial overview" %}
+                {% assign quick_abstract_note = "This is a concise editorial overview, not the paper's verbatim abstract." %}
+                {% assign quick_abstract_source = false %}
+                {% assign abstract_action_label = "Overview" %}
+              {% endif %}
+
               <article class="publication-card" id="paper-{{ paper.id }}">
                 <div class="publication-card-heading">
                   <span class="publication-number"><span class="sr-only">Publication number </span>#{{ paper.id }}</span>
@@ -87,7 +102,9 @@ publications_browser: true
                     <p class="publication-venue">
                       {% if paper.year %}<span>{{ paper.year }}</span>{% endif %}
                       {% if paper.status %}<span>{{ paper.status | escape }}</span>{% endif %}
-                      {% if paper.venue %}<span>{{ paper.venue | escape }}</span>{% endif %}
+                      {% if paper.venue %}
+                        <span>{% if paper.venue_url %}<a href="{{ paper.venue_url | escape }}">{{ paper.venue | escape }}</a>{% else %}{{ paper.venue | escape }}{% endif %}</span>
+                      {% endif %}
                     </p>
                   </div>
                 </div>
@@ -99,6 +116,9 @@ publications_browser: true
                     {% endfor %}
                     {% for label in paper.ai_ml_labels %}
                       <li class="publication-label-ai-focus">{{ label | escape }}</li>
+                    {% endfor %}
+                    {% for contribution_type in paper.contribution_types %}
+                      <li class="publication-label-contribution">{{ contribution_type | escape }}</li>
                     {% endfor %}
                   </ul>
                 {% endif %}
@@ -141,7 +161,7 @@ publications_browser: true
                   <p class="publication-knowledge-link">
                     <a href="{{ landing.url | relative_url }}">
                       Scientific knowledge map
-                      <span>{% if mapped_record.curation.source_scope == "full_source_audit" %}claims, evidence, limits, and profile{% else %}AI draft · full-text audit pending{% endif %}</span>
+                      <span>{% if mapped_record.curation.source_scope == "full_source_audit" %}claims, evidence, limits, and profile{% elsif mapped_record.curation.source_scope == "metadata_and_author_supplied_abstract" or mapped_record.curation.source_scope == "metadata_and_source_abstract" %}abstract-grounded AI draft · manuscript audit pending{% else %}AI draft · full-text audit pending{% endif %}</span>
                       <span aria-hidden="true">→</span>
                     </a>
                   </p>
@@ -151,9 +171,24 @@ publications_browser: true
                   <p class="publication-unavailable" role="note">{{ paper.availability | escape }}</p>
                 {% endif %}
 
-                <details class="publication-summary">
-                  <summary>Plain-language summary</summary>
-                  <p>{{ paper.summary | escape }}</p>
+                <button
+                  class="quick-abstract-trigger"
+                  type="button"
+                  aria-haspopup="dialog"
+                  aria-controls="publication-abstract-dialog"
+                  data-quick-abstract-trigger
+                  data-paper-number="{{ paper.id }}"
+                  data-abstract-dialog-label="{{ abstract_action_label }}"
+                >{{ abstract_action_label }}</button>
+
+                <details class="publication-summary" id="paper-{{ paper.id }}-quick-abstract">
+                  <summary>{{ abstract_action_label }}</summary>
+                  <p class="publication-summary-kind" data-quick-abstract-kind>{{ quick_abstract_kind | escape }}</p>
+                  <p data-quick-abstract-text>{{ quick_abstract | escape }}</p>
+                  <p class="publication-summary-note" data-quick-abstract-note>{{ quick_abstract_note | escape }}</p>
+                  {% if quick_abstract_source %}
+                    <p class="publication-summary-source"><a data-quick-abstract-source href="{{ quick_abstract_source | escape }}">Abstract source</a></p>
+                  {% endif %}
                 </details>
               </article>
             {% endfor %}
@@ -162,6 +197,30 @@ publications_browser: true
           <p class="back-to-topics"><a href="#publication-top">Back to Research Areas</a></p>
         </section>
       {% endfor %}
-    </section>
-  {% endfor %}
+      </section>
+    {% endfor %}
+  </div>
 </div>
+
+<dialog
+  class="publication-abstract-dialog"
+  id="publication-abstract-dialog"
+  aria-labelledby="publication-abstract-title"
+  aria-modal="true"
+>
+  <div class="publication-abstract-dialog-shell">
+    <div class="publication-abstract-dialog-header">
+      <div>
+        <p class="publication-abstract-paper" id="publication-abstract-paper"></p>
+        <h2 id="publication-abstract-title"></h2>
+      </div>
+      <button class="publication-abstract-close" type="button" data-quick-abstract-close>Close</button>
+    </div>
+    <p class="publication-abstract-kind" id="publication-abstract-kind"></p>
+    <p class="publication-abstract-text" id="publication-abstract-text"></p>
+    <div class="publication-abstract-provenance">
+      <p id="publication-abstract-note"></p>
+      <a id="publication-abstract-source" href="" hidden>View abstract source</a>
+    </div>
+  </div>
+</dialog>

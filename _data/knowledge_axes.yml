@@ -1,4 +1,5 @@
 schema_version: "0.1"
+rubric_version: "0.2"
 
 levels:
   low:
@@ -23,10 +24,16 @@ axes:
     label: Auditability
     short_label: Auditability
     description: Whether readers can inspect the paper's evidence, artifacts, assumptions, and validation path.
+    resource_level_rule:
+      high: A publicly inspectable full-text copy is linked through a public archive or author-hosted route.
+      medium: Only official publication metadata is linked; no archive or author-hosted copy is represented.
+      low: No paper-specific official record, public archive, or author-hosted copy is represented.
   - id: production_provenance
     label: Production provenance
     short_label: Provenance
     description: How clearly the human, AI, tool, revision, and approval process that produced the work is documented.
+    default_level: medium
+    default_basis: Named authorship and the publication or review status establish a baseline human and lifecycle provenance trail; contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval may remain incomplete.
   - id: external_scrutiny
     label: External scrutiny
     short_label: Scrutiny

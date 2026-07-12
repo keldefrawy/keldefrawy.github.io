@@ -7,6 +7,8 @@ canonical_path: /knowledge/papers/paper-57/
 machine_path: /knowledge/papers/paper-57.json
 root_node_id: paper-57
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: []
 
 title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
 short_title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
@@ -180,7 +182,7 @@ relations:
 
 assessment:
   id: paper-57-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
@@ -190,12 +192,12 @@ assessment:
       rationale: "The curated editorial summary reports concrete methods, claims, or evaluation, and linked resources make later inspection possible. This draft did not audit full text, formal statements, proofs, experiments, or implementation, so the rating does not exceed medium."
       basis_source_anchor_ids: [anchor-paper-57-curated, anchor-paper-57-official-1, anchor-paper-57-archive-1]
     - id: auditability
-      level: medium
-      rationale: "The resource record provides 2 linked resources, including an archive or author-hosted route, but this draft did not inspect equivalence, pin versions, compute hashes, or reproduce results."
+      level: high
+      rationale: "The resource record provides a publicly inspectable full-text copy through a public archive or author-hosted route. The assumptions, evidence, and stated methods are directly inspectable, so auditability is high; version correspondence, fixity, supplementary artifacts, and independent reproduction have not been verified."
       basis_source_anchor_ids: [anchor-paper-57-curated, anchor-paper-57-official-1, anchor-paper-57-archive-1]
     - id: production_provenance
-      level: low
-      rationale: "The curated record identifies authors, status, and venue where available, but it provides no contributor-role matrix, effort log, revision history, tool trace, AI-use disclosure, or explicit final-approval record."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-57-curated]
     - id: external_scrutiny
       level: medium

@@ -7,6 +7,8 @@ canonical_path: /knowledge/papers/paper-44/
 machine_path: /knowledge/papers/paper-44.json
 root_node_id: paper-44
 stage: mapped_draft
+contribution_type_vocabulary_version: "0.1"
+contribution_types: [protocol]
 
 title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
 year: 2018
@@ -50,6 +52,11 @@ sources:
     title: "Publisher / DOI"
     url: "https://doi.org/10.1007/978-3-319-98113-0_11"
     provenance_category: official
+  - id: source-paper-44-resource-2
+    type: author_hosted_copy
+    title: "ResearchGate author-uploaded PDF"
+    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325722786_Proactive_Secure_Multiparty_Computation_with_a_Dishonest_Majority/links/5b2f64a00f7e9b0df5c35611/Proactive-Secure-Multiparty-Computation-with-a-Dishonest-Majority.pdf"
+    provenance_category: author
 
 source_anchors:
   - id: anchor-paper-44-editorial
@@ -62,6 +69,11 @@ source_anchors:
     label: "Official resource: Publisher / DOI"
     locator: "Official link recorded in the local resource data; linked content and version were not audited for this draft."
     url: "https://doi.org/10.1007/978-3-319-98113-0_11"
+  - id: anchor-paper-44-resource-2
+    source_id: source-paper-44-resource-2
+    label: "Author-hosted resource: ResearchGate author-uploaded PDF"
+    locator: "Author-hosted link recorded in the local resource data; linked content and version were not audited for this draft."
+    url: "https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/325722786_Proactive_Secure_Multiparty_Computation_with_a_Dishonest_Majority/links/5b2f64a00f7e9b0df5c35611/Proactive-Secure-Multiparty-Computation-with-a-Dishonest-Majority.pdf"
 
 nodes:
   - id: paper-44
@@ -160,8 +172,8 @@ nodes:
     order: 7
     epistemic_status: resource_metadata_recorded
     title: "Artifacts and resources"
-    summary: "1 linked resource is recorded by provenance category; its content, persistence, and relation to the final publication were not audited."
-    source_anchor_ids: ["anchor-paper-44-resource-1"]
+    summary: "2 linked resources are recorded by provenance category; their content, persistence, and relation to the final publication were not audited."
+    source_anchor_ids: ["anchor-paper-44-resource-1", "anchor-paper-44-resource-2"]
 
   - id: paper-44-resources-available
     kind: artifact
@@ -169,8 +181,8 @@ nodes:
     order: 1
     epistemic_status: linked_not_content_audited
     title: "Available links"
-    summary: "Official: Publisher / DOI."
-    source_anchor_ids: ["anchor-paper-44-resource-1"]
+    summary: "Official: Publisher / DOI; Author-hosted: ResearchGate author-uploaded PDF."
+    source_anchor_ids: ["anchor-paper-44-resource-1", "anchor-paper-44-resource-2"]
 
   - id: paper-44-scrutiny
     kind: scrutiny
@@ -209,7 +221,7 @@ relations:
 
 assessment:
   id: paper-44-assessment-2026-07-11
-  rubric_version: "0.1"
+  rubric_version: "0.2"
   assessed_at: "2026-07-11"
   status: ai_draft_author_review_pending
   note: "These dimensions summarize documented support and process, not truth, correctness, confidence probability, or a universal ranking. No composite score is calculated."
@@ -219,12 +231,12 @@ assessment:
       rationale: "The curated summary identifies a research contribution and reported support, but the linked paper, claims, assumptions, proofs, data, code, and experiments were not audited; the level therefore does not exceed medium."
       basis_source_anchor_ids: ["anchor-paper-44-editorial", "anchor-paper-44-resource-1"]
     - id: auditability
-      level: low
-      rationale: "The record provides only an official publisher or bibliographic link and no archive or author-hosted copy; access to substantive evidence and reproducibility materials was not verified."
-      basis_source_anchor_ids: ["anchor-paper-44-resource-1"]
+      level: high
+      rationale: "The resource record provides a public author-uploaded full-text route, so the paper is directly inspectable and auditability is high. Local fixity, correspondence with the final published version, and a substantive audit of the paper and supplementary artifacts have not been verified."
+      basis_source_anchor_ids: ["anchor-paper-44-resource-1", "anchor-paper-44-resource-2"]
     - id: production_provenance
-      level: low
-      rationale: "Authorship, venue, and resource categories are recorded, but contributor roles, effort, revisions, AI or tool use, artifact versions, and an explicit final-approval trace are not documented in the represented sources."
+      level: medium
+      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: ["anchor-paper-44-editorial"]
     - id: external_scrutiny
       level: medium
