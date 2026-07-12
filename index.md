@@ -6,11 +6,21 @@ title: Home
 
 <div class="home-page-content" markdown="1">
 
+<figure class="home-research-banner">
+  <img src="{{ '/assets/images/home-research-ribbon-banner.png' | relative_url }}" alt="" width="1983" height="793" fetchpriority="high">
+  <figcaption class="home-research-banner__stats" aria-label="Selected research figures">
+    <a href="{{ '/publications/' | relative_url }}"><strong>{{ site.data.publications | size }}</strong><span>mapped papers</span></a>
+    <a href="{{ '/patents.html' | relative_url }}"><strong>31</strong><span>granted patents</span></a>
+    <a href="{{ '/projects.html' | relative_url }}"><strong>12</strong><span>funded R&amp;D projects</span></a>
+    <a href="https://scholar.google.com/citations?user=e9UP75IAAAAJ&amp;hl=en"><strong>2.5K+</strong><span>scholarly citations</span></a>
+  </figcaption>
+</figure>
+
 <article class="home-bio" markdown="1">
 
 # Brief Bio
 
-Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www.confidencial.io/). Prior to that he was a Principal Computer Scientist at the Computer Science Laboratory ([CSL](http://www.csl.sri.com/)) at [SRI (previously Stanford Research Institute)](https://www.sri.com/). His R&D interests focus on [secure and privacy-preserving computation for distributed systems]({{ '/knowledge/' | relative_url }}#knowledge-area-secure-encrypted-computation), computer-aided formal verification of cryptographic algorithms and protocols, and [security in cyber-physical and embedded systems]({{ '/knowledge/' | relative_url }}#knowledge-area-secure-systems-networks). His interests also include [post-quantum cryptography]({{ '/knowledge/papers/paper-77/' | relative_url }}) and recent work in [quantum communication]({{ '/knowledge/papers/paper-70/' | relative_url }}) and [quantum algorithms]({{ '/knowledge/papers/paper-60/' | relative_url }}). His research has been funded by the Defense Advanced Research Project Agency ([DARPA](https://www.darpa.mil/)), the Department of Homeland Security ([DHS](https://www.dhs.gov/science-and-technology)), the Intelligence Advanced Research Projects Activity ([IARPA](https://www.iarpa.gov/)), the National Science Foundation ([NSF](https://www.nsf.gov)), the US AirForce ([AFWERX](https://www.afwerx.af.mil)), and Boeing and General Motors. His work has received the 2024 [Test of Time Award](https://www.ndss-symposium.org/ndss-test-of-time-award/) by the [Internet Society's](https://www.internetsociety.org/) [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/). Karim authored over 100 scientific works ([75+ peer-reviewed papers and book chapters](https://keldefrawy.github.io/pubs.html), and [31 granted and 10+ pending patents](https://keldefrawy.github.io/patents.html)). His opinions and writing on various cybersecurity topics have been featured on [Forbes](https://councils.forbes.com/profile/Karim-Eldefrawy-CTO-Founder-Confidencial-io/35ea9cb7-7f3c-4fe9-a7d3-780eee7da954) and other venues. Karim served on technical program committees of top academic conferences on security and cryptography and was the information director of ACM Transactions on Privacy and Security (formerly ACM TISSEC) from 2011 to 2015. Karim taught security and cryptography courses at the University of California at Irvine ([UCI](https://www.ics.uci.edu/)) and the University of San Francisco ([USF](https://www.usfca.edu/)).
+Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www.confidencial.io/). Prior to that he was a Principal Computer Scientist at the Computer Science Laboratory ([CSL](http://www.csl.sri.com/)) at [SRI (previously Stanford Research Institute)](https://www.sri.com/). His R&D interests focus on [secure and privacy-preserving computation for distributed systems]({{ '/knowledge/' | relative_url }}#knowledge-area-secure-encrypted-computation), [computer-aided formal verification of cryptographic algorithms and protocols]({{ '/knowledge/' | relative_url }}#knowledge-collection-formal-verification), and [security in cyber-physical and embedded systems]({{ '/knowledge/' | relative_url }}#knowledge-area-secure-systems-networks). His interests also include [post-quantum cryptography]({{ '/knowledge/' | relative_url }}#knowledge-collection-post-quantum-cryptography) and recent work in [quantum communication]({{ '/knowledge/papers/paper-70/' | relative_url }}) and [quantum algorithms]({{ '/knowledge/papers/paper-60/' | relative_url }}). His research has been funded by the Defense Advanced Research Project Agency ([DARPA](https://www.darpa.mil/)), the Department of Homeland Security ([DHS](https://www.dhs.gov/science-and-technology)), the Intelligence Advanced Research Projects Activity ([IARPA](https://www.iarpa.gov/)), the National Science Foundation ([NSF](https://www.nsf.gov)), the US AirForce ([AFWERX](https://www.afwerx.af.mil)), and Boeing and General Motors. His work has received the 2024 [Test of Time Award](https://www.ndss-symposium.org/ndss-test-of-time-award/) by the [Internet Society's](https://www.internetsociety.org/) [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/). Karim authored over 100 scientific works ([75+ peer-reviewed papers and book chapters](https://keldefrawy.github.io/pubs.html), and [31 granted and 10+ pending patents](https://keldefrawy.github.io/patents.html)). His opinions and writing on cybersecurity and cryptography topics have been featured on [Forbes](https://councils.forbes.com/profile/Karim-Eldefrawy-CTO-Founder-Confidencial-io/35ea9cb7-7f3c-4fe9-a7d3-780eee7da954) and other venues. Karim served on technical program committees of top academic conferences on security and cryptography and was the information director of ACM Transactions on Privacy and Security (formerly ACM TISSEC) from 2011 to 2015. Karim taught security and cryptography courses at the University of California at Irvine ([UCI](https://www.ics.uci.edu/)) and the University of San Francisco ([USF](https://www.usfca.edu/)).
 
 </article>
 
@@ -39,8 +49,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 
 ## Projects and Software
 
-* [Extramurally funded research projects]({{ '/projects.html' | relative_url }})
-* [Long-term research threads and projects](http://bit.ly/37tOPHZ) on ResearchGate
+* [Extramurally funded R&D]({{ '/projects.html' | relative_url }})
 * [Open-source software for selected projects]({{ '/software.html' | relative_url }})
 
 </article>
@@ -59,6 +68,15 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 ## Commercial Transitions
 
 * Co-founder & CTO of [Confidencial.io](https://www.confidencial.io/)
+
+</article>
+
+<article class="home-card home-card--arcade" markdown="1">
+
+## Cryptography Arcade
+
+* [Enter the Arcade lobby]({{ '/arcade/' | relative_url }}) for generic Cryptography Classics, paper-derived Research Arcade games, and the Security Side Arcade.
+* Browse [game-to-paper sources]({{ '/arcade/sources/' | relative_url }}) or launch the current Outrefresh prototype below.
 
 </article>
 
@@ -92,5 +110,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 </div>
 
 {% include home-adversary-game.html %}
+
+<p class="home-last-updated">Last updated: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%B %-d, %Y at %-I:%M %p %Z" }}</time></p>
 
 </div>

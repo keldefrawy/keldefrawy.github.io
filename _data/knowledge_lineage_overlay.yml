@@ -1,0 +1,1078 @@
+schema_version: "1.0"
+
+evidence_note: >-
+  The collaborators view uses publication authorship on this site for direct-collaboration anchors.
+  Conceptual-lineage links record broader research influence identified by Karim; they do not imply
+  that every downstream paper was coauthored with the connected person. Blue solid person cards mark
+  direct collaborators; violet dashed person cards mark historical or intellectual influence.
+
+scenes:
+  hotel:
+    exclude_node_ids: [hotel-hilbert, hotel-cantor, hotel-foundations]
+    exclude_note_kinds: [mathematics]
+    people:
+      - id: science-hotel-byzantine-pioneers
+        label: Leslie Lamport, Robert Shostak & Marshall Pease
+        relationship: influence
+        status: Byzantine-agreement lineage
+        note: >-
+          Their Byzantine Generals formulation anchors the consensus and fault-tolerant-replication
+          branch. The self-stabilization connection is through Byzantine-resilient distributed
+          computation, not a claim that they originated self-stabilization or MPC.
+    ideas:
+      - id: hotel-formal-methods
+        label: Formal systems, machine-checked proofs, and code extraction
+      - id: science-hotel-verified-embedded
+        label: Computer-aided verification of embedded security systems
+        status: Architecture and system verification
+      - id: science-hotel-byzantine-agreement
+        label: Byzantine agreement and fault-tolerant replication
+        status: Consensus lineage
+    papers:
+      - id: science-hotel-paper-67
+        publication_id: 67
+        label: "#67 · Formally verified zero knowledge"
+        title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+        url: /knowledge/papers/paper-67/
+        note: EasyCrypt-verified performance work; the paper map records later scrutiny of the represented end-to-end assurance claims.
+      - id: science-hotel-paper-50
+        publication_id: 50
+        label: "#50 · Verified remote attestation"
+        title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+        url: /knowledge/papers/paper-50/
+        note: Formally specified and verified hardware/software remote-attestation architecture.
+      - id: science-hotel-paper-54
+        publication_id: 54
+        label: "#54 · Verified proofs of execution"
+        title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+        url: /knowledge/papers/paper-54/
+        note: Formally verified architecture for proofs of execution on low-end embedded devices.
+      - id: science-hotel-paper-46
+        publication_id: 46
+        label: "#46 · Verified update, reset, and erasure"
+        title: "PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems"
+        url: /knowledge/papers/paper-46/
+        note: Extends verified remote attestation with verified recovery services.
+      - id: science-hotel-paper-47
+        publication_id: 47
+        label: "#47 · Formal-verification research agenda"
+        title: "Opinion: Advancing Remote Attestation via Computer-Aided Formal Verification of Designs and Synthesis of Executables"
+        url: /knowledge/papers/paper-47/
+        note: Agenda-setting position paper rather than a verified artifact.
+      - id: science-hotel-paper-37
+        publication_id: 37
+        label: "#37 · HYDRA verified-component attestation"
+        title: "HYDRA: Hybrid Design for Remote Attestation Using a Formally Verified Microkernel"
+        url: /knowledge/papers/paper-37/
+        note: Builds remote attestation from seL4's machine-checked isolation properties; the full composition is not claimed as an end-to-end proof.
+      - id: science-hotel-paper-38
+        publication_id: 38
+        label: "#38 · HYDRA lessons learned"
+        title: "Fusing Hybrid Remote Attestation with a Formally Verified Microkernel: Lessons Learned"
+        url: /knowledge/papers/paper-38/
+        note: Engineering companion on reuse of the formally verified seL4 microkernel.
+    links:
+      - from: science-hotel-byzantine-pioneers
+        to: science-hotel-byzantine-agreement
+        type: direct
+        label: foundational Byzantine-agreement formulation
+      - from: science-hotel-byzantine-agreement
+        to: hotel-distributed-resilience
+        type: lineage
+        label: fault-tolerant distributed-computing lineage
+      - from: science-hotel-byzantine-agreement
+        to: hotel-paper-63
+        type: direct
+        label: Byzantine consensus under send and receive faults
+      - from: science-hotel-byzantine-agreement
+        to: hotel-paper-29
+        type: uses
+        label: Byzantine-fault-tolerant controller replication
+      - from: science-hotel-byzantine-agreement
+        to: hotel-paper-36
+        type: lineage
+        label: Byzantine-resilient self-stabilizing computation
+      - from: hotel-von-neumann
+        to: hotel-formal-methods
+        type: lineage
+        label: formalized computation and architecture lineage
+      - from: hotel-godel
+        to: science-hotel-verified-embedded
+        type: lineage
+        label: formal-logic and proof lineage
+      - from: hotel-turing
+        to: science-hotel-verified-embedded
+        type: lineage
+        label: models of computation and mechanized reasoning
+      - from: hotel-von-neumann
+        to: science-hotel-verified-embedded
+        type: lineage
+        label: computer architecture and reliable-systems lineage
+      - from: hotel-formal-methods
+        to: science-hotel-paper-67
+        type: direct
+        label: verified zero-knowledge optimization
+      - from: hotel-formal-methods
+        to: science-hotel-paper-47
+        type: lineage
+        label: formal verification and executable-synthesis agenda
+      - from: science-hotel-verified-embedded
+        to: science-hotel-paper-50
+        type: direct
+        label: verified remote attestation
+      - from: science-hotel-verified-embedded
+        to: science-hotel-paper-54
+        type: direct
+        label: verified proof-of-execution architecture
+      - from: science-hotel-verified-embedded
+        to: science-hotel-paper-46
+        type: direct
+        label: verified update, erasure, and reset
+      - from: science-hotel-verified-embedded
+        to: science-hotel-paper-37
+        type: uses
+        label: formally verified seL4 component
+      - from: science-hotel-verified-embedded
+        to: science-hotel-paper-38
+        type: uses
+        label: verified-component engineering lessons
+
+  tour:
+    ideas:
+      - id: tour-capacity-coding
+        label: Channel capacity, network coding, and error-correcting codes
+        status: Shannon foundation; later coding lineages
+        foundation: true
+        note: >-
+          Shannon's information and coding theory is foundational. Network coding and regenerating
+          codes are later research lineages rather than ideas attributed directly to Shannon.
+
+  cipher:
+    people:
+      - id: science-cipher-elgamal
+        label: Taher Elgamal
+        relationship: influence
+        note: >-
+          ElGamal encryption supplies the algebraic and threshold-encryption lineage used in the
+          5PM secure-pattern-matching papers and the related overview article.
+      - id: science-cipher-chaum
+        label: David Chaum
+        relationship: influence
+        status: Anonymity, digital cash, and distance bounding
+        note: >-
+          Chaum anchors the mix-network, anonymous-communication, group-signature, and digital-cash
+          lineages. Distance bounding is credited to the Brands-Chaum construction rather than to
+          Chaum alone.
+      - id: science-cipher-shamir
+        label: Adi Shamir
+        relationship: influence
+        status: Secret sharing and identity-based cryptography
+        note: >-
+          This individual node is intentionally separate from the Rivest-Shamir-Adleman group: it
+          represents Shamir secret sharing and the identity-based-encryption proposal used across
+          Karim's proactive-security and private-messaging work.
+      - id: science-cipher-yao
+        label: Andrew Yao
+        relationship: influence
+        status: Secure-computation lineage
+        note: Foundational secure two-party computation and garbled-circuit lineage.
+      - id: science-cipher-goldreich
+        label: Oded Goldreich
+        relationship: influence
+        status: General secure-computation lineage
+        note: General secure computation with Silvio Micali and Avi Wigderson.
+      - id: science-cipher-proactive-security-pioneers
+        label: Amir Herzberg, Stanisław Jarecki, Hugo Krawczyk & Moti Yung
+        relationship: influence
+        status: Proactive-secret-sharing lineage
+        note: >-
+          The four coauthors of the foundational proactive-secret-sharing work are grouped here to
+          preserve complete attribution without overcrowding the people lane.
+      - id: science-cipher-peikert
+        label: Chris Peikert
+        relationship: collaborator
+        status: Direct collaborator · F1 and CraterLake
+        note: >-
+          Direct coauthor on both mapped FHE accelerators; broader dashed links mark Peikert's
+          lattice, LWE, Ring-LWE, and FHE research influence rather than additional coauthorship.
+      - id: science-cipher-devadas
+        label: Srinivas (Srini) Devadas
+        relationship: collaborator
+        status: Direct collaborator · F1 and CraterLake
+        note: >-
+          Direct coauthor on both mapped FHE accelerators; broader links capture secure-architecture,
+          attestation, formally specified enclave, and strong-anonymity research lineages.
+    ideas:
+      - id: science-cipher-signatures
+        label: Digital signatures and distributed signing
+      - id: science-cipher-elgamal-encryption
+        label: ElGamal and threshold ElGamal encryption
+      - id: science-cipher-pairings
+        label: Bilinear maps and pairing-based cryptography
+      - id: science-cipher-anonymity
+        label: Anonymous communications, group signatures, and digital cash
+      - id: science-cipher-distance-bounding
+        label: Distance bounding and proximity authentication
+      - id: science-cipher-secret-sharing
+        label: Shamir secret sharing
+      - id: science-cipher-proactive-security
+        label: Proactive secret sharing and proactive MPC
+      - id: science-cipher-lattices
+        label: Lattice cryptography, LWE, and Ring-LWE
+    papers:
+      - id: science-cipher-paper-64
+        publication_id: 64
+        label: "#64 · CraterLake FHE accelerator"
+        title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
+        url: /knowledge/papers/paper-64/
+        note: Accelerates bootstrapping so BGV, GSW, and CKKS-style FHE computations can run at unbounded depth.
+      - id: science-cipher-paper-74
+        publication_id: 74
+        label: "#74 · Private identity-based bulletin boards"
+        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
+        url: /knowledge/papers/paper-74/
+        note: Uses searchable hierarchical identity-based encryption, bilinear maps, and private information retrieval.
+      - id: science-cipher-paper-62
+        publication_id: 62
+        label: "#62 · Attribute-based document encryption"
+        title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+        url: /knowledge/papers/paper-62/
+        note: Uses attribute-based encryption to enforce fine-grained document access cryptographically.
+      - id: science-cipher-paper-14
+        publication_id: 14
+        label: "#14 · Anonymous routing with group signatures"
+        title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
+        url: /knowledge/papers/paper-14/
+        note: Authenticates anonymous location announcements using digital and group signatures.
+      - id: science-cipher-paper-19
+        publication_id: 19
+        label: "#19 · 5PM secure pattern matching"
+        title: "5PM: Secure Pattern Matching"
+        url: /knowledge/papers/paper-19/
+        note: The conference version uses additive homomorphic encryption and threshold ElGamal for malicious security.
+      - id: science-cipher-paper-20
+        publication_id: 20
+        label: "#20 · Blindfolded data search"
+        title: "Blindfolded Data Search via Secure Pattern Matching"
+        url: /knowledge/papers/paper-20/
+        note: Overview of secure pattern matching, including additive-ElGamal-based approaches.
+      - id: science-cipher-paper-21
+        publication_id: 21
+        label: "#21 · 5PM journal version"
+        title: "5PM: Secure Pattern Matching"
+        url: /knowledge/papers/paper-21/
+        note: The journal version includes a threshold-ElGamal malicious-security construction.
+      - id: science-cipher-paper-13
+        publication_id: 13
+        label: "#13 · Group distance bounding"
+        title: "Group Distance Bounding Protocols"
+        url: /knowledge/papers/paper-13/
+        note: Extends proximity authentication from two-party to group settings.
+      - id: science-cipher-paper-26
+        publication_id: 26
+        label: "#26 · Digital currency from secure computation"
+        title: "Founding Digital Currency on Secure Computation"
+        url: /knowledge/papers/paper-26/
+      - id: science-cipher-paper-32
+        publication_id: 32
+        label: "#32 · Dishonest-majority proactive sharing"
+        title: "Proactive Secret Sharing with a Dishonest Majority"
+        url: /knowledge/papers/paper-32/
+      - id: science-cipher-paper-35
+        publication_id: 35
+        label: "#35 · Reusable fuzzy extractors from LWE"
+        title: "Efficient, Reusable Fuzzy Extractors from LWE"
+        url: /knowledge/papers/paper-35/
+      - id: science-cipher-paper-52
+        publication_id: 52
+        label: "#52 · Dynamic-group proactive sharing"
+        title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
+        url: /knowledge/papers/paper-52/
+      - id: science-cipher-paper-55
+        publication_id: 55
+        label: "#55 · Dynamic proactive MPC"
+        title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
+        url: /knowledge/papers/paper-55/
+      - id: science-cipher-paper-66
+        publication_id: 66
+        label: "#66 · Traffic analysis with partial visibility"
+        title: "Traffic Analysis by Adversaries with Partial Visibility"
+        url: /knowledge/papers/paper-66/
+    links:
+      - from: science-cipher-chaum
+        to: science-cipher-anonymity
+        type: direct
+        label: mix networks, group signatures, and digital cash
+      - from: science-cipher-chaum
+        to: science-cipher-distance-bounding
+        type: direct
+        label: Brands-Chaum distance-bounding lineage
+      - from: science-cipher-anonymity
+        to: science-cipher-paper-14
+        type: lineage
+        label: anonymous routing with group signatures
+      - from: science-cipher-anonymity
+        to: science-cipher-paper-26
+        type: lineage
+        label: privacy-preserving digital currency
+      - from: science-cipher-anonymity
+        to: science-cipher-paper-66
+        type: direct
+        label: traffic-analysis resistance and limits
+      - from: science-cipher-anonymity
+        to: science-cipher-paper-74
+        type: lineage
+        label: private anonymous bulletin boards
+      - from: science-cipher-distance-bounding
+        to: science-cipher-paper-13
+        type: direct
+        label: group distance bounding
+      - from: science-cipher-shamir
+        to: science-cipher-secret-sharing
+        type: direct
+        label: threshold secret sharing
+      - from: science-cipher-shamir
+        to: cipher-public-key
+        type: lineage
+        label: identity-based-encryption proposal
+      - from: science-cipher-secret-sharing
+        to: science-cipher-proactive-security
+        type: lineage
+        label: periodic refresh while preserving the secret
+      - from: science-cipher-secret-sharing
+        to: cipher-paper-51
+        type: uses
+        label: machine-checked Shamir and Pedersen sharing
+      - from: science-cipher-secret-sharing
+        to: cipher-paper-58
+        type: uses
+        label: Shamir sharing in the verified MPC stack
+      - from: science-cipher-proactive-security-pioneers
+        to: science-cipher-proactive-security
+        type: direct
+        label: foundational proactive secret sharing
+      - from: science-cipher-proactive-security
+        to: science-cipher-paper-32
+        type: direct
+        label: dishonest-majority proactive sharing
+      - from: science-cipher-proactive-security
+        to: cipher-paper-44
+        type: direct
+        label: proactive MPC with a dishonest majority
+      - from: science-cipher-proactive-security
+        to: science-cipher-paper-52
+        type: direct
+        label: dynamic-group proactive sharing
+      - from: science-cipher-proactive-security
+        to: science-cipher-paper-55
+        type: direct
+        label: dynamic proactive MPC
+      - from: science-cipher-yao
+        to: cipher-mpc
+        type: direct
+        label: foundational secure two-party computation
+      - from: science-cipher-goldreich
+        to: cipher-mpc
+        type: direct
+        label: general secure computation with Micali and Wigderson
+      - from: cipher-mpc
+        to: cipher-paper-51
+        type: direct
+        label: machine-checked MPC
+      - from: cipher-mpc
+        to: cipher-paper-58
+        type: uses
+        label: MPC-in-the-head zero knowledge
+      - from: cipher-mpc
+        to: science-cipher-paper-55
+        type: direct
+        label: dynamic proactive secure computation
+      - from: science-cipher-peikert
+        to: science-cipher-lattices
+        type: lineage
+        label: lattice, LWE, Ring-LWE, and FHE research influence
+      - from: science-cipher-peikert
+        to: cipher-paper-59
+        type: direct
+        label: direct coauthorship on F1
+      - from: science-cipher-peikert
+        to: science-cipher-paper-64
+        type: direct
+        label: direct coauthorship on CraterLake
+      - from: science-cipher-devadas
+        to: cipher-fhe
+        type: lineage
+        label: FHE-accelerator and secure-architecture research influence
+      - from: science-cipher-devadas
+        to: cipher-paper-59
+        type: direct
+        label: direct coauthorship on F1
+      - from: science-cipher-devadas
+        to: science-cipher-paper-64
+        type: direct
+        label: direct coauthorship on CraterLake
+      - from: science-cipher-lattices
+        to: science-cipher-paper-35
+        type: direct
+        label: explicit LWE construction
+      - from: science-cipher-lattices
+        to: cipher-paper-59
+        type: uses
+        label: ring-based FHE acceleration
+      - from: science-cipher-lattices
+        to: science-cipher-paper-64
+        type: uses
+        label: bootstrappable ring-based FHE acceleration
+      - from: science-cipher-lattices
+        to: cipher-paper-65
+        type: uses
+        label: BGV, BFV, and CKKS scheme-switching barriers
+      - from: cipher-diffie-hellman
+        to: cipher-public-key
+        type: direct
+        label: public-key cryptography
+      - from: cipher-diffie-hellman
+        to: science-cipher-signatures
+        type: direct
+        label: public-key digital-signature concept
+      - from: cipher-rsa
+        to: science-cipher-signatures
+        type: direct
+        label: RSA signatures
+      - from: cipher-goldwasser
+        to: cipher-public-key
+        type: direct
+        label: probabilistic public-key encryption
+      - from: cipher-goldwasser
+        to: cipher-mpc
+        type: lineage
+        label: major secure-computation research lineage
+      - from: cipher-goldwasser
+        to: cipher-fhe
+        type: lineage
+        label: probabilistic-encryption lineage toward modern FHE
+      - from: cipher-micali
+        to: cipher-public-key
+        type: direct
+        label: probabilistic public-key encryption
+      - from: cipher-micali
+        to: cipher-fhe
+        type: lineage
+        label: probabilistic-encryption lineage toward modern FHE
+      - from: cipher-fhe
+        to: science-cipher-paper-64
+        type: direct
+        label: bootstrapped FHE acceleration
+      - from: cipher-public-key
+        to: science-cipher-paper-74
+        type: direct
+        label: identity-based encryption and searchable HIBE
+      - from: cipher-public-key
+        to: science-cipher-paper-62
+        type: direct
+        label: attribute-based encryption
+      - from: science-cipher-signatures
+        to: science-cipher-paper-14
+        type: uses
+        label: signed announcements and group signatures
+      - from: science-cipher-signatures
+        to: cipher-patent-11
+        type: direct
+        label: distributed proactive ECDSA
+      - from: cipher-miller
+        to: science-cipher-pairings
+        type: lineage
+        label: Miller-algorithm and elliptic-curve pairing lineage
+      - from: science-cipher-pairings
+        to: science-cipher-paper-74
+        type: uses
+        label: bilinear-map searchable encryption
+      - from: science-cipher-pairings
+        to: cipher-paper-68
+        type: uses
+        label: type-3 pairing-curve components
+      - from: science-cipher-elgamal
+        to: science-cipher-elgamal-encryption
+        type: direct
+        label: ElGamal encryption
+      - from: science-cipher-elgamal-encryption
+        to: science-cipher-paper-19
+        type: direct
+        label: threshold ElGamal malicious-security construction
+      - from: science-cipher-elgamal-encryption
+        to: science-cipher-paper-20
+        type: uses
+        label: additive-ElGamal secure-search lineage
+      - from: science-cipher-elgamal-encryption
+        to: science-cipher-paper-21
+        type: direct
+        label: threshold ElGamal malicious-security construction
+
+  collaborators:
+    notes:
+      - kind: collaboration
+        label: How to read this view
+        text: >-
+          Blue solid person cards mark direct collaborators; violet dashed cards mark historical or
+          intellectual influence. Solid links identify documented coauthorship or a directly shared
+          research thread. Dashed conceptual-lineage links capture broader influence named by Karim
+          rather than claiming coauthorship of every downstream paper.
+    people:
+      - id: collaborators-moti-yung
+        label: Moti Yung
+        relationship: collaborator
+        status: Direct collaborator · 11 mapped papers
+        note: Coauthor across timed cryptography, proactive MPC and secret sharing, secure self-stabilization, and regenerating codes.
+      - id: collaborators-rafail-ostrovsky
+        label: Rafail Ostrovsky
+        relationship: collaborator
+        status: Direct collaborator · 13 mapped papers
+        note: Coauthor across proactive security, secure computation, verified zero knowledge, private search, resilient systems, and post-quantum obfuscation.
+      - id: collaborators-gene-tsudik
+        label: Gene Tsudik
+        relationship: collaborator
+        status: Direct collaborator · 21 mapped papers
+        note: Coauthor across remote attestation, verified embedded systems, public-key messaging, network coding, privacy, and authentication.
+      - id: collaborators-nigel-smart
+        label: Nigel Smart
+        relationship: collaborator
+        status: Direct collaborator · 2 mapped papers
+        note: Coauthor on registration-based encryption and concurrent group messaging; Karim also identifies Smart's ECC, FHE, and MPC work as an important influence.
+      - id: collaborators-juan-garay
+        label: Juan Garay
+        relationship: collaborator
+        status: Direct collaborator · secure computation
+        note: Coauthor on secure self-stabilizing computation; Karim also identifies Garay's work in MPC and consensus as an important influence.
+      - id: collaborators-stanislaw-jarecki
+        label: Stanisław Jarecki
+        relationship: collaborator
+        status: Direct collaborator · 2 mapped papers
+        note: >-
+          Coauthor on covert authenticated key exchange and private identity-based bulletin boards;
+          also part of the foundational proactive-secret-sharing lineage.
+      - id: collaborators-srdjan-capkun
+        label: Srdjan Čapkun
+        relationship: collaborator
+        status: Direct collaborator · 2 mapped papers
+        note: Coauthor on physical-layer identification attacks and group distance bounding.
+      - id: collaborators-athina-markopoulou
+        label: Athina Markopoulou
+        relationship: collaborator
+        status: Direct collaborator · 3 mapped papers
+        note: >-
+          Coauthor on BotTorrent, optimal DDoS filtering, and blacklist-based source filtering.
+          Network coding is shown separately as broader research influence, not coauthorship of
+          Karim's mapped network-coding papers.
+      - id: collaborators-ahmad-reza-sadeghi
+        label: Ahmad-Reza Sadeghi
+        relationship: collaborator
+        status: Direct collaborator · 1 mapped paper
+        note: >-
+          Coauthor on safety-critical remote attestation; the dashed attestation link marks Sadeghi's
+          broader trusted-systems influence across the represented attestation program.
+      - id: collaborators-chris-peikert
+        label: Chris Peikert
+        relationship: collaborator
+        status: Direct collaborator · 2 mapped papers
+        note: >-
+          Coauthor on F1 and CraterLake. Lattice, LWE, Ring-LWE, and other FHE links are marked as
+          broader intellectual influence unless the connected paper is one of those two collaborations.
+      - id: collaborators-srini-devadas
+        label: Srinivas (Srini) Devadas
+        relationship: collaborator
+        status: Direct collaborator · 2 mapped papers
+        note: >-
+          Coauthor on F1 and CraterLake. Broader links reflect Aegis attestation, formally specified
+          enclave work, secure architecture, and strong-anonymity systems such as Riffle and Atom.
+    ideas:
+      - id: collaborators-timed
+        label: Timed cryptography
+      - id: collaborators-mpc
+        label: MPC and proactive secret sharing
+      - id: collaborators-coding
+        label: Regenerating codes and distributed repair
+      - id: collaborators-formal-crypto
+        label: Mechanized cryptographic proofs
+      - id: collaborators-verified-ra
+        label: Remote attestation, secure hardware, and verified architectures
+        note: >-
+          Representative nodes are shown here; the mapped attestation body spans papers #17, #27,
+          #33, #37, #38, #41, #42, #46, #47, #50, and #54.
+      - id: collaborators-public-messaging
+        label: Public-key encryption and secure group messaging
+      - id: collaborators-post-quantum
+        label: Post-quantum cryptography
+      - id: collaborators-ecc
+        label: Elliptic-curve cryptography and distributed signing
+      - id: collaborators-fhe
+        label: Fully homomorphic encryption
+      - id: collaborators-consensus
+        label: Consensus and resilient distributed systems
+      - id: collaborators-authenticated-key-exchange
+        label: Covert authenticated key exchange
+      - id: collaborators-physical-layer-authentication
+        label: Physical-layer authentication and identification
+      - id: collaborators-distance-bounding
+        label: Distance bounding and proximity authentication
+      - id: collaborators-ddos-filtering
+        label: DDoS attacks, traffic filtering, and network security
+      - id: collaborators-network-coding
+        label: Secure network coding
+      - id: collaborators-lattices
+        label: Lattice cryptography, LWE, and Ring-LWE
+      - id: collaborators-anonymity
+        label: Strong anonymity and metadata-private messaging
+    papers:
+      - id: collaborators-paper-78
+        publication_id: 78
+        label: "#78 · Timed-protocol composition"
+        title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
+        url: /knowledge/papers/paper-78/
+      - id: collaborators-paper-73
+        publication_id: 73
+        label: "#73 · Multi-party time-lock puzzles"
+        title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
+        url: /knowledge/papers/paper-73/
+      - id: collaborators-paper-55
+        publication_id: 55
+        label: "#55 · Dynamic proactive MPC"
+        title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
+        url: /knowledge/papers/paper-55/
+      - id: collaborators-paper-44
+        publication_id: 44
+        label: "#44 · Dishonest-majority proactive MPC"
+        title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
+        url: /knowledge/papers/paper-44/
+      - id: collaborators-paper-36
+        publication_id: 36
+        label: "#36 · Secure self-stabilizing computation"
+        title: "Brief Announcement: Secure Self-Stabilizing Computation"
+        url: /knowledge/papers/paper-36/
+      - id: collaborators-paper-57
+        publication_id: 57
+        label: "#57 · Regenerating codes and secret sharing"
+        title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
+        url: /knowledge/papers/paper-57/
+      - id: collaborators-paper-67
+        publication_id: 67
+        label: "#67 · Formally verified zero knowledge"
+        title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+        url: /knowledge/papers/paper-67/
+      - id: collaborators-paper-68
+        publication_id: 68
+        label: "#68 · Covert authenticated key exchange"
+        title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+        url: /knowledge/papers/paper-68/
+      - id: collaborators-paper-50
+        publication_id: 50
+        label: "#50 · Verified remote attestation"
+        title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+        url: /knowledge/papers/paper-50/
+      - id: collaborators-paper-54
+        publication_id: 54
+        label: "#54 · Verified proofs of execution"
+        title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+        url: /knowledge/papers/paper-54/
+      - id: collaborators-paper-56
+        publication_id: 56
+        label: "#56 · Registration-based encryption"
+        title: "Optimizing Registration Based Encryption"
+        url: /knowledge/papers/paper-56/
+      - id: collaborators-paper-69
+        publication_id: 69
+        label: "#69 · Concurrent group messaging"
+        title: "The Key Lattice Framework for Concurrent Group Messaging"
+        url: /knowledge/papers/paper-69/
+      - id: collaborators-paper-74
+        publication_id: 74
+        label: "#74 · Private identity-based bulletin boards"
+        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
+        url: /knowledge/papers/paper-74/
+      - id: collaborators-paper-77
+        publication_id: 77
+        label: "#77 · Post-quantum point obfuscation"
+        title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+        url: /knowledge/papers/paper-77/
+      - id: collaborators-paper-59
+        publication_id: 59
+        label: "#59 · F1 FHE accelerator"
+        title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption"
+        url: /knowledge/papers/paper-59/
+      - id: collaborators-paper-64
+        publication_id: 64
+        label: "#64 · CraterLake FHE accelerator"
+        title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
+        url: /knowledge/papers/paper-64/
+      - id: collaborators-paper-65
+        publication_id: 65
+        label: "#65 · FHE scheme-switching hardness"
+        title: "On the Hardness of Scheme-Switching Between SIMD FHE Schemes"
+        url: /knowledge/papers/paper-65/
+      - id: collaborators-paper-63
+        publication_id: 63
+        label: "#63 · Byzantine consensus"
+        title: "How Byzantine Is a Send Corruption?"
+        url: /knowledge/papers/paper-63/
+      - id: collaborators-paper-5
+        publication_id: 5
+        label: "#5 · BotTorrent DDoS attacks"
+        title: "BotTorrent: Misusing BitTorrent to Launch DDoS Attacks"
+        url: /knowledge/papers/paper-5/
+      - id: collaborators-paper-6
+        publication_id: 6
+        label: "#6 · Optimal DDoS filtering"
+        title: "Optimal Filtering for DDoS Attacks"
+        url: /knowledge/papers/paper-6/
+      - id: collaborators-paper-8
+        publication_id: 8
+        label: "#8 · Blacklist-based source filtering"
+        title: "Filtering Sources of Unwanted Traffic Based on Blacklists"
+        url: /knowledge/papers/paper-8/
+      - id: collaborators-paper-11
+        publication_id: 11
+        label: "#11 · Encryption and network-coding capacity"
+        title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
+        url: /knowledge/papers/paper-11/
+      - id: collaborators-paper-12
+        publication_id: 12
+        label: "#12 · Physical-layer identification attacks"
+        title: "Attacks on Physical-Layer Identification"
+        url: /knowledge/papers/paper-12/
+      - id: collaborators-paper-13
+        publication_id: 13
+        label: "#13 · Group distance bounding"
+        title: "Group Distance Bounding Protocols"
+        url: /knowledge/papers/paper-13/
+      - id: collaborators-paper-14
+        publication_id: 14
+        label: "#14 · Anonymous location-aided routing"
+        title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
+        url: /knowledge/papers/paper-14/
+      - id: collaborators-paper-22
+        publication_id: 22
+        label: "#22 · Network-coding throughput and key sharing"
+        title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
+        url: /knowledge/papers/paper-22/
+      - id: collaborators-paper-35
+        publication_id: 35
+        label: "#35 · Reusable fuzzy extractors from LWE"
+        title: "Efficient, Reusable Fuzzy Extractors from LWE"
+        url: /knowledge/papers/paper-35/
+      - id: collaborators-paper-42
+        publication_id: 42
+        label: "#42 · Safety-critical remote attestation"
+        title: "Reconciling Remote Attestation and Safety-Critical Operation on Simple IoT Devices"
+        url: /knowledge/papers/paper-42/
+      - id: collaborators-paper-66
+        publication_id: 66
+        label: "#66 · Traffic analysis with partial visibility"
+        title: "Traffic Analysis by Adversaries with Partial Visibility"
+        url: /knowledge/papers/paper-66/
+      - id: collaborators-paper-76
+        publication_id: 76
+        label: "#76 · PRISM anonymous messaging overlay"
+        title: "PRISM: Privacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+        url: /knowledge/papers/paper-76/
+    patents:
+      - id: collaborators-patent-11
+        label: "Patent #11 · Proactive ECDSA"
+        title: "Proactive ECDSA with dishonest-majority security"
+        url: /patents.html
+        note: Distributed proactive elliptic-curve signing represented in the patent list.
+    links:
+      - from: collaborators-stanislaw-jarecki
+        to: collaborators-paper-68
+        type: direct
+        label: direct coauthorship on covert authenticated key exchange
+      - from: collaborators-stanislaw-jarecki
+        to: collaborators-paper-74
+        type: direct
+        label: direct coauthorship on private bulletin boards
+      - from: collaborators-stanislaw-jarecki
+        to: collaborators-mpc
+        type: lineage
+        label: foundational proactive-secret-sharing influence
+      - from: collaborators-stanislaw-jarecki
+        to: collaborators-authenticated-key-exchange
+        type: direct
+        label: direct collaboration in covert authenticated key exchange
+      - from: collaborators-srdjan-capkun
+        to: collaborators-paper-12
+        type: direct
+        label: direct coauthorship on physical-layer identification
+      - from: collaborators-srdjan-capkun
+        to: collaborators-paper-13
+        type: direct
+        label: direct coauthorship on group distance bounding
+      - from: collaborators-srdjan-capkun
+        to: collaborators-physical-layer-authentication
+        type: direct
+        label: direct collaboration in physical-layer authentication
+      - from: collaborators-srdjan-capkun
+        to: collaborators-distance-bounding
+        type: direct
+        label: direct collaboration in distance bounding
+      - from: collaborators-athina-markopoulou
+        to: collaborators-paper-5
+        type: direct
+        label: direct coauthorship on BotTorrent
+      - from: collaborators-athina-markopoulou
+        to: collaborators-paper-6
+        type: direct
+        label: direct coauthorship on optimal DDoS filtering
+      - from: collaborators-athina-markopoulou
+        to: collaborators-paper-8
+        type: direct
+        label: direct coauthorship on blacklist filtering
+      - from: collaborators-athina-markopoulou
+        to: collaborators-ddos-filtering
+        type: direct
+        label: direct collaboration in DDoS and traffic filtering
+      - from: collaborators-athina-markopoulou
+        to: collaborators-network-coding
+        type: lineage
+        label: broader network-coding research influence identified by Karim
+      - from: collaborators-ahmad-reza-sadeghi
+        to: collaborators-paper-42
+        type: direct
+        label: direct coauthorship on safety-critical attestation
+      - from: collaborators-ahmad-reza-sadeghi
+        to: collaborators-verified-ra
+        type: lineage
+        label: broader remote-attestation and trusted-systems influence
+      - from: collaborators-chris-peikert
+        to: collaborators-paper-59
+        type: direct
+        label: direct coauthorship on F1
+      - from: collaborators-chris-peikert
+        to: collaborators-paper-64
+        type: direct
+        label: direct coauthorship on CraterLake
+      - from: collaborators-chris-peikert
+        to: collaborators-fhe
+        type: lineage
+        label: broader FHE research influence
+      - from: collaborators-chris-peikert
+        to: collaborators-lattices
+        type: lineage
+        label: lattice, LWE, and Ring-LWE research influence
+      - from: collaborators-srini-devadas
+        to: collaborators-paper-59
+        type: direct
+        label: direct coauthorship on F1
+      - from: collaborators-srini-devadas
+        to: collaborators-paper-64
+        type: direct
+        label: direct coauthorship on CraterLake
+      - from: collaborators-srini-devadas
+        to: collaborators-fhe
+        type: lineage
+        label: broader FHE-accelerator research influence
+      - from: collaborators-srini-devadas
+        to: collaborators-verified-ra
+        type: lineage
+        label: Aegis attestation and formally specified enclave lineage
+      - from: collaborators-srini-devadas
+        to: collaborators-anonymity
+        type: lineage
+        label: Riffle, Atom, and metadata-private messaging lineage
+      - from: collaborators-moti-yung
+        to: collaborators-timed
+        type: direct
+        label: direct collaboration in timed cryptography
+      - from: collaborators-moti-yung
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration in proactive MPC and secret sharing
+      - from: collaborators-moti-yung
+        to: collaborators-coding
+        type: direct
+        label: direct collaboration on regenerating codes and secret sharing
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration in proactive MPC and secret sharing
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-formal-crypto
+        type: direct
+        label: direct collaboration on formally verified zero knowledge
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-post-quantum
+        type: direct
+        label: direct collaboration on post-quantum obfuscation
+      - from: collaborators-gene-tsudik
+        to: collaborators-verified-ra
+        type: direct
+        label: direct collaboration in remote attestation and verified systems
+      - from: collaborators-gene-tsudik
+        to: collaborators-public-messaging
+        type: direct
+        label: direct collaboration in public-key messaging and privacy
+      - from: collaborators-nigel-smart
+        to: collaborators-public-messaging
+        type: direct
+        label: direct collaboration in encryption and group messaging
+      - from: collaborators-nigel-smart
+        to: collaborators-ecc
+        type: lineage
+        label: broader ECC research influence identified by Karim
+      - from: collaborators-nigel-smart
+        to: collaborators-fhe
+        type: lineage
+        label: broader FHE research influence identified by Karim
+      - from: collaborators-nigel-smart
+        to: collaborators-mpc
+        type: lineage
+        label: broader MPC research influence identified by Karim
+      - from: collaborators-juan-garay
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on secure self-stabilizing computation
+      - from: collaborators-juan-garay
+        to: collaborators-consensus
+        type: lineage
+        label: consensus research influence identified by Karim
+      - from: collaborators-timed
+        to: collaborators-paper-78
+        type: direct
+        label: timed-protocol composition
+      - from: collaborators-timed
+        to: collaborators-paper-73
+        type: direct
+        label: multi-party time-lock puzzles
+      - from: collaborators-mpc
+        to: collaborators-paper-55
+        type: direct
+        label: dynamic proactive MPC
+      - from: collaborators-mpc
+        to: collaborators-paper-44
+        type: direct
+        label: dishonest-majority proactive MPC
+      - from: collaborators-mpc
+        to: collaborators-paper-36
+        type: direct
+        label: secure self-stabilizing computation
+      - from: collaborators-coding
+        to: collaborators-paper-57
+        type: direct
+        label: regenerating-code and secret-sharing relationship
+      - from: collaborators-formal-crypto
+        to: collaborators-paper-67
+        type: direct
+        label: formally verified zero knowledge
+      - from: collaborators-verified-ra
+        to: collaborators-paper-50
+        type: direct
+        label: verified remote-attestation architecture
+      - from: collaborators-verified-ra
+        to: collaborators-paper-54
+        type: direct
+        label: verified proofs-of-execution architecture
+      - from: collaborators-public-messaging
+        to: collaborators-paper-56
+        type: direct
+        label: registration-based encryption
+      - from: collaborators-public-messaging
+        to: collaborators-paper-69
+        type: direct
+        label: concurrent group-key evolution
+      - from: collaborators-public-messaging
+        to: collaborators-paper-74
+        type: direct
+        label: identity-based private bulletin boards
+      - from: collaborators-post-quantum
+        to: collaborators-paper-77
+        type: direct
+        label: post-quantum non-malleable obfuscation
+      - from: collaborators-ecc
+        to: collaborators-patent-11
+        type: direct
+        label: proactive ECDSA
+      - from: collaborators-fhe
+        to: collaborators-paper-59
+        type: lineage
+        label: F1 accelerator
+      - from: collaborators-fhe
+        to: collaborators-paper-64
+        type: lineage
+        label: CraterLake accelerator
+      - from: collaborators-fhe
+        to: collaborators-paper-65
+        type: lineage
+        label: FHE scheme-switching hardness
+      - from: collaborators-consensus
+        to: collaborators-paper-63
+        type: lineage
+        label: Byzantine and send-corruption consensus
+      - from: collaborators-consensus
+        to: collaborators-paper-36
+        type: uses
+        label: self-stabilizing distributed computation
+      - from: collaborators-authenticated-key-exchange
+        to: collaborators-paper-68
+        type: direct
+        label: covert authenticated key exchange
+      - from: collaborators-physical-layer-authentication
+        to: collaborators-paper-12
+        type: direct
+        label: physical-layer identification attacks
+      - from: collaborators-distance-bounding
+        to: collaborators-paper-13
+        type: direct
+        label: group distance bounding
+      - from: collaborators-ddos-filtering
+        to: collaborators-paper-5
+        type: direct
+        label: BitTorrent-amplified DDoS attacks
+      - from: collaborators-ddos-filtering
+        to: collaborators-paper-6
+        type: direct
+        label: optimal DDoS filtering
+      - from: collaborators-ddos-filtering
+        to: collaborators-paper-8
+        type: direct
+        label: blacklist-based source filtering
+      - from: collaborators-network-coding
+        to: collaborators-paper-11
+        type: lineage
+        label: encryption and wireless network-coding capacity
+      - from: collaborators-network-coding
+        to: collaborators-paper-22
+        type: lineage
+        label: secure network-coding throughput
+      - from: collaborators-lattices
+        to: collaborators-paper-35
+        type: direct
+        label: explicit LWE construction
+      - from: collaborators-lattices
+        to: collaborators-paper-59
+        type: uses
+        label: ring-based FHE acceleration
+      - from: collaborators-lattices
+        to: collaborators-paper-64
+        type: uses
+        label: bootstrappable ring-based FHE acceleration
+      - from: collaborators-lattices
+        to: collaborators-paper-65
+        type: uses
+        label: BGV, BFV, and CKKS scheme-switching barriers
+      - from: collaborators-verified-ra
+        to: collaborators-paper-42
+        type: direct
+        label: safety-critical remote attestation
+      - from: collaborators-anonymity
+        to: collaborators-paper-14
+        type: lineage
+        label: anonymous location-aided routing
+      - from: collaborators-anonymity
+        to: collaborators-paper-66
+        type: direct
+        label: traffic analysis with partial visibility
+      - from: collaborators-anonymity
+        to: collaborators-paper-74
+        type: lineage
+        label: private anonymous bulletin boards
+      - from: collaborators-anonymity
+        to: collaborators-paper-76
+        type: direct
+        label: intrusion-resilient anonymous messaging

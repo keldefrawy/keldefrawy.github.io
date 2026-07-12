@@ -1,0 +1,55 @@
+- year: 2008
+  short_title: HiTEC Winner
+  title: Computer Science HiTEC Product Development Competition
+  organization: UC Irvine
+  icon: competition
+  description: >-
+    Winner of the Computer Science HiTEC Product Development Competition at UCI.
+
+- year: 2013
+  short_title: New Inventor
+  title: New Inventor Award
+  organization: HRL Laboratories
+  icon: invention
+  description: >-
+    New Inventor Award at HRL Laboratories.
+
+- year: 2015
+  short_title: Distinguished Inventor
+  title: Distinguished Inventor Award
+  organization: HRL Laboratories
+  icon: medal
+  description: >-
+    Distinguished Inventor Award at HRL Laboratories.
+
+- year: 2023
+  short_title: Cybersecurity Solution
+  title: Cybersecurity Solution of the Year
+  organization: PwC Luxembourg
+  icon: shield
+  description: >-
+    Cybersecurity Solution of the Year award at [PwC Luxembourg Cybersecurity and Privacy Day](https://www.pwc.lu/en/press/press-releases-2023/cybersecurity-day-2023-winner.html).
+
+- year: 2024
+  short_title: Test of Time
+  title: Test of Time Award
+  organization: NDSS
+  icon: clock
+  description: >-
+    [Test of Time Award](https://www.ndss-symposium.org/ndss-test-of-time-award/) by the [Internet Society's](https://www.internetsociety.org/) [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/). The award recognizes the most influential papers published in past NDSS Symposia.
+
+- year: 2025
+  short_title: Encryption Innovation
+  title: Encryption Innovation Award
+  organization: CyberSecurity Breakthrough
+  icon: key
+  description: >-
+    [Encryption Innovation Award](https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/). The winning selections showcase information-security technologies and companies that push ingenuity and exemplify the best in cybersecurity and risk-management solutions across the globe.
+
+- year: 2026
+  short_title: Legal Data Solution
+  title: Data Solution of the Year for Legal
+  organization: Data Breakthrough Awards
+  icon: document
+  description: >-
+    [Data Solution of the Year for Legal](https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards) in the [7th Annual Data Breakthrough Awards](https://databreakthroughawards.com/2026-winners/) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/).

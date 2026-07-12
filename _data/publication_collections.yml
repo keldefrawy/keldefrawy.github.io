@@ -1,0 +1,89 @@
+- slug: formal-verification
+  name: Computer-Aided Formal Verification
+  short_name: Formal Verification
+  description: Mechanized cryptographic proofs, verified remote-attestation architectures, high-assurance code extraction, and systems built from formally verified components.
+  subtopics:
+    - Mechanized cryptographic proofs
+    - High-assurance MPC and zero knowledge
+    - Verified remote attestation
+    - Verified-component systems
+    - Synthesis and executable extraction
+  note: >-
+    This collection distinguishes end-to-end or architecture-specific verification from work that
+    reuses a verified component and from agenda-setting papers. Each paper map records its actual
+    proof scope, trusted base, limitations, and later scrutiny.
+  members:
+    - paper_id: 67
+      facets: [Mechanized cryptography, Zero knowledge]
+      basis: EasyCrypt-verified performance work; the paper map records important later scrutiny of the represented assurance claims.
+    - paper_id: 58
+      facets: [Mechanized cryptography, Zero knowledge, MPC]
+      basis: Machine-checked EasyCrypt security proofs and extracted MPC-in-the-head implementations.
+    - paper_id: 54
+      facets: [Verified remote systems, Proofs of execution]
+      basis: Formally verified architecture for proofs of execution under full software compromise.
+    - paper_id: 51
+      facets: [Mechanized cryptography, MPC, Code extraction]
+      basis: EasyCrypt proofs of secret sharing and proactive MPC with a Why3-based executable-extraction path.
+    - paper_id: 50
+      facets: [Verified remote systems, Remote attestation]
+      basis: Formally specified and verified hardware/software remote-attestation co-design.
+    - paper_id: 47
+      facets: [Research agenda, Remote attestation, Synthesis]
+      basis: Position paper advocating computer-aided verification and correct-by-construction synthesis; not itself a verified artifact.
+    - paper_id: 46
+      facets: [Verified remote systems, Secure recovery]
+      basis: Extends verified remote attestation with formally verified update, erasure, and reset services.
+    - paper_id: 38
+      facets: [Verified components, Remote attestation]
+      basis: Engineering companion on building remote attestation from the formally verified seL4 microkernel.
+    - paper_id: 37
+      facets: [Verified components, Remote attestation]
+      basis: Remote-attestation design that relies on seL4's machine-checked isolation properties; the full composition is not claimed as an end-to-end proof.
+
+- slug: post-quantum-cryptography
+  name: Post-Quantum Cryptography & Quantum-Resistant Foundations
+  short_name: Post-Quantum & Quantum-Resistant
+  description: Explicit post-quantum constructions, LWE and lattice-based FHE, plus information-theoretic or statistical MPC and secret-sharing foundations relevant after quantum attacks.
+  subtopics:
+    - Explicit post-quantum constructions
+    - LWE and lattice-based primitives
+    - Fully homomorphic encryption
+    - Perfect and statistical MPC
+    - Information-theoretic secret sharing
+    - Quantum-resistant foundations
+  note: >-
+    This is a relevance collection, not a claim that every surrounding protocol, authentication
+    layer, implementation, or deployment is fully quantum-safe. Information-theoretic components
+    remain separated from classical-assumption components in the individual paper maps.
+  members:
+    - paper_id: 77
+      facets: [Explicit post-quantum cryptography, Obfuscation]
+      basis: Explicitly post-quantum non-malleable point obfuscation; evidence remains limited because no public manuscript is represented.
+    - paper_id: 65
+      facets: [Lattice cryptography, FHE]
+      basis: BGV/BFV/CKKS scheme-switching and bootstrapping hardness in the lattice-FHE ecosystem.
+    - paper_id: 64
+      facets: [Lattice cryptography, FHE, Hardware]
+      basis: Accelerator for bootstrapped BGV/GSW/CKKS-style fully homomorphic encryption.
+    - paper_id: 59
+      facets: [Lattice cryptography, FHE, Hardware]
+      basis: Programmable accelerator for complete BGV/GSW/CKKS-style FHE programs.
+    - paper_id: 57
+      facets: [Information-theoretic secret sharing, Regenerating codes]
+      basis: Finite-field secret-sharing and coding foundations relating proactive sharing to regenerating codes.
+    - paper_id: 55
+      facets: [Information-theoretic secure computation, Proactive MPC]
+      basis: Additive and monotone-span-program sharing with information checking for proactive secure computation.
+    - paper_id: 35
+      facets: [LWE, Lattice cryptography, Fuzzy extractors]
+      basis: Reusable fuzzy extractors constructed from Learning With Errors.
+    - paper_id: 34
+      facets: [Perfect secret sharing, Proactive storage]
+      basis: Cloud storage built around a perfectly secure packed proactive-secret-sharing layer, subject to its operational assumptions.
+    - paper_id: 28
+      facets: [Information-theoretic secret sharing, Perfect security, Statistical security]
+      basis: Information-theoretic dynamic proactive secret sharing with perfect and statistical variants.
+    - paper_id: 25
+      facets: [Perfect MPC, Statistical MPC, Proactive security]
+      basis: Explicit perfect- and statistical-security variants of proactive MPC and packed secret sharing.

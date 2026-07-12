@@ -1,8 +1,11 @@
 (function () {
   "use strict";
 
-  var ANIMATION_DURATION = 10500;
-  var FRAME_INTERVAL = 350;
+  var DEFAULT_ANIMATION_DURATION = 10500;
+  var DEFAULT_FRAME_INTERVAL = 350;
+  var AUTO_DELAY_BANDS = [[150, 650], [1150, 1850], [2250, 3100]];
+  var AUTO_DURATION_BANDS = [[9300, 10100], [10600, 11300], [11800, 12500]];
+  var AUTO_FRAME_INTERVAL_BANDS = [[300, 340], [370, 410], [440, 480]];
   var motionQuery = window.matchMedia ?
     window.matchMedia("(prefers-reduced-motion: reduce)") : null;
   var sceneMessages = {
@@ -26,6 +29,62 @@
 
   function prefersReducedMotion() {
     return Boolean(motionQuery && motionQuery.matches);
+  }
+
+  function randomUnit() {
+    var values;
+
+    if (window.crypto && typeof window.crypto.getRandomValues === "function") {
+      values = new Uint32Array(1);
+      window.crypto.getRandomValues(values);
+      return values[0] / 4294967296;
+    }
+
+    return Math.random();
+  }
+
+  function randomInteger(minimum, maximum) {
+    return minimum + Math.floor(randomUnit() * (maximum - minimum + 1));
+  }
+
+  function shuffled(values) {
+    var result = values.slice();
+    var index;
+    var swapIndex;
+    var temporary;
+
+    for (index = result.length - 1; index > 0; index -= 1) {
+      swapIndex = randomInteger(0, index);
+      temporary = result[index];
+      result[index] = result[swapIndex];
+      result[swapIndex] = temporary;
+    }
+
+    return result;
+  }
+
+  function sidebarTimingProfiles(count) {
+    var delayBands = shuffled(AUTO_DELAY_BANDS);
+    var durationBands = shuffled(AUTO_DURATION_BANDS);
+    var frameIntervalBands = shuffled(AUTO_FRAME_INTERVAL_BANDS);
+    var profiles = [];
+    var index;
+    var delayBand;
+    var durationBand;
+    var frameIntervalBand;
+
+    for (index = 0; index < count; index += 1) {
+      delayBand = delayBands[index % delayBands.length];
+      durationBand = durationBands[index % durationBands.length];
+      frameIntervalBand = frameIntervalBands[index % frameIntervalBands.length];
+      profiles.push({
+        delayMs: randomInteger(delayBand[0], delayBand[1]),
+        durationMs: randomInteger(durationBand[0], durationBand[1]),
+        frameIntervalMs: randomInteger(frameIntervalBand[0], frameIntervalBand[1])
+      });
+    }
+
+    return profiles;
   }
 
   function frameUrlsFor(image) {
@@ -83,14 +142,22 @@
     var image = options.image;
     var status = options.status;
     var sceneName = options.sceneName;
+    var animationDuration = Number(options.animationDuration) || DEFAULT_ANIMATION_DURATION;
+    var frameInterval = Number(options.frameInterval) || DEFAULT_FRAME_INTERVAL;
     var animationFrame = null;
     var animationTimer = null;
     var frameTimer = null;
+    var startTimer = null;
     var requestNumber = 0;
     var destroyed = false;
     var frameUrls = frameUrlsFor(image);
     var loadedFrames = frameUrls.slice(0, 1);
     var preloadPromise = null;
+
+    if (root) {
+      root.style.setProperty("--curiosity-pan-duration", animationDuration + "ms");
+      root.style.setProperty("--curiosity-pulse-duration", (animationDuration / 5) + "ms");
+    }
 
     function setFrame(index) {
       var frameUrl = loadedFrames[index];
@@ -108,6 +175,10 @@
       if (animationTimer !== null) {
         window.clearTimeout(animationTimer);
         animationTimer = null;
+      }
+      if (startTimer !== null) {
+        window.clearTimeout(startTimer);
+        startTimer = null;
       }
       if (frameTimer !== null) {
         window.clearInterval(frameTimer);
@@ -179,7 +250,7 @@
 
             patternIndex = (patternIndex + 1) % pattern.length;
             setFrame(pattern[patternIndex]);
-          }, FRAME_INTERVAL);
+          }, frameInterval);
         }
 
         animationTimer = window.setTimeout(function () {
@@ -191,12 +262,13 @@
           if (announce && status) {
             status.textContent = messages.finished;
           }
-        }, ANIMATION_DURATION);
+        }, animationDuration);
       });
     }
 
-    function play(announce) {
+    function play(announce, delayMs) {
       var currentRequest;
+      var startDelay = Math.max(0, Number(delayMs) || 0);
 
       if (destroyed || prefersReducedMotion()) {
         return;
@@ -208,7 +280,14 @@
 
       ensureFrames().then(function () {
         if (!destroyed && currentRequest === requestNumber && !prefersReducedMotion()) {
-          begin(Boolean(announce), currentRequest);
+          if (startDelay > 0) {
+            startTimer = window.setTimeout(function () {
+              startTimer = null;
+              begin(Boolean(announce), currentRequest);
+            }, startDelay);
+          } else {
+            begin(Boolean(announce), currentRequest);
+          }
         }
       });
     }
@@ -248,7 +327,7 @@
     };
   }
 
-  function initializeScene(scene) {
+  function initializeScene(scene, timing) {
     if (scene.getAttribute("data-curiosity-scene-ready") === "true") {
       return;
     }
@@ -257,6 +336,11 @@
     var image = scene.querySelector("[data-curiosity-frames]");
     var replayButton = scene.querySelector("[data-curiosity-replay]");
     var player;
+    var profile = timing || {
+      delayMs: 0,
+      durationMs: DEFAULT_ANIMATION_DURATION,
+      frameIntervalMs: DEFAULT_FRAME_INTERVAL
+    };
 
     if (!image) {
       return;
@@ -266,9 +350,14 @@
       root: scene,
       image: image,
       status: scene.querySelector("[data-curiosity-status]"),
-      sceneName: sceneName
+      sceneName: sceneName,
+      animationDuration: profile.durationMs,
+      frameInterval: profile.frameIntervalMs
     });
     scene.curiosityPlayer = player;
+    scene.setAttribute("data-curiosity-start-delay-ms", String(profile.delayMs));
+    scene.setAttribute("data-curiosity-duration-ms", String(profile.durationMs));
+    scene.setAttribute("data-curiosity-frame-interval-ms", String(profile.frameIntervalMs));
 
     if (replayButton) {
       replayButton.addEventListener("click", function () {
@@ -277,7 +366,7 @@
     }
 
     if (!prefersReducedMotion() && scene.getClientRects().length > 0) {
-      player.play(false);
+      player.play(false, profile.delayMs);
     }
 
     scene.removeAttribute("hidden");
@@ -289,7 +378,12 @@
       return;
     }
 
-    toArray(wrapper.querySelectorAll("[data-curiosity-scene]")).forEach(initializeScene);
+    var scenes = toArray(wrapper.querySelectorAll("[data-curiosity-scene]"));
+    var timingProfiles = sidebarTimingProfiles(scenes.length);
+
+    scenes.forEach(function (scene, index) {
+      initializeScene(scene, timingProfiles[index]);
+    });
     wrapper.setAttribute("data-curiosity-ready", "true");
   }
 

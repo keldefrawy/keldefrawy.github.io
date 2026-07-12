@@ -1,6 +1,12 @@
 ---
 ---
 
+.adversary-game-arcade {
+  margin-top: 0.35rem;
+  text-align: center;
+  width: 100%;
+}
+
 .adversary-game-launch {
   margin: 0.2rem 0 0;
 }
@@ -11,6 +17,22 @@
   font-weight: 800;
   letter-spacing: 0.02em;
   text-underline-offset: 0.18em;
+}
+
+.adversary-game-launch sup {
+  font-size: 0.58em;
+  margin-left: 0.08em;
+  vertical-align: super;
+}
+
+.home-last-updated {
+  border-top: 1px solid var(--publication-line);
+  color: var(--publication-muted);
+  font-size: 0.68rem;
+  line-height: 1.45;
+  margin: 0.15rem 0 0;
+  padding-top: 0.55rem;
+  text-align: left;
 }
 
 .adversary-game-dialog {
@@ -508,6 +530,7 @@ body.adversary-game-dialog-open {
 }
 
 .adversary-game__marquee strong {
+  color: inherit;
   font-size: inherit;
 }
 

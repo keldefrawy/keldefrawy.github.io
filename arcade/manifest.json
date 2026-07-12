@@ -1,0 +1,10 @@
+---
+layout: null
+arcade_page: false
+permalink: /arcade/manifest.json
+---
+{
+  "schema_version": 1,
+  "source": "_data/arcade_games.yml",
+  "games": {{ site.data.arcade_games | jsonify }}
+}

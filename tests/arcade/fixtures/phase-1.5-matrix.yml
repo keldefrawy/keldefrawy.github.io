@@ -1,0 +1,22 @@
+phase: "1.5"
+status: planned
+target:
+  minimum: 96
+  maximum: 120
+  planned: 96
+categories:
+  registry_schema_and_negative_cases: 48
+  jekyll_routes_content_and_links: 24
+  browser_no_javascript_accessibility_visual: 24
+full_regression:
+  prior_gates: ["0.5"]
+  retained_distinct_checks: 104
+  required: true
+planned_total: 96
+planned_cumulative_total: 200
+evidence_directory: test-results/arcade/phase-1.5
+notes:
+  - Every Gate 0 test remains in the same cumulative Vitest and Playwright suites.
+  - Each of the 36 canonical cabinet routes receives per-record validation.
+  - Invalid manifests and broken provenance are required negative cases.
+  - Browser checks run in desktop and mobile Chrome projects where applicable.

@@ -11,6 +11,20 @@ layout: default
 {% assign publication = publication_matches | first %}
 {% assign root_matches = record.nodes | where: "id", record.root_node_id %}
 {% assign root_node = root_matches | first %}
+{% assign arcade_game_count = 0 %}
+{% capture arcade_game_links %}
+  {% for arcade_game in site.data.arcade_games %}
+    {% assign arcade_game_matches_paper = false %}
+    {% for reference in arcade_game.provenance.paper_refs %}
+      {% assign arcade_paper_id = reference.paper_id | default: reference %}
+      {% if arcade_paper_id == record.publication_id %}{% assign arcade_game_matches_paper = true %}{% endif %}
+    {% endfor %}
+    {% if arcade_game_matches_paper %}
+      {% assign arcade_game_count = arcade_game_count | plus: 1 %}
+      <li><a href="{{ '/arcade/games/' | append: arcade_game.slug | append: '/' | relative_url }}">{{ arcade_game.title | escape }}</a> <span>· {{ arcade_game.status | replace: '_', ' ' | replace: '-', ' ' }}</span></li>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
 
 <article class="knowledge-map" data-paper-id="{{ record.publication_id }}" data-map-id="{{ record.map_id | escape }}">
   <nav class="knowledge-breadcrumbs" aria-label="Breadcrumb">
@@ -68,8 +82,18 @@ layout: default
     <a href="#evidence-profile">Six-axis profile</a>
     <a href="#paper-map">Hierarchical map</a>
     <a href="#source-index">Source index</a>
+    {% if arcade_game_count > 0 %}<a href="#play-the-idea">Play the idea</a>{% endif %}
     <a href="{{ record.machine_path | relative_url }}">Machine-readable JSON</a>
   </nav>
+
+  {% if arcade_game_count > 0 %}
+  <aside class="knowledge-machine-access" id="play-the-idea">
+    <p class="knowledge-section-label">Cryptography Arcade</p>
+    <h2>Play the idea</h2>
+    <p>{{ arcade_game_count }} planned or playable cabinet{% unless arcade_game_count == 1 %}s{% endunless %} draw{% if arcade_game_count == 1 %}s{% endif %} a mechanic from this paper. The game page identifies abstractions and limitations separately from the paper's claims.</p>
+    <ul>{{ arcade_game_links }}</ul>
+  </aside>
+  {% endif %}
 
   {% if publication.abstract %}
   <section class="knowledge-paper-abstract" id="paper-abstract" aria-labelledby="paper-abstract-heading">

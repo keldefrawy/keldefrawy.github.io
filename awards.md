@@ -1,14 +1,64 @@
-**2026:** [Data Solution of the Year for Legal](https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards) in the [7th Annual Data Breakthrough Awards](https://databreakthroughawards.com/2026-winners/) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/).
+---
+layout: default
+title: Awards and Recognitions
+description: Selected recognition spanning research, invention, cybersecurity, and commercial innovation from 2008 through 2026.
+permalink: /awards.html
+---
 
-**2025:** [Encryption Innovation Award](https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/). The winning CyberSecurity Breakthrough selections showcase information security technologies and companies that push ingenuity and exemplify the best in cybersecurity and risk management technology solutions across the globe.
+<article class="awards-page">
+  <div class="awards-header">
+    <p class="awards-eyebrow">Recognition timeline · 2008–2026</p>
+    <h1>Awards and Recognitions</h1>
+    <p>Selected milestones spanning research impact, invention, cybersecurity, and commercial innovation.</p>
+  </div>
 
-**2024:** [Test of Time Award](https://www.ndss-symposium.org/ndss-test-of-time-award/) by the [Internet Society's](https://www.internetsociety.org/) [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/):
-An award that recognizes the most influential papers that have been published in past NDSS Symposia.
+  <section class="awards-timeline" aria-labelledby="awards-timeline-title">
+    <div class="awards-section-heading">
+      <div>
+        <p class="awards-section-kicker">From research to real-world impact</p>
+        <h2 id="awards-timeline-title">Recognition over time</h2>
+      </div>
+      <p class="awards-timeline-hint">Chronological · left to right</p>
+    </div>
 
-**2023:** Cybersecurity Solution of the Year award at [PWC Luxembourg Cybersecurity and Privacy Day](https://www.pwc.lu/en/press/press-releases-2023/cybersecurity-day-2023-winner.html)
+    <div
+      class="awards-timeline__viewport"
+      role="region"
+      aria-label="Chronological awards timeline from 2008 through 2026"
+      tabindex="0"
+    >
+      <ol class="awards-timeline__list">
+        {% for award in site.data.awards %}
+          <li class="awards-timeline__item">
+            <time datetime="{{ award.year }}">{{ award.year }}</time>
+            <span class="awards-timeline__marker award-icon--{{ award.icon }}" aria-hidden="true"></span>
+            <a href="#award-{{ award.year }}">{{ award.short_title | escape }}</a>
+            <span class="awards-timeline__organization">{{ award.organization | escape }}</span>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  </section>
 
-**2015:** Distinguished Inventor Award at HRL Laboratories
+  <section class="awards-details" aria-labelledby="awards-details-title">
+    <div class="awards-section-heading">
+      <div>
+        <p class="awards-section-kicker">Full record</p>
+        <h2 id="awards-details-title">Award details</h2>
+      </div>
+    </div>
 
-**2013:** New Inventor Award at HRL Laboratories
-
-**2008:** Winner of the Computer Science HiTEC Product Development Competition at UCI
+    <div class="awards-detail-list">
+      {% assign awards_newest_first = site.data.awards | reverse %}
+      {% for award in awards_newest_first %}
+        <article class="award-detail" id="award-{{ award.year }}">
+          <time datetime="{{ award.year }}">{{ award.year }}</time>
+          <div>
+            <h3>{{ award.title | escape }}</h3>
+            <div class="award-detail__description">{{ award.description | markdownify }}</div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</article>

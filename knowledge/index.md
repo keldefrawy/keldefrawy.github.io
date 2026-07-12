@@ -22,7 +22,7 @@ knowledge_hub: true
     <header class="knowledge-section-heading">
       <p class="knowledge-section-label">Research landscape</p>
       <h2 id="research-landscape-heading">Five connected areas of work</h2>
-      <p>Select an area to see its broad themes, recurring paper topics, and related research.</p>
+      <p>Select one of the five primary areas, or an overlapping cross-cutting collection, to see its themes and related research.</p>
     </header>
 
     <div class="knowledge-landscape__map" aria-label="Five research areas grouped into Methods and Foundations and Security Domains">
@@ -45,11 +45,16 @@ knowledge_hub: true
                 <li id="knowledge-area-{{ area.slug }}">
                   <a
                     href="#catalog-topic-{{ area.slug }}"
+                    data-knowledge-scope-control
+                    data-scope-kind="area"
+                    data-scope-slug="{{ area.slug }}"
                     data-knowledge-area-control="{{ area.slug }}"
                     data-area-name="{{ area.name | escape }}"
                     data-area-domain="{{ domain.name | escape }}"
                     data-area-description="{{ area.description | escape }}"
                     data-area-subtopics="{{ area.subtopics | jsonify | escape }}"
+                    data-scope-subtopics="{{ area.subtopics | jsonify | escape }}"
+                    data-scope-note=""
                     aria-controls="knowledge-selected-area"
                     aria-label="{{ area.name | escape }}, {{ area_papers | size }} papers"
                   >
@@ -65,11 +70,45 @@ knowledge_hub: true
       </div>
     </div>
 
+    <section class="knowledge-collections" aria-labelledby="knowledge-collections-heading">
+      <header>
+        <p class="knowledge-section-label">Cross-cutting collections</p>
+        <h3 id="knowledge-collections-heading">Themes that span the five primary areas</h3>
+        <p>These collections overlap the area map. Membership is curated explicitly rather than inferred from a keyword match.</p>
+      </header>
+      <ul class="knowledge-collection-grid">
+        {% for collection in site.data.publication_collections %}
+          {% assign collection_paper_ids = collection.members | map: "paper_id" %}
+          <li class="knowledge-collection-card" id="knowledge-collection-{{ collection.slug }}">
+            <a
+              href="#paper-catalog"
+              data-knowledge-scope-control
+              data-scope-kind="collection"
+              data-scope-slug="{{ collection.slug }}"
+              data-area-name="{{ collection.name | escape }}"
+              data-area-domain="Cross-cutting collection"
+              data-area-description="{{ collection.description | escape }}"
+              data-scope-subtopics="{{ collection.subtopics | jsonify | escape }}"
+              data-scope-note="{{ collection.note | escape }}"
+              data-paper-ids="{{ collection_paper_ids | jsonify | escape }}"
+              aria-controls="knowledge-selected-area"
+              aria-label="{{ collection.name | escape }}, {{ collection.members | size }} papers"
+            >
+              <span class="knowledge-landscape__area-name">{{ collection.short_name | escape }}</span>
+              <span class="knowledge-landscape__area-count">{{ collection.members | size }} papers</span>
+              <small>{{ collection.description | escape }}</small>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
     <section class="knowledge-area-detail" id="knowledge-selected-area" data-knowledge-area-detail hidden aria-labelledby="knowledge-selected-area-heading">
       <header class="knowledge-area-detail__header">
         <p data-knowledge-selected-domain></p>
         <h3 id="knowledge-selected-area-heading" data-knowledge-selected-name></h3>
         <p data-knowledge-selected-description></p>
+        <p class="knowledge-area-detail__note" data-knowledge-selected-note hidden></p>
       </header>
 
       <div class="knowledge-area-detail__grid">
@@ -104,39 +143,35 @@ knowledge_hub: true
     <header class="knowledge-section-heading">
       <p class="knowledge-section-label">Selected intellectual lineages</p>
       <h2 id="idea-lineages-heading">People → ideas → Karim’s work</h2>
-      <p>The scientific lineage shown here begins with Gödel, Turing, von Neumann, and Shannon, then follows later concepts and researchers to selected papers and patents. Choose a view, then select any node to follow its relationships.</p>
+      <p>The historical views begin with Gödel, Turing, von Neumann, and Shannon, then follow later concepts and researchers. A separate collaborators view connects modern research partnerships to selected papers and patents.</p>
     </header>
 
-    {% assign lineage_order = "cipher,hotel,tour" | split: "," %}
+    {% assign lineage_order = "cipher,hotel,tour,collaborators" | split: "," %}
     <div class="knowledge-lineage-tabs" role="group" aria-label="Choose an ideas map">
       {% for scene_key in lineage_order %}
         {% case scene_key %}
           {% when "cipher" %}
             {% assign lineage_label = "Cryptographic ideas" %}
             {% assign lineage_title = "A Century of Cryptographic Ideas" %}
-            {% assign lineage_description = "From Turing’s cryptanalysis and Shannon’s information-theoretic foundations through public-key cryptography, zero knowledge, elliptic curves, and encrypted computation." %}
-            {% assign lineage_exclusions = "" %}
-            {% assign lineage_note_exclusions = "" %}
+            {% assign lineage_description = "From Turing and Shannon through public-key cryptography, anonymity, secret sharing, secure computation, lattices, and encrypted computation." %}
           {% when "hotel" %}
             {% assign lineage_label = "Formal & reliable systems" %}
             {% assign lineage_title = "From Formal Models to Reliable Cryptographic Systems" %}
-            {% assign lineage_description = "How Gödel’s work on formal systems, Turing’s model of computation, and von Neumann’s reliable-computing lineage support formal proof, cryptographic security, and resilient distributed systems." %}
-            {% assign lineage_exclusions = "hotel-hilbert,hotel-cantor,hotel-foundations" %}
-            {% assign lineage_note_exclusions = "mathematics" %}
+            {% assign lineage_description = "How Gödel, Turing, von Neumann, and the Byzantine-agreement lineage support formal proof, cryptographic security, and resilient distributed systems." %}
           {% when "tour" %}
             {% assign lineage_label = "Information to quantum" %}
             {% assign lineage_title = "From Information Theory to Qubits" %}
             {% assign lineage_description = "From Shannon’s information theory through public-key cryptography and timed release to quantum algorithms, protocols, and post-quantum security." %}
-            {% assign lineage_exclusions = "" %}
-            {% assign lineage_note_exclusions = "" %}
+          {% when "collaborators" %}
+            {% assign lineage_label = "Collaborators" %}
+            {% assign lineage_title = "Collaborators Across Modern Cryptography and Security" %}
+            {% assign lineage_description = "Direct collaborations and broader research influences spanning timed cryptography, MPC, formal verification, remote attestation, public-key systems, post-quantum work, ECC, FHE, and consensus." %}
         {% endcase %}
         <button
           type="button"
           data-knowledge-lineage-scene="{{ scene_key }}"
           data-knowledge-lineage-map-title="{{ lineage_title | escape }}"
           data-knowledge-lineage-map-description="{{ lineage_description | escape }}"
-          data-knowledge-lineage-exclude="{{ lineage_exclusions }}"
-          data-knowledge-lineage-exclude-notes="{{ lineage_note_exclusions }}"
           aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
         >
           {{ lineage_label | escape }}
@@ -169,22 +204,34 @@ knowledge_hub: true
         <div class="knowledge-lineage-foundations" data-knowledge-lineage-notes hidden></div>
       </div>
 
-      <div class="knowledge-lineage-legend" aria-label="Connection types">
-        <strong>Connections</strong>
-        <ul>
-          {% for link_type in site.data.curiosity_connections.link_types %}
-            <li data-link-type="{{ link_type[0] }}"><span aria-hidden="true"></span>{{ link_type[1].label | escape }}</li>
-          {% endfor %}
-        </ul>
+      <div class="knowledge-lineage-legend" aria-label="People and connection types">
+        <div class="knowledge-lineage-legend__group">
+          <strong>People</strong>
+          <ul>
+            <li data-person-relationship="collaborator"><span aria-hidden="true"></span>Direct collaborator</li>
+            <li data-person-relationship="influence"><span aria-hidden="true"></span>Historical / intellectual influence</li>
+          </ul>
+        </div>
+        <div class="knowledge-lineage-legend__group">
+          <strong>Connections</strong>
+          <ul>
+            {% for link_type in site.data.curiosity_connections.link_types %}
+              <li data-link-type="{{ link_type[0] }}"><span aria-hidden="true"></span>{{ link_type[1].label | escape }}</li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
 
       <div class="knowledge-lineage-detail" data-knowledge-lineage-detail aria-live="polite">
         <p>Select a person, idea, paper, or patent to follow its connections.</p>
       </div>
-      <p class="knowledge-lineage-qualification">{{ site.data.curiosity_connections.evidence_note | escape }}</p>
+      <p class="knowledge-lineage-qualification">{{ site.data.curiosity_connections.evidence_note | escape }} {{ site.data.knowledge_lineage_overlay.evidence_note | escape }}</p>
     </div>
 
     <noscript><p class="knowledge-noscript">The interactive lineage views require JavaScript; their source material is also available through the idea maps in the left sidebar.</p></noscript>
+    <script type="application/json" data-knowledge-lineage-overlay>
+      {{ site.data.knowledge_lineage_overlay | jsonify }}
+    </script>
   </section>
 
   <section class="knowledge-explainer" id="map-anatomy" aria-labelledby="map-anatomy-heading">

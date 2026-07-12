@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://keldefrawy.github.io/schemas/arcade-game.schema.json",
+  "title": "Cryptography Arcade game registry",
+  "description": "Phase 1 schema for _data/arcade_games.yml. Cross-record ID uniqueness and cross-file publication/theme/module resolution are validated separately.",
+  "type": "array",
+  "minItems": 1,
+  "items": { "$ref": "#/$defs/game" },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 80
+    },
+    "nonEmptyText": {
+      "type": "string",
+      "minLength": 12,
+      "maxLength": 1200
+    },
+    "paperRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["paper_id", "role"],
+      "properties": {
+        "paper_id": { "type": "integer", "minimum": 1, "maximum": 999999 },
+        "role": {
+          "type": "string",
+          "enum": ["primary_mechanic", "background", "campaign_extension", "caveat_extension"]
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_modes", "modes"],
+      "properties": {
+        "input_modes": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["keyboard", "pointer", "touch", "switch"] }
+        },
+        "modes": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["reduced-motion", "relaxed-timing", "text-summary", "high-contrast", "non-color-cues", "screen-reader-table"]
+          }
+        }
+      }
+    },
+    "persistence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["progress", "resumable_runs", "save_schema_version"],
+      "properties": {
+        "progress": { "type": "boolean" },
+        "resumable_runs": { "type": "boolean" },
+        "save_schema_version": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "fidelity", "model_statement", "review_status"],
+      "properties": {
+        "kind": { "enum": ["paper-derived", "reference-derived"] },
+        "fidelity": {
+          "enum": ["conceptual", "mechanism-faithful", "protocol-faithful", "illustrative-hybrid"]
+        },
+        "paper_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/paperRef" }
+        },
+        "model_statement": { "$ref": "#/$defs/nonEmptyText" },
+        "review_status": {
+          "enum": ["rules-draft", "source-audited", "fixture-audited", "author-reviewed", "release-reviewed"]
+        }
+      }
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["game_version", "rules_version", "seed_version", "save_schema_version"],
+      "properties": {
+        "game_version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?$"
+        },
+        "rules_version": { "type": "integer", "minimum": 1 },
+        "seed_version": { "type": "integer", "minimum": 1 },
+        "save_schema_version": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "game": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "catalog_id",
+        "id",
+        "slug",
+        "title",
+        "category",
+        "status",
+        "size",
+        "featured",
+        "session_minutes",
+        "difficulty_levels",
+        "mechanics",
+        "renderer",
+        "entry_module",
+        "default_theme",
+        "supported_themes",
+        "player_promise",
+        "learning_objectives",
+        "limitations",
+        "accessibility",
+        "persistence",
+        "provenance",
+        "release"
+      ],
+      "properties": {
+        "schema_version": { "const": 1 },
+        "catalog_id": { "type": "string", "pattern": "^(?:R(?:0[0-9]|1[0-9])|C(?:0[1-9]|1[0-6]))$" },
+        "id": { "$ref": "#/$defs/slug" },
+        "slug": { "$ref": "#/$defs/slug" },
+        "title": { "type": "string", "minLength": 3, "maxLength": 100 },
+        "category": {
+          "enum": ["classic", "research", "security", "security-research", "security-algorithms", "experimental"]
+        },
+        "status": { "enum": ["planned", "prototype", "preview", "released", "retired"] },
+        "size": { "enum": ["S", "M", "L", "XL"] },
+        "featured": { "type": "boolean" },
+        "session_minutes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "prefixItems": [
+            { "type": "integer", "minimum": 1, "maximum": 120 },
+            { "type": "integer", "minimum": 1, "maximum": 120 }
+          ],
+          "items": false
+        },
+        "difficulty_levels": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["guided", "standard", "expert"] }
+        },
+        "mechanics": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/slug" }
+        },
+        "renderer": { "enum": ["dom", "svg", "canvas", "canvas-dom-hybrid", "svg-dom-hybrid"] },
+        "entry_module": {
+          "type": "string",
+          "pattern": "^/assets/js/arcade/games/[a-z0-9]+(?:-[a-z0-9]+)*/index\\.js$"
+        },
+        "default_theme": { "const": "paper-lab" },
+        "supported_themes": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "enum": ["paper-lab", "classic-cabinet", "ink-circuit", "neon-terminal", "techno-noir-city", "command-grid", "xenocrypt"]
+          },
+          "allOf": [
+            { "contains": { "const": "paper-lab" } },
+            { "contains": { "const": "classic-cabinet" } }
+          ]
+        },
+        "player_promise": { "$ref": "#/$defs/nonEmptyText" },
+        "learning_objectives": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyText" }
+        },
+        "limitations": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyText" }
+        },
+        "accessibility": { "$ref": "#/$defs/accessibility" },
+        "persistence": { "$ref": "#/$defs/persistence" },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "release": { "$ref": "#/$defs/release" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "category": { "const": "classic" } }, "required": ["category"] },
+          "then": {
+            "properties": {
+              "catalog_id": { "type": "string", "pattern": "^C(?:0[1-9]|1[0-6])$" },
+              "provenance": {
+                "type": "object",
+                "properties": { "kind": { "const": "reference-derived" } }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "catalog_id": { "type": "string", "pattern": "^R(?:0[0-9]|1[0-9])$" },
+              "provenance": {
+                "type": "object",
+                "properties": {
+                  "kind": { "const": "paper-derived" },
+                  "paper_refs": { "type": "array", "minItems": 1 }
+                },
+                "required": ["paper_refs"]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

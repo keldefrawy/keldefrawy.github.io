@@ -1,0 +1,31 @@
+{% assign arcade_game = include.game %}
+<section class="arcade-source-panel" aria-labelledby="arcade-source-heading">
+  <p class="arcade-kicker">Provenance and limits</p>
+  <h2 id="arcade-source-heading">Based on the research</h2>
+  {% if arcade_game.provenance.kind == 'paper-derived' and arcade_game.provenance.paper_refs %}
+    <ul class="arcade-source-list">
+      {% for reference in arcade_game.provenance.paper_refs %}
+        {% assign paper_id = reference.paper_id | default: reference %}
+        {% assign publications = site.data.publications | where: 'id', paper_id %}
+        {% assign publication = publications | first %}
+        <li>
+          <a href="{{ '/knowledge/papers/paper-' | append: paper_id | append: '/' | relative_url }}">
+            Paper #{{ paper_id }}{% if publication %}: {{ publication.title | escape }}{% endif %}
+          </a>
+          {% if publication %}
+            <span>{{ publication.authors | escape }}{% if publication.year %} · {{ publication.year }}{% endif %}{% if publication.venue %} · {{ publication.venue | escape }}{% endif %}</span>
+          {% endif %}
+          {% if reference.role %}<small>Role: {{ reference.role | replace: '_', ' ' | replace: '-', ' ' }}</small>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% if arcade_game.provenance.review_status %}
+      <p><strong>Source review:</strong> {{ arcade_game.provenance.review_status | replace: '_', ' ' | replace: '-', ' ' }}.</p>
+    {% endif %}
+  {% else %}
+    <p>This is a generic Cryptography Classic. It teaches a foundational idea and is not presented as a game derived from one of Karim's papers.</p>
+  {% endif %}
+  {% if arcade_game.provenance.model_statement %}
+    <p><strong>Model statement:</strong> {{ arcade_game.provenance.model_statement | escape }}</p>
+  {% endif %}
+</section>

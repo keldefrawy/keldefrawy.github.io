@@ -1,16 +1,41 @@
 title: Karim Eldefrawy
 description: Cryptography, Cybersecurity, Privacy
+discipline: Computer Science
 url: https://keldefrawy.github.io
 baseurl: ""
+timezone: America/Los_Angeles
 theme: jekyll-theme-minimal
 
 plugins:
   - jekyll-sitemap
 
+# Keep development and test infrastructure out of the published GitHub Pages
+# artifact. The docs/ directory is intentionally not excluded.
+exclude:
+  - .bundle/
+  - .jekyll-cache/
+  - .sass-cache/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - playwright.config.mjs
+  - vitest.config.mjs
+  - scripts/
+  - tests/
+  - test-results/
+  - playwright-report/
+  - coverage/
+  - vendor/
+
 collections:
   papers:
     output: true
     permalink: /knowledge/papers/:name/
+  arcade_games:
+    output: true
+    permalink: /arcade/games/:name/
 
 defaults:
   - scope:
@@ -18,3 +43,14 @@ defaults:
       type: papers
     values:
       layout: knowledge-map
+  - scope:
+      path: ""
+      type: arcade_games
+    values:
+      layout: arcade-game
+      arcade_page: true
+  - scope:
+      path: "arcade"
+    values:
+      layout: arcade-hub
+      arcade_page: true

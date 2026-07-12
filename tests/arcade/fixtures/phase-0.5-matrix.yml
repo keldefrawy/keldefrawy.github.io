@@ -1,0 +1,21 @@
+phase: "0.5"
+status: planned
+target:
+  minimum: 96
+  maximum: 120
+  planned: 104
+categories:
+  source_contracts: 28
+  javascript_characterization: 24
+  jekyll_integration: 18
+  browser_gameplay: 18
+  accessibility_visual_lifecycle: 16
+full_regression:
+  prior_gates: []
+  retained_distinct_checks: 0
+  required: true
+evidence_directory: test-results/arcade/phase-0.5
+notes:
+  - Characterize the existing game before model or DOM refactoring.
+  - Browser checks run in desktop and mobile Chrome projects where applicable.
+  - Stable visual snapshots are reviewed before becoming committed baselines.

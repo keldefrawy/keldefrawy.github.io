@@ -33,12 +33,13 @@
       return;
     }
 
-    var controls = toArray(root.querySelectorAll("[data-knowledge-area-control]"));
+    var controls = toArray(root.querySelectorAll("[data-knowledge-scope-control]"));
     var catalogPapers = toArray(document.querySelectorAll("[data-knowledge-paper]"));
     var detail = root.querySelector("[data-knowledge-area-detail]");
     var selectedDomain = root.querySelector("[data-knowledge-selected-domain]");
     var selectedName = root.querySelector("[data-knowledge-selected-name]");
     var selectedDescription = root.querySelector("[data-knowledge-selected-description]");
+    var selectedNote = root.querySelector("[data-knowledge-selected-note]");
     var subtopics = root.querySelector("[data-knowledge-subtopics]");
     var topicCloud = root.querySelector("[data-knowledge-topic-cloud]");
     var topicsMore = root.querySelector("[data-knowledge-topics-more]");
@@ -71,8 +72,23 @@
       };
     });
 
-    function recordsForActiveArea() {
-      var slug = activeControl ? activeControl.getAttribute("data-knowledge-area-control") : "";
+    function recordsForActiveScope() {
+      var kind = activeControl ? activeControl.getAttribute("data-scope-kind") : "";
+      var slug = activeControl ? activeControl.getAttribute("data-scope-slug") : "";
+      var paperIds;
+
+      if (kind === "collection") {
+        paperIds = parseJSON(activeControl.getAttribute("data-paper-ids"), []).map(function (id) {
+          return String(id);
+        });
+        return paperIds.map(function (paperId) {
+          return records.filter(function (record) {
+            return String(record.id) === paperId;
+          })[0] || null;
+        }).filter(function (record) {
+          return record !== null;
+        });
+      }
 
       return records.filter(function (record) {
         return record.topic === slug;
@@ -143,7 +159,7 @@
     }
 
     function renderTopics() {
-      var areaRecords = recordsForActiveArea();
+      var areaRecords = recordsForActiveScope();
       var topics = topicRecords(areaRecords);
       var visibleTopics = showAllTopics ? topics : topics.slice(0, TOPIC_PREVIEW_LIMIT);
 
@@ -184,7 +200,7 @@
     }
 
     function renderPapers() {
-      var areaRecords = recordsForActiveArea();
+      var areaRecords = recordsForActiveScope();
       var matchingRecords = areaRecords.filter(paperMatchesTag);
       var visibleRecords = activeTag !== null || showAllPapers ?
         matchingRecords : matchingRecords.slice(0, PAPER_PREVIEW_LIMIT);
@@ -220,7 +236,7 @@
     }
 
     function renderSubtopics(control) {
-      var themes = parseJSON(control.getAttribute("data-area-subtopics"), []);
+      var themes = parseJSON(control.getAttribute("data-scope-subtopics"), []);
 
       clear(subtopics);
       themes.forEach(function (theme) {
@@ -231,8 +247,11 @@
       });
     }
 
-    function updateHash(slug) {
-      var hash = "#knowledge-area-" + slug;
+    function updateHash(control) {
+      var slug = control.getAttribute("data-scope-slug");
+      var prefix = control.getAttribute("data-scope-kind") === "collection" ?
+        "#knowledge-collection-" : "#knowledge-area-";
+      var hash = prefix + slug;
 
       if (window.location.hash === hash) {
         return;
@@ -244,8 +263,10 @@
       }
     }
 
-    function selectArea(control, shouldUpdateHash) {
+    function selectScope(control, shouldUpdateHash) {
       var slug;
+      var kind;
+      var scopeNote;
 
       if (!control) {
         return;
@@ -255,7 +276,9 @@
       activeTag = null;
       showAllPapers = false;
       showAllTopics = false;
-      slug = control.getAttribute("data-knowledge-area-control");
+      slug = control.getAttribute("data-scope-slug");
+      kind = control.getAttribute("data-scope-kind");
+      scopeNote = control.getAttribute("data-scope-note") || "";
 
       controls.forEach(function (candidate) {
         if (candidate === control) {
@@ -274,8 +297,14 @@
       if (selectedDescription) {
         selectedDescription.textContent = control.getAttribute("data-area-description") || "";
       }
+      if (selectedNote) {
+        selectedNote.textContent = scopeNote;
+        selectedNote.hidden = !scopeNote;
+      }
       if (catalogLink) {
-        catalogLink.href = "#catalog-topic-" + slug;
+        catalogLink.href = kind === "collection" ? "#paper-catalog" : "#catalog-topic-" + slug;
+        catalogLink.textContent = kind === "collection" ?
+          "View all paper maps in the complete catalog" : "View this area in the complete catalog";
       }
 
       renderSubtopics(control);
@@ -284,32 +313,39 @@
       detail.hidden = false;
 
       if (shouldUpdateHash) {
-        updateHash(slug);
+        updateHash(control);
       }
     }
 
     function controlFromHash() {
       var hash = window.location.hash.replace(/^#/, "");
-      var prefixes = ["knowledge-area-", "catalog-topic-"];
+      var prefixes = [
+        { kind: "collection", value: "knowledge-collection-" },
+        { kind: "area", value: "knowledge-area-" },
+        { kind: "area", value: "catalog-topic-" }
+      ];
       var slug = "";
+      var kind = "";
 
       prefixes.some(function (prefix) {
-        if (hash.indexOf(prefix) === 0) {
-          slug = hash.slice(prefix.length);
+        if (hash.indexOf(prefix.value) === 0) {
+          slug = hash.slice(prefix.value.length);
+          kind = prefix.kind;
           return true;
         }
         return false;
       });
 
       return controls.filter(function (control) {
-        return control.getAttribute("data-knowledge-area-control") === slug;
+        return control.getAttribute("data-scope-slug") === slug &&
+          control.getAttribute("data-scope-kind") === kind;
       })[0] || null;
     }
 
     controls.forEach(function (control) {
       control.addEventListener("click", function (event) {
         event.preventDefault();
-        selectArea(control, true);
+        selectScope(control, true);
       });
     });
 
@@ -331,24 +367,25 @@
       var control = controlFromHash();
 
       if (control && control !== activeControl) {
-        selectArea(control, false);
+        selectScope(control, false);
       }
     });
     window.addEventListener("popstate", function () {
       var control = controlFromHash();
 
       if (control && control !== activeControl) {
-        selectArea(control, false);
+        selectScope(control, false);
       }
     });
 
-    selectArea(controlFromHash() || controls[0], false);
+    selectScope(controlFromHash() || controls[0], false);
     root.setAttribute("data-knowledge-ready", "true");
   }
 
   function initializeLineages() {
     var root = document.querySelector("[data-knowledge-lineages]");
     var dataScript = document.querySelector("[data-curiosity-connections-data]");
+    var overlayScript = root ? root.querySelector("[data-knowledge-lineage-overlay]") : null;
 
     if (!root || !dataScript || root.getAttribute("data-knowledge-lineages-ready") === "true") {
       return;
@@ -356,6 +393,8 @@
 
     var source = parseJSON(dataScript.textContent, {});
     var scenes = source.scenes || source;
+    var overlaySource = overlayScript ? parseJSON(overlayScript.textContent, {}) : {};
+    var overlayScenes = overlaySource.scenes || {};
     var sceneButtons = toArray(root.querySelectorAll("[data-knowledge-lineage-scene]"));
     var title = root.querySelector("[data-knowledge-lineage-title]");
     var description = root.querySelector("[data-knowledge-lineage-description]");
@@ -546,6 +585,8 @@
       var item = document.createElement("li");
       var element = kind === "paper" || kind === "patent" ?
         document.createElement("a") : document.createElement("button");
+      var relationship;
+      var relationshipBadge;
 
       if (!node || !node.id) {
         return;
@@ -558,11 +599,23 @@
         element.href = node.url || "#";
       }
       element.className = "knowledge-lineage-node knowledge-lineage-node--" + kind;
+      if (kind === "person") {
+        relationship = node.relationship === "collaborator" ? "collaborator" : "influence";
+        element.classList.add("knowledge-lineage-node--relationship-" + relationship);
+        element.setAttribute("data-person-relationship", relationship);
+      }
       if (node.foundation) {
         element.classList.add("is-foundation");
       }
       element.setAttribute("data-lineage-node-id", node.id);
       addText(element, node.label || node.title || node.id, false);
+      if (kind === "person") {
+        relationshipBadge = document.createElement("small");
+        relationshipBadge.className = "knowledge-lineage-node__relationship";
+        relationshipBadge.textContent = relationship === "collaborator" ?
+          "Direct collaborator" : "Intellectual lineage";
+        element.appendChild(relationshipBadge);
+      }
       if (node.status) {
         addText(element, node.status, true);
       }
@@ -689,11 +742,11 @@
       drawFrame = window.requestAnimationFrame(drawLines);
     }
 
-    function commaSeparatedSet(value) {
+    function valueSet(values) {
       var result = {};
 
-      String(value || "").split(",").forEach(function (entry) {
-        var key = entry.trim();
+      (values || []).forEach(function (entry) {
+        var key = String(entry || "").trim();
 
         if (key) {
           result[key] = true;
@@ -702,9 +755,52 @@
       return result;
     }
 
-    function scientificScene(scene, button) {
-      var excludedNodes = commaSeparatedSet(button.getAttribute("data-knowledge-lineage-exclude"));
-      var excludedNoteKinds = commaSeparatedSet(button.getAttribute("data-knowledge-lineage-exclude-notes"));
+    function mergedNodes(baseNodes, overlayNodes) {
+      var byId = {};
+      var order = [];
+
+      function addNode(node) {
+        var merged;
+
+        if (!node || !node.id) {
+          return;
+        }
+        if (!byId[node.id]) {
+          byId[node.id] = {};
+          order.push(node.id);
+        }
+        merged = byId[node.id];
+        Object.keys(node).forEach(function (key) {
+          merged[key] = node[key];
+        });
+      }
+
+      (baseNodes || []).forEach(addNode);
+      (overlayNodes || []).forEach(addNode);
+      return order.map(function (id) {
+        return byId[id];
+      });
+    }
+
+    function mergedLinks(baseLinks, overlayLinks) {
+      var seen = {};
+
+      return (baseLinks || []).concat(overlayLinks || []).filter(function (link) {
+        var key = [link.from, link.to, link.type || "direct", link.label || ""].join("|");
+
+        if (seen[key]) {
+          return false;
+        }
+        seen[key] = true;
+        return true;
+      });
+    }
+
+    function scientificScene(scene, overlay) {
+      var excludedNodes = valueSet(overlay.exclude_node_ids);
+      var excludedNoteKinds = valueSet(overlay.exclude_note_kinds);
+      var result;
+      var visibleNodeIds = {};
 
       function visibleNodes(nodes) {
         return (nodes || []).filter(function (node) {
@@ -712,31 +808,39 @@
         });
       }
 
-      return {
-        ideas: visibleNodes(scene.ideas),
-        links: (scene.links || []).filter(function (link) {
-          return !excludedNodes[link.from] && !excludedNodes[link.to];
-        }),
-        notes: (scene.notes || []).filter(function (note) {
+      result = {
+        ideas: visibleNodes(mergedNodes(scene.ideas, overlay.ideas)),
+        notes: (scene.notes || []).concat(overlay.notes || []).filter(function (note) {
           return !excludedNoteKinds[note.kind];
         }),
-        papers: visibleNodes(scene.papers),
-        patents: visibleNodes(scene.patents),
-        people: visibleNodes(scene.people)
+        papers: visibleNodes(mergedNodes(scene.papers, overlay.papers)),
+        patents: visibleNodes(mergedNodes(scene.patents, overlay.patents)),
+        people: visibleNodes(mergedNodes(scene.people, overlay.people))
       };
+
+      [result.people, result.ideas, result.papers, result.patents].forEach(function (nodes) {
+        nodes.forEach(function (node) {
+          visibleNodeIds[node.id] = true;
+        });
+      });
+      result.links = mergedLinks(scene.links, overlay.links).filter(function (link) {
+        return visibleNodeIds[link.from] && visibleNodeIds[link.to];
+      });
+      return result;
     }
 
     function renderScene(sceneName) {
-      var scene = scenes[sceneName];
+      var scene = scenes[sceneName] || {};
+      var overlay = overlayScenes[sceneName] || {};
       var selectedButton = sceneButtons.filter(function (button) {
         return button.getAttribute("data-knowledge-lineage-scene") === sceneName;
       })[0];
 
-      if (!scene || !selectedButton) {
+      if (!selectedButton) {
         return;
       }
 
-      activeScene = scientificScene(scene, selectedButton);
+      activeScene = scientificScene(scene, overlay);
       activeSceneName = sceneName;
       clearLineage();
       if (title) {
