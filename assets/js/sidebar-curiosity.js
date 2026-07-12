@@ -333,6 +333,7 @@
     var peopleLane = dialog.querySelector("[data-curiosity-map-people]");
     var ideasLane = dialog.querySelector("[data-curiosity-map-ideas]");
     var workLane = dialog.querySelector("[data-curiosity-map-papers]");
+    var foundationNotes = dialog.querySelector("[data-curiosity-map-notes]");
     var detail = dialog.querySelector("[data-curiosity-map-detail]");
     var connectionData = parseConnectionsData();
     var scenesData = connectionData.scenes || connectionData;
@@ -372,6 +373,10 @@
       });
       if (edgeLayer) {
         edgeLayer.textContent = "";
+      }
+      if (foundationNotes) {
+        foundationNotes.textContent = "";
+        foundationNotes.hidden = true;
       }
       nodeRecords = {};
       edgeRecords = [];
@@ -433,9 +438,35 @@
       }
 
       targets = connectionTargets(record.data.id, scene);
-      paragraph.textContent = record.data.label + (targets.length ?
-        " connects here to " + targets.join(", ") + "." : ".");
+      paragraph.textContent = record.data.note ?
+        record.data.label + ": " + record.data.note :
+        record.data.label + ".";
       detail.appendChild(paragraph);
+      if (record.data.scope === "all_work") {
+        paragraph = document.createElement("p");
+        paragraph.className = "curiosity-connections__detail-links";
+        paragraph.textContent = "Scope shown: every work item in this map.";
+        detail.appendChild(paragraph);
+      } else if (targets.length) {
+        paragraph = document.createElement("p");
+        paragraph.className = "curiosity-connections__detail-links";
+        paragraph.textContent = "Connections shown: " + targets.join(", ") + ".";
+        detail.appendChild(paragraph);
+      }
+    }
+
+    function includeScopedNodes(record, nodes) {
+      if (!record || record.data.scope !== "all_work") {
+        return;
+      }
+
+      Object.keys(nodeRecords).forEach(function (id) {
+        var kind = nodeRecords[id].kind;
+
+        if (kind === "paper" || kind === "patent") {
+          nodes[id] = true;
+        }
+      });
     }
 
     function linkedSubgraph(nodeId, kind, scene) {
@@ -444,6 +475,7 @@
       var firstHop = [];
 
       nodes[nodeId] = true;
+      includeScopedNodes(nodeRecords[nodeId], nodes);
       (scene.links || []).forEach(function (link, index) {
         if (link.from === nodeId || link.to === nodeId) {
           var other = link.from === nodeId ? link.to : link.from;
@@ -460,6 +492,7 @@
           if (!intermediate || intermediate.kind !== "idea") {
             return;
           }
+          includeScopedNodes(intermediate, nodes);
           (scene.links || []).forEach(function (link, index) {
             if (link.from === intermediateId || link.to === intermediateId) {
               nodes[link.from] = true;
@@ -516,6 +549,22 @@
       var currentOrder = order[record.kind];
       var targetOrder = direction === "right" ? currentOrder + 1 : currentOrder - 1;
       var target = null;
+
+      if (direction === "right" && record.data.scope === "all_work") {
+        Object.keys(nodeRecords).some(function (id) {
+          var candidate = nodeRecords[id];
+
+          if (candidate.kind === "paper" || candidate.kind === "patent") {
+            target = candidate.element;
+            return true;
+          }
+          return false;
+        });
+        if (target) {
+          target.focus();
+          return;
+        }
+      }
 
       (scene.links || []).some(function (link) {
         var otherId = null;
@@ -590,6 +639,9 @@
         element.href = node.url || "#";
       }
       element.className = "curiosity-map__node curiosity-map__node--" + kind;
+      if (node.foundation) {
+        element.classList.add("is-foundation");
+      }
       element.setAttribute("data-curiosity-node-id", node.id);
       element.setAttribute("data-curiosity-node-kind", kind);
       addText(element, "curiosity-map__node-label", node.label || node.title || node.id);
@@ -710,6 +762,37 @@
       (scene.patents || []).forEach(function (node) {
         createNode(node, "patent", workLane, scene);
       });
+      renderFoundationNotes(scene.notes || []);
+    }
+
+    function renderFoundationNotes(notes) {
+      var heading;
+      var list;
+
+      if (!foundationNotes || !notes.length) {
+        return;
+      }
+
+      foundationNotes.textContent = "";
+      heading = document.createElement("p");
+      heading.className = "curiosity-connections__foundations-title";
+      heading.textContent = "Foundational layer across this map";
+      foundationNotes.appendChild(heading);
+      list = document.createElement("ul");
+      notes.forEach(function (note) {
+        var item = document.createElement("li");
+        var label = document.createElement("strong");
+        var text = document.createElement("span");
+
+        item.setAttribute("data-foundation-kind", note.kind || "general");
+        label.textContent = note.label || "Foundation";
+        text.textContent = note.text || "";
+        item.appendChild(label);
+        item.appendChild(text);
+        list.appendChild(item);
+      });
+      foundationNotes.appendChild(list);
+      foundationNotes.hidden = false;
     }
 
     function scheduleDrawEdges() {

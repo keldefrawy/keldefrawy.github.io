@@ -33,7 +33,15 @@
         Nearly a century of cryptography, passed hand to hand—plaintext not included.
       </p>
       <div class="sidebar-curiosity__actions">
-        <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
+        <button
+          class="sidebar-curiosity__launch"
+          type="button"
+          data-curiosity-open
+          data-curiosity-initial-panel="animation"
+          aria-haspopup="dialog"
+          aria-controls="curiosity-dialog"
+          aria-label="Open The Great Cipher Relay and play the animation"
+        >
           Pass the ciphertext
         </button>
         <button
@@ -92,7 +100,15 @@
         One bit walks into information theory and comes out entangled.
       </p>
       <div class="sidebar-curiosity__actions">
-        <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
+        <button
+          class="sidebar-curiosity__launch"
+          type="button"
+          data-curiosity-open
+          data-curiosity-initial-panel="animation"
+          aria-haspopup="dialog"
+          aria-controls="curiosity-dialog"
+          aria-label="Open The One-Bit Grand Tour and play the animation"
+        >
           Send one bit
         </button>
         <button
@@ -151,7 +167,15 @@
         There is always room for one more idea.
       </p>
       <div class="sidebar-curiosity__actions">
-        <button class="sidebar-curiosity__replay" type="button" data-curiosity-replay>
+        <button
+          class="sidebar-curiosity__launch"
+          type="button"
+          data-curiosity-open
+          data-curiosity-initial-panel="animation"
+          aria-haspopup="dialog"
+          aria-controls="curiosity-dialog"
+          aria-label="Open Hilbert’s Margin Hotel and play the animation"
+        >
           Make room
         </button>
         <button
@@ -300,6 +324,14 @@
               <ol class="curiosity-connections__nodes" data-curiosity-map-papers></ol>
             </section>
           </div>
+
+          <div
+            class="curiosity-connections__foundations"
+            data-curiosity-map-notes
+            role="note"
+            aria-label="Foundational layer"
+            hidden
+          ></div>
         </div>
 
         <div class="curiosity-connections__legend" aria-label="Connection types">
@@ -323,6 +355,8 @@
 
         <p class="curiosity-connections__qualification">
           These are thematic connections, not claims of direct collaboration or a complete intellectual lineage.
+          The foundational layer marks shared mathematical or computational frameworks; it does not mean every
+          paper studies those foundations directly.
         </p>
         <p class="curiosity-connections__knowledge-link">
           <a href="{{ '/knowledge/' | relative_url }}">Explore all scientific knowledge maps</a>

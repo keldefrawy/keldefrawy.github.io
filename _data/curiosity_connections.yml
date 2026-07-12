@@ -1,9 +1,10 @@
-schema_version: "1.0"
+schema_version: "1.2"
 
 evidence_note: >-
   These maps show conceptual connections, not claims of citation or direct
   intellectual influence. Dashed lineage links are deliberately broader than
-  direct paper-topic links.
+  direct paper-topic links. Foundation notes identify shared mathematical,
+  computational, or systems frameworks without treating them as each paper’s topic.
 
 link_types:
   direct:
@@ -15,32 +16,62 @@ link_types:
   lineage:
     label: Conceptual lineage
     description: A historical or conceptual bridge that does not assert citation or direct influence.
-
 scenes:
   hotel:
     title: "Hilbert’s Margin Hotel"
-    map_title: "From Foundations to Verified Cryptography"
-    description: "How foundational questions about infinity, proof, computation, and machines reappear in modern cryptographic research."
+    map_title: "From Foundations to Reliable Cryptographic Systems"
+    description: "How mathematical foundations, models of computation, reliable computing, and formal proof support modern cryptographic and distributed-systems research."
+    notes:
+      - kind: mathematics
+        label: Mathematical foundation
+        text: "Modern set theory, founded by Cantor, supplies the standard language of sets, functions, relations, and mathematical structures used throughout cryptography. Hilbert’s axiomatic program made foundations and formal proof central questions."
+      - kind: computation
+        label: Computational foundation
+        text: "Modern cryptography models adversaries and reductions as efficient algorithms, often probabilistic Turing machines or equivalent circuits; Turing’s model therefore underlies computational security proofs."
+      - kind: systems
+        label: Reliable-computation lineage
+        text: "Von Neumann studied how reliable computation can emerge from unreliable components. Modern distributed fault tolerance, self-stabilization, resilience, and consensus are later developments along this conceptual thread—not fields he originated in their present form."
     people:
       - id: hotel-hilbert
         label: David Hilbert
+        note: "Hilbert’s axiomatic program made mathematical foundations and formal proof central; Hilbert’s Hotel also illustrates countable infinity."
       - id: hotel-cantor
         label: Georg Cantor
+        note: "Cantor founded modern set theory and made comparisons among infinite sets mathematically precise."
       - id: hotel-godel
         label: Kurt Gödel
       - id: hotel-turing
         label: Alan Turing
+        note: "Turing’s general model of computation underlies modern definitions of algorithms and efficient adversaries, often through equivalent circuit or RAM models."
       - id: hotel-von-neumann
         label: John von Neumann
+        note: "Von Neumann shaped stored-program architecture and studied how reliable computation can be built from unreliable components. This is a conceptual precursor to modern fault-tolerant and distributed systems, not a claim that he developed today’s consensus protocols."
     ideas:
-      - id: hotel-infinity
-        label: Infinity and set theory
+      - id: hotel-foundations
+        label: Set theory and mathematical foundations
+        status: Foundation beneath the mathematics
+        foundation: true
+        scope: all_work
+        note: "Most mathematics used in cryptography can be formalized in axiomatic set theory; this is a foundational dependency, not a claim that the linked papers study set theory."
       - id: hotel-formal-methods
         label: Formal systems and machine-checked proof
-      - id: hotel-resource-bounds
-        label: Resource-bounded computation
+      - id: hotel-computational-security
+        label: Turing machines and computational security
+        status: Foundation for security proofs
+        foundation: true
+        note: "Cryptographic proofs model adversaries, simulators, and reductions as efficient probabilistic algorithms—commonly Turing machines or equivalent circuit models."
       - id: hotel-architecture
         label: Computer architecture
+      - id: hotel-reliable-computation
+        label: Reliable computation from unreliable components
+        status: Von Neumann’s direct contribution
+        foundation: true
+        note: "Von Neumann analyzed redundancy and probabilistic methods for synthesizing reliable computation from unreliable logical components."
+      - id: hotel-distributed-resilience
+        label: Distributed systems, consensus, and recovery
+        status: Later conceptual lineage
+        foundation: true
+        note: "Modern Byzantine consensus, self-stabilization, proactive recovery, and resilient infrastructure extend the reliable-computation problem into distributed settings."
     papers:
       - id: hotel-paper-51
         publication_id: 51
@@ -66,16 +97,58 @@ scenes:
         title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
         url: /knowledge/papers/paper-59/
         note: "Co-designs a programmable architecture and compiler for complete FHE programs."
+      - id: hotel-paper-36
+        publication_id: 36
+        label: "#36 · PODC secure self-stabilization"
+        title: "Brief Announcement: Secure Self-Stabilizing Computation"
+        url: /knowledge/papers/paper-36/
+        note: "Defines distributed computation that autonomously recovers correctness, privacy, and integrity after transient compromise."
+      - id: hotel-paper-25
+        publication_id: 25
+        label: "#25 · PODC proactive MPC"
+        title: "How to Withstand Mobile Virus Attacks, Revisited"
+        url: /knowledge/papers/paper-25/
+        note: "Builds proactive MPC that remains secure while corruptions move among machines over time."
+      - id: hotel-paper-31
+        publication_id: 31
+        label: "#31 · PODC dishonest-majority sharing"
+        title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
+        url: /knowledge/papers/paper-31/
+        note: "Shows proactive secret sharing can retain confidentiality under mobile and dishonest-majority corruption patterns."
+      - id: hotel-paper-63
+        publication_id: 63
+        label: "#63 · Byzantine consensus"
+        title: "How Byzantine Is a Send Corruption?"
+        url: /knowledge/papers/paper-63/
+        note: "Studies consensus under Byzantine, send, and receive faults and compares their power and resilience thresholds."
+      - id: hotel-paper-29
+        publication_id: 29
+        label: "#29 · Byzantine-fault-tolerant SDN"
+        title: "Byzantine Fault Tolerant Software-Defined Networking (SDN) Controllers"
+        url: /knowledge/papers/paper-29/
+        note: "Uses replicated state-machine controllers so an SDN control plane can survive malicious components."
+      - id: hotel-paper-23
+        publication_id: 23
+        label: "#23 · Resilient cloud infrastructure"
+        title: "An Architecture for a Resilient Cloud Computing Infrastructure"
+        url: /knowledge/papers/paper-23/
+        note: "Designs a self-healing cloud control plane that restores compromised nodes and maintains service under continuing corruption."
+      - id: hotel-paper-57
+        publication_id: 57
+        label: "#57 · Distributed repair and refresh"
+        title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
+        url: /knowledge/papers/paper-57/
+        note: "Connects distributed-storage repair with proactive secret refresh and recovery under mobile attacks."
     patents: []
     links:
       - from: hotel-cantor
-        to: hotel-infinity
+        to: hotel-foundations
         type: direct
-        label: founded modern set theory
+        label: created modern set theory
       - from: hotel-hilbert
-        to: hotel-infinity
+        to: hotel-foundations
         type: lineage
-        label: the infinite-hotel thought experiment
+        label: axiomatic and foundational program
       - from: hotel-hilbert
         to: hotel-formal-methods
         type: direct
@@ -89,13 +162,21 @@ scenes:
         type: lineage
         label: mechanized reasoning
       - from: hotel-turing
-        to: hotel-resource-bounds
+        to: hotel-computational-security
         type: lineage
-        label: models of computation
+        label: Turing-machine model; basis for later efficient-adversary models
       - from: hotel-von-neumann
         to: hotel-architecture
         type: direct
         label: stored-program architecture
+      - from: hotel-von-neumann
+        to: hotel-reliable-computation
+        type: direct
+        label: reliable computation from unreliable components
+      - from: hotel-von-neumann
+        to: hotel-distributed-resilience
+        type: lineage
+        label: conceptual bridge to modern fault-tolerant distributed computing
       - from: hotel-formal-methods
         to: hotel-paper-51
         type: direct
@@ -104,14 +185,50 @@ scenes:
         to: hotel-paper-58
         type: direct
         label: verified zero knowledge
-      - from: hotel-resource-bounds
+      - from: hotel-computational-security
         to: hotel-paper-78
         type: direct
         label: depth-indexed residual complexity
+      - from: hotel-computational-security
+        to: hotel-paper-51
+        type: uses
+        label: computational adversaries and reductions
+      - from: hotel-computational-security
+        to: hotel-paper-58
+        type: uses
+        label: computational zero-knowledge security
       - from: hotel-architecture
         to: hotel-paper-59
         type: direct
         label: specialized cryptographic architecture
+      - from: hotel-distributed-resilience
+        to: hotel-paper-36
+        type: direct
+        label: PODC secure self-stabilization after transient compromise
+      - from: hotel-distributed-resilience
+        to: hotel-paper-25
+        type: direct
+        label: PODC proactive computation under mobile corruptions
+      - from: hotel-distributed-resilience
+        to: hotel-paper-31
+        type: direct
+        label: PODC proactive sharing with a dishonest majority
+      - from: hotel-distributed-resilience
+        to: hotel-paper-63
+        type: direct
+        label: Byzantine consensus under send and receive faults
+      - from: hotel-distributed-resilience
+        to: hotel-paper-29
+        type: direct
+        label: Byzantine fault-tolerant state-machine replication
+      - from: hotel-distributed-resilience
+        to: hotel-paper-23
+        type: direct
+        label: self-healing infrastructure and recovery windows
+      - from: hotel-distributed-resilience
+        to: hotel-paper-57
+        type: direct
+        label: distributed repair and proactive refresh
 
   tour:
     title: "The One-Bit Grand Tour"
@@ -268,10 +385,15 @@ scenes:
   cipher:
     title: "The Great Cipher Relay"
     map_title: "A Century of Cryptographic Ideas"
-    description: "From cryptanalysis and perfect secrecy to zero knowledge, elliptic curves, and encrypted computation."
+    description: "From Turing’s cryptanalysis and model of computation through perfect secrecy, public-key cryptography, zero knowledge, elliptic curves, and encrypted computation."
+    notes:
+      - kind: computation
+        label: Computational foundation
+        text: "Turing’s lasting role in cryptography is also foundational: efficient adversaries, reductions, and security experiments are modeled as algorithms, commonly using probabilistic Turing machines or equivalent circuits."
     people:
       - id: cipher-turing
         label: Alan Turing
+        note: "Beyond cryptanalysis, Turing’s general model of computation underlies the efficient algorithm and adversary models used throughout computational-security proofs."
       - id: cipher-shannon
         label: Claude Shannon
       - id: cipher-diffie-hellman
@@ -287,8 +409,13 @@ scenes:
       - id: cipher-gentry
         label: Craig Gentry
     ideas:
-      - id: cipher-formal-computation
-        label: Cryptanalysis and formal computation
+      - id: cipher-cryptanalysis
+        label: Cryptanalysis
+      - id: cipher-computational-security
+        label: Turing machines and computational security
+        status: Foundation for security proofs
+        foundation: true
+        note: "Modern computational cryptography defines schemes, adversaries, experiments, simulators, and reductions using efficient probabilistic algorithms—often Turing machines or equivalent circuit models."
       - id: cipher-information
         label: Perfect secrecy and information limits
       - id: cipher-key-exchange
@@ -369,13 +496,25 @@ scenes:
         note: "The strongest locally documented direct connection to elliptic-curve cryptography."
     links:
       - from: cipher-turing
-        to: cipher-formal-computation
+        to: cipher-cryptanalysis
         type: direct
-        label: cryptanalysis and models of computation
-      - from: cipher-formal-computation
-        to: cipher-paper-51
+        label: cryptanalysis
+      - from: cipher-turing
+        to: cipher-computational-security
         type: lineage
-        label: machine-checked cryptography
+        label: Turing-machine model; basis for later efficient-adversary models
+      - from: cipher-computational-security
+        to: cipher-paper-51
+        type: uses
+        label: computational security model
+      - from: cipher-computational-security
+        to: cipher-paper-58
+        type: uses
+        label: computational zero knowledge
+      - from: cipher-computational-security
+        to: cipher-paper-65
+        type: direct
+        label: computational hardness
       - from: cipher-shannon
         to: cipher-information
         type: direct
