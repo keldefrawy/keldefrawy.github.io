@@ -1,6 +1,272 @@
 ---
 ---
 
+.adversary-game-launch {
+  margin: 0.2rem 0 0;
+}
+
+.adversary-game-launch a {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-underline-offset: 0.18em;
+}
+
+.adversary-game-dialog {
+  background: transparent;
+  border: 0;
+  color: var(--publication-ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  max-width: 76rem;
+  overflow: hidden;
+  padding: 0;
+  width: calc(100% - 2rem);
+}
+
+.adversary-game-dialog,
+.adversary-game-dialog * {
+  box-sizing: border-box;
+}
+
+.adversary-game-dialog::backdrop {
+  backdrop-filter: blur(3px);
+  background: rgba(31, 35, 40, 0.7);
+}
+
+.adversary-game-dialog__shell {
+  background: #fff;
+  border: 3px solid #151515;
+  box-shadow: 8px 8px 0 #151515;
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.adversary-game-dialog__topbar {
+  align-items: center;
+  background: #151515;
+  color: #fff;
+  display: flex;
+  flex: 0 0 auto;
+  float: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 850;
+  justify-content: space-between;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 0.6rem;
+  position: static;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.adversary-game-dialog__topbar button {
+  appearance: none;
+  background: #fff;
+  border: 2px solid #fff;
+  border-radius: 0;
+  color: #151515;
+  cursor: pointer;
+  font: inherit;
+  padding: 0.35rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.adversary-game-dialog__topbar button:hover {
+  background: #151515;
+  color: #fff;
+}
+
+.adversary-game-dialog__body {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1rem 1.15rem 1.2rem;
+  position: relative;
+}
+
+.adversary-game-dialog section {
+  float: none;
+  width: auto;
+}
+
+.adversary-game-dialog .adversary-game {
+  margin: 0 7px 7px 0;
+}
+
+body.adversary-game-dialog-open {
+  overflow: hidden;
+}
+
+.adversary-game-splash {
+  align-content: center;
+  background-color: #151515;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 16px 16px;
+  border: 4px solid #151515;
+  color: #fff;
+  display: grid;
+  justify-items: center;
+  min-height: min(34rem, calc(100vh - 8rem));
+  min-height: min(34rem, calc(100dvh - 8rem));
+  overflow: hidden;
+  padding: clamp(1.4rem, 6vw, 4rem) 1rem;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.adversary-game-splash[hidden] {
+  display: none;
+}
+
+.adversary-game-splash::after {
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.adversary-game-splash__brand {
+  align-items: center;
+  animation: adversary-game-splash-boot 720ms steps(3, end) both;
+  border: 4px double #fff;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: clamp(0.65rem, 2vw, 1rem);
+  max-width: 100%;
+  padding: 0.72rem clamp(0.9rem, 3vw, 1.7rem);
+  position: relative;
+  z-index: 1;
+}
+
+.adversary-game-splash__brand strong {
+  font-size: clamp(1rem, 4vw, 2.15rem);
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.1;
+}
+
+.adversary-game-splash__brand sup {
+  font-size: 0.42em;
+  margin-left: 0.12em;
+  vertical-align: top;
+}
+
+.adversary-game-splash__lock {
+  border: 4px solid currentColor;
+  display: block;
+  flex: 0 0 auto;
+  height: 25px;
+  position: relative;
+  width: 28px;
+}
+
+.adversary-game-splash__lock::before {
+  border: 4px solid currentColor;
+  border-bottom: 0;
+  content: "";
+  height: 12px;
+  left: 3px;
+  position: absolute;
+  top: -16px;
+  width: 14px;
+}
+
+.adversary-game-splash__lock i {
+  background: currentColor;
+  height: 8px;
+  left: 9px;
+  position: absolute;
+  top: 6px;
+  width: 4px;
+}
+
+.adversary-game-splash__studio,
+.adversary-game-splash__boot,
+.adversary-game-splash__date {
+  position: relative;
+  z-index: 1;
+}
+
+.adversary-game-splash__studio {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  margin: 1.2rem 0 0;
+}
+
+.adversary-game-splash__boot,
+.adversary-game-splash__date {
+  color: #d7d7cf;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+}
+
+.adversary-game-splash__boot {
+  margin: 0.8rem 0 0;
+}
+
+.adversary-game-splash__date {
+  margin: 0.3rem 0 0;
+}
+
+.adversary-game-splash button {
+  appearance: none;
+  background: #fff;
+  border: 3px solid #fff;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #8c959f;
+  color: #151515;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-top: 1.35rem;
+  padding: 0.62rem 0.9rem;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.adversary-game-splash button:hover,
+.adversary-game-splash button:focus-visible {
+  background: #151515;
+  color: #fff;
+}
+
+@keyframes adversary-game-splash-boot {
+  0% {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .adversary-game {
   --game-ink: #151515;
   --game-paper: #ffffff;
@@ -20,10 +286,13 @@
   box-sizing: border-box;
   color: var(--game-ink);
   float: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-variant-numeric: tabular-nums;
   margin: 1.15rem 7px 7px 0;
   min-width: 0;
   overflow: hidden;
   padding: clamp(0.9rem, 2.4vw, 1.35rem);
+  text-transform: uppercase;
   width: calc(100% - 7px);
 }
 
@@ -52,6 +321,7 @@
 .adversary-game__forecast,
 .adversary-game__message,
 .adversary-game__start,
+.adversary-game__reset,
 .adversary-game__schedule select {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
@@ -72,12 +342,20 @@
   margin: 0;
 }
 
-.adversary-game__intro > p:last-child {
+#adversary-game-description {
   color: var(--game-muted);
   font-size: 0.84rem;
   line-height: 1.55;
   margin: 0.48rem 0 0;
   max-width: 59rem;
+}
+
+.adversary-game__date {
+  color: var(--game-muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  margin: 0.48rem 0 0;
 }
 
 .adversary-game__schedule {
@@ -350,21 +628,28 @@
 }
 
 .adversary-game__controls {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   gap: 0.65rem 1rem;
   margin-top: 0.75rem;
 }
 
-.adversary-game__start {
+.adversary-game__button-row {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.adversary-game__start,
+.adversary-game__reset,
+.adversary-game__history-toggle {
   appearance: none;
   background: var(--game-paper);
-  border: 3px solid var(--game-ink);
   border-radius: 0;
-  box-shadow: 4px 4px 0 var(--game-ink);
   color: var(--game-ink);
   cursor: pointer;
-  flex: 0 0 auto;
+  font-family: inherit;
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.035em;
@@ -373,7 +658,23 @@
   text-transform: uppercase;
 }
 
-.adversary-game__start:hover {
+.adversary-game__start {
+  border: 3px solid var(--game-ink);
+  box-shadow: 4px 4px 0 var(--game-ink);
+}
+
+.adversary-game__reset {
+  border: 2px solid var(--game-ink);
+}
+
+.adversary-game__history-toggle {
+  border: 2px solid var(--game-ink);
+}
+
+.adversary-game__start:hover,
+.adversary-game__reset:hover:not(:disabled),
+.adversary-game__history-toggle:hover,
+.adversary-game__history-toggle[aria-expanded="true"] {
   background: var(--game-ink);
   color: var(--game-paper);
 }
@@ -383,8 +684,16 @@
   transform: translate(3px, 3px);
 }
 
+.adversary-game__reset:disabled {
+  cursor: default;
+  opacity: 0.42;
+}
+
 .adversary-game__schedule select:focus-visible,
 .adversary-game__start:focus-visible,
+.adversary-game__reset:focus-visible,
+.adversary-game__history-toggle:focus-visible,
+.adversary-game-dialog__topbar button:focus-visible,
 .adversary-game__rules summary:focus-visible {
   outline: 3px solid rgba(9, 105, 218, 0.45);
   outline-offset: 3px;
@@ -395,6 +704,170 @@
   font-size: 0.67rem;
   line-height: 1.45;
   margin: 0;
+}
+
+.adversary-game__history {
+  background: var(--game-screen);
+  border: 3px solid var(--game-ink);
+  margin-top: 0.95rem;
+  padding: 0.75rem;
+}
+
+.adversary-game__history[hidden] {
+  display: none;
+}
+
+.adversary-game__history-header {
+  align-items: end;
+  display: flex;
+  float: none;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  position: static;
+  width: auto;
+}
+
+.adversary-game__history-header p {
+  color: var(--game-danger);
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  margin: 0 0 0.18rem;
+}
+
+.adversary-game__history-header h3 {
+  color: var(--game-ink);
+  font-size: 0.88rem;
+  letter-spacing: 0.055em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.adversary-game__history-legend {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.58rem;
+  font-weight: 850;
+  gap: 0.35rem 0.8rem;
+  letter-spacing: 0.035em;
+  margin-top: 0.6rem;
+}
+
+.adversary-game__history-legend span {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.28rem;
+}
+
+.adversary-game__history-legend i,
+.adversary-game__history-cell {
+  border: 1px solid rgba(21, 21, 21, 0.7);
+  border-radius: 2px;
+  display: block;
+  height: 12px;
+  position: relative;
+  width: 12px;
+}
+
+.adversary-game__history-body {
+  display: grid;
+  gap: 0.38rem;
+  grid-template-columns: 1.55rem minmax(0, 1fr);
+  margin-top: 0.62rem;
+  min-width: 0;
+}
+
+.adversary-game__history-labels,
+.adversary-game__history-column {
+  display: grid;
+  gap: 3px;
+  grid-template-rows: repeat(7, 12px);
+}
+
+.adversary-game__history-labels span {
+  align-items: center;
+  display: flex;
+  font-size: 0.56rem;
+  font-weight: 900;
+  height: 12px;
+  justify-content: flex-end;
+}
+
+.adversary-game__history-viewport {
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding-bottom: 0.3rem;
+  scrollbar-color: var(--game-ink) #d7d7cf;
+}
+
+.adversary-game__history-columns {
+  display: flex;
+  gap: 3px;
+  min-height: 102px;
+  min-width: min-content;
+}
+
+.adversary-game__history-column {
+  flex: 0 0 12px;
+  position: relative;
+}
+
+.adversary-game__history-column[data-history-kind="refresh"],
+.adversary-game__history-column[data-history-kind="loss"] {
+  box-shadow: -3px 0 0 var(--game-ink);
+  margin-left: 4px;
+}
+
+.adversary-game__history-cell[data-history-state="healthy"],
+.adversary-game__history-legend i[data-history-state="healthy"] {
+  background: #1a7f37;
+}
+
+.adversary-game__history-cell[data-history-state="compromised"],
+.adversary-game__history-legend i[data-history-state="compromised"] {
+  background-color: #cf222e;
+  background-image:
+    linear-gradient(45deg, transparent 39%, #fff 40% 58%, transparent 59%),
+    linear-gradient(-45deg, transparent 39%, #fff 40% 58%, transparent 59%);
+}
+
+.adversary-game__history-cell[data-history-state="active"] {
+  background: #cf222e;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.adversary-game__history-legend i[data-history-state="active"] {
+  background: #cf222e;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.adversary-game__history-cell[data-history-state="resetting"],
+.adversary-game__history-legend i[data-history-state="resetting"] {
+  background: repeating-linear-gradient(135deg, #8c959f 0 3px, #d8dee4 3px 6px);
+}
+
+.adversary-game__history-summary {
+  color: var(--game-muted);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  line-height: 1.45;
+  margin: 0.35rem 0 0;
+}
+
+.adversary-game__history-parody {
+  background: var(--game-ink);
+  color: var(--game-paper);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  line-height: 1.5;
+  margin: 0.58rem 0 0;
+  padding: 0.48rem 0.55rem;
 }
 
 .adversary-game__rules {
@@ -427,11 +900,47 @@
 }
 
 @media screen and (max-width: 620px) {
+  .adversary-game-dialog {
+    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
+    width: calc(100% - 1rem);
+  }
+
+  .adversary-game-dialog__shell {
+    box-shadow: 4px 4px 0 #151515;
+  }
+
+  .adversary-game-dialog__body {
+    padding: 0.6rem 0.65rem 0.75rem;
+  }
+
+  .adversary-game-splash {
+    min-height: calc(100vh - 5.5rem);
+    min-height: calc(100dvh - 5.5rem);
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
+
+  .adversary-game-splash__brand {
+    border-radius: 26px;
+    gap: 0.55rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+
+  .adversary-game-splash__lock {
+    transform: scale(0.82);
+  }
+
   .adversary-game {
     box-shadow: 4px 4px 0 var(--game-ink);
     margin-right: 4px;
     padding: 0.75rem;
     width: calc(100% - 4px);
+  }
+
+  .adversary-game-dialog .adversary-game {
+    margin-right: 4px;
   }
 
   .adversary-game__schedule label {
@@ -472,6 +981,14 @@
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .adversary-game__button-row {
+    width: 100%;
+  }
+
+  .adversary-game__history {
+    padding: 0.6rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -481,5 +998,9 @@
 
   .adversary-game__screen-glare {
     display: none;
+  }
+
+  .adversary-game-splash__brand {
+    animation: none;
   }
 }

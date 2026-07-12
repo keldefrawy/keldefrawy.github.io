@@ -1,130 +1,250 @@
-<section
-  class="adversary-game"
-  data-adversary-game
-  data-game-state="idle"
-  aria-labelledby="adversary-game-title"
-  aria-describedby="adversary-game-description"
->
-  <header class="adversary-game__header">
-    <div class="adversary-game__intro">
-      <p class="adversary-game__eyebrow">Cryptography arcade // PSS + PMPC</p>
-      <h2 id="adversary-game-title">Outrefresh the Mobile Adversary</h2>
-      <p id="adversary-game-description">
-        Commit a randomized rejuvenation schedule before the virus appears. Too slow, and it reads
-        four compatible shares; too aggressive, and your own overlapping repairs lose the quorum.
-      </p>
-    </div>
-
-    <fieldset class="adversary-game__schedule" data-game-schedule-controls>
-      <legend>Program the maintenance loop</legend>
-      <label for="adversary-game-cadence">
-        Rejuvenate every
-        <select id="adversary-game-cadence" data-game-cadence>
-          <option value="1600">1.6 seconds</option>
-          <option value="2400" selected>2.4 seconds</option>
-          <option value="3400">3.4 seconds</option>
-          <option value="4800">4.8 seconds</option>
-        </select>
-      </label>
-      <label for="adversary-game-batch">
-        Parties per random draw
-        <select id="adversary-game-batch" data-game-batch>
-          <option value="1">1 party</option>
-          <option value="2" selected>2 parties</option>
-          <option value="3">3 parties</option>
-          <option value="4">4 parties</option>
-        </select>
-      </label>
-      <p class="adversary-game__schedule-note">
-        Fair draw without replacement. Each selected party is offline for 2.2 seconds.
-      </p>
-    </fieldset>
-  </header>
-
-  <p class="adversary-game__forecast" data-game-forecast aria-live="polite">
-    This schedule keeps five parties online during one repair round, with no planned overlap.
+<div class="adversary-game-arcade" data-adversary-arcade>
+  <p class="adversary-game-launch">
+    <a
+      href="#cryptography-arcade-dialog"
+      data-game-open
+      aria-haspopup="dialog"
+      aria-controls="cryptography-arcade-dialog"
+    >Cryptography Arcade</a>
   </p>
 
-  <dl class="adversary-game__hud" aria-label="Game status">
-    <div>
-      <dt>Time</dt>
-      <dd data-game-time>000.0</dd>
-    </div>
-    <div>
-      <dt>Epoch</dt>
-      <dd data-game-epoch>01</dd>
-    </div>
-    <div data-game-exposure-card>
-      <dt>Current shares</dt>
-      <dd data-game-exposure>0 / 4</dd>
-    </div>
-    <div data-game-online-card>
-      <dt>Online</dt>
-      <dd data-game-online>7 / 7</dd>
-    </div>
-  </dl>
+  <dialog
+    class="adversary-game-dialog"
+    id="cryptography-arcade-dialog"
+    data-game-dialog
+    aria-labelledby="cryptography-arcade-dialog-label"
+    aria-modal="true"
+  >
+    <div class="adversary-game-dialog__shell">
+      <div class="adversary-game-dialog__topbar">
+        <span id="cryptography-arcade-dialog-label">Cryptography Arcade</span>
+        <button type="button" data-game-close>CLOSE</button>
+      </div>
 
-  <div class="adversary-game__cabinet" data-game-board>
-    <div class="adversary-game__marquee">
-      <strong>Toy 4-of-7 proactive network</strong>
-      <span data-game-phase>NEXT DRAW 02.4 // SPEED 1.0x // SCORE 00000</span>
+      <div class="adversary-game-dialog__body">
+        <div
+          class="adversary-game-splash"
+          data-game-splash
+          role="region"
+          aria-labelledby="adversary-game-splash-title"
+        >
+          <div class="adversary-game-splash__brand">
+            <span class="adversary-game-splash__lock" aria-hidden="true"><i></i></span>
+            <strong id="adversary-game-splash-title">
+              CRYPTOGRAPHY ARCADE<sup>&trade;</sup>
+            </strong>
+          </div>
+          <p class="adversary-game-splash__studio">A PROACTIVE SYSTEMS LAB PRODUCTION</p>
+          <p class="adversary-game-splash__boot">SECURE BOOT // ENTROPY CHECK // SYSTEM READY</p>
+          <p class="adversary-game-splash__date">
+            <time datetime="2026-07-12">CONCEIVED + IMPLEMENTED // JULY 12, 2026</time>
+          </p>
+          <button type="button" data-game-splash-skip>PRESS START</button>
+        </div>
+
+        <section
+          class="adversary-game"
+          data-adversary-game
+          data-game-state="idle"
+          aria-labelledby="adversary-game-title"
+          aria-describedby="adversary-game-description"
+        >
+          <header class="adversary-game__header">
+            <div class="adversary-game__intro">
+              <p class="adversary-game__eyebrow">
+                Cryptography Arcade // Proactive Secret Sharing (PSS) + Proactive MPC (PMPC)
+              </p>
+              <h2 id="adversary-game-title">OUTREFRESH THE MOBILE ADVERSARY</h2>
+              <p id="adversary-game-description">
+                LOCK A RANDOMIZED REJUVENATION SCHEDULE BEFORE THE VIRUS APPEARS. TOO SLOW: IT OBTAINS FOUR
+                COMPATIBLE SHARES. TOO AGGRESSIVE: RECOVERY OVERLAP BREAKS QUORUM.
+              </p>
+              <p class="adversary-game__date">
+                <time datetime="2026-07-12">CONCEIVED + IMPLEMENTED // JULY 12, 2026</time>
+              </p>
+            </div>
+
+            <fieldset class="adversary-game__schedule" data-game-schedule-controls>
+              <legend>SET REJUVENATION SCHEDULE</legend>
+              <label for="adversary-game-cadence">
+                REFRESH PULSE
+                <select id="adversary-game-cadence" data-game-cadence>
+                  <option value="1600">1.6 SECONDS</option>
+                  <option value="2400" selected>2.4 SECONDS</option>
+                  <option value="3400">3.4 SECONDS</option>
+                  <option value="4800">4.8 SECONDS</option>
+                </select>
+              </label>
+              <label for="adversary-game-batch">
+                PARTIES PER DRAW
+                <select id="adversary-game-batch" data-game-batch>
+                  <option value="1">1 PARTY</option>
+                  <option value="2" selected>2 PARTIES</option>
+                  <option value="3">3 PARTIES</option>
+                  <option value="4">4 PARTIES</option>
+                </select>
+              </label>
+              <p class="adversary-game__schedule-note">
+                RANDOM DRAW // NO DUPLICATES // REJUVENATION TIME 2.2S
+              </p>
+            </fieldset>
+          </header>
+
+          <p class="adversary-game__forecast" data-game-forecast aria-live="polite">
+            This schedule keeps five parties online during one repair round, with no planned overlap.
+          </p>
+
+          <dl class="adversary-game__hud" aria-label="Game status">
+            <div>
+              <dt>Time</dt>
+              <dd data-game-time>000.0</dd>
+            </div>
+            <div>
+              <dt>Epoch</dt>
+              <dd data-game-epoch>01</dd>
+            </div>
+            <div data-game-exposure-card>
+              <dt>Current shares</dt>
+              <dd data-game-exposure>0 / 4</dd>
+            </div>
+            <div data-game-online-card>
+              <dt>Online</dt>
+              <dd data-game-online>7 / 7</dd>
+            </div>
+          </dl>
+
+          <div class="adversary-game__cabinet" data-game-board>
+            <div class="adversary-game__marquee">
+              <strong>4-OF-7 PROACTIVE NETWORK</strong>
+              <span data-game-phase>NEXT DRAW 02.4 // SPEED 1.0x // SCORE 00000</span>
+            </div>
+
+            <div class="adversary-game__screen">
+              <canvas
+                data-game-canvas
+                width="800"
+                height="380"
+                role="img"
+                aria-label="Seven connected parties are ready. The mobile adversary path is hidden until the schedule is committed."
+              >
+                A seven-party connected network game. Choose a rejuvenation schedule and start the defense.
+              </canvas>
+              <p class="sr-only" data-game-node-summary>
+                P1 through P7 are online; the adversary path is hidden.
+              </p>
+              <div class="adversary-game__screen-glare" aria-hidden="true"></div>
+            </div>
+
+            <div class="adversary-game__legend" aria-hidden="true">
+              <span><i class="adversary-game__key adversary-game__key--party"></i> ONLINE</span>
+              <span><i class="adversary-game__key adversary-game__key--virus">V</i> VIRUS</span>
+              <span><i class="adversary-game__key adversary-game__key--reset"></i> REJUVENATING</span>
+            </div>
+
+            <p class="adversary-game__message" data-game-message>
+              SET SCHEDULE // LOCK CONTROLS // REVEAL HIDDEN ATTACK PATH
+            </p>
+            <p class="sr-only" data-game-announcer role="status" aria-live="polite" aria-atomic="true"></p>
+          </div>
+
+          <div class="adversary-game__controls">
+            <div class="adversary-game__button-row">
+              <button
+                class="adversary-game__start"
+                type="button"
+                data-game-toggle
+                aria-describedby="adversary-game-controls-hint"
+              >
+                COMMIT SCHEDULE + START
+              </button>
+              <button class="adversary-game__reset" type="button" data-game-reset disabled>
+                RESET GAME
+              </button>
+              <button
+                class="adversary-game__history-toggle"
+                type="button"
+                data-game-history-toggle
+                aria-expanded="false"
+                aria-controls="adversary-game-history"
+              >
+                SEE HISTORY
+              </button>
+            </div>
+            <p id="adversary-game-controls-hint">
+              SCHEDULE LOCKS AT START // VIRUS DISPLAY IS PLAYBACK ONLY // RESET TO REPROGRAM
+            </p>
+          </div>
+
+          <section
+            class="adversary-game__history"
+            id="adversary-game-history"
+            data-game-history
+            aria-labelledby="adversary-game-history-title"
+            hidden
+          >
+            <div class="adversary-game__history-header">
+              <div>
+                <p>Battle log // time &rarr;</p>
+                <h3 id="adversary-game-history-title">THE LONG FIGHT // BATTLE LOG</h3>
+              </div>
+            </div>
+
+            <div class="adversary-game__history-legend" aria-label="History colors">
+              <span><i data-history-state="healthy" aria-hidden="true"></i> HEALTHY</span>
+              <span><i data-history-state="compromised" aria-hidden="true"></i> COMPROMISED / SHARE OBTAINED</span>
+              <span><i data-history-state="active" aria-hidden="true"></i> VIRUS PRESENT</span>
+              <span><i data-history-state="resetting" aria-hidden="true"></i> REJUVENATING</span>
+            </div>
+
+            <div class="adversary-game__history-body">
+              <div class="adversary-game__history-labels" aria-hidden="true">
+                <span>P1</span>
+                <span>P2</span>
+                <span>P3</span>
+                <span>P4</span>
+                <span>P5</span>
+                <span>P6</span>
+                <span>P7</span>
+              </div>
+              <div class="adversary-game__history-viewport" data-game-history-viewport>
+                <div
+                  class="adversary-game__history-columns"
+                  data-game-history-matrix
+                  role="img"
+                  aria-label="No network history yet. Start a run to record state changes."
+                ></div>
+              </div>
+            </div>
+            <p class="adversary-game__history-summary" data-game-history-summary>
+              NO SNAPSHOTS YET // START A RUN.
+            </p>
+            <p class="adversary-game__history-parody">
+              FIRST RULE OF REACTIVE DEFENSE // ON A LONG ENOUGH TIMELINE, THE SURVIVAL RATE OF EVERY FIXED
+              SCHEDULE DROPS TO ZERO.
+            </p>
+          </section>
+
+          <details class="adversary-game__rules">
+            <summary>HOW THE TOY PROTOCOL WORKS</summary>
+            <p>
+              <strong>This is an illustrative hybrid of proactive share refresh and randomized proactive recovery,
+              not a protocol simulator.</strong> The mobile adversary hops only along network links and retains every
+              distinct current-epoch share it reads. Four compatible shares reveal this toy secret. At each committed
+              maintenance time, a fair random draw sends the chosen parties offline for recovery. If a quorum remains,
+              the toy abstracts a coordinated system-wide refresh at that pulse: the epoch advances, obsolete honest-party
+              state is assumed securely erased, and old exposures no longer combine with new ones. Selected parties rejoin
+              clean after recovery. If fewer than four parties remain online—even temporarily—the toy computation loses
+              availability. Taking too many parties down does not cryptographically destroy the secret; it removes the live
+              4-party quorum needed to use or continue it. Real PSS and proactive MPC protocols have separate privacy,
+              correctness, robustness, recovery, erasure, communication, and network assumptions.
+            </p>
+          </details>
+
+          <noscript>
+            <p class="adversary-game__noscript">Enable JavaScript to play this interactive protocol-defense game.</p>
+          </noscript>
+        </section>
+      </div>
     </div>
-
-    <div class="adversary-game__screen">
-      <canvas
-        data-game-canvas
-        width="800"
-        height="380"
-        role="img"
-        aria-label="Seven connected parties are ready. The mobile adversary path is hidden until the schedule is committed."
-      >
-        A seven-party connected network game. Choose a rejuvenation schedule and start the defense.
-      </canvas>
-      <p class="sr-only" data-game-node-summary>
-        P1 through P7 are online; the adversary path is hidden.
-      </p>
-      <div class="adversary-game__screen-glare" aria-hidden="true"></div>
-    </div>
-
-    <div class="adversary-game__legend" aria-hidden="true">
-      <span><i class="adversary-game__key adversary-game__key--party"></i> ONLINE</span>
-      <span><i class="adversary-game__key adversary-game__key--virus">V</i> VIRUS</span>
-      <span><i class="adversary-game__key adversary-game__key--reset"></i> REJUVENATING</span>
-    </div>
-
-    <p class="adversary-game__message" data-game-message>
-      Tune the schedule, then commit. The adversary's route is generated only after the controls lock.
-    </p>
-    <p class="sr-only" data-game-announcer role="status" aria-live="polite" aria-atomic="true"></p>
-  </div>
-
-  <div class="adversary-game__controls">
-    <button class="adversary-game__start" type="button" data-game-toggle aria-describedby="adversary-game-controls-hint">
-      Commit schedule + start
-    </button>
-    <p id="adversary-game-controls-hint">
-      Once started, the schedule is locked. The visible virus is a replay aid, not information you can act on.
-    </p>
-  </div>
-
-  <details class="adversary-game__rules">
-    <summary>What the game is modeling</summary>
-    <p>
-      <strong>This is an illustrative hybrid of proactive share refresh and randomized proactive recovery,
-      not a protocol simulator.</strong> The mobile adversary hops only along network links and retains every
-      distinct current-epoch share it reads. Four compatible shares reveal this toy secret. At each committed
-      maintenance time, a fair random draw sends the chosen parties offline for recovery. If a quorum remains,
-      the toy abstracts a coordinated system-wide refresh at that pulse: the epoch advances, obsolete honest-party
-      state is assumed securely erased, and old exposures no longer combine with new ones. Selected parties rejoin
-      clean after recovery. If fewer than four parties remain online—even temporarily—the toy computation loses
-      availability. Taking too many parties down does not cryptographically destroy the secret; it removes the live
-      4-party quorum needed to use or continue it.
-      Real PSS and proactive MPC protocols have separate privacy, correctness, robustness, recovery, erasure,
-      communication, and network assumptions.
-    </p>
-  </details>
-
-  <noscript>
-    <p class="adversary-game__noscript">Enable JavaScript to play this interactive protocol-defense game.</p>
-  </noscript>
-</section>
+  </dialog>
+</div>

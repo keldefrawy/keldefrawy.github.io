@@ -7,6 +7,9 @@
   var BASE_HOP_MS = 2200;
   var MAX_SPEED = 5;
   var EPSILON = 0.01;
+  var HISTORY_STEP_MS = 500;
+  var MAX_HISTORY_SNAPSHOTS = 240;
+  var SPLASH_DURATION_MS = 1900;
   var EDGES = [
     [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0],
     [6, 0], [6, 2], [6, 4]
@@ -81,6 +84,12 @@
   }
 
   function initializeGame(root) {
+    var arcade;
+    var gameDialog;
+    var openButton;
+    var closeButton;
+    var splash;
+    var splashSkipButton;
     var cadenceSelect;
     var batchSelect;
     var scheduleControls;
@@ -98,8 +107,18 @@
     var announcer;
     var nodeSummary;
     var toggleButton;
+    var resetButton;
+    var historyToggleButton;
+    var historyPanel;
+    var historyViewport;
+    var historyMatrix;
+    var historySummary;
     var reducedMotionQuery;
     var resizeObserver = null;
+    var activeDialogTrigger = null;
+    var announcementTimer = null;
+    var splashTimer = null;
+    var splashSeen = false;
     var gameState = "idle";
     var pauseReasons = {};
     var runId = 0;
@@ -126,12 +145,25 @@
     var canvasWidth = 800;
     var canvasHeight = 380;
     var lastCanvasLabel = "";
+    var historySnapshots = [];
+    var historyOmitted = 0;
+    var nextHistoryAt = Infinity;
+    var pendingHistoryKind = "sample";
+    var pendingHistoryDetail = "";
+    var historyFollowLatest = true;
+    var historyOpenedOnce = false;
     var attacker = freshAttacker();
 
     if (!root || root.getAttribute("data-game-ready") === "true") {
       return;
     }
 
+    arcade = root.closest("[data-adversary-arcade]");
+    gameDialog = arcade ? arcade.querySelector("[data-game-dialog]") : null;
+    openButton = arcade ? arcade.querySelector("[data-game-open]") : null;
+    closeButton = gameDialog ? gameDialog.querySelector("[data-game-close]") : null;
+    splash = gameDialog ? gameDialog.querySelector("[data-game-splash]") : null;
+    splashSkipButton = splash ? splash.querySelector("[data-game-splash-skip]") : null;
     cadenceSelect = root.querySelector("[data-game-cadence]");
     batchSelect = root.querySelector("[data-game-batch]");
     scheduleControls = root.querySelector("[data-game-schedule-controls]");
@@ -148,10 +180,19 @@
     announcer = root.querySelector("[data-game-announcer]");
     nodeSummary = root.querySelector("[data-game-node-summary]");
     toggleButton = root.querySelector("[data-game-toggle]");
+    resetButton = root.querySelector("[data-game-reset]");
+    historyToggleButton = root.querySelector("[data-game-history-toggle]");
+    historyPanel = root.querySelector("[data-game-history]");
+    historyViewport = root.querySelector("[data-game-history-viewport]");
+    historyMatrix = root.querySelector("[data-game-history-matrix]");
+    historySummary = root.querySelector("[data-game-history-summary]");
 
-    if (!cadenceSelect || !batchSelect || !scheduleControls || !forecast || !timeValue ||
+    if (!arcade || !gameDialog || !openButton || !closeButton || !splash || !splashSkipButton ||
+        !cadenceSelect || !batchSelect ||
+        !scheduleControls || !forecast || !timeValue ||
         !epochValue || !exposureValue || !onlineValue || !exposureCard || !onlineCard ||
-        !phaseValue || !canvas || !message || !announcer || !toggleButton) {
+        !phaseValue || !canvas || !message || !announcer || !toggleButton || !resetButton ||
+        !historyToggleButton || !historyPanel || !historyViewport || !historyMatrix || !historySummary) {
       return;
     }
 
@@ -277,15 +318,193 @@
       forecast.textContent = text;
     }
 
+    function clearAnnouncementTimer() {
+      if (announcementTimer !== null) {
+        window.clearTimeout(announcementTimer);
+        announcementTimer = null;
+      }
+    }
+
     function setMessage(text, announcement) {
+      var announcementRun = runId;
+
       message.textContent = text;
+      clearAnnouncementTimer();
       if (announcement) {
         announcer.textContent = "";
-        window.setTimeout(function () {
-          if (root.isConnected) {
+        announcementTimer = window.setTimeout(function () {
+          announcementTimer = null;
+          if (root.isConnected && runId === announcementRun) {
             announcer.textContent = announcement === true ? text : announcement;
           }
         }, 20);
+      }
+    }
+
+    function historyStateFor(index) {
+      if (isRecovering(index)) {
+        return "resetting";
+      }
+      if (attacker.node === index) {
+        return "active";
+      }
+      if (exposures.has(index)) {
+        return "compromised";
+      }
+      return "healthy";
+    }
+
+    function clearHistoryElement(element) {
+      while (element.firstChild) {
+        element.removeChild(element.firstChild);
+      }
+    }
+
+    function createHistoryColumn(snapshot) {
+      var column = document.createElement("span");
+
+      column.className = "adversary-game__history-column";
+      column.setAttribute("data-history-kind", snapshot.kind);
+      column.setAttribute("aria-hidden", "true");
+      snapshot.states.forEach(function (state) {
+        var cell = document.createElement("i");
+
+        cell.className = "adversary-game__history-cell";
+        cell.setAttribute("data-history-state", state);
+        column.appendChild(cell);
+      });
+      return column;
+    }
+
+    function updateHistorySummary() {
+      var latest;
+      var counts;
+      var omittedText;
+
+      if (!historySnapshots.length) {
+        historySummary.textContent = "NO SNAPSHOTS YET // START A RUN.";
+        historyMatrix.setAttribute(
+          "aria-label",
+          "No network history yet. Start a run to record state changes."
+        );
+        return;
+      }
+
+      latest = historySnapshots[historySnapshots.length - 1];
+      counts = latest.states.reduce(function (result, state) {
+        result[state] = (result[state] || 0) + 1;
+        return result;
+      }, {});
+      omittedText = historyOmitted > 0 ? " // " + historyOmitted + " EARLIER SNAPSHOTS OMITTED" : "";
+      historySummary.textContent = historySnapshots.length + " SNAPSHOTS // T+" +
+        (latest.time / 1000).toFixed(1) + "S // EPOCH " + padNumber(latest.epoch, 2) +
+        " // " + latest.detail + omittedText;
+      historyMatrix.setAttribute(
+        "aria-label",
+        historySnapshots.length + " network snapshots arranged from left to right, with P1 through P7 " +
+          "from top to bottom. Latest at " + (latest.time / 1000).toFixed(1) + " seconds: " +
+          (counts.healthy || 0) + " healthy, " +
+          ((counts.compromised || 0) + (counts.active || 0)) + " compromised or exposed, and " +
+          (counts.resetting || 0) + " rejuvenating. " + latest.detail + "."
+      );
+    }
+
+    function scrollHistoryToLatest(force) {
+      if (historyPanel.hidden || (!force && !historyFollowLatest)) {
+        return;
+      }
+      window.requestAnimationFrame(function () {
+        if (!historyPanel.hidden) {
+          historyViewport.scrollLeft = historyViewport.scrollWidth;
+        }
+      });
+    }
+
+    function renderHistory() {
+      var fragment = document.createDocumentFragment();
+
+      clearHistoryElement(historyMatrix);
+      historySnapshots.forEach(function (snapshot) {
+        fragment.appendChild(createHistoryColumn(snapshot));
+      });
+      historyMatrix.appendChild(fragment);
+      updateHistorySummary();
+    }
+
+    function clearHistory() {
+      historySnapshots = [];
+      historyOmitted = 0;
+      nextHistoryAt = Infinity;
+      pendingHistoryKind = "sample";
+      pendingHistoryDetail = "";
+      historyFollowLatest = true;
+      clearHistoryElement(historyMatrix);
+      historyViewport.scrollLeft = 0;
+      updateHistorySummary();
+    }
+
+    function markHistoryEvent(kind, detail) {
+      var priority = { sample: 0, compromise: 1, recovery: 2, refresh: 3, loss: 4 };
+
+      if ((priority[kind] || 0) >= (priority[pendingHistoryKind] || 0)) {
+        pendingHistoryKind = kind;
+        pendingHistoryDetail = detail;
+      }
+    }
+
+    function captureHistory(kind, detail) {
+      var states = [];
+      var snapshot;
+      var previous;
+      var replaced = false;
+      var index;
+
+      for (index = 0; index < PARTY_COUNT; index += 1) {
+        states.push(historyStateFor(index));
+      }
+      snapshot = {
+        time: simTime,
+        epoch: epoch,
+        kind: kind || pendingHistoryKind || "sample",
+        detail: detail || pendingHistoryDetail || "SYSTEM STATE SAMPLED",
+        states: states
+      };
+      previous = historySnapshots.length ? historySnapshots[historySnapshots.length - 1] : null;
+      if (previous && Math.abs(previous.time - snapshot.time) <= EPSILON) {
+        historySnapshots[historySnapshots.length - 1] = snapshot;
+        replaced = true;
+      } else {
+        historySnapshots.push(snapshot);
+      }
+
+      if (historySnapshots.length > MAX_HISTORY_SNAPSHOTS) {
+        historySnapshots.shift();
+        historyOmitted += 1;
+        if (!historyPanel.hidden && historyMatrix.firstChild) {
+          historyMatrix.removeChild(historyMatrix.firstChild);
+        }
+      }
+
+      if (!historyPanel.hidden) {
+        if (replaced && historyMatrix.lastChild) {
+          historyMatrix.removeChild(historyMatrix.lastChild);
+        }
+        historyMatrix.appendChild(createHistoryColumn(snapshot));
+        scrollHistoryToLatest(false);
+      }
+      updateHistorySummary();
+      pendingHistoryKind = "sample";
+      pendingHistoryDetail = "";
+    }
+
+    function setHistoryOpen(open) {
+      historyPanel.hidden = !open;
+      historyToggleButton.setAttribute("aria-expanded", open ? "true" : "false");
+      historyToggleButton.textContent = open ? "HIDE HISTORY" : "SEE HISTORY";
+      if (open) {
+        renderHistory();
+        scrollHistoryToLatest(!historyOpenedOnce || historyFollowLatest);
+        historyOpenedOnce = true;
       }
     }
 
@@ -354,14 +573,15 @@
 
     function renderToggle() {
       if (gameState === "running") {
-        toggleButton.textContent = "Pause playback";
+        toggleButton.textContent = "PAUSE PLAYBACK";
       } else if (gameState === "paused") {
-        toggleButton.textContent = "Resume playback";
+        toggleButton.textContent = "RESUME PLAYBACK";
       } else if (gameState === "lost") {
-        toggleButton.textContent = "Run schedule again";
+        toggleButton.textContent = "RESTART GAME";
       } else {
-        toggleButton.textContent = "Commit schedule + start";
+        toggleButton.textContent = "COMMIT SCHEDULE + START";
       }
+      resetButton.disabled = gameState === "idle";
     }
 
     function renderAll() {
@@ -391,6 +611,7 @@
       pauseReasons = {};
       attacker = freshAttacker();
       lastCanvasLabel = "";
+      clearHistory();
       for (index = 0; index < PARTY_COUNT; index += 1) {
         recoveryUntil.push(0);
         recoveredAt.push(-Infinity);
@@ -407,6 +628,7 @@
 
     function resetPreview() {
       runId += 1;
+      clearAnnouncementTimer();
       stopFrame();
       gameState = "idle";
       scheduleControls.disabled = false;
@@ -416,7 +638,7 @@
       nextResetAt = committedCadence;
       updateForecast();
       setMessage(
-        "Tune the schedule, then commit. The adversary's route is generated only after the controls lock.",
+        "SET SCHEDULE // LOCK CONTROLS // REVEAL HIDDEN ATTACK PATH",
         false
       );
       renderAll();
@@ -428,6 +650,7 @@
       }
 
       exposures.add(index);
+      markHistoryEvent("compromise", "P" + (index + 1) + " SHARE OBTAINED");
       if (exposures.size >= THRESHOLD) {
         lose("privacy");
       } else if (exposures.size === THRESHOLD - 1) {
@@ -638,6 +861,10 @@
           " // EPOCH " + padNumber(epoch, 2) + (caught ? " // VIRUS EVICTED" : " // PATH SURVIVED"),
         caught ? "Random rejuvenation caught and evicted the mobile adversary." : false
       );
+      markHistoryEvent(
+        "refresh",
+        "EPOCH " + padNumber(epoch, 2) + " // RESET " + partyList(selected)
+      );
     }
 
     function nextRecoveryTime() {
@@ -664,6 +891,7 @@
         }
       }
       if (recovered.length) {
+        markHistoryEvent("recovery", partyList(recovered) + " REJOINED CLEAN");
         setMessage(
           partyList(recovered) + " REJOINED CLEAN // " + onlineCount() + " OF 7 ONLINE // EPOCH " +
             padNumber(epoch, 2),
@@ -692,7 +920,7 @@
       while (gameState === "running" && guard < 200) {
         recoveryEvent = nextRecoveryTime();
         attackEvent = attackEventTime();
-        nextEvent = Math.min(recoveryEvent, nextResetAt, attackEvent);
+        nextEvent = Math.min(recoveryEvent, nextResetAt, attackEvent, nextHistoryAt);
         if (!isFinite(nextEvent) || nextEvent > targetTime + EPSILON) {
           break;
         }
@@ -707,6 +935,10 @@
         }
         if (gameState === "running" && attackEventTime() <= simTime + EPSILON) {
           processAttackEvent();
+        }
+        if (gameState === "running" && nextHistoryAt <= simTime + EPSILON) {
+          captureHistory();
+          nextHistoryAt += HISTORY_STEP_MS;
         }
         guard += 1;
       }
@@ -729,11 +961,13 @@
       stopFrame();
 
       if (reason === "privacy") {
-        text = "MOBILE ADVERSARY WINS // 4 compatible shares were read in epoch " + epoch +
-          ". A capable enough adversary outran the fixed refresh schedule.";
+        text = "MOBILE ADVERSARY WINS // ADVERSARY OBTAINED FOUR COMPATIBLE SHARES IN EPOCH " +
+          padNumber(epoch, 2) + " // FIXED REFRESH SCHEDULE OVERRUN.";
+        captureHistory("loss", "ADVERSARY OBTAINED FOUR COMPATIBLE SHARES");
       } else {
-        text = "RECOVERY OVERLAP // only " + currentOnline +
-          " parties remained online. The 4-party computation lost availability; the secret was not cryptographically erased.";
+        text = "QUORUM LOST // ONLY " + currentOnline +
+          " PARTIES ONLINE // COMPUTATION UNAVAILABLE // SECRET NOT ERASED.";
+        captureHistory("loss", "QUORUM LOST // " + currentOnline + " ONLINE");
       }
       setMessage(text, text);
       renderAll();
@@ -762,9 +996,11 @@
       attacker.anchor = firstNode;
       attacker.nextHopAt = hopTimeAt(0);
       exposures.add(firstNode);
+      nextHistoryAt = HISTORY_STEP_MS;
+      captureHistory("start", "INTRUSION DETECTED AT P" + (firstNode + 1));
       setMessage(
-        "SCHEDULE LOCKED // The hidden attacker has entered at P" + (firstNode + 1) +
-          ". The graph is now revealed for playback only.",
+        "SCHEDULE LOCKED // INTRUSION AT P" + (firstNode + 1) +
+          " // ATTACK PATH REVEALED FOR PLAYBACK ONLY",
         "Schedule locked. The mobile adversary path is now being revealed for playback only."
       );
       renderAll();
@@ -1067,7 +1303,8 @@
       var width = Math.min(canvasWidth - 28, 380);
       var x = (canvasWidth - width) / 2;
       var y = (canvasHeight - 70) / 2;
-      var detail = lossReason === "privacy" ? "4 COMPATIBLE SHARES" : "FEWER THAN 4 ONLINE";
+      var detail = lossReason === "privacy" ?
+        "ADVERSARY OBTAINED FOUR COMPATIBLE SHARES" : "FEWER THAN 4 ONLINE";
 
       context.fillStyle = "rgba(255, 255, 255, 0.94)";
       context.fillRect(x, y, width, 70);
@@ -1122,8 +1359,109 @@
       drawGame();
     }
 
+    function clearSplashTimer() {
+      if (splashTimer !== null) {
+        window.clearTimeout(splashTimer);
+        splashTimer = null;
+      }
+    }
+
+    function revealGameAfterSplash(focusGame) {
+      clearSplashTimer();
+      splashSeen = true;
+      splash.hidden = true;
+      gameDialog.removeAttribute("data-splash-active");
+      root.hidden = false;
+      root.removeAttribute("inert");
+      root.removeAttribute("aria-hidden");
+      window.requestAnimationFrame(function () {
+        resizeCanvas();
+        if (focusGame && gameDialog.open) {
+          toggleButton.focus();
+        }
+      });
+    }
+
+    function showSplash() {
+      clearSplashTimer();
+      gameDialog.setAttribute("data-splash-active", "true");
+      splash.hidden = false;
+      root.hidden = true;
+      root.setAttribute("inert", "");
+      root.setAttribute("aria-hidden", "true");
+      splashSkipButton.focus();
+      splashTimer = window.setTimeout(function () {
+        revealGameAfterSplash(true);
+      }, reducedMotion ? 900 : SPLASH_DURATION_MS);
+    }
+
+    function cancelSplash() {
+      clearSplashTimer();
+      splash.hidden = true;
+      gameDialog.removeAttribute("data-splash-active");
+      root.hidden = false;
+      root.removeAttribute("inert");
+      root.removeAttribute("aria-hidden");
+    }
+
+    function showGameDialog(event) {
+      if (event) {
+        event.preventDefault();
+      }
+      if (gameDialog.open) {
+        return;
+      }
+
+      activeDialogTrigger = openButton;
+      if (typeof gameDialog.showModal === "function") {
+        gameDialog.showModal();
+      } else {
+        gameDialog.setAttribute("open", "");
+      }
+      document.body.classList.add("adversary-game-dialog-open");
+      resumeGame("arcade");
+      if (!splashSeen && gameState === "idle") {
+        showSplash();
+      } else {
+        splash.hidden = true;
+        closeButton.focus();
+        window.requestAnimationFrame(resizeCanvas);
+      }
+    }
+
+    function cleanupGameDialog() {
+      cancelSplash();
+      document.body.classList.remove("adversary-game-dialog-open");
+      pauseGame("arcade");
+      if (activeDialogTrigger && activeDialogTrigger.isConnected) {
+        activeDialogTrigger.focus();
+      }
+      activeDialogTrigger = null;
+    }
+
+    function closeGameDialog() {
+      if (typeof gameDialog.close === "function") {
+        gameDialog.close();
+      } else {
+        gameDialog.removeAttribute("open");
+        cleanupGameDialog();
+      }
+    }
+
     cadenceSelect.addEventListener("change", resetPreview);
     batchSelect.addEventListener("change", resetPreview);
+
+    openButton.addEventListener("click", showGameDialog);
+    closeButton.addEventListener("click", closeGameDialog);
+    splashSkipButton.addEventListener("click", function () {
+      revealGameAfterSplash(true);
+    });
+    gameDialog.addEventListener("click", function (event) {
+      if (event.target === gameDialog) {
+        closeGameDialog();
+      }
+    });
+    gameDialog.addEventListener("close", cleanupGameDialog);
 
     toggleButton.addEventListener("click", function () {
       if (gameState === "idle" || gameState === "lost") {
@@ -1133,6 +1471,25 @@
       } else if (gameState === "paused" && onlyManualPause()) {
         resumeGame("manual");
       }
+    });
+
+    resetButton.addEventListener("click", function () {
+      resetPreview();
+      setMessage(
+        "GAME RESET // REPROGRAM SCHEDULE // NEW ATTACK PATH HIDDEN",
+        "Game reset. Choose a schedule for a new run."
+      );
+      renderAll();
+      cadenceSelect.focus();
+    });
+
+    historyToggleButton.addEventListener("click", function () {
+      setHistoryOpen(historyPanel.hidden);
+    });
+
+    historyViewport.addEventListener("scroll", function () {
+      historyFollowLatest = historyViewport.scrollWidth - historyViewport.scrollLeft -
+        historyViewport.clientWidth < 24;
     });
 
     document.addEventListener("visibilitychange", function () {
@@ -1181,6 +1538,8 @@
       window.addEventListener("resize", resizeCanvas);
     }
 
+    splash.hidden = true;
+    setHistoryOpen(false);
     root.setAttribute("data-game-ready", "true");
     resetPreview();
     resizeCanvas();
