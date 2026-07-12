@@ -7,7 +7,7 @@ title: Home
 <div class="home-page-content" markdown="1">
 
 <figure class="home-research-banner">
-  <img src="{{ '/assets/images/home-research-ribbon-banner.png' | relative_url }}" alt="" width="1981" height="794" fetchpriority="high">
+  <img src="{{ '/assets/images/home-research-ribbon-banner.svg' | relative_url }}" alt="" width="2200" height="200" fetchpriority="high">
   <figcaption class="home-research-banner__stats" aria-label="Selected research figures">
     <a href="{{ '/publications/' | relative_url }}"><strong>79</strong><span>peer-reviewed publications</span></a>
     <a href="{{ '/patents.html' | relative_url }}"><strong>31</strong><span>granted patents</span></a>

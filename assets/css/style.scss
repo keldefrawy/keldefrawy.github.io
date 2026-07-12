@@ -3089,6 +3089,158 @@ body.quick-abstract-dialog-open {
   text-underline-offset: 0.14em;
 }
 
+.talks-page {
+  color: var(--publication-ink);
+}
+
+.talks-page > .talks-section {
+  float: none;
+  padding-bottom: 0;
+  width: auto;
+}
+
+.talks-header {
+  float: none;
+  margin-bottom: 2rem;
+  position: static;
+  width: auto;
+}
+
+.talks-header h1 {
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0.35rem 0 0.65rem;
+}
+
+.talks-header > p:last-child {
+  color: var(--publication-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 48rem;
+}
+
+.talks-eyebrow,
+.talks-section__kicker {
+  color: #0550ae;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.talks-section + .talks-section {
+  border-top: 1px solid var(--publication-line);
+  margin-top: 2.3rem;
+  padding-top: 2rem;
+}
+
+.talks-section__heading {
+  margin-bottom: 0.9rem;
+}
+
+.talks-section__heading h2 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0.2rem 0 0;
+}
+
+.talks-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.talk-card {
+  background: #fff;
+  border: 1px solid var(--publication-line);
+  border-radius: 11px;
+  box-shadow: 0 4px 14px rgba(31, 35, 40, 0.035);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1rem;
+}
+
+.talk-card:hover {
+  border-color: #b7d4f4;
+  box-shadow: 0 7px 20px rgba(31, 73, 125, 0.075);
+}
+
+.talk-card__meta {
+  align-items: center;
+  color: #0550ae;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.65rem;
+  font-weight: 750;
+  gap: 0.34rem;
+  letter-spacing: 0.045em;
+  margin: 0 0 0.55rem;
+  text-transform: uppercase;
+}
+
+.talk-card__meta > * {
+  background: #f1f7ff;
+  border-radius: 999px;
+  line-height: 1;
+  padding: 0.28rem 0.46rem;
+}
+
+.talk-card h3 {
+  color: var(--publication-ink);
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.talk-card > p:not(.talk-card__meta):not(.talk-card__link) {
+  color: var(--publication-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin: 0.45rem 0 0;
+}
+
+.talk-card__link {
+  font-size: 0.76rem;
+  font-weight: 700;
+  margin: auto 0 0;
+  padding-top: 0.75rem;
+}
+
+.talk-card__link a {
+  text-decoration: none;
+}
+
+.talk-card__link a:hover,
+.talk-card__link a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.talk-card__link a:focus-visible {
+  border-radius: 2px;
+  outline: 2px solid rgba(9, 105, 218, 0.32);
+  outline-offset: 3px;
+}
+
+.talk-card--compact {
+  background: #fbfdff;
+}
+
+.talks-grid--organized {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.talk-card--organized {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(9, 105, 218, 0.08), transparent 22%),
+    linear-gradient(135deg, #f7fbff 0%, #fff 58%);
+}
+
 .home-page-content {
   color: var(--publication-ink);
   display: grid;
@@ -3096,15 +3248,15 @@ body.quick-abstract-dialog-open {
 }
 
 .home-research-banner {
-  aspect-ratio: auto;
+  aspect-ratio: 11 / 1;
   border: 1px solid #dbe7f5;
   border-radius: 12px;
   box-sizing: border-box;
   box-shadow: 0 5px 18px rgba(31, 73, 125, 0.07);
-  height: clamp(108px, 8vw, 120px);
+  height: auto;
   margin: 0;
   max-height: none;
-  min-height: 0;
+  min-height: 96px;
   min-width: 0;
   overflow: hidden;
   position: relative;
@@ -3114,8 +3266,8 @@ body.quick-abstract-dialog-open {
 .home-research-banner > img {
   display: block;
   height: 100%;
-  max-width: none;
-  object-fit: fill;
+  max-width: 100%;
+  object-fit: contain;
   object-position: center;
   width: 100%;
 }
@@ -3175,7 +3327,7 @@ body.quick-abstract-dialog-open {
 }
 
 .home-bio {
-  margin: 0 0 0.65rem;
+  margin: 0 0 2.1rem;
   padding: 0 0 0.25rem;
 }
 
@@ -3378,9 +3530,17 @@ body.quick-abstract-dialog-open {
     margin-top: 0.28rem;
   }
 
-  body.home-page .sidebar-curiosity__launch {
+  body.home-page .sidebar-curiosity__actions {
+    flex-wrap: nowrap;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    margin-top: 0.45rem;
+  }
+
+  body.home-page .sidebar-curiosity__launch,
+  body.home-page .sidebar-curiosity__ideas {
     font-size: 0.58rem;
-    margin-top: 0.38rem;
+    margin-top: 0;
     padding: 0.36rem 0.52rem;
   }
 
@@ -3466,11 +3626,11 @@ body.quick-abstract-dialog-open {
   }
 
   .home-research-banner {
-    height: 96px;
+    min-height: 96px;
   }
 
   .home-bio {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.75rem;
     padding-bottom: 0;
   }
 
@@ -3611,7 +3771,17 @@ body.quick-abstract-dialog-open {
   }
 
   .home-research-banner {
+    aspect-ratio: auto;
     height: clamp(190px, 38vw, 220px);
+  }
+
+  .home-research-banner > img {
+    height: auto;
+    object-position: center top;
+  }
+
+  .home-bio {
+    margin-bottom: 1.4rem;
   }
 
   .home-research-banner__stats {
@@ -3627,6 +3797,19 @@ body.quick-abstract-dialog-open {
 }
 
 @media screen and (max-width: 620px) {
+  .talks-header {
+    margin-bottom: 1.45rem;
+  }
+
+  .talks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .talks-section + .talks-section {
+    margin-top: 1.8rem;
+    padding-top: 1.55rem;
+  }
+
   .awards-header {
     margin-bottom: 1.45rem;
   }

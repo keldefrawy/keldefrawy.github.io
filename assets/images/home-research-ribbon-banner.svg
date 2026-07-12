@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 200" role="img" aria-labelledby="research-ribbon-title research-ribbon-desc">
+  <title id="research-ribbon-title">Research themes</title>
+  <desc id="research-ribbon-desc">A blue ribbon connects matching line icons for publications, patents, research projects, and citations.</desc>
+  <defs>
+    <linearGradient id="ribbon-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0550ae"/>
+      <stop offset="0.48" stop-color="#1677d2"/>
+      <stop offset="1" stop-color="#0b4ba0"/>
+    </linearGradient>
+    <linearGradient id="icon-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#dceeff"/>
+    </linearGradient>
+    <pattern id="binary-pattern" width="76" height="46" patternUnits="userSpaceOnUse">
+      <g fill="#73b8f2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" opacity="0.18">
+        <text x="8" y="13">1</text><text x="31" y="31">0</text><text x="57" y="18">1</text>
+        <text x="13" y="41">0</text><text x="65" y="43">1</text>
+      </g>
+    </pattern>
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#173f70" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <rect width="2200" height="200" fill="#fff"/>
+  <rect width="2200" height="200" fill="url(#binary-pattern)"/>
+
+  <path d="M0 111 C170 111 218 117 322 109 C445 99 518 94 636 108 C756 123 809 129 928 112 C1052 94 1137 96 1255 113 C1372 130 1441 127 1562 108 C1692 88 1776 90 1892 107 C2015 125 2085 119 2200 110 L2200 132 C2074 141 2011 145 1885 128 C1768 112 1696 110 1572 128 C1447 147 1363 147 1245 130 C1129 113 1054 113 936 131 C810 149 737 142 626 127 C512 112 445 117 329 128 C212 139 139 132 0 132 Z" fill="url(#ribbon-gradient)" opacity="0.94"/>
+  <path d="M0 111 C170 111 218 117 322 109 C445 99 518 94 636 108 C756 123 809 129 928 112 C1052 94 1137 96 1255 113 C1372 130 1441 127 1562 108 C1692 88 1776 90 1892 107 C2015 125 2085 119 2200 110" fill="none" stroke="#58a8ea" stroke-width="4" opacity="0.72"/>
+
+  <!-- Publications: book and secure-computing laptop. -->
+  <g transform="translate(400 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+    <path d="M-76 5 Q-40 -10 -4 10 V61 Q-39 43 -76 53 Z" fill="url(#icon-fill)"/>
+    <path d="M76 5 Q40 -10 4 10 V61 Q39 43 76 53 Z" fill="url(#icon-fill)"/>
+    <path d="M0 10 V64"/>
+    <path d="M-66 18 Q-39 10 -14 21 M-66 30 Q-39 22 -14 33 M66 18 Q39 10 14 21 M66 30 Q39 22 14 33" stroke-width="3" opacity="0.62"/>
+    <g transform="translate(0 -41)">
+      <rect x="-43" y="-21" width="86" height="50" rx="7" fill="#fff"/>
+      <path d="M-53 36 H53 L43 45 H-43 Z" fill="#dceeff"/>
+      <path d="M-26 5 H-6 M6 5 H26 M0 -11 V20 M-18 -4 L0 8 L18 -4" stroke-width="3"/>
+      <circle cx="0" cy="8" r="4" fill="#075bb8" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- Patents: documents, key, and shield. -->
+  <g transform="translate(858 73)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+    <rect x="-64" y="-5" width="96" height="72" rx="8" fill="#cfe8ff" opacity="0.8"/>
+    <rect x="-49" y="-18" width="96" height="72" rx="8" fill="#e8f5ff"/>
+    <rect x="-34" y="-31" width="96" height="72" rx="8" fill="#fff"/>
+    <path d="M-15 -9 H39 M-15 5 H33 M-15 19 H22" stroke-width="3" opacity="0.66"/>
+    <g transform="translate(-30 -51)">
+      <circle r="20" fill="url(#icon-fill)"/>
+      <circle r="7"/>
+      <path d="M7 0 H40 M28 0 V10 M37 0 V7"/>
+    </g>
+    <path d="M65 -58 L92 -47 V-24 C92 -5 80 8 65 15 C50 8 38 -5 38 -24 V-47 Z" fill="url(#icon-fill)"/>
+    <path d="M55 -23 L63 -15 L78 -34"/>
+  </g>
+
+  <!-- Research projects: lattice and award seal. -->
+  <g transform="translate(1334 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+    <g transform="translate(0 -48)" stroke-width="3">
+      <path d="M-48 -11 H48 M-48 5 H48 M-48 21 H48 M-32 -25 V27 M0 -25 V27 M32 -25 V27" opacity="0.38"/>
+      <g fill="#1677d2" stroke="#fff" stroke-width="2">
+        <circle cx="-32" cy="-11" r="5"/><circle cx="0" cy="-11" r="5"/><circle cx="32" cy="-11" r="5"/>
+        <circle cx="-32" cy="5" r="5"/><circle cx="0" cy="5" r="5"/><circle cx="32" cy="5" r="5"/>
+        <circle cx="-32" cy="21" r="5"/><circle cx="0" cy="21" r="5"/><circle cx="32" cy="21" r="5"/>
+      </g>
+    </g>
+    <circle cx="0" cy="20" r="52" fill="#e8f5ff"/>
+    <circle cx="0" cy="20" r="37" fill="#fff"/>
+    <path d="M-22 63 L-34 91 L0 78 L34 91 L22 63" fill="#cfe8ff"/>
+    <path d="M-18 20 L-5 33 L22 5"/>
+  </g>
+
+  <!-- Citations and connected work: network, lock, and atom. -->
+  <g transform="translate(1800 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+    <g opacity="0.88">
+      <path d="M-76 8 L-30 -20 L15 2 L57 -18 M-76 8 L-44 51 L8 48 L57 -18 M15 2 L8 48"/>
+      <g fill="#e8f5ff">
+        <circle cx="-76" cy="8" r="11"/><circle cx="-30" cy="-20" r="11"/><circle cx="15" cy="2" r="11"/><circle cx="57" cy="-18" r="11"/><circle cx="-44" cy="51" r="11"/><circle cx="8" cy="48" r="11"/>
+      </g>
+    </g>
+    <g transform="translate(67 45)">
+      <rect x="-30" y="-8" width="60" height="51" rx="8" fill="#fff"/>
+      <path d="M-18 -8 V-20 C-18 -35 -10 -43 0 -43 C10 -43 18 -35 18 -20 V-8"/>
+      <circle cy="15" r="6" fill="#075bb8" stroke="none"/>
+      <path d="M0 20 V29"/>
+    </g>
+    <g transform="translate(18 -57)" stroke-width="3">
+      <ellipse rx="48" ry="15"/>
+      <ellipse rx="48" ry="15" transform="rotate(60)"/>
+      <ellipse rx="48" ry="15" transform="rotate(120)"/>
+      <circle r="6" fill="#1677d2" stroke="none"/>
+    </g>
+  </g>
+</svg>
