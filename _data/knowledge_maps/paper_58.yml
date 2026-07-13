@@ -19,6 +19,7 @@ labels: [Theory, Applied]
 authors:
   - José Carlos Bacelar Almeida
   - Manuel Barbosa
+  - Manuel L. Correia
   - Karim Eldefrawy
   - Stéphane Graham-Lengrand
   - Hugo Pacheco
@@ -57,6 +58,9 @@ sources:
     media_type: application/pdf
     sha256: ff902956233cac0529a5c1283fcb83fde1c7be887aa32e0ef41a0dda8ef62d78
     page_count: 29
+    version_note: >-
+      This May 2021 arXiv copy has the earlier six-author list. The canonical metadata above
+      follows the final ACM CCS and IACR ePrint record, which includes Manuel L. Correia.
   - id: source-paper-58-official
     type: official_publication_record
     title: ACM CCS 2021 publication record

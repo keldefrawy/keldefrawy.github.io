@@ -74,11 +74,27 @@ scenes:
         relationship: influence
         status: Senior tool influence · EasyCrypt
         note: "Coauthor of the paper that introduced EasyCrypt and one of its main implementors; the dashed path records proof-assistant and automation lineage."
+      - id: hotel-gene-tsudik
+        label: Gene Tsudik
+        relationship: collaborator
+        catalog_authors: [Gene Tsudik]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 21 catalog paper records mapped
+        note: >-
+          Coauthor across twenty-one cataloged works spanning cooperative and confidential mobile
+          networking; ALARM and PRISM anonymous routing; secure network coding; group distance
+          bounding; web-fraud measurement; roots of trust, remote attestation, verified embedded
+          security, and proofs of execution; and private anonymous bulletin boards.
       - id: hotel-vitor-pereira
         label: Vitor Pereira
         relationship: collaborator
-        status: Direct collaborator · verified MPC and ZK
-        note: "Coauthor on the machine-checked MPC evaluator and machine-checked MPC-in-the-head zero-knowledge work."
+        catalog_authors: [Vitor Pereira]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 3 catalog publications mapped
+        note: >-
+          Coauthor on all three cataloged works: machine-checked MPC evaluation, machine-checked
+          MPC-in-the-head zero knowledge, and verified parallel and memory-access optimizations for
+          zero knowledge.
       - id: hotel-norrathep-rattanavipanon
         label: Norrathep Rattanavipanon
         relationship: collaborator
@@ -134,6 +150,15 @@ scenes:
         status: Foundation for security proofs
         foundation: true
         note: "Cryptographic proofs model adversaries, simulators, and reductions as efficient probabilistic algorithms—commonly Turing machines or equivalent circuit models."
+      - id: hotel-secure-communications
+        label: Secure, private, and anonymous communications
+        note: "Secure networking, encrypted channels, anonymous routing, and private bulletin boards carry cryptographic foundations into communication systems."
+      - id: hotel-distance-bounding
+        label: Distance bounding and proximity authentication
+      - id: hotel-security-measurement
+        label: Security measurement and data-driven detection
+      - id: hotel-attestation-trust
+        label: Roots of trust, integrity, and remote attestation
       - id: hotel-architecture
         label: Computer architecture
       - id: hotel-reliable-computation
@@ -149,6 +174,31 @@ scenes:
       - id: science-hotel-byzantine-self-stabilization
         label: Byzantine-resilient self-stabilization
         status: Fault tolerance under transient and Byzantine faults
+    catalog_paper_idea_links:
+      - idea_id: hotel-secure-communications
+        publication_ids: [4, 7, 9, 10, 11, 14, 15, 74]
+        type: direct
+        label: secure and private communications
+      - idea_id: hotel-distance-bounding
+        publication_ids: [13]
+        type: direct
+        label: group proximity authentication
+      - idea_id: hotel-security-measurement
+        publication_ids: [16]
+        type: direct
+        label: TLS-certificate measurement and web-fraud detection
+      - idea_id: hotel-attestation-trust
+        publication_ids: [17, 27, 33, 41, 42]
+        type: direct
+        label: roots of trust, integrity, and attestation
+      - idea_id: hotel-verified-attestation
+        publication_ids: [37, 38, 46, 47, 50, 54]
+        type: direct
+        label: formally verified attestation and execution
+      - idea_id: hotel-formal-methods
+        publication_ids: [51, 58, 67]
+        type: direct
+        label: machine-checked cryptography
     papers:
       - id: hotel-paper-51
         publication_id: 51
@@ -503,8 +553,24 @@ scenes:
       - id: tour-gene-tsudik
         label: Gene Tsudik
         relationship: collaborator
-        status: Direct collaborator · encrypted network coding
-        note: "Coauthor on the study of link-layer encryption and achievable wireless network-coding capacity; the complete collaborators map also shows ALARM, PRISM, distance bounding, messaging, and attestation."
+        catalog_authors: [Gene Tsudik]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 21 catalog paper records mapped
+        note: >-
+          Coauthor across twenty-one cataloged works spanning cooperative and confidential mobile
+          networking; ALARM and PRISM anonymous routing; secure network coding; group distance
+          bounding; web-fraud measurement; roots of trust, remote attestation, verified embedded
+          security, and proofs of execution; and private anonymous bulletin boards.
+      - id: tour-vitor-pereira
+        label: Vitor Pereira
+        relationship: collaborator
+        catalog_authors: [Vitor Pereira]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 3 catalog publications mapped
+        note: >-
+          Coauthor on all three cataloged works: machine-checked MPC evaluation, machine-checked
+          MPC-in-the-head zero knowledge, and verified parallel and memory-access optimizations for
+          zero knowledge.
       - id: tour-moti-yung
         label: Moti Yung
         relationship: collaborator
@@ -563,6 +629,29 @@ scenes:
         label: Quantum algorithms and protocols
       - id: tour-post-quantum
         label: Post-quantum cryptography
+      - id: tour-secure-communications
+        label: Network privacy, confidential messaging, and security analytics
+      - id: tour-proximity-attestation
+        label: Proximity authentication, roots of trust, and attestation
+      - id: tour-formal-security
+        label: Machine-checked secure and verifiable computation
+    catalog_paper_idea_links:
+      - idea_id: tour-secure-communications
+        publication_ids: [4, 7, 9, 10, 14, 15, 16, 74]
+        type: direct
+        label: secure and private communications
+      - idea_id: tour-capacity-coding
+        publication_ids: [11]
+        type: direct
+        label: encrypted network coding and capacity
+      - idea_id: tour-proximity-attestation
+        publication_ids: [13, 17, 27, 33, 41, 42]
+        type: direct
+        label: proximity, integrity, and attestation
+      - idea_id: tour-formal-security
+        publication_ids: [37, 38, 46, 47, 50, 51, 54, 58, 67]
+        type: direct
+        label: formal and machine-checked security
     papers:
       - id: tour-paper-11
         publication_id: 11
@@ -1032,6 +1121,27 @@ scenes:
         relationship: influence
         status: Model checking and embedded systems · no collaboration
         note: "Sifakis helped establish model checking as an effective technology for automatically verifying concurrent, real-time, and embedded systems."
+      - id: machines-gene-tsudik
+        label: Gene Tsudik
+        relationship: collaborator
+        catalog_authors: [Gene Tsudik]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 21 catalog paper records mapped
+        note: >-
+          Coauthor across twenty-one cataloged works spanning cooperative and confidential mobile
+          networking; ALARM and PRISM anonymous routing; secure network coding; group distance
+          bounding; web-fraud measurement; roots of trust, remote attestation, verified embedded
+          security, and proofs of execution; and private anonymous bulletin boards.
+      - id: machines-vitor-pereira
+        label: Vitor Pereira
+        relationship: collaborator
+        catalog_authors: [Vitor Pereira]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 3 catalog publications mapped
+        note: >-
+          Coauthor on all three cataloged works: machine-checked MPC evaluation, machine-checked
+          MPC-in-the-head zero knowledge, and verified parallel and memory-access optimizations for
+          zero knowledge.
     ideas:
       - id: machines-formalization
         label: Axioms, formal proof, and mechanical reasoning
@@ -1063,6 +1173,25 @@ scenes:
         label: Formal specification, model checking, and proof tools
       - id: machines-checked-security
         label: Machine-checked cryptography, protocols, algorithms, and systems
+      - id: machines-secure-systems
+        label: Secure networking, privacy, and proximity authentication
+    catalog_paper_idea_links:
+      - idea_id: machines-secure-systems
+        publication_ids: [4, 7, 9, 10, 13, 14, 15, 74]
+        type: direct
+        label: secure networking and authentication
+      - idea_id: machines-information-switching
+        publication_ids: [11]
+        type: direct
+        label: information, coding, and capacity
+      - idea_id: machines-trustworthy-automation
+        publication_ids: [16, 17, 27, 33, 41, 42]
+        type: direct
+        label: cyberanalytics, roots of trust, and attestation
+      - idea_id: machines-checked-security
+        publication_ids: [37, 38, 46, 47, 50, 51, 54, 58, 67]
+        type: direct
+        label: formal and machine-checked security
     papers:
       - id: machines-paper-79
         publication_id: 79
@@ -1400,7 +1529,8 @@ scenes:
           not as coauthors. Peter G. Neumann is shown as a Bell Labs-to-SRI institutional and
           intellectual bridge. Juan Garay, Moti Yung, Gene Tsudik, Stas Jarecki, Ashish Gehani,
           Hassen Saïdi, Linda Briesemeister, Tim McCarthy, Christopher Peikert, Tancrède Lepoint,
-          and Gabriela F. Ciocarlie are separately marked as documented direct collaborators;
+          Gabriela F. Ciocarlie, and Vitor Pereira are separately marked as documented direct
+          collaborators; placement does not assert employment at a named laboratory, and
           co-inventorship is stated only where a joint patent is listed.
     people:
       - id: labs-shannon
@@ -1477,11 +1607,24 @@ scenes:
         label: Gene Tsudik
         relationship: collaborator
         catalog_authors: [Gene Tsudik]
-        status: Direct collaborator · IBM Zurich lineage · 21 catalog publications
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · IBM Zurich lineage · all 21 catalog paper records mapped
         note: >-
-          Tsudik worked at IBM Zurich Research Laboratory before his UCI career and directly
-          coauthored twenty-one cataloged papers with Karim across privacy-preserving networking,
-          distance bounding, attestation, verified embedded security, and anonymous messaging.
+          Tsudik worked at IBM Zurich Research Laboratory before his UCI career and coauthored
+          twenty-one cataloged works spanning cooperative and confidential mobile networking;
+          ALARM and PRISM anonymous routing; secure network coding; group distance bounding;
+          web-fraud measurement; remote attestation and verified embedded security; and private
+          anonymous bulletin boards.
+      - id: labs-vitor-pereira
+        label: Vitor Pereira
+        relationship: collaborator
+        catalog_authors: [Vitor Pereira]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 3 catalog publications mapped
+        note: >-
+          Coauthor on all three cataloged works: machine-checked MPC evaluation, machine-checked
+          MPC-in-the-head zero knowledge, and verified parallel and memory-access optimizations for
+          zero knowledge.
       - id: labs-stas-jarecki
         label: Stanisław “Stas” Jarecki
         relationship: collaborator
@@ -1612,6 +1755,23 @@ scenes:
         label: Data provenance, blockchain analysis, and cyber forensics
       - id: labs-cryptography-privacy
         label: Cryptography, privacy, and resilient secure systems
+    catalog_paper_idea_links:
+      - idea_id: labs-cryptography-privacy
+        publication_ids: [4, 7, 9, 10, 13, 14, 15, 17, 27, 33, 41, 42, 74]
+        type: direct
+        label: cryptography, privacy, and secure systems
+      - idea_id: labs-digital-foundations
+        publication_ids: [11]
+        type: direct
+        label: information, coding, and digital communication
+      - idea_id: labs-provenance-security
+        publication_ids: [16]
+        type: direct
+        label: certificate measurement and web-fraud detection
+      - idea_id: labs-formal-methods
+        publication_ids: [37, 38, 46, 47, 50, 51, 54, 58, 67]
+        type: direct
+        label: formal and machine-checked security
     papers:
       - id: labs-paper-19
         publication_id: 19
@@ -2096,8 +2256,14 @@ scenes:
       - id: cipher-gene-tsudik
         label: Gene Tsudik
         relationship: collaborator
-        status: Direct collaborator · network coding and privacy
-        note: "Coauthor on encrypted network-coding capacity; the expanded collaborators view also traces ALARM and PRISM anonymous routing, location privacy, group distance bounding, messaging, and verified attestation."
+        catalog_authors: [Gene Tsudik]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 21 catalog paper records mapped
+        note: >-
+          Coauthor across twenty-one cataloged works spanning cooperative and confidential mobile
+          networking; ALARM and PRISM anonymous routing; secure network coding; group distance
+          bounding; web-fraud measurement; roots of trust, remote attestation, verified embedded
+          security, and proofs of execution; and private anonymous bulletin boards.
       - id: cipher-moti-yung
         label: Moti Yung
         relationship: collaborator
@@ -2150,8 +2316,13 @@ scenes:
       - id: cipher-vitor-pereira
         label: Vitor Pereira
         relationship: collaborator
-        status: Direct collaborator · verified MPC and zero knowledge
-        note: "Coauthor on machine-checked MPC and machine-checked MPC-in-the-head zero knowledge."
+        catalog_authors: [Vitor Pereira]
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 3 catalog publications mapped
+        note: >-
+          Coauthor on all three cataloged works: machine-checked MPC evaluation, machine-checked
+          MPC-in-the-head zero knowledge, and verified parallel and memory-access optimizations for
+          zero knowledge.
       - id: cipher-kelong-cong
         label: Kelong Cong
         relationship: collaborator
@@ -2212,6 +2383,51 @@ scenes:
         label: Elliptic-curve cryptography
       - id: cipher-fhe
         label: Fully homomorphic encryption
+      - id: cipher-verified-security
+        label: Machine-checked cryptography and verified security architectures
+      - id: cipher-private-communications
+        label: Secure networking and confidential messaging
+      - id: cipher-security-measurement
+        label: Security measurement and web-fraud detection
+      - id: cipher-trusted-systems-attestation
+        label: Roots of trust, remote attestation, and proofs of execution
+    catalog_paper_idea_links:
+      - idea_id: cipher-anonymity
+        publication_ids: [7, 9, 14, 15, 74]
+        type: direct
+        label: anonymous and private communications
+      - idea_id: cipher-private-communications
+        publication_ids: [4, 10]
+        type: direct
+        label: secure networking and message confidentiality
+      - idea_id: cipher-security-measurement
+        publication_ids: [16]
+        type: direct
+        label: certificate measurement and web-fraud detection
+      - idea_id: cipher-trusted-systems-attestation
+        publication_ids: [17, 27, 33, 41, 42]
+        type: direct
+        label: trusted systems and remote attestation
+      - idea_id: cipher-information
+        publication_ids: [11]
+        type: direct
+        label: encrypted network coding and capacity
+      - idea_id: science-cipher-distance-bounding
+        publication_ids: [13]
+        type: direct
+        label: group distance bounding
+      - idea_id: cipher-verified-security
+        publication_ids: [37, 38, 46, 47, 50, 54]
+        type: direct
+        label: formally verified attestation and execution
+      - idea_id: cipher-mpc
+        publication_ids: [51]
+        type: direct
+        label: machine-checked secure multiparty computation
+      - idea_id: cipher-provable-zk
+        publication_ids: [58, 67]
+        type: direct
+        label: verified zero knowledge
     papers:
       - id: cipher-paper-51
         publication_id: 51

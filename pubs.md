@@ -69,7 +69,7 @@ Applied Cryptography and Network Security (ACNS), 2022. [PDF] [[eprint]](https:/
 
 59- Axel Feldmann, Nikola Samardzic, Aleksandar Krastev, Nicholas Genise, Srini Devadas, Karim Eldefrawy, Ronald Dreslinski, Christopher Peikert, Daniel Sanchez, "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption", extended version of a preliminary paper in proceedings of the 54th IEEE/ACM International Symposium on Microarchitecture (Micro). [[PDF]](/pubs/2021/f1-fhe-accelerator-extended.pdf) [[arxiv]](https://arxiv.org/pdf/2109.05371.pdf)
 
-58- Jose Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in proceedings of the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](/pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf) [[arXiv PDF]](https://arxiv.org/pdf/2104.05516.pdf)
+58- Jose Bacelar Almeida, Manuel Barbosa, Manuel L. Correia, Karim Eldefrawy, Stephane Graham-Lengrand, Hugo Pacheco, Vitor Pereira, "Machine-checked ZKP for NP-relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head", in proceedings of the 28th ACM Conference on Computer and Communications Security (CCS). [[PDF]](/pubs/2021/machine-checked-zkp-mpc-in-the-head.pdf) [[arXiv PDF]](https://arxiv.org/pdf/2104.05516.pdf)
 
 57- Karim Eldefrawy, Nicholas Genise, Rutuja Kshirsagar, Moti Yung, "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications", in proceedings of the 23rd International Symposium on Stabilization, Safety, and Security of Distributed Systems (SSS). [PDF] [[eprint]](https://eprint.iacr.org/2022/096)
 

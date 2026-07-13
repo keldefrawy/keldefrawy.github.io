@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "json"
+require "open3"
 require "yaml"
 
 ROOT = File.expand_path("..", __dir__)
@@ -21,6 +23,67 @@ base_scenes = YAML.load_file(File.join(ROOT, "_data/curiosity_connections.yml"))
 overlay_scenes = YAML.load_file(File.join(ROOT, "_data/knowledge_lineage_overlay.yml")).fetch("scenes")
 publications = YAML.load_file(File.join(ROOT, "_data/publications.yml"))
 errors = []
+
+complete_catalog_expectations = {
+  "Gene Tsudik" => [4, 7, 9, 10, 11, 13, 14, 15, 16, 17, 27, 33, 37, 38, 41, 42, 46, 47, 50, 54, 74],
+  "Vitor Pereira" => [51, 58, 67]
+}
+complete_catalog_scene_names = %w[hotel tour machines labs cipher]
+
+complete_catalog_expectations.each do |label, expected_ids|
+  actual_ids = publications.select do |publication|
+    publication.fetch("authors")
+               .gsub(/,\s+and\s+/, ", ")
+               .gsub(/\s+and\s+/, ", ")
+               .split(/\s*,\s*/)
+               .include?(label)
+  end.map { |publication| publication.fetch("id").to_i }.sort
+  errors << "#{label} catalog set is #{actual_ids.inspect}" unless actual_ids == expected_ids
+end
+
+target_catalog_ids = complete_catalog_expectations.values.flatten.sort
+complete_catalog_scene_names.each do |scene_name|
+  base_scene = base_scenes.fetch(scene_name)
+  overlay_scene = overlay_scenes.fetch(scene_name, {})
+  groups = base_scene.fetch("catalog_paper_idea_links", []) +
+           overlay_scene.fetch("catalog_paper_idea_links", [])
+  mapped_ids = groups.flat_map { |group| group.fetch("publication_ids") }.map(&:to_i).sort
+  unless mapped_ids == target_catalog_ids
+    errors << "#{scene_name} catalog paper-to-idea mapping is #{mapped_ids.inspect}"
+  end
+
+  visible_idea_ids = merged_nodes(base_scene, overlay_scene, "ideas").map { |idea| idea.fetch("id") }
+  groups.each do |group|
+    unless visible_idea_ids.include?(group.fetch("idea_id"))
+      errors << "#{scene_name} catalog mapping targets missing idea #{group.fetch("idea_id")}"
+    end
+  end
+end
+
+collaborator_base_scene = base_scenes.fetch("collaborators", {})
+collaborator_overlay_scene = overlay_scenes.fetch("collaborators")
+collaborator_catalog_groups =
+  collaborator_base_scene.fetch("catalog_paper_idea_links", []) +
+  collaborator_overlay_scene.fetch("catalog_paper_idea_links", [])
+collaborator_mapped_ids = collaborator_catalog_groups.flat_map do |group|
+  group.fetch("publication_ids")
+end.map(&:to_i)
+# A paper may intentionally illuminate more than one idea, so overlaps are allowed;
+# the distinct set must still be exactly the complete Gene/Vitor catalog set.
+unless collaborator_mapped_ids.uniq.sort == target_catalog_ids
+  errors << "collaborators catalog paper-to-idea mapping covers #{collaborator_mapped_ids.uniq.sort.inspect}"
+end
+
+collaborator_visible_idea_ids = merged_nodes(
+  collaborator_base_scene,
+  collaborator_overlay_scene,
+  "ideas"
+).map { |idea| idea.fetch("id") }
+collaborator_catalog_groups.each do |group|
+  unless collaborator_visible_idea_ids.include?(group.fetch("idea_id"))
+    errors << "collaborators catalog mapping targets missing idea #{group.fetch("idea_id")}"
+  end
+end
 
 cipher_base = base_scenes.fetch("cipher")
 cipher_overlay = overlay_scenes.fetch("cipher")
@@ -82,7 +145,9 @@ expected_machine_people = [
   "Martín Abadi",
   "Patrick Lincoln",
   "Leslie Lamport",
-  "Joseph Sifakis"
+  "Joseph Sifakis",
+  "Gene Tsudik",
+  "Vitor Pereira"
 ]
 machine_people = machines.fetch("people").map { |person| person.fetch("label") }
 errors << "machines lineage people differ: #{machine_people.inspect}" unless machine_people == expected_machine_people
@@ -96,9 +161,11 @@ end
 machine_collaborators = machines.fetch("people").select { |person| person["relationship"] == "collaborator" }
 unless machine_collaborators.map { |person| person.fetch("label") } == [
   "Gabriela F. Ciocarlie",
-  "Linda Briesemeister"
+  "Linda Briesemeister",
+  "Gene Tsudik",
+  "Vitor Pereira"
 ]
-  errors << "machines lineage misstates the two direct SRI collaborators"
+  errors << "machines lineage misstates its direct collaborators"
 end
 
 machine_idea_ids = machines.fetch("ideas").map { |idea| idea.fetch("id") }
@@ -165,6 +232,7 @@ expected_lab_people = [
   "Juan A. Garay",
   "Moti Yung",
   "Gene Tsudik",
+  "Vitor Pereira",
   "Stanisław “Stas” Jarecki",
   "Natarajan Shankar",
   "Patrick Lincoln",
@@ -187,6 +255,7 @@ expected_lab_collaborators = [
   "Juan A. Garay",
   "Moti Yung",
   "Gene Tsudik",
+  "Vitor Pereira",
   "Stanisław “Stas” Jarecki",
   "Christopher Peikert",
   "Tancrède Lepoint",
@@ -281,6 +350,279 @@ knowledge_page = File.read(File.join(ROOT, "knowledge/index.md"))
 sidebar_js = File.read(File.join(ROOT, "assets/js/sidebar-curiosity.js"))
 sidebar_css = File.read(File.join(ROOT, "assets/css/style.scss"))
 knowledge_js = File.read(File.join(ROOT, "assets/js/knowledge-hub.js"))
+scene_data_js_path = File.join(ROOT, "assets/js/knowledge-scene-data.js")
+scene_data_js = File.read(scene_data_js_path)
+
+catalog_completion_call = "completeCatalogCoauthorship(result, settings.publications);"
+visible_authorship_call = "completeVisibleAuthorship(result, settings.publications);"
+catalog_completion_index = scene_data_js.index(catalog_completion_call)
+visible_authorship_index = scene_data_js.index(visible_authorship_call)
+unless scene_data_js.include?("function completeCatalogCoauthorship") &&
+       scene_data_js.include?("person.complete_catalog_coauthorship === true") &&
+       catalog_completion_index && visible_authorship_index &&
+       catalog_completion_index < visible_authorship_index
+  errors << "shared scene merger does not complete opted-in catalog coauthorship before visible authorship"
+end
+
+runtime_input = {
+  "base_scenes" => base_scenes,
+  "overlay_scenes" => overlay_scenes,
+  "publications" => publications,
+  "scene_names" => complete_catalog_scene_names,
+  "collaborator_labels" => complete_catalog_expectations.keys
+}
+runtime_script = <<~'JAVASCRIPT'
+  const fs = require("fs");
+  const vm = require("vm");
+  const input = JSON.parse(fs.readFileSync(0, "utf8"));
+  global.window = {};
+  vm.runInThisContext(fs.readFileSync(process.argv[1], "utf8"), {
+    filename: process.argv[1]
+  });
+
+  const collaboratorDirectory =
+    ((input.overlay_scenes.collaborators || {}).people || []);
+  const result = {};
+
+  input.scene_names.forEach(function (sceneName) {
+    const scene = window.KnowledgeSceneData.mergeScene(
+      input.base_scenes[sceneName] || {},
+      input.overlay_scenes[sceneName] || {},
+      {
+        collaboratorPeople: collaboratorDirectory,
+        publications: input.publications
+      }
+    );
+    const nodesById = {};
+    const ideaIds = {};
+
+    [scene.people, scene.ideas, scene.papers, scene.patents].forEach(function (nodes) {
+      nodes.forEach(function (node) {
+        nodesById[node.id] = node;
+      });
+    });
+    scene.ideas.forEach(function (idea) {
+      ideaIds[idea.id] = true;
+    });
+    result[sceneName] = {};
+    input.collaborator_labels.forEach(function (label) {
+      const people = scene.people.filter(function (person) {
+        return person.label === label;
+      });
+      const personIds = {};
+
+      people.forEach(function (person) {
+        personIds[person.id] = true;
+      });
+      const directPapers = scene.links.filter(function (link) {
+        if (link.type !== "direct") {
+          return false;
+        }
+        return (personIds[link.from] && nodesById[link.to] && nodesById[link.to].publication_id) ||
+          (personIds[link.to] && nodesById[link.from] && nodesById[link.from].publication_id);
+      }).map(function (link) {
+        const paper = personIds[link.from] ? nodesById[link.to] : nodesById[link.from];
+        return {
+          publication_id: Number(paper.publication_id),
+          title: paper.title,
+          url: paper.url,
+          idea_ids: scene.links.filter(function (candidate) {
+            return (candidate.from === paper.id && ideaIds[candidate.to]) ||
+              (candidate.to === paper.id && ideaIds[candidate.from]);
+          }).map(function (candidate) {
+            return candidate.from === paper.id ? candidate.to : candidate.from;
+          })
+        };
+      }).sort(function (left, right) {
+        return left.publication_id - right.publication_id;
+      });
+
+      result[sceneName][label] = {
+        people: people,
+        direct_papers: directPapers
+      };
+    });
+  });
+
+  let collaboratorScene = window.KnowledgeSceneData.mergeScene(
+    input.base_scenes.collaborators || {},
+    input.overlay_scenes.collaborators || {},
+    {
+      collaboratorPeople: collaboratorDirectory,
+      publications: input.publications
+    }
+  );
+  collaboratorScene = window.KnowledgeSceneData.completeCollaboratorView(
+    collaboratorScene,
+    input.publications
+  );
+
+  const collaboratorNodesById = {};
+  const collaboratorIdeaIds = {};
+  [
+    collaboratorScene.people,
+    collaboratorScene.ideas,
+    collaboratorScene.papers,
+    collaboratorScene.patents
+  ].forEach(function (nodes) {
+    nodes.forEach(function (node) {
+      collaboratorNodesById[node.id] = node;
+    });
+  });
+  collaboratorScene.ideas.forEach(function (idea) {
+    collaboratorIdeaIds[idea.id] = true;
+  });
+
+  const collaboratorPaperCounts = {};
+  collaboratorScene.papers.forEach(function (paper) {
+    const publicationId = Number(paper.publication_id);
+    if (!Number.isFinite(publicationId)) {
+      return;
+    }
+    collaboratorPaperCounts[publicationId] =
+      (collaboratorPaperCounts[publicationId] || 0) + 1;
+  });
+
+  result.collaborators = {
+    paper_counts: collaboratorPaperCounts,
+    collaborators: {}
+  };
+  input.collaborator_labels.forEach(function (label) {
+    const people = collaboratorScene.people.filter(function (person) {
+      return person.label === label;
+    });
+    const personIds = {};
+    people.forEach(function (person) {
+      personIds[person.id] = true;
+    });
+    const directPapers = collaboratorScene.links.filter(function (link) {
+      if (link.type !== "direct") {
+        return false;
+      }
+      return (personIds[link.from] && collaboratorNodesById[link.to] &&
+          collaboratorNodesById[link.to].publication_id) ||
+        (personIds[link.to] && collaboratorNodesById[link.from] &&
+          collaboratorNodesById[link.from].publication_id);
+    }).map(function (link) {
+      const paper = personIds[link.from] ?
+        collaboratorNodesById[link.to] : collaboratorNodesById[link.from];
+      return {
+        publication_id: Number(paper.publication_id),
+        title: paper.title,
+        url: paper.url,
+        idea_ids: collaboratorScene.links.filter(function (candidate) {
+          return (candidate.from === paper.id && collaboratorIdeaIds[candidate.to]) ||
+            (candidate.to === paper.id && collaboratorIdeaIds[candidate.from]);
+        }).map(function (candidate) {
+          return candidate.from === paper.id ? candidate.to : candidate.from;
+        })
+      };
+    }).sort(function (left, right) {
+      return left.publication_id - right.publication_id;
+    });
+
+    result.collaborators.collaborators[label] = {
+      people: people,
+      direct_papers: directPapers
+    };
+  });
+  process.stdout.write(JSON.stringify(result));
+JAVASCRIPT
+
+runtime_stdout, runtime_stderr, runtime_status = Open3.capture3(
+  "node",
+  "-e",
+  runtime_script,
+  scene_data_js_path,
+  stdin_data: JSON.generate(runtime_input),
+  chdir: ROOT
+)
+if !runtime_status.success?
+  errors << "shared scene merger runtime audit failed: #{runtime_stderr.strip}"
+else
+  runtime_scenes = JSON.parse(runtime_stdout)
+  publication_titles = publications.to_h { |publication| [publication.fetch("id").to_i, publication.fetch("title")] }
+  complete_catalog_scene_names.each do |scene_name|
+    complete_catalog_expectations.each do |label, expected_ids|
+      record = runtime_scenes.fetch(scene_name).fetch(label)
+      people = record.fetch("people")
+      if people.length != 1
+        errors << "#{scene_name} runtime scene has #{people.length} #{label} collaborator nodes"
+        next
+      end
+
+      person = people.first
+      errors << "#{scene_name}: #{label} is not a collaborator" unless person["relationship"] == "collaborator"
+      unless person["complete_catalog_coauthorship"] == true
+        errors << "#{scene_name}: #{label} is not opted into complete catalog coauthorship"
+      end
+      direct_papers = record.fetch("direct_papers")
+      direct_publication_ids = direct_papers.map { |paper| paper.fetch("publication_id") }
+      unless direct_publication_ids == expected_ids
+        errors << "#{scene_name}: #{label} direct catalog links are #{direct_publication_ids.inspect}"
+      end
+      direct_papers.each do |paper|
+        publication_id = paper.fetch("publication_id")
+        expected_url = "/knowledge/papers/paper-#{publication_id}/"
+        unless paper.fetch("url") == expected_url
+          errors << "#{scene_name}: #{label} paper #{publication_id} points to #{paper.fetch("url").inspect}"
+        end
+        unless paper.fetch("title") == publication_titles.fetch(publication_id)
+          errors << "#{scene_name}: #{label} paper #{publication_id} title differs from the catalog"
+        end
+        if paper.fetch("idea_ids").empty?
+          errors << "#{scene_name}: #{label} paper #{publication_id} has no research-idea connection"
+        end
+        unless File.exist?(File.join(ROOT, "_data/knowledge_maps/paper_#{publication_id}.yml"))
+          errors << "#{scene_name}: #{label} paper #{publication_id} has no backing knowledge-map record"
+        end
+      end
+    end
+  end
+
+  collaborator_runtime = runtime_scenes.fetch("collaborators")
+  collaborator_paper_counts = collaborator_runtime.fetch("paper_counts")
+  complete_catalog_expectations.each do |label, expected_ids|
+    record = collaborator_runtime.fetch("collaborators").fetch(label)
+    people = record.fetch("people")
+    if people.length != 1
+      errors << "collaborators runtime scene has #{people.length} #{label} collaborator nodes"
+      next
+    end
+
+    person = people.first
+    errors << "collaborators: #{label} is not a collaborator" unless person["relationship"] == "collaborator"
+    direct_papers = record.fetch("direct_papers")
+    direct_publication_ids = direct_papers.map { |paper| paper.fetch("publication_id") }
+    unless direct_publication_ids == expected_ids
+      errors << "collaborators: #{label} direct catalog links are #{direct_publication_ids.inspect}"
+    end
+
+    expected_ids.each do |publication_id|
+      count = collaborator_paper_counts.fetch(publication_id.to_s, 0)
+      unless count == 1
+        errors << "collaborators: publication #{publication_id} has #{count} paper nodes"
+      end
+    end
+
+    direct_papers.each do |paper|
+      publication_id = paper.fetch("publication_id")
+      expected_url = "/knowledge/papers/paper-#{publication_id}/"
+      unless paper.fetch("url") == expected_url
+        errors << "collaborators: #{label} paper #{publication_id} points to #{paper.fetch("url").inspect}"
+      end
+      unless paper.fetch("title") == publication_titles.fetch(publication_id)
+        errors << "collaborators: #{label} paper #{publication_id} title differs from the catalog"
+      end
+      if paper.fetch("idea_ids").empty?
+        errors << "collaborators: #{label} paper #{publication_id} has no research-idea connection"
+      end
+      unless File.exist?(File.join(ROOT, "_data/knowledge_maps/paper_#{publication_id}.yml"))
+        errors << "collaborators: #{label} paper #{publication_id} has no backing knowledge-map record"
+      end
+    end
+  end
+end
 
 %w[data-curiosity-connections-data data-knowledge-lineage-overlay data-knowledge-publication-catalog].each do |marker|
   errors << "sidebar include is missing #{marker}" unless sidebar_include.include?(marker)
@@ -384,4 +726,4 @@ errors << "knowledge renderer does not use shared scene merger" unless knowledge
 
 abort_with(errors)
 
-puts "Knowledge-scene unification audit passed: shared cipher, tour, hotel, machines, and laboratory data verified."
+puts "Knowledge-scene unification audit passed: five thematic scenes and the main collaborators map verified."

@@ -150,6 +150,63 @@
     });
   }
 
+  function completeCatalogCoauthorship(result, publications) {
+    var papersByPublicationId = {};
+    var usedNodeIds = {};
+    var collaborators = result.people.filter(function (person) {
+      return person.relationship === "collaborator" &&
+        person.complete_catalog_coauthorship === true &&
+        (person.catalog_authors || person.catalog_author_groups);
+    });
+
+    if (!collaborators.length) {
+      return;
+    }
+
+    [result.people, result.ideas, result.papers, result.patents].forEach(function (nodes) {
+      nodes.forEach(function (node) {
+        usedNodeIds[node.id] = true;
+      });
+    });
+    result.papers.forEach(function (paper) {
+      var publicationId = String(paper.publication_id || "").trim();
+
+      if (publicationId && !papersByPublicationId[publicationId]) {
+        papersByPublicationId[publicationId] = paper;
+      }
+    });
+
+    (publications || []).forEach(function (publication) {
+      var publicationId = String(publication.id || "").trim();
+      var generatedId;
+      var suffix;
+
+      if (!publicationId || papersByPublicationId[publicationId] ||
+          !collaborators.some(function (person) {
+            return publicationMatches(publication, person);
+          })) {
+        return;
+      }
+
+      generatedId = "catalog-coauthorship-paper-" + publicationId;
+      suffix = 2;
+      while (usedNodeIds[generatedId]) {
+        generatedId = "catalog-coauthorship-paper-" + publicationId + "-" + suffix;
+        suffix += 1;
+      }
+
+      papersByPublicationId[publicationId] = {
+        id: generatedId,
+        publication_id: publication.id,
+        label: "#" + publication.id + " · " + publication.title,
+        title: publication.title,
+        url: "/knowledge/papers/paper-" + publication.id + "/"
+      };
+      usedNodeIds[generatedId] = true;
+      result.papers.push(papersByPublicationId[publicationId]);
+    });
+  }
+
   function completeVisibleAuthorship(result, publications) {
     var publicationById = {};
     var paperIds = {};
@@ -194,6 +251,150 @@
     });
   }
 
+  function completeCollaboratorView(result, publications) {
+    var papersByPublicationId = {};
+    var usedNodeIds = {};
+    var collaboratorIds = {};
+    var ideaIds = {};
+    var paperIds = {};
+    var collaborators = result.people.filter(function (person) {
+      return person.relationship === "collaborator" &&
+        (person.catalog_authors || person.catalog_author_groups);
+    });
+
+    collaborators.forEach(function (person) {
+      collaboratorIds[person.id] = true;
+    });
+    result.ideas.forEach(function (idea) {
+      ideaIds[idea.id] = true;
+      usedNodeIds[idea.id] = true;
+    });
+    result.people.forEach(function (person) {
+      usedNodeIds[person.id] = true;
+    });
+    result.patents.forEach(function (patent) {
+      usedNodeIds[patent.id] = true;
+    });
+    result.papers.forEach(function (paper) {
+      var publicationId = String(paper.publication_id || "").trim();
+
+      paperIds[paper.id] = true;
+      usedNodeIds[paper.id] = true;
+      if (publicationId && !papersByPublicationId[publicationId]) {
+        papersByPublicationId[publicationId] = paper;
+      }
+    });
+
+    // In the collaborator view, catalog-verified paper cards mediate every
+    // collaborator-to-idea relationship. Rebuild authorship from the catalog
+    // so a hand-maintained edge cannot imply an unverified coauthorship.
+    result.links = result.links.filter(function (link) {
+      var joinsCollaboratorAndIdea =
+        (collaboratorIds[link.from] && ideaIds[link.to]) ||
+        (collaboratorIds[link.to] && ideaIds[link.from]);
+      var joinsCollaboratorAndPaper =
+        (collaboratorIds[link.from] && paperIds[link.to]) ||
+        (collaboratorIds[link.to] && paperIds[link.from]);
+
+      return !joinsCollaboratorAndIdea && !joinsCollaboratorAndPaper;
+    });
+
+    collaborators.forEach(function (person) {
+      (publications || []).forEach(function (publication) {
+        var publicationId = String(publication.id || "").trim();
+        var paper;
+        var generatedId;
+        var suffix;
+
+        if (!publicationId || !publicationMatches(publication, person)) {
+          return;
+        }
+
+        paper = papersByPublicationId[publicationId];
+        if (!paper) {
+          generatedId = "collaborators-paper-" + publicationId;
+          suffix = 2;
+          while (usedNodeIds[generatedId]) {
+            generatedId = "collaborators-paper-" + publicationId + "-" + suffix;
+            suffix += 1;
+          }
+          paper = {
+            id: generatedId,
+            publication_id: publication.id,
+            label: "#" + publication.id + " · " + publication.title,
+            title: publication.title,
+            url: "/knowledge/papers/paper-" + publication.id + "/"
+          };
+          papersByPublicationId[publicationId] = paper;
+          paperIds[paper.id] = true;
+          usedNodeIds[paper.id] = true;
+          result.papers.push(paper);
+        }
+
+        result.links.push({
+          from: person.id,
+          to: paper.id,
+          type: "direct",
+          label: "direct coauthorship"
+        });
+      });
+    });
+
+    result.papers.sort(function (left, right) {
+      return Number(right.publication_id || 0) - Number(left.publication_id || 0);
+    });
+    return result;
+  }
+
+  function completeCatalogIdeaLinks(result, groups) {
+    var ideasById = {};
+    var papersByPublicationId = {};
+    var linkedEndpoints = {};
+
+    result.ideas.forEach(function (idea) {
+      ideasById[idea.id] = idea;
+    });
+    result.papers.forEach(function (paper) {
+      var publicationId = String(paper.publication_id || "").trim();
+
+      if (publicationId && !papersByPublicationId[publicationId]) {
+        papersByPublicationId[publicationId] = paper;
+      }
+    });
+    result.links.forEach(function (link) {
+      linkedEndpoints[link.from + "|" + link.to] = true;
+      linkedEndpoints[link.to + "|" + link.from] = true;
+    });
+
+    (groups || []).forEach(function (group) {
+      var idea = ideasById[group.idea_id];
+
+      if (!idea) {
+        return;
+      }
+      (group.publication_ids || []).forEach(function (publicationId) {
+        var paper = papersByPublicationId[String(publicationId)];
+        var endpointKey;
+
+        if (!paper) {
+          return;
+        }
+        endpointKey = idea.id + "|" + paper.id;
+        if (linkedEndpoints[endpointKey]) {
+          return;
+        }
+        result.links.push({
+          from: idea.id,
+          to: paper.id,
+          type: group.type || "direct",
+          label: group.label || "cataloged research topic"
+        });
+        linkedEndpoints[endpointKey] = true;
+        linkedEndpoints[paper.id + "|" + idea.id] = true;
+      });
+    });
+  }
+
   function mergeScene(baseScene, overlayScene, options) {
     var base = baseScene || {};
     var overlay = overlayScene || {};
@@ -222,6 +423,9 @@
       people: visibleNodes(mergedNodes(base.people, overlay.people))
     };
 
+    attachCatalogAliases(result.people, collaboratorDirectory(settings.collaboratorPeople));
+    completeCatalogCoauthorship(result, settings.publications);
+
     [result.people, result.ideas, result.papers, result.patents].forEach(function (nodes) {
       nodes.forEach(function (node) {
         visibleNodeIds[node.id] = true;
@@ -231,13 +435,17 @@
       return visibleNodeIds[link.from] && visibleNodeIds[link.to];
     });
 
-    attachCatalogAliases(result.people, collaboratorDirectory(settings.collaboratorPeople));
     separateDirectAuthorshipFromTopics(result);
+    completeCatalogIdeaLinks(
+      result,
+      (base.catalog_paper_idea_links || []).concat(overlay.catalog_paper_idea_links || [])
+    );
     completeVisibleAuthorship(result, settings.publications);
     return result;
   }
 
   global.KnowledgeSceneData = {
+    completeCollaboratorView: completeCollaboratorView,
     mergeScene: mergeScene,
     publicationMatches: publicationMatches
   };

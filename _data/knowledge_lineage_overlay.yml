@@ -36,18 +36,6 @@ scenes:
         title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
         url: /knowledge/papers/paper-67/
         note: EasyCrypt-verified performance work; the paper map records later scrutiny of the represented end-to-end assurance claims.
-      - id: science-hotel-paper-50
-        publication_id: 50
-        label: "#50 · Verified remote attestation"
-        title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
-        url: /knowledge/papers/paper-50/
-        note: Formally specified and verified hardware/software remote-attestation architecture.
-      - id: science-hotel-paper-54
-        publication_id: 54
-        label: "#54 · Verified proofs of execution"
-        title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
-        url: /knowledge/papers/paper-54/
-        note: Formally verified architecture for proofs of execution on low-end embedded devices.
       - id: science-hotel-paper-46
         publication_id: 46
         label: "#46 · Verified update, reset, and erasure"
@@ -122,11 +110,11 @@ scenes:
         type: lineage
         label: formal verification and executable-synthesis agenda
       - from: science-hotel-verified-embedded
-        to: science-hotel-paper-50
+        to: hotel-paper-50
         type: direct
         label: verified remote attestation
       - from: science-hotel-verified-embedded
-        to: science-hotel-paper-54
+        to: hotel-paper-54
         type: direct
         label: verified proof-of-execution architecture
       - from: science-hotel-verified-embedded
@@ -261,7 +249,7 @@ scenes:
       - id: science-cipher-paper-74
         publication_id: 74
         label: "#74 · Private identity-based bulletin boards"
-        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
+        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
         url: /knowledge/papers/paper-74/
         note: Uses searchable hierarchical identity-based encryption, bilinear maps, and private information retrieval.
       - id: science-cipher-paper-62
@@ -297,7 +285,7 @@ scenes:
       - id: science-cipher-paper-13
         publication_id: 13
         label: "#13 · Group distance bounding"
-        title: "Group Distance Bounding Protocols"
+        title: "Group Distance Bounding Protocols (Short Paper)"
         url: /knowledge/papers/paper-13/
         note: Extends proximity authentication from two-party to group settings.
       - id: science-cipher-paper-26
@@ -613,7 +601,8 @@ scenes:
         label: Gene Tsudik
         relationship: collaborator
         catalog_authors: [Gene Tsudik]
-        status: Direct collaborator · all 21 catalog publications mapped
+        complete_catalog_coauthorship: true
+        status: Direct collaborator · all 21 catalog paper records mapped
         note: >-
           Coauthor across ALARM and PRISM anonymous routing, location privacy, group distance bounding,
           confidential and anonymous messaging, secure network coding, web-fraud measurement, remote
@@ -771,6 +760,7 @@ scenes:
         label: Vitor Pereira
         relationship: collaborator
         catalog_authors: [Vitor Pereira]
+        complete_catalog_coauthorship: true
         status: Direct collaborator · all 3 catalog publications mapped
         note: >-
           Coauthor on machine-checked secure computation and formally verified zero-knowledge,
@@ -850,6 +840,10 @@ scenes:
         label: DDoS attacks, traffic filtering, and network security
       - id: collaborators-network-coding
         label: Secure network coding
+      - id: collaborators-cooperative-networking
+        label: Secure cooperative and mobile networking
+      - id: collaborators-security-measurement
+        label: Web PKI, security measurement, and fraud detection
       - id: collaborators-lattices
         label: Lattice cryptography, LWE, and Ring-LWE
       - id: collaborators-anonymity
@@ -874,6 +868,47 @@ scenes:
         label: Machine-checked zero knowledge and secure computation
       - id: collaborators-secure-pattern-matching
         label: Privacy-preserving pattern matching
+    catalog_paper_idea_links:
+      - idea_id: collaborators-cooperative-networking
+        publication_ids: [4]
+        type: direct
+        label: secure cooperative inter-personal networking
+      - idea_id: collaborators-anonymity
+        publication_ids: [7, 9, 14, 15, 74]
+        type: direct
+        label: anonymous routing, location privacy, and metadata-private messaging
+      - idea_id: collaborators-private-messaging
+        publication_ids: [10, 74]
+        type: direct
+        label: private and confidential messaging
+      - idea_id: collaborators-network-coding
+        publication_ids: [11]
+        type: direct
+        label: encryption and secure network coding
+      - idea_id: collaborators-distance-bounding
+        publication_ids: [13]
+        type: direct
+        label: group proximity authentication
+      - idea_id: collaborators-security-measurement
+        publication_ids: [16]
+        type: direct
+        label: TLS-certificate measurement and web-fraud detection
+      - idea_id: collaborators-verified-ra
+        publication_ids: [17, 27, 33, 37, 38, 41, 42, 46, 47, 50, 54]
+        type: direct
+        label: remote attestation, roots of trust, and verified architectures
+      - idea_id: collaborators-formal-crypto
+        publication_ids: [51, 58, 67]
+        type: direct
+        label: machine-checked cryptographic proofs
+      - idea_id: collaborators-mpc
+        publication_ids: [51, 58]
+        type: direct
+        label: machine-checked secure computation
+      - idea_id: collaborators-zero-knowledge
+        publication_ids: [58, 67]
+        type: direct
+        label: machine-checked zero knowledge
     papers:
       - id: collaborators-paper-78
         publication_id: 78

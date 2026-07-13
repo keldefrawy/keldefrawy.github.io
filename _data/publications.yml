@@ -316,7 +316,7 @@
   labels: [Theory, Applied]
   contribution_types: [protocol, algorithm]
   title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
-  authors: "José Carlos Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stéphane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira"
+  authors: "José Carlos Bacelar Almeida, Manuel Barbosa, Manuel L. Correia, Karim Eldefrawy, Stéphane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira"
   tags: ["zero knowledge", "MPC-in-the-head", "formal verification"]
   summary: >-
     This paper gives the first machine-checked implementation of the general MPC-in-the-Head transformation from secure computation to zero-knowledge proofs. Its modular EasyCrypt proof accepts suitable MPC protocols as components and supports extracting a verified executable implementation for benchmarking.
