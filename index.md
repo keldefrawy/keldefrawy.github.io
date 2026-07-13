@@ -11,8 +11,8 @@ title: Home
   <figcaption class="home-research-banner__stats" aria-label="Selected research figures">
     <a href="{{ '/publications/' | relative_url }}"><strong>79</strong><span>peer-reviewed publications</span></a>
     <a href="{{ '/patents.html' | relative_url }}"><strong>31</strong><span>granted patents</span></a>
-    <a href="{{ '/projects.html' | relative_url }}"><strong>13</strong><span>funded R&amp;D projects</span></a>
-    <a href="https://scholar.google.com/citations?user=e9UP75IAAAAJ&amp;hl=en"><strong>5.1K+</strong><span>Google Scholar citations</span></a>
+    <a href="{{ '/projects.html' | relative_url }}"><strong>12</strong><span>funded R&amp;D projects</span></a>
+    <a href="https://scholar.google.com/citations?user=e9UP75IAAAAJ&amp;hl=en"><strong>4.7K+</strong><span>Google Scholar citations</span></a>
   </figcaption>
 </figure>
 
@@ -58,8 +58,8 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 
 ## Talks and Articles
 
-* [Featured interviews and profiles]({{ '/profiles.html' | relative_url }})
 * [Online talks]({{ '/talks.html' | relative_url }})
+* [Featured interviews and profiles]({{ '/profiles.html' | relative_url }})
 
 </article>
 

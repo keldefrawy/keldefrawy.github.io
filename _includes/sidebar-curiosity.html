@@ -16,9 +16,9 @@
     >
       <img
         class="sidebar-curiosity__image"
-        src="{{ '/assets/images/sidebar/great-cipher-relay.webp' | relative_url }}"
-        data-curiosity-frames="{{ '/assets/images/sidebar/great-cipher-relay.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-2.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-3.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-frame-4.webp' | relative_url }}"
-        alt="A cryptographic relay carries a glowing ciphertext from Turing and Shannon through Diffie, Hellman, Rivest, Shamir, Adleman, Goldwasser, Micali, Miller, Gentry, and Karim."
+        src="{{ '/assets/images/sidebar/great-cipher-relay-koblitz.webp' | relative_url }}"
+        data-curiosity-frames="{{ '/assets/images/sidebar/great-cipher-relay-koblitz.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-koblitz-frame-2.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-koblitz-frame-3.webp' | relative_url }}|{{ '/assets/images/sidebar/great-cipher-relay-koblitz-frame-4.webp' | relative_url }}"
+        alt="A cryptographic relay carries a glowing ciphertext from Turing and Shannon through Diffie, Hellman, Rivest, Shamir, Adleman, Goldwasser, Micali, Miller, Koblitz, Gentry, and Karim."
         width="460"
         height="853"
         loading="lazy"
@@ -307,12 +307,17 @@
 
           <div class="curiosity-connections__columns" data-curiosity-map-columns>
             <section class="curiosity-connections__lane" aria-labelledby="curiosity-map-scientists-title">
-              <h4 id="curiosity-map-scientists-title">Scientists</h4>
+              <h4 id="curiosity-map-scientists-title">Foundational scientists</h4>
               <ol class="curiosity-connections__nodes" data-curiosity-map-people></ol>
             </section>
 
+            <section class="curiosity-connections__lane" aria-labelledby="curiosity-map-collaborators-title">
+              <h4 id="curiosity-map-collaborators-title">Collaborators &amp; co-authors</h4>
+              <ol class="curiosity-connections__nodes" data-curiosity-map-collaborators></ol>
+            </section>
+
             <section class="curiosity-connections__lane" aria-labelledby="curiosity-map-ideas-title">
-              <h4 id="curiosity-map-ideas-title">Ideas</h4>
+              <h4 id="curiosity-map-ideas-title">Research ideas</h4>
               <ol class="curiosity-connections__nodes" data-curiosity-map-ideas></ol>
             </section>
 
@@ -334,7 +339,7 @@
         <div class="curiosity-connections__legend" aria-label="Connection types">
           <p>Connections</p>
           <ul data-curiosity-map-legend>
-            <li data-curiosity-link-type="direct"><span aria-hidden="true"></span>Direct</li>
+            <li data-curiosity-link-type="direct"><span aria-hidden="true"></span>Direct research connection</li>
             <li data-curiosity-link-type="uses"><span aria-hidden="true"></span>Uses or applies</li>
             <li data-curiosity-link-type="lineage"><span aria-hidden="true"></span>Conceptual lineage</li>
           </ul>
@@ -347,16 +352,19 @@
           aria-atomic="false"
           tabindex="-1"
         >
-          <p>Select a scientist, idea, paper, or patent to follow its connections.</p>
+          <p>Select a foundational scientist, collaborator, idea, paper, or patent to follow its connections.</p>
         </div>
 
         <p class="curiosity-connections__qualification">
-          These are thematic connections, not claims of direct collaboration or a complete intellectual lineage.
-          The foundational layer marks shared mathematical or computational frameworks; it does not mean every
-          paper studies those foundations directly.
+          <strong>Living Knowledge Map.</strong> This is a subjective, point-in-time view and may contain
+          unintentional omissions. Other collaborators, influences, ideas, works, and connections will
+          continue to be reviewed and added as the map evolves.<br>
+          Karim has not collaborated with the historical scientists in the foundational lane. They mark
+          intellectual and mathematical lineage only; documented co-authors appear separately in the
+          collaborators lane. This is a condensed map, not a complete genealogy or publication graph.
         </p>
         <p class="curiosity-connections__knowledge-link">
-          <a href="{{ '/knowledge/' | relative_url }}">Explore all scientific knowledge maps</a>
+          <a href="{{ '/knowledge/#idea-lineages' | relative_url }}" data-curiosity-knowledge-link>Continue to the complete scientific knowledge map</a>
         </p>
       </section>
     </div>

@@ -1,63 +1,63 @@
 # (Last Updated: May 2024)
 
-31- "Augmenting executables having cryptographic primitives" United States Patent Number US11934538
+31- "Augmenting executables having cryptographic primitives" United States Patent Number [US11934538](https://patents.google.com/patent/US11934538B2/en)
 
-30- "Checkpointable secure multi-party computation" United States Patent Number US11775390
+30- "Checkpointable secure multi-party computation" United States Patent Number [US11775390](https://patents.google.com/patent/US11775390B2/en)
 
-29- "Smart privacy and controlled exposure on blockchains" United States Patent Number US11741247
+29- "Smart privacy and controlled exposure on blockchains" United States Patent Number [US11741247](https://patents.google.com/patent/US11741247B2/en)
 
-28- "Selectively sharing data in unstructured data containers" United States Patent Number US11507676
+28- "Selectively sharing data in unstructured data containers" United States Patent Number [US11507676](https://patents.google.com/patent/US11507676B2/en)
 
-27- "Biometric authentication with template privacy and non-interactive re-enrollment" United States Patent Number US11223478
+27- "Biometric authentication with template privacy and non-interactive re-enrollment" United States Patent Number [US11223478](https://patents.google.com/patent/US11223478B2/en)
 
-26- "Secure re-enrollment of biometric templates using functional encryption" United States Patent Number US11023569
+26- "Secure re-enrollment of biometric templates using functional encryption" United States Patent Number [US11023569](https://patents.google.com/patent/US11023569B2/en)
 
-25- “Semi-robust protocols for secure multiparty computation” United States Patent Number US10686597
+25- “Semi-robust protocols for secure multiparty computation” United States Patent Number [US10686597](https://patents.google.com/patent/US10686597B1/en)
 
-24- “Creating software packages for performing secure computations“ United States Patent Number  US10867053
+24- “Creating software packages for performing secure computations” United States Patent Number [US10867053](https://patents.google.com/patent/US10867053B2/en)
 
-23- “Secure, tunable, and accountable generic search in databases” United States Patent Number US10691754
+23- “STAGS: secure, tunable, and accountable generic search in databases” United States Patent Number [US10691754](https://patents.google.com/patent/US10691754B1/en)
 
-22- “Generic pattern matching system” United States Patent Number US10621364
+22- “Generic pattern matching system” United States Patent Number [US10621364](https://patents.google.com/patent/US10621364B1/en)
 
-21- “System and method to integrate secure and privacy-preserving biometrics with identification, authentication, and online credential systems” United States Patent Number US10523654
+21- “System and method to integrate secure and privacy-preserving biometrics with identification, authentication, and online credential systems” United States Patent Number [US10523654](https://patents.google.com/patent/US10523654B1/en)
 
-20- “One-time obfuscation for polynomial-size ordered binary decision diagrams (POBDDs)” United States Patent Number US10509918
+20- “One-time obfuscation for polynomial-size ordered binary decision diagrams (POBDDs)” United States Patent Number [US10509918](https://patents.google.com/patent/US10509918B1/en)
 
-19- “System and method for operating a proactive digital currency ledger” United States Patent Number US10423961
+19- “System and method for operating a proactive digital currency ledger” United States Patent Number [US10423961](https://patents.google.com/patent/US10423961B1/en)
 
-18- “System and method for cloud control operations plane based on proactive security algorithms” United States Patent Number US9846596
+18- “System and method for cloud control operations plane based on proactive security algorithms” United States Patent Number [US9846596](https://patents.google.com/patent/US9846596B1/en)
 
-17- “Information secure protocol for mobile proactive secret sharing with near-optimal resilience” United States Patent Number US9787472
+17- “Information secure protocol for mobile proactive secret sharing with near-optimal resilience” United States Patent Number [US9787472](https://patents.google.com/patent/US9787472B1/en)
 
-16- “System and method for cloud control operations plane based on proactive security algorithms” United States Patent Number US9846596
+16- “Mapping network service dependencies” United States Patent Number [US9628553](https://patents.google.com/patent/US9628553B2/en)
 
-15- “Secure Multi-dimensional Pattern Matching for Secure Search and Recognition” United States Patent Number US9613292
+15- “Secure multi-dimensional pattern matching for secure search and recognition” United States Patent Number [US9613292](https://patents.google.com/patent/US9613292B1/en)
 
-14- “Cryptographically-secure Packed Proactive Secret Sharing Protocol” United States Patent Number US9614676
+14- “Cryptographically-secure packed proactive secret sharing (PPSS) protocol” United States Patent Number [US9614676](https://patents.google.com/patent/US9614676B1/en)
 
-13- “Information Theoretically Secure Protocol for Mobile Proactive Secret Sharing with Near-optimal Resilience ” United States Patent Number US9558359
+13- “Information theoretically secure protocol for mobile proactive secret sharing with near-optimal resilience” United States Patent Number [US9558359](https://patents.google.com/patent/US9558359B1/en)
 
-12- “Secure Mobile Proactive Multi-party Computation Protocol” United States Patent Number US9536114
+12- “Secure mobile proactive multiparty computation protocol” United States Patent Number [US9536114](https://patents.google.com/patent/US9536114B1/en)
 
-11- “Method for Secure and Resilient Distributed Generation of Elliptic Curve Digital Signature Algorithm (ECDSA) Based Digital Signatures with Proactive Security” United States Patent Number US9489522
+11- “Method for secure and resilient distributed generation of elliptic curve digital signature algorithm (ECDSA) based digital signatures with proactive security” United States Patent Number [US9489522](https://patents.google.com/patent/US9489522B1/en)
 
-10- “Generic Proactively Secure Secret Sharing Protocol from any Suitable Honest-Majority Secret Sharing Protocol” United States Patent Number US9467451
+10- “Generic proactively-secure secret-sharing protocol from any suitable honest-majority secret-sharing protocol” United States Patent Number [US9467451](https://patents.google.com/patent/US9467451B1/en)
 
-09- “General Protocol for Proactively Secure Computation” United States Patent Number US9449177
+09- “General protocol for proactively secure computation” United States Patent Number [US9449177](https://patents.google.com/patent/US9449177B1/en)
 
-08- “System and Method for Mobile Proactive Secret Sharing” United States Patent Number US9443089
+08- “System and method for mobile proactive secret sharing” United States Patent Number [US9443089](https://patents.google.com/patent/US9443089B1/en)
 
-07- “System and Method for Deep Packet Inspection and Intrusion Detection” United States Patent Number US9336239
+07- “System and method for deep packet inspection and intrusion detection” United States Patent Number [US9336239](https://patents.google.com/patent/US9336239B1/en)
 
-06- “Wireless Network Security” United States Patent Number US9119077
+06- “Wireless network security” United States Patent Number [US9119077](https://patents.google.com/patent/US9119077B2/en)
 
-05- “Secure Pattern Matching” United States Patent Number US9009089
+05- “Secure pattern matching” United States Patent Number [US9009089](https://patents.google.com/patent/US9009089B1/en)
 
-04- “Ensuring Promises are Kept in an Anonymous System” United States Patent Number US9026786
+04- “System for ensuring that promises are kept in an anonymous system” United States Patent Number [US9026786](https://patents.google.com/patent/US9026786B1/en)
 
-03- “Wireless Network Security” United States Patent Number US8612743
+03- “Wireless network security” United States Patent Number [US8612743](https://patents.google.com/patent/US8612743B2/en)
 
-02- “FilteringUnwantedDataTrafficviaaPer-CustomerBlacklist” United States Patent Number US8161155
+02- “Filtering unwanted data traffic via a per-customer blacklist” United States Patent Number [US8161155](https://patents.google.com/patent/US8161155B2/en)
 
-01- “System and Method for Filtering Unwanted Internet Protocol Traffic based on Blacklists” United States Patent Number US8539576
+01- “System and method for filtering unwanted Internet Protocol traffic based on blacklists” United States Patent Number [US8539576](https://patents.google.com/patent/US8539576B2/en)

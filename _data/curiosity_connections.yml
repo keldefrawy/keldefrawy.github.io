@@ -1,14 +1,17 @@
-schema_version: "1.2"
+schema_version: "1.3"
 
 evidence_note: >-
-  These maps show conceptual connections, not claims of citation or direct
-  intellectual influence. Dashed lineage links are deliberately broader than
-  direct paper-topic links. Foundation notes identify shared mathematical,
-  computational, or systems frameworks without treating them as each paper’s topic.
+  Historical and foundational scientists mark intellectual lineage only; Karim has
+  not collaborated with them. People marked as direct collaborators are documented
+  co-authors. Dashed lineage links are deliberately broader than direct paper-topic
+  links, and foundation notes identify shared frameworks without treating them as
+  each paper’s topic. This is a living, subjective, point-in-time knowledge map. It
+  may contain unintentional omissions, and additional collaborators, influences,
+  ideas, works, and connections will be reviewed and added as the map evolves.
 
 link_types:
   direct:
-    label: Direct connection
+    label: Direct research connection
     description: A well-established person-to-idea relationship or a work that centrally studies the linked idea.
   uses:
     label: Uses
@@ -20,7 +23,7 @@ scenes:
   hotel:
     title: "Hilbert’s Margin Hotel"
     map_title: "From Foundations to Reliable Cryptographic Systems"
-    description: "How mathematical foundations, models of computation, reliable computing, and formal proof support modern cryptographic and distributed-systems research."
+    description: "A condensed four-layer view: mathematical and computational foundations, documented co-authors, research ideas, and selected cryptographic and distributed-systems work."
     notes:
       - kind: mathematics
         label: Mathematical foundation
@@ -34,18 +37,83 @@ scenes:
     people:
       - id: hotel-hilbert
         label: David Hilbert
+        relationship: influence
+        status: Intellectual foundation · no collaboration
         note: "Hilbert’s axiomatic program made mathematical foundations and formal proof central; Hilbert’s Hotel also illustrates countable infinity."
       - id: hotel-cantor
         label: Georg Cantor
+        relationship: influence
+        status: Intellectual foundation · no collaboration
         note: "Cantor founded modern set theory and made comparisons among infinite sets mathematically precise."
       - id: hotel-godel
         label: Kurt Gödel
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: hotel-turing
         label: Alan Turing
+        relationship: influence
+        status: Intellectual foundation · no collaboration
         note: "Turing’s general model of computation underlies modern definitions of algorithms and efficient adversaries, often through equivalent circuit or RAM models."
       - id: hotel-von-neumann
         label: John von Neumann
+        relationship: influence
+        status: Intellectual foundation · no collaboration
         note: "Von Neumann shaped stored-program architecture and studied how reliable computation can be built from unreliable components. This is a conceptual precursor to modern fault-tolerant and distributed systems, not a claim that he developed today’s consensus protocols."
+      - id: science-hotel-danny-dolev
+        label: Danny Dolev
+        relationship: influence
+        status: Senior influence · Byzantine agreement and fault tolerance
+        note: "A foundational contributor to Byzantine agreement, fault-tolerant distributed algorithms, and self-stabilizing Byzantine agreement. The dashed path to Shlomi Dolev records intellectual influence, not collaboration or doctoral advising."
+      - id: science-hotel-gilles-barthe
+        label: Gilles Barthe
+        relationship: influence
+        status: Senior tool influence · EasyCrypt
+        note: "Coauthor of the paper that introduced EasyCrypt and a leader of its development; the dashed path records the tool and proof-method lineage behind Vitor Pereira’s shared work."
+      - id: science-hotel-benjamin-gregoire
+        label: Benjamin Grégoire
+        relationship: influence
+        status: Senior tool influence · EasyCrypt
+        note: "Coauthor of the paper that introduced EasyCrypt and one of its main implementors; the dashed path records proof-assistant and automation lineage."
+      - id: hotel-vitor-pereira
+        label: Vitor Pereira
+        relationship: collaborator
+        status: Direct collaborator · verified MPC and ZK
+        note: "Coauthor on the machine-checked MPC evaluator and machine-checked MPC-in-the-head zero-knowledge work."
+      - id: hotel-norrathep-rattanavipanon
+        label: Norrathep Rattanavipanon
+        relationship: collaborator
+        status: Direct collaborator · verified attestation and execution
+        note: "Coauthor on VRASED’s formally verified remote-attestation architecture and APEX’s verified proofs of execution."
+      - id: hotel-ivan-nunes
+        label: Ivan De Oliveira Nunes
+        relationship: collaborator
+        status: Direct collaborator · verified attestation and execution
+        note: "Coauthor on VRASED’s formally verified remote-attestation architecture and APEX’s verified proofs of execution."
+      - id: hotel-rafail-ostrovsky
+        label: Rafail Ostrovsky
+        relationship: collaborator
+        status: Direct collaborator · proactive and resilient systems
+        note: "Coauthor across proactive security, secure self-stabilization, resilient cloud infrastructure, and related secure-computation work."
+      - id: hotel-moti-yung
+        label: Moti Yung
+        relationship: collaborator
+        status: Direct collaborator · proactive, timed, and repair systems
+        note: "Coauthor on proactive security, secure self-stabilization, distributed repair, and timed cryptography."
+      - id: hotel-juan-garay
+        label: Juan Garay
+        relationship: collaborator
+        status: Direct collaborator · secure self-stabilization
+        note: "Coauthor on secure self-stabilizing computation."
+      - id: science-hotel-shlomi-dolev
+        label: Shlomi Dolev
+        relationship: collaborator
+        status: Direct collaborator · self-stabilization and proactive sharing
+        note: "Coauthor on secure self-stabilizing computation and dishonest-majority proactive secret sharing."
+      - id: hotel-fhe-collaborators
+        label: Chris Peikert and Srini Devadas
+        relationship: collaborator
+        status: Direct collaborators · F1
+        note: "Both are coauthors on the F1 fully homomorphic-encryption accelerator."
     ideas:
       - id: hotel-foundations
         label: Set theory and mathematical foundations
@@ -55,6 +123,9 @@ scenes:
         note: "Most mathematics used in cryptography can be formalized in axiomatic set theory; this is a foundational dependency, not a claim that the linked papers study set theory."
       - id: hotel-formal-methods
         label: Formal systems and machine-checked proof
+      - id: hotel-verified-attestation
+        label: Verified remote attestation and proofs of execution
+        note: "Machine-checked architectures establish that a low-end remote device is in an expected state or executed specified software, even under full software compromise."
       - id: hotel-computational-security
         label: Turing machines and computational security
         status: Foundation for security proofs
@@ -72,6 +143,9 @@ scenes:
         status: Later conceptual lineage
         foundation: true
         note: "Modern Byzantine consensus, self-stabilization, proactive recovery, and resilient infrastructure extend the reliable-computation problem into distributed settings."
+      - id: science-hotel-byzantine-self-stabilization
+        label: Byzantine-resilient self-stabilization
+        status: Fault tolerance under transient and Byzantine faults
     papers:
       - id: hotel-paper-51
         publication_id: 51
@@ -85,6 +159,18 @@ scenes:
         title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
         url: /knowledge/papers/paper-58/
         note: "Machine-checks a general transformation from secure computation to zero-knowledge proofs."
+      - id: hotel-paper-50
+        publication_id: 50
+        label: "#50 · VRASED verified attestation"
+        title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+        url: /knowledge/papers/paper-50/
+        note: "Formally specifies and verifies a hardware/software remote-attestation architecture for low-end embedded devices."
+      - id: hotel-paper-54
+        publication_id: 54
+        label: "#54 · APEX proofs of execution"
+        title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+        url: /knowledge/papers/paper-54/
+        note: "Extends verified embedded-device security from attesting state to proving that specified software executed and produced an authenticated result."
       - id: hotel-paper-78
         publication_id: 78
         label: "#78 · Timed-protocol composition"
@@ -177,6 +263,138 @@ scenes:
         to: hotel-distributed-resilience
         type: lineage
         label: conceptual bridge to modern fault-tolerant distributed computing
+      - from: science-hotel-danny-dolev
+        to: science-hotel-byzantine-self-stabilization
+        type: lineage
+        label: self-stabilizing Byzantine-agreement lineage
+      - from: science-hotel-danny-dolev
+        to: science-hotel-shlomi-dolev
+        type: lineage
+        label: senior intellectual influence in Byzantine-resilient self-stabilization
+      - from: science-hotel-shlomi-dolev
+        to: science-hotel-byzantine-self-stabilization
+        type: direct
+        label: direct collaboration on secure self-stabilizing computation
+      - from: science-hotel-shlomi-dolev
+        to: hotel-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilizing computation
+      - from: science-hotel-byzantine-self-stabilization
+        to: hotel-distributed-resilience
+        type: lineage
+        label: resilient distributed-computing lineage
+      - from: science-hotel-byzantine-self-stabilization
+        to: hotel-paper-36
+        type: direct
+        label: secure self-stabilizing computation
+      - from: science-hotel-gilles-barthe
+        to: hotel-formal-methods
+        type: lineage
+        label: EasyCrypt's code-based game-playing verification lineage
+      - from: science-hotel-gilles-barthe
+        to: hotel-vitor-pereira
+        type: lineage
+        label: senior EasyCrypt tool and proof-method influence
+      - from: science-hotel-benjamin-gregoire
+        to: hotel-formal-methods
+        type: lineage
+        label: EasyCrypt proof-assistant and automation infrastructure
+      - from: science-hotel-benjamin-gregoire
+        to: hotel-vitor-pereira
+        type: lineage
+        label: senior EasyCrypt implementation and automation influence
+      - from: hotel-vitor-pereira
+        to: hotel-formal-methods
+        type: direct
+        label: direct collaboration on machine-checked cryptography
+      - from: hotel-vitor-pereira
+        to: hotel-paper-51
+        type: direct
+        label: direct coauthorship on verified MPC
+      - from: hotel-vitor-pereira
+        to: hotel-paper-58
+        type: direct
+        label: direct coauthorship on verified zero knowledge
+      - from: hotel-norrathep-rattanavipanon
+        to: hotel-verified-attestation
+        type: direct
+        label: direct collaboration on verified attestation and proofs of execution
+      - from: hotel-norrathep-rattanavipanon
+        to: hotel-paper-50
+        type: direct
+        label: direct coauthorship on VRASED
+      - from: hotel-norrathep-rattanavipanon
+        to: hotel-paper-54
+        type: direct
+        label: direct coauthorship on APEX
+      - from: hotel-ivan-nunes
+        to: hotel-verified-attestation
+        type: direct
+        label: direct collaboration on verified attestation and proofs of execution
+      - from: hotel-ivan-nunes
+        to: hotel-paper-50
+        type: direct
+        label: direct coauthorship on VRASED
+      - from: hotel-ivan-nunes
+        to: hotel-paper-54
+        type: direct
+        label: direct coauthorship on APEX
+      - from: hotel-rafail-ostrovsky
+        to: hotel-distributed-resilience
+        type: direct
+        label: direct collaboration in proactive and resilient systems
+      - from: hotel-rafail-ostrovsky
+        to: hotel-paper-25
+        type: direct
+        label: direct coauthorship on mobile-adversary resilience
+      - from: hotel-rafail-ostrovsky
+        to: hotel-paper-31
+        type: direct
+        label: direct coauthorship on proactive secret sharing
+      - from: hotel-rafail-ostrovsky
+        to: hotel-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilization
+      - from: hotel-rafail-ostrovsky
+        to: hotel-paper-23
+        type: direct
+        label: direct coauthorship on resilient cloud infrastructure
+      - from: hotel-moti-yung
+        to: hotel-distributed-resilience
+        type: direct
+        label: direct collaboration in proactive security and distributed repair
+      - from: hotel-moti-yung
+        to: hotel-paper-31
+        type: direct
+        label: direct coauthorship on proactive secret sharing
+      - from: hotel-moti-yung
+        to: hotel-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilization
+      - from: hotel-moti-yung
+        to: hotel-paper-57
+        type: direct
+        label: direct coauthorship on regenerating codes and secret sharing
+      - from: hotel-moti-yung
+        to: hotel-paper-78
+        type: direct
+        label: direct coauthorship on timed-protocol composition
+      - from: hotel-juan-garay
+        to: hotel-distributed-resilience
+        type: direct
+        label: direct collaboration in secure self-stabilization
+      - from: hotel-juan-garay
+        to: hotel-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilization
+      - from: hotel-fhe-collaborators
+        to: hotel-architecture
+        type: direct
+        label: direct collaboration on cryptographic architecture
+      - from: hotel-fhe-collaborators
+        to: hotel-paper-59
+        type: direct
+        label: direct coauthorship on F1
       - from: hotel-formal-methods
         to: hotel-paper-51
         type: direct
@@ -185,6 +403,14 @@ scenes:
         to: hotel-paper-58
         type: direct
         label: verified zero knowledge
+      - from: hotel-verified-attestation
+        to: hotel-paper-50
+        type: direct
+        label: formally verified remote attestation
+      - from: hotel-verified-attestation
+        to: hotel-paper-54
+        type: direct
+        label: verified proofs of execution
       - from: hotel-computational-security
         to: hotel-paper-78
         type: direct
@@ -233,18 +459,73 @@ scenes:
   tour:
     title: "The One-Bit Grand Tour"
     map_title: "From Capacity to Qubits"
-    description: "A bit travels through information theory, public-key cryptography, and quantum computation."
+    description: "A condensed four-layer tour from foundational scientists through documented co-authors to information theory, public-key cryptography, quantum ideas, and selected papers."
     people:
       - id: tour-shannon
         label: Claude Shannon
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: tour-diffie-hellman
         label: Whitfield Diffie and Martin Hellman
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: tour-rsa
         label: Rivest, Shamir, and Adleman
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: tour-feynman
         label: Richard Feynman
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: tour-shor
         label: Peter Shor
+        relationship: influence
+        status: Intellectual foundation · no collaboration
+      - id: tour-gene-tsudik
+        label: Gene Tsudik
+        relationship: collaborator
+        status: Direct collaborator · encrypted network coding
+        note: "Coauthor on the study of link-layer encryption and achievable wireless network-coding capacity; the complete collaborators map also shows ALARM, PRISM, distance bounding, messaging, and attestation."
+      - id: tour-moti-yung
+        label: Moti Yung
+        relationship: collaborator
+        status: Direct collaborator · coding, sharing, and timed release
+        note: "Coauthor on regenerating codes and proactive secret sharing and on multi-party time-lock puzzles."
+      - id: tour-ben-terner
+        label: Ben Terner
+        relationship: collaborator
+        status: Direct collaborator · timed cryptography
+        note: "Coauthor on multi-party time-lock puzzles and related work on timed cryptography."
+      - id: tour-nicholas-genise
+        label: Nicholas Genise
+        relationship: collaborator
+        status: Direct collaborator · coding, key exchange, and quantum algorithms
+        note: "Coauthor on regenerating codes and proactive secret sharing, covert authenticated key exchange, and quantum optimization heuristics."
+      - id: tour-stanislaw-jarecki
+        label: Stanisław Jarecki
+        relationship: collaborator
+        status: Direct collaborator · authenticated key exchange
+        note: "Coauthor on short concurrent covert authenticated key exchange."
+      - id: tour-nigel-smart
+        label: Nigel Smart
+        relationship: collaborator
+        status: Direct collaborator · public-key encryption
+        note: "Coauthor on registration-based encryption."
+      - id: tour-wim-van-dam
+        label: Wim van Dam
+        relationship: collaborator
+        status: Direct collaborator · quantum optimization
+        note: "Coauthor on quantum optimization heuristics for knapsack problems."
+      - id: tour-quantum-distance-collaborators
+        label: Aysajan Abidin and Dave Singelée
+        relationship: collaborator
+        status: Direct collaborators · quantum distance bounding
+        note: "Both are coauthors on entanglement-based mutual quantum distance bounding."
+      - id: tour-rafail-ostrovsky
+        label: Rafail Ostrovsky
+        relationship: collaborator
+        status: Direct collaborator · post-quantum obfuscation
+        note: "Coauthor on post-quantum non-malleable point obfuscation."
     ideas:
       - id: tour-capacity-coding
         label: Channel capacity and coding
@@ -320,6 +601,102 @@ scenes:
         to: tour-capacity-coding
         type: direct
         label: information and communication limits
+      - from: tour-gene-tsudik
+        to: tour-capacity-coding
+        type: direct
+        label: direct collaboration on encrypted network-coding capacity
+      - from: tour-gene-tsudik
+        to: tour-paper-11
+        type: direct
+        label: direct coauthorship on link-layer encryption and capacity
+      - from: tour-moti-yung
+        to: tour-capacity-coding
+        type: direct
+        label: direct collaboration on regenerating codes and secret sharing
+      - from: tour-moti-yung
+        to: tour-timed-release
+        type: direct
+        label: direct collaboration on multi-party time-lock puzzles
+      - from: tour-moti-yung
+        to: tour-paper-57
+        type: direct
+        label: direct coauthorship on coding and proactive sharing
+      - from: tour-moti-yung
+        to: tour-paper-73
+        type: direct
+        label: direct coauthorship on multi-party timed release
+      - from: tour-ben-terner
+        to: tour-timed-release
+        type: direct
+        label: direct collaboration in multi-party timed cryptography
+      - from: tour-ben-terner
+        to: tour-paper-73
+        type: direct
+        label: direct coauthorship on multi-party time-lock puzzles
+      - from: tour-nicholas-genise
+        to: tour-capacity-coding
+        type: direct
+        label: direct collaboration on regenerating codes and proactive sharing
+      - from: tour-nicholas-genise
+        to: tour-paper-57
+        type: direct
+        label: direct coauthorship on regenerating codes and secret sharing
+      - from: tour-nicholas-genise
+        to: tour-key-exchange
+        type: direct
+        label: direct collaboration in covert authenticated key exchange
+      - from: tour-nicholas-genise
+        to: tour-paper-68
+        type: direct
+        label: direct coauthorship on short cAKE
+      - from: tour-nicholas-genise
+        to: tour-quantum
+        type: direct
+        label: direct collaboration in quantum optimization
+      - from: tour-nicholas-genise
+        to: tour-paper-60
+        type: direct
+        label: direct coauthorship on quantum optimization heuristics
+      - from: tour-stanislaw-jarecki
+        to: tour-key-exchange
+        type: direct
+        label: direct collaboration in authenticated key exchange
+      - from: tour-stanislaw-jarecki
+        to: tour-paper-68
+        type: direct
+        label: direct coauthorship on short cAKE
+      - from: tour-nigel-smart
+        to: tour-public-key
+        type: direct
+        label: direct collaboration in public-key encryption
+      - from: tour-nigel-smart
+        to: tour-paper-56
+        type: direct
+        label: direct coauthorship on registration-based encryption
+      - from: tour-wim-van-dam
+        to: tour-quantum
+        type: direct
+        label: direct collaboration in quantum optimization
+      - from: tour-wim-van-dam
+        to: tour-paper-60
+        type: direct
+        label: direct coauthorship on quantum optimization heuristics
+      - from: tour-quantum-distance-collaborators
+        to: tour-quantum
+        type: direct
+        label: direct collaboration in quantum distance bounding
+      - from: tour-quantum-distance-collaborators
+        to: tour-paper-70
+        type: direct
+        label: direct coauthorship on quantum distance bounding
+      - from: tour-rafail-ostrovsky
+        to: tour-post-quantum
+        type: direct
+        label: direct collaboration in post-quantum obfuscation
+      - from: tour-rafail-ostrovsky
+        to: tour-paper-77
+        type: direct
+        label: direct coauthorship on post-quantum point obfuscation
       - from: tour-capacity-coding
         to: tour-paper-11
         type: direct
@@ -385,7 +762,7 @@ scenes:
   cipher:
     title: "The Great Cipher Relay"
     map_title: "A Century of Cryptographic Ideas"
-    description: "From Turing’s cryptanalysis and model of computation through perfect secrecy, public-key cryptography, zero knowledge, elliptic curves, and encrypted computation."
+    description: "A condensed four-layer map from foundational cryptographic scientists through documented co-authors to ideas and selected papers; the complete scientific map continues the lineage."
     notes:
       - kind: computation
         label: Computational foundation
@@ -393,21 +770,108 @@ scenes:
     people:
       - id: cipher-turing
         label: Alan Turing
+        relationship: influence
+        status: Intellectual foundation · no collaboration
         note: "Beyond cryptanalysis, Turing’s general model of computation underlies the efficient algorithm and adversary models used throughout computational-security proofs."
       - id: cipher-shannon
         label: Claude Shannon
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: cipher-diffie-hellman
         label: Whitfield Diffie and Martin Hellman
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: cipher-rsa
         label: Rivest, Shamir, and Adleman
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: cipher-goldwasser
         label: Shafi Goldwasser
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: cipher-micali
         label: Silvio Micali
+        relationship: influence
+        status: Intellectual foundation · no collaboration
       - id: cipher-miller
         label: Victor Miller
+        relationship: influence
+        status: Intellectual foundation · no collaboration
+        note: "Miller independently proposed using elliptic-curve groups for public-key cryptography in 1985. His Miller algorithm also supplies a separate lineage to elliptic-curve pairings."
+      - id: cipher-koblitz
+        label: Neal Koblitz
+        relationship: influence
+        status: Intellectual foundation · no collaboration
+        note: "Koblitz independently proposed using elliptic-curve groups for public-key cryptography in 1985, in parallel with Victor Miller."
       - id: cipher-gentry
         label: Craig Gentry
+        relationship: influence
+        status: Intellectual foundation · no collaboration
+      - id: cipher-gene-tsudik
+        label: Gene Tsudik
+        relationship: collaborator
+        status: Direct collaborator · network coding and privacy
+        note: "Coauthor on encrypted network-coding capacity; the expanded collaborators view also traces ALARM and PRISM anonymous routing, location privacy, group distance bounding, messaging, and verified attestation."
+      - id: cipher-moti-yung
+        label: Moti Yung
+        relationship: collaborator
+        status: Direct collaborator · proactive and timed cryptography
+        note: "Coauthor on proactive MPC and multi-party time-lock puzzles among a broader body of joint work."
+      - id: cipher-rafail-ostrovsky
+        label: Rafail Ostrovsky
+        relationship: collaborator
+        status: Direct collaborator · MPC and post-quantum security
+        note: "Coauthor on proactive secure computation and a broader program spanning formal and post-quantum cryptography."
+      - id: cipher-stanislaw-jarecki
+        label: Stanisław Jarecki
+        relationship: collaborator
+        status: Direct collaborator · authenticated key exchange
+        note: "Coauthor on short concurrent covert authenticated key exchange."
+      - id: cipher-nigel-smart
+        label: Nigel Smart
+        relationship: collaborator
+        status: Direct collaborator · public-key encryption
+        note: "Coauthor on registration-based encryption."
+      - id: cipher-ben-terner
+        label: Ben Terner
+        relationship: collaborator
+        status: Direct collaborator · timed cryptography, MPC, and messaging
+        note: "Coauthor on multi-party time-lock puzzles, maliciously secure decomposable MPC, and concurrent group messaging."
+      - id: cipher-nicholas-genise
+        label: Nicholas Genise
+        relationship: collaborator
+        status: Direct collaborator · key exchange and FHE
+        note: "Coauthor on covert authenticated key exchange, the F1 accelerator, and hardness results for switching between FHE schemes."
+      - id: cipher-vitor-pereira
+        label: Vitor Pereira
+        relationship: collaborator
+        status: Direct collaborator · verified MPC and zero knowledge
+        note: "Coauthor on machine-checked MPC and machine-checked MPC-in-the-head zero knowledge."
+      - id: cipher-kelong-cong
+        label: Kelong Cong
+        relationship: collaborator
+        status: Direct collaborator · public-key encryption, MPC, and messaging
+        note: "Coauthor on registration-based encryption, maliciously secure decomposable MPC, and the key-lattice framework for concurrent group messaging."
+      - id: cipher-claudia-diaz
+        label: Claudia Díaz
+        relationship: collaborator
+        status: Direct collaborator · mixnet traffic analysis and metadata privacy
+        note: "Direct coauthor on traffic analysis with partial visibility; broader anonymity and metadata-privacy links are marked as intellectual lineage."
+      - id: cipher-jonathan-katz
+        label: Jonathan Katz
+        relationship: collaborator
+        status: Direct collaborator · reusable fuzzy extractors
+        note: "Direct coauthor on reusable fuzzy extractors from LWE; broader MPC and Byzantine-agreement connections are intellectual lineage."
+      - id: science-cipher-peikert
+        label: Chris Peikert
+        relationship: collaborator
+        status: Direct collaborator · F1 and CraterLake
+        note: "Direct coauthor on the F1 and CraterLake FHE accelerators; the sidebar shows F1 as a representative work."
+      - id: science-cipher-devadas
+        label: Srinivas (Srini) Devadas
+        relationship: collaborator
+        status: Direct collaborator · F1 and CraterLake
+        note: "Direct coauthor on the F1 and CraterLake FHE accelerators; the sidebar shows F1 as a representative work."
     ideas:
       - id: cipher-cryptanalysis
         label: Cryptanalysis
@@ -428,6 +892,13 @@ scenes:
         label: Probabilistic encryption and zero knowledge
       - id: cipher-mpc
         label: Secure multiparty computation
+      - id: cipher-group-messaging
+        label: Concurrent group messaging and key evolution
+        note: "Dynamic group-key evolution with forward secrecy and post-compromise security under concurrent updates."
+      - id: cipher-anonymity
+        label: Anonymous communications, traffic analysis, and metadata privacy
+      - id: cipher-byzantine
+        label: Byzantine agreement and resilient distributed systems
       - id: cipher-ecc
         label: Elliptic-curve cryptography
       - id: cipher-fhe
@@ -463,6 +934,19 @@ scenes:
         title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
         url: /knowledge/papers/paper-73/
         note: "Extends timed release from a single committer to quorum-controlled generation."
+      - id: cipher-paper-75
+        publication_id: 75
+        label: "#75 · Decomposable MPC"
+        title: "Decomposable MPC with Security Against Malicious Adversaries"
+        url: /knowledge/papers/paper-75/
+        status: Under review
+        note: "Studies how secure computation can be decomposed into reusable components while retaining security against malicious participants."
+      - id: cipher-paper-69
+        publication_id: 69
+        label: "#69 · Concurrent group messaging"
+        title: "The Key Lattice Framework for Concurrent Group Messaging"
+        url: /knowledge/papers/paper-69/
+        note: "Uses a key lattice to support concurrent group-key evolution with forward secrecy and post-compromise security."
       - id: cipher-paper-58
         publication_id: 58
         label: "#58 · Machine-checked zero knowledge"
@@ -487,6 +971,24 @@ scenes:
         title: "On the Hardness of Scheme-Switching Between SIMD FHE Schemes"
         url: /knowledge/papers/paper-65/
         note: "Shows that broadly useful exact/approximate FHE switching would imply expensive bootstrapping capabilities."
+      - id: cipher-paper-35
+        publication_id: 35
+        label: "#35 · Reusable fuzzy extractors from LWE"
+        title: "Efficient, Reusable Fuzzy Extractors from LWE"
+        url: /knowledge/papers/paper-35/
+        note: "Constructs reusable fuzzy extractors from Learning With Errors."
+      - id: cipher-paper-66
+        publication_id: 66
+        label: "#66 · Traffic analysis with partial visibility"
+        title: "Traffic Analysis by Adversaries with Partial Visibility"
+        url: /knowledge/papers/paper-66/
+        note: "Studies the limits of traffic analysis when the adversary observes only part of a mix network."
+      - id: cipher-paper-63
+        publication_id: 63
+        label: "#63 · Byzantine consensus"
+        title: "How Byzantine Is a Send Corruption?"
+        url: /knowledge/papers/paper-63/
+        note: "Refines Byzantine communication faults by separating send-side and receive-side corruption."
     patents:
       - id: cipher-patent-11
         patent_number: US9489522
@@ -503,6 +1005,182 @@ scenes:
         to: cipher-computational-security
         type: lineage
         label: Turing-machine model; basis for later efficient-adversary models
+      - from: cipher-gene-tsudik
+        to: cipher-information
+        type: direct
+        label: direct collaboration on encryption and network-coding capacity
+      - from: cipher-gene-tsudik
+        to: cipher-paper-11
+        type: direct
+        label: direct coauthorship on encrypted network-coding capacity
+      - from: cipher-moti-yung
+        to: cipher-mpc
+        type: direct
+        label: direct collaboration in proactive secure computation
+      - from: cipher-moti-yung
+        to: cipher-timed-release
+        type: direct
+        label: direct collaboration in multi-party timed cryptography
+      - from: cipher-moti-yung
+        to: cipher-paper-44
+        type: direct
+        label: direct coauthorship on proactive MPC
+      - from: cipher-moti-yung
+        to: cipher-paper-73
+        type: direct
+        label: direct coauthorship on multi-party time-lock puzzles
+      - from: cipher-rafail-ostrovsky
+        to: cipher-mpc
+        type: direct
+        label: direct collaboration in proactive secure computation
+      - from: cipher-rafail-ostrovsky
+        to: cipher-paper-44
+        type: direct
+        label: direct coauthorship on proactive MPC
+      - from: cipher-stanislaw-jarecki
+        to: cipher-key-exchange
+        type: direct
+        label: direct collaboration in authenticated key exchange
+      - from: cipher-stanislaw-jarecki
+        to: cipher-paper-68
+        type: direct
+        label: direct coauthorship on short cAKE
+      - from: cipher-nigel-smart
+        to: cipher-public-key
+        type: direct
+        label: direct collaboration in public-key encryption
+      - from: cipher-nigel-smart
+        to: cipher-paper-56
+        type: direct
+        label: direct coauthorship on registration-based encryption
+      - from: cipher-ben-terner
+        to: cipher-timed-release
+        type: direct
+        label: direct collaboration in timed cryptography
+      - from: cipher-ben-terner
+        to: cipher-paper-73
+        type: direct
+        label: direct coauthorship on multi-party time-lock puzzles
+      - from: cipher-ben-terner
+        to: cipher-mpc
+        type: direct
+        label: direct collaboration on decomposable MPC
+      - from: cipher-ben-terner
+        to: cipher-paper-75
+        type: direct
+        label: direct coauthorship on maliciously secure decomposable MPC
+      - from: cipher-ben-terner
+        to: cipher-group-messaging
+        type: direct
+        label: direct collaboration on concurrent group messaging
+      - from: cipher-ben-terner
+        to: cipher-paper-69
+        type: direct
+        label: direct coauthorship on the key-lattice framework
+      - from: cipher-nicholas-genise
+        to: cipher-key-exchange
+        type: direct
+        label: direct collaboration in covert authenticated key exchange
+      - from: cipher-nicholas-genise
+        to: cipher-paper-68
+        type: direct
+        label: direct coauthorship on short cAKE
+      - from: cipher-nicholas-genise
+        to: cipher-fhe
+        type: direct
+        label: direct collaboration on FHE acceleration and scheme switching
+      - from: cipher-nicholas-genise
+        to: cipher-paper-59
+        type: direct
+        label: direct coauthorship on F1
+      - from: cipher-nicholas-genise
+        to: cipher-paper-65
+        type: direct
+        label: direct coauthorship on FHE scheme-switching hardness
+      - from: cipher-vitor-pereira
+        to: cipher-mpc
+        type: direct
+        label: direct collaboration on verified secure computation
+      - from: cipher-vitor-pereira
+        to: cipher-paper-51
+        type: direct
+        label: direct coauthorship on machine-checked MPC
+      - from: cipher-vitor-pereira
+        to: cipher-provable-zk
+        type: direct
+        label: direct collaboration on verified zero knowledge
+      - from: cipher-vitor-pereira
+        to: cipher-paper-58
+        type: direct
+        label: direct coauthorship on machine-checked zero knowledge
+      - from: cipher-kelong-cong
+        to: cipher-public-key
+        type: direct
+        label: direct collaboration in registration-based encryption
+      - from: cipher-kelong-cong
+        to: cipher-paper-56
+        type: direct
+        label: direct coauthorship on registration-based encryption
+      - from: cipher-kelong-cong
+        to: cipher-mpc
+        type: direct
+        label: direct collaboration on decomposable MPC
+      - from: cipher-kelong-cong
+        to: cipher-paper-75
+        type: direct
+        label: direct coauthorship on maliciously secure decomposable MPC
+      - from: cipher-kelong-cong
+        to: cipher-group-messaging
+        type: direct
+        label: direct collaboration on concurrent group messaging
+      - from: cipher-kelong-cong
+        to: cipher-paper-69
+        type: direct
+        label: direct coauthorship on the key-lattice framework
+      - from: cipher-claudia-diaz
+        to: cipher-paper-66
+        type: direct
+        label: direct coauthorship on traffic analysis with partial visibility
+      - from: cipher-claudia-diaz
+        to: cipher-anonymity
+        type: lineage
+        label: broader mixnet, traffic-analysis, and metadata-privacy lineage
+      - from: cipher-jonathan-katz
+        to: cipher-paper-35
+        type: direct
+        label: direct coauthorship on reusable fuzzy extractors from LWE
+      - from: cipher-jonathan-katz
+        to: cipher-mpc
+        type: lineage
+        label: broader secure multiparty-computation influence
+      - from: cipher-jonathan-katz
+        to: cipher-byzantine
+        type: lineage
+        label: broader Byzantine-agreement influence
+      - from: cipher-anonymity
+        to: cipher-paper-66
+        type: direct
+        label: traffic-analysis resistance and limits
+      - from: cipher-byzantine
+        to: cipher-paper-63
+        type: direct
+        label: Byzantine consensus under asymmetric corruption
+      - from: science-cipher-peikert
+        to: cipher-fhe
+        type: direct
+        label: direct collaboration on FHE acceleration
+      - from: science-cipher-peikert
+        to: cipher-paper-59
+        type: direct
+        label: direct coauthorship on F1
+      - from: science-cipher-devadas
+        to: cipher-fhe
+        type: direct
+        label: direct collaboration on FHE acceleration
+      - from: science-cipher-devadas
+        to: cipher-paper-59
+        type: direct
+        label: direct coauthorship on F1
       - from: cipher-computational-security
         to: cipher-paper-51
         type: uses
@@ -568,10 +1246,22 @@ scenes:
         to: cipher-paper-44
         type: direct
         label: proactive secure computation
+      - from: cipher-mpc
+        to: cipher-paper-75
+        type: direct
+        label: maliciously secure decomposable MPC
+      - from: cipher-group-messaging
+        to: cipher-paper-69
+        type: direct
+        label: concurrent key evolution with post-compromise security
       - from: cipher-miller
         to: cipher-ecc
         type: direct
-        label: elliptic-curve cryptography
+        label: independent 1985 proposal of elliptic-curve cryptography
+      - from: cipher-koblitz
+        to: cipher-ecc
+        type: direct
+        label: independent 1985 proposal of elliptic-curve cryptography
       - from: cipher-ecc
         to: cipher-patent-11
         type: direct
@@ -583,7 +1273,7 @@ scenes:
       - from: cipher-gentry
         to: cipher-fhe
         type: direct
-        label: fully homomorphic encryption
+        label: first fully homomorphic-encryption construction and bootstrapping breakthrough
       - from: cipher-fhe
         to: cipher-paper-59
         type: direct

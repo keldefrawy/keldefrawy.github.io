@@ -1,0 +1,103 @@
+- id: p2p-ddos-security
+  year_label: "2007"
+  datetime: "2007"
+  title: P2P & DDoS Security
+  icon: shield-alert
+  summary: File-sharing abuse, unwanted traffic, and attacks assembled from distributed peers.
+  coverage:
+    - year: "2007"
+      title: File-sharing sites are being subverted for web attacks
+      source: New Scientist
+      url: https://www.newscientist.com/article/dn11949-file-sharing-sites-are-being-subverted-for-web-attacks/
+
+- id: machine-to-machine-security
+  year_label: "2020"
+  datetime: "2020"
+  title: Machine-to-Machine Cybersecurity
+  icon: network
+  summary: Security, accountability, and resilience as connected machines communicate autonomously.
+  coverage:
+    - year: "2020"
+      title: "M2M: The Future of Cybersecurity"
+      source: Silicon UK
+      url: https://www.silicon.co.uk/networks/m2m/m2m-the-future-of-cybersecurity-347076
+
+- id: encrypted-computing-at-scale
+  year_label: "2021–22"
+  datetime: "2021"
+  title: Encrypted Computing at Scale
+  icon: cpu
+  summary: DARPA-backed hardware and system designs for accelerating fully homomorphic encryption.
+  coverage:
+    - year: "2022"
+      title: SRI DPRIVE teams’ FHE accelerator design strengthens security of outsourced data processing
+      source: SRI International
+      url: https://www.sri.com/story/sri-dprive-teams-fhe-accelerator-design-strengthens-security-of-outsourced-data-processing/
+    - year: "2021"
+      title: ASIC accelerators get DARPA funding
+      source: EE Times India
+      url: https://www.eetindia.co.in/asic-accelerators-get-darpa-funding/
+    - year: "2021"
+      title: "Accelerating FHE: DARPA awards contracts for encrypted data processing"
+      source: Breaking Defense
+      url: https://breakingdefense.com/2021/03/darpa-awards-contracts-for-encrypted-data-processing/
+    - year: "2021"
+      title: SRI awarded $11.5 million DARPA contract to accelerate fully homomorphic encryption
+      source: SRI International
+      url: https://www.sri.com/press-release/sri-international-awarded-11-5-million-darpa-contract-to-accelerate-fully-homomorphic-encryption/
+
+- id: secure-communications-collaboration
+  year_label: "2022"
+  datetime: "2022"
+  title: Secure 5G & Private Collaboration
+  icon: radio-tower
+  summary: Secure 5G overlays and the transition of privacy-preserving collaboration into practice.
+  coverage:
+    - year: "2022"
+      title: PICO protected communication overlay funded through the NSF 5G Security Convergence Accelerator
+      source: SRI International
+      url: https://www.sri.com/press/press-release/sri-international-spearheads-two-groundbreaking-efforts-to-secure-5g/
+    - year: "2022"
+      title: SRI spin-off Confidencial delivers innovations in data privacy
+      source: DISH
+      url: https://medium.com/dish/sri-spin-off-confidencial-delivers-innovations-in-data-privacy-b4965a05788d
+    - year: "2022"
+      title: SRI Ventures announces new spinout Confidencial
+      source: SRI International
+      url: https://www.sri.com/press/sri-ventures-announces-new-spin-out-confidencial-to-secure-sensitive-information-and-collaboration-for-distributed-enterprises/
+    - year: "2022"
+      title: SRI Ventures announces Confidencial for distributed-enterprise collaboration
+      source: Global Security Mag
+      url: http://www.globalsecuritymag.com/SRI-Ventures-Announces-New-Spin,20220607,126312.html
+
+- id: cybersecurity-transition-recognition
+  year_label: "2023"
+  datetime: "2023"
+  title: Transition & Cybersecurity Recognition
+  icon: shield-check
+  summary: Dual-use technology transition and recognition for practical cybersecurity innovation.
+  coverage:
+    - year: "2023"
+      title: Confidencial accepted into the 2023 MassChallenge Air Force Labs
+      source: Confidencial
+      url: https://www.confidencial.io/news/confidencial-accepted-into-the-2023-masschallenge%27s-air-force-labs.
+    - year: "2023"
+      title: Confidencial wins Cybersecurity Solution of the Year
+      source: PwC Luxembourg Cybersecurity and Privacy Day
+      url: https://www.pwc.lu/en/press/press-releases-2023/cybersecurity-day-2023-winner.html
+
+- id: defense-innovation-lasting-impact
+  year_label: "2024"
+  datetime: "2024"
+  title: Defense Innovation & Lasting Impact
+  icon: clock-3
+  summary: National-security technology transition alongside recognition of enduring research influence.
+  coverage:
+    - year: "2024"
+      title: Early-stage companies to deliver novel technology solutions to Pacific Air Forces
+      source: National Security Innovation Network
+      url: https://nsin.mil/news/2024-08-06-propel-hi-cohortannouncement/
+    - year: "2024"
+      title: Gene Tsudik, Karim Eldefrawy and collaborators win the NDSS 2024 Test of Time Award
+      source: UC Irvine
+      url: https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/

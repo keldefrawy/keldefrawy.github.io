@@ -605,10 +605,12 @@
     var graph = dialog.querySelector("[data-curiosity-graph]");
     var edgeLayer = dialog.querySelector("[data-curiosity-map-edges]");
     var peopleLane = dialog.querySelector("[data-curiosity-map-people]");
+    var collaboratorsLane = dialog.querySelector("[data-curiosity-map-collaborators]");
     var ideasLane = dialog.querySelector("[data-curiosity-map-ideas]");
     var workLane = dialog.querySelector("[data-curiosity-map-papers]");
     var foundationNotes = dialog.querySelector("[data-curiosity-map-notes]");
     var detail = dialog.querySelector("[data-curiosity-map-detail]");
+    var knowledgeLink = dialog.querySelector("[data-curiosity-knowledge-link]");
     var connectionData = parseConnectionsData();
     var scenesData = connectionData.scenes || connectionData;
     var activeTrigger = null;
@@ -635,12 +637,12 @@
 
       detail.textContent = "";
       var paragraph = document.createElement("p");
-      paragraph.textContent = "Select a scientist, idea, paper, or patent to follow its connections.";
+      paragraph.textContent = "Select a foundational scientist, collaborator, idea, paper, or patent to follow its connections.";
       detail.appendChild(paragraph);
     }
 
     function clearGraph() {
-      [peopleLane, ideasLane, workLane].forEach(function (lane) {
+      [peopleLane, collaboratorsLane, ideasLane, workLane].forEach(function (lane) {
         if (lane) {
           lane.textContent = "";
         }
@@ -746,34 +748,50 @@
     function linkedSubgraph(nodeId, kind, scene) {
       var nodes = {};
       var links = {};
-      var firstHop = [];
+      var order = { person: 0, collaborator: 1, idea: 2, paper: 3, patent: 3 };
+      var startOrder = order[kind];
+      var direction = startOrder <= 1 ? 1 : (startOrder >= 3 ? -1 : 0);
+      var maxDepth = direction === 0 ? 1 : 3;
+      var queue = [{ id: nodeId, depth: 0 }];
+      var visited = {};
 
       nodes[nodeId] = true;
       includeScopedNodes(nodeRecords[nodeId], nodes);
-      (scene.links || []).forEach(function (link, index) {
-        if (link.from === nodeId || link.to === nodeId) {
-          var other = link.from === nodeId ? link.to : link.from;
-          nodes[other] = true;
-          links[index] = true;
-          firstHop.push(other);
+      while (queue.length) {
+        var current = queue.shift();
+        var currentRecord = nodeRecords[current.id];
+        var currentOrder = currentRecord ? order[currentRecord.kind] : null;
+
+        if (visited[current.id] || !currentRecord || current.depth >= maxDepth) {
+          continue;
         }
-      });
+        visited[current.id] = true;
+        (scene.links || []).forEach(function (link, index) {
+          var otherId = null;
+          var otherRecord;
+          var otherOrder;
+          var followsDirection;
 
-      if (kind === "person" || kind === "paper" || kind === "patent") {
-        firstHop.forEach(function (intermediateId) {
-          var intermediate = nodeRecords[intermediateId];
-
-          if (!intermediate || intermediate.kind !== "idea") {
+          if (link.from === current.id) {
+            otherId = link.to;
+          } else if (link.to === current.id) {
+            otherId = link.from;
+          }
+          otherRecord = otherId ? nodeRecords[otherId] : null;
+          if (!otherRecord) {
             return;
           }
-          includeScopedNodes(intermediate, nodes);
-          (scene.links || []).forEach(function (link, index) {
-            if (link.from === intermediateId || link.to === intermediateId) {
-              nodes[link.from] = true;
-              nodes[link.to] = true;
-              links[index] = true;
-            }
-          });
+          otherOrder = order[otherRecord.kind];
+          followsDirection = direction === 0 ||
+            (direction > 0 && otherOrder > currentOrder) ||
+            (direction < 0 && otherOrder < currentOrder);
+          if (!followsDirection) {
+            return;
+          }
+          nodes[otherId] = true;
+          links[index] = true;
+          includeScopedNodes(otherRecord, nodes);
+          queue.push({ id: otherId, depth: current.depth + 1 });
         });
       }
 
@@ -819,10 +837,10 @@
     }
 
     function focusConnectedNode(record, direction, scene) {
-      var order = { person: 0, idea: 1, paper: 2, patent: 2 };
+      var order = { person: 0, collaborator: 1, idea: 2, paper: 3, patent: 3 };
       var currentOrder = order[record.kind];
-      var targetOrder = direction === "right" ? currentOrder + 1 : currentOrder - 1;
       var target = null;
+      var targetDistance = Infinity;
 
       if (direction === "right" && record.data.scope === "all_work") {
         Object.keys(nodeRecords).some(function (id) {
@@ -848,9 +866,15 @@
         } else if (link.to === record.data.id) {
           otherId = link.from;
         }
-        if (otherId && nodeRecords[otherId] && order[nodeRecords[otherId].kind] === targetOrder) {
-          target = nodeRecords[otherId].element;
-          return true;
+        if (otherId && nodeRecords[otherId]) {
+          var candidateOrder = order[nodeRecords[otherId].kind];
+          var distance = Math.abs(candidateOrder - currentOrder);
+          var isInDirection = direction === "right" ? candidateOrder > currentOrder : candidateOrder < currentOrder;
+
+          if (isInDirection && distance < targetDistance) {
+            target = nodeRecords[otherId].element;
+            targetDistance = distance;
+          }
         }
         return false;
       });
@@ -913,6 +937,10 @@
         element.href = node.url || "#";
       }
       element.className = "curiosity-map__node curiosity-map__node--" + kind;
+      if (kind === "person" || kind === "collaborator") {
+        element.classList.add("curiosity-map__node--relationship-" +
+          (kind === "collaborator" ? "collaborator" : "influence"));
+      }
       if (node.foundation) {
         element.classList.add("is-foundation");
       }
@@ -1025,7 +1053,11 @@
         connectionsDescription.textContent = scene.description || "";
       }
       (scene.people || []).forEach(function (node) {
-        createNode(node, "person", peopleLane, scene);
+        if (node.relationship === "collaborator") {
+          createNode(node, "collaborator", collaboratorsLane, scene);
+        } else {
+          createNode(node, "person", peopleLane, scene);
+        }
       });
       (scene.ideas || []).forEach(function (node) {
         createNode(node, "idea", ideasLane, scene);
@@ -1036,6 +1068,10 @@
       (scene.patents || []).forEach(function (node) {
         createNode(node, "patent", workLane, scene);
       });
+      if (knowledgeLink) {
+        var baseHref = knowledgeLink.getAttribute("href").split("#")[0].split("?")[0];
+        knowledgeLink.href = baseHref + "?lineage=" + encodeURIComponent(sceneName) + "#idea-lineages";
+      }
       renderFoundationNotes(scene.notes || []);
     }
 

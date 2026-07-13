@@ -3,13 +3,12 @@ schema_version: "1.0"
 evidence_note: >-
   The collaborators view uses publication authorship on this site for direct-collaboration anchors.
   Conceptual-lineage links record broader research influence identified by Karim; they do not imply
-  that every downstream paper was coauthored with the connected person. Blue solid person cards mark
-  direct collaborators; violet dashed person cards mark historical or intellectual influence.
+  that every downstream paper was coauthored with the connected person. Karim has not collaborated
+  with the scientists in the foundational lane. Blue solid cards mark documented co-authors; violet
+  dashed cards mark historical or intellectual influence only.
 
 scenes:
   hotel:
-    exclude_node_ids: [hotel-hilbert, hotel-cantor, hotel-foundations]
-    exclude_note_kinds: [mathematics]
     people:
       - id: science-hotel-byzantine-pioneers
         label: Leslie Lamport, Robert Shostak & Marshall Pease
@@ -76,6 +75,10 @@ scenes:
         to: science-hotel-byzantine-agreement
         type: direct
         label: foundational Byzantine-agreement formulation
+      - from: science-hotel-danny-dolev
+        to: science-hotel-byzantine-agreement
+        type: lineage
+        label: Byzantine-agreement and fault-tolerant distributed-algorithms lineage
       - from: science-hotel-byzantine-agreement
         to: hotel-distributed-resilience
         type: lineage
@@ -163,6 +166,20 @@ scenes:
           Chaum anchors the mix-network, anonymous-communication, group-signature, and digital-cash
           lineages. Distance bounding is credited to the Brands-Chaum construction rather than to
           Chaum alone.
+      - id: science-cipher-claudia-diaz
+        label: Claudia Díaz
+        relationship: collaborator
+        status: Direct collaborator · mixnet traffic analysis and metadata privacy
+        note: >-
+          Direct coauthor on paper #66. Her wider work on mixnets, traffic analysis, and anonymous
+          communications is shown as a broader lineage rather than additional coauthorship.
+      - id: science-cipher-jonathan-katz
+        label: Jonathan Katz
+        relationship: collaborator
+        status: Direct collaborator · reusable fuzzy extractors
+        note: >-
+          Direct coauthor on paper #35, Efficient, Reusable Fuzzy Extractors from LWE. Dashed links
+          separately record his broader secure-computation and Byzantine-agreement influence.
       - id: science-cipher-shamir
         label: Adi Shamir
         relationship: influence
@@ -303,13 +320,29 @@ scenes:
         to: science-cipher-anonymity
         type: direct
         label: mix networks, group signatures, and digital cash
+      - from: science-cipher-claudia-diaz
+        to: science-cipher-anonymity
+        type: lineage
+        label: broader mixnet, traffic-analysis, and metadata-privacy lineage
+      - from: science-cipher-claudia-diaz
+        to: science-cipher-paper-66
+        type: direct
+        label: direct coauthorship on traffic analysis with partial visibility
+      - from: science-cipher-jonathan-katz
+        to: science-cipher-paper-35
+        type: direct
+        label: direct coauthorship on reusable fuzzy extractors from LWE
+      - from: science-cipher-jonathan-katz
+        to: cipher-mpc
+        type: lineage
+        label: broader secure multiparty-computation influence
       - from: science-cipher-chaum
         to: science-cipher-distance-bounding
         type: direct
         label: Brands-Chaum distance-bounding lineage
       - from: science-cipher-anonymity
         to: science-cipher-paper-14
-        type: lineage
+        type: direct
         label: anonymous routing with group signatures
       - from: science-cipher-anonymity
         to: science-cipher-paper-26
@@ -321,7 +354,7 @@ scenes:
         label: traffic-analysis resistance and limits
       - from: science-cipher-anonymity
         to: science-cipher-paper-74
-        type: lineage
+        type: direct
         label: private anonymous bulletin boards
       - from: science-cipher-distance-bounding
         to: science-cipher-paper-13
@@ -392,10 +425,6 @@ scenes:
         type: lineage
         label: lattice, LWE, Ring-LWE, and FHE research influence
       - from: science-cipher-peikert
-        to: cipher-paper-59
-        type: direct
-        label: direct coauthorship on F1
-      - from: science-cipher-peikert
         to: science-cipher-paper-64
         type: direct
         label: direct coauthorship on CraterLake
@@ -403,10 +432,6 @@ scenes:
         to: cipher-fhe
         type: lineage
         label: FHE-accelerator and secure-architecture research influence
-      - from: science-cipher-devadas
-        to: cipher-paper-59
-        type: direct
-        label: direct coauthorship on F1
       - from: science-cipher-devadas
         to: science-cipher-paper-64
         type: direct
@@ -513,26 +538,55 @@ scenes:
       - kind: collaboration
         label: How to read this view
         text: >-
-          Blue solid person cards mark direct collaborators; violet dashed cards mark historical or
-          intellectual influence. Solid links identify documented coauthorship or a directly shared
-          research thread. Dashed conceptual-lineage links capture broader influence named by Karim
-          rather than claiming coauthorship of every downstream paper.
+          Blue solid cards mark documented collaborators and co-authors. Violet cards in the separate
+          foundations-and-influences lane are not Karim's collaborators. Solid person-to-paper links
+          identify shared publications; other solid links identify a directly shared research thread.
+          Dashed links capture broader intellectual or tool lineage rather than coauthorship. Individual cards
+          cover every catalog coauthor with at least three shared publications, plus selected one- or
+          two-paper specialists central to the represented lineages; remaining one-paper project teams
+          are grouped rather than presented as an exhaustive author directory.
     people:
+      - id: collaborators-danny-dolev
+        label: Danny Dolev
+        relationship: influence
+        status: Senior influence · Byzantine agreement and fault tolerance
+        note: >-
+          A foundational contributor to Byzantine agreement, fault-tolerant distributed algorithms,
+          and self-stabilizing Byzantine agreement. The dashed path to Shlomi Dolev records a senior
+          intellectual influence, not collaboration or a claim of doctoral advising.
+      - id: collaborators-gilles-barthe
+        label: Gilles Barthe
+        relationship: influence
+        status: Senior tool influence · EasyCrypt
+        note: >-
+          Coauthor of the paper that introduced EasyCrypt and a leader of its development. The dashed
+          path records the tool and proof-method lineage behind Vitor Pereira's shared work, not
+          coauthorship or advising.
+      - id: collaborators-benjamin-gregoire
+        label: Benjamin Grégoire
+        relationship: influence
+        status: Senior tool influence · EasyCrypt
+        note: >-
+          Coauthor of the paper that introduced EasyCrypt and one of its main implementors. The dashed
+          path records proof-assistant and automation lineage, not coauthorship or advising.
       - id: collaborators-moti-yung
         label: Moti Yung
         relationship: collaborator
-        status: Direct collaborator · 11 mapped papers
+        status: Direct collaborator · 11 catalog publications; selected papers shown
         note: Coauthor across timed cryptography, proactive MPC and secret sharing, secure self-stabilization, and regenerating codes.
       - id: collaborators-rafail-ostrovsky
         label: Rafail Ostrovsky
         relationship: collaborator
-        status: Direct collaborator · 13 mapped papers
+        status: Direct collaborator · 13 catalog publications; selected papers shown
         note: Coauthor across proactive security, secure computation, verified zero knowledge, private search, resilient systems, and post-quantum obfuscation.
       - id: collaborators-gene-tsudik
         label: Gene Tsudik
         relationship: collaborator
-        status: Direct collaborator · 21 mapped papers
-        note: Coauthor across remote attestation, verified embedded systems, public-key messaging, network coding, privacy, and authentication.
+        status: Direct collaborator · 21 catalog publications; selected papers shown
+        note: >-
+          Coauthor across ALARM and PRISM anonymous routing, location privacy, group distance bounding,
+          confidential and anonymous messaging, secure network coding, web-fraud measurement, remote
+          attestation, and verified embedded systems.
       - id: collaborators-nigel-smart
         label: Nigel Smart
         relationship: collaborator
@@ -543,6 +597,13 @@ scenes:
         relationship: collaborator
         status: Direct collaborator · secure computation
         note: Coauthor on secure self-stabilizing computation; Karim also identifies Garay's work in MPC and consensus as an important influence.
+      - id: collaborators-prism-overlay-team
+        label: Linda Briesemeister, Bob Haley & Tim McCarthy
+        relationship: collaborator
+        status: Direct collaborators · PRISM messaging overlay
+        note: >-
+          Coauthors on paper #76, the later intrusion-resilient anonymous-messaging overlay named PRISM.
+          This is distinct from Gene Tsudik's earlier PRISM privacy-friendly routing work in papers #9 and #15.
       - id: collaborators-stanislaw-jarecki
         label: Stanisław Jarecki
         relationship: collaborator
@@ -584,6 +645,95 @@ scenes:
         note: >-
           Coauthor on F1 and CraterLake. Broader links reflect Aegis attestation, formally specified
           enclave work, secure architecture, and strong-anonymity systems such as Riffle and Atom.
+      - id: collaborators-ben-terner
+        label: Ben Terner
+        relationship: collaborator
+        status: Direct collaborator · 9 catalog publications; selected papers shown
+        note: >-
+          Coauthor across timed cryptography, malicious-secure MPC, concurrent group messaging,
+          private bulletin boards, Byzantine communication, and the later PRISM messaging overlay.
+      - id: collaborators-norrathep-rattanavipanon
+        label: Norrathep Rattanavipanon
+        relationship: collaborator
+        status: Direct collaborator · 9 catalog publications; selected papers shown
+        note: >-
+          Coauthor across verified remote attestation, proofs of execution, update/reset/erasure,
+          swarm attestation, microkernel-backed attestation, and legacy-cryptography instrumentation.
+      - id: collaborators-nicholas-genise
+        label: Nicholas Genise
+        relationship: collaborator
+        status: Direct collaborator · 6 catalog publications; selected papers shown
+        note: >-
+          Coauthor across covert authenticated key exchange, FHE accelerators and scheme switching,
+          quantum optimization, and the coding-theoretic foundations of proactive secret sharing.
+      - id: collaborators-joshua-lampkins
+        label: Joshua Lampkins
+        relationship: collaborator
+        status: Direct collaborator · 6 catalog publications; selected papers shown
+        note: >-
+          Coauthor on proactive secret sharing against mobile and dishonest-majority adversaries,
+          dynamic groups, secure computation for digital currency, and privacy-preserving AppCoins.
+      - id: collaborators-tancrede-lepoint
+        label: Tancrède Lepoint
+        relationship: collaborator
+        status: Direct collaborator · 6 catalog publications; selected papers shown
+        note: >-
+          Coauthor on proactive MPC and secret sharing for dynamic groups, secure biometric
+          re-enrollment, cryptographically enforced selective access, and blockchain cyber insurance.
+      - id: collaborators-ivan-nunes
+        label: Ivan De Oliveira Nunes
+        relationship: collaborator
+        status: Direct collaborator · 5 catalog publications; selected papers shown
+        note: >-
+          Coauthor on VRASED, APEX, PURE, and secure non-interactive biometric re-enrollment.
+      - id: collaborators-joshua-baron
+        label: Joshua Baron
+        relationship: collaborator
+        status: Direct collaborator · 5 catalog publications; selected papers shown
+        note: >-
+          Coauthor on proactive secret sharing for dynamic and mobile-adversary settings,
+          resilient cloud infrastructure, and malicious-secure private pattern matching.
+      - id: collaborators-vitor-pereira
+        label: Vitor Pereira
+        relationship: collaborator
+        status: Direct collaborator · 3 catalog publications; selected papers shown
+        note: >-
+          Coauthor on machine-checked secure computation and formally verified zero-knowledge,
+          including verified parallelism and memory-access optimizations.
+      - id: collaborators-kelong-cong
+        label: Kelong Cong
+        relationship: collaborator
+        status: Direct collaborator · 3 catalog publications; selected papers shown
+        note: >-
+          Coauthor on malicious-secure decomposable MPC, registration-based encryption,
+          and concurrent group messaging through the key-lattice framework.
+      - id: collaborators-shlomi-dolev
+        label: Shlomi Dolev
+        relationship: collaborator
+        status: Direct collaborator · 3 catalog publications; selected papers shown
+        note: >-
+          Coauthor on secure self-stabilizing computation and dishonest-majority proactive secret sharing.
+      - id: collaborators-xavier-carpent
+        label: Xavier Carpent
+        relationship: collaborator
+        status: Direct collaborator · 3 catalog publications; selected papers shown
+        note: >-
+          Coauthor on lightweight swarm attestation, temporal consistency for integrity-preserving
+          computation, and safety-critical remote attestation.
+      - id: collaborators-claudia-diaz
+        label: Claudia Díaz
+        relationship: collaborator
+        status: Direct collaborator · 1 catalog publication; selected specialist
+        note: >-
+          Direct coauthor on traffic analysis with partial visibility. Her broader work on mixnets,
+          metadata privacy, and anonymous communications is shown with dashed lineage links.
+      - id: collaborators-jonathan-katz
+        label: Jonathan Katz
+        relationship: collaborator
+        status: Direct collaborator · 1 catalog publication; selected specialist
+        note: >-
+          Direct coauthor on Efficient, Reusable Fuzzy Extractors from LWE. His broader MPC and
+          Byzantine-agreement work is shown with dashed lineage links rather than as additional coauthorship.
     ideas:
       - id: collaborators-timed
         label: Timed cryptography
@@ -599,7 +749,9 @@ scenes:
           Representative nodes are shown here; the mapped attestation body spans papers #17, #27,
           #33, #37, #38, #41, #42, #46, #47, #50, and #54.
       - id: collaborators-public-messaging
-        label: Public-key encryption and secure group messaging
+        label: Public-key encryption and concurrent group messaging
+      - id: collaborators-private-messaging
+        label: Private, identity-based, and confidential messaging
       - id: collaborators-post-quantum
         label: Post-quantum cryptography
       - id: collaborators-ecc
@@ -621,7 +773,21 @@ scenes:
       - id: collaborators-lattices
         label: Lattice cryptography, LWE, and Ring-LWE
       - id: collaborators-anonymity
-        label: Strong anonymity and metadata-private messaging
+        label: Anonymous routing, location privacy, and metadata-private messaging
+      - id: collaborators-intrusion-resilient-messaging
+        label: Intrusion-resilient anonymous messaging overlays
+      - id: collaborators-proactive-mobile-adversaries
+        label: Proactive security against mobile and dishonest-majority adversaries
+      - id: collaborators-secure-biometrics
+        label: Secure biometric enrollment and re-enrollment
+      - id: collaborators-selective-access
+        label: Cryptographically enforced selective access
+      - id: collaborators-quantum-optimization
+        label: Quantum optimization algorithms
+      - id: collaborators-zero-knowledge
+        label: Machine-checked zero knowledge and secure computation
+      - id: collaborators-secure-pattern-matching
+        label: Privacy-preserving pattern matching
     papers:
       - id: collaborators-paper-78
         publication_id: 78
@@ -686,7 +852,7 @@ scenes:
       - id: collaborators-paper-74
         publication_id: 74
         label: "#74 · Private identity-based bulletin boards"
-        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
+        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
         url: /knowledge/papers/paper-74/
       - id: collaborators-paper-77
         publication_id: 77
@@ -696,7 +862,7 @@ scenes:
       - id: collaborators-paper-59
         publication_id: 59
         label: "#59 · F1 FHE accelerator"
-        title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption"
+        title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
         url: /knowledge/papers/paper-59/
       - id: collaborators-paper-64
         publication_id: 64
@@ -728,6 +894,24 @@ scenes:
         label: "#8 · Blacklist-based source filtering"
         title: "Filtering Sources of Unwanted Traffic Based on Blacklists"
         url: /knowledge/papers/paper-8/
+      - id: collaborators-paper-7
+        publication_id: 7
+        label: "#7 · ALARM anonymous routing"
+        title: "ALARM: Anonymous Location-Aided Routing in Suspicious MANETs"
+        url: /knowledge/papers/paper-7/
+        note: "The original ALARM conference paper, coauthored with Gene Tsudik."
+      - id: collaborators-paper-9
+        publication_id: 9
+        label: "#9 · PRISM privacy-friendly routing"
+        title: "PRISM: Privacy-Friendly Routing in Suspicious MANETs (and VANETs)"
+        url: /knowledge/papers/paper-9/
+        note: "Gene Tsudik's PRISM routing paper; distinct from the later paper #76 messaging overlay."
+      - id: collaborators-paper-15
+        publication_id: 15
+        label: "#15 · Privacy-preserving on-demand routing"
+        title: "Privacy-Preserving Location-Based On-Demand Routing in MANETs"
+        url: /knowledge/papers/paper-15/
+        note: "The journal routing construction in the earlier PRISM line, coauthored with Gene Tsudik."
       - id: collaborators-paper-11
         publication_id: 11
         label: "#11 · Encryption and network-coding capacity"
@@ -741,7 +925,7 @@ scenes:
       - id: collaborators-paper-13
         publication_id: 13
         label: "#13 · Group distance bounding"
-        title: "Group Distance Bounding Protocols"
+        title: "Group Distance Bounding Protocols (Short Paper)"
         url: /knowledge/papers/paper-13/
       - id: collaborators-paper-14
         publication_id: 14
@@ -771,8 +955,68 @@ scenes:
       - id: collaborators-paper-76
         publication_id: 76
         label: "#76 · PRISM anonymous messaging overlay"
-        title: "PRISM: Privacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+        title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
         url: /knowledge/papers/paper-76/
+      - id: collaborators-paper-75
+        publication_id: 75
+        label: "#75 · Malicious-secure decomposable MPC"
+        title: "Decomposable MPC with Security Against Malicious Adversaries"
+        url: /knowledge/papers/paper-75/
+      - id: collaborators-paper-60
+        publication_id: 60
+        label: "#60 · Quantum optimization for knapsack"
+        title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
+        url: /knowledge/papers/paper-60/
+      - id: collaborators-paper-32
+        publication_id: 32
+        label: "#32 · Dishonest-majority proactive secret sharing"
+        title: "Proactive Secret Sharing with a Dishonest Majority"
+        url: /knowledge/papers/paper-32/
+      - id: collaborators-paper-28
+        publication_id: 28
+        label: "#28 · Communication-optimal proactive sharing"
+        title: "Communication-Optimal Proactive Secret Sharing for Dynamic Groups"
+        url: /knowledge/papers/paper-28/
+      - id: collaborators-paper-25
+        publication_id: 25
+        label: "#25 · Mobile-virus resilience"
+        title: "How to Withstand Mobile Virus Attacks, Revisited"
+        url: /knowledge/papers/paper-25/
+      - id: collaborators-paper-61
+        publication_id: 61
+        label: "#61 · Proactive MPC for dynamic groups"
+        title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
+        url: /knowledge/papers/paper-61/
+      - id: collaborators-paper-48
+        publication_id: 48
+        label: "#48 · Secure biometric re-enrollment"
+        title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
+        url: /knowledge/papers/paper-48/
+      - id: collaborators-paper-62
+        publication_id: 62
+        label: "#62 · Cryptographic selective access"
+        title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+        url: /knowledge/papers/paper-62/
+      - id: collaborators-paper-23
+        publication_id: 23
+        label: "#23 · Resilient cloud infrastructure"
+        title: "An Architecture for a Resilient Cloud Computing Infrastructure"
+        url: /knowledge/papers/paper-23/
+      - id: collaborators-paper-58
+        publication_id: 58
+        label: "#58 · Machine-checked MPC-in-the-head ZKP"
+        title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+        url: /knowledge/papers/paper-58/
+      - id: collaborators-paper-33
+        publication_id: 33
+        label: "#33 · Lightweight swarm attestation"
+        title: "Lightweight Swarm Attestation: A Tale of Two LISA-s"
+        url: /knowledge/papers/paper-33/
+      - id: collaborators-paper-21
+        publication_id: 21
+        label: "#21 · Malicious-secure private pattern matching"
+        title: "5PM: Secure Pattern Matching"
+        url: /knowledge/papers/paper-21/
     patents:
       - id: collaborators-patent-11
         label: "Patent #11 · Proactive ECDSA"
@@ -780,6 +1024,342 @@ scenes:
         url: /patents.html
         note: Distributed proactive elliptic-curve signing represented in the patent list.
     links:
+      - from: collaborators-danny-dolev
+        to: collaborators-shlomi-dolev
+        type: lineage
+        label: senior intellectual influence in Byzantine-resilient self-stabilization
+      - from: collaborators-danny-dolev
+        to: collaborators-consensus
+        type: lineage
+        label: Byzantine agreement and fault-tolerant distributed-algorithms lineage
+      - from: collaborators-gilles-barthe
+        to: collaborators-vitor-pereira
+        type: lineage
+        label: senior EasyCrypt tool and proof-method influence
+      - from: collaborators-gilles-barthe
+        to: collaborators-formal-crypto
+        type: lineage
+        label: EasyCrypt's code-based game-playing verification lineage
+      - from: collaborators-benjamin-gregoire
+        to: collaborators-vitor-pereira
+        type: lineage
+        label: senior EasyCrypt implementation and automation influence
+      - from: collaborators-benjamin-gregoire
+        to: collaborators-formal-crypto
+        type: lineage
+        label: EasyCrypt proof-assistant and automation infrastructure
+      - from: collaborators-claudia-diaz
+        to: collaborators-paper-66
+        type: direct
+        label: direct coauthorship on traffic analysis with partial visibility
+      - from: collaborators-claudia-diaz
+        to: collaborators-anonymity
+        type: lineage
+        label: broader mixnet, traffic-analysis, and metadata-privacy lineage
+      - from: collaborators-claudia-diaz
+        to: collaborators-intrusion-resilient-messaging
+        type: lineage
+        label: broader intrusion-resilient anonymous-messaging lineage
+      - from: collaborators-jonathan-katz
+        to: collaborators-paper-35
+        type: direct
+        label: direct coauthorship on reusable fuzzy extractors from LWE
+      - from: collaborators-jonathan-katz
+        to: collaborators-mpc
+        type: lineage
+        label: broader secure multiparty-computation influence
+      - from: collaborators-jonathan-katz
+        to: collaborators-consensus
+        type: lineage
+        label: broader Byzantine-agreement influence
+      - from: collaborators-ben-terner
+        to: collaborators-timed
+        type: direct
+        label: direct collaboration on timed cryptography
+      - from: collaborators-ben-terner
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on malicious-secure and timed MPC
+      - from: collaborators-ben-terner
+        to: collaborators-public-messaging
+        type: direct
+        label: direct collaboration on concurrent group messaging
+      - from: collaborators-ben-terner
+        to: collaborators-private-messaging
+        type: direct
+        label: direct collaboration on private identity-based bulletin boards
+      - from: collaborators-ben-terner
+        to: collaborators-consensus
+        type: direct
+        label: direct collaboration on Byzantine send corruption
+      - from: collaborators-ben-terner
+        to: collaborators-intrusion-resilient-messaging
+        type: direct
+        label: direct collaboration on the later PRISM messaging overlay
+      - from: collaborators-ben-terner
+        to: collaborators-paper-78
+        type: direct
+        label: direct coauthorship on timed-protocol composition
+      - from: collaborators-ben-terner
+        to: collaborators-paper-76
+        type: direct
+        label: direct coauthorship on the later PRISM messaging overlay
+      - from: collaborators-ben-terner
+        to: collaborators-paper-75
+        type: direct
+        label: direct coauthorship on decomposable MPC
+      - from: collaborators-ben-terner
+        to: collaborators-paper-74
+        type: direct
+        label: direct coauthorship on private bulletin boards
+      - from: collaborators-ben-terner
+        to: collaborators-paper-73
+        type: direct
+        label: direct coauthorship on multi-party time-lock puzzles
+      - from: collaborators-ben-terner
+        to: collaborators-paper-69
+        type: direct
+        label: direct coauthorship on concurrent group messaging
+      - from: collaborators-ben-terner
+        to: collaborators-paper-63
+        type: direct
+        label: direct coauthorship on Byzantine send corruption
+      - from: collaborators-norrathep-rattanavipanon
+        to: collaborators-verified-ra
+        type: direct
+        label: direct collaboration across the verified-attestation program
+      - from: collaborators-norrathep-rattanavipanon
+        to: collaborators-formal-crypto
+        type: direct
+        label: direct collaboration on verification-backed systems security
+      - from: collaborators-norrathep-rattanavipanon
+        to: collaborators-paper-50
+        type: direct
+        label: direct coauthorship on VRASED
+      - from: collaborators-norrathep-rattanavipanon
+        to: collaborators-paper-54
+        type: direct
+        label: direct coauthorship on APEX
+      - from: collaborators-norrathep-rattanavipanon
+        to: collaborators-paper-42
+        type: direct
+        label: direct coauthorship on safety-critical attestation
+      - from: collaborators-norrathep-rattanavipanon
+        to: collaborators-paper-33
+        type: direct
+        label: direct coauthorship on lightweight swarm attestation
+      - from: collaborators-nicholas-genise
+        to: collaborators-authenticated-key-exchange
+        type: direct
+        label: direct collaboration on covert authenticated key exchange
+      - from: collaborators-nicholas-genise
+        to: collaborators-fhe
+        type: direct
+        label: direct collaboration on FHE accelerators and scheme switching
+      - from: collaborators-nicholas-genise
+        to: collaborators-coding
+        type: direct
+        label: direct collaboration on regenerating codes and proactive sharing
+      - from: collaborators-nicholas-genise
+        to: collaborators-quantum-optimization
+        type: direct
+        label: direct collaboration on quantum optimization heuristics
+      - from: collaborators-nicholas-genise
+        to: collaborators-paper-68
+        type: direct
+        label: direct coauthorship on short cAKE
+      - from: collaborators-nicholas-genise
+        to: collaborators-paper-65
+        type: direct
+        label: direct coauthorship on FHE scheme switching
+      - from: collaborators-nicholas-genise
+        to: collaborators-paper-64
+        type: direct
+        label: direct coauthorship on CraterLake
+      - from: collaborators-nicholas-genise
+        to: collaborators-paper-60
+        type: direct
+        label: direct coauthorship on quantum optimization
+      - from: collaborators-nicholas-genise
+        to: collaborators-paper-59
+        type: direct
+        label: direct coauthorship on F1
+      - from: collaborators-nicholas-genise
+        to: collaborators-paper-57
+        type: direct
+        label: direct coauthorship on regenerating codes and proactive sharing
+      - from: collaborators-joshua-lampkins
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on proactive secret sharing and secure computation
+      - from: collaborators-joshua-lampkins
+        to: collaborators-proactive-mobile-adversaries
+        type: direct
+        label: direct collaboration on mobile and dishonest-majority adversaries
+      - from: collaborators-joshua-lampkins
+        to: collaborators-paper-32
+        type: direct
+        label: direct coauthorship on dishonest-majority proactive sharing
+      - from: collaborators-joshua-lampkins
+        to: collaborators-paper-28
+        type: direct
+        label: direct coauthorship on dynamic-group proactive sharing
+      - from: collaborators-joshua-lampkins
+        to: collaborators-paper-25
+        type: direct
+        label: direct coauthorship on mobile-virus resilience
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on proactive MPC and secret sharing
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-proactive-mobile-adversaries
+        type: direct
+        label: direct collaboration on dishonest-majority dynamic groups
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-secure-biometrics
+        type: direct
+        label: direct collaboration on secure biometric re-enrollment
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-selective-access
+        type: direct
+        label: direct collaboration on cryptographically enforced selective access
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-paper-61
+        type: direct
+        label: direct coauthorship on proactive MPC for dynamic groups
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-paper-48
+        type: direct
+        label: direct coauthorship on SNUSE
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-paper-62
+        type: direct
+        label: direct coauthorship on selective access control
+      - from: collaborators-ivan-nunes
+        to: collaborators-verified-ra
+        type: direct
+        label: direct collaboration on verified attestation and proofs of execution
+      - from: collaborators-ivan-nunes
+        to: collaborators-secure-biometrics
+        type: direct
+        label: direct collaboration on secure biometric re-enrollment
+      - from: collaborators-ivan-nunes
+        to: collaborators-paper-50
+        type: direct
+        label: direct coauthorship on VRASED
+      - from: collaborators-ivan-nunes
+        to: collaborators-paper-54
+        type: direct
+        label: direct coauthorship on APEX
+      - from: collaborators-ivan-nunes
+        to: collaborators-paper-48
+        type: direct
+        label: direct coauthorship on SNUSE
+      - from: collaborators-joshua-baron
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on proactive sharing and secure computation
+      - from: collaborators-joshua-baron
+        to: collaborators-proactive-mobile-adversaries
+        type: direct
+        label: direct collaboration on dynamic groups and mobile-adversary resilience
+      - from: collaborators-joshua-baron
+        to: collaborators-consensus
+        type: direct
+        label: direct collaboration on resilient cloud infrastructure
+      - from: collaborators-joshua-baron
+        to: collaborators-secure-pattern-matching
+        type: direct
+        label: direct collaboration on privacy-preserving pattern matching
+      - from: collaborators-joshua-baron
+        to: collaborators-paper-28
+        type: direct
+        label: direct coauthorship on dynamic-group proactive sharing
+      - from: collaborators-joshua-baron
+        to: collaborators-paper-25
+        type: direct
+        label: direct coauthorship on mobile-virus resilience
+      - from: collaborators-joshua-baron
+        to: collaborators-paper-23
+        type: direct
+        label: direct coauthorship on resilient cloud infrastructure
+      - from: collaborators-joshua-baron
+        to: collaborators-paper-21
+        type: direct
+        label: direct coauthorship on secure pattern matching
+      - from: collaborators-vitor-pereira
+        to: collaborators-formal-crypto
+        type: direct
+        label: direct collaboration on machine-checked cryptographic proofs
+      - from: collaborators-vitor-pereira
+        to: collaborators-zero-knowledge
+        type: direct
+        label: direct collaboration on formally verified zero knowledge
+      - from: collaborators-vitor-pereira
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on machine-checked secure computation
+      - from: collaborators-vitor-pereira
+        to: collaborators-paper-67
+        type: direct
+        label: direct coauthorship on optimized verified zero knowledge
+      - from: collaborators-vitor-pereira
+        to: collaborators-paper-58
+        type: direct
+        label: direct coauthorship on machine-checked MPC-in-the-head ZKP
+      - from: collaborators-kelong-cong
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on malicious-secure decomposable MPC
+      - from: collaborators-kelong-cong
+        to: collaborators-public-messaging
+        type: direct
+        label: direct collaboration on encryption and concurrent group messaging
+      - from: collaborators-kelong-cong
+        to: collaborators-paper-75
+        type: direct
+        label: direct coauthorship on decomposable MPC
+      - from: collaborators-kelong-cong
+        to: collaborators-paper-69
+        type: direct
+        label: direct coauthorship on the key-lattice framework
+      - from: collaborators-kelong-cong
+        to: collaborators-paper-56
+        type: direct
+        label: direct coauthorship on registration-based encryption
+      - from: collaborators-shlomi-dolev
+        to: collaborators-mpc
+        type: direct
+        label: direct collaboration on proactive secret sharing and secure computation
+      - from: collaborators-shlomi-dolev
+        to: collaborators-proactive-mobile-adversaries
+        type: direct
+        label: direct collaboration on dishonest-majority proactive sharing
+      - from: collaborators-shlomi-dolev
+        to: collaborators-consensus
+        type: direct
+        label: direct collaboration on secure self-stabilizing computation
+      - from: collaborators-shlomi-dolev
+        to: collaborators-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilizing computation
+      - from: collaborators-shlomi-dolev
+        to: collaborators-paper-32
+        type: direct
+        label: direct coauthorship on dishonest-majority proactive sharing
+      - from: collaborators-xavier-carpent
+        to: collaborators-verified-ra
+        type: direct
+        label: direct collaboration on swarm and safety-critical attestation
+      - from: collaborators-xavier-carpent
+        to: collaborators-paper-42
+        type: direct
+        label: direct coauthorship on safety-critical attestation
+      - from: collaborators-xavier-carpent
+        to: collaborators-paper-33
+        type: direct
+        label: direct coauthorship on lightweight swarm attestation
       - from: collaborators-stanislaw-jarecki
         to: collaborators-paper-68
         type: direct
@@ -789,6 +1369,10 @@ scenes:
         type: direct
         label: direct coauthorship on private bulletin boards
       - from: collaborators-stanislaw-jarecki
+        to: collaborators-private-messaging
+        type: direct
+        label: direct collaboration on private identity-based messaging
+      - from: collaborators-stanislaw-jarecki
         to: collaborators-mpc
         type: lineage
         label: foundational proactive-secret-sharing influence
@@ -796,6 +1380,14 @@ scenes:
         to: collaborators-authenticated-key-exchange
         type: direct
         label: direct collaboration in covert authenticated key exchange
+      - from: collaborators-prism-overlay-team
+        to: collaborators-intrusion-resilient-messaging
+        type: direct
+        label: direct collaboration on the later PRISM messaging overlay
+      - from: collaborators-prism-overlay-team
+        to: collaborators-paper-76
+        type: direct
+        label: direct coauthorship on PRISM messaging overlay
       - from: collaborators-srdjan-capkun
         to: collaborators-paper-12
         type: direct
@@ -888,6 +1480,30 @@ scenes:
         to: collaborators-coding
         type: direct
         label: direct collaboration on regenerating codes and secret sharing
+      - from: collaborators-moti-yung
+        to: collaborators-paper-78
+        type: direct
+        label: direct coauthorship on timed-protocol composition
+      - from: collaborators-moti-yung
+        to: collaborators-paper-73
+        type: direct
+        label: direct coauthorship on multi-party time-lock puzzles
+      - from: collaborators-moti-yung
+        to: collaborators-paper-55
+        type: direct
+        label: direct coauthorship on dynamic proactive MPC
+      - from: collaborators-moti-yung
+        to: collaborators-paper-44
+        type: direct
+        label: direct coauthorship on dishonest-majority proactive MPC
+      - from: collaborators-moti-yung
+        to: collaborators-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilization
+      - from: collaborators-moti-yung
+        to: collaborators-paper-57
+        type: direct
+        label: direct coauthorship on regenerating codes and secret sharing
       - from: collaborators-rafail-ostrovsky
         to: collaborators-mpc
         type: direct
@@ -900,14 +1516,86 @@ scenes:
         to: collaborators-post-quantum
         type: direct
         label: direct collaboration on post-quantum obfuscation
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-55
+        type: direct
+        label: direct coauthorship on dynamic proactive MPC
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-44
+        type: direct
+        label: direct coauthorship on dishonest-majority proactive MPC
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilization
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-67
+        type: direct
+        label: direct coauthorship on formally verified zero knowledge
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-77
+        type: direct
+        label: direct coauthorship on post-quantum point obfuscation
       - from: collaborators-gene-tsudik
         to: collaborators-verified-ra
         type: direct
         label: direct collaboration in remote attestation and verified systems
       - from: collaborators-gene-tsudik
-        to: collaborators-public-messaging
+        to: collaborators-private-messaging
         type: direct
-        label: direct collaboration in public-key messaging and privacy
+        label: direct collaboration in private and confidential messaging
+      - from: collaborators-gene-tsudik
+        to: collaborators-anonymity
+        type: direct
+        label: direct collaboration on ALARM and PRISM anonymous routing and location privacy
+      - from: collaborators-gene-tsudik
+        to: collaborators-distance-bounding
+        type: direct
+        label: direct collaboration on group distance bounding
+      - from: collaborators-gene-tsudik
+        to: collaborators-network-coding
+        type: direct
+        label: direct collaboration on encrypted network-coding capacity
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-7
+        type: direct
+        label: direct coauthorship on the original ALARM paper
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-9
+        type: direct
+        label: direct coauthorship on PRISM privacy-friendly routing
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-11
+        type: direct
+        label: direct coauthorship on encrypted network-coding capacity
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-13
+        type: direct
+        label: direct coauthorship on group distance bounding
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-14
+        type: direct
+        label: direct coauthorship on ALARM journal paper
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-15
+        type: direct
+        label: direct coauthorship on privacy-preserving on-demand routing
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-42
+        type: direct
+        label: direct coauthorship on safety-critical remote attestation
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-50
+        type: direct
+        label: direct coauthorship on VRASED
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-54
+        type: direct
+        label: direct coauthorship on APEX
+      - from: collaborators-gene-tsudik
+        to: collaborators-paper-74
+        type: direct
+        label: direct coauthorship on private identity-based bulletin boards
       - from: collaborators-nigel-smart
         to: collaborators-public-messaging
         type: direct
@@ -924,6 +1612,14 @@ scenes:
         to: collaborators-mpc
         type: lineage
         label: broader MPC research influence identified by Karim
+      - from: collaborators-nigel-smart
+        to: collaborators-paper-56
+        type: direct
+        label: direct coauthorship on registration-based encryption
+      - from: collaborators-nigel-smart
+        to: collaborators-paper-69
+        type: direct
+        label: direct coauthorship on concurrent group messaging
       - from: collaborators-juan-garay
         to: collaborators-mpc
         type: direct
@@ -932,6 +1628,10 @@ scenes:
         to: collaborators-consensus
         type: lineage
         label: consensus research influence identified by Karim
+      - from: collaborators-juan-garay
+        to: collaborators-paper-36
+        type: direct
+        label: direct coauthorship on secure self-stabilizing computation
       - from: collaborators-timed
         to: collaborators-paper-78
         type: direct
@@ -952,6 +1652,18 @@ scenes:
         to: collaborators-paper-36
         type: direct
         label: secure self-stabilizing computation
+      - from: collaborators-mpc
+        to: collaborators-paper-75
+        type: direct
+        label: malicious-secure decomposable MPC
+      - from: collaborators-mpc
+        to: collaborators-paper-61
+        type: direct
+        label: proactive MPC for dynamic groups
+      - from: collaborators-mpc
+        to: collaborators-paper-58
+        type: direct
+        label: MPC-in-the-head zero knowledge
       - from: collaborators-coding
         to: collaborators-paper-57
         type: direct
@@ -960,6 +1672,10 @@ scenes:
         to: collaborators-paper-67
         type: direct
         label: formally verified zero knowledge
+      - from: collaborators-formal-crypto
+        to: collaborators-paper-58
+        type: direct
+        label: machine-checked security proofs
       - from: collaborators-verified-ra
         to: collaborators-paper-50
         type: direct
@@ -968,6 +1684,10 @@ scenes:
         to: collaborators-paper-54
         type: direct
         label: verified proofs-of-execution architecture
+      - from: collaborators-verified-ra
+        to: collaborators-paper-33
+        type: direct
+        label: lightweight swarm attestation
       - from: collaborators-public-messaging
         to: collaborators-paper-56
         type: direct
@@ -976,7 +1696,7 @@ scenes:
         to: collaborators-paper-69
         type: direct
         label: concurrent group-key evolution
-      - from: collaborators-public-messaging
+      - from: collaborators-private-messaging
         to: collaborators-paper-74
         type: direct
         label: identity-based private bulletin boards
@@ -1008,6 +1728,10 @@ scenes:
         to: collaborators-paper-36
         type: uses
         label: self-stabilizing distributed computation
+      - from: collaborators-consensus
+        to: collaborators-paper-23
+        type: direct
+        label: resilient cloud-computing infrastructure
       - from: collaborators-authenticated-key-exchange
         to: collaborators-paper-68
         type: direct
@@ -1034,7 +1758,7 @@ scenes:
         label: blacklist-based source filtering
       - from: collaborators-network-coding
         to: collaborators-paper-11
-        type: lineage
+        type: direct
         label: encryption and wireless network-coding capacity
       - from: collaborators-network-coding
         to: collaborators-paper-22
@@ -1061,18 +1785,70 @@ scenes:
         type: direct
         label: safety-critical remote attestation
       - from: collaborators-anonymity
+        to: collaborators-paper-7
+        type: direct
+        label: original ALARM anonymous routing
+      - from: collaborators-anonymity
+        to: collaborators-paper-9
+        type: direct
+        label: PRISM privacy-friendly routing
+      - from: collaborators-anonymity
         to: collaborators-paper-14
-        type: lineage
+        type: direct
         label: anonymous location-aided routing
+      - from: collaborators-anonymity
+        to: collaborators-paper-15
+        type: direct
+        label: privacy-preserving location-based on-demand routing
       - from: collaborators-anonymity
         to: collaborators-paper-66
         type: direct
         label: traffic analysis with partial visibility
       - from: collaborators-anonymity
         to: collaborators-paper-74
-        type: lineage
+        type: direct
         label: private anonymous bulletin boards
-      - from: collaborators-anonymity
+      - from: collaborators-intrusion-resilient-messaging
         to: collaborators-paper-76
         type: direct
         label: intrusion-resilient anonymous messaging
+      - from: collaborators-proactive-mobile-adversaries
+        to: collaborators-paper-32
+        type: direct
+        label: dishonest-majority proactive secret sharing
+      - from: collaborators-proactive-mobile-adversaries
+        to: collaborators-paper-28
+        type: direct
+        label: communication-optimal proactive sharing for dynamic groups
+      - from: collaborators-proactive-mobile-adversaries
+        to: collaborators-paper-25
+        type: direct
+        label: resilience against mobile virus attacks
+      - from: collaborators-proactive-mobile-adversaries
+        to: collaborators-paper-61
+        type: direct
+        label: dishonest-majority proactive MPC for dynamic groups
+      - from: collaborators-secure-biometrics
+        to: collaborators-paper-48
+        type: direct
+        label: secure large-scale biometric re-enrollment
+      - from: collaborators-selective-access
+        to: collaborators-paper-62
+        type: direct
+        label: in-app cryptographically enforced access control
+      - from: collaborators-quantum-optimization
+        to: collaborators-paper-60
+        type: direct
+        label: quantum optimization heuristics for knapsack
+      - from: collaborators-zero-knowledge
+        to: collaborators-paper-58
+        type: direct
+        label: machine-checked MPC-in-the-head zero knowledge
+      - from: collaborators-zero-knowledge
+        to: collaborators-paper-67
+        type: direct
+        label: verified high-performance line-point zero knowledge
+      - from: collaborators-secure-pattern-matching
+        to: collaborators-paper-21
+        type: direct
+        label: malicious-secure private pattern matching

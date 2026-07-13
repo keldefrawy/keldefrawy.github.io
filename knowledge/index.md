@@ -142,8 +142,13 @@ knowledge_hub: true
   <section class="knowledge-lineages" id="idea-lineages" aria-labelledby="idea-lineages-heading" data-knowledge-lineages>
     <header class="knowledge-section-heading">
       <p class="knowledge-section-label">Selected intellectual lineages</p>
-      <h2 id="idea-lineages-heading">People → ideas → Karim’s work</h2>
-      <p>The historical views begin with Gödel, Turing, von Neumann, and Shannon, then follow later concepts and researchers. A separate collaborators view connects modern research partnerships to selected papers and patents.</p>
+      <h2 id="idea-lineages-heading">Foundations → collaborators → ideas → Karim’s work</h2>
+      <p>The first lane records historical and intellectual foundations—not personal collaboration. The second lane identifies documented collaborators and co-authors, followed by the ideas and selected papers or patents that connect them.</p>
+      <p class="knowledge-lineage-living-note" role="note">
+        <strong>Living Knowledge Map.</strong> This is a subjective, point-in-time view and may contain
+        unintentional omissions. Other collaborators, influences, ideas, works, and connections will
+        continue to be reviewed and added as the map evolves.
+      </p>
     </header>
 
     {% assign lineage_order = "cipher,hotel,tour,collaborators" | split: "," %}
@@ -165,7 +170,7 @@ knowledge_hub: true
           {% when "collaborators" %}
             {% assign lineage_label = "Collaborators" %}
             {% assign lineage_title = "Collaborators Across Modern Cryptography and Security" %}
-            {% assign lineage_description = "Direct collaborations and broader research influences spanning timed cryptography, MPC, formal verification, remote attestation, public-key systems, post-quantum work, ECC, FHE, and consensus." %}
+            {% assign lineage_description = "An expanded direct-coauthorship audit covering every catalog coauthor with at least three shared publications, plus selected specialists central to the represented lineages. Broader research influences remain explicitly distinguished from shared papers." %}
         {% endcase %}
         <button
           type="button"
@@ -189,11 +194,15 @@ knowledge_hub: true
         <canvas data-knowledge-lineage-lines aria-hidden="true"></canvas>
         <div class="knowledge-lineage-map__lanes">
           <section class="knowledge-lineage-map__lane" aria-labelledby="knowledge-lineage-people-heading">
-            <h4 id="knowledge-lineage-people-heading">People</h4>
+            <h4 id="knowledge-lineage-people-heading">Foundations &amp; influences</h4>
             <ol data-knowledge-lineage-people></ol>
           </section>
+          <section class="knowledge-lineage-map__lane" aria-labelledby="knowledge-lineage-collaborators-heading">
+            <h4 id="knowledge-lineage-collaborators-heading">Collaborators &amp; co-authors</h4>
+            <ol data-knowledge-lineage-collaborators></ol>
+          </section>
           <section class="knowledge-lineage-map__lane" aria-labelledby="knowledge-lineage-ideas-heading">
-            <h4 id="knowledge-lineage-ideas-heading">Ideas</h4>
+            <h4 id="knowledge-lineage-ideas-heading">Research ideas</h4>
             <ol data-knowledge-lineage-ideas></ol>
           </section>
           <section class="knowledge-lineage-map__lane" aria-labelledby="knowledge-lineage-work-heading">
@@ -209,7 +218,7 @@ knowledge_hub: true
           <strong>People</strong>
           <ul>
             <li data-person-relationship="collaborator"><span aria-hidden="true"></span>Direct collaborator</li>
-            <li data-person-relationship="influence"><span aria-hidden="true"></span>Historical / intellectual influence</li>
+            <li data-person-relationship="influence"><span aria-hidden="true"></span>Historical / intellectual influence; no collaboration</li>
           </ul>
         </div>
         <div class="knowledge-lineage-legend__group">
@@ -223,7 +232,7 @@ knowledge_hub: true
       </div>
 
       <div class="knowledge-lineage-detail" data-knowledge-lineage-detail aria-live="polite">
-        <p>Select a person, idea, paper, or patent to follow its connections.</p>
+        <p>Select a foundational scientist, collaborator, idea, paper, or patent to follow its connections.</p>
       </div>
       <p class="knowledge-lineage-qualification">{{ site.data.curiosity_connections.evidence_note | escape }} {{ site.data.knowledge_lineage_overlay.evidence_note | escape }}</p>
     </div>

@@ -1,35 +1,83 @@
-# 2022 - 202X @ Confidencial: 
+---
+layout: default
+title: News Coverage
+description: Selected coverage of Karim Eldefrawy's work across cybersecurity, encrypted computing, secure communications, technology transition, and research impact.
+permalink: /news.html
+---
 
-[2024: National Security Innovation Network (NSIN) Annoucement: Early-Stage Companies to Deliver Novel Technology Solutions to Pacific Air Forces](https://nsin.mil/news/2024-08-06-propel-hi-cohortannouncement/)
+<article class="news-page">
+  <div class="news-header">
+    <p class="news-eyebrow">Coverage timeline · 2007–2024</p>
+    <h1>News Coverage</h1>
+    <p>Selected reporting on how the work moved from network defense and secure systems toward encrypted computing, private collaboration, and real-world impact.</p>
+  </div>
 
-[2024: UC Irvine Coverage of Test of Time Award by the Internet Society’s Network and Distributed System Security Symposium (NDSS)](https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/)
+  <figure class="news-topics" aria-labelledby="news-topics-title">
+    <div class="news-section-heading">
+      <div>
+        <p class="news-section-kicker">The conversation over time</p>
+        <h2 id="news-topics-title">Coverage Themes Over Time</h2>
+      </div>
+      <p class="news-topics-hint">Chronological · left to right</p>
+    </div>
 
-[2023: Confidencial Accepted into the 2023 Air Force Labs MassChallenge](https://www.confidencial.io/news/confidencial-accepted-into-the-2023-masschallenge's-air-force-labs.)
+    <div
+      class="news-topics__viewport"
+      role="region"
+      aria-label="Chronological news coverage themes from 2007 through 2024"
+      tabindex="0"
+    >
+      <ol class="news-topics__list">
+        {% for topic in site.data.news_topics %}
+          <li class="news-topics__item">
+            <time datetime="{{ topic.datetime }}">{{ topic.year_label }}</time>
+            <a class="news-topics__tile" href="#news-topic-{{ topic.id }}">
+              <span class="news-topics__marker" aria-hidden="true">
+                {% include news-topic-icon.html name=topic.icon %}
+              </span>
+              <span class="news-topics__title">{{ topic.title | escape }}</span>
+            </a>
+            <span class="news-topics__summary">{{ topic.summary | escape }}</span>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
 
-[2023: Confidencial wins the 2023 "Cybersecurity Solution of the Year" award at PWC Luxembourg Cybersecurity and Privacy Day](https://www.pwc.lu/en/press/press-releases-2023/cybersecurity-day-2023-winner.html)
+    <figcaption>A selective news wire of recurring themes; article links and sources appear below.</figcaption>
+  </figure>
 
-[2022: Annoucement of "PICO: Protected Integrated Communication Overlay" funding by the NSF 5G Security Convergence Accelerator](https://www.sri.com/press/press-release/sri-international-spearheads-two-groundbreaking-efforts-to-secure-5g/)
+  <section class="news-coverage" aria-labelledby="news-coverage-title">
+    <div class="news-section-heading">
+      <div>
+        <p class="news-section-kicker">Selected reporting</p>
+        <h2 id="news-coverage-title">Coverage by Topic</h2>
+      </div>
+    </div>
 
-# 2017 - 2022 @ SRI
-
-[2022: SRI's Coverage of our DPRIVE FHE Accelerator Designs](https://www.sri.com/story/sri-dprive-teams-fhe-accelerator-design-strengthens-security-of-outsourced-data-processing/)
-
-[2022: SRI's Dish Blog Article on Confidencial](https://medium.com/dish/sri-spin-off-confidencial-delivers-innovations-in-data-privacy-b4965a05788d)
-
-[2022: Confidencial's Spin-out Annoucement by SRI](https://www.sri.com/press/sri-ventures-announces-new-spin-out-confidencial-to-secure-sensitive-information-and-collaboration-for-distributed-enterprises/)
-
-[2022: Confidencial's Coverage by Global Security Mag](http://www.globalsecuritymag.com/SRI-Ventures-Announces-New-Spin,20220607,126312.html)
-
-[2021: ASIC Accelerators Get DARPA Funding](https://www.eetindia.co.in/asic-accelerators-get-darpa-funding/)
-
-
-[2021: Accelerating FHE: DARPA Awards Contracts For Encrypted Data Processing](https://breakingdefense.com/2021/03/darpa-awards-contracts-for-encrypted-data-processing/)
-
-[2021: Accelerating Fully Homomorphic Encryption (FHE): SRI International awarded $11.5 million DARPA contract to accelerate FHE](https://www.sri.com/press-release/sri-international-awarded-11-5-million-darpa-contract-to-accelerate-fully-homomorphic-encryption/)
-
-[2020: Silicon UK IT Magazine - M2M: The Future of Cybersecurity](https://www.silicon.co.uk/networks/m2m/m2m-the-future-of-cybersecurity-347076)
-
-
-
-# 2006 - 2017 @ UCI and HRL
-[News Scientist - File-sharing sites are being subverted for web attacks](https://www.newscientist.com/article/dn11949-file-sharing-sites-are-being-subverted-for-web-attacks/)
+    <div class="news-topic-list">
+      {% assign news_topics_newest_first = site.data.news_topics | reverse %}
+      {% for topic in news_topics_newest_first %}
+        <article class="news-topic-detail" id="news-topic-{{ topic.id }}">
+          <div class="news-topic-detail__header">
+            <time datetime="{{ topic.datetime }}">{{ topic.year_label }}</time>
+            <div>
+              <h3>{{ topic.title | escape }}</h3>
+              <p>{{ topic.summary | escape }}</p>
+            </div>
+          </div>
+          <ul class="news-coverage-list">
+            {% for item in topic.coverage %}
+              <li>
+                <time datetime="{{ item.year }}">{{ item.year }}</time>
+                <div>
+                  <a href="{{ item.url }}">{{ item.title | escape }}</a>
+                  <span>{{ item.source | escape }}</span>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</article>

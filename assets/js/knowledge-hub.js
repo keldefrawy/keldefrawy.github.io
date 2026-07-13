@@ -401,6 +401,7 @@
     var graph = root.querySelector("[data-knowledge-lineage-graph]");
     var canvas = root.querySelector("[data-knowledge-lineage-lines]");
     var peopleLane = root.querySelector("[data-knowledge-lineage-people]");
+    var collaboratorsLane = root.querySelector("[data-knowledge-lineage-collaborators]");
     var ideasLane = root.querySelector("[data-knowledge-lineage-ideas]");
     var workLane = root.querySelector("[data-knowledge-lineage-work]");
     var notesPanel = root.querySelector("[data-knowledge-lineage-notes]");
@@ -412,7 +413,7 @@
     var relatedGraph = null;
     var drawFrame = null;
 
-    if (!sceneButtons.length || !graph || !canvas || !peopleLane || !ideasLane || !workLane) {
+    if (!sceneButtons.length || !graph || !canvas || !peopleLane || !collaboratorsLane || !ideasLane || !workLane) {
       return;
     }
 
@@ -424,14 +425,14 @@
     }
 
     function clearLineage() {
-      [peopleLane, ideasLane, workLane].forEach(clear);
+      [peopleLane, collaboratorsLane, ideasLane, workLane].forEach(clear);
       nodeRecords = {};
       selectedNodeId = null;
       relatedGraph = null;
       if (detail) {
         clear(detail);
         var paragraph = document.createElement("p");
-        paragraph.textContent = "Select a person, idea, paper, or patent to follow its connections.";
+        paragraph.textContent = "Select a foundational scientist, collaborator, idea, paper, or patent to follow its connections.";
         detail.appendChild(paragraph);
       }
     }
@@ -513,34 +514,50 @@
     function linkedSubgraph(nodeId, kind) {
       var nodes = {};
       var links = {};
-      var firstHop = [];
+      var order = { person: 0, collaborator: 1, idea: 2, paper: 3, patent: 3 };
+      var startOrder = order[kind];
+      var direction = startOrder <= 1 ? 1 : (startOrder >= 3 ? -1 : 0);
+      var maxDepth = direction === 0 ? 1 : 3;
+      var queue = [{ id: nodeId, depth: 0 }];
+      var visited = {};
 
       nodes[nodeId] = true;
       includeAllWork(nodeRecords[nodeId], nodes);
-      (activeScene.links || []).forEach(function (link, index) {
-        if (link.from === nodeId || link.to === nodeId) {
-          var other = link.from === nodeId ? link.to : link.from;
-          nodes[other] = true;
-          links[index] = true;
-          firstHop.push(other);
+      while (queue.length) {
+        var current = queue.shift();
+        var currentRecord = nodeRecords[current.id];
+        var currentOrder = currentRecord ? order[currentRecord.kind] : null;
+
+        if (visited[current.id] || !currentRecord || current.depth >= maxDepth) {
+          continue;
         }
-      });
+        visited[current.id] = true;
+        (activeScene.links || []).forEach(function (link, index) {
+          var otherId = null;
+          var otherRecord;
+          var otherOrder;
+          var followsDirection;
 
-      if (kind === "person" || kind === "paper" || kind === "patent") {
-        firstHop.forEach(function (intermediateId) {
-          var intermediate = nodeRecords[intermediateId];
-
-          if (!intermediate || intermediate.kind !== "idea") {
+          if (link.from === current.id) {
+            otherId = link.to;
+          } else if (link.to === current.id) {
+            otherId = link.from;
+          }
+          otherRecord = otherId ? nodeRecords[otherId] : null;
+          if (!otherRecord) {
             return;
           }
-          includeAllWork(intermediate, nodes);
-          (activeScene.links || []).forEach(function (link, index) {
-            if (link.from === intermediateId || link.to === intermediateId) {
-              nodes[link.from] = true;
-              nodes[link.to] = true;
-              links[index] = true;
-            }
-          });
+          otherOrder = order[otherRecord.kind];
+          followsDirection = direction === 0 ||
+            (direction > 0 && otherOrder > currentOrder) ||
+            (direction < 0 && otherOrder < currentOrder);
+          if (!followsDirection) {
+            return;
+          }
+          nodes[otherId] = true;
+          links[index] = true;
+          includeAllWork(otherRecord, nodes);
+          queue.push({ id: otherId, depth: current.depth + 1 });
         });
       }
 
@@ -575,7 +592,7 @@
       } else {
         clear(detail);
         var paragraph = document.createElement("p");
-        paragraph.textContent = "Select a person, idea, paper, or patent to follow its connections.";
+        paragraph.textContent = "Select a foundational scientist, collaborator, idea, paper, or patent to follow its connections.";
         detail.appendChild(paragraph);
       }
       scheduleDraw();
@@ -599,7 +616,7 @@
         element.href = node.url || "#";
       }
       element.className = "knowledge-lineage-node knowledge-lineage-node--" + kind;
-      if (kind === "person") {
+      if (kind === "person" || kind === "collaborator") {
         relationship = node.relationship === "collaborator" ? "collaborator" : "influence";
         element.classList.add("knowledge-lineage-node--relationship-" + relationship);
         element.setAttribute("data-person-relationship", relationship);
@@ -609,11 +626,11 @@
       }
       element.setAttribute("data-lineage-node-id", node.id);
       addText(element, node.label || node.title || node.id, false);
-      if (kind === "person") {
+      if (kind === "person" || kind === "collaborator") {
         relationshipBadge = document.createElement("small");
         relationshipBadge.className = "knowledge-lineage-node__relationship";
         relationshipBadge.textContent = relationship === "collaborator" ?
-          "Direct collaborator" : "Intellectual lineage";
+          "Direct collaborator" : "No collaboration · intellectual lineage";
         element.appendChild(relationshipBadge);
       }
       if (node.status) {
@@ -843,6 +860,14 @@
       activeScene = scientificScene(scene, overlay);
       activeSceneName = sceneName;
       clearLineage();
+      graph.setAttribute("data-lineage-scene", sceneName);
+      var hasInfluencePeople = activeScene.people.some(function (node) {
+        return node.relationship !== "collaborator";
+      });
+      graph.setAttribute("data-lineage-has-foundations", hasInfluencePeople ? "true" : "false");
+      if (peopleLane.parentElement) {
+        peopleLane.parentElement.hidden = !hasInfluencePeople;
+      }
       if (title) {
         title.textContent = selectedButton.getAttribute("data-knowledge-lineage-map-title") ||
           scene.map_title || scene.title || "Ideas map";
@@ -852,7 +877,11 @@
           scene.description || "";
       }
       activeScene.people.forEach(function (node) {
-        createNode(node, "person", peopleLane);
+        if (node.relationship === "collaborator") {
+          createNode(node, "collaborator", collaboratorsLane);
+        } else {
+          createNode(node, "person", peopleLane);
+        }
       });
       activeScene.ideas.forEach(function (node) {
         createNode(node, "idea", ideasLane);
@@ -873,7 +902,16 @@
 
     sceneButtons.forEach(function (button) {
       button.addEventListener("click", function () {
-        renderScene(button.getAttribute("data-knowledge-lineage-scene"));
+        var sceneName = button.getAttribute("data-knowledge-lineage-scene");
+        var url;
+
+        renderScene(sceneName);
+        if (window.history && typeof window.history.replaceState === "function") {
+          url = new URL(window.location.href);
+          url.searchParams.set("lineage", sceneName);
+          url.hash = "idea-lineages";
+          window.history.replaceState({}, "", url.toString());
+        }
       });
     });
 
@@ -882,7 +920,12 @@
       new window.ResizeObserver(scheduleDraw).observe(graph);
     }
 
-    renderScene(sceneButtons[0].getAttribute("data-knowledge-lineage-scene"));
+    var requestedScene = new URLSearchParams(window.location.search).get("lineage");
+    var initialButton = sceneButtons.filter(function (button) {
+      return button.getAttribute("data-knowledge-lineage-scene") === requestedScene;
+    })[0] || sceneButtons[0];
+
+    renderScene(initialButton.getAttribute("data-knowledge-lineage-scene"));
     root.setAttribute("data-knowledge-lineages-ready", "true");
   }
 
