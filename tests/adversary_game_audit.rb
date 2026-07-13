@@ -37,8 +37,14 @@ checks = {
     styles.include?("@media screen and (max-height: 650px)") && styles.include?("min-height: 100px"),
   "keeps the game out of layout while the splash is active" =>
     styles.match?(/\.adversary-game\[hidden\]\s*\{\s*display:\s*none;/m),
-  "renders the splash as a full-width red surface" =>
-    styles.match?(/\.adversary-game-splash\s*\{.*?background-color:\s*#9b1220;.*?flex:\s*1 1 auto;.*?width:\s*100%;/m),
+  "renders the splash as a full-width themed surface" =>
+    styles.match?(/\.adversary-game-splash\s*\{.*?--splash-bg:\s*#9b1220;.*?background-color:\s*var\(--splash-bg\);.*?flex:\s*1 1 auto;.*?width:\s*100%;/m),
+  "randomizes among accessible splash palettes" =>
+    script.include?('var SPLASH_PALETTES = ["red", "blue", "green", "gray", "black", "white", "purple", "orange"];') &&
+      script.include?("function randomizeSplashPalette()") &&
+      script.include?('splash.setAttribute("data-splash-palette", SPLASH_PALETTES[paletteIndex])') &&
+      %w[blue green gray black white purple orange].all? { |palette| styles.include?(%([data-splash-palette="#{palette}"])) },
+  "holds the splash for three seconds" => script.include?("var SPLASH_DURATION_MS = 3000;"),
   "automatically reveals the game after the splash duration" =>
     script.match?(/splashTimer\s*=\s*window\.setTimeout\(function \(\) \{\s*revealGameAfterSplash\(/m),
   "lets press start dismiss the splash immediately" =>

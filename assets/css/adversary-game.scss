@@ -228,14 +228,25 @@ body.adversary-game-dialog-open {
 }
 
 .adversary-game-splash {
+  --splash-bg: #9b1220;
+  --splash-fg: #fffdf7;
+  --splash-muted: #ffe9df;
+  --splash-grid: rgba(255, 253, 247, 0.075);
+  --splash-scanline: rgba(255, 253, 247, 0.045);
+  --splash-button-bg: var(--splash-fg);
+  --splash-button-border: var(--splash-fg);
+  --splash-button-fg: #86101c;
+  --splash-button-hover-bg: #7a0c17;
+  --splash-button-hover-fg: var(--splash-fg);
+  --splash-button-shadow: #570811;
   align-content: center;
-  background-color: #9b1220;
+  background-color: var(--splash-bg);
   background-image:
-    linear-gradient(rgba(255, 253, 247, 0.075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 253, 247, 0.075) 1px, transparent 1px);
+    linear-gradient(var(--splash-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--splash-grid) 1px, transparent 1px);
   background-size: 16px 16px;
-  border: 4px solid #fffdf7;
-  color: #fffdf7;
+  border: 4px solid var(--splash-fg);
+  color: var(--splash-fg);
   display: grid;
   flex: 1 1 auto;
   justify-items: center;
@@ -250,6 +261,74 @@ body.adversary-game-dialog-open {
   width: 100%;
 }
 
+.adversary-game-splash[data-splash-palette="blue"] {
+  --splash-bg: #0b4f8a;
+  --splash-fg: #f7fbff;
+  --splash-muted: #d9eeff;
+  --splash-button-fg: #083c69;
+  --splash-button-hover-bg: #06365f;
+  --splash-button-shadow: #052847;
+}
+
+.adversary-game-splash[data-splash-palette="green"] {
+  --splash-bg: #17633a;
+  --splash-fg: #f6fff9;
+  --splash-muted: #d8f6e4;
+  --splash-button-fg: #124b2d;
+  --splash-button-hover-bg: #0f482a;
+  --splash-button-shadow: #0a331e;
+}
+
+.adversary-game-splash[data-splash-palette="gray"] {
+  --splash-bg: #555d65;
+  --splash-fg: #ffffff;
+  --splash-muted: #f1f3f5;
+  --splash-button-fg: #343a40;
+  --splash-button-hover-bg: #343a40;
+  --splash-button-shadow: #282d31;
+}
+
+.adversary-game-splash[data-splash-palette="black"] {
+  --splash-bg: #101214;
+  --splash-fg: #f7f7f2;
+  --splash-muted: #deded6;
+  --splash-button-fg: #101214;
+  --splash-button-hover-bg: #34373a;
+  --splash-button-shadow: #000000;
+}
+
+.adversary-game-splash[data-splash-palette="white"] {
+  --splash-bg: #f7f7f2;
+  --splash-fg: #151515;
+  --splash-muted: #34383c;
+  --splash-grid: rgba(21, 21, 21, 0.075);
+  --splash-scanline: rgba(21, 21, 21, 0.045);
+  --splash-button-bg: #151515;
+  --splash-button-border: #151515;
+  --splash-button-fg: #f7f7f2;
+  --splash-button-hover-bg: #464b50;
+  --splash-button-hover-fg: #ffffff;
+  --splash-button-shadow: #8a8a83;
+}
+
+.adversary-game-splash[data-splash-palette="purple"] {
+  --splash-bg: #5b2a86;
+  --splash-fg: #fffaff;
+  --splash-muted: #eee1ff;
+  --splash-button-fg: #4a216f;
+  --splash-button-hover-bg: #3f1b60;
+  --splash-button-shadow: #2b1242;
+}
+
+.adversary-game-splash[data-splash-palette="orange"] {
+  --splash-bg: #8f3b0a;
+  --splash-fg: #fffaf4;
+  --splash-muted: #fff0db;
+  --splash-button-fg: #713006;
+  --splash-button-hover-bg: #682904;
+  --splash-button-shadow: #482005;
+}
+
 .adversary-game-splash[hidden] {
   display: none;
 }
@@ -257,8 +336,8 @@ body.adversary-game-dialog-open {
 .adversary-game-splash::after {
   background: repeating-linear-gradient(
     to bottom,
-    rgba(255, 253, 247, 0.045) 0,
-    rgba(255, 253, 247, 0.045) 1px,
+    var(--splash-scanline) 0,
+    var(--splash-scanline) 1px,
     transparent 1px,
     transparent 4px
   );
@@ -271,7 +350,7 @@ body.adversary-game-dialog-open {
 .adversary-game-splash__brand {
   align-items: center;
   animation: adversary-game-splash-boot 1500ms steps(5, end) both;
-  border: 4px double #fffdf7;
+  border: 4px double var(--splash-fg);
   border-radius: 999px;
   display: inline-flex;
   gap: clamp(0.65rem, 2vw, 1rem);
@@ -282,7 +361,7 @@ body.adversary-game-dialog-open {
 }
 
 .adversary-game-splash__brand strong {
-  color: #fffdf7;
+  color: var(--splash-fg);
   font-size: clamp(1rem, 4vw, 2.15rem);
   font-weight: 900;
   letter-spacing: 0.075em;
@@ -340,7 +419,7 @@ body.adversary-game-dialog-open {
 
 .adversary-game-splash__boot,
 .adversary-game-splash__date {
-  color: #ffe9df;
+  color: var(--splash-muted);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.055em;
@@ -356,11 +435,11 @@ body.adversary-game-dialog-open {
 
 .adversary-game-splash button {
   appearance: none;
-  background: #fffdf7;
-  border: 3px solid #fffdf7;
+  background: var(--splash-button-bg);
+  border: 3px solid var(--splash-button-border);
   border-radius: 0;
-  box-shadow: 4px 4px 0 #570811;
-  color: #86101c;
+  box-shadow: 4px 4px 0 var(--splash-button-shadow);
+  color: var(--splash-button-fg);
   cursor: pointer;
   font: inherit;
   font-size: 0.72rem;
@@ -375,8 +454,8 @@ body.adversary-game-dialog-open {
 
 .adversary-game-splash button:hover,
 .adversary-game-splash button:focus-visible {
-  background: #7a0c17;
-  color: #fffdf7;
+  background: var(--splash-button-hover-bg);
+  color: var(--splash-button-hover-fg);
 }
 
 .adversary-game-splash__menu[hidden] {
@@ -392,7 +471,7 @@ body.adversary-game-dialog-open {
 }
 
 .adversary-game-splash__menu > p {
-  color: #ffe9df;
+  color: var(--splash-muted);
   font-size: 0.74rem;
   font-weight: 850;
   letter-spacing: 0.06em;
@@ -412,14 +491,14 @@ body.adversary-game-dialog-open {
 
 .adversary-game-splash__actions [data-game-splash-reset] {
   background: transparent;
-  border-color: #fffdf7;
-  color: #fffdf7;
+  border-color: var(--splash-fg);
+  color: var(--splash-fg);
 }
 
 .adversary-game-splash__actions [data-game-splash-reset]:hover,
 .adversary-game-splash__actions [data-game-splash-reset]:focus-visible {
-  background: #fffdf7;
-  color: #86101c;
+  background: var(--splash-fg);
+  color: var(--splash-button-fg);
 }
 
 @keyframes adversary-game-splash-boot {

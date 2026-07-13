@@ -7,7 +7,8 @@
   var EPSILON = 0.01;
   var HISTORY_STEP_MS = 500;
   var MAX_HISTORY_SNAPSHOTS = 240;
-  var SPLASH_DURATION_MS = 2000;
+  var SPLASH_DURATION_MS = 3000;
+  var SPLASH_PALETTES = ["red", "blue", "green", "gray", "black", "white", "purple", "orange"];
   var CADENCE_VALUES = [2400, 3200, 4200, 5600];
   var CADENCE_LABELS = ["FAST", "BALANCED", "SLOW", "VERY SLOW"];
   var SURVIVAL_VALUES = [60000, 120000];
@@ -145,6 +146,7 @@
     var activeDialogTrigger = null;
     var announcementTimer = null;
     var splashTimer = null;
+    var lastSplashPaletteIndex = -1;
     var gameState = "idle";
     var pauseReasons = {};
     var runId = 0;
@@ -1879,6 +1881,16 @@
       return gameState !== "idle" || historySnapshots.length > 0;
     }
 
+    function randomizeSplashPalette() {
+      var paletteIndex = randomSeed(lastSplashPaletteIndex + 1) % SPLASH_PALETTES.length;
+
+      if (paletteIndex === lastSplashPaletteIndex) {
+        paletteIndex = (paletteIndex + 1) % SPLASH_PALETTES.length;
+      }
+      lastSplashPaletteIndex = paletteIndex;
+      splash.setAttribute("data-splash-palette", SPLASH_PALETTES[paletteIndex]);
+    }
+
     function showSplashMenu(focusMenu) {
       var currentRun = hasCurrentRun();
       var shouldMoveFocus = focusMenu && document.activeElement === splashSkipButton;
@@ -1923,6 +1935,7 @@
 
     function showSplash() {
       clearSplashTimer();
+      randomizeSplashPalette();
       gameDialog.setAttribute("data-splash-active", "true");
       splash.setAttribute("data-splash-phase", "intro");
       splash.hidden = false;
