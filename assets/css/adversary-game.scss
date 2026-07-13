@@ -237,14 +237,17 @@ body.adversary-game-dialog-open {
   border: 4px solid #fffdf7;
   color: #fffdf7;
   display: grid;
+  flex: 1 1 auto;
   justify-items: center;
   min-height: min(34rem, calc(100vh - 8rem));
   min-height: min(34rem, calc(100dvh - 8rem));
+  min-width: 0;
   overflow: hidden;
   padding: clamp(1.4rem, 6vw, 4rem) 1rem;
   position: relative;
   text-align: center;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .adversary-game-splash[hidden] {
@@ -475,6 +478,10 @@ body.adversary-game-dialog-open {
   position: relative;
   text-transform: uppercase;
   width: calc(100% - 7px);
+}
+
+.adversary-game[hidden] {
+  display: none;
 }
 
 .adversary-game,

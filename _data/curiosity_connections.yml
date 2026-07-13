@@ -882,6 +882,48 @@ scenes:
         note: >-
           Nilsson co-led SRI's Shakey project and helped develop foundational AI methods including
           heuristic search and STRIPS planning, connecting symbolic reasoning to an embodied agent.
+      - id: machines-peter-neumann
+        label: Peter G. Neumann
+        relationship: influence
+        status: Bell Labs → SRI · trustworthy systems and formal assurance · no coauthorship claim
+        note: >-
+          Neumann bridged Bell Labs and SRI through work on secure, reliable, survivable, and
+          high-assurance systems. His place in this scene connects machine reasoning to the
+          practical assurance of critical computing systems.
+      - id: machines-karen-myers
+        label: Karen Myers
+        relationship: influence
+        status: SRI AI Center · planning, agents, and human–machine collaboration · no coauthorship claim
+        note: >-
+          Myers leads SRI work on intelligent systems that collaborate with people, spanning
+          multi-agent systems, automated planning and scheduling, intelligent assistants,
+          knowledge management, and end-user automation.
+      - id: machines-carolyn-talcott
+        label: Carolyn Talcott
+        relationship: influence
+        status: SRI CSL · formal reasoning for computer, cyber-physical, and biological systems
+        note: >-
+          Talcott develops formal reasoning methods for complex computer and biological systems,
+          including distributed cyber-physical agents, placing symbolic modeling and verification
+          beside applied automation rather than treating them as separate traditions.
+      - id: machines-gabriela-ciocarlie
+        label: Gabriela F. Ciocarlie
+        relationship: collaborator
+        catalog_authors: [Gabriela F. Ciocarlie]
+        status: Direct SRI collaborator · cyberanalytics, anomaly detection, and trustworthy AI
+        note: >-
+          Ciocarlie's SRI work spans automated cyberanalytics, anomaly detection, distributed alert
+          correlation, formal analysis, and adversarial machine learning. The map distinguishes
+          this applied trustworthy-AI bridge from foundational AI lineage.
+      - id: machines-linda-briesemeister
+        label: Linda Briesemeister
+        relationship: collaborator
+        catalog_authors: [Linda Briesemeister]
+        status: Direct SRI collaborator · distributed algorithms, robots, and dependable automation
+        note: >-
+          Briesemeister applies distributed algorithms to mobile, robotic, wireless, and complex
+          networked systems, including automated simulation, anomaly mitigation, and dependable
+          information exchange.
       - id: machines-cook-levin
         label: Stephen Cook & Leonid Levin
         relationship: influence
@@ -1007,6 +1049,8 @@ scenes:
         label: Symbolic AI, Lisp, and automated reasoning
       - id: machines-assistant-ai
         label: Cognitive assistants and human–machine dialogue
+      - id: machines-trustworthy-automation
+        label: Trustworthy automation, cyberanalytics, and distributed agents
       - id: machines-program-proof
         label: Assertions, invariants, and deductive program synthesis
       - id: machines-temporal-verification
@@ -1060,6 +1104,16 @@ scenes:
         label: "#67 · Optimized formally verified cryptography"
         title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
         url: /knowledge/papers/paper-67/
+      - id: machines-paper-40
+        publication_id: 40
+        label: "#40 · Automated blockchain cyber insurance"
+        title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
+        url: /knowledge/papers/paper-40/
+      - id: machines-paper-76
+        publication_id: 76
+        label: "#76 · Dependable privacy-preserving messaging automation"
+        title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+        url: /knowledge/papers/paper-76/
     patents: []
     links:
       - from: machines-hilbert
@@ -1094,6 +1148,30 @@ scenes:
         to: machines-symbolic-ai
         type: direct
         label: heuristic search, Shakey, and STRIPS planning
+      - from: machines-peter-neumann
+        to: machines-formal-security
+        type: direct
+        label: trustworthy, survivable, and high-assurance computing systems
+      - from: machines-peter-neumann
+        to: machines-formal-verification
+        type: direct
+        label: practical formal assurance and computing-risk analysis
+      - from: machines-karen-myers
+        to: machines-symbolic-ai
+        type: direct
+        label: planning, agents, knowledge, and mixed-initiative intelligence
+      - from: machines-karen-myers
+        to: machines-assistant-ai
+        type: direct
+        label: intelligent assistants and human–machine collaboration
+      - from: machines-carolyn-talcott
+        to: machines-proof-systems
+        type: direct
+        label: formal reasoning about computational and biological systems
+      - from: machines-carolyn-talcott
+        to: machines-trustworthy-automation
+        type: direct
+        label: symbolic models of distributed cyber-physical agents
       - from: machines-cook-levin
         to: machines-complexity
         type: direct
@@ -1214,6 +1292,14 @@ scenes:
         to: machines-assistant-ai
         type: lineage
         label: representation, planning, and agents develop into cognitive assistants
+      - from: machines-assistant-ai
+        to: machines-trustworthy-automation
+        type: lineage
+        label: assistants and agents move into dependable human-centered automation
+      - from: machines-formal-verification
+        to: machines-trustworthy-automation
+        type: lineage
+        label: formal models and checking support reliable automated systems
       - from: machines-nilsson
         to: machines-assistant-ai
         type: lineage
@@ -1254,6 +1340,14 @@ scenes:
         to: machines-paper-79
         type: direct
         label: reliability of generative assistants in cybersecurity use cases
+      - from: machines-trustworthy-automation
+        to: machines-paper-40
+        type: direct
+        label: automated risk sharing and blockchain-based cyber insurance
+      - from: machines-trustworthy-automation
+        to: machines-paper-76
+        type: direct
+        label: intrusion-resilient automation for privacy-preserving distributed messaging
       - from: machines-checked-security
         to: machines-paper-47
         type: direct
@@ -1287,23 +1381,27 @@ scenes:
     title: "The R&D Labyrinth"
     map_title: "From American Research Laboratories to Secure Systems"
     description: >-
-      A career journey through Lucent/Bell Labs, AT&T Shannon Labs, HRL Laboratories, and SRI
-      International, connecting landmark laboratory inventions and people to the computing,
-      formal-methods, cryptography, privacy, and resilient-systems work that followed.
+      A research lineage connecting Bell Labs and AT&T, formative IBM Research collaborations,
+      HRL's ruby-laser tradition, and SRI International to the computing, formal-methods,
+      cryptography, privacy, automation, and resilient-systems work that followed.
     notes:
       - kind: chronology
         label: The route through the laboratories
         text: >-
-          The visual route follows Karim through Lucent/Bell Labs, AT&T Shannon Labs, HRL
-          Laboratories, and SRI International.
+          The visual begins with Claude Shannon and Peter G. Neumann at Bell Labs, crosses the
+          IBM/Bell/AT&T cryptography bridge around Juan Garay, Moti Yung, Gene Tsudik, and Stas
+          Jarecki, refracts through HRL's ruby-laser motif, and continues through SRI formal
+          methods, security, and cryptography to Karim. IBM is a collaboration lineage here, not
+          an employment claim about Karim or Stas.
       - kind: relationship
         label: Institutional history is not coauthorship
         text: >-
           Historical laboratory figures and direct institutional colleagues are shown as context,
           not as coauthors. Peter G. Neumann is shown as a Bell Labs-to-SRI institutional and
-          intellectual bridge. Ashish Gehani, Hassen Saïdi, Linda Briesemeister, Tim McCarthy,
-          Christopher Peikert, Tancrède Lepoint, and Gabriela F. Ciocarlie are separately marked as
-          documented direct collaborators; co-inventorship is stated only where a joint patent is listed.
+          intellectual bridge. Juan Garay, Moti Yung, Gene Tsudik, Stas Jarecki, Ashish Gehani,
+          Hassen Saïdi, Linda Briesemeister, Tim McCarthy, Christopher Peikert, Tancrède Lepoint,
+          and Gabriela F. Ciocarlie are separately marked as documented direct collaborators;
+          co-inventorship is stated only where a joint patent is listed.
     people:
       - id: labs-shannon
         label: Claude Shannon
@@ -1357,6 +1455,42 @@ scenes:
           joining SRI's Computer Science Laboratory in 1971. His research on security, reliability,
           survivability, high assurance, formal methods, and computer-related risks bridged two
           stops in the laboratory journey until his death in 2026.
+      - id: labs-juan-garay
+        label: Juan A. Garay
+        relationship: collaborator
+        catalog_authors: [Juan Garay]
+        status: Direct collaborator · IBM Watson → Bell Labs → AT&T Labs · 1 catalog publication
+        note: >-
+          Garay's research career directly bridges IBM T.J. Watson, Bell Labs, and AT&T
+          Labs–Research. He coauthored the secure self-stabilizing computation work with Karim and
+          Moti Yung, making him both an institutional and a documented collaboration bridge.
+      - id: labs-moti-yung
+        label: Moti Yung
+        relationship: collaborator
+        catalog_authors: [Moti Yung]
+        status: Direct collaborator · IBM T.J. Watson lineage · 11 catalog publications
+        note: >-
+          Yung spent a formative period at IBM Research and directly coauthored eleven cataloged
+          papers with Karim across proactive secret sharing, secure multiparty computation,
+          self-stabilization, timed cryptography, and related foundations.
+      - id: labs-gene-tsudik
+        label: Gene Tsudik
+        relationship: collaborator
+        catalog_authors: [Gene Tsudik]
+        status: Direct collaborator · IBM Zurich lineage · 21 catalog publications
+        note: >-
+          Tsudik worked at IBM Zurich Research Laboratory before his UCI career and directly
+          coauthored twenty-one cataloged papers with Karim across privacy-preserving networking,
+          distance bounding, attestation, verified embedded security, and anonymous messaging.
+      - id: labs-stas-jarecki
+        label: Stanisław “Stas” Jarecki
+        relationship: collaborator
+        catalog_authors: [Stanislaw Jarecki]
+        status: Direct graduate-school collaborator · 2 catalog publications · not IBM staff
+        note: >-
+          Jarecki directly coauthored Short cAKE and the private identity-based bulletin-board work
+          with Karim. He is placed beside the IBM group as a formative cryptography collaborator,
+          while the map explicitly avoids assigning him an IBM employment affiliation.
       - id: labs-shankar
         label: Natarajan Shankar
         relationship: influence
@@ -1378,6 +1512,14 @@ scenes:
         note: >-
           Dutertre developed SRI's Yices SMT solver, connecting efficient decision procedures
           with automated theorem proving and hardware and software verification.
+      - id: labs-rushby
+        label: John Rushby
+        relationship: influence
+        status: Direct SRI colleague · PVS, formal methods, and dependable systems · no coauthorship claim
+        note: >-
+          Rushby's SRI work connects PVS, theorem proving, automated assurance, and the design of
+          dependable and safety-critical systems. This is an institutional and intellectual link,
+          not a claim of direct paper coauthorship.
       - id: labs-brent-waters
         label: Brent Waters
         relationship: influence
@@ -1456,6 +1598,8 @@ scenes:
         label: Mission-driven industrial research and invention
       - id: labs-digital-foundations
         label: Information theory, UNIX, and digital systems
+      - id: labs-ibm-crypto-collaboration
+        label: IBM Research and formative cryptography collaborations
       - id: labs-photonic-invention
         label: Laser physics and experimental invention
       - id: labs-interactive-internet
@@ -1559,6 +1703,31 @@ scenes:
         title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
         url: /knowledge/papers/paper-76/
         note: "Ongoing direct joint work with Linda Briesemeister and Tim McCarthy."
+      - id: labs-paper-31
+        publication_id: 31
+        label: "#31 · Proactive secret sharing with a dishonest majority"
+        title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
+        url: /knowledge/papers/paper-31/
+      - id: labs-paper-32
+        publication_id: 32
+        label: "#32 · Proactive secret sharing with a dishonest majority"
+        title: "Proactive Secret Sharing with a Dishonest Majority"
+        url: /knowledge/papers/paper-32/
+      - id: labs-paper-36
+        publication_id: 36
+        label: "#36 · Secure self-stabilizing computation"
+        title: "Brief Announcement: Secure Self-Stabilizing Computation"
+        url: /knowledge/papers/paper-36/
+      - id: labs-paper-68
+        publication_id: 68
+        label: "#68 · Short concurrent authenticated key exchange"
+        title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
+        url: /knowledge/papers/paper-68/
+      - id: labs-paper-74
+        publication_id: 74
+        label: "#74 · Private identity-based bulletin boards"
+        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
+        url: /knowledge/papers/paper-74/
     patents:
       - id: labs-patent-24
         patent_number: US10867053
@@ -1651,6 +1820,10 @@ scenes:
         to: labs-formal-methods
         type: direct
         label: Yices and satisfiability modulo theories
+      - from: labs-rushby
+        to: labs-formal-methods
+        type: direct
+        label: PVS, theorem proving, and dependable-system assurance
       - from: labs-brent-waters
         to: labs-public-key-pq-fhe
         type: direct
@@ -1684,6 +1857,10 @@ scenes:
         type: lineage
         label: Bell Labs tradition of foundational invention
       - from: labs-industrial-research
+        to: labs-ibm-crypto-collaboration
+        type: lineage
+        label: mission-driven research laboratories and formative cryptography collaborations
+      - from: labs-industrial-research
         to: labs-photonic-invention
         type: lineage
         label: Hughes and HRL experimental research tradition
@@ -1707,6 +1884,34 @@ scenes:
         to: labs-cryptography-privacy
         type: lineage
         label: broader cryptographic expertise surrounding the joint SRI work
+      - from: labs-ibm-crypto-collaboration
+        to: labs-cryptography-privacy
+        type: lineage
+        label: formative IBM, Bell, AT&T, UCI, and graduate-school collaboration line
+      - from: labs-ibm-crypto-collaboration
+        to: labs-paper-31
+        type: direct
+        label: proactive secret-sharing collaboration with Moti Yung
+      - from: labs-ibm-crypto-collaboration
+        to: labs-paper-32
+        type: direct
+        label: proactive secret-sharing collaboration with Moti Yung
+      - from: labs-ibm-crypto-collaboration
+        to: labs-paper-36
+        type: direct
+        label: self-stabilizing computation with Juan Garay and Moti Yung
+      - from: labs-ibm-crypto-collaboration
+        to: labs-paper-50
+        type: lineage
+        label: later verified-attestation collaboration with Gene Tsudik
+      - from: labs-ibm-crypto-collaboration
+        to: labs-paper-68
+        type: direct
+        label: authenticated key-exchange collaboration with Stas Jarecki
+      - from: labs-ibm-crypto-collaboration
+        to: labs-paper-74
+        type: direct
+        label: anonymous bulletin-board collaboration with Gene Tsudik and Stas Jarecki
       - from: labs-provenance-security
         to: labs-cryptography-privacy
         type: lineage

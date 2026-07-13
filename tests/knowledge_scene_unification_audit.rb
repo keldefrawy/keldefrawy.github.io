@@ -64,6 +64,11 @@ expected_machine_people = [
   "John von Neumann",
   "John McCarthy",
   "Nils J. Nilsson",
+  "Peter G. Neumann",
+  "Karen Myers",
+  "Carolyn Talcott",
+  "Gabriela F. Ciocarlie",
+  "Linda Briesemeister",
   "Stephen Cook & Leonid Levin",
   "Robert W. Floyd",
   "Zohar Manna",
@@ -82,14 +87,18 @@ expected_machine_people = [
 machine_people = machines.fetch("people").map { |person| person.fetch("label") }
 errors << "machines lineage people differ: #{machine_people.inspect}" unless machine_people == expected_machine_people
 
-omitted_second_layer_names = %w[Luckham Igarashi London Pratt Pnueli Dill Barrett Mitchell Talcott Feferman]
+omitted_second_layer_names = %w[Luckham Igarashi London Pratt Pnueli Dill Barrett Mitchell Feferman]
 machine_scene_text = machines.to_s
 unexpected_second_layer_names = omitted_second_layer_names.select { |name| machine_scene_text.include?(name) }
 unless unexpected_second_layer_names.empty?
   errors << "machines lineage still exposes distant second-layer figures #{unexpected_second_layer_names.inspect}"
 end
-if machines.fetch("people").any? { |person| person["relationship"] == "collaborator" }
-  errors << "machines lineage incorrectly marks a foundational figure as a collaborator"
+machine_collaborators = machines.fetch("people").select { |person| person["relationship"] == "collaborator" }
+unless machine_collaborators.map { |person| person.fetch("label") } == [
+  "Gabriela F. Ciocarlie",
+  "Linda Briesemeister"
+]
+  errors << "machines lineage misstates the two direct SRI collaborators"
 end
 
 machine_idea_ids = machines.fetch("ideas").map { |idea| idea.fetch("id") }
@@ -100,6 +109,7 @@ expected_verification_ideas = %w[
   machines-formal-security
   machines-complexity
   machines-assistant-ai
+  machines-trustworthy-automation
 ]
 missing_verification_ideas = expected_verification_ideas - machine_idea_ids
 unless missing_verification_ideas.empty?
@@ -121,6 +131,18 @@ unless dutertre && dutertre.fetch("status").include?("Yices")
   errors << "Bruno Dutertre is not connected to Yices and the SRI verification lineage"
 end
 
+expected_machine_sri_people = {
+  "machines-peter-neumann" => "Peter G. Neumann",
+  "machines-karen-myers" => "Karen Myers",
+  "machines-carolyn-talcott" => "Carolyn Talcott",
+  "machines-gabriela-ciocarlie" => "Gabriela F. Ciocarlie",
+  "machines-linda-briesemeister" => "Linda Briesemeister"
+}
+expected_machine_sri_people.each do |id, label|
+  person = machines.fetch("people").find { |candidate| candidate.fetch("id") == id }
+  errors << "Machines/AI lineage omits #{label}" unless person && person.fetch("label") == label
+end
+
 machine_ids = %w[people ideas papers patents].flat_map do |kind|
   machines.fetch(kind, []).map { |node| node.fetch("id") }
 end
@@ -140,9 +162,14 @@ expected_lab_people = [
   "Leslie Lamport",
   "Elizabeth “Jake” Feinler",
   "Peter G. Neumann",
+  "Juan A. Garay",
+  "Moti Yung",
+  "Gene Tsudik",
+  "Stanisław “Stas” Jarecki",
   "Natarajan Shankar",
   "Patrick Lincoln",
   "Bruno Dutertre",
+  "John Rushby",
   "Brent Waters",
   "Christopher Peikert",
   "Tancrède Lepoint",
@@ -157,6 +184,10 @@ errors << "R&D laboratory lineage people differ: #{lab_people.inspect}" unless l
 
 lab_collaborators = labs.fetch("people").select { |person| person["relationship"] == "collaborator" }
 expected_lab_collaborators = [
+  "Juan A. Garay",
+  "Moti Yung",
+  "Gene Tsudik",
+  "Stanisław “Stas” Jarecki",
   "Christopher Peikert",
   "Tancrède Lepoint",
   "Gabriela F. Ciocarlie",
@@ -188,6 +219,15 @@ new_sri_publication_ids = labs.fetch("papers").filter_map do |paper|
 end.sort
 unless new_sri_publication_ids == expected_new_sri_publication_ids
   errors << "R&D laboratory lineage omits new SRI collaborator papers #{new_sri_publication_ids.inspect}"
+end
+
+expected_formative_collaboration_ids = [31, 32, 36, 50, 68, 74]
+formative_collaboration_ids = labs.fetch("papers").filter_map do |paper|
+  publication_id = paper.fetch("publication_id").to_i
+  publication_id if expected_formative_collaboration_ids.include?(publication_id)
+end.sort
+unless formative_collaboration_ids == expected_formative_collaboration_ids
+  errors << "R&D laboratory lineage omits IBM/formative collaborator papers #{formative_collaboration_ids.inspect}"
 end
 
 expected_joint_patents = %w[US10867053 US11023569 US11507676 US11741247 US11934538]
@@ -250,28 +290,45 @@ errors << "sidebar omits the R&D laboratory scene" unless sidebar_include.includ
 [
   "Claude Shannon",
   "Peter Neumann",
-  "Theodore Maiman",
-  "Douglas Engelbart",
-  "Leslie Lamport",
+  "Moti Yung",
+  "Gene Tsudik",
+  "Juan Garay",
+  "Stas Jarecki",
+  "Natarajan Shankar",
+  "Bruno Dutertre",
+  "John Rushby",
   "Patrick Lincoln",
-  "Brent Waters",
-  "Christopher Peikert",
   "Tancrède Lepoint",
-  "Gabriela Ciocarlie"
+  "Gabriela F. Ciocarlie",
+  "Linda Briesemeister",
+  "Ashish Gehani",
+  "Karim holding a glowing secure sphere"
 ].each do |name|
   errors << "expanded R&D laboratory animation omits #{name}" unless sidebar_include.include?(name)
 end
 %w[
-  machines-automation-ai.webp
-  machines-automation-ai-frame-2.webp
-  machines-automation-ai-frame-3.webp
-  machines-automation-ai-frame-4.webp
+  machines-automation-ai-v2.webp
+  machines-automation-ai-v2-frame-2.webp
+  machines-automation-ai-v2-frame-3.webp
+  machines-automation-ai-v2-frame-4.webp
 ].each do |frame|
   errors << "Machines/AI animation omits frame #{frame}" unless sidebar_include.include?(frame)
+end
+%w[
+  rd-labyrinth.webp
+  rd-labyrinth-frame-2.webp
+  rd-labyrinth-frame-3.webp
+  rd-labyrinth-frame-4.webp
+].each do |frame|
+  errors << "R&D Labyrinth animation omits frame #{frame}" unless sidebar_include.include?(frame)
 end
 [
   "Nils Nilsson with Shakey",
   "Peter Neumann",
+  "Karen Myers",
+  "Carolyn Talcott",
+  "Gabriela F. Ciocarlie",
+  "Linda Briesemeister",
   "Shankar",
   "Dutertre",
   "bearded John Rushby",
@@ -284,8 +341,14 @@ end
 if sidebar_include.include?("data-curiosity-machine-visual") || sidebar_js.include?("sourceMachine")
   errors << "Machines/AI animation still depends on the obsolete initials-and-circles visual"
 end
-unless sidebar_include.include?("Lucent/Bell Labs → AT&amp;T Shannon Labs → HRL → SRI")
-  errors << "R&D Labyrinth route omits Lucent/Bell Labs or AT&T Shannon Labs"
+if sidebar_include.include?("data-curiosity-lab-visual")
+  errors << "R&D Labyrinth still depends on the obsolete initials-only visual"
+end
+unless sidebar_include.include?("Bell/AT&amp;T → IBM collaborators → HRL → SRI")
+  errors << "R&D Labyrinth route omits the IBM collaboration stage"
+end
+unless sidebar_include.include?("rather than IBM staff")
+  errors << "R&D Labyrinth does not distinguish Stas Jarecki from IBM staff"
 end
 expected_sidebar_order = 'var sceneOrder = ["labs", "cipher", "tour", "machines", "hotel"]'
 errors << "sidebar scene order differs from the requested sequence" unless sidebar_js.include?(expected_sidebar_order)

@@ -1933,7 +1933,7 @@
       root.setAttribute("aria-hidden", "true");
       splashSkipButton.focus();
       splashTimer = window.setTimeout(function () {
-        showSplashMenu(true);
+        revealGameAfterSplash(hasCurrentRun() ? toggleButton : cadenceRange);
       }, SPLASH_DURATION_MS);
     }
 
@@ -1994,7 +1994,7 @@
     openButton.addEventListener("click", showGameDialog);
     closeButton.addEventListener("click", closeGameDialog);
     splashSkipButton.addEventListener("click", function () {
-      showSplashMenu(true);
+      revealGameAfterSplash(hasCurrentRun() ? toggleButton : cadenceRange);
     });
     splashContinueButton.addEventListener("click", function () {
       revealGameAfterSplash(hasCurrentRun() ? toggleButton : cadenceRange);

@@ -34,7 +34,15 @@ checks = {
   "uses a compact playfield rather than a fixed tall canvas" =>
     styles.include?(".adversary-game__playfield") && !styles.include?("height: clamp(280px"),
   "has height-sensitive short-screen compaction" =>
-    styles.include?("@media screen and (max-height: 650px)") && styles.include?("min-height: 100px")
+    styles.include?("@media screen and (max-height: 650px)") && styles.include?("min-height: 100px"),
+  "keeps the game out of layout while the splash is active" =>
+    styles.match?(/\.adversary-game\[hidden\]\s*\{\s*display:\s*none;/m),
+  "renders the splash as a full-width red surface" =>
+    styles.match?(/\.adversary-game-splash\s*\{.*?background-color:\s*#9b1220;.*?flex:\s*1 1 auto;.*?width:\s*100%;/m),
+  "automatically reveals the game after the splash duration" =>
+    script.match?(/splashTimer\s*=\s*window\.setTimeout\(function \(\) \{\s*revealGameAfterSplash\(/m),
+  "lets press start dismiss the splash immediately" =>
+    script.match?(/splashSkipButton\.addEventListener\("click", function \(\) \{\s*revealGameAfterSplash\(/m)
 }
 
 failures = checks.reject { |_label, passed| passed }.keys

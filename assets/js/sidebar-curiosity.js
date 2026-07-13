@@ -23,12 +23,12 @@
       finished: "The ciphertext has completed the great cipher relay."
     },
     machines: {
-      playing: "The idea-light is moving from machine reasoning through Shakey and SRI formal verification.",
+      playing: "The idea-light is moving through machine reasoning, Shakey, SRI automation, and formal verification.",
       finished: "The verified assistant has carried the idea-light into Karim’s secure phone."
     },
     labs: {
-      playing: "The idea-light is traveling from Lucent/Bell Labs through AT&T Shannon Labs, HRL, and SRI.",
-      finished: "The idea-light has reached SRI."
+      playing: "The idea-light is traveling from Bell and AT&T through IBM collaborations, HRL’s ruby, and SRI.",
+      finished: "The research lineage has reached Karim’s secure idea sphere."
     }
   };
 
