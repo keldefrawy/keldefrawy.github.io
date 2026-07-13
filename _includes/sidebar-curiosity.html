@@ -1,4 +1,4 @@
-<aside class="sidebar-curiosity" data-sidebar-curiosity aria-label="Mathematical and cryptographic curiosities">
+<aside class="sidebar-curiosity" data-sidebar-curiosity aria-label="Mathematical, cryptographic, and computing curiosities">
   <figure
     class="sidebar-curiosity__scene"
     data-curiosity-scene="cipher"
@@ -93,9 +93,9 @@
     </button>
     <figcaption class="sidebar-curiosity__content">
       <h2 class="sidebar-curiosity__title" id="curiosity-tour-title">The One-Bit Grand Tour</h2>
-      <p class="sidebar-curiosity__tagline" id="curiosity-tour-tagline">From entropy to qubits</p>
+      <p class="sidebar-curiosity__tagline" id="curiosity-tour-tagline">Secrecy → public keys → encrypted computation → quantum</p>
       <p class="sidebar-curiosity__caption" id="curiosity-tour-caption">
-        One bit walks into information theory and comes out entangled.
+        Follow one protected bit from Shannon’s secrecy through public-key and homomorphic encryption, into the quantum threat, and back toward post-quantum security.
       </p>
     </figcaption>
     <div class="sidebar-curiosity__actions">
@@ -196,6 +196,69 @@
       aria-atomic="true"
     ></p>
   </figure>
+
+  <figure
+    class="sidebar-curiosity__scene"
+    data-curiosity-scene="machines"
+    aria-labelledby="curiosity-machines-title"
+    aria-describedby="curiosity-machines-tagline curiosity-machines-caption"
+  >
+    <button
+      class="sidebar-curiosity__viewport sidebar-curiosity__viewport--machines sidebar-curiosity__open"
+      type="button"
+      data-curiosity-open
+      data-curiosity-initial-panel="connections"
+      aria-haspopup="dialog"
+      aria-controls="curiosity-dialog"
+      aria-label="Open Machines, Automation and Artificial Intelligence ideas map"
+    >
+      <span class="sidebar-curiosity__machine-visual" data-curiosity-machine-visual aria-hidden="true">
+        <span class="sidebar-curiosity__machine-tape">010011<br>110100<br>001101<br>101010<br>011001</span>
+        <span class="sidebar-curiosity__machine-formula">∀ P</span>
+        <span class="sidebar-curiosity__machine-core">⊢</span>
+        <span class="sidebar-curiosity__machine-result">✓</span>
+        <span class="sidebar-curiosity__machine-label">SPEC → CHECK → PROOF</span>
+      </span>
+    </button>
+    <figcaption class="sidebar-curiosity__content">
+      <h2 class="sidebar-curiosity__title" id="curiosity-machines-title">Machines, Automation &amp; AI</h2>
+      <p class="sidebar-curiosity__tagline" id="curiosity-machines-tagline">From formal axioms to machine-checked security</p>
+      <p class="sidebar-curiosity__caption" id="curiosity-machines-caption">
+        A proof walks into a machine and comes out with its assumptions showing.
+      </p>
+    </figcaption>
+    <div class="sidebar-curiosity__actions">
+      <button
+        class="sidebar-curiosity__ideas"
+        type="button"
+        data-curiosity-ideas
+        data-curiosity-initial-panel="connections"
+        aria-haspopup="dialog"
+        aria-controls="curiosity-dialog"
+        aria-label="Explore the Machines, Automation and Artificial Intelligence ideas map"
+      >
+        Ideas map
+      </button>
+      <button
+        class="sidebar-curiosity__launch"
+        type="button"
+        data-curiosity-open
+        data-curiosity-initial-panel="animation"
+        aria-haspopup="dialog"
+        aria-controls="curiosity-dialog"
+        aria-label="Open the reasoning-machine animation and reason about the problem"
+      >
+        Reason about the problem
+      </button>
+    </div>
+    <p
+      class="sidebar-curiosity__status"
+      data-curiosity-status
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></p>
+  </figure>
 </aside>
 
 <dialog
@@ -236,6 +299,13 @@
             height="853"
             decoding="async"
           >
+          <div class="curiosity-dialog__machine-visual" data-curiosity-dialog-machine hidden aria-hidden="true">
+            <span class="sidebar-curiosity__machine-tape">010011<br>110100<br>001101<br>101010<br>011001</span>
+            <span class="sidebar-curiosity__machine-formula">∀ P</span>
+            <span class="sidebar-curiosity__machine-core">⊢</span>
+            <span class="sidebar-curiosity__machine-result">✓</span>
+            <span class="sidebar-curiosity__machine-label">SPEC → CHECK → PROOF</span>
+          </div>
         </div>
         <p class="curiosity-dialog__caption" id="curiosity-dialog-caption" data-curiosity-dialog-caption></p>
         <div class="curiosity-dialog__actions">
@@ -373,4 +443,10 @@
 
 <script type="application/json" data-curiosity-connections-data>
   {{ site.data.curiosity_connections | jsonify }}
+</script>
+<script type="application/json" data-knowledge-lineage-overlay>
+  {{ site.data.knowledge_lineage_overlay | jsonify }}
+</script>
+<script type="application/json" data-knowledge-publication-catalog>
+  {{ site.data.publications | jsonify }}
 </script>

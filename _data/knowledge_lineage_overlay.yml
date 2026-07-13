@@ -9,6 +9,8 @@ evidence_note: >-
 
 scenes:
   hotel:
+    exclude_node_ids: [hotel-hilbert, hotel-cantor, hotel-foundations]
+    exclude_note_kinds: [mathematics]
     people:
       - id: science-hotel-byzantine-pioneers
         label: Leslie Lamport, Robert Shostak & Marshall Pease
@@ -179,20 +181,27 @@ scenes:
         relationship: influence
         status: Secure-computation lineage
         note: Foundational secure two-party computation and garbled-circuit lineage.
+      - id: science-cipher-boneh
+        label: Dan Boneh
+        relationship: influence
+        status: Pairing-based and applied cryptography
+        note: >-
+          Boneh's pairing-based and applied-cryptography work supplies intellectual lineage for
+          bilinear-map constructions represented here. He is a foundational influence, not a collaborator.
       - id: science-cipher-goldreich
         label: Oded Goldreich
         relationship: influence
         status: General secure-computation lineage
         note: General secure computation with Silvio Micali and Avi Wigderson.
       - id: science-cipher-peikert
-        label: Chris Peikert
+        label: Christopher Peikert
         relationship: collaborator
         status: Direct collaborator · F1 and CraterLake
         note: >-
           Direct coauthor on both mapped FHE accelerators; broader dashed links mark Peikert's
           lattice, LWE, Ring-LWE, and FHE research influence rather than additional coauthorship.
       - id: science-cipher-devadas
-        label: Srinivas (Srini) Devadas
+        label: Srinivas Devadas
         relationship: collaborator
         status: Direct collaborator · F1 and CraterLake
         note: >-
@@ -223,6 +232,26 @@ scenes:
       - id: science-cipher-lattices
         label: Lattice cryptography, LWE, and Ring-LWE
     papers:
+      - id: science-cipher-paper-78
+        publication_id: 78
+        label: "#78 · Timed-protocol composition"
+        title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
+        url: /knowledge/papers/paper-78/
+      - id: science-cipher-paper-76
+        publication_id: 76
+        label: "#76 · PRISM intrusion-resilient messaging"
+        title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+        url: /knowledge/papers/paper-76/
+      - id: science-cipher-paper-72
+        publication_id: 72
+        label: "#72 · Timed-cryptography position paper (full)"
+        title: "Challenges in Timed Cryptography: A Position Paper (Full Paper)"
+        url: /knowledge/papers/paper-72/
+      - id: science-cipher-paper-71
+        publication_id: 71
+        label: "#71 · Timed-cryptography position paper (short)"
+        title: "Challenges in Timed-Cryptography: A Position Paper (Short Paper)"
+        url: /knowledge/papers/paper-71/
       - id: science-cipher-paper-64
         publication_id: 64
         label: "#64 · CraterLake FHE accelerator"
@@ -292,6 +321,22 @@ scenes:
         title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
         url: /knowledge/papers/paper-55/
     links:
+      - from: cipher-timed-release
+        to: science-cipher-paper-78
+        type: direct
+        label: foundations and composition of timed protocols
+      - from: cipher-timed-release
+        to: science-cipher-paper-72
+        type: direct
+        label: full timed-cryptography position paper
+      - from: cipher-timed-release
+        to: science-cipher-paper-71
+        type: direct
+        label: short timed-cryptography position paper
+      - from: cipher-group-messaging
+        to: science-cipher-paper-76
+        type: direct
+        label: intrusion-resilient privacy-preserving messaging overlay
       - from: science-cipher-chaum
         to: science-cipher-anonymity
         type: direct
@@ -332,6 +377,14 @@ scenes:
         to: cipher-public-key
         type: lineage
         label: identity-based-encryption proposal
+      - from: science-cipher-boneh
+        to: science-cipher-pairings
+        type: lineage
+        label: pairing-based cryptography and identity-based encryption
+      - from: science-cipher-boneh
+        to: cipher-public-key
+        type: lineage
+        label: modern public-key and applied-cryptography lineage
       - from: science-cipher-secret-sharing
         to: science-cipher-proactive-security
         type: lineage
@@ -498,6 +551,12 @@ scenes:
         label: threshold ElGamal malicious-security construction
 
   collaborators:
+    title: "Collaborators Across Modern Cryptography and Security"
+    map_title: "Collaborators Across Modern Cryptography and Security"
+    description: >-
+      A catalog-checked coauthorship view: collaborators connect only to papers carrying their
+      names, while papers connect separately to research ideas. Select a person or idea to reveal
+      the relevant papers.
     notes:
       - kind: collaboration
         label: How to read this view
@@ -612,15 +671,15 @@ scenes:
           Coauthor on safety-critical remote attestation; the dashed attestation link marks Sadeghi's
           broader trusted-systems influence across the represented attestation program.
       - id: collaborators-chris-peikert
-        label: Chris Peikert
+        label: Christopher Peikert
         relationship: collaborator
-        catalog_authors: [Chris Peikert]
+        catalog_authors: [Chris Peikert, Christopher Peikert]
         status: Direct collaborator · all 2 catalog publications mapped
         note: >-
           Coauthor on F1 and CraterLake. Lattice, LWE, Ring-LWE, and other FHE links are marked as
           broader intellectual influence unless the connected paper is one of those two collaborations.
       - id: collaborators-srini-devadas
-        label: Srinivas (Srini) Devadas
+        label: Srinivas Devadas
         relationship: collaborator
         catalog_authors: [Srini Devadas, Srinivas Devadas]
         status: Direct collaborator · all 2 catalog publications mapped
@@ -628,7 +687,7 @@ scenes:
           Coauthor on F1 and CraterLake. Broader links reflect Aegis attestation, formally specified
           enclave work, secure architecture, and strong-anonymity systems such as Riffle and Atom.
       - id: collaborators-ben-terner
-        label: Ben Terner
+        label: Benjamin Terner
         relationship: collaborator
         catalog_authors: [Ben Terner, Benjamin Terner]
         status: Direct collaborator · all 9 catalog publications mapped

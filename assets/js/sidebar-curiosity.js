@@ -21,6 +21,10 @@
     cipher: {
       playing: "The ciphertext is moving through the great cipher relay.",
       finished: "The ciphertext has completed the great cipher relay."
+    },
+    machines: {
+      playing: "The reasoning machine is checking the specification.",
+      finished: "The checker has produced a model-bounded result."
     }
   };
 
@@ -525,10 +529,6 @@
       frameIntervalMs: DEFAULT_FRAME_INTERVAL
     };
 
-    if (!image) {
-      return;
-    }
-
     player = createFramePlayer({
       root: scene,
       image: image,
@@ -567,17 +567,17 @@
     wrapper.curiosityLoop.resume();
   }
 
-  function parseConnectionsData() {
-    var script = document.querySelector("[data-curiosity-connections-data]");
+  function parseEmbeddedData(selector, fallback) {
+    var script = document.querySelector(selector);
 
     if (!script) {
-      return {};
+      return fallback;
     }
 
     try {
-      return JSON.parse(script.textContent || "{}");
+      return JSON.parse(script.textContent || "");
     } catch (error) {
-      return {};
+      return fallback;
     }
   }
 
@@ -591,6 +591,7 @@
 
     var modalScene = dialog.querySelector("[data-curiosity-dialog-scene]");
     var modalImage = dialog.querySelector("[data-curiosity-dialog-image]");
+    var modalMachine = dialog.querySelector("[data-curiosity-dialog-machine]");
     var modalStatus = dialog.querySelector("[data-curiosity-dialog-status]");
     var modalTitle = dialog.querySelector("[data-curiosity-dialog-title]");
     var modalTagline = dialog.querySelector("[data-curiosity-dialog-tagline]");
@@ -611,8 +612,12 @@
     var foundationNotes = dialog.querySelector("[data-curiosity-map-notes]");
     var detail = dialog.querySelector("[data-curiosity-map-detail]");
     var knowledgeLink = dialog.querySelector("[data-curiosity-knowledge-link]");
-    var connectionData = parseConnectionsData();
+    var connectionData = parseEmbeddedData("[data-curiosity-connections-data]", {});
+    var overlayData = parseEmbeddedData("[data-knowledge-lineage-overlay]", {});
+    var publicationCatalog = parseEmbeddedData("[data-knowledge-publication-catalog]", []);
     var scenesData = connectionData.scenes || connectionData;
+    var overlayScenes = overlayData.scenes || {};
+    var mergedScenes = {};
     var activeTrigger = null;
     var activeScene = null;
     var modalPlayer = null;
@@ -627,7 +632,22 @@
     }
 
     function sceneRecord(sceneName) {
-      return scenesData && scenesData[sceneName] ? scenesData[sceneName] : null;
+      var baseScene = scenesData && scenesData[sceneName] ? scenesData[sceneName] : null;
+
+      if (!baseScene) {
+        return null;
+      }
+      if (!mergedScenes[sceneName]) {
+        mergedScenes[sceneName] = window.KnowledgeSceneData.mergeScene(
+          baseScene,
+          overlayScenes[sceneName] || {},
+          {
+            collaboratorPeople: (overlayScenes.collaborators || {}).people || [],
+            publications: publicationCatalog
+          }
+        );
+      }
+      return mergedScenes[sceneName];
     }
 
     function setDefaultDetail() {
@@ -751,7 +771,8 @@
       var order = { person: 0, collaborator: 1, idea: 2, paper: 3, patent: 3 };
       var startOrder = order[kind];
       var direction = startOrder <= 1 ? 1 : (startOrder >= 3 ? -1 : 0);
-      var maxDepth = direction === 0 ? 1 : 3;
+      var maxDepth = kind === "collaborator" || kind === "paper" || kind === "patent" ?
+        1 : (direction === 0 ? 1 : 3);
       var queue = [{ id: nodeId, depth: 0 }];
       var visited = {};
 
@@ -1034,6 +1055,8 @@
 
     function renderGraph(sceneName) {
       var scene = sceneRecord(sceneName);
+      var hasInfluencePeople;
+      var hasCollaborators;
 
       clearGraph();
       if (!scene) {
@@ -1051,6 +1074,20 @@
       }
       if (connectionsDescription) {
         connectionsDescription.textContent = scene.description || "";
+      }
+      hasInfluencePeople = (scene.people || []).some(function (node) {
+        return node.relationship !== "collaborator";
+      });
+      hasCollaborators = (scene.people || []).some(function (node) {
+        return node.relationship === "collaborator";
+      });
+      graph.setAttribute("data-curiosity-has-foundations", hasInfluencePeople ? "true" : "false");
+      graph.setAttribute("data-curiosity-has-collaborators", hasCollaborators ? "true" : "false");
+      if (peopleLane && peopleLane.parentElement) {
+        peopleLane.parentElement.hidden = !hasInfluencePeople;
+      }
+      if (collaboratorsLane && collaboratorsLane.parentElement) {
+        collaboratorsLane.parentElement.hidden = !hasCollaborators;
       }
       (scene.people || []).forEach(function (node) {
         if (node.relationship === "collaborator") {
@@ -1147,6 +1184,7 @@
 
     function populateDialog(scene, sceneName) {
       var sourceImage = scene.querySelector("[data-curiosity-frames]");
+      var sourceMachine = scene.querySelector("[data-curiosity-machine-visual]");
       var sourceFrames = sourceImage ? sourceImage.getAttribute("data-curiosity-frames") || "" : "";
       var firstFrame = sourceFrames.split("|").map(function (value) {
         return value.trim();
@@ -1164,16 +1202,26 @@
       if (modalStatus) {
         modalStatus.textContent = "";
       }
-      modalImage.setAttribute("alt", sourceImage ? sourceImage.getAttribute("alt") || "" : "");
-      modalImage.setAttribute("data-curiosity-frames", sourceFrames);
-      if (firstFrame || (sourceImage && sourceImage.getAttribute("src"))) {
-        modalImage.setAttribute("src", firstFrame || sourceImage.getAttribute("src"));
+      modalImage.hidden = Boolean(sourceMachine);
+      if (modalMachine) {
+        modalMachine.hidden = !sourceMachine;
+      }
+      if (sourceMachine) {
+        modalImage.removeAttribute("src");
+        modalImage.setAttribute("data-curiosity-frames", "");
+        modalImage.setAttribute("alt", "");
+      } else {
+        modalImage.setAttribute("alt", sourceImage ? sourceImage.getAttribute("alt") || "" : "");
+        modalImage.setAttribute("data-curiosity-frames", sourceFrames);
+        if (firstFrame || (sourceImage && sourceImage.getAttribute("src"))) {
+          modalImage.setAttribute("src", firstFrame || sourceImage.getAttribute("src"));
+        }
       }
 
       renderGraph(sceneName);
       modalPlayer = createFramePlayer({
         root: modalScene,
-        image: modalImage,
+        image: sourceMachine ? null : modalImage,
         status: modalStatus,
         sceneName: sceneName
       });

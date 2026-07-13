@@ -385,8 +385,8 @@
   function initializeLineages() {
     var root = document.querySelector("[data-knowledge-lineages]");
     var dataScript = document.querySelector("[data-curiosity-connections-data]");
-    var overlayScript = root ? root.querySelector("[data-knowledge-lineage-overlay]") : null;
-    var catalogScript = root ? root.querySelector("[data-knowledge-publication-catalog]") : null;
+    var overlayScript = document.querySelector("[data-knowledge-lineage-overlay]");
+    var catalogScript = document.querySelector("[data-knowledge-publication-catalog]");
 
     if (!root || !dataScript || root.getAttribute("data-knowledge-lineages-ready") === "true") {
       return;
@@ -766,19 +766,6 @@
       drawFrame = window.requestAnimationFrame(drawLines);
     }
 
-    function valueSet(values) {
-      var result = {};
-
-      (values || []).forEach(function (entry) {
-        var key = String(entry || "").trim();
-
-        if (key) {
-          result[key] = true;
-        }
-      });
-      return result;
-    }
-
     function normalizedAuthorName(value) {
       var name = normalized(value);
 
@@ -878,28 +865,6 @@
       return result;
     }
 
-    function separateDirectAuthorshipFromTopics(result) {
-      var collaboratorIds = {};
-      var ideaIds = {};
-
-      result.people.forEach(function (person) {
-        if (person.relationship === "collaborator") {
-          collaboratorIds[person.id] = true;
-        }
-      });
-      result.ideas.forEach(function (idea) {
-        ideaIds[idea.id] = true;
-      });
-      result.links = result.links.filter(function (link) {
-        var joinsCollaboratorAndIdea =
-          (collaboratorIds[link.from] && ideaIds[link.to]) ||
-          (collaboratorIds[link.to] && ideaIds[link.from]);
-
-        return link.type !== "direct" || !joinsCollaboratorAndIdea;
-      });
-      return result;
-    }
-
     function syncCollaboratorWorkVisibility() {
       var placeholder;
       var visibleWork = 0;
@@ -933,78 +898,12 @@
       placeholder.hidden = visibleWork > 0;
     }
 
-    function mergedNodes(baseNodes, overlayNodes) {
-      var byId = {};
-      var order = [];
-
-      function addNode(node) {
-        var merged;
-
-        if (!node || !node.id) {
-          return;
-        }
-        if (!byId[node.id]) {
-          byId[node.id] = {};
-          order.push(node.id);
-        }
-        merged = byId[node.id];
-        Object.keys(node).forEach(function (key) {
-          merged[key] = node[key];
-        });
-      }
-
-      (baseNodes || []).forEach(addNode);
-      (overlayNodes || []).forEach(addNode);
-      return order.map(function (id) {
-        return byId[id];
-      });
-    }
-
-    function mergedLinks(baseLinks, overlayLinks) {
-      var seen = {};
-
-      return (baseLinks || []).concat(overlayLinks || []).filter(function (link) {
-        var key = [link.from, link.to, link.type || "direct", link.label || ""].join("|");
-
-        if (seen[key]) {
-          return false;
-        }
-        seen[key] = true;
-        return true;
-      });
-    }
-
     function scientificScene(scene, overlay, sceneName) {
-      var excludedNodes = valueSet(overlay.exclude_node_ids);
-      var excludedNoteKinds = valueSet(overlay.exclude_note_kinds);
-      var result;
-      var visibleNodeIds = {};
-
-      function visibleNodes(nodes) {
-        return (nodes || []).filter(function (node) {
-          return !excludedNodes[node.id];
-        });
-      }
-
-      result = {
-        ideas: visibleNodes(mergedNodes(scene.ideas, overlay.ideas)),
-        notes: (scene.notes || []).concat(overlay.notes || []).filter(function (note) {
-          return !excludedNoteKinds[note.kind];
-        }),
-        papers: visibleNodes(mergedNodes(scene.papers, overlay.papers)),
-        patents: visibleNodes(mergedNodes(scene.patents, overlay.patents)),
-        people: visibleNodes(mergedNodes(scene.people, overlay.people))
-      };
-
-      [result.people, result.ideas, result.papers, result.patents].forEach(function (nodes) {
-        nodes.forEach(function (node) {
-          visibleNodeIds[node.id] = true;
-        });
+      var result = window.KnowledgeSceneData.mergeScene(scene, overlay, {
+        collaboratorPeople: (overlayScenes.collaborators || {}).people || [],
+        publications: publicationCatalog
       });
-      result.links = mergedLinks(scene.links, overlay.links).filter(function (link) {
-        return visibleNodeIds[link.from] && visibleNodeIds[link.to];
-      });
-      result = separateDirectAuthorshipFromTopics(result);
+
       if (sceneName === "collaborators") {
         result = completeCollaboratorAuthorship(result);
       }
@@ -1033,17 +932,24 @@
       var hasInfluencePeople = activeScene.people.some(function (node) {
         return node.relationship !== "collaborator";
       });
+      var hasCollaborators = activeScene.people.some(function (node) {
+        return node.relationship === "collaborator";
+      });
       graph.setAttribute("data-lineage-has-foundations", hasInfluencePeople ? "true" : "false");
+      graph.setAttribute("data-lineage-has-collaborators", hasCollaborators ? "true" : "false");
       if (peopleLane.parentElement) {
         peopleLane.parentElement.hidden = !hasInfluencePeople;
       }
+      if (collaboratorsLane.parentElement) {
+        collaboratorsLane.parentElement.hidden = !hasCollaborators;
+      }
       if (title) {
         title.textContent = selectedButton.getAttribute("data-knowledge-lineage-map-title") ||
-          scene.map_title || scene.title || "Ideas map";
+          activeScene.map_title || activeScene.title || "Ideas map";
       }
       if (description) {
         description.textContent = selectedButton.getAttribute("data-knowledge-lineage-map-description") ||
-          scene.description || "";
+          activeScene.description || "";
       }
       activeScene.people.forEach(function (node) {
         if (node.relationship === "collaborator") {

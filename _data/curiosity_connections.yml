@@ -110,7 +110,7 @@ scenes:
         status: Direct collaborator · self-stabilization and proactive sharing
         note: "Coauthor on secure self-stabilizing computation and dishonest-majority proactive secret sharing."
       - id: hotel-fhe-collaborators
-        label: Chris Peikert and Srini Devadas
+        label: Christopher Peikert and Srinivas Devadas
         relationship: collaborator
         catalog_author_groups:
           - [Chris Peikert]
@@ -461,8 +461,19 @@ scenes:
 
   tour:
     title: "The One-Bit Grand Tour"
-    map_title: "From Capacity to Qubits"
-    description: "A condensed four-layer tour from foundational scientists through documented co-authors to information theory, public-key cryptography, quantum ideas, and selected papers."
+    map_title: "From a Secret Bit to Qubits—and Back to Security"
+    description: >-
+      Follow one protected bit: Shannon defines secrecy and information; Diffie–Hellman and RSA
+      make public-key protection possible; Gentry makes computation on encrypted data possible;
+      Feynman and Shor show how quantum computation changes the assumptions; and post-quantum
+      cryptography asks how to keep the bit secure afterward.
+    notes:
+      - kind: journey
+        label: How to read the tour
+        text: >-
+          This is a conceptual journey, not a single citation chain: secrecy becomes public-key
+          protection, then encrypted computation, then a quantum threat, and finally a post-quantum
+          effort to preserve security.
     people:
       - id: tour-shannon
         label: Claude Shannon
@@ -476,6 +487,11 @@ scenes:
         label: Rivest, Shamir, and Adleman
         relationship: influence
         status: Intellectual foundation · no collaboration
+      - id: tour-gentry
+        label: Craig Gentry
+        relationship: influence
+        status: Fully homomorphic encryption · no collaboration
+        note: "Gentry's FHE breakthrough made general computation on encrypted data possible without first revealing the protected bit."
       - id: tour-feynman
         label: Richard Feynman
         relationship: influence
@@ -495,7 +511,7 @@ scenes:
         status: Direct collaborator · coding, sharing, and timed release
         note: "Coauthor on regenerating codes and proactive secret sharing and on multi-party time-lock puzzles."
       - id: tour-ben-terner
-        label: Ben Terner
+        label: Benjamin Terner
         relationship: collaborator
         status: Direct collaborator · timed cryptography
         note: "Coauthor on multi-party time-lock puzzles and related work on timed cryptography."
@@ -539,6 +555,8 @@ scenes:
         label: Public-key agreement
       - id: tour-public-key
         label: Public-key encryption
+      - id: tour-encrypted-computation
+        label: Computation while data remains encrypted
       - id: tour-timed-release
         label: Rivest–Shamir–Wagner time-lock puzzles
       - id: tour-quantum
@@ -576,6 +594,18 @@ scenes:
         title: "Optimizing Registration Based Encryption"
         url: /knowledge/papers/paper-56/
         note: "Optimizes a public-key-encryption model that removes identity-based encryption's key escrow."
+      - id: tour-paper-59
+        publication_id: 59
+        label: "#59 · F1 encrypted-computation accelerator"
+        title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
+        url: /knowledge/papers/paper-59/
+        note: "Accelerates programmable computation on encrypted data."
+      - id: tour-paper-64
+        publication_id: 64
+        label: "#64 · CraterLake unbounded encrypted computation"
+        title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
+        url: /knowledge/papers/paper-64/
+        note: "Builds hardware support for unbounded computation while data remains encrypted."
       - id: tour-paper-73
         publication_id: 73
         label: "#73 · Multi-party time-lock puzzles"
@@ -731,6 +761,22 @@ scenes:
         to: tour-paper-56
         type: direct
         label: modern public-key encryption
+      - from: tour-public-key
+        to: tour-encrypted-computation
+        type: lineage
+        label: from encrypted communication to encrypted computation
+      - from: tour-gentry
+        to: tour-encrypted-computation
+        type: direct
+        label: fully homomorphic encryption
+      - from: tour-encrypted-computation
+        to: tour-paper-59
+        type: direct
+        label: programmable FHE acceleration
+      - from: tour-encrypted-computation
+        to: tour-paper-64
+        type: direct
+        label: unbounded encrypted computation
       - from: tour-rsa
         to: tour-timed-release
         type: lineage
@@ -765,10 +811,237 @@ scenes:
         type: direct
         label: post-quantum obfuscation
 
+  machines:
+    title: "Machines, Automation & Artificial Intelligence"
+    map_title: "From Formal Reasoning to Machine-Checked Security"
+    description: >-
+      A compact lineage from Hilbert's formal program and Gödel's limits through programmable and
+      universal machines, information and symbolic AI, to modern formal specification and model
+      checking—the machinery used to check protocols, algorithms, cryptography, mathematics, and systems.
+    notes:
+      - kind: scope
+        label: What this map means by AI
+        text: >-
+          The emphasis is machine-assisted reasoning rather than a general history of neural AI:
+          formalize a claim, represent it mechanically, search or check the reasoning, and expose
+          precisely what has and has not been verified.
+      - kind: limits
+        label: Automation has boundaries
+        text: >-
+          Gödel and Turing place fundamental limits on formal systems and computation. Mechanized
+          verification raises assurance within an explicit model; it does not eliminate modeling
+          assumptions or make every true statement automatically decidable.
+    people:
+      - id: machines-hilbert
+        label: David Hilbert
+        relationship: influence
+        status: Formalization and proof · no collaboration
+        note: "Hilbert's program made axiomatization, formal proof, consistency, and mechanical reasoning central foundational questions."
+      - id: machines-godel
+        label: Kurt Gödel
+        relationship: influence
+        status: Limits of formal systems · no collaboration
+        note: "Gödel's incompleteness results delimit what sufficiently expressive formal systems can prove about themselves."
+      - id: machines-babbage-lovelace
+        label: Charles Babbage & Ada Lovelace
+        relationship: influence
+        status: Programmable machinery · no collaboration
+        note: "Babbage designed the Analytical Engine; Lovelace's Notes described a worked procedure and the machine's broader symbolic potential."
+      - id: machines-turing
+        label: Alan Turing
+        relationship: influence
+        status: Universal computation and machine intelligence · no collaboration
+        note: "Turing formalized general computation and later framed machine intelligence through the imitation game."
+      - id: machines-shannon
+        label: Claude Shannon
+        relationship: influence
+        status: Switching, information, and machine search · no collaboration
+        note: "Shannon connected Boolean logic to relay circuits, founded information theory, and developed early ideas for computer-chess search."
+      - id: machines-von-neumann
+        label: John von Neumann
+        relationship: influence
+        status: Stored-program architecture and automata · no collaboration
+        note: "Von Neumann documented stored-program organization and studied automata, reliable computation, and self-reproducing machines."
+      - id: machines-mccarthy
+        label: John McCarthy
+        relationship: influence
+        status: Artificial intelligence, Lisp, and machine reasoning · no collaboration
+        note: "McCarthy co-founded the named field of AI and made symbolic representation and machine deduction programmable through the Advice Taker and Lisp."
+      - id: machines-lamport
+        label: Leslie Lamport
+        relationship: influence
+        status: Formal specification of concurrent systems · no collaboration
+        note: "Lamport developed formal modeling and verification methods, including TLA+, for reasoning about distributed and concurrent systems."
+      - id: machines-sifakis
+        label: Joseph Sifakis
+        relationship: influence
+        status: Model checking and embedded systems · no collaboration
+        note: "Sifakis helped establish model checking as an effective technology for automatically verifying concurrent, real-time, and embedded systems."
+    ideas:
+      - id: machines-formalization
+        label: Axioms, formal proof, and mechanical reasoning
+      - id: machines-limits
+        label: Incompleteness and limits of automation
+      - id: machines-programmability
+        label: Programmable machines and symbolic procedures
+      - id: machines-universal-computation
+        label: Universal computation and machine intelligence
+      - id: machines-information-switching
+        label: Information, switching logic, and search
+      - id: machines-symbolic-ai
+        label: Symbolic AI, Lisp, and automated reasoning
+      - id: machines-formal-verification
+        label: Formal specification, model checking, and proof tools
+      - id: machines-checked-security
+        label: Machine-checked cryptography, protocols, algorithms, and systems
+    papers:
+      - id: machines-paper-79
+        publication_id: 79
+        label: "#79 · Composing generative models and hallucination"
+        title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
+        url: /knowledge/papers/paper-79/
+      - id: machines-paper-47
+        publication_id: 47
+        label: "#47 · Formal verification and executable synthesis"
+        title: "Opinion: Advancing Remote Attestation via Computer-Aided Formal Verification of Designs and Synthesis of Executables"
+        url: /knowledge/papers/paper-47/
+      - id: machines-paper-50
+        publication_id: 50
+        label: "#50 · Verified remote attestation"
+        title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+        url: /knowledge/papers/paper-50/
+      - id: machines-paper-51
+        publication_id: 51
+        label: "#51 · Machine-checked secure computation"
+        title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
+        url: /knowledge/papers/paper-51/
+      - id: machines-paper-53
+        publication_id: 53
+        label: "#53 · Automated cryptographic executable augmentation"
+        title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
+        url: /knowledge/papers/paper-53/
+      - id: machines-paper-54
+        publication_id: 54
+        label: "#54 · Verified proofs of execution"
+        title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
+        url: /knowledge/papers/paper-54/
+      - id: machines-paper-58
+        publication_id: 58
+        label: "#58 · Machine-checked zero knowledge"
+        title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
+        url: /knowledge/papers/paper-58/
+      - id: machines-paper-67
+        publication_id: 67
+        label: "#67 · Optimized formally verified cryptography"
+        title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
+        url: /knowledge/papers/paper-67/
+    patents: []
+    links:
+      - from: machines-hilbert
+        to: machines-formalization
+        type: direct
+        label: axiomatization and formal proof
+      - from: machines-godel
+        to: machines-limits
+        type: direct
+        label: incompleteness and formal limits
+      - from: machines-babbage-lovelace
+        to: machines-programmability
+        type: direct
+        label: programmable analytical machinery
+      - from: machines-turing
+        to: machines-universal-computation
+        type: direct
+        label: universal computation and machine intelligence
+      - from: machines-shannon
+        to: machines-information-switching
+        type: direct
+        label: Boolean switching, information, and search
+      - from: machines-von-neumann
+        to: machines-universal-computation
+        type: lineage
+        label: stored-program architecture and automata
+      - from: machines-mccarthy
+        to: machines-symbolic-ai
+        type: direct
+        label: AI, Lisp, and logical machine reasoning
+      - from: machines-lamport
+        to: machines-formal-verification
+        type: direct
+        label: formal specification and TLA+
+      - from: machines-sifakis
+        to: machines-formal-verification
+        type: direct
+        label: algorithmic model checking
+      - from: machines-formalization
+        to: machines-limits
+        type: lineage
+        label: expressive formal systems meet inherent limits
+      - from: machines-formalization
+        to: machines-formal-verification
+        type: lineage
+        label: formal proof becomes tool-assisted checking
+      - from: machines-programmability
+        to: machines-universal-computation
+        type: lineage
+        label: programmable mechanisms become universal machines
+      - from: machines-information-switching
+        to: machines-universal-computation
+        type: lineage
+        label: logic becomes realizable circuitry
+      - from: machines-universal-computation
+        to: machines-symbolic-ai
+        type: lineage
+        label: general computation enables symbolic machine reasoning
+      - from: machines-limits
+        to: machines-formal-verification
+        type: lineage
+        label: verification remains explicitly model- and logic-bounded
+      - from: machines-symbolic-ai
+        to: machines-checked-security
+        type: lineage
+        label: automated representation, search, and deduction
+      - from: machines-formal-verification
+        to: machines-checked-security
+        type: direct
+        label: specification, proof assistants, synthesis, and model checking
+      - from: machines-symbolic-ai
+        to: machines-paper-79
+        type: direct
+        label: reliability of composed generative models
+      - from: machines-checked-security
+        to: machines-paper-47
+        type: direct
+        label: verification and executable synthesis agenda
+      - from: machines-checked-security
+        to: machines-paper-50
+        type: direct
+        label: verified embedded security architecture
+      - from: machines-checked-security
+        to: machines-paper-51
+        type: direct
+        label: machine-checked secure-computation protocols
+      - from: machines-checked-security
+        to: machines-paper-53
+        type: direct
+        label: automated cryptographic instrumentation
+      - from: machines-checked-security
+        to: machines-paper-54
+        type: direct
+        label: verified proof-of-execution system
+      - from: machines-checked-security
+        to: machines-paper-58
+        type: direct
+        label: machine-checked algorithms and zero-knowledge proofs
+      - from: machines-checked-security
+        to: machines-paper-67
+        type: direct
+        label: optimized formally verified cryptography
+
   cipher:
     title: "The Great Cipher Relay"
     map_title: "A Century of Cryptographic Ideas"
-    description: "A condensed four-layer map from foundational cryptographic scientists through documented co-authors to ideas and selected papers; the complete scientific map continues the lineage."
+    description: "A unified four-layer map from foundational cryptographic scientists through documented co-authors to ideas and selected papers, shared by the sidebar and full scientific knowledge map."
     notes:
       - kind: computation
         label: Computational foundation
@@ -839,10 +1112,10 @@ scenes:
         status: Direct collaborator · public-key encryption
         note: "Coauthor on registration-based encryption."
       - id: cipher-ben-terner
-        label: Ben Terner
+        label: Benjamin Terner
         relationship: collaborator
-        status: Direct collaborator · timed cryptography, MPC, and messaging
-        note: "Coauthor on multi-party time-lock puzzles, maliciously secure decomposable MPC, and concurrent group messaging."
+        status: Direct collaborator · 9 catalog publications
+        note: "Coauthor across timed cryptography, consensus, maliciously secure MPC, concurrent group messaging, private bulletin boards, and the later PRISM messaging overlay."
       - id: cipher-nicholas-genise
         label: Nicholas Genise
         relationship: collaborator
@@ -869,15 +1142,15 @@ scenes:
         status: Direct collaborator · reusable fuzzy extractors
         note: "Direct coauthor on reusable fuzzy extractors from LWE; broader MPC and Byzantine-agreement connections are intellectual lineage."
       - id: science-cipher-peikert
-        label: Chris Peikert
+        label: Christopher Peikert
         relationship: collaborator
         status: Direct collaborator · F1 and CraterLake
-        note: "Direct coauthor on the F1 and CraterLake FHE accelerators; the sidebar shows F1 as a representative work."
+        note: "Direct coauthor on the F1 and CraterLake FHE accelerators."
       - id: science-cipher-devadas
-        label: Srinivas (Srini) Devadas
+        label: Srinivas Devadas
         relationship: collaborator
         status: Direct collaborator · F1 and CraterLake
-        note: "Direct coauthor on the F1 and CraterLake FHE accelerators; the sidebar shows F1 as a representative work."
+        note: "Direct coauthor on the F1 and CraterLake FHE accelerators."
     ideas:
       - id: cipher-cryptanalysis
         label: Cryptanalysis

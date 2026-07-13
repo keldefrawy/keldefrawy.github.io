@@ -112,6 +112,115 @@
   width: 224px;
 }
 
+.sidebar-curiosity__machine-visual,
+.curiosity-dialog__machine-visual {
+  align-items: center;
+  background:
+    radial-gradient(circle at 68% 35%, rgba(84, 174, 255, 0.24), transparent 30%),
+    linear-gradient(145deg, #071b35 0%, #0b3158 55%, #0c4670 100%);
+  color: #dff5ff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-curiosity__machine-visual::before,
+.curiosity-dialog__machine-visual::before {
+  background-image:
+    linear-gradient(rgba(130, 205, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130, 205, 255, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.sidebar-curiosity__machine-tape {
+  color: rgba(184, 228, 255, 0.25);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.56rem, 1.5vw, 0.78rem);
+  left: 8%;
+  letter-spacing: 0.16em;
+  line-height: 1.8;
+  position: absolute;
+  top: 9%;
+}
+
+.sidebar-curiosity__machine-formula {
+  color: #a5ddff;
+  font-family: Georgia, serif;
+  font-size: clamp(0.9rem, 2.6vw, 1.45rem);
+  position: absolute;
+  right: 12%;
+  top: 15%;
+}
+
+.sidebar-curiosity__machine-core {
+  align-items: center;
+  background: rgba(7, 27, 53, 0.82);
+  border: 2px solid #79c9ff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px rgba(84, 174, 255, 0.1), 0 0 28px rgba(84, 174, 255, 0.35);
+  display: flex;
+  font-family: Georgia, serif;
+  font-size: clamp(1.65rem, 5vw, 3rem);
+  height: clamp(3.2rem, 12vw, 6rem);
+  justify-content: center;
+  position: relative;
+  width: clamp(3.2rem, 12vw, 6rem);
+  z-index: 1;
+}
+
+.sidebar-curiosity__machine-result {
+  color: #7ee787;
+  font-size: clamp(1.3rem, 4vw, 2.4rem);
+  position: absolute;
+  right: 15%;
+  top: 58%;
+}
+
+.sidebar-curiosity__machine-label {
+  bottom: 10%;
+  color: #dff5ff;
+  font-size: clamp(0.46rem, 1.35vw, 0.72rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  position: absolute;
+}
+
+.sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__machine-tape,
+.curiosity-dialog__animation[data-animating="true"] .sidebar-curiosity__machine-tape {
+  animation: reasoning-machine-tape var(--curiosity-pan-duration, 10.5s) linear both;
+}
+
+.sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__machine-core,
+.curiosity-dialog__animation[data-animating="true"] .sidebar-curiosity__machine-core {
+  animation: reasoning-machine-core 2.1s ease-in-out 5;
+}
+
+.sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__machine-result,
+.curiosity-dialog__animation[data-animating="true"] .sidebar-curiosity__machine-result {
+  animation: reasoning-machine-result var(--curiosity-pan-duration, 10.5s) ease both;
+}
+
+@keyframes reasoning-machine-tape {
+  from { transform: translateY(18px); }
+  to { transform: translateY(-32px); }
+}
+
+@keyframes reasoning-machine-core {
+  0%, 100% { box-shadow: 0 0 0 8px rgba(84, 174, 255, 0.1), 0 0 20px rgba(84, 174, 255, 0.25); }
+  50% { box-shadow: 0 0 0 13px rgba(84, 174, 255, 0.05), 0 0 38px rgba(84, 174, 255, 0.58); }
+}
+
+@keyframes reasoning-machine-result {
+  0%, 66% { opacity: 0.2; transform: scale(0.85); }
+  78%, 100% { opacity: 1; transform: scale(1); }
+}
+
 .sidebar-curiosity__scene[data-animating="true"] .sidebar-curiosity__image {
   animation: sidebar-curiosity-pan var(--curiosity-pan-duration, 10.5s) cubic-bezier(0.45, 0, 0.55, 1) both;
 }
@@ -384,6 +493,16 @@
   width: auto;
 }
 
+.curiosity-dialog__machine-visual {
+  min-height: min(68vh, 720px);
+  min-height: min(68dvh, 720px);
+}
+
+.curiosity-dialog__image[hidden],
+.curiosity-dialog__machine-visual[hidden] {
+  display: none;
+}
+
 .curiosity-dialog__caption {
   color: var(--publication-muted);
   font-size: 0.83rem;
@@ -508,6 +627,11 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   position: relative;
   z-index: 1;
+}
+
+.curiosity-connections__graph[data-curiosity-has-collaborators="false"] .curiosity-connections__columns,
+.curiosity-connections__graph[data-curiosity-has-foundations="false"] .curiosity-connections__columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .curiosity-connections__foundations {
@@ -2432,6 +2556,10 @@ body.quick-abstract-dialog-open {
 }
 
 .knowledge-lineage-map__graph[data-lineage-scene="collaborators"][data-lineage-has-foundations="false"] .knowledge-lineage-map__lanes {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.knowledge-lineage-map__graph[data-lineage-has-collaborators="false"] .knowledge-lineage-map__lanes {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 

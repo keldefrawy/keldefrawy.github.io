@@ -151,32 +151,24 @@ knowledge_hub: true
       </p>
     </header>
 
-    {% assign lineage_order = "cipher,hotel,tour,collaborators" | split: "," %}
+    {% assign lineage_order = "cipher,hotel,tour,machines,collaborators" | split: "," %}
     <div class="knowledge-lineage-tabs" role="group" aria-label="Choose an ideas map">
       {% for scene_key in lineage_order %}
         {% case scene_key %}
           {% when "cipher" %}
             {% assign lineage_label = "Cryptographic ideas" %}
-            {% assign lineage_title = "A Century of Cryptographic Ideas" %}
-            {% assign lineage_description = "From Turing and Shannon through public-key cryptography, anonymity, secret sharing, secure computation, lattices, and encrypted computation." %}
           {% when "hotel" %}
             {% assign lineage_label = "Formal & reliable systems" %}
-            {% assign lineage_title = "From Formal Models to Reliable Cryptographic Systems" %}
-            {% assign lineage_description = "How Gödel, Turing, von Neumann, and the Byzantine-agreement lineage support formal proof, cryptographic security, and resilient distributed systems." %}
           {% when "tour" %}
             {% assign lineage_label = "Information to quantum" %}
-            {% assign lineage_title = "From Information Theory to Qubits" %}
-            {% assign lineage_description = "From Shannon’s information theory through public-key cryptography and timed release to quantum algorithms, protocols, and post-quantum security." %}
+          {% when "machines" %}
+            {% assign lineage_label = "Machines & AI" %}
           {% when "collaborators" %}
             {% assign lineage_label = "Collaborators" %}
-            {% assign lineage_title = "Collaborators Across Modern Cryptography and Security" %}
-            {% assign lineage_description = "A catalog-checked coauthorship view: collaborators connect only to papers carrying their names, while papers connect separately to research ideas. Select a person or idea to reveal the relevant papers." %}
         {% endcase %}
         <button
           type="button"
           data-knowledge-lineage-scene="{{ scene_key }}"
-          data-knowledge-lineage-map-title="{{ lineage_title | escape }}"
-          data-knowledge-lineage-map-description="{{ lineage_description | escape }}"
           aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
         >
           {{ lineage_label | escape }}
@@ -238,12 +230,6 @@ knowledge_hub: true
     </div>
 
     <noscript><p class="knowledge-noscript">The interactive lineage views require JavaScript; their source material is also available through the idea maps in the left sidebar.</p></noscript>
-    <script type="application/json" data-knowledge-lineage-overlay>
-      {{ site.data.knowledge_lineage_overlay | jsonify }}
-    </script>
-    <script type="application/json" data-knowledge-publication-catalog>
-      {{ site.data.publications | jsonify }}
-    </script>
   </section>
 
   <section class="knowledge-explainer" id="map-anatomy" aria-labelledby="map-anatomy-heading">
