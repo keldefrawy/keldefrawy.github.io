@@ -722,10 +722,36 @@ scenes:
         label: Tancrède Lepoint
         relationship: collaborator
         catalog_authors: [Tancrède Lepoint]
-        status: Direct collaborator · all 6 catalog publications mapped
+        status: Direct collaborator · all 6 publications and 4 granted joint patents mapped
         note: >-
           Coauthor on proactive MPC and secret sharing for dynamic groups, secure biometric
-          re-enrollment, cryptographically enforced selective access, and blockchain cyber insurance.
+          re-enrollment, cryptographically enforced selective access, and blockchain cyber insurance;
+          co-inventor on four granted joint U.S. patents. Broader public-key, FHE, lattice, and
+          post-quantum links record expertise rather than additional joint publications.
+      - id: collaborators-gabriela-ciocarlie
+        label: Gabriela F. Ciocarlie
+        relationship: collaborator
+        catalog_authors: [Gabriela F. Ciocarlie]
+        status: Direct collaborator · 1 catalog publication mapped · SRI co-inventor
+        note: >-
+          Coauthor on BlockCIS and co-inventor on Smart Privacy and Controlled Exposure on
+          Blockchains; broader blockchain-security and privacy links are marked as lineage.
+      - id: collaborators-ashish-gehani
+        label: Ashish Gehani
+        relationship: collaborator
+        catalog_authors: [Ashish Gehani]
+        status: Direct collaborator · 1 catalog publication mapped
+        note: >-
+          Coauthor on the longitudinal Bitcoin-misuse analysis. The paper's separate topic links
+          identify blockchain measurement, dark-web analysis, and cyber forensics.
+      - id: collaborators-hassen-saidi
+        label: Hassen Saïdi
+        relationship: collaborator
+        catalog_authors: [Hassen Saïdi]
+        status: Direct collaborator · 1 catalog publication mapped · 1 granted joint patent
+        note: >-
+          Coauthor and co-inventor on automated augmentation of legacy cryptographic executables,
+          connecting formal verification, binary analysis, and secure software modernization.
       - id: collaborators-ivan-nunes
         label: Ivan De Oliveira Nunes
         relationship: collaborator
@@ -836,6 +862,12 @@ scenes:
         label: Secure biometric enrollment and re-enrollment
       - id: collaborators-selective-access
         label: Cryptographically enforced selective access
+      - id: collaborators-blockchain-privacy
+        label: Blockchain privacy, cyber insurance, and controlled exposure
+      - id: collaborators-blockchain-analysis
+        label: Blockchain measurement, dark-web analysis, and cyber forensics
+      - id: collaborators-legacy-crypto-modernization
+        label: Automated analysis and modernization of legacy cryptographic software
       - id: collaborators-quantum-optimization
         label: Quantum optimization algorithms
       - id: collaborators-zero-knowledge
@@ -1061,11 +1093,36 @@ scenes:
         label: "#61 · Proactive MPC for dynamic groups"
         title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
         url: /knowledge/papers/paper-61/
+      - id: collaborators-paper-52
+        publication_id: 52
+        label: "#52 · Dynamic proactive secret sharing"
+        title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
+        url: /knowledge/papers/paper-52/
+      - id: collaborators-paper-43
+        publication_id: 43
+        label: "#43 · Secure biometric re-enrollment"
+        title: "Secure Non-Interactive User Re-Enrollment in Biometrics-Based Identification and Authentication Systems"
+        url: /knowledge/papers/paper-43/
+      - id: collaborators-paper-40
+        publication_id: 40
+        label: "#40 · Blockchain cyber insurance"
+        title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
+        url: /knowledge/papers/paper-40/
       - id: collaborators-paper-48
         publication_id: 48
         label: "#48 · Secure biometric re-enrollment"
         title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
         url: /knowledge/papers/paper-48/
+      - id: collaborators-paper-49
+        publication_id: 49
+        label: "#49 · Longitudinal Bitcoin-misuse analysis"
+        title: "Longitudinal Analysis of Misuse of Bitcoin"
+        url: /knowledge/papers/paper-49/
+      - id: collaborators-paper-53
+        publication_id: 53
+        label: "#53 · Automated legacy-cryptography augmentation"
+        title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
+        url: /knowledge/papers/paper-53/
       - id: collaborators-paper-62
         publication_id: 62
         label: "#62 · Cryptographic selective access"
@@ -1102,6 +1159,39 @@ scenes:
         title: "Proactive ECDSA with dishonest-majority security"
         url: /patents.html
         note: Distributed proactive elliptic-curve signing represented in the patent list.
+      - id: collaborators-patent-24
+        patent_number: US10867053
+        label: "Patent #24 · Secure-computation software packages"
+        title: "Creating Software Packages for Performing Secure Computations"
+        url: https://patents.google.com/patent/US10867053B2/en
+        note: "Granted joint patent of Karim Eldefrawy and Tancrède Lepoint."
+      - id: collaborators-patent-26
+        patent_number: US11023569
+        label: "Patent #26 · Functional-encryption biometric re-enrollment"
+        title: "Secure Re-Enrollment of Biometric Templates Using Functional Encryption"
+        url: https://patents.google.com/patent/US11023569B2/en
+        note: "Granted joint patent of Karim Eldefrawy and Tancrède Lepoint."
+      - id: collaborators-patent-28
+        patent_number: US11507676
+        label: "Patent #28 · Selective encrypted data sharing"
+        title: "Selectively Sharing Data in Unstructured Data Containers"
+        url: https://patents.google.com/patent/US11507676B2/en
+        note: "Granted joint patent of Karim Eldefrawy and Tancrède Lepoint."
+      - id: collaborators-patent-29
+        patent_number: US11741247
+        label: "Patent #29 · Smart blockchain privacy"
+        title: "Smart Privacy and Controlled Exposure on Blockchains"
+        url: https://patents.google.com/patent/US11741247B2/en
+        note: >-
+          Granted joint patent of Gabriela F. Ciocarlie, Karim Eldefrawy, and Tancrède Lepoint.
+      - id: collaborators-patent-31
+        patent_number: US11934538
+        label: "Patent #31 · Cryptographic-executable augmentation"
+        title: "Augmenting Executables Having Cryptographic Primitives"
+        url: https://patents.google.com/patent/US11934538B2/en
+        note: >-
+          Granted joint patent of Karim Eldefrawy, Hassen Saïdi, Michael E. Locasto,
+          and Norrathep Rattanavipanon.
     links:
       - from: collaborators-danny-dolev
         to: collaborators-shlomi-dolev
@@ -1304,6 +1394,26 @@ scenes:
         type: direct
         label: direct collaboration on cryptographically enforced selective access
       - from: collaborators-tancrede-lepoint
+        to: collaborators-public-messaging
+        type: lineage
+        label: broader public-key and attribute-based-encryption expertise
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-fhe
+        type: lineage
+        label: broader fully homomorphic-encryption expertise
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-lattices
+        type: lineage
+        label: broader lattice-cryptography expertise
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-post-quantum
+        type: lineage
+        label: broader post-quantum cryptography expertise
+      - from: collaborators-gabriela-ciocarlie
+        to: collaborators-blockchain-privacy
+        type: lineage
+        label: broader SRI blockchain-security and privacy collaboration
+      - from: collaborators-tancrede-lepoint
         to: collaborators-paper-61
         type: direct
         label: direct coauthorship on proactive MPC for dynamic groups
@@ -1315,6 +1425,54 @@ scenes:
         to: collaborators-paper-62
         type: direct
         label: direct coauthorship on selective access control
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-paper-52
+        type: direct
+        label: direct coauthorship on proactive secret sharing for dynamic groups
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-paper-43
+        type: direct
+        label: direct coauthorship on secure biometric re-enrollment
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-paper-40
+        type: direct
+        label: direct coauthorship on BlockCIS
+      - from: collaborators-gabriela-ciocarlie
+        to: collaborators-paper-40
+        type: direct
+        label: direct coauthorship on BlockCIS
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-patent-24
+        type: direct
+        label: direct co-inventorship
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-patent-26
+        type: direct
+        label: direct co-inventorship
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-patent-28
+        type: direct
+        label: direct co-inventorship
+      - from: collaborators-tancrede-lepoint
+        to: collaborators-patent-29
+        type: direct
+        label: direct co-inventorship
+      - from: collaborators-gabriela-ciocarlie
+        to: collaborators-patent-29
+        type: direct
+        label: direct co-inventorship
+      - from: collaborators-ashish-gehani
+        to: collaborators-paper-49
+        type: direct
+        label: direct coauthorship on longitudinal Bitcoin-misuse analysis
+      - from: collaborators-hassen-saidi
+        to: collaborators-paper-53
+        type: direct
+        label: direct coauthorship on legacy cryptographic-executable augmentation
+      - from: collaborators-hassen-saidi
+        to: collaborators-patent-31
+        type: direct
+        label: direct co-inventorship
       - from: collaborators-ivan-nunes
         to: collaborators-verified-ra
         type: direct
@@ -1792,6 +1950,10 @@ scenes:
         type: direct
         label: proactive MPC for dynamic groups
       - from: collaborators-mpc
+        to: collaborators-paper-52
+        type: direct
+        label: proactive secret sharing for dynamic groups
+      - from: collaborators-mpc
         to: collaborators-paper-58
         type: direct
         label: MPC-in-the-head zero knowledge
@@ -1960,6 +2122,10 @@ scenes:
         type: direct
         label: dishonest-majority proactive MPC for dynamic groups
       - from: collaborators-secure-biometrics
+        to: collaborators-paper-43
+        type: direct
+        label: secure biometric re-enrollment
+      - from: collaborators-secure-biometrics
         to: collaborators-paper-48
         type: direct
         label: secure large-scale biometric re-enrollment
@@ -1967,6 +2133,38 @@ scenes:
         to: collaborators-paper-62
         type: direct
         label: in-app cryptographically enforced access control
+      - from: collaborators-blockchain-privacy
+        to: collaborators-paper-40
+        type: direct
+        label: blockchain cyber insurance
+      - from: collaborators-blockchain-analysis
+        to: collaborators-paper-49
+        type: direct
+        label: longitudinal Bitcoin and dark-web measurement
+      - from: collaborators-legacy-crypto-modernization
+        to: collaborators-paper-53
+        type: direct
+        label: automated binary analysis and cryptographic-primitive replacement
+      - from: collaborators-mpc
+        to: collaborators-patent-24
+        type: direct
+        label: packaged secure computation
+      - from: collaborators-public-messaging
+        to: collaborators-patent-26
+        type: direct
+        label: functional encryption for biometric re-enrollment
+      - from: collaborators-selective-access
+        to: collaborators-patent-28
+        type: direct
+        label: selective encrypted data sharing
+      - from: collaborators-blockchain-privacy
+        to: collaborators-patent-29
+        type: direct
+        label: controlled blockchain exposure
+      - from: collaborators-legacy-crypto-modernization
+        to: collaborators-patent-31
+        type: direct
+        label: augmentation of executables containing cryptographic primitives
       - from: collaborators-quantum-optimization
         to: collaborators-paper-60
         type: direct

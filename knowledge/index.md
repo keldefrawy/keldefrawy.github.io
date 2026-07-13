@@ -151,7 +151,7 @@ knowledge_hub: true
       </p>
     </header>
 
-    {% assign lineage_order = "cipher,hotel,tour,machines,collaborators" | split: "," %}
+    {% assign lineage_order = "cipher,hotel,tour,machines,labs,collaborators" | split: "," %}
     <div class="knowledge-lineage-tabs" role="group" aria-label="Choose an ideas map">
       {% for scene_key in lineage_order %}
         {% case scene_key %}
@@ -163,6 +163,8 @@ knowledge_hub: true
             {% assign lineage_label = "Information to quantum" %}
           {% when "machines" %}
             {% assign lineage_label = "Machines & AI" %}
+          {% when "labs" %}
+            {% assign lineage_label = "R&D laboratories" %}
           {% when "collaborators" %}
             {% assign lineage_label = "Collaborators" %}
         {% endcase %}

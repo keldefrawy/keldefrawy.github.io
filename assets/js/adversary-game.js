@@ -1,21 +1,23 @@
 (function () {
   "use strict";
 
-  var PARTY_COUNT = 7;
+  var PARTY_COUNT = 9;
   var THRESHOLD = 4;
   var RECOVERY_MS = 2200;
-  var BASE_HOP_MS = 2200;
-  var MAX_SPEED = 5;
   var EPSILON = 0.01;
   var HISTORY_STEP_MS = 500;
   var MAX_HISTORY_SNAPSHOTS = 240;
   var SPLASH_DURATION_MS = 2000;
-  var CADENCE_VALUES = [1600, 2400, 3400, 4800];
+  var CADENCE_VALUES = [2400, 3200, 4200, 5600];
   var CADENCE_LABELS = ["FAST", "BALANCED", "SLOW", "VERY SLOW"];
+  var SURVIVAL_VALUES = [60000, 120000];
+  var CHALLENGE_RATES = [0.18, 0.20, 0.22];
+  var RATE_STEP = 1.06;
   var EDGES = [
-    [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0],
-    [6, 0], [6, 2], [6, 4]
+    [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 0],
+    [8, 0], [8, 2], [8, 4], [8, 6]
   ];
+  var EPOCH_COLORS = ["#0969da", "#bf8700", "#8250df", "#0f766e", "#cf222e", "#1a7f37"];
   var ADJACENCY = buildAdjacency();
   var VIRUS_BITMAP = [
     "001010100",
@@ -60,6 +62,14 @@
     }).join(" + ");
   }
 
+  function formatCountdown(milliseconds) {
+    var totalSeconds = Math.max(0, milliseconds) / 1000;
+    var minutes = Math.floor(totalSeconds / 60);
+    var seconds = (totalSeconds - (minutes * 60)).toFixed(1);
+
+    return padNumber(minutes, 2) + ":" + padNumber(seconds, 4);
+  }
+
   function randomSeed(offset) {
     var values;
 
@@ -100,15 +110,20 @@
     var cadenceValue;
     var batchRange;
     var batchValue;
+    var degreeRange;
+    var degreeValue;
+    var durationRange;
+    var durationValue;
     var scheduleControls;
     var forecast;
     var timeValue;
-    var epochValue;
+    var rateValue;
     var exposureValue;
     var onlineValue;
     var exposureCard;
     var onlineCard;
     var phaseValue;
+    var networkValue;
     var canvas;
     var context;
     var message;
@@ -116,11 +131,15 @@
     var nodeSummary;
     var toggleButton;
     var resetButton;
+    var purgeButton;
     var historyToggleButton;
     var historyPanel;
     var historyViewport;
     var historyMatrix;
     var historySummary;
+    var ledgerCount;
+    var ledgerStatus;
+    var ledgerEpochs;
     var reducedMotionQuery;
     var resizeObserver = null;
     var activeDialogTrigger = null;
@@ -137,21 +156,33 @@
     var recoveryUntil = [];
     var recoveredAt = [];
     var exposures = new Set();
+    var compromisedNodes = new Set();
+    var epochLedger = [];
     var resetCount = 0;
     var refreshCount = 0;
     var catchCount = 0;
     var onlinePartyMilliseconds = 0;
     var lastResetAt = -Infinity;
     var lastResetNodes = [];
+    var lastCaptureAt = -Infinity;
+    var lastCapturedNodes = [];
+    var lastCaptureEpoch = 1;
     var lossReason = "";
+    var purgeUsed = false;
     var committedCadence = 2400;
     var committedBatch = 2;
+    var committedDegree = 3;
+    var committedDuration = 60000;
+    var challengeRate = 0.20;
+    var rateBursts = [];
     var resetRandom = Math.random;
     var attackRandom = Math.random;
+    var rateRandom = Math.random;
     var reducedMotion = false;
     var canvasWidth = 800;
     var canvasHeight = 380;
     var lastCanvasLabel = "";
+    var lastLedgerSignature = "";
     var historySnapshots = [];
     var historyOmitted = 0;
     var nextHistoryAt = Infinity;
@@ -179,34 +210,45 @@
     cadenceValue = root.querySelector("[data-game-cadence-value]");
     batchRange = root.querySelector("[data-game-batch]");
     batchValue = root.querySelector("[data-game-batch-value]");
+    degreeRange = root.querySelector("[data-game-degree]");
+    degreeValue = root.querySelector("[data-game-degree-value]");
+    durationRange = root.querySelector("[data-game-duration]");
+    durationValue = root.querySelector("[data-game-duration-value]");
     scheduleControls = root.querySelector("[data-game-schedule-controls]");
     forecast = root.querySelector("[data-game-forecast]");
     timeValue = root.querySelector("[data-game-time]");
-    epochValue = root.querySelector("[data-game-epoch]");
+    rateValue = root.querySelector("[data-game-rate]");
     exposureValue = root.querySelector("[data-game-exposure]");
     onlineValue = root.querySelector("[data-game-online]");
     exposureCard = root.querySelector("[data-game-exposure-card]");
     onlineCard = root.querySelector("[data-game-online-card]");
     phaseValue = root.querySelector("[data-game-phase]");
+    networkValue = root.querySelector("[data-game-network]");
     canvas = root.querySelector("[data-game-canvas]");
     message = root.querySelector("[data-game-message]");
     announcer = root.querySelector("[data-game-announcer]");
     nodeSummary = root.querySelector("[data-game-node-summary]");
     toggleButton = root.querySelector("[data-game-toggle]");
     resetButton = root.querySelector("[data-game-reset]");
+    purgeButton = root.querySelector("[data-game-purge]");
     historyToggleButton = root.querySelector("[data-game-history-toggle]");
     historyPanel = root.querySelector("[data-game-history]");
     historyViewport = root.querySelector("[data-game-history-viewport]");
     historyMatrix = root.querySelector("[data-game-history-matrix]");
     historySummary = root.querySelector("[data-game-history-summary]");
+    ledgerCount = root.querySelector("[data-game-ledger-count]");
+    ledgerStatus = root.querySelector("[data-game-ledger-status]");
+    ledgerEpochs = root.querySelector("[data-game-ledger-epochs]");
 
     if (!arcade || !gameDialog || !openButton || !closeButton || !splash || !splashSkipButton ||
         !splashMenu || !splashState || !splashContinueButton || !splashResetButton ||
         !cadenceRange || !cadenceValue || !batchRange || !batchValue ||
+        !degreeRange || !degreeValue || !durationRange || !durationValue ||
         !scheduleControls || !forecast || !timeValue ||
-        !epochValue || !exposureValue || !onlineValue || !exposureCard || !onlineCard ||
-        !phaseValue || !canvas || !message || !announcer || !toggleButton || !resetButton ||
-        !historyToggleButton || !historyPanel || !historyViewport || !historyMatrix || !historySummary) {
+        !rateValue || !exposureValue || !onlineValue || !exposureCard || !onlineCard ||
+        !phaseValue || !networkValue || !canvas || !message || !announcer || !toggleButton || !resetButton || !purgeButton ||
+        !historyToggleButton || !historyPanel || !historyViewport || !historyMatrix || !historySummary ||
+        !ledgerCount || !ledgerStatus || !ledgerEpochs) {
       return;
     }
 
@@ -236,6 +278,8 @@
     function scheduleValues() {
       var cadenceIndex = parseInt(cadenceRange.value, 10);
       var batch = parseInt(batchRange.value, 10);
+      var degree = parseInt(degreeRange.value, 10);
+      var durationIndex = parseInt(durationRange.value, 10);
 
       if (!Number.isFinite(cadenceIndex)) {
         cadenceIndex = 1;
@@ -243,25 +287,49 @@
       if (!Number.isFinite(batch)) {
         batch = 2;
       }
+      if (!Number.isFinite(degree)) {
+        degree = 3;
+      }
+      if (!Number.isFinite(durationIndex)) {
+        durationIndex = 0;
+      }
       cadenceIndex = Math.max(0, Math.min(CADENCE_VALUES.length - 1, cadenceIndex));
-      batch = Math.max(1, Math.min(4, batch));
+      batch = Math.max(1, Math.min(2, batch));
+      degree = Math.max(2, Math.min(3, degree));
+      durationIndex = Math.max(0, Math.min(SURVIVAL_VALUES.length - 1, durationIndex));
       return {
         cadence: CADENCE_VALUES[cadenceIndex],
         cadenceIndex: cadenceIndex,
-        batch: batch
+        batch: batch,
+        degree: degree,
+        threshold: degree + 1,
+        duration: SURVIVAL_VALUES[durationIndex],
+        durationIndex: durationIndex
       };
     }
 
     function syncScheduleControls() {
       var values = scheduleValues();
       var partyLabel = values.batch === 1 ? "1 PARTY" : values.batch + " PARTIES";
+      var durationLabel = values.durationIndex === 0 ? "1 MINUTE" : "2 MINUTES";
 
+      THRESHOLD = values.threshold;
       cadenceRange.value = String(values.cadenceIndex);
       cadenceRange.setAttribute("aria-valuetext", CADENCE_LABELS[values.cadenceIndex]);
       cadenceValue.textContent = CADENCE_LABELS[values.cadenceIndex];
       batchRange.value = String(values.batch);
       batchRange.setAttribute("aria-valuetext", partyLabel);
       batchValue.textContent = partyLabel;
+      degreeRange.value = String(values.degree);
+      degreeRange.setAttribute(
+        "aria-valuetext",
+        "Degree " + values.degree + ", " + values.threshold + " shares required"
+      );
+      degreeValue.textContent = values.degree + " -> " + values.threshold + " SHARES";
+      durationRange.value = String(values.durationIndex);
+      durationRange.setAttribute("aria-valuetext", durationLabel.toLowerCase());
+      durationValue.textContent = durationLabel;
+      networkValue.textContent = values.threshold + "-OF-" + PARTY_COUNT + " PROACTIVE NETWORK";
     }
 
     function isRecovering(index) {
@@ -280,6 +348,22 @@
       return count;
     }
 
+    function cleanHelperCount() {
+      var count = 0;
+      var index;
+
+      for (index = 0; index < PARTY_COUNT; index += 1) {
+        if (!isRecovering(index) && !compromisedNodes.has(index)) {
+          count += 1;
+        }
+      }
+      return count;
+    }
+
+    function epochColor(epochNumber) {
+      return EPOCH_COLORS[(Math.max(1, epochNumber) - 1) % EPOCH_COLORS.length];
+    }
+
     function onlineIndices() {
       var indices = [];
       var index;
@@ -292,12 +376,84 @@
       return indices;
     }
 
-    function speedAt(time) {
-      return Math.min(MAX_SPEED, 1 + (time / 45000));
+    function burstMultiplierAt(time) {
+      var multiplier = 1;
+
+      rateBursts.forEach(function (burst) {
+        if (time >= burst.start && time < burst.end) {
+          multiplier = Math.max(multiplier, burst.multiplier);
+        }
+      });
+      return multiplier;
+    }
+
+    function attackRateAt(time) {
+      var stage = Math.floor(Math.max(0, time) / 15000);
+
+      return challengeRate * Math.pow(RATE_STEP, stage) * burstMultiplierAt(time);
     }
 
     function hopTimeAt(time) {
-      return BASE_HOP_MS / speedAt(time);
+      return 1000 / Math.max(0.01, attackRateAt(time));
+    }
+
+    function nextRateBoundaryAfter(time) {
+      var next = (Math.floor((time + EPSILON) / 15000) + 1) * 15000;
+
+      rateBursts.forEach(function (burst) {
+        if (burst.start > time + EPSILON && burst.start < next) {
+          next = burst.start;
+        }
+        if (burst.end > time + EPSILON && burst.end < next) {
+          next = burst.end;
+        }
+      });
+      return next;
+    }
+
+    function nextAttackTimeFrom(time) {
+      var remainingWork = 1;
+      var cursor = time;
+      var guard = 0;
+
+      while (guard < 64) {
+        var boundary = nextRateBoundaryAfter(cursor);
+        var rate = Math.max(0.01, attackRateAt(cursor + EPSILON));
+        var availableWork = rate * ((boundary - cursor) / 1000);
+
+        if (availableWork >= remainingWork) {
+          return cursor + ((remainingWork / rate) * 1000);
+        }
+        remainingWork -= availableWork;
+        cursor = boundary;
+        guard += 1;
+      }
+      return cursor + ((remainingWork / Math.max(0.01, attackRateAt(cursor + EPSILON))) * 1000);
+    }
+
+    function drawChallengeRate() {
+      var random = seededRandom(randomSeed(0xA4093822));
+
+      challengeRate = CHALLENGE_RATES[Math.floor(random() * CHALLENGE_RATES.length)];
+    }
+
+    function buildRateBursts(duration) {
+      var segmentCount = Math.ceil(duration / 15000);
+      var segment;
+
+      rateBursts = [];
+      for (segment = 0; segment < segmentCount; segment += 1) {
+        if (rateRandom() < 0.58) {
+          var start = (segment * 15000) + 3500 + Math.floor(rateRandom() * 7000);
+          var length = 3500 + Math.floor(rateRandom() * 1500);
+
+          rateBursts.push({
+            start: start,
+            end: Math.min(duration, start + length),
+            multiplier: 1.25 + (rateRandom() * 0.05)
+          });
+        }
+      }
     }
 
     function score() {
@@ -329,28 +485,35 @@
       var values = scheduleValues();
       var overlappingRounds = Math.ceil(RECOVERY_MS / values.cadence);
       var maximumOffline = Math.min(PARTY_COUNT, values.batch * overlappingRounds);
-      var headroom = 3 - maximumOffline;
+      var cleanFloor = PARTY_COUNT - (values.threshold - 1) - maximumOffline;
+      var headroom = cleanFloor - values.threshold;
+      var finalStage = Math.floor((values.duration - 1) / 15000);
+      var peakRate = challengeRate * Math.pow(RATE_STEP, finalStage);
+      var burstPeakRate = peakRate * 1.3;
+      var attemptPressure = peakRate * (values.cadence / 1000);
+      var expectedRecoveries = ((values.threshold - 1) * values.batch) / PARTY_COUNT;
+      var pressureRatio = expectedRecoveries / Math.max(0.01, attemptPressure);
+      var rateSummary = "BASE " + challengeRate.toFixed(2) + "/S -> PEAK " + peakRate.toFixed(2) +
+        "/S; BURSTS <= " + burstPeakRate.toFixed(2) + "/S; PURGE x1. ";
       var text;
       var level = "safe";
 
-      if (values.batch >= 4) {
+      if (cleanFloor < values.threshold) {
         level = "danger";
-        text = "Guaranteed quorum loss: the first draw takes 4 parties offline, leaving only 3 of 7 online.";
-      } else if (maximumOffline >= 4) {
+        text = rateSummary + "UNAVAILABLE: ONLY " + cleanFloor +
+          " CLEAN HELPERS REMAIN AT THE PRIVACY LIMIT.";
+      } else if (pressureRatio < 0.85) {
+        level = "danger";
+        text = rateSummary + "UNFAVORABLE: RANDOM RECOVERY IS ESTIMATED TO TRAIL ATTEMPT PRESSURE.";
+      } else if (pressureRatio < 1.12) {
         level = "warning";
-        text = "Availability gamble: overlapping random draws can put up to " + maximumOffline +
-          " distinct parties into recovery—enough to lose the 4-party quorum.";
-      } else if (values.cadence >= 3400) {
-        level = "warning";
-        text = "Comfortable recovery headroom, but the " +
-          CADENCE_LABELS[values.cadenceIndex].toLowerCase() +
-          " refresh tempo gives the accelerating adversary a long window to collect compatible shares.";
+        text = rateSummary + "TIGHT: SURVIVAL IS POSSIBLE, BUT RANDOM DRAWS AND BURSTS MATTER.";
       } else if (headroom === 0) {
-        text = "No spare recovery slot: one worst-case overlap remains within quorum, but any fourth outage would stop the computation.";
+        text = rateSummary + "WINNABLE ESTIMATE; AVAILABILITY SITS EXACTLY AT " + values.threshold +
+          " CLEAN HELPERS IN THE WORST CASE.";
       } else {
-        text = "This schedule keeps at least " + (PARTY_COUNT - maximumOffline) +
-          " parties online in its worst planned overlap, with " + headroom +
-          (headroom === 1 ? " recovery slot" : " recovery slots") + " of headroom.";
+        text = rateSummary + "WINNABLE ESTIMATE WITH " + headroom + " CLEAN-HELPER " +
+          (headroom === 1 ? "SLOT" : "SLOTS") + " OF HEADROOM.";
       }
 
       forecast.setAttribute("data-forecast-level", level);
@@ -384,10 +547,7 @@
       if (isRecovering(index)) {
         return "resetting";
       }
-      if (attacker.node === index) {
-        return "active";
-      }
-      if (exposures.has(index)) {
+      if (compromisedNodes.has(index)) {
         return "compromised";
       }
       return "healthy";
@@ -404,6 +564,16 @@
 
       column.className = "adversary-game__history-column";
       column.setAttribute("data-history-kind", snapshot.kind);
+      column.style.setProperty("--history-epoch-color", epochColor(snapshot.epoch));
+      if (snapshot.kind === "loss") {
+        column.setAttribute("data-history-outcome", "ADVERSARY WINS");
+        column.setAttribute("data-history-result", "loss");
+        column.setAttribute("title", "Adversary wins");
+      } else if (snapshot.kind === "survival") {
+        column.setAttribute("data-history-outcome", "YOU SURVIVED");
+        column.setAttribute("data-history-result", "win");
+        column.setAttribute("title", "You survived");
+      }
       column.setAttribute("aria-hidden", "true");
       snapshot.states.forEach(function (state) {
         var cell = document.createElement("i");
@@ -440,11 +610,13 @@
         " // " + latest.detail + omittedText;
       historyMatrix.setAttribute(
         "aria-label",
-        historySnapshots.length + " network snapshots arranged from left to right, with P1 through P7 " +
+        historySnapshots.length + " network snapshots arranged from left to right, with P1 through P9 " +
           "from top to bottom. Latest at " + (latest.time / 1000).toFixed(1) + " seconds: " +
           (counts.healthy || 0) + " healthy, " +
-          ((counts.compromised || 0) + (counts.active || 0)) + " compromised or exposed, and " +
-          (counts.resetting || 0) + " rejuvenating. " + latest.detail + "."
+          (counts.compromised || 0) + " corrupted with shares captured, and " +
+          (counts.resetting || 0) + " rejuvenating. " + latest.detail + "." +
+          (latest.kind === "loss" ?
+            " Outcome: Adversary wins." : (latest.kind === "survival" ? " Outcome: You survived." : ""))
       );
     }
 
@@ -483,7 +655,7 @@
     }
 
     function markHistoryEvent(kind, detail) {
-      var priority = { sample: 0, compromise: 1, recovery: 2, refresh: 3, loss: 4 };
+      var priority = { sample: 0, compromise: 1, recovery: 2, refresh: 3, purge: 4, loss: 5, survival: 5 };
 
       if ((priority[kind] || 0) >= (priority[pendingHistoryKind] || 0)) {
         pendingHistoryKind = kind;
@@ -557,6 +729,70 @@
       return "safe";
     }
 
+    function createLedgerEpoch(entry, isCurrent) {
+      var row = document.createElement("section");
+      var heading = document.createElement("div");
+      var color = document.createElement("i");
+      var label = document.createElement("strong");
+      var state = document.createElement("span");
+      var slots = document.createElement("div");
+      var captured = Array.from(entry.shares).sort(function (left, right) {
+        return left - right;
+      });
+      var index;
+
+      row.className = "adversary-game__ledger-epoch";
+      row.setAttribute("data-current", isCurrent ? "true" : "false");
+      row.style.setProperty("--epoch-color", epochColor(entry.epoch));
+      heading.className = "adversary-game__ledger-epoch-heading";
+      color.setAttribute("aria-hidden", "true");
+      label.textContent = "E" + padNumber(entry.epoch, 2);
+      state.textContent = isCurrent ? "ACTIVE" : "EXPIRED";
+      heading.appendChild(color);
+      heading.appendChild(label);
+      heading.appendChild(state);
+      slots.className = "adversary-game__ledger-slots";
+      slots.style.gridTemplateColumns = "repeat(" + THRESHOLD + ", minmax(0, 1fr))";
+      for (index = 0; index < THRESHOLD; index += 1) {
+        var slot = document.createElement("i");
+
+        slot.setAttribute("data-filled", index < captured.length ? "true" : "false");
+        slot.textContent = index < captured.length ? "P" + (captured[index] + 1) : "–";
+        slots.appendChild(slot);
+      }
+      row.appendChild(heading);
+      row.appendChild(slots);
+      row.setAttribute(
+        "aria-label",
+        "Epoch " + entry.epoch + ", " + captured.length + " of " + THRESHOLD +
+          " shares captured, " + (isCurrent ? "active" : "expired and incompatible with other colors") + "."
+      );
+      return row;
+    }
+
+    function updateLedger() {
+      var visible = epochLedger.slice(-3).reverse();
+      var signature = visible.map(function (entry) {
+        return entry.epoch + ":" + Array.from(entry.shares).sort().join(",");
+      }).join("|");
+      var fragment;
+
+      ledgerCount.textContent = exposures.size + " / " + THRESHOLD;
+      ledgerStatus.textContent = "CURRENT COLOR E" + padNumber(epoch, 2) + " // " +
+        exposures.size + " MATCHING " + (exposures.size === 1 ? "SHARE" : "SHARES") +
+        " // ADVERSARY NEEDS " + THRESHOLD;
+      if (signature === lastLedgerSignature) {
+        return;
+      }
+      lastLedgerSignature = signature;
+      clearHistoryElement(ledgerEpochs);
+      fragment = document.createDocumentFragment();
+      visible.forEach(function (entry) {
+        fragment.appendChild(createLedgerEpoch(entry, entry.epoch === epoch));
+      });
+      ledgerEpochs.appendChild(fragment);
+    }
+
     function updateCanvasAccessibility() {
       var states = [];
       var label;
@@ -565,20 +801,18 @@
       for (index = 0; index < PARTY_COUNT; index += 1) {
         if (isRecovering(index)) {
           states.push("P" + (index + 1) + " rejuvenating");
-        } else if (attacker.node === index) {
-          states.push("P" + (index + 1) + " currently compromised");
-        } else if (exposures.has(index)) {
-          states.push("P" + (index + 1) + " share read this epoch");
+        } else if (compromisedNodes.has(index)) {
+          states.push("P" + (index + 1) + " corrupted and leaking its epoch " + epoch + " share");
         } else {
           states.push("P" + (index + 1) + " online");
         }
       }
 
       if (gameState === "idle") {
-        label = "Seven connected parties are online. The adversary path remains hidden until the schedule is committed.";
+        label = "Nine connected parties are online. The adversary path remains hidden until the schedule is committed.";
       } else {
-        label = "Seven-party connected network. " + states.join("; ") + ". " +
-          exposures.size + " of 4 compatible shares read in epoch " + epoch + ".";
+        label = "Nine-party connected network. " + states.join("; ") + ". " +
+          exposures.size + " of " + THRESHOLD + " compatible shares read in epoch " + epoch + ".";
       }
       if (label !== lastCanvasLabel) {
         canvas.setAttribute("aria-label", label);
@@ -591,23 +825,29 @@
 
     function updateHud() {
       var remaining = Math.max(0, nextResetAt - simTime);
-      var speed = speedAt(simTime);
-      var currentOnline = onlineCount();
+      var duration = gameState === "idle" ? scheduleValues().duration : committedDuration;
+      var timeLeft = Math.max(0, duration - simTime);
+      var currentRate = gameState === "idle" ? challengeRate : attackRateAt(simTime);
+      var currentCleanHelpers = cleanHelperCount();
 
-      timeValue.textContent = padNumber((simTime / 1000).toFixed(1), 5);
-      epochValue.textContent = padNumber(epoch, 2);
+      timeValue.textContent = formatCountdown(timeLeft);
+      rateValue.textContent = currentRate.toFixed(2) + "/S" +
+        (gameState !== "idle" && burstMultiplierAt(simTime) > 1 ? " BURST" : "");
+      rateValue.setAttribute(
+        "data-burst",
+        gameState !== "idle" && burstMultiplierAt(simTime) > 1 ? "true" : "false"
+      );
       exposureValue.textContent = exposures.size + " / " + THRESHOLD;
-      onlineValue.textContent = currentOnline + " / " + PARTY_COUNT;
-      exposureCard.setAttribute("data-risk-level", riskLevel(exposures.size, THRESHOLD, 3));
-      onlineCard.setAttribute("data-risk-level", currentOnline < THRESHOLD ? "danger" :
-        (currentOnline === THRESHOLD ? "warning" : "safe"));
+      onlineValue.textContent = currentCleanHelpers + " / " + PARTY_COUNT;
+      exposureCard.setAttribute("data-risk-level", riskLevel(exposures.size, THRESHOLD, THRESHOLD - 1));
+      onlineCard.setAttribute("data-risk-level", currentCleanHelpers < THRESHOLD ? "danger" :
+        (currentCleanHelpers === THRESHOLD ? "warning" : "safe"));
 
       if (gameState === "idle") {
         remaining = scheduleValues().cadence;
-        speed = 1;
       }
-      phaseValue.textContent = "NEXT DRAW " + padNumber((remaining / 1000).toFixed(1), 4) +
-        " // SPEED " + speed.toFixed(1) + "x // SCORE " + padNumber(score(), 5);
+      phaseValue.textContent = "NEXT REFRESH " + padNumber((remaining / 1000).toFixed(1), 4) +
+        " // RATE " + currentRate.toFixed(2) + "/S // SCORE " + padNumber(score(), 5);
     }
 
     function renderToggle() {
@@ -617,15 +857,20 @@
         toggleButton.textContent = "RESUME PLAYBACK";
       } else if (gameState === "lost") {
         toggleButton.textContent = "RESTART GAME";
+      } else if (gameState === "won") {
+        toggleButton.textContent = "REPLAY CHALLENGE";
       } else {
         toggleButton.textContent = "COMMIT SCHEDULE + START";
       }
       resetButton.disabled = gameState === "idle";
+      purgeButton.disabled = gameState !== "running" || purgeUsed || compromisedNodes.size === 0;
+      purgeButton.textContent = purgeUsed ? "PURGE USED" : "PURGE x1";
     }
 
     function renderAll() {
       root.setAttribute("data-game-state", gameState);
       updateHud();
+      updateLedger();
       updateCanvasAccessibility();
       renderToggle();
       drawGame();
@@ -640,16 +885,23 @@
       recoveryUntil = [];
       recoveredAt = [];
       exposures = new Set();
+      compromisedNodes = new Set();
+      epochLedger = [{ epoch: epoch, shares: exposures }];
       resetCount = 0;
       refreshCount = 0;
       catchCount = 0;
       onlinePartyMilliseconds = 0;
       lastResetAt = -Infinity;
       lastResetNodes = [];
+      lastCaptureAt = -Infinity;
+      lastCapturedNodes = [];
+      lastCaptureEpoch = 1;
       lossReason = "";
+      purgeUsed = false;
       pauseReasons = {};
       attacker = freshAttacker();
       lastCanvasLabel = "";
+      lastLedgerSignature = "";
       clearHistory();
       for (index = 0; index < PARTY_COUNT; index += 1) {
         recoveryUntil.push(0);
@@ -675,6 +927,9 @@
       resetModel();
       committedCadence = scheduleValues().cadence;
       committedBatch = scheduleValues().batch;
+      committedDegree = scheduleValues().degree;
+      committedDuration = scheduleValues().duration;
+      THRESHOLD = committedDegree + 1;
       nextResetAt = committedCadence;
       updateForecast();
       setMessage(
@@ -684,22 +939,36 @@
       renderAll();
     }
 
-    function exposeNode(index, announceWarning) {
-      if (index < 0 || isRecovering(index) || exposures.has(index) || gameState !== "running") {
-        return;
+    function compromiseNode(index, announceWarning) {
+      var newlyCompromised;
+
+      if (index < 0 || isRecovering(index) || gameState !== "running") {
+        return false;
       }
 
+      newlyCompromised = !compromisedNodes.has(index);
+      compromisedNodes.add(index);
+      if (exposures.has(index)) {
+        return newlyCompromised;
+      }
       exposures.add(index);
-      markHistoryEvent("compromise", "P" + (index + 1) + " SHARE OBTAINED");
+      lastCaptureAt = simTime;
+      lastCapturedNodes = [index];
+      lastCaptureEpoch = epoch;
+      markHistoryEvent("compromise", "P" + (index + 1) + " CORRUPTED // E" +
+        padNumber(epoch, 2) + " SHARE CAPTURED");
       if (exposures.size >= THRESHOLD) {
         lose("privacy");
       } else if (exposures.size === THRESHOLD - 1) {
         setMessage(
-          "WARNING // 3 of 4 compatible shares read in epoch " + epoch + ". Next refresh in " +
+          "WARNING // " + exposures.size + " of " + THRESHOLD + " compatible shares read in epoch " + epoch +
+            ". Next refresh in " +
             Math.max(0, (nextResetAt - simTime) / 1000).toFixed(1) + " seconds.",
-          announceWarning ? "Warning. Three of four compatible shares have been read." : false
+          announceWarning ? "Warning. " + exposures.size + " of " + THRESHOLD +
+            " compatible shares have been read." : false
         );
       }
+      return newlyCompromised;
     }
 
     function distanceToFresh(start) {
@@ -769,10 +1038,13 @@
 
     function enterAdversary() {
       var candidates = onlineIndices();
+      var footholds = candidates.filter(function (index) {
+        return compromisedNodes.has(index);
+      });
       var fresh = candidates.filter(function (index) {
         return !exposures.has(index);
       });
-      var selected = chooseRandom(fresh.length ? fresh : candidates, attackRandom);
+      var selected = chooseRandom(footholds.length ? footholds : (fresh.length ? fresh : candidates), attackRandom);
 
       if (selected < 0) {
         attacker.nextHopAt = simTime + 300;
@@ -781,8 +1053,8 @@
       attacker.node = selected;
       attacker.anchor = -1;
       attacker.lastNode = -1;
-      attacker.nextHopAt = simTime + hopTimeAt(simTime);
-      exposeNode(selected, true);
+      attacker.nextHopAt = nextAttackTimeFrom(simTime);
+      compromiseNode(selected, true);
     }
 
     function finishHop() {
@@ -796,8 +1068,8 @@
         attacker.node = target;
         attacker.lastNode = from;
         attacker.anchor = target;
-        attacker.nextHopAt = simTime + hopTimeAt(simTime);
-        exposeNode(target, true);
+        attacker.nextHopAt = nextAttackTimeFrom(simTime);
+        compromiseNode(target, true);
       } else {
         attacker.node = -1;
         attacker.anchor = from;
@@ -842,25 +1114,63 @@
     }
 
     function evictAdversary(index) {
-      if (attacker.node !== index) {
-        return false;
+      var removed = compromisedNodes.delete(index);
+
+      if (removed) {
+        catchCount += 1;
       }
-      catchCount += 1;
-      attacker.anchor = index;
-      attacker.lastNode = index;
-      attacker.node = -1;
-      attacker.from = -1;
-      attacker.target = -1;
-      attacker.moving = false;
-      attacker.nextHopAt = simTime + hopTimeAt(simTime);
-      return true;
+      if (attacker.node === index) {
+        attacker.anchor = index;
+        attacker.lastNode = index;
+        attacker.node = -1;
+        attacker.from = -1;
+        attacker.target = -1;
+        attacker.moving = false;
+        attacker.nextHopAt = nextAttackTimeFrom(simTime);
+      }
+      return removed;
+    }
+
+    function performEmergencyPurge() {
+      var cleanedCount;
+
+      if (gameState !== "running" || purgeUsed || compromisedNodes.size === 0) {
+        return;
+      }
+      cleanedCount = compromisedNodes.size;
+      purgeUsed = true;
+      compromisedNodes.clear();
+      attacker = freshAttacker();
+      attacker.nextHopAt = nextAttackTimeFrom(simTime);
+      epoch += 1;
+      refreshCount += 1;
+      exposures = new Set();
+      epochLedger.push({ epoch: epoch, shares: exposures });
+      lastResetAt = simTime;
+      lastResetNodes = [];
+      lastCaptureAt = -Infinity;
+      lastCapturedNodes = [];
+      lastCaptureEpoch = epoch;
+      captureHistory(
+        "purge",
+        "ONE-TIME PURGE // " + cleanedCount + " " + (cleanedCount === 1 ? "INFECTION" : "INFECTIONS") +
+          " REMOVED // EPOCH " + padNumber(epoch, 2)
+      );
+      setMessage(
+        "STATE-PRESERVING PURGE // " + cleanedCount + " " +
+          (cleanedCount === 1 ? "INFECTION" : "INFECTIONS") + " REMOVED // RESHARED AS E" +
+          padNumber(epoch, 2) + " // PURGE SPENT",
+        "Emergency purge used. " + cleanedCount + " infections removed. State preserved and reshared into epoch " +
+          epoch + "."
+      );
+      renderAll();
     }
 
     function processResetPulse() {
       var candidates = [];
       var selected;
-      var caught = false;
-      var currentOnline;
+      var cleaned = [];
+      var currentCleanHelpers;
       var index;
 
       for (index = 0; index < PARTY_COUNT; index += 1) {
@@ -878,32 +1188,46 @@
 
       selected.forEach(function (party) {
         if (evictAdversary(party)) {
-          caught = true;
+          cleaned.push(party);
         }
         recoveryUntil[party] = Math.max(recoveryUntil[party], simTime + RECOVERY_MS);
       });
 
-      currentOnline = onlineCount();
-      if (currentOnline < THRESHOLD) {
+      currentCleanHelpers = cleanHelperCount();
+      if (currentCleanHelpers < THRESHOLD) {
         lose("availability");
         return;
       }
 
       epoch += 1;
       refreshCount += 1;
-      exposures.clear();
-      if (attacker.node >= 0) {
-        exposeNode(attacker.node, false);
+      exposures = new Set();
+      epochLedger.push({ epoch: epoch, shares: exposures });
+      compromisedNodes.forEach(function (party) {
+        if (!isRecovering(party)) {
+          exposures.add(party);
+        }
+      });
+      lastCaptureAt = simTime;
+      lastCapturedNodes = Array.from(exposures);
+      lastCaptureEpoch = epoch;
+      if (exposures.size >= THRESHOLD) {
+        lose("privacy");
+        return;
       }
 
       setMessage(
-        "COIN " + padNumber(resetCount, 2) + " -> RESET " + partyList(selected) +
-          " // EPOCH " + padNumber(epoch, 2) + (caught ? " // VIRUS EVICTED" : " // PATH SURVIVED"),
-        caught ? "Random rejuvenation caught and evicted the mobile adversary." : false
+        "REFRESH " + padNumber(resetCount, 2) + " -> EPOCH " + padNumber(epoch, 2) +
+          " // RESET " + partyList(selected) + " // " + exposures.size + " NEW-COLOR " +
+          (exposures.size === 1 ? "SHARE" : "SHARES") + " LEAKED" +
+          (cleaned.length ? " // " + partyList(cleaned) + " CLEANED" : ""),
+        "Epoch " + epoch + ". " + partyList(selected) + " rejuvenating. The adversary immediately holds " +
+          exposures.size + " of " + THRESHOLD + " new-color shares."
       );
       markHistoryEvent(
         "refresh",
-        "EPOCH " + padNumber(epoch, 2) + " // RESET " + partyList(selected)
+        "EPOCH " + padNumber(epoch, 2) + " // RESET " + partyList(selected) +
+          " // " + exposures.size + " PERSISTENT-CORRUPTION SHARES LEAKED"
       );
     }
 
@@ -933,7 +1257,8 @@
       if (recovered.length) {
         markHistoryEvent("recovery", partyList(recovered) + " REJOINED CLEAN");
         setMessage(
-          partyList(recovered) + " REJOINED CLEAN // " + onlineCount() + " OF 7 ONLINE // EPOCH " +
+          partyList(recovered) + " REJOINED CLEAN WITH E" + padNumber(epoch, 2) + " SHARES // " +
+            cleanHelperCount() + " CLEAN HELPERS // EPOCH " +
             padNumber(epoch, 2),
           false
         );
@@ -957,10 +1282,10 @@
       var recoveryEvent;
       var attackEvent;
 
-      while (gameState === "running" && guard < 200) {
+      while (gameState === "running" && guard < 2000) {
         recoveryEvent = nextRecoveryTime();
         attackEvent = attackEventTime();
-        nextEvent = Math.min(recoveryEvent, nextResetAt, attackEvent, nextHistoryAt);
+        nextEvent = Math.min(recoveryEvent, nextResetAt, attackEvent, nextHistoryAt, committedDuration);
         if (!isFinite(nextEvent) || nextEvent > targetTime + EPSILON) {
           break;
         }
@@ -980,6 +1305,9 @@
           captureHistory();
           nextHistoryAt += HISTORY_STEP_MS;
         }
+        if (gameState === "running" && committedDuration <= simTime + EPSILON) {
+          win();
+        }
         guard += 1;
       }
 
@@ -989,7 +1317,7 @@
     }
 
     function lose(reason) {
-      var currentOnline = onlineCount();
+      var currentCleanHelpers = cleanHelperCount();
       var text;
 
       if (gameState !== "running") {
@@ -1001,14 +1329,31 @@
       stopFrame();
 
       if (reason === "privacy") {
-        text = "MOBILE ADVERSARY WINS // ADVERSARY OBTAINED FOUR COMPATIBLE SHARES IN EPOCH " +
+        text = "ADVERSARY WINS // " + THRESHOLD + " COMPATIBLE SHARES CAPTURED IN EPOCH " +
           padNumber(epoch, 2) + " // FIXED REFRESH SCHEDULE OVERRUN.";
-        captureHistory("loss", "ADVERSARY OBTAINED FOUR COMPATIBLE SHARES");
+        captureHistory("loss", "ADVERSARY WINS // " + THRESHOLD + " COMPATIBLE E" +
+          padNumber(epoch, 2) + " SHARES");
       } else {
-        text = "QUORUM LOST // ONLY " + currentOnline +
-          " PARTIES ONLINE // COMPUTATION UNAVAILABLE // SECRET NOT ERASED.";
-        captureHistory("loss", "QUORUM LOST // " + currentOnline + " ONLINE");
+        text = "ADVERSARY WINS // QUORUM LOST // ONLY " + currentCleanHelpers +
+          " CLEAN HELPERS AVAILABLE // SECRET NOT ERASED.";
+        captureHistory("loss", "ADVERSARY WINS // QUORUM LOST // " + currentCleanHelpers + " CLEAN HELPERS");
       }
+      setMessage(text, text);
+      renderAll();
+    }
+
+    function win() {
+      var text;
+
+      if (gameState !== "running") {
+        return;
+      }
+      gameState = "won";
+      scheduleControls.disabled = false;
+      stopFrame();
+      text = "YOU SURVIVED // " + Math.round(committedDuration / 1000) +
+        " SECONDS // NO EPOCH REACHED " + THRESHOLD + " COMPATIBLE SHARES.";
+      captureHistory("survival", "YOU SURVIVED // " + Math.round(committedDuration / 1000) + " SECONDS");
       setMessage(text, text);
       renderAll();
     }
@@ -1023,25 +1368,35 @@
       resetModel();
       committedCadence = scheduleValues().cadence;
       committedBatch = scheduleValues().batch;
+      committedDegree = scheduleValues().degree;
+      committedDuration = scheduleValues().duration;
+      THRESHOLD = committedDegree + 1;
       resetRandom = seededRandom(randomSeed(0x9E3779B9));
       attackRandom = seededRandom(randomSeed(0x243F6A88));
+      rateRandom = seededRandom(randomSeed(0xB7E15162));
+      buildRateBursts(committedDuration);
       nextResetAt = committedCadence;
       gameState = "running";
       scheduleControls.disabled = true;
       forecast.setAttribute("data-forecast-level", "safe");
-      forecast.textContent = "SCHEDULE LOCKED // Reset draws cannot inspect the infection. Virus reveal is playback only.";
+      forecast.textContent = "SCHEDULE LOCKED // Refreshes recolor every share; only selected rejuvenations remove infections.";
 
       firstNode = Math.floor(attackRandom() * PARTY_COUNT);
       attacker.node = firstNode;
       attacker.anchor = firstNode;
-      attacker.nextHopAt = hopTimeAt(0);
+      attacker.nextHopAt = nextAttackTimeFrom(0);
+      compromisedNodes.add(firstNode);
       exposures.add(firstNode);
+      lastCaptureAt = 0;
+      lastCapturedNodes = [firstNode];
+      lastCaptureEpoch = 1;
       nextHistoryAt = HISTORY_STEP_MS;
-      captureHistory("start", "INTRUSION DETECTED AT P" + (firstNode + 1));
+      captureHistory("start", "P" + (firstNode + 1) + " CORRUPTED // E01 SHARE CAPTURED");
       setMessage(
-        "SCHEDULE LOCKED // INTRUSION AT P" + (firstNode + 1) +
-          " // ATTACK PATH REVEALED FOR PLAYBACK ONLY",
-        "Schedule locked. The mobile adversary path is now being revealed for playback only."
+        "SCHEDULE LOCKED // P" + (firstNode + 1) +
+          " CORRUPTED // E01 SHARE CAPTURED // INFECTION PERSISTS UNTIL RESET",
+        "Schedule locked. P" + (firstNode + 1) +
+          " is corrupted and its epoch one share was captured."
       );
       renderAll();
       startFrame(token);
@@ -1057,7 +1412,7 @@
       if (!lastFrameAt) {
         lastFrameAt = timestamp;
       }
-      elapsed = Math.max(0, Math.min(100, timestamp - lastFrameAt));
+      elapsed = Math.max(0, timestamp - lastFrameAt);
       lastFrameAt = timestamp;
       advanceSimulation(simTime + elapsed);
       renderAll();
@@ -1115,22 +1470,27 @@
     }
 
     function nodePositions() {
-      var top = Math.max(35, canvasHeight * 0.12);
-      var bottom = canvasHeight - Math.max(36, canvasHeight * 0.12);
-      var upper = top + ((bottom - top) * 0.22);
-      var lower = top + ((bottom - top) * 0.78);
+      var short = canvasHeight < 180;
+      var top = short ? 26 : Math.max(35, canvasHeight * 0.12);
+      var bottom = canvasHeight - (short ? 27 : Math.max(36, canvasHeight * 0.12));
+      var upper = top + ((bottom - top) * 0.18);
+      var lower = top + ((bottom - top) * 0.82);
       var middle = top + ((bottom - top) * 0.5);
-      var left = Math.max(42, canvasWidth * 0.18);
+      var left = Math.max(34, canvasWidth * 0.14);
       var right = canvasWidth - left;
       var center = canvasWidth / 2;
+      var innerLeft = left + ((center - left) * 0.38);
+      var innerRight = right - ((right - center) * 0.38);
 
       return [
         { x: center, y: top },
-        { x: right, y: upper },
-        { x: right, y: lower },
+        { x: innerRight, y: upper },
+        { x: right, y: middle },
+        { x: innerRight, y: lower },
         { x: center, y: bottom },
-        { x: left, y: lower },
-        { x: left, y: upper },
+        { x: innerLeft, y: lower },
+        { x: left, y: middle },
+        { x: innerLeft, y: upper },
         { x: center, y: middle }
       ];
     }
@@ -1226,15 +1586,18 @@
 
     function drawNode(index, position) {
       var compact = canvasWidth < 430;
-      var width = compact ? 48 : 62;
-      var height = compact ? 32 : 38;
+      var tiny = canvasHeight < 180;
+      var width = tiny ? 38 : (compact ? 44 : 60);
+      var height = tiny ? 30 : (compact ? 38 : 46);
       var x = Math.round(position.x - (width / 2));
       var y = Math.round(position.y - (height / 2));
       var recovering = isRecovering(index);
-      var active = attacker.node === index;
-      var leaked = exposures.has(index);
+      var active = compromisedNodes.has(index);
       var justRecovered = simTime - recoveredAt[index] < 420;
       var progress;
+      var shareX;
+      var shareY;
+      var shareWidth;
 
       steppedRectPath(x, y, width, height, 4);
       context.fillStyle = recovering ? "#e3e4df" : (active ? "#fff0f1" : "#ffffff");
@@ -1251,31 +1614,33 @@
       }
 
       context.fillStyle = justRecovered && !reducedMotion ? "#ffffff" : "#151515";
-      context.font = "800 " + (compact ? 11 : 13) + "px ui-monospace, monospace";
-      context.textAlign = active ? "left" : "center";
+      context.font = "800 " + (tiny ? 9 : (compact ? 11 : 13)) + "px ui-monospace, monospace";
+      context.textAlign = "center";
       context.textBaseline = "middle";
-      context.fillText("P" + (index + 1), active ? x + 7 : position.x, position.y);
+      context.fillText("P" + (index + 1), position.x, y + (tiny ? 9 : (compact ? 11 : 13)));
 
-      if (leaked && !recovering) {
-        context.strokeStyle = "#b4232f";
-        context.lineWidth = 2;
-        context.beginPath();
-        context.moveTo(x + width - 12, y + 5);
-        context.lineTo(x + width - 5, y + 12);
-        context.moveTo(x + width - 5, y + 5);
-        context.lineTo(x + width - 12, y + 12);
-        context.stroke();
-      }
+      shareWidth = width - (tiny ? 8 : (compact ? 10 : 14));
+      shareX = x + ((width - shareWidth) / 2);
+      shareY = y + height - (tiny ? 11 : (compact ? 15 : 18));
+      context.fillStyle = recovering ? "#8c959f" : epochColor(epoch);
+      context.fillRect(shareX, shareY, shareWidth, tiny ? 8 : (compact ? 10 : 12));
+      context.fillStyle = "#ffffff";
+      context.font = "900 " + (tiny ? 6 : (compact ? 7 : 8)) + "px ui-monospace, monospace";
+      context.fillText("E" + padNumber(epoch, 2), position.x, shareY + (tiny ? 4 : (compact ? 5 : 6)));
 
       if (active) {
-        drawVirus(x + width - (compact ? 13 : 15), position.y, compact ? 1.35 : 1.65);
+        drawVirus(
+          x + width - (tiny ? 7 : (compact ? 9 : 11)),
+          y + (tiny ? 6 : (compact ? 8 : 10)),
+          tiny ? 0.72 : (compact ? 0.9 : 1.15)
+        );
       }
 
       if (recovering) {
         progress = Math.max(0, Math.min(1, (recoveryUntil[index] - simTime) / RECOVERY_MS));
         context.fillStyle = "#151515";
         context.fillRect(x, y + height + 4, Math.round(width * (1 - progress)), 3);
-        context.font = "700 " + (compact ? 8 : 9) + "px ui-monospace, monospace";
+        context.font = "700 " + (tiny ? 7 : (compact ? 8 : 9)) + "px ui-monospace, monospace";
         context.textAlign = "center";
         context.fillText("RST", position.x, y + height + 13);
       }
@@ -1301,7 +1666,86 @@
       target = positions[attacker.target];
       x = from.x + ((target.x - from.x) * progress);
       y = from.y + ((target.y - from.y) * progress);
-      drawVirus(x, y, canvasWidth < 430 ? 1.45 : 1.85);
+      drawVirus(x, y, canvasHeight < 180 ? 1.05 : (canvasWidth < 430 ? 1.45 : 1.85));
+    }
+
+    function drawCapturedShares(positions) {
+      var elapsed = simTime - lastCaptureAt;
+      var progress;
+
+      if (reducedMotion || elapsed < 0 || elapsed > 520 || !lastCapturedNodes.length) {
+        return;
+      }
+      progress = Math.floor(Math.min(1, elapsed / 520) * 8) / 8;
+      lastCapturedNodes.forEach(function (index, order) {
+        var from = positions[index];
+        var targetY = 24 + ((order % 4) * 16);
+        var x = from.x + (((canvasWidth - 14) - from.x) * progress);
+        var y = from.y + ((targetY - from.y) * progress);
+
+        context.fillStyle = epochColor(lastCaptureEpoch);
+        context.fillRect(Math.round(x - 13), Math.round(y - 6), 26, 12);
+        context.strokeStyle = "#151515";
+        context.lineWidth = 1;
+        context.strokeRect(Math.round(x - 13) + 0.5, Math.round(y - 6) + 0.5, 25, 11);
+        context.fillStyle = "#ffffff";
+        context.font = "900 7px ui-monospace, monospace";
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillText("E" + padNumber(lastCaptureEpoch, 2), x, y);
+      });
+    }
+
+    function drawRefreshStrike() {
+      var elapsed = simTime - lastResetAt;
+      var alpha;
+      var centerX;
+
+      if (elapsed < 0 || elapsed > (reducedMotion ? 800 : 520) || gameState === "idle") {
+        return;
+      }
+      alpha = Math.max(0, 1 - (elapsed / (reducedMotion ? 800 : 520)));
+      centerX = canvasWidth * (0.48 + ((epoch % 3) * 0.02));
+      context.save();
+      context.fillStyle = "rgba(255, 238, 140, " + (alpha * 0.16).toFixed(3) + ")";
+      context.fillRect(0, 0, canvasWidth, canvasHeight);
+
+      if (!reducedMotion) {
+        context.beginPath();
+        context.moveTo(centerX, 0);
+        context.lineTo(centerX - 18, canvasHeight * 0.2);
+        context.lineTo(centerX + 8, canvasHeight * 0.24);
+        context.lineTo(centerX - 30, canvasHeight * 0.5);
+        context.lineTo(centerX + 4, canvasHeight * 0.54);
+        context.lineTo(centerX - 24, canvasHeight * 0.82);
+        context.lineTo(centerX - 8, canvasHeight);
+        context.strokeStyle = "rgba(21, 21, 21, " + (alpha * 0.8).toFixed(3) + ")";
+        context.lineWidth = 7;
+        context.stroke();
+        context.strokeStyle = "rgba(255, 205, 42, " + alpha.toFixed(3) + ")";
+        context.lineWidth = 3;
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(centerX - 30, canvasHeight * 0.5);
+        context.lineTo(centerX - (canvasWidth * 0.22), canvasHeight * 0.68);
+        context.lineTo(centerX - (canvasWidth * 0.31), canvasHeight * 0.66);
+        context.moveTo(centerX + 8, canvasHeight * 0.24);
+        context.lineTo(centerX + (canvasWidth * 0.2), canvasHeight * 0.38);
+        context.lineTo(centerX + (canvasWidth * 0.28), canvasHeight * 0.35);
+        context.strokeStyle = "rgba(255, 205, 42, " + alpha.toFixed(3) + ")";
+        context.lineWidth = 2;
+        context.stroke();
+      }
+
+      context.fillStyle = "rgba(21, 21, 21, " + Math.max(0.82, alpha).toFixed(3) + ")";
+      context.fillRect((canvasWidth / 2) - 74, (canvasHeight / 2) - 13, 148, 26);
+      context.fillStyle = "#ffffff";
+      context.font = "900 10px ui-monospace, monospace";
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillText("RESHARE -> E" + padNumber(epoch, 2), canvasWidth / 2, canvasHeight / 2);
+      context.restore();
     }
 
     function drawCoinBanner() {
@@ -1311,7 +1755,7 @@
       if (simTime - lastResetAt > 650 || !lastResetNodes.length || gameState === "idle") {
         return;
       }
-      text = "COIN " + padNumber(resetCount, 2) + " -> " + partyList(lastResetNodes);
+      text = "E" + padNumber(epoch, 2) + " // RESET " + partyList(lastResetNodes);
       context.font = "800 11px ui-monospace, monospace";
       width = Math.min(canvasWidth - 24, Math.max(170, context.measureText(text).width + 24));
       context.fillStyle = "#151515";
@@ -1344,7 +1788,8 @@
       var x = (canvasWidth - width) / 2;
       var y = (canvasHeight - 70) / 2;
       var detail = lossReason === "privacy" ?
-        "ADVERSARY OBTAINED FOUR COMPATIBLE SHARES" : "FEWER THAN 4 ONLINE";
+        "ADVERSARY WINS // " + THRESHOLD + " SAME-COLOR SHARES" :
+        "FEWER THAN " + THRESHOLD + " CLEAN HELPERS";
 
       context.fillStyle = "rgba(255, 255, 255, 0.94)";
       context.fillRect(x, y, width, 70);
@@ -1361,6 +1806,26 @@
       context.fillText(detail, canvasWidth / 2, y + 48);
     }
 
+    function drawWinBanner() {
+      var width = Math.min(canvasWidth - 28, 360);
+      var x = (canvasWidth - width) / 2;
+      var y = (canvasHeight - 70) / 2;
+
+      context.fillStyle = "rgba(255, 255, 255, 0.95)";
+      context.fillRect(x, y, width, 70);
+      context.strokeStyle = "#165c37";
+      context.lineWidth = 4;
+      context.strokeRect(x + 2, y + 2, width - 4, 66);
+      context.fillStyle = "#165c37";
+      context.font = "900 " + (canvasWidth < 430 ? 13 : 16) + "px ui-monospace, monospace";
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillText("YOU SURVIVED", canvasWidth / 2, y + 25);
+      context.fillStyle = "#151515";
+      context.font = "800 " + (canvasWidth < 430 ? 9 : 11) + "px ui-monospace, monospace";
+      context.fillText(Math.round(committedDuration / 1000) + " SECONDS // SECRET SAFE", canvasWidth / 2, y + 48);
+    }
+
     function drawGame() {
       var positions = nodePositions();
       var index;
@@ -1373,11 +1838,15 @@
       for (index = 0; index < PARTY_COUNT; index += 1) {
         drawNode(index, positions[index]);
       }
+      drawCapturedShares(positions);
+      drawRefreshStrike();
       drawCoinBanner();
       if (gameState === "idle") {
         drawIdleBanner();
       } else if (gameState === "lost") {
         drawLossBanner();
+      } else if (gameState === "won") {
+        drawWinBanner();
       }
       context.restore();
     }
@@ -1519,6 +1988,8 @@
 
     cadenceRange.addEventListener("input", resetPreview);
     batchRange.addEventListener("input", resetPreview);
+    degreeRange.addEventListener("input", resetPreview);
+    durationRange.addEventListener("input", resetPreview);
 
     openButton.addEventListener("click", showGameDialog);
     closeButton.addEventListener("click", closeGameDialog);
@@ -1531,6 +2002,9 @@
     splashResetButton.addEventListener("click", function () {
       cadenceRange.value = "1";
       batchRange.value = "2";
+      degreeRange.value = "3";
+      durationRange.value = "0";
+      drawChallengeRate();
       resetPreview();
       setMessage(
         "ARCADE RESET // REPROGRAM SCHEDULE // NEW ATTACK PATH HIDDEN",
@@ -1546,7 +2020,7 @@
     gameDialog.addEventListener("close", cleanupGameDialog);
 
     toggleButton.addEventListener("click", function () {
-      if (gameState === "idle" || gameState === "lost") {
+      if (gameState === "idle" || gameState === "lost" || gameState === "won") {
         startGame();
       } else if (gameState === "running") {
         pauseGame("manual");
@@ -1556,6 +2030,7 @@
     });
 
     resetButton.addEventListener("click", function () {
+      drawChallengeRate();
       resetPreview();
       setMessage(
         "GAME RESET // REPROGRAM SCHEDULE // NEW ATTACK PATH HIDDEN",
@@ -1564,6 +2039,8 @@
       renderAll();
       cadenceRange.focus();
     });
+
+    purgeButton.addEventListener("click", performEmergencyPurge);
 
     historyToggleButton.addEventListener("click", function () {
       setHistoryOpen(historyPanel.hidden);
@@ -1623,6 +2100,7 @@
     splash.hidden = true;
     setHistoryOpen(false);
     root.setAttribute("data-game-ready", "true");
+    drawChallengeRate();
     resetPreview();
     resizeCanvas();
   }

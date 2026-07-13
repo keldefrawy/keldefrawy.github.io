@@ -816,8 +816,9 @@ scenes:
     map_title: "From Formal Reasoning to Machine-Checked Security"
     description: >-
       A compact lineage from Hilbert's formal program and Gödel's limits through programmable and
-      universal machines, information and symbolic AI, to modern formal specification and model
-      checking—the machinery used to check protocols, algorithms, cryptography, mathematics, and systems.
+      universal machines, information and symbolic AI, through the Stanford–SRI program-proof and
+      mechanized-reasoning line, to modern formal specification and model checking—the machinery
+      used to check protocols, algorithms, cryptography, mathematics, and systems.
     notes:
       - kind: scope
         label: What this map means by AI
@@ -831,6 +832,12 @@ scenes:
           Gödel and Turing place fundamental limits on formal systems and computation. Mechanized
           verification raises assurance within an explicit model; it does not eliminate modeling
           assumptions or make every true statement automatically decidable.
+      - kind: lineage
+        label: Stanford–SRI verification school
+        text: >-
+          The compact line highlights Floyd's assertion method; Manna's synthesis and temporal-
+          verification school; Green and Waldinger's logical program synthesis; Stanford LCF;
+          SRI's PVS team; and the later bridge from formal reasoning to security protocols.
     people:
       - id: machines-hilbert
         label: David Hilbert
@@ -867,6 +874,80 @@ scenes:
         relationship: influence
         status: Artificial intelligence, Lisp, and machine reasoning · no collaboration
         note: "McCarthy co-founded the named field of AI and made symbolic representation and machine deduction programmable through the Advice Taker and Lisp."
+      - id: machines-floyd
+        label: Robert W. Floyd
+        relationship: influence
+        status: Assertions, invariants, and program verification · no collaboration
+        note: >-
+          Floyd's 1967 assertion method opened systematic program verification: logical invariants
+          attached to program points reduce correctness to proof obligations and helped seed the
+          later Floyd–Hoare tradition. Stanford's genealogy also places Manna in Floyd's doctoral line.
+      - id: machines-manna
+        label: Zohar Manna
+        relationship: influence
+        status: Program synthesis and temporal verification · no collaboration
+        note: >-
+          Manna worked with McCarthy at Stanford, developed foundational methods for program synthesis
+          and software proof, collaborated with Richard Waldinger on deductive synthesis, advanced
+          temporal verification, and led the Stanford Temporal Prover line.
+      - id: machines-green-waldinger
+        label: Cordell Green & Richard Waldinger
+        relationship: influence
+        status: Logical AI and deductive program synthesis · no collaboration
+        note: >-
+          Green's Stanford work showed how theorem proving could support planning and program
+          synthesis in McCarthy's logical-AI school. Waldinger built the parallel Stanford–SRI bridge
+          from automated deduction to program synthesis and verification, much of it with Manna.
+      - id: machines-stanford-lcf
+        label: Dana Scott & Robin Milner
+        relationship: influence
+        status: Stanford LCF proof checking · no collaboration
+        note: >-
+          Scott formulated the Logic for Computable Functions; at Stanford, Milner implemented LCF
+          as an interactive machine proof checker. Its small trusted proof kernel became a
+          foundational ancestor of later theorem-prover families including HOL and Isabelle.
+      - id: machines-weyhrauch
+        label: Richard Weyhrauch
+        relationship: influence
+        status: Stanford FOL and mechanized reasoning · no collaboration
+        note: >-
+          Weyhrauch developed Stanford's FOL interactive proof-checking environment and helped
+          connect logical representation, theorem proving, and practical machine-assisted
+          reasoning alongside the Stanford LCF line.
+      - id: machines-boyer-moore
+        label: Robert S. Boyer & J Strother Moore
+        relationship: influence
+        status: Automated theorem proving and verified algorithms · no collaboration
+        note: >-
+          Boyer and Moore developed the Boyer–Moore family of automated theorem provers for
+          inductive reasoning and program verification; the same pair also created the fast
+          Boyer–Moore string-search algorithm. Moore later co-developed ACL2 with Matt Kaufmann.
+      - id: machines-pvs
+        label: Natarajan Shankar, Sam Owre & John Rushby
+        relationship: influence
+        status: SRI PVS specification and verification · colleague lineage, not a coauthorship claim
+        note: >-
+          Shankar, Owre, and Rushby created the PVS line at SRI, integrating a specification
+          language, proof checking, decision procedures, and model checking for algorithms,
+          protocols, hardware, and dependable systems. Shankar had earlier been a Stanford
+          Computer Science research associate.
+      - id: machines-abadi
+        label: Martín Abadi
+        relationship: influence
+        status: Formal security and protocol logics · no collaboration
+        note: >-
+          Abadi's Stanford doctorate under Manna was on temporal theorem proving. His later work
+          brought logic, process calculi, and formal semantics directly into authentication,
+          cryptographic-protocol analysis, programming languages, and computer security.
+      - id: machines-lincoln
+        label: Patrick Lincoln
+        relationship: influence
+        status: Direct SRI colleague · formal methods, security, and fault tolerance
+        note: >-
+          Lincoln earned his Stanford doctorate in linear logic and built a long SRI line spanning
+          formal verification, security protocols, privacy, fault tolerance, and
+          dependable distributed systems. This card records a direct institutional-colleague
+          connection, not a claim that every mapped paper was coauthored with him.
       - id: machines-lamport
         label: Leslie Lamport
         relationship: influence
@@ -890,6 +971,14 @@ scenes:
         label: Information, switching logic, and search
       - id: machines-symbolic-ai
         label: Symbolic AI, Lisp, and automated reasoning
+      - id: machines-program-proof
+        label: Assertions, invariants, and deductive program synthesis
+      - id: machines-temporal-verification
+        label: Temporal logic and reactive-system verification
+      - id: machines-proof-systems
+        label: Proof checkers, decision procedures, and verification systems
+      - id: machines-formal-security
+        label: Formal reasoning about security protocols and systems
       - id: machines-formal-verification
         label: Formal specification, model checking, and proof tools
       - id: machines-checked-security
@@ -965,10 +1054,74 @@ scenes:
         to: machines-symbolic-ai
         type: direct
         label: AI, Lisp, and logical machine reasoning
-      - from: machines-lamport
-        to: machines-formal-verification
+      - from: machines-turing
+        to: machines-program-proof
+        type: lineage
+        label: computability and the prospect of mechanically checking programs
+      - from: machines-mccarthy
+        to: machines-program-proof
+        type: lineage
+        label: mathematical theory of computation and program proof
+      - from: machines-floyd
+        to: machines-program-proof
         type: direct
-        label: formal specification and TLA+
+        label: assertions and inductive invariants
+      - from: machines-floyd
+        to: machines-manna
+        type: lineage
+        label: doctoral line from inductive assertions to program synthesis
+      - from: machines-mccarthy
+        to: machines-manna
+        type: lineage
+        label: worked together on Stanford logical AI and verification
+      - from: machines-manna
+        to: machines-temporal-verification
+        type: direct
+        label: temporal verification and the Stanford Temporal Prover line
+      - from: machines-manna
+        to: machines-abadi
+        type: lineage
+        label: doctoral line from temporal theorem proving to formal security
+      - from: machines-green-waldinger
+        to: machines-program-proof
+        type: direct
+        label: logical and deductive program synthesis
+      - from: machines-mccarthy
+        to: machines-green-waldinger
+        type: lineage
+        label: logical AI applied to planning and program synthesis
+      - from: machines-stanford-lcf
+        to: machines-proof-systems
+        type: direct
+        label: machine proof checking and the LCF kernel discipline
+      - from: machines-weyhrauch
+        to: machines-proof-systems
+        type: direct
+        label: interactive FOL proof checking and mechanized reasoning
+      - from: machines-boyer-moore
+        to: machines-symbolic-ai
+        type: direct
+        label: automated inductive theorem proving
+      - from: machines-boyer-moore
+        to: machines-proof-systems
+        type: lineage
+        label: inductive theorem proving and verified algorithms
+      - from: machines-pvs
+        to: machines-proof-systems
+        type: direct
+        label: specification, proof checking, decision procedures, and model checking
+      - from: machines-abadi
+        to: machines-formal-security
+        type: direct
+        label: authentication logics and formal security semantics
+      - from: machines-lincoln
+        to: machines-formal-security
+        type: direct
+        label: formal analysis of security and fault-tolerant systems
+      - from: machines-lamport
+        to: machines-temporal-verification
+        type: direct
+        label: formal specification and temporal reasoning with TLA+
       - from: machines-sifakis
         to: machines-formal-verification
         type: direct
@@ -997,10 +1150,26 @@ scenes:
         to: machines-formal-verification
         type: lineage
         label: verification remains explicitly model- and logic-bounded
+      - from: machines-program-proof
+        to: machines-formal-verification
+        type: lineage
+        label: deductive proof obligations become computer-aided verification
+      - from: machines-temporal-verification
+        to: machines-formal-verification
+        type: direct
+        label: reactive-system safety and liveness become checkable
+      - from: machines-proof-systems
+        to: machines-formal-verification
+        type: direct
+        label: proof checking, decision procedures, and model checking
       - from: machines-symbolic-ai
         to: machines-checked-security
         type: lineage
         label: automated representation, search, and deduction
+      - from: machines-formal-security
+        to: machines-checked-security
+        type: direct
+        label: protocol and system security become machine-analyzable
       - from: machines-formal-verification
         to: machines-checked-security
         type: direct
@@ -1037,6 +1206,493 @@ scenes:
         to: machines-paper-67
         type: direct
         label: optimized formally verified cryptography
+
+  labs:
+    title: "The R&D Labyrinth"
+    map_title: "From American Research Laboratories to Secure Systems"
+    description: >-
+      A career journey through Bell Labs / Lucent Technologies, HRL Laboratories, and
+      SRI International, connecting landmark laboratory inventions and people to the
+      computing, formal-methods, cryptography, privacy, and resilient-systems work that followed.
+    notes:
+      - kind: chronology
+        label: The route through the laboratories
+        text: >-
+          The visual route follows Karim's 2001 Bell Labs / Lucent internship, his 2010–2016
+          research period at HRL Laboratories, and his work at SRI International beginning in 2017.
+      - kind: relationship
+        label: Institutional history is not coauthorship
+        text: >-
+          Historical laboratory figures and direct institutional colleagues are shown as context,
+          not as coauthors. Peter G. Neumann is shown as a Bell Labs-to-SRI institutional and
+          intellectual bridge. Ashish Gehani, Hassen Saïdi, Linda Briesemeister, Tim McCarthy,
+          Tancrède Lepoint, and Gabriela F. Ciocarlie are separately marked as documented direct
+          collaborators; co-inventorship is stated only where a joint patent is listed.
+    people:
+      - id: labs-shannon
+        label: Claude Shannon
+        relationship: influence
+        status: Bell Labs · information theory · no collaboration
+        note: >-
+          Shannon developed information theory at Bell Labs, establishing foundations for digital
+          communication, coding, compression, cryptography, and the internet.
+      - id: labs-thompson-ritchie
+        label: Ken Thompson & Dennis Ritchie
+        relationship: influence
+        status: Bell Labs · UNIX and C · no collaboration
+        note: >-
+          Thompson and Ritchie created UNIX at Bell Labs; Ritchie's C language and their systems
+          work became enduring foundations for networked and secure computing.
+      - id: labs-maiman
+        label: Theodore H. Maiman
+        relationship: influence
+        status: Hughes Research Laboratories · first working laser · no collaboration
+        note: >-
+          Maiman and his Hughes Research Laboratories team demonstrated the first working ruby
+          laser in Malibu on May 16, 1960, an emblem of experimental industrial research.
+      - id: labs-engelbart
+        label: Douglas Engelbart
+        relationship: influence
+        status: SRI · interactive computing and ARPANET · no collaboration
+        note: >-
+          Engelbart led SRI's Augmentation Research Center, developed NLS and the computer mouse,
+          presented the Mother of All Demos, and hosted ARPANET's second node.
+      - id: labs-feinler
+        label: Elizabeth “Jake” Feinler
+        relationship: influence
+        status: SRI · ARPANET Network Information Center · no collaboration
+        note: >-
+          Feinler led the SRI Network Information Center that organized ARPANET host information,
+          directories, and RFC distribution as the network grew toward the modern internet.
+      - id: labs-neumann
+        label: Peter G. Neumann
+        relationship: influence
+        status: Bell Labs → SRI CSL · trustworthy systems and risks · no coauthorship claim
+        note: >-
+          Neumann spent a decade at Bell Labs, including work on the Multics file system, before
+          joining SRI's Computer Science Laboratory in 1971. His research on security, reliability,
+          survivability, high assurance, formal methods, and computer-related risks bridges two
+          stops in the laboratory journey.
+      - id: labs-shankar
+        label: Natarajan Shankar
+        relationship: influence
+        status: Direct SRI colleague · PVS · not a coauthorship claim
+        note: >-
+          Shankar created the influential Prototype Verification System at SRI and developed
+          machine-assisted methods spanning logic, programming, verification, and certification.
+      - id: labs-lincoln
+        label: Patrick Lincoln
+        relationship: influence
+        status: Direct SRI colleague · formal methods and security · not a coauthorship claim
+        note: >-
+          Lincoln led SRI research across formal methods, computer security and privacy,
+          fault tolerance, distributed systems, and scalable survivable systems.
+      - id: labs-dutertre
+        label: Bruno Dutertre
+        relationship: influence
+        status: Direct SRI colleague · Yices and SMT solving · not a coauthorship claim
+        note: >-
+          Dutertre developed SRI's Yices SMT solver, connecting efficient decision procedures
+          with automated theorem proving and hardware and software verification.
+      - id: labs-lepoint
+        label: Tancrède Lepoint
+        relationship: collaborator
+        catalog_author_groups:
+          - [Tancrede Lepoint, Tancrède Lepoint]
+        status: Direct collaborator · 6 publications and 4 granted joint patents mapped
+        note: >-
+          A direct coauthor on six papers spanning proactive secret sharing and MPC,
+          cryptographically enforced access control, secure biometrics, and blockchain cyber
+          insurance; also a co-inventor on four granted U.S. patents listed in this map. Broader
+          lineage links record his public-key, FHE, lattice, and post-quantum work without treating
+          those broader topics as additional coauthorship.
+      - id: labs-gabriela-ciocarlie
+        label: Gabriela F. Ciocarlie
+        relationship: collaborator
+        catalog_authors: [Gabriela F. Ciocarlie]
+        status: Direct SRI collaborator and co-inventor · blockchain security and privacy
+        note: >-
+          A direct coauthor on BlockCIS and co-inventor on Smart Privacy and Controlled Exposure on
+          Blockchains, connecting SRI work in privacy, distributed ledgers, and secure systems.
+      - id: labs-ashish-gehani
+        label: Ashish Gehani
+        relationship: collaborator
+        catalog_authors: [Ashish Gehani]
+        status: Direct SRI collaborator · 1 catalog publication mapped · data provenance and cyber analytics
+        note: >-
+          A direct coauthor on the longitudinal Bitcoin-misuse analysis. Broader lineage records
+          Gehani's SRI work on data provenance, digital forensics, trustworthy computing, software
+          debloating, and cyber-threat detection without implying additional joint publications.
+      - id: labs-hassen-saidi
+        label: Hassen Saïdi
+        relationship: collaborator
+        catalog_authors: [Hassen Saïdi]
+        status: Direct SRI collaborator · 1 publication and 1 granted joint patent mapped
+        note: >-
+          A direct coauthor and co-inventor on automated analysis and augmentation of legacy
+          cryptographic executables. His broader SRI work spans computer-aided verification,
+          formal methods, static analysis, malware analysis, and reverse engineering.
+      - id: labs-linda-briesemeister
+        label: Linda Briesemeister
+        relationship: collaborator
+        catalog_authors: [Linda Briesemeister]
+        status: Direct SRI collaborator · 1 catalog publication mapped
+        note: >-
+          A direct coauthor on the later PRISM intrusion-resilient messaging overlay. Her broader
+          SRI work includes distributed algorithms, mobile and ad hoc networks, malicious-code
+          propagation, and collaborative network defense.
+      - id: labs-tim-mccarthy
+        label: Tim McCarthy
+        relationship: collaborator
+        catalog_authors: [Tim McCarthy]
+        status: Direct SRI collaborator · 1 catalog publication mapped
+        note: >-
+          A direct coauthor on the later PRISM privacy-preserving, intrusion-resilient secure
+          multiparty-computation-based messaging overlay.
+    ideas:
+      - id: labs-industrial-research
+        label: Mission-driven industrial research and invention
+      - id: labs-digital-foundations
+        label: Information theory, UNIX, and digital systems
+      - id: labs-photonic-invention
+        label: Laser physics and experimental invention
+      - id: labs-interactive-internet
+        label: Interactive computing, ARPANET, and the internet
+      - id: labs-formal-methods
+        label: Formal methods, PVS, and SMT solving
+      - id: labs-public-key-pq-fhe
+        label: Public-key, FHE, lattice, and post-quantum cryptography
+      - id: labs-provenance-security
+        label: Data provenance, blockchain analysis, and cyber forensics
+      - id: labs-cryptography-privacy
+        label: Cryptography, privacy, and resilient secure systems
+    papers:
+      - id: labs-paper-19
+        publication_id: 19
+        label: "#19 · Secure pattern matching"
+        title: "5PM: Secure Pattern Matching"
+        url: /knowledge/papers/paper-19/
+        note: "Representative HRL-era work on privacy-preserving search and cryptographic systems."
+      - id: labs-paper-23
+        publication_id: 23
+        label: "#23 · Resilient cloud infrastructure"
+        title: "An Architecture for a Resilient Cloud Computing Infrastructure"
+        url: /knowledge/papers/paper-23/
+        note: "Representative HRL-era work on self-healing, intrusion-resilient cloud systems."
+      - id: labs-paper-49
+        publication_id: 49
+        label: "#49 · Longitudinal Bitcoin-misuse analysis"
+        title: "Longitudinal Analysis of Misuse of Bitcoin"
+        url: /knowledge/papers/paper-49/
+        note: "Direct joint work with Ashish Gehani on blockchain measurement and dark-web misuse."
+      - id: labs-paper-50
+        publication_id: 50
+        label: "#50 · Verified remote attestation"
+        title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
+        url: /knowledge/papers/paper-50/
+        note: "Representative SRI work combining embedded security and formal verification."
+      - id: labs-paper-51
+        publication_id: 51
+        label: "#51 · Machine-checked MPC"
+        title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
+        url: /knowledge/papers/paper-51/
+        note: "Representative SRI work on machine-checked cryptographic protocols and executable code."
+      - id: labs-paper-53
+        publication_id: 53
+        label: "#53 · Automated legacy-cryptography augmentation"
+        title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
+        url: /knowledge/papers/paper-53/
+        note: "Direct joint work with Hassen Saïdi on finding and replacing weak cryptography in binaries."
+      - id: labs-paper-40
+        publication_id: 40
+        label: "#40 · Blockchain cyber insurance"
+        title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
+        url: /knowledge/papers/paper-40/
+        note: "Joint SRI work with Tancrède Lepoint and Gabriela F. Ciocarlie."
+      - id: labs-paper-43
+        publication_id: 43
+        label: "#43 · Secure biometric re-enrollment"
+        title: "Secure Non-Interactive User Re-Enrollment in Biometrics-Based Identification and Authentication Systems"
+        url: /knowledge/papers/paper-43/
+        note: "Joint work with Tancrède Lepoint on secure biometric re-enrollment."
+      - id: labs-paper-48
+        publication_id: 48
+        label: "#48 · Large-scale secure biometric re-enrollment"
+        title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
+        url: /knowledge/papers/paper-48/
+        note: "Journal-version joint work with Tancrède Lepoint on secure biometric re-enrollment."
+      - id: labs-paper-52
+        publication_id: 52
+        label: "#52 · Dynamic proactive secret sharing"
+        title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
+        url: /knowledge/papers/paper-52/
+        note: "Joint work with Tancrède Lepoint on resilient cryptographic sharing."
+      - id: labs-paper-61
+        publication_id: 61
+        label: "#61 · Dynamic proactive MPC"
+        title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
+        url: /knowledge/papers/paper-61/
+        note: "Joint work with Tancrède Lepoint extending proactive security to computation."
+      - id: labs-paper-62
+        publication_id: 62
+        label: "#62 · Cryptographic access control"
+        title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
+        url: /knowledge/papers/paper-62/
+        note: "Joint work with Tancrède Lepoint on deployable cryptographic access control."
+      - id: labs-paper-76
+        publication_id: 76
+        label: "#76 · Intrusion-resilient private messaging"
+        title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+        url: /knowledge/papers/paper-76/
+        note: "Ongoing direct joint work with Linda Briesemeister and Tim McCarthy."
+    patents:
+      - id: labs-patent-24
+        patent_number: US10867053
+        label: "Patent #24 · Secure-computation software packages"
+        title: "Creating Software Packages for Performing Secure Computations"
+        url: https://patents.google.com/patent/US10867053B2/en
+        note: "Granted U.S. patent jointly invented by Karim Eldefrawy and Tancrède Lepoint."
+      - id: labs-patent-26
+        patent_number: US11023569
+        label: "Patent #26 · Functional-encryption biometric re-enrollment"
+        title: "Secure Re-Enrollment of Biometric Templates Using Functional Encryption"
+        url: https://patents.google.com/patent/US11023569B2/en
+        note: "Granted U.S. patent jointly invented by Karim Eldefrawy and Tancrède Lepoint."
+      - id: labs-patent-28
+        patent_number: US11507676
+        label: "Patent #28 · Selective encrypted data sharing"
+        title: "Selectively Sharing Data in Unstructured Data Containers"
+        url: https://patents.google.com/patent/US11507676B2/en
+        note: "Granted U.S. patent jointly invented by Karim Eldefrawy and Tancrède Lepoint."
+      - id: labs-patent-29
+        patent_number: US11741247
+        label: "Patent #29 · Smart blockchain privacy"
+        title: "Smart Privacy and Controlled Exposure on Blockchains"
+        url: https://patents.google.com/patent/US11741247B2/en
+        note: >-
+          Granted U.S. patent jointly invented by Gabriela F. Ciocarlie, Karim Eldefrawy,
+          and Tancrède Lepoint.
+      - id: labs-patent-31
+        patent_number: US11934538
+        label: "Patent #31 · Cryptographic-executable augmentation"
+        title: "Augmenting Executables Having Cryptographic Primitives"
+        url: https://patents.google.com/patent/US11934538B2/en
+        note: >-
+          Granted U.S. patent jointly invented by Karim Eldefrawy, Hassen Saïdi,
+          Michael E. Locasto, and Norrathep Rattanavipanon.
+    links:
+      - from: labs-shannon
+        to: labs-digital-foundations
+        type: direct
+        label: information theory and the digital age
+      - from: labs-thompson-ritchie
+        to: labs-digital-foundations
+        type: direct
+        label: UNIX, C, and systems foundations
+      - from: labs-maiman
+        to: labs-photonic-invention
+        type: direct
+        label: first working ruby laser
+      - from: labs-engelbart
+        to: labs-interactive-internet
+        type: direct
+        label: NLS, interactive computing, and ARPANET's second node
+      - from: labs-feinler
+        to: labs-interactive-internet
+        type: direct
+        label: ARPANET Network Information Center
+      - from: labs-neumann
+        to: labs-digital-foundations
+        type: direct
+        label: Multics file-system and access-control foundations at Bell Labs
+      - from: labs-neumann
+        to: labs-formal-methods
+        type: direct
+        label: provably secure and high-assurance systems at SRI
+      - from: labs-neumann
+        to: labs-cryptography-privacy
+        type: lineage
+        label: security, survivability, privacy, cryptographic policy, and risk
+      - from: labs-shankar
+        to: labs-formal-methods
+        type: direct
+        label: PVS and machine-assisted verification
+      - from: labs-lincoln
+        to: labs-formal-methods
+        type: direct
+        label: formal analysis of systems and protocols
+      - from: labs-lincoln
+        to: labs-cryptography-privacy
+        type: lineage
+        label: institutional security, privacy, and fault-tolerance program
+      - from: labs-dutertre
+        to: labs-formal-methods
+        type: direct
+        label: Yices and satisfiability modulo theories
+      - from: labs-lepoint
+        to: labs-public-key-pq-fhe
+        type: lineage
+        label: broader public-key, FHE, lattice, and post-quantum research
+      - from: labs-gabriela-ciocarlie
+        to: labs-cryptography-privacy
+        type: lineage
+        label: broader SRI blockchain-security and privacy collaboration
+      - from: labs-ashish-gehani
+        to: labs-provenance-security
+        type: lineage
+        label: broader data-provenance, digital-forensics, and trustworthy-computing research
+      - from: labs-hassen-saidi
+        to: labs-formal-methods
+        type: lineage
+        label: broader computer-aided verification, static analysis, and secure-software research
+      - from: labs-linda-briesemeister
+        to: labs-interactive-internet
+        type: lineage
+        label: broader distributed-algorithms, mobile-networking, and network-defense research
+      - from: labs-industrial-research
+        to: labs-digital-foundations
+        type: lineage
+        label: Bell Labs tradition of foundational invention
+      - from: labs-industrial-research
+        to: labs-photonic-invention
+        type: lineage
+        label: Hughes and HRL experimental research tradition
+      - from: labs-industrial-research
+        to: labs-interactive-internet
+        type: lineage
+        label: SRI's human-centered computing and networking tradition
+      - from: labs-digital-foundations
+        to: labs-cryptography-privacy
+        type: lineage
+        label: digital communication and systems foundations
+      - from: labs-interactive-internet
+        to: labs-cryptography-privacy
+        type: lineage
+        label: connected systems create new security and privacy problems
+      - from: labs-formal-methods
+        to: labs-cryptography-privacy
+        type: direct
+        label: machine-assisted assurance for security protocols and systems
+      - from: labs-public-key-pq-fhe
+        to: labs-cryptography-privacy
+        type: lineage
+        label: broader cryptographic expertise surrounding the joint SRI work
+      - from: labs-provenance-security
+        to: labs-cryptography-privacy
+        type: lineage
+        label: provenance and behavioral analysis support trustworthy secure systems
+      - from: labs-cryptography-privacy
+        to: labs-paper-19
+        type: direct
+        label: privacy-preserving secure pattern matching
+      - from: labs-cryptography-privacy
+        to: labs-paper-23
+        type: direct
+        label: resilient cloud infrastructure
+      - from: labs-cryptography-privacy
+        to: labs-paper-40
+        type: direct
+        label: blockchain cyber insurance
+      - from: labs-cryptography-privacy
+        to: labs-paper-43
+        type: direct
+        label: secure biometric re-enrollment
+      - from: labs-cryptography-privacy
+        to: labs-paper-48
+        type: direct
+        label: large-scale secure biometric re-enrollment
+      - from: labs-provenance-security
+        to: labs-paper-49
+        type: direct
+        label: Bitcoin, dark-web, and transaction-graph measurement
+      - from: labs-formal-methods
+        to: labs-paper-50
+        type: direct
+        label: formally verified attestation architecture
+      - from: labs-formal-methods
+        to: labs-paper-51
+        type: direct
+        label: machine-checked secure computation
+      - from: labs-formal-methods
+        to: labs-paper-53
+        type: direct
+        label: automated analysis and rewriting of legacy cryptographic executables
+      - from: labs-cryptography-privacy
+        to: labs-paper-52
+        type: direct
+        label: dynamic proactive secret sharing
+      - from: labs-cryptography-privacy
+        to: labs-paper-61
+        type: direct
+        label: dynamic proactive secure computation
+      - from: labs-cryptography-privacy
+        to: labs-paper-62
+        type: direct
+        label: deployable cryptographic access control
+      - from: labs-cryptography-privacy
+        to: labs-paper-76
+        type: direct
+        label: privacy-preserving intrusion-resilient messaging
+      - from: labs-cryptography-privacy
+        to: labs-patent-24
+        type: direct
+        label: packaged secure computation
+      - from: labs-public-key-pq-fhe
+        to: labs-patent-26
+        type: direct
+        label: functional encryption for biometric re-enrollment
+      - from: labs-public-key-pq-fhe
+        to: labs-patent-28
+        type: direct
+        label: attribute-based selective encryption
+      - from: labs-cryptography-privacy
+        to: labs-patent-29
+        type: direct
+        label: controlled blockchain exposure
+      - from: labs-formal-methods
+        to: labs-patent-31
+        type: direct
+        label: executable analysis and cryptographic-primitive augmentation
+      - from: labs-lepoint
+        to: labs-patent-24
+        type: direct
+        label: direct co-inventorship
+      - from: labs-lepoint
+        to: labs-patent-26
+        type: direct
+        label: direct co-inventorship
+      - from: labs-lepoint
+        to: labs-patent-28
+        type: direct
+        label: direct co-inventorship
+      - from: labs-lepoint
+        to: labs-patent-29
+        type: direct
+        label: direct co-inventorship
+      - from: labs-gabriela-ciocarlie
+        to: labs-patent-29
+        type: direct
+        label: direct co-inventorship
+      - from: labs-ashish-gehani
+        to: labs-paper-49
+        type: direct
+        label: direct coauthorship
+      - from: labs-hassen-saidi
+        to: labs-paper-53
+        type: direct
+        label: direct coauthorship
+      - from: labs-hassen-saidi
+        to: labs-patent-31
+        type: direct
+        label: direct co-inventorship
+      - from: labs-linda-briesemeister
+        to: labs-paper-76
+        type: direct
+        label: direct coauthorship
+      - from: labs-tim-mccarthy
+        to: labs-paper-76
+        type: direct
+        label: direct coauthorship
 
   cipher:
     title: "The Great Cipher Relay"
@@ -1111,6 +1767,25 @@ scenes:
         relationship: collaborator
         status: Direct collaborator · public-key encryption
         note: "Coauthor on registration-based encryption."
+      - id: cipher-tancrede-lepoint
+        label: Tancrède Lepoint
+        relationship: collaborator
+        catalog_author_groups:
+          - [Tancrede Lepoint, Tancrède Lepoint]
+        status: Direct collaborator · 6 publications and 4 granted joint patents mapped
+        note: >-
+          Direct coauthor across proactive secret sharing and MPC, secure biometric re-enrollment,
+          cryptographic access control, and blockchain cyber insurance. Dashed links to public-key,
+          FHE, lattice, and post-quantum cryptography record his broader research expertise rather
+          than claiming additional joint papers in those areas.
+      - id: cipher-gabriela-ciocarlie
+        label: Gabriela F. Ciocarlie
+        relationship: collaborator
+        catalog_authors: [Gabriela F. Ciocarlie]
+        status: Direct SRI collaborator and co-inventor · blockchain security and privacy
+        note: >-
+          Direct coauthor on BlockCIS and co-inventor on Smart Privacy and Controlled Exposure on
+          Blockchains. Broader blockchain-security and privacy connections are marked as lineage.
       - id: cipher-ben-terner
         label: Benjamin Terner
         relationship: collaborator
@@ -1171,11 +1846,15 @@ scenes:
         label: Probabilistic encryption and zero knowledge
       - id: cipher-mpc
         label: Secure multiparty computation
+      - id: cipher-post-quantum
+        label: Post-quantum and information-theoretic security
       - id: cipher-group-messaging
         label: Concurrent group messaging and key evolution
         note: "Dynamic group-key evolution with forward secrecy and post-compromise security under concurrent updates."
       - id: cipher-anonymity
         label: Anonymous communications, traffic analysis, and metadata privacy
+      - id: cipher-blockchain-privacy
+        label: Blockchain privacy and controlled exposure
       - id: cipher-byzantine
         label: Byzantine agreement and resilient distributed systems
       - id: cipher-ecc
@@ -1268,6 +1947,30 @@ scenes:
         title: "How Byzantine Is a Send Corruption?"
         url: /knowledge/papers/paper-63/
         note: "Refines Byzantine communication faults by separating send-side and receive-side corruption."
+      - id: cipher-paper-40
+        publication_id: 40
+        label: "#40 · Blockchain cyber insurance"
+        title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
+        url: /knowledge/papers/paper-40/
+        note: "Direct joint work with Tancrède Lepoint and Gabriela F. Ciocarlie."
+      - id: cipher-paper-43
+        publication_id: 43
+        label: "#43 · Secure biometric re-enrollment"
+        title: "Secure Non-Interactive User Re-Enrollment in Biometrics-Based Identification and Authentication Systems"
+        url: /knowledge/papers/paper-43/
+        note: "Direct joint work with Tancrède Lepoint using secure computation for biometric re-enrollment."
+      - id: cipher-paper-48
+        publication_id: 48
+        label: "#48 · Large-scale secure biometric re-enrollment"
+        title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
+        url: /knowledge/papers/paper-48/
+        note: "Journal-version direct joint work with Tancrède Lepoint."
+      - id: cipher-paper-61
+        publication_id: 61
+        label: "#61 · Dynamic proactive MPC"
+        title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
+        url: /knowledge/papers/paper-61/
+        note: "Direct joint work with Tancrède Lepoint on proactive secure computation."
     patents:
       - id: cipher-patent-11
         patent_number: US9489522
@@ -1275,6 +1978,32 @@ scenes:
         title: "Method for Secure and Resilient Distributed Generation of Elliptic Curve Digital Signature Algorithm (ECDSA) Based Digital Signatures with Proactive Security"
         url: /patents.html
         note: "The strongest locally documented direct connection to elliptic-curve cryptography."
+      - id: cipher-patent-24
+        patent_number: US10867053
+        label: "Patent #24 · Secure-computation software packages"
+        title: "Creating Software Packages for Performing Secure Computations"
+        url: https://patents.google.com/patent/US10867053B2/en
+        note: "Granted U.S. patent jointly invented by Karim Eldefrawy and Tancrède Lepoint."
+      - id: cipher-patent-26
+        patent_number: US11023569
+        label: "Patent #26 · Functional-encryption biometric re-enrollment"
+        title: "Secure Re-Enrollment of Biometric Templates Using Functional Encryption"
+        url: https://patents.google.com/patent/US11023569B2/en
+        note: "Granted U.S. patent jointly invented by Karim Eldefrawy and Tancrède Lepoint."
+      - id: cipher-patent-28
+        patent_number: US11507676
+        label: "Patent #28 · Selective encrypted data sharing"
+        title: "Selectively Sharing Data in Unstructured Data Containers"
+        url: https://patents.google.com/patent/US11507676B2/en
+        note: "Granted U.S. patent jointly invented by Karim Eldefrawy and Tancrède Lepoint."
+      - id: cipher-patent-29
+        patent_number: US11741247
+        label: "Patent #29 · Smart blockchain privacy"
+        title: "Smart Privacy and Controlled Exposure on Blockchains"
+        url: https://patents.google.com/patent/US11741247B2/en
+        note: >-
+          Granted U.S. patent jointly invented by Gabriela F. Ciocarlie, Karim Eldefrawy,
+          and Tancrède Lepoint.
     links:
       - from: cipher-turing
         to: cipher-cryptanalysis
@@ -1332,6 +2061,22 @@ scenes:
         to: cipher-paper-56
         type: direct
         label: direct coauthorship on registration-based encryption
+      - from: cipher-tancrede-lepoint
+        to: cipher-public-key
+        type: lineage
+        label: broader attribute-based and public-key cryptography expertise
+      - from: cipher-tancrede-lepoint
+        to: cipher-fhe
+        type: lineage
+        label: broader fully homomorphic-encryption expertise
+      - from: cipher-tancrede-lepoint
+        to: cipher-post-quantum
+        type: lineage
+        label: broader lattice and post-quantum cryptography expertise
+      - from: cipher-gabriela-ciocarlie
+        to: cipher-blockchain-privacy
+        type: lineage
+        label: broader blockchain-security and privacy collaboration
       - from: cipher-ben-terner
         to: cipher-timed-release
         type: direct
@@ -1529,6 +2274,46 @@ scenes:
         to: cipher-paper-75
         type: direct
         label: maliciously secure decomposable MPC
+      - from: cipher-mpc
+        to: cipher-post-quantum
+        type: lineage
+        label: information-theoretic and statistical MPC remain quantum-resistant
+      - from: cipher-fhe
+        to: cipher-post-quantum
+        type: lineage
+        label: lattice-based FHE contributes to post-quantum cryptography
+      - from: cipher-mpc
+        to: cipher-paper-43
+        type: direct
+        label: secure-computation-based biometric re-enrollment
+      - from: cipher-mpc
+        to: cipher-paper-48
+        type: direct
+        label: large-scale secure biometric re-enrollment
+      - from: cipher-mpc
+        to: science-cipher-paper-52
+        type: direct
+        label: proactive secret sharing for dynamic groups
+      - from: cipher-mpc
+        to: cipher-paper-61
+        type: direct
+        label: proactive MPC for dynamic groups
+      - from: cipher-post-quantum
+        to: science-cipher-paper-52
+        type: uses
+        label: information-theoretic security remains quantum-resistant
+      - from: cipher-post-quantum
+        to: cipher-paper-61
+        type: uses
+        label: statistical and information-theoretic components remain quantum-resistant
+      - from: cipher-public-key
+        to: science-cipher-paper-62
+        type: direct
+        label: ciphertext-policy attribute-based encryption
+      - from: cipher-blockchain-privacy
+        to: cipher-paper-40
+        type: direct
+        label: blockchain-based cyber insurance and controlled exposure
       - from: cipher-group-messaging
         to: cipher-paper-69
         type: direct
@@ -1561,3 +2346,39 @@ scenes:
         to: cipher-paper-65
         type: direct
         label: FHE scheme-switching barriers
+      - from: cipher-mpc
+        to: cipher-patent-24
+        type: direct
+        label: packaged secure computation
+      - from: cipher-public-key
+        to: cipher-patent-26
+        type: direct
+        label: functional encryption for biometric re-enrollment
+      - from: cipher-public-key
+        to: cipher-patent-28
+        type: direct
+        label: attribute-based selective encryption
+      - from: cipher-blockchain-privacy
+        to: cipher-patent-29
+        type: direct
+        label: controlled blockchain exposure
+      - from: cipher-tancrede-lepoint
+        to: cipher-patent-24
+        type: direct
+        label: direct co-inventorship
+      - from: cipher-tancrede-lepoint
+        to: cipher-patent-26
+        type: direct
+        label: direct co-inventorship
+      - from: cipher-tancrede-lepoint
+        to: cipher-patent-28
+        type: direct
+        label: direct co-inventorship
+      - from: cipher-tancrede-lepoint
+        to: cipher-patent-29
+        type: direct
+        label: direct co-inventorship
+      - from: cipher-gabriela-ciocarlie
+        to: cipher-patent-29
+        type: direct
+        label: direct co-inventorship

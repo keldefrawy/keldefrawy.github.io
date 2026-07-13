@@ -25,6 +25,10 @@
     machines: {
       playing: "The reasoning machine is checking the specification.",
       finished: "The checker has produced a model-bounded result."
+    },
+    labs: {
+      playing: "The journey through the research laboratories is underway.",
+      finished: "The route has reached its next invention."
     }
   };
 
@@ -556,6 +560,12 @@
       return;
     }
 
+    var labsScene = wrapper.querySelector('[data-curiosity-scene="labs"]');
+
+    if (labsScene && wrapper.firstElementChild !== labsScene) {
+      wrapper.insertBefore(labsScene, wrapper.firstElementChild);
+    }
+
     var scenes = toArray(wrapper.querySelectorAll("[data-curiosity-scene]"));
     var timingProfiles = sidebarTimingProfiles(scenes.length);
 
@@ -592,6 +602,7 @@
     var modalScene = dialog.querySelector("[data-curiosity-dialog-scene]");
     var modalImage = dialog.querySelector("[data-curiosity-dialog-image]");
     var modalMachine = dialog.querySelector("[data-curiosity-dialog-machine]");
+    var modalLabs = dialog.querySelector("[data-curiosity-dialog-labs]");
     var modalStatus = dialog.querySelector("[data-curiosity-dialog-status]");
     var modalTitle = dialog.querySelector("[data-curiosity-dialog-title]");
     var modalTagline = dialog.querySelector("[data-curiosity-dialog-tagline]");
@@ -1185,6 +1196,8 @@
     function populateDialog(scene, sceneName) {
       var sourceImage = scene.querySelector("[data-curiosity-frames]");
       var sourceMachine = scene.querySelector("[data-curiosity-machine-visual]");
+      var sourceLabs = scene.querySelector("[data-curiosity-lab-visual]");
+      var sourceCustomVisual = sourceMachine || sourceLabs;
       var sourceFrames = sourceImage ? sourceImage.getAttribute("data-curiosity-frames") || "" : "";
       var firstFrame = sourceFrames.split("|").map(function (value) {
         return value.trim();
@@ -1202,11 +1215,19 @@
       if (modalStatus) {
         modalStatus.textContent = "";
       }
-      modalImage.hidden = Boolean(sourceMachine);
+      modalImage.hidden = Boolean(sourceCustomVisual);
       if (modalMachine) {
         modalMachine.hidden = !sourceMachine;
       }
-      if (sourceMachine) {
+      if (modalLabs) {
+        modalLabs.hidden = !sourceLabs;
+        if (sourceLabs) {
+          modalLabs.innerHTML = sourceLabs.innerHTML;
+        } else {
+          modalLabs.textContent = "";
+        }
+      }
+      if (sourceCustomVisual) {
         modalImage.removeAttribute("src");
         modalImage.setAttribute("data-curiosity-frames", "");
         modalImage.setAttribute("alt", "");
@@ -1221,7 +1242,7 @@
       renderGraph(sceneName);
       modalPlayer = createFramePlayer({
         root: modalScene,
-        image: sourceMachine ? null : modalImage,
+        image: sourceCustomVisual ? null : modalImage,
         status: modalStatus,
         sceneName: sceneName
       });

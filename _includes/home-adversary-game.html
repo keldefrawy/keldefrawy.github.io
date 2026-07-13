@@ -115,8 +115,8 @@
               </p>
               <h2 id="adversary-game-title">OUTREFRESH THE MOBILE ADVERSARY</h2>
               <p id="adversary-game-description">
-                LOCK A RANDOMIZED REJUVENATION SCHEDULE BEFORE THE VIRUS APPEARS. TOO SLOW: IT OBTAINS FOUR
-                COMPATIBLE SHARES. TOO AGGRESSIVE: RECOVERY OVERLAP BREAKS QUORUM.
+                GOAL // KEEP EVERY EPOCH BELOW THE SELECTED SHARE THRESHOLD. A REFRESH CHANGES EVERY SHARE,
+                BUT CORRUPTED PARTIES LEAK THE NEW COLOR IMMEDIATELY; ONLY REJUVENATION REMOVES THE VIRUS.
               </p>
               <p class="adversary-game__date">
                 <time datetime="2026-07-12">CONCEIVED + IMPLEMENTED // JULY 12, 2026</time>
@@ -146,7 +146,7 @@
               </label>
               <label class="adversary-game__schedule-control" for="adversary-game-batch">
                 <span class="adversary-game__schedule-label">
-                  <span>PARTIES PER DRAW</span>
+                  <span>PARTIES PER REFRESH</span>
                   <output for="adversary-game-batch" data-game-batch-value aria-hidden="true">2 PARTIES</output>
                 </span>
                 <input
@@ -154,69 +154,119 @@
                   data-game-batch
                   type="range"
                   min="1"
-                  max="4"
+                  max="2"
                   step="1"
                   value="2"
                   aria-valuetext="2 parties"
                 >
                 <span class="adversary-game__range-scale" aria-hidden="true">
-                  <span>1</span><span>2</span><span>3</span><span>4</span>
+                  <span>1</span><span>2</span>
+                </span>
+              </label>
+              <label class="adversary-game__schedule-control" for="adversary-game-degree">
+                <span class="adversary-game__schedule-label">
+                  <span>POLYNOMIAL DEGREE</span>
+                  <output for="adversary-game-degree" data-game-degree-value aria-hidden="true">3 → 4 SHARES</output>
+                </span>
+                <input
+                  id="adversary-game-degree"
+                  data-game-degree
+                  type="range"
+                  min="2"
+                  max="3"
+                  step="1"
+                  value="3"
+                  aria-valuetext="Degree 3, four shares required"
+                >
+                <span class="adversary-game__range-scale" aria-hidden="true">
+                  <span>2 → 3</span><span>3 → 4</span>
+                </span>
+              </label>
+              <label class="adversary-game__schedule-control" for="adversary-game-duration">
+                <span class="adversary-game__schedule-label">
+                  <span>SURVIVAL PERIOD</span>
+                  <output for="adversary-game-duration" data-game-duration-value aria-hidden="true">1 MINUTE</output>
+                </span>
+                <input
+                  id="adversary-game-duration"
+                  data-game-duration
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="1"
+                  value="0"
+                  aria-valuetext="1 minute"
+                >
+                <span class="adversary-game__range-scale" aria-hidden="true">
+                  <span>1 MIN</span><span>2 MIN</span>
                 </span>
               </label>
               <p class="adversary-game__schedule-note">
-                RANDOM DRAW // NO DUPLICATES // RECOVERY MAY OVERLAP THE NEXT PULSE
+                ATTACK PACE IS DRAWN AT RESET // +6% EVERY 15S // SPORADIC BURSTS NEVER EXCEED +30%
               </p>
             </fieldset>
           </header>
 
           <p class="adversary-game__forecast" data-game-forecast aria-live="polite">
-            This schedule keeps five parties online during one repair round, with no planned overlap.
+            Two simultaneous recoveries leave at least four clean helpers while the adversary holds at most three parties.
           </p>
 
           <dl class="adversary-game__hud" aria-label="Game status">
             <div>
-              <dt>Time</dt>
-              <dd data-game-time>000.0</dd>
+              <dt>Time left</dt>
+              <dd data-game-time>01:00.0</dd>
             </div>
             <div>
-              <dt>Epoch</dt>
-              <dd data-game-epoch>01</dd>
+              <dt>Attack pace</dt>
+              <dd data-game-rate>0.20 / S</dd>
             </div>
             <div data-game-exposure-card>
               <dt>Current shares</dt>
               <dd data-game-exposure>0 / 4</dd>
             </div>
             <div data-game-online-card>
-              <dt>Online</dt>
-              <dd data-game-online>7 / 7</dd>
+              <dt>Clean helpers</dt>
+              <dd data-game-online>9 / 9</dd>
             </div>
           </dl>
 
           <div class="adversary-game__cabinet" data-game-board>
             <div class="adversary-game__marquee">
-              <strong>4-OF-7 PROACTIVE NETWORK</strong>
-              <span data-game-phase>NEXT DRAW 02.4 // SPEED 1.0x // SCORE 00000</span>
+              <strong data-game-network>4-OF-9 PROACTIVE NETWORK</strong>
+              <span data-game-phase>NEXT REFRESH 03.2 // RATE 0.20/S // SCORE 00000</span>
             </div>
 
-            <div class="adversary-game__screen">
-              <canvas
-                data-game-canvas
-                width="800"
-                height="380"
-                role="img"
-                aria-label="Seven connected parties are ready. The mobile adversary path is hidden until the schedule is committed."
-              >
-                A seven-party connected network game. Choose a rejuvenation schedule and start the defense.
-              </canvas>
-              <p class="sr-only" data-game-node-summary>
-                P1 through P7 are online; the adversary path is hidden.
-              </p>
-              <div class="adversary-game__screen-glare" aria-hidden="true"></div>
+            <div class="adversary-game__playfield">
+              <div class="adversary-game__screen">
+                <canvas
+                  data-game-canvas
+                  width="800"
+                  height="380"
+                  role="img"
+                  aria-label="Nine connected parties are ready. The mobile adversary path is hidden until the schedule is committed."
+                >
+                  A nine-party connected network game. Choose a rejuvenation schedule and start the defense.
+                </canvas>
+                <p class="sr-only" data-game-node-summary>
+                  P1 through P9 are online; the adversary path is hidden.
+                </p>
+                <div class="adversary-game__screen-glare" aria-hidden="true"></div>
+              </div>
+
+              <aside class="adversary-game__ledger" aria-labelledby="adversary-game-ledger-title">
+                <div class="adversary-game__ledger-header">
+                  <span id="adversary-game-ledger-title">ADVERSARY SHARES</span>
+                  <strong data-game-ledger-count>0 / 4</strong>
+                </div>
+                <p data-game-ledger-status>CURRENT EPOCH E01 // THE ADVERSARY NEEDS ONE MATCHING-COLOR SET</p>
+                <div class="adversary-game__ledger-epochs" data-game-ledger-epochs aria-live="polite"></div>
+                <p class="adversary-game__ledger-rule">COLORS FROM DIFFERENT EPOCHS NEVER COMBINE</p>
+              </aside>
             </div>
 
             <div class="adversary-game__legend" aria-hidden="true">
-              <span><i class="adversary-game__key adversary-game__key--party"></i> ONLINE</span>
-              <span><i class="adversary-game__key adversary-game__key--virus">V</i> VIRUS</span>
+              <span><i class="adversary-game__key adversary-game__key--party"></i> CURRENT SHARE</span>
+              <span><i class="adversary-game__key adversary-game__key--virus">V</i> CORRUPTED + CAPTURED</span>
               <span><i class="adversary-game__key adversary-game__key--reset"></i> REJUVENATING</span>
             </div>
 
@@ -240,6 +290,15 @@
                 RESET GAME
               </button>
               <button
+                class="adversary-game__purge"
+                type="button"
+                data-game-purge
+                aria-label="Use the one-time state-preserving purge to remove every infection and reshare"
+                disabled
+              >
+                PURGE ×1
+              </button>
+              <button
                 class="adversary-game__history-toggle"
                 type="button"
                 data-game-history-toggle
@@ -250,7 +309,7 @@
               </button>
             </div>
             <p id="adversary-game-controls-hint">
-              SCHEDULE LOCKS AT START // VIRUS DISPLAY IS PLAYBACK ONLY // RESET TO REPROGRAM
+              SCHEDULE LOCKS AT START // ONE STATE-PRESERVING PURGE PER RUN // RESET TO DRAW A NEW ATTACK RATE
             </p>
           </div>
 
@@ -270,8 +329,7 @@
 
             <div class="adversary-game__history-legend" aria-label="History colors">
               <span><i data-history-state="healthy" aria-hidden="true"></i> HEALTHY</span>
-              <span><i data-history-state="compromised" aria-hidden="true"></i> COMPROMISED / SHARE OBTAINED</span>
-              <span><i data-history-state="active" aria-hidden="true"></i> VIRUS PRESENT</span>
+              <span><i data-history-state="compromised" aria-hidden="true"></i> CORRUPTED + SHARE CAPTURED</span>
               <span><i data-history-state="resetting" aria-hidden="true"></i> REJUVENATING</span>
             </div>
 
@@ -284,6 +342,8 @@
                 <span>P5</span>
                 <span>P6</span>
                 <span>P7</span>
+                <span>P8</span>
+                <span>P9</span>
               </div>
               <div class="adversary-game__history-viewport" data-game-history-viewport>
                 <div
@@ -306,16 +366,22 @@
           <details class="adversary-game__rules">
             <summary>HOW THE TOY PROTOCOL WORKS</summary>
             <p>
-              <strong>This is an illustrative hybrid of proactive share refresh and randomized proactive recovery,
-              not a protocol simulator.</strong> The mobile adversary hops only along network links and retains every
-              distinct current-epoch share it reads. Four compatible shares reveal this toy secret. At each committed
-              maintenance time, a fair random draw sends the chosen parties offline for recovery. If a quorum remains,
-              the toy abstracts a coordinated system-wide refresh at that pulse: the epoch advances, obsolete honest-party
-              state is assumed securely erased, and old exposures no longer combine with new ones. Selected parties rejoin
-              clean after recovery. If fewer than four parties remain online—even temporarily—the toy computation loses
-              availability. Taking too many parties down does not cryptographically destroy the secret; it removes the live
-              4-party quorum needed to use or continue it. Real PSS and proactive MPC protocols have separate privacy,
-              correctness, robustness, recovery, erasure, communication, and network assumptions.
+              <strong>This is an illustrative configurable-threshold Shamir-sharing game, not a protocol simulator.</strong>
+              Each epoch uses a fresh degree-two or degree-three polynomial with the same secret at zero, so the selected
+              degree plus one same-color shares reconstruct while one fewer reveal nothing in this toy model. A virus compromise immediately copies that
+              party's current share and persists until the party is rejuvenated. Rejuvenation removes the infection but
+              cannot erase a share already copied by the adversary. At each maintenance pulse, the selected parties begin
+              recovery and every share changes color; any party still corrupted immediately leaks its new share. Old-color
+              shares remain visible in the ledger but cannot combine with a new epoch. Two simultaneous recoveries leave
+              enough clean helpers for the selected threshold while the adversary remains below it. The displayed base
+              compromise rate rises six percent every fifteen seconds and receives occasional short bursts of at most
+              thirty percent. The rate is an upper-bound compromise-attempt pace; graph traversal can revisit an already
+              corrupted party. Once per run, the player may invoke an abstract state-preserving purge that removes every
+              infection and immediately reshares into a fresh epoch; previously copied colors remain archived. Survive
+              the selected one- or two-minute period to win. This models share leakage, not arbitrary Byzantine message
+              forgery: three of nine is exactly one third, not the stricter less-than-one-third active-fault regime.
+              Real proactive secret sharing
+              requires explicit channel, erasure, recovery, correctness, robustness, and adversary assumptions.
             </p>
           </details>
 

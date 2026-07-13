@@ -246,9 +246,94 @@
         data-curiosity-initial-panel="animation"
         aria-haspopup="dialog"
         aria-controls="curiosity-dialog"
-        aria-label="Open the reasoning-machine animation and reason about the problem"
+        aria-label="Open the reasoning-machine animation to automatically check and verify"
       >
-        Reason about the problem
+        Automatically check &amp; verify
+      </button>
+    </div>
+    <p
+      class="sidebar-curiosity__status"
+      data-curiosity-status
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></p>
+  </figure>
+
+  <figure
+    class="sidebar-curiosity__scene"
+    data-curiosity-scene="labs"
+    aria-labelledby="curiosity-labs-title"
+    aria-describedby="curiosity-labs-tagline curiosity-labs-caption"
+  >
+    <button
+      class="sidebar-curiosity__viewport sidebar-curiosity__viewport--labs sidebar-curiosity__open"
+      type="button"
+      data-curiosity-open
+      data-curiosity-initial-panel="connections"
+      aria-haspopup="dialog"
+      aria-controls="curiosity-dialog"
+      aria-label="Open The R and D Labyrinth animation and ideas map"
+    >
+      <span class="sidebar-curiosity__lab-visual" data-curiosity-lab-visual aria-hidden="true">
+        <span class="sidebar-curiosity__lab-route sidebar-curiosity__lab-route--top"></span>
+        <span class="sidebar-curiosity__lab-route sidebar-curiosity__lab-route--right"></span>
+        <span class="sidebar-curiosity__lab-route sidebar-curiosity__lab-route--bottom"></span>
+        <span class="sidebar-curiosity__lab-stop sidebar-curiosity__lab-stop--bell">
+          <span class="sidebar-curiosity__lab-symbol">01</span>
+          <strong>Bell Labs</strong>
+          <small>Lucent</small>
+        </span>
+        <span class="sidebar-curiosity__lab-stop sidebar-curiosity__lab-stop--hrl">
+          <span class="sidebar-curiosity__lab-symbol sidebar-curiosity__lab-symbol--ruby">◆</span>
+          <strong>HRL</strong>
+          <small>Laser</small>
+        </span>
+        <span class="sidebar-curiosity__lab-stop sidebar-curiosity__lab-stop--sri">
+          <span class="sidebar-curiosity__lab-symbol sidebar-curiosity__lab-symbol--network">●—●</span>
+          <strong>SRI</strong>
+          <small>Net · proof · crypto</small>
+        </span>
+        <span class="sidebar-curiosity__lab-stop sidebar-curiosity__lab-stop--karim">
+          <span class="sidebar-curiosity__lab-symbol">K</span>
+          <strong>Karim</strong>
+          <small>Secure systems</small>
+        </span>
+        <span class="sidebar-curiosity__lab-team sidebar-curiosity__lab-team--lineage">SRI CSL · NEUMANN · SHANKAR · LINCOLN · DUTERTRE</span>
+        <span class="sidebar-curiosity__lab-team sidebar-curiosity__lab-team--collaborators">COLLABORATORS · SAÏDI · GEHANI · BRIESEMEISTER · MCCARTHY · LEPOINT · CIOCARLIE</span>
+        <span class="sidebar-curiosity__lab-spark"></span>
+        <span class="sidebar-curiosity__lab-label">IDEA → EXPERIMENT → INVENTION</span>
+      </span>
+    </button>
+    <figcaption class="sidebar-curiosity__content">
+      <h2 class="sidebar-curiosity__title" id="curiosity-labs-title">The R&amp;D Labyrinth</h2>
+      <p class="sidebar-curiosity__tagline" id="curiosity-labs-tagline">Bell Labs / Lucent → HRL → SRI → Karim</p>
+      <p class="sidebar-curiosity__caption" id="curiosity-labs-caption">
+        From bits and lasers to verified, resilient systems—follow an idea through three storied American research laboratories.
+      </p>
+    </figcaption>
+    <div class="sidebar-curiosity__actions">
+      <button
+        class="sidebar-curiosity__ideas"
+        type="button"
+        data-curiosity-ideas
+        data-curiosity-initial-panel="connections"
+        aria-haspopup="dialog"
+        aria-controls="curiosity-dialog"
+        aria-label="Explore the ideas connected to The R and D Labyrinth"
+      >
+        Ideas map
+      </button>
+      <button
+        class="sidebar-curiosity__launch"
+        type="button"
+        data-curiosity-open
+        data-curiosity-initial-panel="animation"
+        aria-haspopup="dialog"
+        aria-controls="curiosity-dialog"
+        aria-label="Open The R and D Labyrinth and follow the invention journey"
+      >
+        Invent it!
       </button>
     </div>
     <p
@@ -306,6 +391,7 @@
             <span class="sidebar-curiosity__machine-result">✓</span>
             <span class="sidebar-curiosity__machine-label">SPEC → CHECK → PROOF</span>
           </div>
+          <div class="curiosity-dialog__lab-visual" data-curiosity-dialog-labs hidden aria-hidden="true"></div>
         </div>
         <p class="curiosity-dialog__caption" id="curiosity-dialog-caption" data-curiosity-dialog-caption></p>
         <div class="curiosity-dialog__actions">
