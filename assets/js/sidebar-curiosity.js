@@ -23,12 +23,12 @@
       finished: "The ciphertext has completed the great cipher relay."
     },
     machines: {
-      playing: "The reasoning machine is checking the specification.",
-      finished: "The checker has produced a model-bounded result."
+      playing: "The idea-light is moving from machine reasoning through Shakey and SRI formal verification.",
+      finished: "The verified assistant has carried the idea-light into Karim’s secure phone."
     },
     labs: {
-      playing: "The idea-light is traveling from Bell Labs through HRL and SRI.",
-      finished: "The idea-light is glowing in Karim’s work."
+      playing: "The idea-light is traveling from Lucent/Bell Labs through AT&T Shannon Labs, HRL, and SRI.",
+      finished: "The idea-light has reached SRI."
     }
   };
 
@@ -380,7 +380,7 @@
 
       if (sceneQueue.length === 0) {
         availableScenes = scenes.filter(function (scene) {
-          return Boolean(scene.curiosityPlayer);
+          return Boolean(scene.curiosityPlayer) && scene.getClientRects().length > 0;
         });
         sceneQueue = shuffled(availableScenes);
 
@@ -390,6 +390,10 @@
           sceneQueue[0] = sceneQueue[swapIndex];
           sceneQueue[swapIndex] = temporary;
         }
+      }
+
+      while (sceneQueue.length > 0 && sceneQueue[0].getClientRects().length === 0) {
+        sceneQueue.shift();
       }
 
       return sceneQueue.shift() || null;
@@ -561,6 +565,10 @@
     }
 
     var sceneOrder = ["labs", "cipher", "tour", "machines", "hotel"];
+    var moreToggle;
+    var secondaryScenes;
+    var scenes;
+    var timingProfiles;
 
     sceneOrder.forEach(function (sceneName) {
       var orderedScene = wrapper.querySelector('[data-curiosity-scene="' + sceneName + '"]');
@@ -570,13 +578,43 @@
       }
     });
 
-    var scenes = toArray(wrapper.querySelectorAll("[data-curiosity-scene]"));
-    var timingProfiles = sidebarTimingProfiles(scenes.length);
+    moreToggle = wrapper.querySelector("[data-curiosity-more]");
+    secondaryScenes = toArray(wrapper.querySelectorAll("[data-curiosity-secondary]"));
+    if (moreToggle) {
+      wrapper.appendChild(moreToggle);
+    }
+
+    scenes = toArray(wrapper.querySelectorAll("[data-curiosity-scene]"));
+    timingProfiles = sidebarTimingProfiles(scenes.length);
 
     scenes.forEach(function (scene, index) {
       initializeScene(scene, timingProfiles[index]);
     });
     wrapper.curiosityLoop = createSidebarLoop(wrapper, scenes);
+
+    if (moreToggle && secondaryScenes.length > 0) {
+      moreToggle.addEventListener("click", function () {
+        var expanded = moreToggle.getAttribute("aria-expanded") === "true";
+
+        wrapper.curiosityLoop.pause("more-toggle");
+        expanded = !expanded;
+        moreToggle.setAttribute("aria-expanded", String(expanded));
+        moreToggle.setAttribute(
+          "aria-label",
+          expanded ? "Hide additional curiosities" : "Show additional curiosities"
+        );
+        moreToggle.textContent = expanded ? "Show less" : "More";
+        if (expanded) {
+          wrapper.setAttribute("data-curiosity-expanded", "true");
+        } else {
+          wrapper.removeAttribute("data-curiosity-expanded");
+        }
+        wrapper.curiosityLoop.resume("more-toggle");
+      });
+    } else if (moreToggle) {
+      moreToggle.hidden = true;
+    }
+
     wrapper.setAttribute("data-curiosity-ready", "true");
     wrapper.curiosityLoop.resume();
   }
@@ -605,7 +643,6 @@
 
     var modalScene = dialog.querySelector("[data-curiosity-dialog-scene]");
     var modalImage = dialog.querySelector("[data-curiosity-dialog-image]");
-    var modalMachine = dialog.querySelector("[data-curiosity-dialog-machine]");
     var modalLabs = dialog.querySelector("[data-curiosity-dialog-labs]");
     var modalStatus = dialog.querySelector("[data-curiosity-dialog-status]");
     var modalTitle = dialog.querySelector("[data-curiosity-dialog-title]");
@@ -1199,9 +1236,8 @@
 
     function populateDialog(scene, sceneName) {
       var sourceImage = scene.querySelector("[data-curiosity-frames]");
-      var sourceMachine = scene.querySelector("[data-curiosity-machine-visual]");
       var sourceLabs = scene.querySelector("[data-curiosity-lab-visual]");
-      var sourceCustomVisual = sourceMachine || sourceLabs;
+      var sourceCustomVisual = sourceLabs;
       var sourceFrames = sourceImage ? sourceImage.getAttribute("data-curiosity-frames") || "" : "";
       var firstFrame = sourceFrames.split("|").map(function (value) {
         return value.trim();
@@ -1220,9 +1256,6 @@
         modalStatus.textContent = "";
       }
       modalImage.hidden = Boolean(sourceCustomVisual);
-      if (modalMachine) {
-        modalMachine.hidden = !sourceMachine;
-      }
       if (modalLabs) {
         modalLabs.hidden = !sourceLabs;
         if (sourceLabs) {

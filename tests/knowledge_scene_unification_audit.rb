@@ -63,6 +63,8 @@ expected_machine_people = [
   "Claude Shannon",
   "John von Neumann",
   "John McCarthy",
+  "Nils J. Nilsson",
+  "Stephen Cook & Leonid Levin",
   "Robert W. Floyd",
   "Zohar Manna",
   "Cordell Green & Richard Waldinger",
@@ -70,6 +72,8 @@ expected_machine_people = [
   "Richard Weyhrauch",
   "Robert S. Boyer & J Strother Moore",
   "Natarajan Shankar, Sam Owre & John Rushby",
+  "Bruno Dutertre",
+  "Adam Cheyer",
   "Martín Abadi",
   "Patrick Lincoln",
   "Leslie Lamport",
@@ -94,6 +98,8 @@ expected_verification_ideas = %w[
   machines-temporal-verification
   machines-proof-systems
   machines-formal-security
+  machines-complexity
+  machines-assistant-ai
 ]
 missing_verification_ideas = expected_verification_ideas - machine_idea_ids
 unless missing_verification_ideas.empty?
@@ -103,6 +109,16 @@ end
 shankar = machines.fetch("people").find { |person| person.fetch("id") == "machines-pvs" }
 unless shankar && shankar.fetch("label").start_with?("Natarajan Shankar")
   errors << "PVS lineage does not use Natarajan Shankar's correct name"
+end
+
+cheyer = machines.fetch("people").find { |person| person.fetch("id") == "machines-cheyer" }
+unless cheyer && cheyer.fetch("relationship") == "influence" && cheyer.fetch("status").include?("Siri")
+  errors << "Adam Cheyer is not identified as an SRI/Siri institutional influence"
+end
+
+dutertre = machines.fetch("people").find { |person| person.fetch("id") == "machines-dutertre" }
+unless dutertre && dutertre.fetch("status").include?("Yices")
+  errors << "Bruno Dutertre is not connected to Yices and the SRI verification lineage"
 end
 
 machine_ids = %w[people ideas papers patents].flat_map do |kind|
@@ -223,6 +239,7 @@ end
 sidebar_include = File.read(File.join(ROOT, "_includes/sidebar-curiosity.html"), encoding: "UTF-8")
 knowledge_page = File.read(File.join(ROOT, "knowledge/index.md"))
 sidebar_js = File.read(File.join(ROOT, "assets/js/sidebar-curiosity.js"))
+sidebar_css = File.read(File.join(ROOT, "assets/css/style.scss"))
 knowledge_js = File.read(File.join(ROOT, "assets/js/knowledge-hub.js"))
 
 %w[data-curiosity-connections-data data-knowledge-lineage-overlay data-knowledge-publication-catalog].each do |marker|
@@ -244,8 +261,61 @@ errors << "sidebar omits the R&D laboratory scene" unless sidebar_include.includ
 ].each do |name|
   errors << "expanded R&D laboratory animation omits #{name}" unless sidebar_include.include?(name)
 end
+%w[
+  machines-automation-ai.webp
+  machines-automation-ai-frame-2.webp
+  machines-automation-ai-frame-3.webp
+  machines-automation-ai-frame-4.webp
+].each do |frame|
+  errors << "Machines/AI animation omits frame #{frame}" unless sidebar_include.include?(frame)
+end
+[
+  "Nils Nilsson with Shakey",
+  "Peter Neumann",
+  "Shankar",
+  "Dutertre",
+  "bearded John Rushby",
+  "Patrick Lincoln",
+  "Adam Cheyer",
+  "Karim holding a verified neural-network phone"
+].each do |description|
+  errors << "Machines/AI image description omits #{description}" unless sidebar_include.include?(description)
+end
+if sidebar_include.include?("data-curiosity-machine-visual") || sidebar_js.include?("sourceMachine")
+  errors << "Machines/AI animation still depends on the obsolete initials-and-circles visual"
+end
+unless sidebar_include.include?("Lucent/Bell Labs → AT&amp;T Shannon Labs → HRL → SRI")
+  errors << "R&D Labyrinth route omits Lucent/Bell Labs or AT&T Shannon Labs"
+end
 expected_sidebar_order = 'var sceneOrder = ["labs", "cipher", "tour", "machines", "hotel"]'
 errors << "sidebar scene order differs from the requested sequence" unless sidebar_js.include?(expected_sidebar_order)
+
+secondary_scene_names = sidebar_include.scan(
+  /<figure\b(?=[^>]*data-curiosity-secondary)[^>]*data-curiosity-scene="([^"]+)"/m
+).flatten.sort
+unless secondary_scene_names == %w[hotel machines]
+  errors << "sidebar secondary scenes are #{secondary_scene_names.inspect}, expected machines and hotel"
+end
+unless sidebar_include.scan("data-curiosity-more").length == 1 &&
+       sidebar_include.include?('aria-controls="curiosity-machines-scene curiosity-hotel-scene"')
+  errors << "sidebar More control does not uniquely reveal the two secondary scenes"
+end
+unless sidebar_js.include?("wrapper.appendChild(moreToggle)") &&
+       sidebar_js.include?('wrapper.setAttribute("data-curiosity-expanded", "true")') &&
+       sidebar_js.include?('expanded ? "Show less" : "More"')
+  errors << "sidebar More control is not ordered last or does not toggle expanded state"
+end
+unless sidebar_js.include?("scene.getClientRects().length > 0") &&
+       sidebar_js.include?("sceneQueue[0].getClientRects().length === 0")
+  errors << "sidebar animation loop does not exclude hidden secondary scenes"
+end
+unless sidebar_css.include?('.sidebar-curiosity[data-curiosity-ready="true"]:not([data-curiosity-expanded="true"]) [data-curiosity-secondary]') &&
+       sidebar_css.include?('.sidebar-curiosity[data-curiosity-ready="true"] .sidebar-curiosity__more:not([hidden])')
+  errors << "sidebar styles do not implement the ready-only collapsed More state"
+end
+unless sidebar_include.include?("Automatically verify") && !sidebar_include.include?("Automatically check")
+  errors << "Machines/AI action is not labeled exactly Automatically verify"
+end
 errors << "sidebar renderer does not use shared scene merger" unless sidebar_js.include?("KnowledgeSceneData.mergeScene")
 errors << "knowledge renderer does not use shared scene merger" unless knowledge_js.include?("KnowledgeSceneData.mergeScene")
 

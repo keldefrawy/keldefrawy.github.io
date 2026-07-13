@@ -133,7 +133,9 @@
 
   <figure
     class="sidebar-curiosity__scene"
+    id="curiosity-hotel-scene"
     data-curiosity-scene="hotel"
+    data-curiosity-secondary
     aria-labelledby="curiosity-hotel-title"
     aria-describedby="curiosity-hotel-tagline curiosity-hotel-caption"
   >
@@ -199,7 +201,9 @@
 
   <figure
     class="sidebar-curiosity__scene"
+    id="curiosity-machines-scene"
     data-curiosity-scene="machines"
+    data-curiosity-secondary
     aria-labelledby="curiosity-machines-title"
     aria-describedby="curiosity-machines-tagline curiosity-machines-caption"
   >
@@ -210,79 +214,18 @@
       data-curiosity-initial-panel="connections"
       aria-haspopup="dialog"
       aria-controls="curiosity-dialog"
-      aria-label="Open Machines, Automation and Artificial Intelligence ideas map"
+      aria-label="Open Machines, Automation and Artificial Intelligence animation and ideas map"
     >
-      <span class="sidebar-curiosity__machine-visual" data-curiosity-machine-visual aria-hidden="true">
-        <span class="sidebar-curiosity__machine-bits">010010 · 110101 · 001011 · 101100</span>
-        <span class="sidebar-curiosity__machine-era sidebar-curiosity__machine-era--origins">FOUNDATIONS</span>
-        <span class="sidebar-curiosity__machine-era sidebar-curiosity__machine-era--questions">WHAT CAN MACHINES DO?</span>
-        <span class="sidebar-curiosity__machine-era sidebar-curiosity__machine-era--sri">SRI: REASON + ASSIST</span>
-
-        <span class="sidebar-curiosity__machine-foundations">
-          <span class="sidebar-curiosity__machine-person sidebar-curiosity__machine-person--godel">
-            <b>KG</b><small>Kurt Gödel</small>
-          </span>
-          <span class="sidebar-curiosity__machine-person sidebar-curiosity__machine-person--turing">
-            <b>AT</b><small>Alan Turing</small>
-          </span>
-          <span class="sidebar-curiosity__machine-person sidebar-curiosity__machine-person--shannon">
-            <b>CS</b><small>Claude Shannon</small>
-          </span>
-          <span class="sidebar-curiosity__machine-person sidebar-curiosity__machine-person--vonneumann">
-            <b>JN</b><small>John von Neumann</small>
-          </span>
-        </span>
-
-        <span class="sidebar-curiosity__machine-rail sidebar-curiosity__machine-rail--stem"></span>
-        <span class="sidebar-curiosity__machine-rail sidebar-curiosity__machine-rail--complexity"></span>
-        <span class="sidebar-curiosity__machine-rail sidebar-curiosity__machine-rail--logic"></span>
-        <span class="sidebar-curiosity__machine-rail sidebar-curiosity__machine-rail--sri"></span>
-        <span class="sidebar-curiosity__machine-pulse sidebar-curiosity__machine-pulse--one"></span>
-        <span class="sidebar-curiosity__machine-pulse sidebar-curiosity__machine-pulse--two"></span>
-        <span class="sidebar-curiosity__machine-pulse sidebar-curiosity__machine-pulse--three"></span>
-
-        <span class="sidebar-curiosity__machine-question">
-          <strong>P ?= NP</strong>
-          <small>Stephen Cook &amp; Leonid Levin</small>
-        </span>
-        <span class="sidebar-curiosity__machine-person sidebar-curiosity__machine-person--mccarthy">
-          <b>JM</b><small>John McCarthy</small><em>LOGICAL AI</em>
-        </span>
-
-        <span class="sidebar-curiosity__machine-sri-hub">
-          <span class="sidebar-curiosity__machine-sri-lane sidebar-curiosity__machine-sri-lane--proof">
-            <span class="sidebar-curiosity__machine-sri-symbol">SPEC ⊢ ✓</span>
-            <span class="sidebar-curiosity__machine-sri-people">
-              <span><b>NS</b><small>Natarajan Shankar</small></span>
-              <span><b>SO</b><small>Sam Owre</small></span>
-              <span><b>JR</b><small>John Rushby</small></span>
-            </span>
-            <em>PVS · FORMAL VERIFICATION</em>
-          </span>
-          <span class="sidebar-curiosity__machine-sri-lane sidebar-curiosity__machine-sri-lane--assistant">
-            <span class="sidebar-curiosity__machine-person sidebar-curiosity__machine-person--cheyer">
-              <b>AC</b><small>Adam Cheyer</small>
-            </span>
-            <span class="sidebar-curiosity__machine-wave"><i></i><i></i><i></i><i></i><i></i></span>
-            <em>CALO → SIRI</em>
-          </span>
-        </span>
-
-        <span class="sidebar-curiosity__machine-endpoint">
-          <span class="sidebar-curiosity__machine-speech">Verify it.</span>
-          <span class="sidebar-curiosity__machine-karim">
-            <span class="sidebar-curiosity__machine-karim-head">KE</span>
-            <span class="sidebar-curiosity__machine-karim-body"></span>
-            <small>Karim</small>
-          </span>
-          <span class="sidebar-curiosity__machine-phone">
-            <span class="sidebar-curiosity__machine-phone-net">
-              <i></i><i></i><i></i><i></i><i></i><i></i>
-            </span>
-            <span class="sidebar-curiosity__machine-phone-check">✓</span>
-          </span>
-        </span>
-      </span>
+      <img
+        class="sidebar-curiosity__image"
+        src="{{ '/assets/images/sidebar/machines-automation-ai.webp' | relative_url }}"
+        data-curiosity-frames="{{ '/assets/images/sidebar/machines-automation-ai.webp' | relative_url }}|{{ '/assets/images/sidebar/machines-automation-ai-frame-2.webp' | relative_url }}|{{ '/assets/images/sidebar/machines-automation-ai-frame-3.webp' | relative_url }}|{{ '/assets/images/sidebar/machines-automation-ai-frame-4.webp' | relative_url }}"
+        alt="An illustrated machine tower traces AI from Gödel, Turing, Shannon, and von Neumann through McCarthy, Nils Nilsson with Shakey, Peter Neumann, Shankar, Dutertre, bearded John Rushby, Patrick Lincoln, and Adam Cheyer to Karim holding a verified neural-network phone."
+        width="460"
+        height="853"
+        loading="lazy"
+        decoding="async"
+      >
     </button>
     <figcaption class="sidebar-curiosity__content">
       <h2 class="sidebar-curiosity__title" id="curiosity-machines-title">Machines, Automation &amp; AI</h2>
@@ -310,9 +253,9 @@
         data-curiosity-initial-panel="animation"
         aria-haspopup="dialog"
         aria-controls="curiosity-dialog"
-        aria-label="Open the reasoning-machine animation to automatically check and verify"
+        aria-label="Open the reasoning-machine animation to automatically verify"
       >
-        Automatically check &amp; verify
+        Automatically verify
       </button>
     </div>
     <p
@@ -369,7 +312,7 @@
         </span>
 
         <span class="sidebar-curiosity__lab-place sidebar-curiosity__lab-place--bell">
-          <strong>Bell Labs</strong>
+          <strong>Lucent/Bell Labs</strong>
           <small class="sidebar-curiosity__lab-place-note">LIGHT · BITS · INFORMATION</small>
           <span class="sidebar-curiosity__lab-people sidebar-curiosity__lab-people--bell">
             <span class="sidebar-curiosity__lab-person sidebar-curiosity__lab-person--influence">
@@ -446,9 +389,9 @@
     </button>
     <figcaption class="sidebar-curiosity__content">
       <h2 class="sidebar-curiosity__title" id="curiosity-labs-title">The R&amp;D Labyrinth</h2>
-      <p class="sidebar-curiosity__tagline" id="curiosity-labs-tagline">Bell Labs → HRL ruby → SRI → Karim</p>
+      <p class="sidebar-curiosity__tagline" id="curiosity-labs-tagline">Lucent/Bell Labs → AT&amp;T Shannon Labs → HRL → SRI</p>
       <p class="sidebar-curiosity__caption" id="curiosity-labs-caption">
-        Follow an idea as light: from Bell Labs, through HRL’s ruby laser and ARPANET’s first links, into SRI—and finally into Karim’s work.
+        Follow an idea as light through Lucent/Bell Labs, AT&amp;T Shannon Labs, HRL’s ruby laser, and SRI’s formal-methods and cryptography tradition.
       </p>
     </figcaption>
     <div class="sidebar-curiosity__actions">
@@ -483,6 +426,17 @@
       aria-atomic="true"
     ></p>
   </figure>
+
+  <button
+    class="sidebar-curiosity__more"
+    type="button"
+    data-curiosity-more
+    aria-expanded="false"
+    aria-controls="curiosity-machines-scene curiosity-hotel-scene"
+    aria-label="Show additional curiosities"
+  >
+    More
+  </button>
 </aside>
 
 <dialog
@@ -523,7 +477,6 @@
             height="853"
             decoding="async"
           >
-          <div class="curiosity-dialog__machine-visual" data-curiosity-dialog-machine hidden aria-hidden="true"></div>
           <div class="curiosity-dialog__lab-visual" data-curiosity-dialog-labs hidden aria-hidden="true"></div>
         </div>
         <p class="curiosity-dialog__caption" id="curiosity-dialog-caption" data-curiosity-dialog-caption></p>

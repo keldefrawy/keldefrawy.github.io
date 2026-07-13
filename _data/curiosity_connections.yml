@@ -816,16 +816,17 @@ scenes:
     map_title: "From Formal Reasoning to Machine-Checked Security"
     description: >-
       A compact lineage from Hilbert's formal program and Gödel's limits through programmable and
-      universal machines, information and symbolic AI, through the Stanford–SRI program-proof and
-      mechanized-reasoning line, to modern formal specification and model checking—the machinery
-      used to check protocols, algorithms, cryptography, mathematics, and systems.
+      universal machines, information, complexity, and symbolic AI, through SRI's parallel lines of
+      intelligent assistants and machine-checked reasoning, to modern formal specification, model
+      checking, and reliable AI—the machinery used to check protocols, algorithms, cryptography,
+      mathematics, and systems.
     notes:
       - kind: scope
         label: What this map means by AI
         text: >-
-          The emphasis is machine-assisted reasoning rather than a general history of neural AI:
-          formalize a claim, represent it mechanically, search or check the reasoning, and expose
-          precisely what has and has not been verified.
+          The emphasis is machine-assisted reasoning and reliable intelligent assistants rather than
+          a comprehensive history of neural AI: represent a claim or goal mechanically, search or
+          check the reasoning, and expose precisely what has and has not been verified.
       - kind: limits
         label: Automation has boundaries
         text: >-
@@ -874,6 +875,21 @@ scenes:
         relationship: influence
         status: Artificial intelligence, Lisp, and machine reasoning · no collaboration
         note: "McCarthy co-founded the named field of AI and made symbolic representation and machine deduction programmable through the Advice Taker and Lisp."
+      - id: machines-nilsson
+        label: Nils J. Nilsson
+        relationship: influence
+        status: SRI AI, Shakey, search, and planning · no collaboration
+        note: >-
+          Nilsson co-led SRI's Shakey project and helped develop foundational AI methods including
+          heuristic search and STRIPS planning, connecting symbolic reasoning to an embodied agent.
+      - id: machines-cook-levin
+        label: Stephen Cook & Leonid Levin
+        relationship: influence
+        status: NP-completeness and feasible computation · no collaboration
+        note: >-
+          Cook and Levin independently established the foundational NP-completeness result. The
+          unresolved P-versus-NP question asks, in part, whether efficiently checkable solutions are
+          also efficiently findable.
       - id: machines-floyd
         label: Robert W. Floyd
         relationship: influence
@@ -931,6 +947,22 @@ scenes:
           language, proof checking, decision procedures, and model checking for algorithms,
           protocols, hardware, and dependable systems. Shankar had earlier been a Stanford
           Computer Science research associate.
+      - id: machines-dutertre
+        label: Bruno Dutertre
+        relationship: influence
+        status: Direct SRI colleague · Yices SMT solving and automated reasoning
+        note: >-
+          Dutertre developed the Yices satisfiability-modulo-theories solver at SRI, connecting
+          practical automated reasoning and decision procedures to verification workflows. This
+          card records a direct institutional-colleague connection, not a coauthorship claim.
+      - id: machines-cheyer
+        label: Adam Cheyer
+        relationship: influence
+        status: SRI OAA/CALO and Siri · institutional lineage, no collaboration
+        note: >-
+          Cheyer was a principal architect of SRI's Open Agent Architecture and CALO work and a
+          cofounder of Siri, carrying SRI's agent and natural-language research into a widely used
+          conversational assistant.
       - id: machines-abadi
         label: Martín Abadi
         relationship: influence
@@ -967,10 +999,14 @@ scenes:
         label: Programmable machines and symbolic procedures
       - id: machines-universal-computation
         label: Universal computation and machine intelligence
+      - id: machines-complexity
+        label: Efficient verification, NP-completeness, and P versus NP
       - id: machines-information-switching
         label: Information, switching logic, and search
       - id: machines-symbolic-ai
         label: Symbolic AI, Lisp, and automated reasoning
+      - id: machines-assistant-ai
+        label: Cognitive assistants and human–machine dialogue
       - id: machines-program-proof
         label: Assertions, invariants, and deductive program synthesis
       - id: machines-temporal-verification
@@ -1054,6 +1090,18 @@ scenes:
         to: machines-symbolic-ai
         type: direct
         label: AI, Lisp, and logical machine reasoning
+      - from: machines-nilsson
+        to: machines-symbolic-ai
+        type: direct
+        label: heuristic search, Shakey, and STRIPS planning
+      - from: machines-cook-levin
+        to: machines-complexity
+        type: direct
+        label: NP-completeness and the limits of efficient search
+      - from: machines-turing
+        to: machines-complexity
+        type: lineage
+        label: computability develops into the study of computational feasibility
       - from: machines-turing
         to: machines-program-proof
         type: lineage
@@ -1110,6 +1158,18 @@ scenes:
         to: machines-proof-systems
         type: direct
         label: specification, proof checking, decision procedures, and model checking
+      - from: machines-dutertre
+        to: machines-proof-systems
+        type: direct
+        label: Yices SMT solving and automated decision procedures
+      - from: machines-dutertre
+        to: machines-formal-verification
+        type: direct
+        label: solver-backed verification workflows
+      - from: machines-cheyer
+        to: machines-assistant-ai
+        type: direct
+        label: OAA and CALO carried agent research into Siri
       - from: machines-abadi
         to: machines-formal-security
         type: direct
@@ -1146,6 +1206,18 @@ scenes:
         to: machines-symbolic-ai
         type: lineage
         label: general computation enables symbolic machine reasoning
+      - from: machines-complexity
+        to: machines-formal-verification
+        type: lineage
+        label: computational feasibility bounds automated reasoning and verification
+      - from: machines-symbolic-ai
+        to: machines-assistant-ai
+        type: lineage
+        label: representation, planning, and agents develop into cognitive assistants
+      - from: machines-nilsson
+        to: machines-assistant-ai
+        type: lineage
+        label: SRI's agent lineage from Shakey toward interactive assistants
       - from: machines-limits
         to: machines-formal-verification
         type: lineage
@@ -1178,6 +1250,10 @@ scenes:
         to: machines-paper-79
         type: direct
         label: reliability of composed generative models
+      - from: machines-assistant-ai
+        to: machines-paper-79
+        type: direct
+        label: reliability of generative assistants in cybersecurity use cases
       - from: machines-checked-security
         to: machines-paper-47
         type: direct
@@ -1211,15 +1287,15 @@ scenes:
     title: "The R&D Labyrinth"
     map_title: "From American Research Laboratories to Secure Systems"
     description: >-
-      A career journey through Bell Labs / Lucent Technologies, HRL Laboratories, and
-      SRI International, connecting landmark laboratory inventions and people to the
-      computing, formal-methods, cryptography, privacy, and resilient-systems work that followed.
+      A career journey through Lucent/Bell Labs, AT&T Shannon Labs, HRL Laboratories, and SRI
+      International, connecting landmark laboratory inventions and people to the computing,
+      formal-methods, cryptography, privacy, and resilient-systems work that followed.
     notes:
       - kind: chronology
         label: The route through the laboratories
         text: >-
-          The visual route follows Karim's 2001 Bell Labs / Lucent internship, his 2010–2016
-          research period at HRL Laboratories, and his work at SRI International beginning in 2017.
+          The visual route follows Karim through Lucent/Bell Labs, AT&T Shannon Labs, HRL
+          Laboratories, and SRI International.
       - kind: relationship
         label: Institutional history is not coauthorship
         text: >-
