@@ -27,8 +27,8 @@
       finished: "The checker has produced a model-bounded result."
     },
     labs: {
-      playing: "The journey through the research laboratories is underway.",
-      finished: "The route has reached its next invention."
+      playing: "The idea-light is traveling from Bell Labs through HRL and SRI.",
+      finished: "The idea-light is glowing in Karim’s work."
     }
   };
 
@@ -560,11 +560,15 @@
       return;
     }
 
-    var labsScene = wrapper.querySelector('[data-curiosity-scene="labs"]');
+    var sceneOrder = ["labs", "cipher", "tour", "machines", "hotel"];
 
-    if (labsScene && wrapper.firstElementChild !== labsScene) {
-      wrapper.insertBefore(labsScene, wrapper.firstElementChild);
-    }
+    sceneOrder.forEach(function (sceneName) {
+      var orderedScene = wrapper.querySelector('[data-curiosity-scene="' + sceneName + '"]');
+
+      if (orderedScene) {
+        wrapper.appendChild(orderedScene);
+      }
+    });
 
     var scenes = toArray(wrapper.querySelectorAll("[data-curiosity-scene]"));
     var timingProfiles = sidebarTimingProfiles(scenes.length);

@@ -121,11 +121,14 @@ expected_lab_people = [
   "Ken Thompson & Dennis Ritchie",
   "Theodore H. Maiman",
   "Douglas Engelbart",
+  "Leslie Lamport",
   "Elizabeth “Jake” Feinler",
   "Peter G. Neumann",
   "Natarajan Shankar",
   "Patrick Lincoln",
   "Bruno Dutertre",
+  "Brent Waters",
+  "Christopher Peikert",
   "Tancrède Lepoint",
   "Gabriela F. Ciocarlie",
   "Ashish Gehani",
@@ -138,6 +141,7 @@ errors << "R&D laboratory lineage people differ: #{lab_people.inspect}" unless l
 
 lab_collaborators = labs.fetch("people").select { |person| person["relationship"] == "collaborator" }
 expected_lab_collaborators = [
+  "Christopher Peikert",
   "Tancrède Lepoint",
   "Gabriela F. Ciocarlie",
   "Ashish Gehani",
@@ -161,7 +165,7 @@ unless lepoint_publication_ids == [40, 43, 48, 52, 61, 62]
   errors << "R&D laboratory lineage omits Tancrède publications #{lepoint_publication_ids.inspect}"
 end
 
-expected_new_sri_publication_ids = [49, 53, 76]
+expected_new_sri_publication_ids = [49, 53, 59, 64, 76]
 new_sri_publication_ids = labs.fetch("papers").filter_map do |paper|
   publication_id = paper.fetch("publication_id").to_i
   publication_id if expected_new_sri_publication_ids.include?(publication_id)
@@ -226,10 +230,22 @@ knowledge_js = File.read(File.join(ROOT, "assets/js/knowledge-hub.js"))
 end
 errors << "knowledge page omits the laboratory tab" unless knowledge_page.include?("cipher,hotel,tour,machines,labs,collaborators")
 errors << "sidebar omits the R&D laboratory scene" unless sidebar_include.include?('data-curiosity-scene="labs"')
-%w[NEUMANN SAÏDI GEHANI BRIESEMEISTER MCCARTHY LEPOINT CIOCARLIE].each do |name|
+[
+  "Claude Shannon",
+  "Peter Neumann",
+  "Theodore Maiman",
+  "Douglas Engelbart",
+  "Leslie Lamport",
+  "Patrick Lincoln",
+  "Brent Waters",
+  "Christopher Peikert",
+  "Tancrède Lepoint",
+  "Gabriela Ciocarlie"
+].each do |name|
   errors << "expanded R&D laboratory animation omits #{name}" unless sidebar_include.include?(name)
 end
-errors << "sidebar does not place the R&D laboratory scene first at runtime" unless sidebar_js.include?('wrapper.insertBefore(labsScene, wrapper.firstElementChild)')
+expected_sidebar_order = 'var sceneOrder = ["labs", "cipher", "tour", "machines", "hotel"]'
+errors << "sidebar scene order differs from the requested sequence" unless sidebar_js.include?(expected_sidebar_order)
 errors << "sidebar renderer does not use shared scene merger" unless sidebar_js.include?("KnowledgeSceneData.mergeScene")
 errors << "knowledge renderer does not use shared scene merger" unless knowledge_js.include?("KnowledgeSceneData.mergeScene")
 
