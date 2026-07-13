@@ -386,6 +386,7 @@
     var root = document.querySelector("[data-knowledge-lineages]");
     var dataScript = document.querySelector("[data-curiosity-connections-data]");
     var overlayScript = root ? root.querySelector("[data-knowledge-lineage-overlay]") : null;
+    var catalogScript = root ? root.querySelector("[data-knowledge-publication-catalog]") : null;
 
     if (!root || !dataScript || root.getAttribute("data-knowledge-lineages-ready") === "true") {
       return;
@@ -395,6 +396,7 @@
     var scenes = source.scenes || source;
     var overlaySource = overlayScript ? parseJSON(overlayScript.textContent, {}) : {};
     var overlayScenes = overlaySource.scenes || {};
+    var publicationCatalog = catalogScript ? parseJSON(catalogScript.textContent, []) : [];
     var sceneButtons = toArray(root.querySelectorAll("[data-knowledge-lineage-scene]"));
     var title = root.querySelector("[data-knowledge-lineage-title]");
     var description = root.querySelector("[data-knowledge-lineage-description]");
@@ -517,7 +519,8 @@
       var order = { person: 0, collaborator: 1, idea: 2, paper: 3, patent: 3 };
       var startOrder = order[kind];
       var direction = startOrder <= 1 ? 1 : (startOrder >= 3 ? -1 : 0);
-      var maxDepth = direction === 0 ? 1 : 3;
+      var maxDepth = kind === "collaborator" || kind === "paper" || kind === "patent" ?
+        1 : (direction === 0 ? 1 : 3);
       var queue = [{ id: nodeId, depth: 0 }];
       var visited = {};
 
@@ -586,6 +589,7 @@
           current.element.setAttribute("aria-pressed", isSelected ? "true" : "false");
         }
       });
+      syncCollaboratorWorkVisibility();
 
       if (selectedNodeId) {
         updateLineageDetail(nodeRecords[selectedNodeId]);
@@ -724,6 +728,9 @@
         if (!sourceRecord || !targetRecord) {
           return;
         }
+        if (sourceRecord.element.parentElement.hidden || targetRecord.element.parentElement.hidden) {
+          return;
+        }
 
         sourceRect = sourceRecord.element.getBoundingClientRect();
         targetRect = targetRecord.element.getBoundingClientRect();
@@ -772,6 +779,160 @@
       return result;
     }
 
+    function normalizedAuthorName(value) {
+      var name = normalized(value);
+
+      if (typeof name.normalize === "function") {
+        name = name.normalize("NFKD").replace(/[\u0300-\u036f]/g, "");
+      }
+      return name.replace(/\./g, "").replace(/\s+/g, " ");
+    }
+
+    function publicationAuthors(value) {
+      return String(value || "")
+        .replace(/,\s+and\s+/g, ", ")
+        .replace(/\s+and\s+/g, ", ")
+        .split(/\s*,\s*/)
+        .map(normalizedAuthorName)
+        .filter(function (name) {
+          return Boolean(name);
+        });
+    }
+
+    function publicationMatchesCollaborator(publication, collaborator) {
+      var authors = publicationAuthors(publication.authors);
+      var catalogAuthors = (collaborator.catalog_authors || []).map(normalizedAuthorName);
+
+      if (!catalogAuthors.length) {
+        return false;
+      }
+      if (collaborator.catalog_match === "all") {
+        return catalogAuthors.every(function (name) {
+          return authors.indexOf(name) !== -1;
+        });
+      }
+      return catalogAuthors.some(function (name) {
+        return authors.indexOf(name) !== -1;
+      });
+    }
+
+    function completeCollaboratorAuthorship(result) {
+      var collaborators = result.people.filter(function (person) {
+        return person.relationship === "collaborator" && person.catalog_authors;
+      });
+      var collaboratorIds = {};
+      var ideaIds = {};
+      var paperIds = {};
+
+      collaborators.forEach(function (person) {
+        collaboratorIds[person.id] = true;
+      });
+      result.ideas.forEach(function (idea) {
+        ideaIds[idea.id] = true;
+      });
+      result.papers.forEach(function (paper) {
+        paperIds[paper.id] = true;
+      });
+
+      result.links = result.links.filter(function (link) {
+        var joinsCollaboratorAndIdea =
+          (collaboratorIds[link.from] && ideaIds[link.to]) ||
+          (collaboratorIds[link.to] && ideaIds[link.from]);
+        var joinsCollaboratorAndPaper =
+          (collaboratorIds[link.from] && paperIds[link.to]) ||
+          (collaboratorIds[link.to] && paperIds[link.from]);
+
+        return !joinsCollaboratorAndIdea && !joinsCollaboratorAndPaper;
+      });
+
+      collaborators.forEach(function (person) {
+        publicationCatalog.forEach(function (publication) {
+          var paperId;
+
+          if (!publicationMatchesCollaborator(publication, person)) {
+            return;
+          }
+          paperId = "collaborators-paper-" + publication.id;
+          if (!paperIds[paperId]) {
+            result.papers.push({
+              id: paperId,
+              publication_id: publication.id,
+              label: "#" + publication.id + " · " + publication.title,
+              title: publication.title,
+              url: "/knowledge/papers/paper-" + publication.id + "/"
+            });
+            paperIds[paperId] = true;
+          }
+          result.links.push({
+            from: person.id,
+            to: paperId,
+            type: "direct",
+            label: "direct coauthorship"
+          });
+        });
+      });
+
+      result.papers.sort(function (left, right) {
+        return Number(right.publication_id || 0) - Number(left.publication_id || 0);
+      });
+      return result;
+    }
+
+    function separateDirectAuthorshipFromTopics(result) {
+      var collaboratorIds = {};
+      var ideaIds = {};
+
+      result.people.forEach(function (person) {
+        if (person.relationship === "collaborator") {
+          collaboratorIds[person.id] = true;
+        }
+      });
+      result.ideas.forEach(function (idea) {
+        ideaIds[idea.id] = true;
+      });
+      result.links = result.links.filter(function (link) {
+        var joinsCollaboratorAndIdea =
+          (collaboratorIds[link.from] && ideaIds[link.to]) ||
+          (collaboratorIds[link.to] && ideaIds[link.from]);
+
+        return link.type !== "direct" || !joinsCollaboratorAndIdea;
+      });
+      return result;
+    }
+
+    function syncCollaboratorWorkVisibility() {
+      var placeholder;
+      var visibleWork = 0;
+
+      if (activeSceneName !== "collaborators") {
+        return;
+      }
+      placeholder = workLane.querySelector("[data-knowledge-lineage-work-placeholder]");
+      Object.keys(nodeRecords).forEach(function (id) {
+        var record = nodeRecords[id];
+        var isWork = record.kind === "paper" || record.kind === "patent";
+        var isVisible = Boolean(selectedNodeId && relatedGraph && relatedGraph.nodes[id]);
+
+        if (!isWork) {
+          return;
+        }
+        record.element.parentElement.hidden = !isVisible;
+        if (isVisible) {
+          visibleWork += 1;
+        }
+      });
+      if (!placeholder) {
+        placeholder = document.createElement("li");
+        placeholder.className = "knowledge-lineage-work-placeholder";
+        placeholder.setAttribute("data-knowledge-lineage-work-placeholder", "");
+        workLane.appendChild(placeholder);
+      }
+      placeholder.textContent = selectedNodeId ?
+        (visibleWork ? "" : "No directly connected papers in this view.") :
+        "Select a collaborator or research idea to reveal papers.";
+      placeholder.hidden = visibleWork > 0;
+    }
+
     function mergedNodes(baseNodes, overlayNodes) {
       var byId = {};
       var order = [];
@@ -813,7 +974,7 @@
       });
     }
 
-    function scientificScene(scene, overlay) {
+    function scientificScene(scene, overlay, sceneName) {
       var excludedNodes = valueSet(overlay.exclude_node_ids);
       var excludedNoteKinds = valueSet(overlay.exclude_note_kinds);
       var result;
@@ -843,6 +1004,10 @@
       result.links = mergedLinks(scene.links, overlay.links).filter(function (link) {
         return visibleNodeIds[link.from] && visibleNodeIds[link.to];
       });
+      result = separateDirectAuthorshipFromTopics(result);
+      if (sceneName === "collaborators") {
+        result = completeCollaboratorAuthorship(result);
+      }
       return result;
     }
 
@@ -857,10 +1022,14 @@
         return;
       }
 
-      activeScene = scientificScene(scene, overlay);
+      activeScene = scientificScene(scene, overlay, sceneName);
       activeSceneName = sceneName;
       clearLineage();
       graph.setAttribute("data-lineage-scene", sceneName);
+      if (workLane.parentElement && workLane.parentElement.querySelector("h4")) {
+        workLane.parentElement.querySelector("h4").textContent = sceneName === "collaborators" ?
+          "Coauthored papers" : "Karim’s work";
+      }
       var hasInfluencePeople = activeScene.people.some(function (node) {
         return node.relationship !== "collaborator";
       });
@@ -892,6 +1061,7 @@
       activeScene.patents.forEach(function (node) {
         createNode(node, "patent", workLane);
       });
+      syncCollaboratorWorkVisibility();
       renderNotes(activeScene.notes);
       sceneButtons.forEach(function (button) {
         button.setAttribute("aria-pressed",

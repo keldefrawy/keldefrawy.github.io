@@ -143,7 +143,7 @@ knowledge_hub: true
     <header class="knowledge-section-heading">
       <p class="knowledge-section-label">Selected intellectual lineages</p>
       <h2 id="idea-lineages-heading">Foundations → collaborators → ideas → Karim’s work</h2>
-      <p>The first lane records historical and intellectual foundations—not personal collaboration. The second lane identifies documented collaborators and co-authors, followed by the ideas and selected papers or patents that connect them.</p>
+      <p>The first lane records historical and intellectual foundations—not personal collaboration. In the collaborator view, people connect only to papers they coauthored; papers connect separately to their research ideas.</p>
       <p class="knowledge-lineage-living-note" role="note">
         <strong>Living Knowledge Map.</strong> This is a subjective, point-in-time view and may contain
         unintentional omissions. Other collaborators, influences, ideas, works, and connections will
@@ -170,7 +170,7 @@ knowledge_hub: true
           {% when "collaborators" %}
             {% assign lineage_label = "Collaborators" %}
             {% assign lineage_title = "Collaborators Across Modern Cryptography and Security" %}
-            {% assign lineage_description = "An expanded direct-coauthorship audit covering every catalog coauthor with at least three shared publications, plus selected specialists central to the represented lineages. Broader research influences remain explicitly distinguished from shared papers." %}
+            {% assign lineage_description = "A catalog-checked coauthorship view: collaborators connect only to papers carrying their names, while papers connect separately to research ideas. Select a person or idea to reveal the relevant papers." %}
         {% endcase %}
         <button
           type="button"
@@ -240,6 +240,9 @@ knowledge_hub: true
     <noscript><p class="knowledge-noscript">The interactive lineage views require JavaScript; their source material is also available through the idea maps in the left sidebar.</p></noscript>
     <script type="application/json" data-knowledge-lineage-overlay>
       {{ site.data.knowledge_lineage_overlay | jsonify }}
+    </script>
+    <script type="application/json" data-knowledge-publication-catalog>
+      {{ site.data.publications | jsonify }}
     </script>
   </section>
 

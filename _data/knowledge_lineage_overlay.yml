@@ -166,20 +166,6 @@ scenes:
           Chaum anchors the mix-network, anonymous-communication, group-signature, and digital-cash
           lineages. Distance bounding is credited to the Brands-Chaum construction rather than to
           Chaum alone.
-      - id: science-cipher-claudia-diaz
-        label: Claudia Díaz
-        relationship: collaborator
-        status: Direct collaborator · mixnet traffic analysis and metadata privacy
-        note: >-
-          Direct coauthor on paper #66. Her wider work on mixnets, traffic analysis, and anonymous
-          communications is shown as a broader lineage rather than additional coauthorship.
-      - id: science-cipher-jonathan-katz
-        label: Jonathan Katz
-        relationship: collaborator
-        status: Direct collaborator · reusable fuzzy extractors
-        note: >-
-          Direct coauthor on paper #35, Efficient, Reusable Fuzzy Extractors from LWE. Dashed links
-          separately record his broader secure-computation and Byzantine-agreement influence.
       - id: science-cipher-shamir
         label: Adi Shamir
         relationship: influence
@@ -198,13 +184,6 @@ scenes:
         relationship: influence
         status: General secure-computation lineage
         note: General secure computation with Silvio Micali and Avi Wigderson.
-      - id: science-cipher-proactive-security-pioneers
-        label: Amir Herzberg, Stanisław Jarecki, Hugo Krawczyk & Moti Yung
-        relationship: influence
-        status: Proactive-secret-sharing lineage
-        note: >-
-          The four coauthors of the foundational proactive-secret-sharing work are grouped here to
-          preserve complete attribution without overcrowding the people lane.
       - id: science-cipher-peikert
         label: Chris Peikert
         relationship: collaborator
@@ -220,6 +199,13 @@ scenes:
           Direct coauthor on both mapped FHE accelerators; broader links capture secure-architecture,
           attestation, formally specified enclave, and strong-anonymity research lineages.
     ideas:
+      - id: science-cipher-proactive-security-pioneers
+        label: "Foundational proactive secret sharing: Herzberg, Jarecki, Krawczyk & Yung"
+        status: Historical foundation and attribution
+        note: >-
+          This grouped foundation preserves complete attribution to the four coauthors without
+          misclassifying Moti Yung or Stanisław Jarecki as non-collaborating influences; both are
+          represented individually as direct collaborators in the collaborator view.
       - id: science-cipher-signatures
         label: Digital signatures and distributed signing
       - id: science-cipher-elgamal-encryption
@@ -295,11 +281,6 @@ scenes:
         label: "#32 · Dishonest-majority proactive sharing"
         title: "Proactive Secret Sharing with a Dishonest Majority"
         url: /knowledge/papers/paper-32/
-      - id: science-cipher-paper-35
-        publication_id: 35
-        label: "#35 · Reusable fuzzy extractors from LWE"
-        title: "Efficient, Reusable Fuzzy Extractors from LWE"
-        url: /knowledge/papers/paper-35/
       - id: science-cipher-paper-52
         publication_id: 52
         label: "#52 · Dynamic-group proactive sharing"
@@ -310,32 +291,15 @@ scenes:
         label: "#55 · Dynamic proactive MPC"
         title: "Communication-Efficient (Proactive) Secure Computation for Dynamic General Adversary Structures and Dynamic Groups"
         url: /knowledge/papers/paper-55/
-      - id: science-cipher-paper-66
-        publication_id: 66
-        label: "#66 · Traffic analysis with partial visibility"
-        title: "Traffic Analysis by Adversaries with Partial Visibility"
-        url: /knowledge/papers/paper-66/
     links:
       - from: science-cipher-chaum
         to: science-cipher-anonymity
         type: direct
         label: mix networks, group signatures, and digital cash
-      - from: science-cipher-claudia-diaz
+      - from: cipher-claudia-diaz
         to: science-cipher-anonymity
         type: lineage
         label: broader mixnet, traffic-analysis, and metadata-privacy lineage
-      - from: science-cipher-claudia-diaz
-        to: science-cipher-paper-66
-        type: direct
-        label: direct coauthorship on traffic analysis with partial visibility
-      - from: science-cipher-jonathan-katz
-        to: science-cipher-paper-35
-        type: direct
-        label: direct coauthorship on reusable fuzzy extractors from LWE
-      - from: science-cipher-jonathan-katz
-        to: cipher-mpc
-        type: lineage
-        label: broader secure multiparty-computation influence
       - from: science-cipher-chaum
         to: science-cipher-distance-bounding
         type: direct
@@ -349,7 +313,7 @@ scenes:
         type: lineage
         label: privacy-preserving digital currency
       - from: science-cipher-anonymity
-        to: science-cipher-paper-66
+        to: cipher-paper-66
         type: direct
         label: traffic-analysis resistance and limits
       - from: science-cipher-anonymity
@@ -437,7 +401,7 @@ scenes:
         type: direct
         label: direct coauthorship on CraterLake
       - from: science-cipher-lattices
-        to: science-cipher-paper-35
+        to: cipher-paper-35
         type: direct
         label: explicit LWE construction
       - from: science-cipher-lattices
@@ -540,8 +504,9 @@ scenes:
         text: >-
           Blue solid cards mark documented collaborators and co-authors. Violet cards in the separate
           foundations-and-influences lane are not Karim's collaborators. Solid person-to-paper links
-          identify shared publications; other solid links identify a directly shared research thread.
-          Dashed links capture broader intellectual or tool lineage rather than coauthorship. Individual cards
+          identify shared publications. In this view, collaborators do not connect directly to broad topics;
+          each paper connects separately to its research ideas. Dashed links capture broader intellectual or
+          tool lineage rather than coauthorship. Individual cards
           cover every catalog coauthor with at least three shared publications, plus selected one- or
           two-paper specialists central to the represented lineages; remaining one-paper project teams
           are grouped rather than presented as an exhaustive author directory.
@@ -572,17 +537,24 @@ scenes:
       - id: collaborators-moti-yung
         label: Moti Yung
         relationship: collaborator
-        status: Direct collaborator · 11 catalog publications; selected papers shown
-        note: Coauthor across timed cryptography, proactive MPC and secret sharing, secure self-stabilization, and regenerating codes.
+        catalog_authors: [Moti Yung]
+        status: Direct collaborator · all 11 catalog publications mapped
+        note: >-
+          Every catalog coauthorship is shown, including the full and short timed-cryptography
+          position papers and the full and brief proactive-secret-sharing records.
       - id: collaborators-rafail-ostrovsky
         label: Rafail Ostrovsky
         relationship: collaborator
-        status: Direct collaborator · 13 catalog publications; selected papers shown
-        note: Coauthor across proactive security, secure computation, verified zero knowledge, private search, resilient systems, and post-quantum obfuscation.
+        catalog_authors: [Rafail Ostrovsky]
+        status: Direct collaborator · all 13 catalog publications mapped
+        note: >-
+          Every catalog coauthorship is shown across proactive security, secure computation,
+          verified zero knowledge, private search, resilient systems, and post-quantum obfuscation.
       - id: collaborators-gene-tsudik
         label: Gene Tsudik
         relationship: collaborator
-        status: Direct collaborator · 21 catalog publications; selected papers shown
+        catalog_authors: [Gene Tsudik]
+        status: Direct collaborator · all 21 catalog publications mapped
         note: >-
           Coauthor across ALARM and PRISM anonymous routing, location privacy, group distance bounding,
           confidential and anonymous messaging, secure network coding, web-fraud measurement, remote
@@ -590,36 +562,43 @@ scenes:
       - id: collaborators-nigel-smart
         label: Nigel Smart
         relationship: collaborator
-        status: Direct collaborator · 2 mapped papers
+        catalog_authors: [Nigel P. Smart]
+        status: Direct collaborator · all 2 catalog publications mapped
         note: Coauthor on registration-based encryption and concurrent group messaging; Karim also identifies Smart's ECC, FHE, and MPC work as an important influence.
       - id: collaborators-juan-garay
         label: Juan Garay
         relationship: collaborator
-        status: Direct collaborator · secure computation
+        catalog_authors: [Juan Garay]
+        status: Direct collaborator · 1 catalog publication mapped
         note: Coauthor on secure self-stabilizing computation; Karim also identifies Garay's work in MPC and consensus as an important influence.
       - id: collaborators-prism-overlay-team
         label: Linda Briesemeister, Bob Haley & Tim McCarthy
         relationship: collaborator
-        status: Direct collaborators · PRISM messaging overlay
+        catalog_authors: [Linda Briesemeister, Bob Haley, Tim McCarthy]
+        catalog_match: all
+        status: Direct collaborators · 1 catalog publication mapped
         note: >-
           Coauthors on paper #76, the later intrusion-resilient anonymous-messaging overlay named PRISM.
           This is distinct from Gene Tsudik's earlier PRISM privacy-friendly routing work in papers #9 and #15.
       - id: collaborators-stanislaw-jarecki
         label: Stanisław Jarecki
         relationship: collaborator
-        status: Direct collaborator · 2 mapped papers
+        catalog_authors: [Stanislaw Jarecki]
+        status: Direct collaborator · all 2 catalog publications mapped
         note: >-
           Coauthor on covert authenticated key exchange and private identity-based bulletin boards;
           also part of the foundational proactive-secret-sharing lineage.
       - id: collaborators-srdjan-capkun
         label: Srdjan Čapkun
         relationship: collaborator
-        status: Direct collaborator · 2 mapped papers
+        catalog_authors: [Srdjan Čapkun]
+        status: Direct collaborator · all 2 catalog publications mapped
         note: Coauthor on physical-layer identification attacks and group distance bounding.
       - id: collaborators-athina-markopoulou
         label: Athina Markopoulou
         relationship: collaborator
-        status: Direct collaborator · 3 mapped papers
+        catalog_authors: [Athina Markopoulou]
+        status: Direct collaborator · all 3 catalog publications mapped
         note: >-
           Coauthor on BotTorrent, optimal DDoS filtering, and blacklist-based source filtering.
           Network coding is shown separately as broader research influence, not coauthorship of
@@ -627,110 +606,126 @@ scenes:
       - id: collaborators-ahmad-reza-sadeghi
         label: Ahmad-Reza Sadeghi
         relationship: collaborator
-        status: Direct collaborator · 1 mapped paper
+        catalog_authors: [Ahmad-Reza Sadeghi]
+        status: Direct collaborator · 1 catalog publication mapped
         note: >-
           Coauthor on safety-critical remote attestation; the dashed attestation link marks Sadeghi's
           broader trusted-systems influence across the represented attestation program.
       - id: collaborators-chris-peikert
         label: Chris Peikert
         relationship: collaborator
-        status: Direct collaborator · 2 mapped papers
+        catalog_authors: [Chris Peikert]
+        status: Direct collaborator · all 2 catalog publications mapped
         note: >-
           Coauthor on F1 and CraterLake. Lattice, LWE, Ring-LWE, and other FHE links are marked as
           broader intellectual influence unless the connected paper is one of those two collaborations.
       - id: collaborators-srini-devadas
         label: Srinivas (Srini) Devadas
         relationship: collaborator
-        status: Direct collaborator · 2 mapped papers
+        catalog_authors: [Srini Devadas, Srinivas Devadas]
+        status: Direct collaborator · all 2 catalog publications mapped
         note: >-
           Coauthor on F1 and CraterLake. Broader links reflect Aegis attestation, formally specified
           enclave work, secure architecture, and strong-anonymity systems such as Riffle and Atom.
       - id: collaborators-ben-terner
         label: Ben Terner
         relationship: collaborator
-        status: Direct collaborator · 9 catalog publications; selected papers shown
+        catalog_authors: [Ben Terner, Benjamin Terner]
+        status: Direct collaborator · all 9 catalog publications mapped
         note: >-
           Coauthor across timed cryptography, malicious-secure MPC, concurrent group messaging,
           private bulletin boards, Byzantine communication, and the later PRISM messaging overlay.
       - id: collaborators-norrathep-rattanavipanon
         label: Norrathep Rattanavipanon
         relationship: collaborator
-        status: Direct collaborator · 9 catalog publications; selected papers shown
+        catalog_authors: [Norrathep Rattanavipanon]
+        status: Direct collaborator · all 9 catalog publications mapped
         note: >-
           Coauthor across verified remote attestation, proofs of execution, update/reset/erasure,
           swarm attestation, microkernel-backed attestation, and legacy-cryptography instrumentation.
       - id: collaborators-nicholas-genise
         label: Nicholas Genise
         relationship: collaborator
-        status: Direct collaborator · 6 catalog publications; selected papers shown
+        catalog_authors: [Nicholas Genise]
+        status: Direct collaborator · all 6 catalog publications mapped
         note: >-
           Coauthor across covert authenticated key exchange, FHE accelerators and scheme switching,
           quantum optimization, and the coding-theoretic foundations of proactive secret sharing.
       - id: collaborators-joshua-lampkins
         label: Joshua Lampkins
         relationship: collaborator
-        status: Direct collaborator · 6 catalog publications; selected papers shown
+        catalog_authors: [Joshua Lampkins]
+        status: Direct collaborator · all 6 catalog publications mapped
         note: >-
           Coauthor on proactive secret sharing against mobile and dishonest-majority adversaries,
           dynamic groups, secure computation for digital currency, and privacy-preserving AppCoins.
       - id: collaborators-tancrede-lepoint
         label: Tancrède Lepoint
         relationship: collaborator
-        status: Direct collaborator · 6 catalog publications; selected papers shown
+        catalog_authors: [Tancrède Lepoint]
+        status: Direct collaborator · all 6 catalog publications mapped
         note: >-
           Coauthor on proactive MPC and secret sharing for dynamic groups, secure biometric
           re-enrollment, cryptographically enforced selective access, and blockchain cyber insurance.
       - id: collaborators-ivan-nunes
         label: Ivan De Oliveira Nunes
         relationship: collaborator
-        status: Direct collaborator · 5 catalog publications; selected papers shown
+        catalog_authors: [Ivan De Oliveira Nunes]
+        status: Direct collaborator · all 5 catalog publications mapped
         note: >-
           Coauthor on VRASED, APEX, PURE, and secure non-interactive biometric re-enrollment.
       - id: collaborators-joshua-baron
         label: Joshua Baron
         relationship: collaborator
-        status: Direct collaborator · 5 catalog publications; selected papers shown
+        catalog_authors: [Joshua Baron]
+        status: Direct collaborator · all 5 catalog publications mapped
         note: >-
           Coauthor on proactive secret sharing for dynamic and mobile-adversary settings,
           resilient cloud infrastructure, and malicious-secure private pattern matching.
       - id: collaborators-vitor-pereira
         label: Vitor Pereira
         relationship: collaborator
-        status: Direct collaborator · 3 catalog publications; selected papers shown
+        catalog_authors: [Vitor Pereira]
+        status: Direct collaborator · all 3 catalog publications mapped
         note: >-
           Coauthor on machine-checked secure computation and formally verified zero-knowledge,
           including verified parallelism and memory-access optimizations.
       - id: collaborators-kelong-cong
         label: Kelong Cong
         relationship: collaborator
-        status: Direct collaborator · 3 catalog publications; selected papers shown
+        catalog_authors: [Kelong Cong]
+        status: Direct collaborator · all 3 catalog publications mapped
         note: >-
           Coauthor on malicious-secure decomposable MPC, registration-based encryption,
           and concurrent group messaging through the key-lattice framework.
       - id: collaborators-shlomi-dolev
         label: Shlomi Dolev
         relationship: collaborator
-        status: Direct collaborator · 3 catalog publications; selected papers shown
+        catalog_authors: [Shlomi Dolev]
+        status: Direct collaborator · all 3 catalog publications mapped
         note: >-
           Coauthor on secure self-stabilizing computation and dishonest-majority proactive secret sharing.
       - id: collaborators-xavier-carpent
         label: Xavier Carpent
         relationship: collaborator
-        status: Direct collaborator · 3 catalog publications; selected papers shown
+        catalog_authors: [Xavier Carpent]
+        status: Direct collaborator · all 3 catalog publications mapped
         note: >-
           Coauthor on lightweight swarm attestation, temporal consistency for integrity-preserving
           computation, and safety-critical remote attestation.
       - id: collaborators-claudia-diaz
         label: Claudia Díaz
         relationship: collaborator
-        status: Direct collaborator · 1 catalog publication; selected specialist
+        catalog_authors: [Claudia Díaz]
+        status: Direct collaborator · 1 catalog publication mapped
         note: >-
           Direct coauthor on traffic analysis with partial visibility. Her broader work on mixnets,
           metadata privacy, and anonymous communications is shown with dashed lineage links.
       - id: collaborators-jonathan-katz
         label: Jonathan Katz
         relationship: collaborator
-        status: Direct collaborator · 1 catalog publication; selected specialist
+        catalog_authors: [Jonathan Katz]
+        status: Direct collaborator · 1 catalog publication mapped
         note: >-
           Direct coauthor on Efficient, Reusable Fuzzy Extractors from LWE. His broader MPC and
           Byzantine-agreement work is shown with dashed lineage links rather than as additional coauthorship.
@@ -799,6 +794,16 @@ scenes:
         label: "#73 · Multi-party time-lock puzzles"
         title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
         url: /knowledge/papers/paper-73/
+      - id: collaborators-paper-72
+        publication_id: 72
+        label: "#72 · Timed-cryptography position paper (full)"
+        title: "Challenges in Timed Cryptography: A Position Paper (Full Paper)"
+        url: /knowledge/papers/paper-72/
+      - id: collaborators-paper-71
+        publication_id: 71
+        label: "#71 · Timed-cryptography position paper (short)"
+        title: "Challenges in Timed-Cryptography: A Position Paper (Short Paper)"
+        url: /knowledge/papers/paper-71/
       - id: collaborators-paper-55
         publication_id: 55
         label: "#55 · Dynamic proactive MPC"
@@ -809,11 +814,21 @@ scenes:
         label: "#44 · Dishonest-majority proactive MPC"
         title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
         url: /knowledge/papers/paper-44/
+      - id: collaborators-paper-45
+        publication_id: 45
+        label: "#45 · Mobile target-defense foundations"
+        title: "Theoretical Foundations for Mobile Target Defense: Proactive Secret Sharing and Secure Multiparty Computation"
+        url: /knowledge/papers/paper-45/
       - id: collaborators-paper-36
         publication_id: 36
         label: "#36 · Secure self-stabilizing computation"
         title: "Brief Announcement: Secure Self-Stabilizing Computation"
         url: /knowledge/papers/paper-36/
+      - id: collaborators-paper-31
+        publication_id: 31
+        label: "#31 · Dishonest-majority proactive sharing (brief)"
+        title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
+        url: /knowledge/papers/paper-31/
       - id: collaborators-paper-57
         publication_id: 57
         label: "#57 · Regenerating codes and secret sharing"
@@ -1014,9 +1029,14 @@ scenes:
         url: /knowledge/papers/paper-33/
       - id: collaborators-paper-21
         publication_id: 21
-        label: "#21 · Malicious-secure private pattern matching"
+        label: "#21 · 5PM private pattern matching (journal)"
         title: "5PM: Secure Pattern Matching"
         url: /knowledge/papers/paper-21/
+      - id: collaborators-paper-19
+        publication_id: 19
+        label: "#19 · 5PM private pattern matching (conference)"
+        title: "5PM: Secure Pattern Matching"
+        url: /knowledge/papers/paper-19/
     patents:
       - id: collaborators-patent-11
         label: "Patent #11 · Proactive ECDSA"
@@ -1489,9 +1509,21 @@ scenes:
         type: direct
         label: direct coauthorship on multi-party time-lock puzzles
       - from: collaborators-moti-yung
+        to: collaborators-paper-72
+        type: direct
+        label: direct coauthorship on the full timed-cryptography position paper
+      - from: collaborators-moti-yung
+        to: collaborators-paper-71
+        type: direct
+        label: direct coauthorship on the short timed-cryptography position paper
+      - from: collaborators-moti-yung
         to: collaborators-paper-55
         type: direct
         label: direct coauthorship on dynamic proactive MPC
+      - from: collaborators-moti-yung
+        to: collaborators-paper-45
+        type: direct
+        label: direct coauthorship on mobile target-defense foundations
       - from: collaborators-moti-yung
         to: collaborators-paper-44
         type: direct
@@ -1500,6 +1532,14 @@ scenes:
         to: collaborators-paper-36
         type: direct
         label: direct coauthorship on secure self-stabilization
+      - from: collaborators-moti-yung
+        to: collaborators-paper-32
+        type: direct
+        label: direct coauthorship on dishonest-majority proactive secret sharing
+      - from: collaborators-moti-yung
+        to: collaborators-paper-31
+        type: direct
+        label: direct coauthorship on the brief dishonest-majority proactive-sharing announcement
       - from: collaborators-moti-yung
         to: collaborators-paper-57
         type: direct
@@ -1521,6 +1561,10 @@ scenes:
         type: direct
         label: direct coauthorship on dynamic proactive MPC
       - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-45
+        type: direct
+        label: direct coauthorship on mobile target-defense foundations
+      - from: collaborators-rafail-ostrovsky
         to: collaborators-paper-44
         type: direct
         label: direct coauthorship on dishonest-majority proactive MPC
@@ -1528,6 +1572,34 @@ scenes:
         to: collaborators-paper-36
         type: direct
         label: direct coauthorship on secure self-stabilization
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-32
+        type: direct
+        label: direct coauthorship on dishonest-majority proactive secret sharing
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-31
+        type: direct
+        label: direct coauthorship on the brief dishonest-majority proactive-sharing announcement
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-28
+        type: direct
+        label: direct coauthorship on communication-optimal proactive sharing
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-25
+        type: direct
+        label: direct coauthorship on mobile-virus resilience
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-23
+        type: direct
+        label: direct coauthorship on resilient cloud infrastructure
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-21
+        type: direct
+        label: direct coauthorship on the 5PM journal paper
+      - from: collaborators-rafail-ostrovsky
+        to: collaborators-paper-19
+        type: direct
+        label: direct coauthorship on the 5PM conference paper
       - from: collaborators-rafail-ostrovsky
         to: collaborators-paper-67
         type: direct

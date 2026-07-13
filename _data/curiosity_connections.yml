@@ -112,6 +112,9 @@ scenes:
       - id: hotel-fhe-collaborators
         label: Chris Peikert and Srini Devadas
         relationship: collaborator
+        catalog_author_groups:
+          - [Chris Peikert]
+          - [Srini Devadas, Srinivas Devadas]
         status: Direct collaborators · F1
         note: "Both are coauthors on the F1 fully homomorphic-encryption accelerator."
     ideas:
@@ -514,11 +517,14 @@ scenes:
       - id: tour-wim-van-dam
         label: Wim van Dam
         relationship: collaborator
+        catalog_authors: [Wim van Dam]
         status: Direct collaborator · quantum optimization
         note: "Coauthor on quantum optimization heuristics for knapsack problems."
       - id: tour-quantum-distance-collaborators
         label: Aysajan Abidin and Dave Singelée
         relationship: collaborator
+        catalog_authors: [Aysajan Abidin, Dave Singelée]
+        catalog_match: all
         status: Direct collaborators · quantum distance bounding
         note: "Both are coauthors on entanglement-based mutual quantum distance bounding."
       - id: tour-rafail-ostrovsky

@@ -2464,6 +2464,15 @@ body.quick-abstract-dialog-open {
   min-width: 0;
 }
 
+.knowledge-lineage-work-placeholder {
+  border: 1px dashed var(--publication-line);
+  border-radius: 7px;
+  color: var(--publication-muted);
+  font-size: 0.67rem;
+  line-height: 1.45;
+  padding: 0.65rem;
+}
+
 .knowledge-lineage-node {
   appearance: none;
   background: #fff;

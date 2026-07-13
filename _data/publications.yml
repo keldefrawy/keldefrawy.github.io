@@ -316,7 +316,7 @@
   labels: [Theory, Applied]
   contribution_types: [protocol, algorithm]
   title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
-  authors: "José Bacelar Almeida, Manuel Barbosa, Manuel L. Correia, Karim Eldefrawy, Stéphane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira"
+  authors: "José Carlos Bacelar Almeida, Manuel Barbosa, Karim Eldefrawy, Stéphane Graham-Lengrand, Hugo Pacheco, and Vitor Pereira"
   tags: ["zero knowledge", "MPC-in-the-head", "formal verification"]
   summary: >-
     This paper gives the first machine-checked implementation of the general MPC-in-the-Head transformation from secure computation to zero-knowledge proofs. Its modular EasyCrypt proof accepts suitable MPC protocols as components and supports extracting a verified executable implementation for benchmarking.
@@ -680,7 +680,7 @@
   labels: [Theory]
   contribution_types: [protocol, algorithm]
   title: "Brief Announcement: Secure Self-Stabilizing Computation"
-  authors: "Shlomi Dolev, Karim Eldefrawy, Juan A. Garay, Muni Venkateswarlu Kumaramangalam, Rafail Ostrovsky, and Moti Yung"
+  authors: "Shlomi Dolev, Karim Eldefrawy, Juan Garay, Muni Venkateswarlu Kumaramangalam, Rafail Ostrovsky, and Moti Yung"
   tags: ["self-stabilization", "secure multiparty computation"]
   summary: >-
     The paper defines secure self-stabilizing computation, in which a distributed system recovers not only correct operation but also privacy and integrity after even a temporary compromise of every component. It demonstrates the idea with a jointly computed finite-state machine that autonomously restores secure MPC guarantees once enough parties recover and the Byzantine threshold is again satisfied.
