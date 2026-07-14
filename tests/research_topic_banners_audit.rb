@@ -75,6 +75,8 @@ accessibility_checks.each { |label, passed| errors << "shared banner does not #{
 style_checks = {
   "supports five-topic ribbons" => styles.include?(".research-topic-banner__list--5"),
   "supports six-topic ribbons" => styles.include?(".research-topic-banner__list--6"),
+  "keeps the page header in normal flow" => styles.match?(/\.research-record-page > \.research-record-header\s*\{[^}]*float:\s*none;[^}]*position:\s*static;[^}]*width:\s*auto;/m),
+  "keeps nested record sections full-width" => styles.match?(/\.research-record-page > \.research-record\s*\{[^}]*float:\s*none;[^}]*padding:\s*0;[^}]*width:\s*auto;/m),
   "has a visible focus state" => styles.include?(".research-topic-banner__viewport:focus-visible"),
   "has mobile topic guidance" => styles.include?(".research-topic-banner__hint-mobile"),
   "has print-safe wrapping" => styles.match?(/@media print.*?\.research-topic-banner__list--5,/m)

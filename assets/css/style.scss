@@ -3727,6 +3727,28 @@ body.quick-abstract-dialog-open {
 
 .research-record-page {
   color: var(--publication-ink);
+  min-width: 0;
+}
+
+// Minimal treats every semantic <header> as the fixed site sidebar and every
+// <section> as the floated content column. Keep the record page's nested
+// landmarks in the normal document flow instead.
+.research-record-page > .research-record-header {
+  box-sizing: border-box;
+  float: none;
+  padding: 0;
+  position: static;
+  width: auto;
+}
+
+.research-record-page > .research-record {
+  border: 0;
+  box-sizing: border-box;
+  float: none;
+  margin: 2.2rem 0 0;
+  padding: 0;
+  position: static;
+  width: auto;
 }
 
 .research-record-header {
@@ -3939,10 +3961,6 @@ body.quick-abstract-dialog-open {
   line-height: 1.4;
   margin-top: 0.15rem;
   text-align: right;
-}
-
-.research-record {
-  margin-top: 2.2rem;
 }
 
 .research-record h2 {
