@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2200 200" role="img" aria-labelledby="research-ribbon-title research-ribbon-desc">
   <title id="research-ribbon-title">Research themes</title>
-  <desc id="research-ribbon-desc">A blue ribbon connects publications and patents with a secure distributed research network and a paper receiving incoming citations.</desc>
+  <desc id="research-ribbon-desc">A blue ribbon connects scholarly publications on a laptop, granted patents represented by a gavel and shield, funded research represented by a lock and microscope, and a paper receiving incoming citations.</desc>
   <defs>
     <linearGradient id="ribbon-gradient" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#0550ae"/>
@@ -31,63 +31,64 @@
   <path d="M0 111 C170 111 218 117 322 109 C445 99 518 94 636 108 C756 123 809 129 928 112 C1052 94 1137 96 1255 113 C1372 130 1441 127 1562 108 C1692 88 1776 90 1892 107 C2015 125 2085 119 2200 110 L2200 132 C2074 141 2011 145 1885 128 C1768 112 1696 110 1572 128 C1447 147 1363 147 1245 130 C1129 113 1054 113 936 131 C810 149 737 142 626 127 C512 112 445 117 329 128 C212 139 139 132 0 132 Z" fill="url(#ribbon-gradient)" opacity="0.94"/>
   <path d="M0 111 C170 111 218 117 322 109 C445 99 518 94 636 108 C756 123 809 129 928 112 C1052 94 1137 96 1255 113 C1372 130 1441 127 1562 108 C1692 88 1776 90 1892 107 C2015 125 2085 119 2200 110" fill="none" stroke="#58a8ea" stroke-width="4" opacity="0.72"/>
 
-  <!-- Publications: book and secure-computing laptop. -->
-  <g transform="translate(400 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
-    <path d="M-76 5 Q-40 -10 -4 10 V61 Q-39 43 -76 53 Z" fill="url(#icon-fill)"/>
-    <path d="M76 5 Q40 -10 4 10 V61 Q39 43 76 53 Z" fill="url(#icon-fill)"/>
-    <path d="M0 10 V64"/>
-    <path d="M-66 18 Q-39 10 -14 21 M-66 30 Q-39 22 -14 33 M66 18 Q39 10 14 21 M66 30 Q39 22 14 33" stroke-width="3" opacity="0.62"/>
-    <g transform="translate(0 -41)">
-      <rect x="-43" y="-21" width="86" height="50" rx="7" fill="#fff"/>
-      <path d="M-53 36 H53 L43 45 H-43 Z" fill="#dceeff"/>
-      <path d="M-26 5 H-6 M6 5 H26 M0 -11 V20 M-18 -4 L0 8 L18 -4" stroke-width="3"/>
-      <circle cx="0" cy="8" r="4" fill="#075bb8" stroke="none"/>
+  <!-- Official Lucide icon geometry; ISC license: /assets/licenses/lucide.txt. -->
+  <!-- Publications: a scholarly open book and laptop. -->
+  <g transform="translate(440 72)" fill="none" stroke="#075bb8" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+    <g transform="translate(-86 -67) scale(4.3)" stroke-width="0.95">
+      <path d="M12 7v14"/>
+      <path d="M16 12h2"/>
+      <path d="M16 8h2"/>
+      <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" fill="url(#icon-fill)"/>
+      <path d="M6 12h2"/>
+      <path d="M6 8h2"/>
+    </g>
+    <g transform="translate(10 -70) scale(3.4)" stroke-width="1.18">
+      <path d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z" fill="#fff"/>
+      <path d="M20.054 15.987H3.946"/>
     </g>
   </g>
 
-  <!-- Patents: documents, key, and shield. -->
-  <g transform="translate(858 73)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+  <!-- Patents: documents, a legal gavel, and a granted-patent shield. -->
+  <g transform="translate(880 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
     <rect x="-64" y="-5" width="96" height="72" rx="8" fill="#cfe8ff" opacity="0.8"/>
     <rect x="-49" y="-18" width="96" height="72" rx="8" fill="#e8f5ff"/>
     <rect x="-34" y="-31" width="96" height="72" rx="8" fill="#fff"/>
     <path d="M-15 -9 H39 M-15 5 H33 M-15 19 H22" stroke-width="3" opacity="0.66"/>
-    <g transform="translate(-30 -51)">
-      <circle r="20" fill="url(#icon-fill)"/>
-      <circle r="7"/>
-      <path d="M7 0 H40 M28 0 V10 M37 0 V7"/>
+    <g transform="translate(-100 -69) scale(3)" stroke-width="1.33">
+      <path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3l8.384-8.381"/>
+      <path d="m16 16 6-6"/>
+      <path d="m21.5 10.5-8-8"/>
+      <path d="m8 8 6-6"/>
+      <path d="m8.5 7.5 8 8"/>
     </g>
-    <path d="M65 -58 L92 -47 V-24 C92 -5 80 8 65 15 C50 8 38 -5 38 -24 V-47 Z" fill="url(#icon-fill)"/>
-    <path d="M55 -23 L63 -15 L78 -34"/>
+    <g transform="translate(26 -72) scale(3.55)" stroke-width="1.13">
+      <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" fill="url(#icon-fill)"/>
+      <path d="m9 12 2 2 4-4"/>
+    </g>
   </g>
 
-  <!-- Research projects: lattice, distributed network, and secure lock. -->
-  <g transform="translate(1334 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
-    <g transform="translate(43 -43)" stroke-width="3" opacity="0.58">
-      <path d="M-42 -13 H42 M-42 2 H42 M-42 17 H42 M-28 -25 V25 M0 -25 V25 M28 -25 V25"/>
-      <g fill="#1677d2" stroke="#fff" stroke-width="2">
-        <circle cx="-28" cy="-13" r="4.5"/><circle cx="0" cy="-13" r="4.5"/><circle cx="28" cy="-13" r="4.5"/>
-        <circle cx="-28" cy="2" r="4.5"/><circle cx="0" cy="2" r="4.5"/><circle cx="28" cy="2" r="4.5"/>
-        <circle cx="-28" cy="17" r="4.5"/><circle cx="0" cy="17" r="4.5"/><circle cx="28" cy="17" r="4.5"/>
-      </g>
+  <!-- Funded R&amp;D: secure systems on the left and experimental research on the right. -->
+  <g transform="translate(1320 72)" fill="none" stroke="#075bb8" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+    <path d="M-3 -18 H9" stroke="#8bbcec" stroke-width="3" opacity="0.72"/>
+    <circle cx="-46" cy="-18" r="43" fill="#fff" stroke="#b6d7fb" stroke-width="3"/>
+    <circle cx="52" cy="-18" r="43" fill="#fff" stroke="#b6d7fb" stroke-width="3"/>
+    <g transform="translate(-82 -58) scale(3.05)" stroke-width="1.31">
+      <circle cx="12" cy="16" r="1"/>
+      <rect x="3" y="10" width="18" height="12" rx="2" fill="url(#icon-fill)"/>
+      <path d="M7 10V7a5 5 0 0 1 10 0v3"/>
     </g>
-    <g opacity="0.9">
-      <path d="M-88 -15 L-49 -47 L-7 -25 L38 -46 L86 -11 M-88 -15 L-63 39 L-18 52 L39 42 L86 -11 M-49 -47 L-18 52 M-7 -25 L39 42 M38 -46 L-18 52" stroke-width="3"/>
-      <g fill="#e8f5ff" stroke-width="3">
-        <circle cx="-88" cy="-15" r="9"/><circle cx="-49" cy="-47" r="9"/><circle cx="-7" cy="-25" r="9"/>
-        <circle cx="38" cy="-46" r="9"/><circle cx="86" cy="-11" r="9"/><circle cx="-63" cy="39" r="9"/>
-        <circle cx="-18" cy="52" r="9"/><circle cx="39" cy="42" r="9"/>
-      </g>
-    </g>
-    <g transform="translate(4 -8)">
-      <rect x="-35" y="-10" width="70" height="58" rx="9" fill="#fff"/>
-      <path d="M-21 -10 V-25 C-21 -43 -12 -53 0 -53 C12 -53 21 -43 21 -25 V-10" fill="url(#icon-fill)"/>
-      <circle cy="14" r="7" fill="#075bb8" stroke="none"/>
-      <path d="M0 20 V31"/>
+    <g transform="translate(15 -58) scale(3.05)" stroke-width="1.31">
+      <path d="M6 18h8"/>
+      <path d="M3 22h18"/>
+      <path d="M14 22a7 7 0 1 0 0-14h-1"/>
+      <path d="M9 14h2"/>
+      <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" fill="url(#icon-fill)"/>
+      <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/>
     </g>
   </g>
 
   <!-- Citations: papers in an incoming citation graph and an active writing pen. -->
-  <g transform="translate(1800 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
+  <g transform="translate(1760 72)" fill="none" stroke="#075bb8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#soft-shadow)">
     <g stroke-width="3" opacity="0.9">
       <path d="M-75 -29 C-57 -28 -52 -21 -39 -14" marker-end="url(#citation-arrow)"/>
       <path d="M-74 40 C-54 39 -49 27 -38 17" marker-end="url(#citation-arrow)"/>

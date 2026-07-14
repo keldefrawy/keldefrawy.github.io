@@ -1,0 +1,28 @@
+{%- assign resource_matches = site.data.publication_resources | where: "id", include.publication_id -%}
+{%- assign resources = resource_matches | first -%}
+{%- assign rendered_resource_count = 0 -%}
+<span class="chronological-publication-resources" role="group" aria-label="Resources for publication {{ include.publication_id }}">
+{%- assign resource_types = "official,archive,author" | split: "," -%}
+{%- for resource_type in resource_types -%}
+{%- assign resource_list = resources[resource_type] -%}
+{%- if resource_list and resource_list != empty -%}
+{%- for resource in resource_list -%}
+{%- if resource.url and resource.url != empty -%}
+{%- assign rendered_resource_count = rendered_resource_count | plus: 1 -%}
+{%- assign resource_label = resource.label -%}
+{%- if resource.url contains "/pubs/" -%}
+{%- if resource.label contains "Extended" or resource.label contains "extended" -%}
+{%- assign resource_label = "Local extended PDF" -%}
+{%- else -%}
+{%- assign resource_label = "Local author PDF" -%}
+{%- endif -%}
+{%- endif -%}
+<a class="chronological-publication-resource chronological-publication-resource--{{ resource_type }}" href="{{ resource.url | escape }}"><span class="sr-only">{% case resource_type %}{% when "official" %}Official version: {% when "archive" %}Public archive: {% when "author" %}Author-hosted copy: {% endcase %}</span>{{ resource_label | escape }}</a>
+{%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+{%- endfor -%}
+{%- if rendered_resource_count == 0 -%}
+<span class="chronological-publication-resource-missing">No public paper link yet</span>
+{%- endif -%}
+</span>

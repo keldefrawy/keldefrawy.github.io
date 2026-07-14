@@ -1,6 +1,8 @@
 ---
 - id: 79
-  official: []
+  official:
+  - label: CSCML 2026 venue
+    url: https://www.cscml.org/
   archive: []
   author: []
 - id: 78
@@ -8,7 +10,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2024/676
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2024/composing-timed-cryptographic-protocols-eprint2024.pdf
 - id: 77
   official: []
   archive: []
@@ -44,7 +48,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2024/1529
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2024/challenges-timed-cryptography-cscml2024.pdf
 - id: 70
   official:
   - label: Publisher / DOI
@@ -62,7 +68,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2022/1531
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2024/key-lattice-framework-acns2024.pdf
 - id: 68
   official:
   - label: Publisher / DOI
@@ -70,7 +78,11 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2023/1418
-  author: []
+  - label: NSF Public Access
+    url: https://par.nsf.gov/servlets/purl/10616428
+  author:
+  - label: Local author PDF
+    url: /pubs/2023/short-concurrent-covert-ake-asiacrypt2023.pdf
 - id: 67
   official:
   - label: Publisher / DOI
@@ -78,7 +90,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2023/1322
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2023/high-assurance-line-point-zkp-ccs2023.pdf
 - id: 66
   official:
   - label: Publisher / DOI
@@ -99,6 +113,8 @@
   author:
   - label: IBM author page
     url: https://research.ibm.com/publications/on-the-hardness-of-scheme-switching-between-simd-fhe-schemes
+  - label: Local author PDF
+    url: /pubs/2023/scheme-switching-simd-fhe-pqcrypto2023.pdf
 - id: 64
   official:
   - label: Publisher / DOI
@@ -121,6 +137,8 @@
   author:
   - label: CISPA author page
     url: https://cispa.de/en/research/publications/66354-how-byzantine-is-a-send-corruption-
+  - label: Local author PDF
+    url: /pubs/2022/how-byzantine-send-corruption-acns2022.pdf
 - id: 62
   official:
   - label: Publisher / DOI
@@ -138,7 +156,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2021/1564
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2022/communication-efficient-proactive-mpc-acns2022.pdf
 - id: 60
   official:
   - label: Publisher / DOI
@@ -176,7 +196,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2022/096
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2021/regenerating-codes-proactive-secret-sharing-sss2021.pdf
 - id: 56
   official:
   - label: Publisher / DOI
@@ -184,7 +206,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2021/499
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2021/optimizing-registration-based-encryption-imacc2021.pdf
 - id: 55
   official:
   - label: Publisher / DOI
@@ -192,7 +216,9 @@
   archive:
   - label: IACR ePrint
     url: https://eprint.iacr.org/2020/747
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2020/proactive-mpc-dynamic-adversary-structures-scn2020.pdf
 - id: 54
   official:
   - label: USENIX paper page
@@ -465,6 +491,8 @@
   author:
   - label: ResearchGate author-uploaded PDF
     url: https://www.researchgate.net/profile/Karim-Eldefrawy-2/publication/285835450_Founding_Digital_Currency_on_Secure_Computation/links/573dee9a08ae9f741b2ffd5a/Founding-Digital-Currency-on-Secure-Computation.pdf
+  - label: Local author PDF
+    url: /pubs/2014/founding-digital-currency-secure-computation-ccs2014.pdf
 - id: 25
   official:
   - label: Publisher / DOI
@@ -576,7 +604,9 @@
   archive:
   - label: CiteSeerX archive
     url: https://citeseerx.ist.psu.edu/document?doi=7a36caaf053d725da668419e3e765021f7f145ea&repid=rep1&type=pdf
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2011/alarm-tmc2011.pdf
 - id: 13
   official:
   - label: Publisher / DOI
@@ -700,7 +730,9 @@
   archive:
   - label: CiteSeerX archive
     url: https://citeseerx.ist.psu.edu/document?doi=5c6faed11ce6a9d687bfdbb5f1a0b253c5628995&repid=rep1&type=pdf
-  author: []
+  author:
+  - label: Local author PDF
+    url: /pubs/2006/cross-layer-coordination-framework-iwcmc2006.pdf
 - id: 1
   official:
   - label: Publisher / DOI
