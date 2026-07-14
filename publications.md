@@ -15,7 +15,9 @@ publications_browser: true
     <strong>View:</strong>
     <span aria-current="page">By Research Area</span>
     <span aria-hidden="true">·</span>
-    <a href="{{ '/pubs.html' | relative_url }}">Original chronological list</a>
+    <a href="{{ '/pubs.html' | relative_url }}">Chronological list</a>
+    <span aria-hidden="true">·</span>
+    <a href="{{ '/knowledge/' | relative_url }}">Scientific knowledge maps</a>
   </nav>
 
   <nav class="publication-taxonomy-index" aria-label="Publication Research Areas">

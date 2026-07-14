@@ -692,7 +692,7 @@
         return styles.getPropertyValue("--knowledge-line-uses").trim() || "#738496";
       }
       if (type === "lineage") {
-        return styles.getPropertyValue("--knowledge-line-lineage").trim() || "#8250df";
+        return styles.getPropertyValue("--knowledge-line-lineage").trim() || "#1f6feb";
       }
       return styles.getPropertyValue("--knowledge-line-direct").trim() || "#8c959f";
     }

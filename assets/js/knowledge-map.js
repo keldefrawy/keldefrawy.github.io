@@ -101,7 +101,7 @@
     values.forEach(function (value, index) {
       if (value === null) {
         var notAssessedPoint = point(index, 1.03);
-        context.fillStyle = "#6e5494";
+        context.fillStyle = "#3f6f9f";
         context.font = "700 10px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
         context.textAlign = "center";
         context.textBaseline = "middle";

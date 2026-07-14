@@ -1,5 +1,24 @@
-# (Last Updated: July 2026)
-(Email me if you are having problems finidng a PDF of one of my papers)
+---
+layout: default
+title: Publications in Chronological Order
+description: A chronological list of Karim Eldefrawy's publications, with links to topic-based browsing and scientific knowledge maps.
+permalink: /pubs.html
+---
+
+# Publications in Chronological Order
+
+_Last updated: July 2026_
+
+<nav class="publication-view-switcher" aria-label="Publication views">
+  <strong>Explore:</strong>
+  <span aria-current="page">Chronological list</span>
+  <span aria-hidden="true">·</span>
+  <a href="{{ '/publications/' | relative_url }}">Browse by research area</a>
+  <span aria-hidden="true">·</span>
+  <a href="{{ '/knowledge/' | relative_url }}">Scientific knowledge maps</a>
+</nav>
+
+(Email me if you are having problems finding a PDF of one of my papers.)
 
 
 # Pre-prints, Under Review, and Ongoing Work

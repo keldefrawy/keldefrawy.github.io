@@ -4,7 +4,7 @@ evidence_note: >-
   The collaborators view uses publication authorship on this site for direct-collaboration anchors.
   Conceptual-lineage links record broader research influence identified by Karim; they do not imply
   that every downstream paper was coauthored with the connected person. Karim has not collaborated
-  with the scientists in the foundational lane. Blue solid cards mark documented co-authors; violet
+  with the scientists in the foundational lane. Blue solid cards mark documented co-authors; pale-blue
   dashed cards mark historical or intellectual influence only.
 
 scenes:
@@ -549,7 +549,7 @@ scenes:
       - kind: collaboration
         label: How to read this view
         text: >-
-          Blue solid cards mark documented collaborators and co-authors. Violet cards in the separate
+          Blue solid cards mark documented collaborators and co-authors. Pale-blue dashed cards in the separate
           foundations-and-influences lane are not Karim's collaborators. Solid person-to-paper links
           identify shared publications. In this view, collaborators do not connect directly to broad topics;
           each paper connects separately to its research ideas. Dashed links capture broader intellectual or
