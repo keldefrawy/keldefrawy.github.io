@@ -1,0 +1,31 @@
+---
+- id: cryptographic-software
+  title: Cryptographic Software
+  count: 3
+  count_label: patents
+  icon: file-code
+  summary: Executable hardening · secure-computation tooling
+- id: proactive-cryptography
+  title: Proactive Cryptography
+  count: 11
+  count_label: patents
+  icon: refresh-ccw
+  summary: Resilient MPC · secret sharing · signatures & ledgers
+- id: private-search-data
+  title: Private Search & Data
+  count: 6
+  count_label: patents
+  icon: database-search
+  summary: Private search · selective disclosure · blockchain privacy
+- id: secure-identity-biometrics
+  title: Secure Identity & Biometrics
+  count: 4
+  count_label: patents
+  icon: scan-face
+  summary: Private biometrics · credentials · anonymous accountability
+- id: network-cloud-defense
+  title: Network & Cloud Defense
+  count: 7
+  count_label: patents
+  icon: cloud-cog
+  summary: Cloud control · network visibility · traffic defense

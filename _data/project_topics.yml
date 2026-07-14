@@ -1,0 +1,37 @@
+---
+- id: data-document-security
+  title: Data and Document Security
+  count: 3
+  count_label: awards
+  icon: file-lock
+  summary: Watermarking · protected CUI workflows
+- id: verified-encrypted-computation
+  title: Verified Encrypted Computation
+  count: 2
+  count_label: projects
+  icon: cpu
+  summary: FHE acceleration · zero-knowledge verification
+- id: private-anonymous-communication
+  title: Private & Anonymous Communication
+  count: 2
+  count_label: projects
+  icon: messages-square
+  summary: Protected overlays · anonymous messaging
+- id: health-private-biometrics
+  title: Health & Private Biometrics
+  count: 2
+  count_label: projects
+  icon: heart-pulse
+  summary: Cognitive health · cryptographic biometrics
+- id: quantum-powered-security
+  title: Quantum-powered Security
+  count: 1
+  count_label: project
+  icon: atom
+  summary: Quantum optimization for Internet security
+- id: cloud-cyber-physical-security
+  title: Cloud & Cyber-Physical Security
+  count: 2
+  count_label: projects
+  icon: cloud-cog
+  summary: Secure cloud control · resilient CPS

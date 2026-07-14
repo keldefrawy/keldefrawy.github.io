@@ -1,0 +1,37 @@
+{% assign topic_count = include.topics | size %}
+<figure class="research-topic-banner" aria-labelledby="{{ include.id }}-title">
+  <div class="research-topic-banner__heading">
+    <div>
+      <p class="research-topic-banner__kicker">{{ include.kicker | escape }}</p>
+      <h2 id="{{ include.id }}-title">{{ include.title | escape }}</h2>
+    </div>
+    <p class="research-topic-banner__hint">
+      <span class="research-topic-banner__hint-default">Conceptual map · left to right</span>
+      <span class="research-topic-banner__hint-mobile">Swipe topics →</span>
+    </p>
+  </div>
+
+  <p id="{{ include.id }}-scroll-help" class="sr-only">On smaller screens, scroll horizontally to view every topic.</p>
+  <div
+    class="research-topic-banner__viewport"
+    role="region"
+    aria-labelledby="{{ include.id }}-title"
+    aria-describedby="{{ include.id }}-scroll-help"
+    tabindex="0"
+  >
+    <ul class="research-topic-banner__list research-topic-banner__list--{{ topic_count }}">
+      {% for topic in include.topics %}
+        <li class="research-topic-banner__item">
+          <span class="research-topic-banner__count">{{ topic.count }} {{ topic.count_label | escape }}</span>
+          <span class="research-topic-banner__marker" aria-hidden="true">
+            {% include research-topic-icon.html name=topic.icon %}
+          </span>
+          <strong>{{ topic.title | escape }}</strong>
+          <span class="research-topic-banner__summary">{{ topic.summary | escape }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <figcaption>{{ include.caption | escape }}</figcaption>
+</figure>

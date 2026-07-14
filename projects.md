@@ -1,6 +1,20 @@
+---
+layout: default
+title: Extramurally Funded Projects
+description: Twelve funded R&D awards spanning data and document security, verified encrypted computation, private communication, health and biometrics, quantum-powered security, and secure cloud and cyber-physical systems.
+permalink: /projects.html
+---
 
-# Extramurally Funded Projects
+<article class="research-record-page research-record-page--projects">
+  <header class="research-record-header">
+    <p class="research-record-header__eyebrow">Extramurally funded R&amp;D · 2013–2026</p>
+    <h1>Extramurally Funded Projects</h1>
+    <p>Research programs connecting protected information, verifiable encrypted computation, private communication, emerging computing, and resilient systems.</p>
+  </header>
 
+  {% include research-topic-banner.html id="project-topics" kicker="Six areas of funded R&D" title="Project Topics" topics=site.data.project_topics caption="Primary-topic view of 12 funded awards; several projects contribute to more than one area." %}
+
+  <div class="research-record project-record" markdown="1">
 
 
 ## At [Confidencial.io](https://www.confidencial.io/) from 2022 to 202X:
@@ -24,3 +38,6 @@
 * 2016-2017: PI of "ABC: Acquiring Biometrics with Cryptography,” funded by [IARPA](https://www.iarpa.gov/) under the Open Call Broad Agency Annoucement.
 * 2015-2017: Task Lead in "Side-channel Security Analysis and Secure Software Updates for Cyber-Physical Systems,” funded by the [DHS Science and Technology](https://www.dhs.gov/science-and-technology) divison under the Cyber Physical Systems (CPS) program.
 * 2013-2016: Task Lead in "Cloud-COP: A Secure Cloud Control and Operation Plane,” funded by the [DHS Science and Technology](https://www.dhs.gov/science-and-technology) divison under the Open Call Broad Agency Annoucement.
+
+</div>
+</article>
