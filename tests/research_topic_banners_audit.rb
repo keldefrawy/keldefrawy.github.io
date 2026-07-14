@@ -68,6 +68,7 @@ accessibility_checks = {
   "describes horizontal overflow" => banner_include.include?('aria-describedby="{{ include.id }}-scroll-help"'),
   "provides a keyboard-focusable region" => banner_include.include?('tabindex="0"'),
   "uses a non-temporal unordered list" => banner_include.include?('<ul class="research-topic-banner__list'),
+  "omits the redundant desktop direction label" => !banner_include.include?("Conceptual map · left to right"),
   "keeps icons decorative beside visible text" => icon_include.include?('aria-hidden="true"') && icon_include.include?('focusable="false"')
 }
 accessibility_checks.each { |label, passed| errors << "shared banner does not #{label}" unless passed }
