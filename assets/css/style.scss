@@ -4609,10 +4609,6 @@ body.quick-abstract-dialog-open {
   .home-primary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .home-card--commercial {
-    grid-column: 1 / -1;
-  }
 }
 
 @media screen and (min-width: 800px) {
@@ -4785,14 +4781,12 @@ body.quick-abstract-dialog-open {
   }
 
   .home-card--awards,
+  .home-card--publications,
+  .home-card--publication-exploration,
   .home-card--projects,
   .home-card--commercial,
   .home-card--talks {
     grid-column: span 2;
-  }
-
-  .home-card--publications {
-    grid-column: span 4;
   }
 }
 

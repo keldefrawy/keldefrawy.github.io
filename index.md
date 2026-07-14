@@ -9,7 +9,7 @@ title: Home
 <figure class="home-research-banner">
   <img src="{{ '/assets/images/home-research-ribbon-banner.svg' | relative_url }}" alt="" width="2200" height="200" fetchpriority="high">
   <figcaption class="home-research-banner__stats" aria-label="Selected research figures">
-    <a href="{{ '/publications/' | relative_url }}"><strong>79</strong><span>peer-reviewed publications</span></a>
+    <a href="{{ '/pubs.html' | relative_url }}"><strong>{{ site.data.publications | size }}</strong><span>publications &amp; current work</span></a>
     <a href="{{ '/patents.html' | relative_url }}"><strong>31</strong><span>granted patents</span></a>
     <a href="{{ '/projects.html' | relative_url }}"><strong>12</strong><span>funded R&amp;D projects</span></a>
     <a href="https://scholar.google.com/citations?user=e9UP75IAAAAJ&amp;hl=en"><strong>4.7K+</strong><span>Google Scholar citations</span></a>
@@ -39,9 +39,19 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 
 ## Publications, Patents, and Writings
 
-* **Publications ({{ site.data.publications | size }}):** [Browse by research area]({{ '/publications/' | relative_url }}) · [Scientific knowledge maps]({{ '/knowledge/' | relative_url }}) · [Google Scholar](https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AJsN-F7q-GqI53DXmoBIjiwmtgnu75VPKmwt3OmWxFkR6fIsDEBoFY4aY3AW3KFD2fi5AqKsA7lETPZGPC1p3b_1fbs75S5nYF9EQYUHyWIaHOSivsS9xgM&user=e9UP75IAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Karim-Eldefrawy-2)
+* [Publications ({{ site.data.publications | size }}) — chronological list]({{ '/pubs.html' | relative_url }})
 * [Patents (31)]({{ '/patents.html' | relative_url }})
 * [Short informal articles]({{ '/thoughts.html' | relative_url }})
+
+</article>
+
+<article class="home-card home-card--publication-exploration" markdown="1">
+
+## Explore Publications
+
+* [Browse publications by research area]({{ '/publications/' | relative_url }})
+* [Scientific knowledge maps]({{ '/knowledge/' | relative_url }})
+* [Google Scholar](https://scholar.google.com/citations?user=e9UP75IAAAAJ&hl=en) · [ResearchGate](https://www.researchgate.net/profile/Karim-Eldefrawy-2)
 
 </article>
 
