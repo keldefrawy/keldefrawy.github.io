@@ -176,7 +176,7 @@ scenes:
         status: Fault tolerance under transient and Byzantine faults
     catalog_paper_idea_links:
       - idea_id: hotel-secure-communications
-        publication_ids: [4, 7, 9, 10, 11, 14, 15, 74]
+        publication_ids: [4, 7, 9, 10, 11, 14, 15, 78]
         type: direct
         label: secure and private communications
       - idea_id: hotel-distance-bounding
@@ -224,11 +224,11 @@ scenes:
         title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
         url: /knowledge/papers/paper-54/
         note: "Extends verified embedded-device security from attesting state to proving that specified software executed and produced an authenticated result."
-      - id: hotel-paper-78
-        publication_id: 78
-        label: "#78 · Timed-protocol composition"
+      - id: hotel-paper-77
+        publication_id: 77
+        label: "#77 · Timed-protocol composition"
         title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-        url: /knowledge/papers/paper-78/
+        url: /knowledge/papers/paper-77/
         note: "Models residual complexity across adversarial depth and proves timed-protocol composition results."
       - id: hotel-paper-59
         publication_id: 59
@@ -429,7 +429,7 @@ scenes:
         type: direct
         label: direct coauthorship on regenerating codes and secret sharing
       - from: hotel-moti-yung
-        to: hotel-paper-78
+        to: hotel-paper-77
         type: direct
         label: direct coauthorship on timed-protocol composition
       - from: hotel-juan-garay
@@ -465,7 +465,7 @@ scenes:
         type: direct
         label: verified proofs of execution
       - from: hotel-computational-security
-        to: hotel-paper-78
+        to: hotel-paper-77
         type: direct
         label: depth-indexed residual complexity
       - from: hotel-computational-security
@@ -637,7 +637,7 @@ scenes:
         label: Machine-checked secure and verifiable computation
     catalog_paper_idea_links:
       - idea_id: tour-secure-communications
-        publication_ids: [4, 7, 9, 10, 14, 15, 16, 74]
+        publication_ids: [4, 7, 9, 10, 14, 15, 16, 78]
         type: direct
         label: secure and private communications
       - idea_id: tour-capacity-coding
@@ -713,11 +713,11 @@ scenes:
         title: "Entanglement-Based Mutual Quantum Distance Bounding"
         url: /knowledge/papers/paper-70/
         note: "Uses entangled states in a mutual distance-bounding protocol."
-      - id: tour-paper-77
-        publication_id: 77
-        label: "#77 · Post-quantum point obfuscation"
+      - id: tour-paper-76
+        publication_id: 76
+        label: "#76 · Post-quantum point obfuscation"
         title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
-        url: /knowledge/papers/paper-77/
+        url: /knowledge/papers/paper-76/
         status: Ongoing work
         note: "An ongoing post-quantum project; no public manuscript is currently linked."
     patents: []
@@ -819,7 +819,7 @@ scenes:
         type: direct
         label: direct collaboration in post-quantum obfuscation
       - from: tour-rafail-ostrovsky
-        to: tour-paper-77
+        to: tour-paper-76
         type: direct
         label: direct coauthorship on post-quantum point obfuscation
       - from: tour-capacity-coding
@@ -896,7 +896,7 @@ scenes:
         type: lineage
         label: quantum threat to classical public keys
       - from: tour-post-quantum
-        to: tour-paper-77
+        to: tour-paper-76
         type: direct
         label: post-quantum obfuscation
 
@@ -1177,7 +1177,7 @@ scenes:
         label: Secure networking, privacy, and proximity authentication
     catalog_paper_idea_links:
       - idea_id: machines-secure-systems
-        publication_ids: [4, 7, 9, 10, 13, 14, 15, 74]
+        publication_ids: [4, 7, 9, 10, 13, 14, 15, 78]
         type: direct
         label: secure networking and authentication
       - idea_id: machines-information-switching
@@ -1238,11 +1238,11 @@ scenes:
         label: "#40 · Automated blockchain cyber insurance"
         title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
         url: /knowledge/papers/paper-40/
-      - id: machines-paper-76
-        publication_id: 76
-        label: "#76 · Dependable privacy-preserving messaging automation"
+      - id: machines-paper-75
+        publication_id: 75
+        label: "#75 · Dependable privacy-preserving messaging automation"
         title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-        url: /knowledge/papers/paper-76/
+        url: /knowledge/papers/paper-75/
     patents: []
     links:
       - from: machines-hilbert
@@ -1474,7 +1474,7 @@ scenes:
         type: direct
         label: automated risk sharing and blockchain-based cyber insurance
       - from: machines-trustworthy-automation
-        to: machines-paper-76
+        to: machines-paper-75
         type: direct
         label: intrusion-resilient automation for privacy-preserving distributed messaging
       - from: machines-checked-security
@@ -1757,7 +1757,7 @@ scenes:
         label: Cryptography, privacy, and resilient secure systems
     catalog_paper_idea_links:
       - idea_id: labs-cryptography-privacy
-        publication_ids: [4, 7, 9, 10, 13, 14, 15, 17, 27, 33, 41, 42, 74]
+        publication_ids: [4, 7, 9, 10, 13, 14, 15, 17, 27, 33, 41, 42, 78]
         type: direct
         label: cryptography, privacy, and secure systems
       - idea_id: labs-digital-foundations
@@ -1857,11 +1857,11 @@ scenes:
         title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
         url: /knowledge/papers/paper-62/
         note: "Joint work with Tancrède Lepoint on deployable cryptographic access control."
-      - id: labs-paper-76
-        publication_id: 76
-        label: "#76 · Intrusion-resilient private messaging"
+      - id: labs-paper-75
+        publication_id: 75
+        label: "#75 · Intrusion-resilient private messaging"
         title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-        url: /knowledge/papers/paper-76/
+        url: /knowledge/papers/paper-75/
         note: "Ongoing direct joint work with Linda Briesemeister and Tim McCarthy."
       - id: labs-paper-31
         publication_id: 31
@@ -1883,11 +1883,11 @@ scenes:
         label: "#68 · Short concurrent authenticated key exchange"
         title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
         url: /knowledge/papers/paper-68/
-      - id: labs-paper-74
-        publication_id: 74
-        label: "#74 · Private identity-based bulletin boards"
+      - id: labs-paper-78
+        publication_id: 78
+        label: "#78 · Private identity-based bulletin boards"
         title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
-        url: /knowledge/papers/paper-74/
+        url: /knowledge/papers/paper-78/
     patents:
       - id: labs-patent-24
         patent_number: US10867053
@@ -2069,7 +2069,7 @@ scenes:
         type: direct
         label: authenticated key-exchange collaboration with Stas Jarecki
       - from: labs-ibm-crypto-collaboration
-        to: labs-paper-74
+        to: labs-paper-78
         type: direct
         label: anonymous bulletin-board collaboration with Gene Tsudik and Stas Jarecki
       - from: labs-provenance-security
@@ -2133,7 +2133,7 @@ scenes:
         type: direct
         label: deployable cryptographic access control
       - from: labs-cryptography-privacy
-        to: labs-paper-76
+        to: labs-paper-75
         type: direct
         label: privacy-preserving intrusion-resilient messaging
       - from: labs-cryptography-privacy
@@ -2189,11 +2189,11 @@ scenes:
         type: direct
         label: direct co-inventorship
       - from: labs-linda-briesemeister
-        to: labs-paper-76
+        to: labs-paper-75
         type: direct
         label: direct coauthorship
       - from: labs-tim-mccarthy
-        to: labs-paper-76
+        to: labs-paper-75
         type: direct
         label: direct coauthorship
       - from: labs-christopher-peikert
@@ -2393,7 +2393,7 @@ scenes:
         label: Roots of trust, remote attestation, and proofs of execution
     catalog_paper_idea_links:
       - idea_id: cipher-anonymity
-        publication_ids: [7, 9, 14, 15, 74]
+        publication_ids: [7, 9, 14, 15, 78]
         type: direct
         label: anonymous and private communications
       - idea_id: cipher-private-communications
@@ -2459,11 +2459,11 @@ scenes:
         title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
         url: /knowledge/papers/paper-73/
         note: "Extends timed release from a single committer to quorum-controlled generation."
-      - id: cipher-paper-75
-        publication_id: 75
-        label: "#75 · Decomposable MPC"
+      - id: cipher-paper-74
+        publication_id: 74
+        label: "#74 · Decomposable MPC"
         title: "Decomposable MPC with Security Against Malicious Adversaries"
-        url: /knowledge/papers/paper-75/
+        url: /knowledge/papers/paper-74/
         status: Under review
         note: "Studies how secure computation can be decomposed into reusable components while retaining security against malicious participants."
       - id: cipher-paper-69
@@ -2657,7 +2657,7 @@ scenes:
         type: direct
         label: direct collaboration on decomposable MPC
       - from: cipher-ben-terner
-        to: cipher-paper-75
+        to: cipher-paper-74
         type: direct
         label: direct coauthorship on maliciously secure decomposable MPC
       - from: cipher-ben-terner
@@ -2717,7 +2717,7 @@ scenes:
         type: direct
         label: direct collaboration on decomposable MPC
       - from: cipher-kelong-cong
-        to: cipher-paper-75
+        to: cipher-paper-74
         type: direct
         label: direct coauthorship on maliciously secure decomposable MPC
       - from: cipher-kelong-cong
@@ -2838,7 +2838,7 @@ scenes:
         type: direct
         label: proactive secure computation
       - from: cipher-mpc
-        to: cipher-paper-75
+        to: cipher-paper-74
         type: direct
         label: maliciously secure decomposable MPC
       - from: cipher-mpc

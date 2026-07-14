@@ -220,16 +220,16 @@ scenes:
       - id: science-cipher-lattices
         label: Lattice cryptography, LWE, and Ring-LWE
     papers:
-      - id: science-cipher-paper-78
-        publication_id: 78
-        label: "#78 · Timed-protocol composition"
+      - id: science-cipher-paper-77
+        publication_id: 77
+        label: "#77 · Timed-protocol composition"
         title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-        url: /knowledge/papers/paper-78/
-      - id: science-cipher-paper-76
-        publication_id: 76
-        label: "#76 · PRISM intrusion-resilient messaging"
+        url: /knowledge/papers/paper-77/
+      - id: science-cipher-paper-75
+        publication_id: 75
+        label: "#75 · PRISM intrusion-resilient messaging"
         title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-        url: /knowledge/papers/paper-76/
+        url: /knowledge/papers/paper-75/
       - id: science-cipher-paper-72
         publication_id: 72
         label: "#72 · Timed-cryptography position paper (full)"
@@ -246,11 +246,11 @@ scenes:
         title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
         url: /knowledge/papers/paper-64/
         note: Accelerates bootstrapping so BGV, GSW, and CKKS-style FHE computations can run at unbounded depth.
-      - id: science-cipher-paper-74
-        publication_id: 74
-        label: "#74 · Private identity-based bulletin boards"
+      - id: science-cipher-paper-78
+        publication_id: 78
+        label: "#78 · Private identity-based bulletin boards"
         title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
-        url: /knowledge/papers/paper-74/
+        url: /knowledge/papers/paper-78/
         note: Uses searchable hierarchical identity-based encryption, bilinear maps, and private information retrieval.
       - id: science-cipher-paper-62
         publication_id: 62
@@ -310,7 +310,7 @@ scenes:
         url: /knowledge/papers/paper-55/
     links:
       - from: cipher-timed-release
-        to: science-cipher-paper-78
+        to: science-cipher-paper-77
         type: direct
         label: foundations and composition of timed protocols
       - from: cipher-timed-release
@@ -322,7 +322,7 @@ scenes:
         type: direct
         label: short timed-cryptography position paper
       - from: cipher-group-messaging
-        to: science-cipher-paper-76
+        to: science-cipher-paper-75
         type: direct
         label: intrusion-resilient privacy-preserving messaging overlay
       - from: science-cipher-chaum
@@ -350,7 +350,7 @@ scenes:
         type: direct
         label: traffic-analysis resistance and limits
       - from: science-cipher-anonymity
-        to: science-cipher-paper-74
+        to: science-cipher-paper-78
         type: direct
         label: private anonymous bulletin boards
       - from: science-cipher-distance-bounding
@@ -494,7 +494,7 @@ scenes:
         type: direct
         label: bootstrapped FHE acceleration
       - from: cipher-public-key
-        to: science-cipher-paper-74
+        to: science-cipher-paper-78
         type: direct
         label: identity-based encryption and searchable HIBE
       - from: cipher-public-key
@@ -514,7 +514,7 @@ scenes:
         type: lineage
         label: Miller-algorithm and elliptic-curve pairing lineage
       - from: science-cipher-pairings
-        to: science-cipher-paper-74
+        to: science-cipher-paper-78
         type: uses
         label: bilinear-map searchable encryption
       - from: science-cipher-pairings
@@ -626,7 +626,7 @@ scenes:
         catalog_match: all
         status: Direct collaborators · 1 catalog publication mapped
         note: >-
-          Coauthors on paper #76, the later intrusion-resilient anonymous-messaging overlay named PRISM.
+          Coauthors on paper #75, the later intrusion-resilient anonymous-messaging overlay named PRISM.
           This is distinct from Gene Tsudik's earlier PRISM privacy-friendly routing work in papers #9 and #15.
       - id: collaborators-stanislaw-jarecki
         label: Stanisław Jarecki
@@ -874,11 +874,11 @@ scenes:
         type: direct
         label: secure cooperative inter-personal networking
       - idea_id: collaborators-anonymity
-        publication_ids: [7, 9, 14, 15, 74]
+        publication_ids: [7, 9, 14, 15, 78]
         type: direct
         label: anonymous routing, location privacy, and metadata-private messaging
       - idea_id: collaborators-private-messaging
-        publication_ids: [10, 74]
+        publication_ids: [10, 78]
         type: direct
         label: private and confidential messaging
       - idea_id: collaborators-network-coding
@@ -910,11 +910,11 @@ scenes:
         type: direct
         label: machine-checked zero knowledge
     papers:
-      - id: collaborators-paper-78
-        publication_id: 78
-        label: "#78 · Timed-protocol composition"
+      - id: collaborators-paper-77
+        publication_id: 77
+        label: "#77 · Timed-protocol composition"
         title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-        url: /knowledge/papers/paper-78/
+        url: /knowledge/papers/paper-77/
       - id: collaborators-paper-73
         publication_id: 73
         label: "#73 · Multi-party time-lock puzzles"
@@ -990,16 +990,16 @@ scenes:
         label: "#69 · Concurrent group messaging"
         title: "The Key Lattice Framework for Concurrent Group Messaging"
         url: /knowledge/papers/paper-69/
-      - id: collaborators-paper-74
-        publication_id: 74
-        label: "#74 · Private identity-based bulletin boards"
+      - id: collaborators-paper-78
+        publication_id: 78
+        label: "#78 · Private identity-based bulletin boards"
         title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
-        url: /knowledge/papers/paper-74/
-      - id: collaborators-paper-77
-        publication_id: 77
-        label: "#77 · Post-quantum point obfuscation"
+        url: /knowledge/papers/paper-78/
+      - id: collaborators-paper-76
+        publication_id: 76
+        label: "#76 · Post-quantum point obfuscation"
         title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
-        url: /knowledge/papers/paper-77/
+        url: /knowledge/papers/paper-76/
       - id: collaborators-paper-59
         publication_id: 59
         label: "#59 · F1 FHE accelerator"
@@ -1046,7 +1046,7 @@ scenes:
         label: "#9 · PRISM privacy-friendly routing"
         title: "PRISM: Privacy-Friendly Routing in Suspicious MANETs (and VANETs)"
         url: /knowledge/papers/paper-9/
-        note: "Gene Tsudik's PRISM routing paper; distinct from the later paper #76 messaging overlay."
+        note: "Gene Tsudik's PRISM routing paper; distinct from the later paper #75 messaging overlay."
       - id: collaborators-paper-15
         publication_id: 15
         label: "#15 · Privacy-preserving on-demand routing"
@@ -1093,16 +1093,16 @@ scenes:
         label: "#66 · Traffic analysis with partial visibility"
         title: "Traffic Analysis by Adversaries with Partial Visibility"
         url: /knowledge/papers/paper-66/
-      - id: collaborators-paper-76
-        publication_id: 76
-        label: "#76 · PRISM anonymous messaging overlay"
-        title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-        url: /knowledge/papers/paper-76/
       - id: collaborators-paper-75
         publication_id: 75
-        label: "#75 · Malicious-secure decomposable MPC"
-        title: "Decomposable MPC with Security Against Malicious Adversaries"
+        label: "#75 · PRISM anonymous messaging overlay"
+        title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
         url: /knowledge/papers/paper-75/
+      - id: collaborators-paper-74
+        publication_id: 74
+        label: "#74 · Malicious-secure decomposable MPC"
+        title: "Decomposable MPC with Security Against Malicious Adversaries"
+        url: /knowledge/papers/paper-74/
       - id: collaborators-paper-60
         publication_id: 60
         label: "#60 · Quantum optimization for knapsack"
@@ -1301,19 +1301,19 @@ scenes:
         type: direct
         label: direct collaboration on the later PRISM messaging overlay
       - from: collaborators-ben-terner
-        to: collaborators-paper-78
+        to: collaborators-paper-77
         type: direct
         label: direct coauthorship on timed-protocol composition
       - from: collaborators-ben-terner
-        to: collaborators-paper-76
+        to: collaborators-paper-75
         type: direct
         label: direct coauthorship on the later PRISM messaging overlay
       - from: collaborators-ben-terner
-        to: collaborators-paper-75
+        to: collaborators-paper-74
         type: direct
         label: direct coauthorship on decomposable MPC
       - from: collaborators-ben-terner
-        to: collaborators-paper-74
+        to: collaborators-paper-78
         type: direct
         label: direct coauthorship on private bulletin boards
       - from: collaborators-ben-terner
@@ -1589,7 +1589,7 @@ scenes:
         type: direct
         label: direct collaboration on encryption and concurrent group messaging
       - from: collaborators-kelong-cong
-        to: collaborators-paper-75
+        to: collaborators-paper-74
         type: direct
         label: direct coauthorship on decomposable MPC
       - from: collaborators-kelong-cong
@@ -1637,7 +1637,7 @@ scenes:
         type: direct
         label: direct coauthorship on covert authenticated key exchange
       - from: collaborators-stanislaw-jarecki
-        to: collaborators-paper-74
+        to: collaborators-paper-78
         type: direct
         label: direct coauthorship on private bulletin boards
       - from: collaborators-stanislaw-jarecki
@@ -1657,7 +1657,7 @@ scenes:
         type: direct
         label: direct collaboration on the later PRISM messaging overlay
       - from: collaborators-prism-overlay-team
-        to: collaborators-paper-76
+        to: collaborators-paper-75
         type: direct
         label: direct coauthorship on PRISM messaging overlay
       - from: collaborators-srdjan-capkun
@@ -1753,7 +1753,7 @@ scenes:
         type: direct
         label: direct collaboration on regenerating codes and secret sharing
       - from: collaborators-moti-yung
-        to: collaborators-paper-78
+        to: collaborators-paper-77
         type: direct
         label: direct coauthorship on timed-protocol composition
       - from: collaborators-moti-yung
@@ -1857,7 +1857,7 @@ scenes:
         type: direct
         label: direct coauthorship on formally verified zero knowledge
       - from: collaborators-rafail-ostrovsky
-        to: collaborators-paper-77
+        to: collaborators-paper-76
         type: direct
         label: direct coauthorship on post-quantum point obfuscation
       - from: collaborators-gene-tsudik
@@ -1917,7 +1917,7 @@ scenes:
         type: direct
         label: direct coauthorship on APEX
       - from: collaborators-gene-tsudik
-        to: collaborators-paper-74
+        to: collaborators-paper-78
         type: direct
         label: direct coauthorship on private identity-based bulletin boards
       - from: collaborators-nigel-smart
@@ -1957,7 +1957,7 @@ scenes:
         type: direct
         label: direct coauthorship on secure self-stabilizing computation
       - from: collaborators-timed
-        to: collaborators-paper-78
+        to: collaborators-paper-77
         type: direct
         label: timed-protocol composition
       - from: collaborators-timed
@@ -1977,7 +1977,7 @@ scenes:
         type: direct
         label: secure self-stabilizing computation
       - from: collaborators-mpc
-        to: collaborators-paper-75
+        to: collaborators-paper-74
         type: direct
         label: malicious-secure decomposable MPC
       - from: collaborators-mpc
@@ -2025,11 +2025,11 @@ scenes:
         type: direct
         label: concurrent group-key evolution
       - from: collaborators-private-messaging
-        to: collaborators-paper-74
+        to: collaborators-paper-78
         type: direct
         label: identity-based private bulletin boards
       - from: collaborators-post-quantum
-        to: collaborators-paper-77
+        to: collaborators-paper-76
         type: direct
         label: post-quantum non-malleable obfuscation
       - from: collaborators-ecc
@@ -2133,11 +2133,11 @@ scenes:
         type: direct
         label: traffic analysis with partial visibility
       - from: collaborators-anonymity
-        to: collaborators-paper-74
+        to: collaborators-paper-78
         type: direct
         label: private anonymous bulletin boards
       - from: collaborators-intrusion-resilient-messaging
-        to: collaborators-paper-76
+        to: collaborators-paper-75
         type: direct
         label: intrusion-resilient anonymous messaging
       - from: collaborators-proactive-mobile-adversaries

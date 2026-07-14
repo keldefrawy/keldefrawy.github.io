@@ -25,7 +25,7 @@ publications = YAML.load_file(File.join(ROOT, "_data/publications.yml"))
 errors = []
 
 complete_catalog_expectations = {
-  "Gene Tsudik" => [4, 7, 9, 10, 11, 13, 14, 15, 16, 17, 27, 33, 37, 38, 41, 42, 46, 47, 50, 54, 74],
+  "Gene Tsudik" => [4, 7, 9, 10, 11, 13, 14, 15, 16, 17, 27, 33, 37, 38, 41, 42, 46, 47, 50, 54, 78],
   "Vitor Pereira" => [51, 58, 67]
 }
 complete_catalog_scene_names = %w[hotel tour machines labs cipher]
@@ -100,7 +100,7 @@ benjamin_ids = publications.select do |publication|
   publication.fetch("authors").include?("Ben Terner") ||
     publication.fetch("authors").include?("Benjamin Terner")
 end.map { |publication| publication.fetch("id").to_i }.sort
-expected_benjamin_ids = [63, 69, 71, 72, 73, 74, 75, 76, 78]
+expected_benjamin_ids = [63, 69, 71, 72, 73, 74, 75, 77, 78]
 errors << "Benjamin Terner catalog set is #{benjamin_ids.inspect}" unless benjamin_ids == expected_benjamin_ids
 
 cipher_publication_ids = cipher_papers.map { |paper| paper.fetch("publication_id").to_i }
@@ -281,7 +281,7 @@ unless lepoint_publication_ids == [40, 43, 48, 52, 61, 62]
   errors << "R&D laboratory lineage omits Tancrède publications #{lepoint_publication_ids.inspect}"
 end
 
-expected_new_sri_publication_ids = [49, 53, 59, 64, 76]
+expected_new_sri_publication_ids = [49, 53, 59, 64, 75]
 new_sri_publication_ids = labs.fetch("papers").filter_map do |paper|
   publication_id = paper.fetch("publication_id").to_i
   publication_id if expected_new_sri_publication_ids.include?(publication_id)
@@ -290,7 +290,7 @@ unless new_sri_publication_ids == expected_new_sri_publication_ids
   errors << "R&D laboratory lineage omits new SRI collaborator papers #{new_sri_publication_ids.inspect}"
 end
 
-expected_formative_collaboration_ids = [31, 32, 36, 50, 68, 74]
+expected_formative_collaboration_ids = [31, 32, 36, 50, 68, 78]
 formative_collaboration_ids = labs.fetch("papers").filter_map do |paper|
   publication_id = paper.fetch("publication_id").to_i
   publication_id if expected_formative_collaboration_ids.include?(publication_id)
