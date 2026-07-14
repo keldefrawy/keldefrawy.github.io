@@ -55,7 +55,7 @@ sources:
     url: https://doi.org/10.1109/GLOCOM.2013.6831179
   - id: source-paper-22-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #22"
+    title: "OpenAlex work record for “Neighborhood Watch: On Network Coding Throughput and Key Sharing” by Martin Strohmeier, Ivan Martinovic, Utz Roedig, Karim Eldefrawy, and Jens Schmitt"
     url: https://openalex.org/W2074968496
     accessed_at: "2026-07-11"
 

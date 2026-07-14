@@ -52,7 +52,7 @@ sources:
     url: https://doi.org/10.1145/2660267.2660293
   - id: source-paper-26-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #26"
+    title: "OpenAlex work record for “Founding Digital Currency on Secure Computation” by Karim Eldefrawy and Joshua Lampkins"
     url: https://openalex.org/W2163898713
     accessed_at: "2026-07-11"
 

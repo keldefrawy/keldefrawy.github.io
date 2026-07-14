@@ -10,564 +10,283 @@ stage: mapped_draft
 contribution_type_vocabulary_version: "0.1"
 contribution_types: []
 
-title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-short_title: "Composing Timed Cryptographic Protocols"
-year: 2024
-venue: "IACR Cryptology ePrint Archive"
-publication_status: "Preprint · under review"
-topic: secure-encrypted-computation
+title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
+short_title: "Post-Quantum Non-Malleable Point Obfuscation"
+year: null
+venue: null
+publication_status: "Ongoing work"
+topic: algorithms-foundations
 labels: ["Theory"]
+availability: "Public manuscript not found; this work is listed as ongoing."
 authors:
+  - "Daniel Apon"
+  - "Chongwon Cho"
   - "Karim Eldefrawy"
-  - "Ben Terner"
-  - "Moti Yung"
+  - "Feng-Hao Liu"
+  - "Rafail Ostrovsky"
 keywords:
-  - "timed cryptography"
-  - "protocol composition"
+  - "post-quantum cryptography"
+  - "obfuscation"
 
 research_question: >-
-  How can cryptographic protocols soundly compose components whose secrecy expires within feasible polynomial time, while accounting for leakage, simulator cost, adversary depth, and the time at which each guarantee ceases to be meaningful?
+  Can a post-quantum point-function obfuscation notion resist malleation while reproducing a useful aspect of random-oracle behavior?
 central_answer: >-
-  The paper defines residual complexity and a critical time for leaky timed primitives, embeds them in a depth-bounded real/ideal MPC framework parameterized by adversary, simulator, and environment depth, and proves composition theorems with explicit security degradation. It adds a one-random-oracle compiler for leaky algebraic puzzles and applies the framework to time-lock-puzzle auctions, including a simultaneous multi-round auction whose parameters are retuned for composition loss.
+  The title establishes this research objective, and a NIST administrative email verifies that a manuscript with this title and author list entered an internal review process in 2021. No public manuscript was located, so the construction, security notion, quantum-access model, assumptions, theorem, and proof remain unaudited.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: full-text extraction, definition and theorem decomposition, proof-evidence linking, protocol analysis, and initial assessment
+      role: metadata verification, administrative-provenance analysis, public-source searching, and uncertainty documentation
   method: >-
-    Source-grounded audit of the complete 43-page IACR ePrint, its archive metadata, the author-site record, and a dated citation search. Definitions, theorem parameters, proof locations, application assumptions, and stated limitations are separated; self-reported novelty is not converted into an independently verified priority claim.
-  source_scope: full_source_audit
+    AI drafting from the author-site record, a public NIST administrative email, and exact-title, author-title, archive, index, and coauthor-profile searches. The NIST document is used only as manuscript provenance; it is not treated as full text, peer review, a citation, or evidence for any technical claim.
+  source_scope: metadata_administrative_provenance_and_documented_public_source_search
   approval:
     status: pending
-    note: "AI-authored source-linked map awaiting full author audit; mathematical summaries and ratings may be revised before approval."
+    note: "AI-authored bounded map awaiting full author audit; technical content is intentionally not reconstructed from the title alone."
 
 sources:
-  - id: source-paper-77-paper
-    type: scholarly_preprint
-    title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-    url: "https://eprint.iacr.org/2024/676.pdf"
-    media_type: application/pdf
-    page_count: 43
-    provenance_category: public_archive
-    retrieved_at: "2026-07-11"
-    scope_note: "Complete IACR ePrint used for the technical audit; no machine-checked proof artifact or implementation accompanies the represented source."
-  - id: source-paper-77-archive
-    type: archive_record
-    title: "IACR ePrint 2024/676 record"
-    url: "https://eprint.iacr.org/2024/676"
-    scope_note: "Public archive landing record for the audited preprint."
   - id: source-paper-77-curated
     type: curated_site_record
-    title: "Website publication record for Paper #77"
+    title: "Website publication record for “Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation” by Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, and Rafail Ostrovsky"
     url: /publications/#paper-77
-    scope_note: "Author-site bibliographic identity and under-review status."
-  - id: source-paper-77-dblp
-    type: bibliographic_record
-    title: "DBLP record for IACR ePrint 2024/676"
-    url: "https://dblp.org/rec/journals/iacr/EldefrawyTY24"
-    scope_note: "Independent bibliographic record; not peer review or evidence for the paper's theorems."
+    scope_note: "Author-site title, authorship, ongoing-work status, and editorial summary; not a manuscript or technical source."
+  - id: source-paper-77-nist-email
+    type: administrative_provenance_record
+    title: "NIST ERB sponsor-review email mentioning the manuscript"
+    url: "https://nist.pqcrypto.org/foia/20250416/RE_%20NPS_%20REMINDER%20-%20ERB%20Sponsor%20Review%20Manuscript.pdf"
+    media_type: application/pdf
+    scope_note: >-
+      The email names the manuscript and authors, records a 2021-03-02 submission date and ERB Control G2021-0620, and discusses administrative sponsor review before intended conference submission. It is neither the manuscript nor a scholarly citation, venue decision, review report, or technical validation.
+  - id: source-paper-77-manuscript-search
+    type: source_search_record
+    title: "Public-manuscript search for “Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation” by Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, and Rafail Ostrovsky"
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+    accessed_at: "2026-07-11"
+    scope_note: >-
+      Exact-title and author-title variants were checked across the open web, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, NIST/public-record pages, and discoverable author or coauthor pages. The NIST email was located, but no public manuscript, abstract, DOI, ePrint identifier, venue paper page, or stable scholarly index record was found.
   - id: source-paper-77-citation-search
     type: citation_search_snapshot
     title: "Exact-title scholarly-web citation search"
-    url: "https://www.google.com/search?q=%22Composing+Timed+Cryptographic+Protocols%3A+Foundations+and+Applications%22"
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
     accessed_at: "2026-07-11"
-    scope_note: "Three distinct downstream scholarly references were located; this is a conservative lower bound, not a normalized citation-index total."
+    scope_note: "The NIST administrative email was excluded from reception because it does not cite the work as scholarship."
 
 source_anchors:
-  - id: anchor-paper-77-problem
-    source_id: source-paper-77-paper
-    label: "Problem, contributions, and claimed scope"
-    locator: "Abstract and Section 1, PDF pages 1–5"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=1"
-  - id: anchor-paper-77-leakage-motivation
-    source_id: source-paper-77-paper
-    label: "Leaky algebraic solving and fine-grained motivation"
-    locator: "Section 2, PDF pages 5–7"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=5"
-  - id: anchor-paper-77-residual
-    source_id: source-paper-77-paper
-    label: "Residual complexity and critical time"
-    locator: "Informal Definition 1 and formal Definition 7, PDF pages 6–7 and 13"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=6"
-  - id: anchor-paper-77-depth-model
-    source_id: source-paper-77-paper
-    label: "Depth-bounded circuits and indistinguishability"
-    locator: "Definitions 3–4, PDF page 12"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=12"
-  - id: anchor-paper-77-depth-mpc
-    source_id: source-paper-77-paper
-    label: "Depth-bounded real/ideal MPC"
-    locator: "Section 5 and Definitions 8–9, PDF pages 13–17"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=13"
-  - id: anchor-paper-77-temporary-privacy
-    source_id: source-paper-77-paper
-    label: "Leaky functionalities and temporary privacy"
-    locator: "Section 5.4, PDF pages 16–17"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=16"
-  - id: anchor-paper-77-concurrent
-    source_id: source-paper-77-paper
-    label: "Concurrent composition theorem"
-    locator: "Theorem 3 and proof, PDF pages 18–20"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=18"
-  - id: anchor-paper-77-sequential
-    source_id: source-paper-77-paper
-    label: "Sequential and lockstep composition"
-    locator: "Theorem 4 and Corollaries 1–2, PDF pages 20–21; deferred proof in Appendix C, PDF pages 34–37"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=20"
-  - id: anchor-paper-77-arbitrary-poly
-    source_id: source-paper-77-paper
-    label: "Boundary with arbitrary-polynomial MPC"
-    locator: "Section 6.4, Corollaries 3–4 and Lemma 2, PDF pages 21–22"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=21"
-  - id: anchor-paper-77-compiler
-    source_id: source-paper-77-paper
-    label: "One-random-oracle compiler"
-    locator: "Section 7.1, Figure 2, Theorem 5 and Lemma 3, PDF pages 22–24"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=22"
-  - id: anchor-paper-77-equivocation
-    source_id: source-paper-77-paper
-    label: "Simulation-equivocation and temporary-privacy boundary"
-    locator: "Section 7.2, PDF page 24"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=24"
-  - id: anchor-paper-77-auction
-    source_id: source-paper-77-paper
-    label: "Single-round auction functionality and protocol"
-    locator: "Section 8.1, Figures 3–4 and Theorem 6, PDF pages 25–27"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=25"
-  - id: anchor-paper-77-smra
-    source_id: source-paper-77-paper
-    label: "Simultaneous multi-round auction composition"
-    locator: "Section 8.2 and Theorem 7, PDF pages 27–28"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=27"
-  - id: anchor-paper-77-appendices
-    source_id: source-paper-77-paper
-    label: "Deferred model details and proofs"
-    locator: "Appendices A–F, PDF pages 32–43"
-    url: "https://eprint.iacr.org/2024/676.pdf#page=32"
-  - id: anchor-paper-77-archive
-    source_id: source-paper-77-archive
-    label: "Public ePrint record"
-    locator: "IACR ePrint 2024/676 landing page"
-    url: "https://eprint.iacr.org/2024/676"
-  - id: anchor-paper-77-bibliography
-    source_id: source-paper-77-dblp
-    label: "Independent bibliographic identity"
-    locator: "DBLP record Eldefrawy–Terner–Yung, 2024"
-    url: "https://dblp.org/rec/journals/iacr/EldefrawyTY24"
+  - id: anchor-paper-77-metadata
+    source_id: source-paper-77-curated
+    label: "Author-site paper metadata"
+    locator: "Title, authors, topic, Theory label, and ongoing-work status for the post-quantum point-obfuscation manuscript"
+    url: /publications/#paper-77
+  - id: anchor-paper-77-nist-email
+    source_id: source-paper-77-nist-email
+    label: "NIST administrative manuscript provenance"
+    locator: >-
+      Public email record naming the manuscript and five authors; submitted 2021-03-02 under ERB Control G2021-0620; administrative sponsor-review correspondence, not manuscript content or scholarly review
+    url: "https://nist.pqcrypto.org/foia/20250416/RE_%20NPS_%20REMINDER%20-%20ERB%20Sponsor%20Review%20Manuscript.pdf"
+  - id: anchor-paper-77-search-gap
+    source_id: source-paper-77-manuscript-search
+    label: "Documented full-text search gap"
+    locator: >-
+      Search completed 2026-07-11 across exact-title and author-title web queries, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, NIST records, and discoverable author/coauthor pages; administrative provenance found but no primary full text or stable scholarly record
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
   - id: anchor-paper-77-citations
     source_id: source-paper-77-citation-search
-    label: "Dated lower-bound citation snapshot"
-    locator: "Exact-title search located three distinct citing works when accessed 2026-07-11"
-    url: "https://www.google.com/search?q=%22Composing+Timed+Cryptographic+Protocols%3A+Foundations+and+Applications%22"
+    label: "Dated exact-title citation search"
+    locator: "No citing scholarly work verifiably located; the NIST administrative email was excluded from the count"
+    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
 
 nodes:
   - id: paper-77
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: public_preprint_pending_author_audit
-    title: "A compositional foundation for expiring security"
+    epistemic_status: metadata_and_administrative_provenance_pending_author_audit
+    title: "Post-quantum non-malleable point obfuscation"
     summary: >-
-      A 43-page theory preprint that models timed cryptographic security with fine-grained circuit depth, makes leakage explicit through residual complexity, proves composition rules with quantified degradation, and demonstrates the framework through timed auction protocols.
-    source_anchor_ids: [anchor-paper-77-problem, anchor-paper-77-archive]
+      An ongoing theory project whose title targets a post-quantum, non-malleable point-obfuscation primitive. A NIST email verifies manuscript identity and administrative history, but no technical text is public in the located sources.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email, anchor-paper-77-search-gap]
 
   - id: paper-77-question
     kind: question
     parent_id: paper-77
     order: 1
-    epistemic_status: explicitly_stated
-    title: "Research question"
+    epistemic_status: title_inferred
+    title: "Research direction"
     summary: >-
-      How can a larger MPC protocol use time-lock primitives whose secrecy expires in feasible time without hiding leakage, giving the simulator unrealistic power, or assuming composition preserves an undegraded guarantee?
-    source_anchor_ids: [anchor-paper-77-problem, anchor-paper-77-leakage-motivation]
+      Can point-function obfuscation retain a non-malleability property against quantum-capable adversaries and thereby realize a useful random-oracle-like capability?
+    source_anchor_ids: [anchor-paper-77-metadata]
 
-  - id: paper-77-diagnosis
-    kind: problem_analysis
+  - id: paper-77-point-obfuscation
+    kind: primitive
     parent_id: paper-77
     order: 2
-    epistemic_status: source_argued
-    title: "Why conventional idealization is insufficient"
+    epistemic_status: primitive_named_definition_unavailable
+    title: "Point obfuscation"
     summary: >-
-      The paper argues that existing approaches lack composability, consistent analysis, or required functionality when algebraic time-lock solving is modeled as opaque or random-oracle-like at every step despite possible intermediate leakage.
-    source_anchor_ids: [anchor-paper-77-problem, anchor-paper-77-leakage-motivation]
-
-  - id: paper-77-framework
-    kind: contribution
-    parent_id: paper-77
-    order: 3
-    epistemic_status: formally_defined
-    title: "Depth-bounded timed-cryptography framework"
-    summary: >-
-      The framework parameterizes adversary, simulator, and environment by polynomial circuit depth and represents a timed primitive's changing hardness rather than treating it as perfectly hidden until an instantaneous expiry.
-    source_anchor_ids: [anchor-paper-77-residual, anchor-paper-77-depth-model, anchor-paper-77-depth-mpc]
-
-  - id: paper-77-residual-complexity
-    kind: definition
-    parent_id: paper-77-framework
-    order: 1
-    epistemic_status: formally_defined
-    title: "Residual complexity"
-    summary: >-
-      A puzzle has residual complexity (d, r) when every depth-d adversary guesses a random puzzle solution with probability at most r; the paper calls 1−r the remaining hardness and uses the curve across depths as a leakage profile.
-    source_anchor_ids: [anchor-paper-77-residual]
-
-  - id: paper-77-critical-time
-    kind: definition
-    parent_id: paper-77-framework
-    order: 2
-    epistemic_status: formally_defined_and_designer_parameterized
-    title: "Critical time"
-    summary: >-
-      Given a designer-chosen unacceptable guessing threshold, the critical time is the first depth at which residual complexity crosses it. Timed privacy is claimed only before that point, which may conservatively precede honest completion.
-    source_anchor_ids: [anchor-paper-77-residual]
-
-  - id: paper-77-falsifiability
-    kind: methodological_property
-    parent_id: paper-77-framework
-    order: 3
-    epistemic_status: explicitly_argued
-    title: "Falsifiable leakage assumptions"
-    summary: >-
-      Rather than asserting an opaque generic step, the framework's depth-indexed guessing bounds can in principle be falsified by a sampling and guessing algorithm that outperforms the assumed residual-complexity curve.
-    source_anchor_ids: [anchor-paper-77-leakage-motivation, anchor-paper-77-residual]
-
-  - id: paper-77-depth-machines
-    kind: definition_group
-    parent_id: paper-77-framework
-    order: 4
-    epistemic_status: formally_defined
-    title: "Depth-bounded machines and indistinguishability"
-    summary: >-
-      The model bounds circuit depth while retaining polynomial size, extends this accounting to interactive circuits, and defines indistinguishability relative to a depth-bounded distinguisher.
-    source_anchor_ids: [anchor-paper-77-depth-model]
-
-  - id: paper-77-depth-mpc
-    kind: security_definition
-    parent_id: paper-77-framework
-    order: 5
-    epistemic_status: formally_defined
-    title: "(d_a, d_s, d_e)-depth-secure MPC"
-    summary: >-
-      A protocol is depth-secure when a d_s-depth simulator makes real and ideal executions indistinguishable to every d_a-depth adversary and d_e-depth environment; the paper gives a concurrent UC-like model and a separate sequential model.
-    source_anchor_ids: [anchor-paper-77-depth-mpc]
-
-  - id: paper-77-simulator-budget
-    kind: modeling_constraint
-    parent_id: paper-77-depth-mpc
-    order: 1
-    epistemic_status: explicitly_justified
-    title: "Simulator budget is security-critical"
-    summary: >-
-      Constraining simulator depth prevents a vacuous proof in which the simulator solves a time-lock puzzle to learn information unavailable to the real adversary; meaningful parameters require the simulation budget to remain below relevant adversary and environment depths.
-    source_anchor_ids: [anchor-paper-77-depth-mpc, anchor-paper-77-sequential]
-
-  - id: paper-77-temporary-privacy
-    kind: security_property
-    parent_id: paper-77-depth-mpc
-    order: 2
-    epistemic_status: formally_modeled
-    title: "Temporary privacy with matched leakage"
-    summary: >-
-      Leaky ideal functionalities reveal information in phases so that a simulator learns no more than the adversary at the corresponding depth; outputs may become public after the timed protection has served its purpose.
-    source_anchor_ids: [anchor-paper-77-temporary-privacy]
-
-  - id: paper-77-composition
-    kind: theorem_group
-    parent_id: paper-77
-    order: 4
-    epistemic_status: formally_proved
-    title: "Composition with explicit degradation"
-    summary: >-
-      The paper tracks how simulator work reduces the adversary depth covered by the result, increases the composite simulator budget, and limits the environment to the weaker component bound.
-    source_anchor_ids: [anchor-paper-77-concurrent, anchor-paper-77-sequential]
-
-  - id: paper-77-concurrent-theorem
-    kind: theorem
-    parent_id: paper-77-composition
-    order: 1
-    epistemic_status: proved
-    title: "Concurrent composition (Theorem 3)"
-    summary: >-
-      If π is (d_a,d_s,d_e)-secure and ρ is (d'_a,d'_s,d'_e)-secure, their concurrent composition is (d_a−d'_s, d_s+d'_s, min(d_e,d'_e))-secure, under the theorem's meaningful-depth conditions.
-    source_anchor_ids: [anchor-paper-77-concurrent]
-
-  - id: paper-77-sequential-theorem
-    kind: theorem
-    parent_id: paper-77-composition
-    order: 2
-    epistemic_status: proved
-    title: "Sequential composition (Theorem 4)"
-    summary: >-
-      When π invokes ρ sequentially, the general bound is (d_a−d'_s, d_s·d'_s, min(d_e,d'_e)); if the caller's simulator never rewinds across the invocation, Corollary 1 improves the simulator term to d_s+d'_s.
-    source_anchor_ids: [anchor-paper-77-sequential]
-
-  - id: paper-77-lockstep
-    kind: corollary
-    parent_id: paper-77-composition
-    order: 3
-    epistemic_status: proved_or_claimed_as_specified
-    title: "Lockstep and serial structure"
-    summary: >-
-      Lockstep execution lets multiple subprotocol simulators run in parallel so degradation depends on the largest relevant simulator depth rather than summing all of them. For serially separated executions, the paper states that independent analyses need not degrade one another.
-    source_anchor_ids: [anchor-paper-77-sequential, anchor-paper-77-arbitrary-poly]
-
-  - id: paper-77-arbitrary-poly-boundary
-    kind: boundary
-    parent_id: paper-77-composition
-    order: 4
-    epistemic_status: explicitly_characterized
-    title: "Boundary with standard arbitrary-polynomial MPC"
-    summary: >-
-      Depth-bounded protocols may use or run beside standard MPC through the stated composition bounds. The reverse direction has no general black-box theorem; it is supported in the special case where the timed subprotocol's inputs and outputs may all be revealed when it terminates.
-    source_anchor_ids: [anchor-paper-77-arbitrary-poly]
-
-  - id: paper-77-compiler
-    kind: construction
-    parent_id: paper-77
-    order: 5
-    epistemic_status: proposed_and_analyzed
-    title: "One-random-oracle compiler for leaky algebraic puzzles"
-    summary: >-
-      Generate an algebraic puzzle Z with random solution r, mask the intended solution χ as γ=H(r) xor χ, and publish (Z,γ). Solving recovers r and then χ; only the final masking step uses the random oracle.
-    source_anchor_ids: [anchor-paper-77-compiler]
-
-  - id: paper-77-compiler-theorem
-    kind: theorem
-    parent_id: paper-77-compiler
-    order: 1
-    epistemic_status: proved
-    title: "Compiler guarantee (Theorem 5)"
-    summary: >-
-      The compiled construction's critical time is no earlier than the last point at which the base algebraic solution still hides on the order of the security parameter in bits; the proof links this hidden information to negligible guessing probability.
-    source_anchor_ids: [anchor-paper-77-compiler]
-
-  - id: paper-77-equivocation
-    kind: simulation_technique
-    parent_id: paper-77-compiler
-    order: 2
-    epistemic_status: analyzed_in_random_oracle_model
-    title: "Late equivocation"
-    summary: >-
-      A simulator can initially use a random puzzle solution and later program the random oracle so the puzzle opens to the required value. This requires a small timing advantage and guarantees privacy only until the critical time.
-    source_anchor_ids: [anchor-paper-77-equivocation]
-
-  - id: paper-77-auction-application
-    kind: application
-    parent_id: paper-77
-    order: 6
-    epistemic_status: formally_specified
-    title: "Timed auction application"
-    summary: >-
-      The paper uses auctions to demonstrate how temporary privacy, non-malleability, simulator budgeting, and composition loss interact in a concrete multi-party protocol.
-    source_anchor_ids: [anchor-paper-77-auction, anchor-paper-77-smra]
-
-  - id: paper-77-single-auction
-    kind: protocol
-    parent_id: paper-77-auction-application
-    order: 1
-    epistemic_status: specified_and_proved_under_assumptions
-    title: "Single-round single-item auction"
-    summary: >-
-      Each party unfair-broadcasts a time-lock puzzle containing its bid before t_bid, solves all timely puzzles in parallel by t_end, and outputs all bids and the maximum. Puzzle parameters require the critical time to follow the bid deadline.
-    source_anchor_ids: [anchor-paper-77-auction]
-
-  - id: paper-77-auction-security
-    kind: theorem
-    parent_id: paper-77-single-auction
-    order: 1
-    epistemic_status: proved_under_named_assumptions
-    title: "Single-auction security (Theorem 6)"
-    summary: >-
-      Given an equivocable, non-malleable time-lock puzzle and a bounded unfair-broadcast simulator, the protocol realizes the auction functionality with adversary depth reduced by the broadcast-simulation cost and simulator depth covering puzzle generation plus equivocation.
-    source_anchor_ids: [anchor-paper-77-auction, anchor-paper-77-appendices]
+      Point obfuscation is named in the title. The point-function domain, correctness condition, hiding notion, auxiliary input, reusable access, and output representation are not specified publicly.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
 
   - id: paper-77-nonmalleability
-    kind: assumption
-    parent_id: paper-77-single-auction
-    order: 2
-    epistemic_status: explicitly_required
-    title: "Non-malleability blocks bid adaptation"
+    kind: security_property
+    parent_id: paper-77
+    order: 3
+    epistemic_status: property_named_definition_unavailable
+    title: "Non-malleability target"
     summary: >-
-      The proof requires a corrupt bidder not to transform honest parties' unsolved puzzles into related bid puzzles. Appendix F reduces indistinguishability of real and simulated executions to concurrent puzzle non-malleability, with a CCA-based alternative discussed.
-    source_anchor_ids: [anchor-paper-77-auction, anchor-paper-77-appendices]
+      Non-malleability is explicit in the title, but the admissible relation, challenge game, adversarial output, success event, and handling of trivial transformations are unavailable.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
 
-  - id: paper-77-smra
-    kind: protocol
-    parent_id: paper-77-auction-application
-    order: 2
-    epistemic_status: specified_and_composition_analyzed
-    title: "Simultaneous multi-round auction"
+  - id: paper-77-postquantum
+    kind: threat_model
+    parent_id: paper-77
+    order: 4
+    epistemic_status: adversary_class_named_model_unavailable
+    title: "Post-quantum adversary"
     summary: >-
-      A round runs one single-item auction per item in lockstep, and rounds are then composed serially. Because concurrent composition weakens the adversary-depth guarantee, the bid deadline and puzzle hardness must be retuned.
-    source_anchor_ids: [anchor-paper-77-smra]
+      The title claims a post-quantum setting, but it does not disclose whether the model permits quantum advice, superposition access, quantum random-oracle queries, adaptive challenge selection, or quantum outputs.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
 
-  - id: paper-77-smra-theorem
-    kind: theorem
-    parent_id: paper-77-smra
-    order: 1
-    epistemic_status: proved
-    title: "SMRA security (Theorem 7)"
+  - id: paper-77-random-oracle-goal
+    kind: objective
+    parent_id: paper-77
+    order: 5
+    epistemic_status: objective_named_scope_unavailable
+    title: "Further realizing random oracles"
     summary: >-
-      If the single-auction protocol is (d_a,d_s,d_e)-secure, one lockstep SMRA round is (d_a−d_s,2d_s,d_e)-secure; with appropriate parameterization and end-of-round revelation, the full serial SMRA implements its functionality in the arbitrary-polynomial regime.
-    source_anchor_ids: [anchor-paper-77-smra]
+      The title situates the work in a program of realizing random-oracle behavior, but the targeted functionality, application class, and sense of realization cannot be inferred safely without the manuscript.
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
 
-  - id: paper-77-proof-evidence
-    kind: formal_evidence
+  - id: paper-77-construction
+    kind: construction
+    parent_id: paper-77
+    order: 6
+    epistemic_status: not_available_for_audit
+    title: "Construction unavailable"
+    summary: >-
+      No algorithm, compiler, parameter set, underlying primitive, or post-quantum assumption can be extracted from the located records.
+    source_anchor_ids: [anchor-paper-77-search-gap]
+
+  - id: paper-77-theorem
+    kind: theorem_group
     parent_id: paper-77
     order: 7
-    epistemic_status: human_written_proofs_present
-    title: "Formal evidence"
+    epistemic_status: not_available_for_audit
+    title: "Theorem and proof unavailable"
     summary: >-
-      The preprint contains formal definitions, theorem statements, reductions and simulation arguments, with deferred composition, residual-hardness, non-malleability, and auction proofs in the appendices. No proof is represented as machine checked.
-    source_anchor_ids: [anchor-paper-77-concurrent, anchor-paper-77-sequential, anchor-paper-77-compiler, anchor-paper-77-appendices]
+      The available records do not establish existence, correctness, security, efficiency, or any reduction to a named hardness assumption.
+    source_anchor_ids: [anchor-paper-77-search-gap]
 
-  - id: paper-77-empirical-evidence
-    kind: evidence_boundary
+  - id: paper-77-nist-provenance
+    kind: provenance
     parent_id: paper-77
     order: 8
-    epistemic_status: not_claimed
-    title: "No empirical system evaluation"
+    epistemic_status: administratively_documented
+    title: "NIST ERB record"
     summary: >-
-      The evidence is definitional and proof-based. The represented preprint does not provide an implementation, measured puzzle leakage curve, benchmark, deployment study, or machine-checked formalization.
-    source_anchor_ids: [anchor-paper-77-problem, anchor-paper-77-appendices]
+      A NIST email records that a manuscript with this title and author list was submitted on March 2, 2021 under ERB Control G2021-0620 and discusses sponsor review before intended conference peer review.
+    source_anchor_ids: [anchor-paper-77-nist-email]
 
-  - id: paper-77-limitations
-    kind: limitation_group
+  - id: paper-77-provenance-boundary
+    kind: limitation
+    parent_id: paper-77-nist-provenance
+    order: 1
+    epistemic_status: source_scope_boundary
+    title: "What the email does not establish"
+    summary: >-
+      The email does not provide the manuscript, theorem statements, proof, public release, venue submission identity, acceptance decision, reviewer judgment, or citation evidence.
+    source_anchor_ids: [anchor-paper-77-nist-email]
+
+  - id: paper-77-evidence
+    kind: evidence_group
     parent_id: paper-77
     order: 9
-    epistemic_status: source_reported_and_audit_inferred
-    title: "Technical boundaries"
+    epistemic_status: no_public_technical_evidence_located
+    title: "Evidence status"
+    summary: "No public proof, formalization, implementation, experiment, or supplementary artifact attributable to this paper was located."
+    source_anchor_ids: [anchor-paper-77-search-gap]
+
+  - id: paper-77-unknowns
+    kind: limitation_group
+    parent_id: paper-77
+    order: 10
+    epistemic_status: explicit_unknowns
+    title: "Information needed for a substantive map"
     summary: >-
-      Composition analysis is black-box and not proven tight; the critical time depends on a designer's hardness belief and threshold; the compiler uses the random-oracle model; auction security requires equivocation, non-malleability, unfair broadcast, parameter retuning, and eventual revelation of all bids.
-    source_anchor_ids: [anchor-paper-77-residual, anchor-paper-77-sequential, anchor-paper-77-compiler, anchor-paper-77-auction, anchor-paper-77-smra]
+      Manuscript audit must establish the point-obfuscation syntax, correctness and non-malleability games, quantum oracle-access model, assumptions, construction, reduction, parameter loss, efficiency, applications, and relation to prior random-oracle realizations.
+    source_anchor_ids: [anchor-paper-77-search-gap]
+
+  - id: paper-77-search
+    kind: audit_record
+    parent_id: paper-77
+    order: 11
+    epistemic_status: documented_search
+    title: "Public-source search"
+    summary: >-
+      Exact-title, author-title, archive, index, NIST-record, and public-profile searches located administrative provenance but no primary technical source; the provenance record was kept separate from evidence and reception.
+    source_anchor_ids: [anchor-paper-77-nist-email, anchor-paper-77-search-gap]
 
   - id: paper-77-artifacts
     kind: artifact_group
     parent_id: paper-77
-    order: 10
-    epistemic_status: public_full_text_only
-    title: "Artifacts"
-    summary: >-
-      The complete 43-page ePrint and stable archive/bibliographic records are public. No code, dataset, proof-assistant development, immutable local copy, or experimental artifact is represented.
-    source_anchor_ids: [anchor-paper-77-archive, anchor-paper-77-bibliography, anchor-paper-77-appendices]
+    order: 12
+    epistemic_status: metadata_and_administrative_record_only
+    title: "Available artifacts"
+    summary: "The represented resources are an author-site listing and a NIST administrative email; neither is the manuscript or a technical artifact."
+    source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email]
 
   - id: paper-77-scrutiny
     kind: scrutiny
     parent_id: paper-77
-    order: 11
-    epistemic_status: public_preprint_under_review
+    order: 13
+    epistemic_status: no_completed_scholarly_scrutiny_located
     title: "Scrutiny and reception"
     summary: >-
-      The work is publicly archived and independently indexed but remains listed as under review. Three downstream scholarly references were located; no acceptance, public review, independent proof audit, correction, or implementation was located.
-    source_anchor_ids: [anchor-paper-77-archive, anchor-paper-77-bibliography, anchor-paper-77-citations]
+      Administrative sponsor review is provenance, not completed scholarly peer review. No venue outcome, public review, reproduction, correction, cryptanalysis, or scholarly citation was located.
+    source_anchor_ids: [anchor-paper-77-nist-email, anchor-paper-77-citations]
 
 relations:
-  - id: paper-77-relation-diagnosis-motivates-framework
-    type: motivates
-    from_id: paper-77-diagnosis
-    to_id: paper-77-framework
-  - id: paper-77-relation-framework-answers-question
-    type: answers
-    from_id: paper-77-framework
-    to_id: paper-77-question
-  - id: paper-77-relation-residual-defines-critical
-    type: parameterizes
-    from_id: paper-77-residual-complexity
-    to_id: paper-77-critical-time
-  - id: paper-77-relation-falsifiability-qualifies-residual
-    type: qualifies
-    from_id: paper-77-falsifiability
-    to_id: paper-77-residual-complexity
-  - id: paper-77-relation-machines-enable-mpc
-    type: enables
-    from_id: paper-77-depth-machines
-    to_id: paper-77-depth-mpc
-  - id: paper-77-relation-simulator-qualifies-mpc
-    type: qualifies
-    from_id: paper-77-simulator-budget
-    to_id: paper-77-depth-mpc
-  - id: paper-77-relation-critical-bounds-privacy
-    type: bounds
-    from_id: paper-77-critical-time
-    to_id: paper-77-temporary-privacy
-  - id: paper-77-relation-mpc-enables-composition
-    type: enables
-    from_id: paper-77-depth-mpc
-    to_id: paper-77-composition
-  - id: paper-77-relation-concurrent-instantiates-composition
-    type: instantiates
-    from_id: paper-77-concurrent-theorem
-    to_id: paper-77-composition
-  - id: paper-77-relation-sequential-instantiates-composition
-    type: instantiates
-    from_id: paper-77-sequential-theorem
-    to_id: paper-77-composition
-  - id: paper-77-relation-lockstep-refines-composition
-    type: refines
-    from_id: paper-77-lockstep
-    to_id: paper-77-composition
-  - id: paper-77-relation-arbitrary-qualifies-composition
-    type: qualifies
-    from_id: paper-77-arbitrary-poly-boundary
-    to_id: paper-77-composition
-  - id: paper-77-relation-compiler-theorem-supports-compiler
-    type: supports
-    from_id: paper-77-compiler-theorem
-    to_id: paper-77-compiler
-  - id: paper-77-relation-compiler-enables-equivocation
-    type: enables
-    from_id: paper-77-compiler
-    to_id: paper-77-equivocation
-  - id: paper-77-relation-equivocation-realizes-temporary
-    type: helps_realize
-    from_id: paper-77-equivocation
-    to_id: paper-77-temporary-privacy
-  - id: paper-77-relation-auction-applies-framework
-    type: applies
-    from_id: paper-77-auction-application
-    to_id: paper-77-framework
-  - id: paper-77-relation-single-instantiates-auction
-    type: instantiates
-    from_id: paper-77-single-auction
-    to_id: paper-77-auction-application
-  - id: paper-77-relation-nonmalleability-supports-auction
-    type: supports
+  - id: paper-77-relation-question-point
+    type: concerns
+    from_id: paper-77-question
+    to_id: paper-77-point-obfuscation
+  - id: paper-77-relation-nonmalleability-qualifies-point
+    type: constrains
     from_id: paper-77-nonmalleability
-    to_id: paper-77-auction-security
-  - id: paper-77-relation-auction-security-supports-single
-    type: supports
-    from_id: paper-77-auction-security
-    to_id: paper-77-single-auction
-  - id: paper-77-relation-smra-composes-single
-    type: composes
-    from_id: paper-77-smra
-    to_id: paper-77-single-auction
-  - id: paper-77-relation-smra-theorem-supports-smra
-    type: supports
-    from_id: paper-77-smra-theorem
-    to_id: paper-77-smra
-  - id: paper-77-relation-composition-supports-smra
-    type: supports
-    from_id: paper-77-composition
-    to_id: paper-77-smra-theorem
-  - id: paper-77-relation-proof-supports-framework
-    type: supports
-    from_id: paper-77-proof-evidence
-    to_id: paper-77-framework
-  - id: paper-77-relation-empirical-qualifies-evidence
+    to_id: paper-77-point-obfuscation
+  - id: paper-77-relation-postquantum-qualifies-nonmalleability
     type: qualifies
-    from_id: paper-77-empirical-evidence
-    to_id: paper-77-proof-evidence
-  - id: paper-77-relation-limitations-qualify-paper
-    type: qualifies
-    from_id: paper-77-limitations
+    from_id: paper-77-postquantum
+    to_id: paper-77-nonmalleability
+  - id: paper-77-relation-point-targets-random-oracle-goal
+    type: intended_to_support
+    from_id: paper-77-point-obfuscation
+    to_id: paper-77-random-oracle-goal
+  - id: paper-77-relation-construction-would-realize-point
+    type: would_realize
+    from_id: paper-77-construction
+    to_id: paper-77-point-obfuscation
+  - id: paper-77-relation-theorem-would-support-construction
+    type: would_support
+    from_id: paper-77-theorem
+    to_id: paper-77-construction
+  - id: paper-77-relation-nist-contextualizes-paper
+    type: establishes_provenance_for
+    from_id: paper-77-nist-provenance
     to_id: paper-77
-  - id: paper-77-relation-artifacts-enable-audit
-    type: enables_audit_of
-    from_id: paper-77-artifacts
-    to_id: paper-77-proof-evidence
+  - id: paper-77-relation-provenance-boundary-qualifies-nist
+    type: qualifies
+    from_id: paper-77-provenance-boundary
+    to_id: paper-77-nist-provenance
+  - id: paper-77-relation-search-limits-evidence
+    type: limits_audit_of
+    from_id: paper-77-search
+    to_id: paper-77-evidence
+  - id: paper-77-relation-unknowns-qualify-paper
+    type: qualifies
+    from_id: paper-77-unknowns
+    to_id: paper-77
   - id: paper-77-relation-scrutiny-contextualizes-paper
     type: contextualizes
     from_id: paper-77-scrutiny
@@ -581,37 +300,34 @@ assessment:
   note: "These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated."
   axes:
     - id: epistemic_evidence
-      level: high
-      rationale: "The complete preprint contains explicit definitions, quantified theorem statements, reductions, deferred proofs, and a fully specified auction application. Evidence is formal and human-written rather than empirical or machine checked."
-      basis_source_anchor_ids: [anchor-paper-77-residual, anchor-paper-77-depth-mpc, anchor-paper-77-concurrent, anchor-paper-77-sequential, anchor-paper-77-compiler, anchor-paper-77-auction, anchor-paper-77-appendices]
+      level: low
+      rationale: "The title and NIST email establish identity, objective, and administrative history, but no manuscript, definition, construction, theorem, proof, or technical artifact was located."
+      basis_source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email, anchor-paper-77-search-gap]
     - id: auditability
-      level: high
-      rationale: "A complete 43-page public ePrint exposes the assumptions, definitions, theorem statements, proofs, protocol, and limitations for direct inspection. No code, proof-assistant artifact, or immutable checked-in copy is represented."
-      basis_source_anchor_ids: [anchor-paper-77-archive, anchor-paper-77-problem, anchor-paper-77-appendices]
+      level: low
+      rationale: "No paper-specific public archive or author-hosted manuscript was located. The NIST email is inspectable provenance but does not expose assumptions, evidence, or version content."
+      basis_source_anchor_ids: [anchor-paper-77-nist-email, anchor-paper-77-search-gap]
     - id: production_provenance
       level: medium
-      rationale: "Named authorship, a stable ePrint identity, independent bibliographic indexing, and under-review status provide baseline provenance. Contributor roles, revision history, AI or tool use, proof-review history, and explicit final author approval remain unaudited."
-      basis_source_anchor_ids: [anchor-paper-77-archive, anchor-paper-77-bibliography]
+      rationale: "Named authorship, ongoing-work status, submission date, and ERB control number provide a concrete human and lifecycle trail. Contributor roles, revisions, AI or tool use, and manuscript/artifact lineage remain unaudited."
+      basis_source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-nist-email]
     - id: external_scrutiny
       level: low
-      rationale: "Public archiving and downstream citation create exposure, but the site lists the paper as under review and no completed venue decision, public review, independent proof audit, or reproduction was located."
-      basis_source_anchor_ids: [anchor-paper-77-archive, anchor-paper-77-citations]
+      rationale: "The located record documents administrative sponsor review and intended later conference review, not a completed scholarly review outcome or independent technical validation."
+      basis_source_anchor_ids: [anchor-paper-77-nist-email]
     - id: reception
       level: low
-      rationale: "The dated search located 3 distinct citing works. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; 3 is a conservative lower bound rather than a normalized total."
+      rationale: "The dated exact-title search located 0 scholarly citations. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; the NIST email is provenance, not a citation."
       basis_source_anchor_ids: [anchor-paper-77-citations]
     - id: contribution_significance
-      level: medium
-      rationale: "The source presents a new model, explicit composition degradation, a compiler, and a nontrivial protocol application. Priority, tightness, adoption, and breakthrough status are not independently established, so significance remains provisional."
-      basis_source_anchor_ids: [anchor-paper-77-problem, anchor-paper-77-concurrent, anchor-paper-77-compiler, anchor-paper-77-smra]
+      level: not_assessed
+      rationale: "The title describes an ambitious theoretical objective, but result strength, novelty, assumptions, and impact cannot be assessed without technical text."
+      basis_source_anchor_ids: [anchor-paper-77-metadata, anchor-paper-77-search-gap]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: "Exact-title scholarly-web search; conservative distinct-work count"
-  citation_count: 3
-  source_url: "https://www.google.com/search?q=%22Composing+Timed+Cryptographic+Protocols%3A+Foundations+and+Applications%22"
-  signals:
-    - "Improved Rate for Non-Malleable Codes and Time-Lock Puzzles cites ePrint 2024/676."
-    - "A dissertation on scaling verifiable computations cites the work."
-    - "Expanding the Toolbox: Coercion and Cast-as-Intended Verifiability cites the work."
-  limitation: "The three located references are a lower bound from open-web searching, not a normalized Google Scholar, Scopus, Web of Science, or OpenAlex total; additional citations may be unindexed or omitted."
+  method: "Exact-title scholarly-web search with administrative mentions excluded"
+  citation_count: 0
+  source_url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+  signals: []
+  limitation: "No public manuscript or stable index record was located. Zero means no scholarly citation was verifiably attributable to the exact title; the NIST email establishes manuscript provenance only."

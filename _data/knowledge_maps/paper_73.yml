@@ -44,7 +44,7 @@ curation:
 sources:
   - id: source-paper-73-curated
     type: curated_site_record
-    title: "Website publication record for Paper #73"
+    title: "Website publication record for “Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure” by Karim Eldefrawy, Sashidhar Jakkamsetti, Ben Terner, and Moti Yung"
     url: /publications/#paper-73
     scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
   - id: source-paper-73-official-1
@@ -56,7 +56,7 @@ sources:
     type: related_preprint
     title: "Standard Model Time-Lock Puzzles: Defining Security and Constructing via Composition"
     url: https://eprint.iacr.org/2023/439
-    scope_note: "Earlier work by the same four authors and the ePrint named in the older site listing. Its different title and abstract show that it is related lineage, not established here as the author manuscript of Paper #73."
+    scope_note: "Earlier work by the same four authors and the ePrint named in the older site listing. Its different title and abstract show that it is related lineage, not established here as the author manuscript of “Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure.”"
   - id: source-paper-73-openalex
     type: citation_index_snapshot
     title: OpenAlex record W4416558403

@@ -60,7 +60,7 @@ sources:
     url: https://doi.org/10.1007/978-3-319-28166-7_2
   - id: source-paper-28-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #28"
+    title: "OpenAlex work record for “Communication-Optimal Proactive Secret Sharing for Dynamic Groups” by Joshua Baron, Karim Eldefrawy, Joshua Lampkins, and Rafail Ostrovsky"
     url: https://openalex.org/W2296195235
     accessed_at: "2026-07-11"
 
@@ -312,7 +312,7 @@ nodes:
     order: 10
     epistemic_status: documented
     title: "Research lineage"
-    summary: "The construction extends paper #25's packed proactive redistribution from a fixed group to changing groups and thresholds, then reuses it as the state-refresh layer for dynamic proactive MPC."
+    summary: "The construction extends the packed proactive redistribution in “How to Withstand Mobile Virus Attacks, Revisited” by Joshua Baron, Karim Eldefrawy, Joshua Lampkins, and Rafail Ostrovsky from a fixed group to changing groups and thresholds, then reuses it as the state-refresh layer for dynamic proactive MPC."
     source_anchor_ids: [anchor-paper-28-problem, anchor-paper-28-dpmpc]
 
 relations:

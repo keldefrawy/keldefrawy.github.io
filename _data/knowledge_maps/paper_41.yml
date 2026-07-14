@@ -296,7 +296,7 @@ nodes:
     epistemic_status: documented
     title: Research lineage
     summary: >-
-      The temporal-consistency analysis supplies the mechanism vocabulary later used to explain the availability conflict in paper #42 and forms part of the verified-attestation line leading to VRASED and PURE.
+      The temporal-consistency analysis supplies the mechanism vocabulary later used to explain the availability conflict in “Reconciling Remote Attestation and Safety-Critical Operation on Simple IoT Devices” by Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, Ahmad-Reza Sadeghi, and Gene Tsudik, and forms part of the verified-attestation line leading to VRASED and PURE.
     source_anchor_ids: [anchor-paper-41-problem, anchor-paper-41-conclusion]
 
 relations:

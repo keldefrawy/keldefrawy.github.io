@@ -287,7 +287,7 @@ nodes:
     order: 13
     epistemic_status: versioned
     title: Later journal version
-    summary: Paper #48 is the expanded FGCS journal treatment with a reorganized design, optimization discussion, and integrated evaluation/security sections; it is a separate publication record.
+    summary: "“SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems” by Ivan De Oliveira Nunes, Karim Eldefrawy, and Tancrède Lepoint is the expanded FGCS journal treatment with a reorganized design, optimization discussion, and integrated evaluation/security sections; it is a separate publication record."
     source_anchor_ids: [anchor-paper-43-problem, anchor-paper-43-conclusion]
 
 relations:

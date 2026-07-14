@@ -25,7 +25,7 @@ publications = YAML.load_file(File.join(ROOT, "_data/publications.yml"))
 errors = []
 
 complete_catalog_expectations = {
-  "Gene Tsudik" => [4, 7, 9, 10, 11, 13, 14, 15, 16, 17, 27, 33, 37, 38, 41, 42, 46, 47, 50, 54, 78],
+  "Gene Tsudik" => [4, 7, 9, 10, 11, 13, 14, 15, 16, 17, 27, 33, 37, 38, 41, 42, 46, 47, 50, 54, 74],
   "Vitor Pereira" => [51, 58, 67]
 }
 complete_catalog_scene_names = %w[hotel tour machines labs cipher]
@@ -100,7 +100,7 @@ benjamin_ids = publications.select do |publication|
   publication.fetch("authors").include?("Ben Terner") ||
     publication.fetch("authors").include?("Benjamin Terner")
 end.map { |publication| publication.fetch("id").to_i }.sort
-expected_benjamin_ids = [63, 69, 71, 72, 73, 74, 75, 77, 78]
+expected_benjamin_ids = [63, 69, 71, 72, 73, 74, 75, 76, 78]
 errors << "Benjamin Terner catalog set is #{benjamin_ids.inspect}" unless benjamin_ids == expected_benjamin_ids
 
 cipher_publication_ids = cipher_papers.map { |paper| paper.fetch("publication_id").to_i }
@@ -109,7 +109,7 @@ errors << "cipher scene omits Benjamin papers #{missing_benjamin_nodes.inspect}"
 
 registration_paper = publications.find { |publication| publication.fetch("id").to_i == 56 }
 if registration_paper.fetch("authors").include?("Terner")
-  errors << "registration-based encryption paper #56 incorrectly lists Benjamin Terner"
+  errors << "Optimizing Registration Based Encryption incorrectly lists Benjamin Terner"
 end
 
 hotel_overlay = overlay_scenes.fetch("hotel")
@@ -281,7 +281,7 @@ unless lepoint_publication_ids == [40, 43, 48, 52, 61, 62]
   errors << "R&D laboratory lineage omits Tancrède publications #{lepoint_publication_ids.inspect}"
 end
 
-expected_new_sri_publication_ids = [49, 53, 59, 64, 75]
+expected_new_sri_publication_ids = [49, 53, 59, 64, 76]
 new_sri_publication_ids = labs.fetch("papers").filter_map do |paper|
   publication_id = paper.fetch("publication_id").to_i
   publication_id if expected_new_sri_publication_ids.include?(publication_id)
@@ -290,7 +290,7 @@ unless new_sri_publication_ids == expected_new_sri_publication_ids
   errors << "R&D laboratory lineage omits new SRI collaborator papers #{new_sri_publication_ids.inspect}"
 end
 
-expected_formative_collaboration_ids = [31, 32, 36, 50, 68, 78]
+expected_formative_collaboration_ids = [31, 32, 36, 50, 68, 74]
 formative_collaboration_ids = labs.fetch("papers").filter_map do |paper|
   publication_id = paper.fetch("publication_id").to_i
   publication_id if expected_formative_collaboration_ids.include?(publication_id)
@@ -424,7 +424,9 @@ runtime_script = <<~'JAVASCRIPT'
         const paper = personIds[link.from] ? nodesById[link.to] : nodesById[link.from];
         return {
           publication_id: Number(paper.publication_id),
+          label: paper.label,
           title: paper.title,
+          authors: paper.authors,
           url: paper.url,
           idea_ids: scene.links.filter(function (candidate) {
             return (candidate.from === paper.id && ideaIds[candidate.to]) ||
@@ -508,7 +510,9 @@ runtime_script = <<~'JAVASCRIPT'
         collaboratorNodesById[link.to] : collaboratorNodesById[link.from];
       return {
         publication_id: Number(paper.publication_id),
+        label: paper.label,
         title: paper.title,
+        authors: paper.authors,
         url: paper.url,
         idea_ids: collaboratorScene.links.filter(function (candidate) {
           return (candidate.from === paper.id && collaboratorIdeaIds[candidate.to]) ||
@@ -542,6 +546,7 @@ if !runtime_status.success?
 else
   runtime_scenes = JSON.parse(runtime_stdout)
   publication_titles = publications.to_h { |publication| [publication.fetch("id").to_i, publication.fetch("title")] }
+  publication_authors = publications.to_h { |publication| [publication.fetch("id").to_i, publication.fetch("authors")] }
   complete_catalog_scene_names.each do |scene_name|
     complete_catalog_expectations.each do |label, expected_ids|
       record = runtime_scenes.fetch(scene_name).fetch(label)
@@ -569,6 +574,12 @@ else
         end
         unless paper.fetch("title") == publication_titles.fetch(publication_id)
           errors << "#{scene_name}: #{label} paper #{publication_id} title differs from the catalog"
+        end
+        unless paper.fetch("label") == publication_titles.fetch(publication_id)
+          errors << "#{scene_name}: #{label} paper #{publication_id} label is not its full catalog title"
+        end
+        unless paper.fetch("authors") == publication_authors.fetch(publication_id)
+          errors << "#{scene_name}: #{label} paper #{publication_id} authors differ from the catalog"
         end
         if paper.fetch("idea_ids").empty?
           errors << "#{scene_name}: #{label} paper #{publication_id} has no research-idea connection"
@@ -613,6 +624,12 @@ else
       end
       unless paper.fetch("title") == publication_titles.fetch(publication_id)
         errors << "collaborators: #{label} paper #{publication_id} title differs from the catalog"
+      end
+      unless paper.fetch("label") == publication_titles.fetch(publication_id)
+        errors << "collaborators: #{label} paper #{publication_id} label is not its full catalog title"
+      end
+      unless paper.fetch("authors") == publication_authors.fetch(publication_id)
+        errors << "collaborators: #{label} paper #{publication_id} authors differ from the catalog"
       end
       if paper.fetch("idea_ids").empty?
         errors << "collaborators: #{label} paper #{publication_id} has no research-idea connection"

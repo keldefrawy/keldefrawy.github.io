@@ -45,7 +45,7 @@ curation:
 sources:
   - id: source-paper-72-curated
     type: curated_site_record
-    title: "Website publication record for Paper #72"
+    title: "Website publication record for “Challenges in Timed Cryptography: A Position Paper (Full Paper)” by Karim Eldefrawy, Ben Terner, and Moti Yung"
     url: /publications/#paper-72
     scope_note: "Local metadata and editorial summary; not a quotation from or substitute for the paper."
   - id: source-paper-72-citation-search

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publications by Research Area
-description: Browse 79 publications by research area, with stable paper identifiers, resource links, plain-language summaries, and human- and machine-readable scientific knowledge maps.
+description: Browse 79 publications by research area, with stable paper records, resource links, plain-language summaries, and human- and machine-readable scientific knowledge maps.
 permalink: /publications/
 publications_browser: true
 ---
@@ -91,7 +91,6 @@ publications_browser: true
 
               <article class="publication-card" id="paper-{{ paper.id }}">
                 <div class="publication-card-heading">
-                  <span class="publication-number"><span class="sr-only">Publication number </span>#{{ paper.id }}</span>
                   <div>
                     <h4>
                       {% if primary_resource and primary_resource.url %}
@@ -179,7 +178,7 @@ publications_browser: true
                   aria-haspopup="dialog"
                   aria-controls="publication-abstract-dialog"
                   data-quick-abstract-trigger
-                  data-paper-number="{{ paper.id }}"
+                  data-paper-authors="{{ paper.authors | escape }}"
                   data-abstract-dialog-label="{{ abstract_action_label }}"
                 >{{ abstract_action_label }}</button>
 

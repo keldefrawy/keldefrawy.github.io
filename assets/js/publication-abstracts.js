@@ -27,7 +27,7 @@
     var sourceLink = card.querySelector("[data-quick-abstract-source]");
     var dialogLabel = trigger.getAttribute("data-abstract-dialog-label") || "Abstract";
     activeTrigger = trigger;
-    paperLabel.textContent = "Paper #" + trigger.getAttribute("data-paper-number") + " · " + dialogLabel;
+    paperLabel.textContent = trigger.getAttribute("data-paper-authors") + " · " + dialogLabel;
     title.textContent = textFrom(card, "h4");
     kind.textContent = textFrom(card, "[data-quick-abstract-kind]");
     abstractText.textContent = textFrom(card, "[data-quick-abstract-text]");

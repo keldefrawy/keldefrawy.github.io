@@ -275,7 +275,7 @@ nodes:
     epistemic_status: explicit
     title: VRASED extension
     summary: >-
-      PURE is downstream of VRASED (#50): it reuses VRASED's verified attestation TCB and HMAC path, adding remediation states and services rather than replacing the base architecture.
+      “PURE: Using Verified Remote Attestation to Obtain Proofs of Update, Reset and Erasure in Low-End Embedded Systems” by Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik is downstream of “VRASED: A Verified Hardware/Software Co-Design for Remote Attestation” by Ivan De Oliveira Nunes, Karim Eldefrawy, Norrathep Rattanavipanon, Michael Steiner, and Gene Tsudik: PURE reuses VRASED's verified attestation TCB and HMAC path, adding remediation states and services rather than replacing the base architecture.
     source_anchor_ids: [anchor-paper-46-vrased, anchor-paper-46-problem]
 
 relations:

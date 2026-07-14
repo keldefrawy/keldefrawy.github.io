@@ -219,7 +219,7 @@ nodes:
     order: 11
     epistemic_status: documented
     title: Position in the proactive-security line
-    summary: The chapter synthesizes the PSS construction represented by papers #31/#32 and anticipates the dishonest-majority PMPC result represented by paper #44.
+    summary: "The chapter synthesizes the PSS constructions in “Brief Announcement: Proactive Secret Sharing with a Dishonest Majority” and “Proactive Secret Sharing with a Dishonest Majority” by Shlomi Dolev, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, and Moti Yung, and anticipates “Proactive Secure Multiparty Computation with a Dishonest Majority” by Karim Eldefrawy, Rafail Ostrovsky, Sunoo Park, and Moti Yung."
     source_anchor_ids: [anchor-paper-45-abstract, anchor-paper-45-example-model]
 
 relations:

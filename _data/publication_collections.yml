@@ -57,7 +57,7 @@
     layer, implementation, or deployment is fully quantum-safe. Information-theoretic components
     remain separated from classical-assumption components in the individual paper maps.
   members:
-    - paper_id: 76
+    - paper_id: 77
       facets: [Explicit post-quantum cryptography, Obfuscation]
       basis: Explicitly post-quantum non-malleable point obfuscation; evidence remains limited because no public manuscript is represented.
     - paper_id: 65

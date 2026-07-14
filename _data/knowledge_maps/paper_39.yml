@@ -81,7 +81,8 @@ source_anchors:
   - id: anchor-paper-39-author-record
     source_id: source-paper-39-author-record
     label: Author publication listing
-    locator: Publication #39; ISSA Journal volume 16, number 5, May 2018
+    locator: >-
+      “Security Threats, Defenses, and Recommended Practices for Enterprise Mobility” by Karim Eldefrawy and Vincent Sritapan; ISSA Journal volume 16, number 5, May 2018
     url: https://keldefrawy.github.io/pubs.html
   - id: anchor-paper-39-pages
     source_id: source-paper-39-independent-citation

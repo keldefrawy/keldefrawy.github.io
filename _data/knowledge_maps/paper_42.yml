@@ -247,7 +247,7 @@ nodes:
     order: 12
     epistemic_status: documented
     title: Relation to temporal consistency
-    summary: The locking taxonomy and consistency vocabulary are drawn from the fuller treatment in paper #41; this paper reframes them around safety-critical protocol selection.
+    summary: "The locking taxonomy and consistency vocabulary are drawn from the fuller treatment in “Temporal Consistency of Integrity-Ensuring Computations and Applications to Embedded Systems Security” by Xavier Carpent, Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik; this paper reframes them around safety-critical protocol selection."
     source_anchor_ids: [anchor-paper-42-locking, anchor-paper-42-conclusion]
 
 relations:

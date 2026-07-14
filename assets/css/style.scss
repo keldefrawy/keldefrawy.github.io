@@ -1929,18 +1929,7 @@ body.home-page .sidebar-curiosity__lab-label {
   align-items: flex-start;
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: auto minmax(0, 1fr);
-}
-
-.publication-number {
-  background: var(--publication-soft);
-  border-radius: 5px;
-  color: var(--publication-muted);
-  font-size: 0.75rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
-  line-height: 1;
-  padding: 0.4rem 0.45rem;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .publication-card h4 {
@@ -3698,18 +3687,9 @@ body.quick-abstract-dialog-open {
   border-radius: 7px;
   display: grid;
   gap: 0.55rem;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   padding: 0.6rem;
   scroll-margin-top: 1rem;
-}
-
-.knowledge-catalog-number {
-  background: var(--publication-soft);
-  border-radius: 4px;
-  color: var(--publication-muted);
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 0.25rem 0.35rem;
 }
 
 .knowledge-catalog-topic li a {
@@ -3718,11 +3698,16 @@ body.quick-abstract-dialog-open {
   line-height: 1.4;
 }
 
+.knowledge-catalog-authors,
 .knowledge-catalog-meta {
   color: var(--publication-muted);
   display: block;
   font-size: 0.7rem;
   margin-top: 0.2rem;
+}
+
+.knowledge-catalog-authors {
+  color: var(--publication-ink);
 }
 
 .knowledge-catalog-types {
@@ -5151,11 +5136,11 @@ body.quick-abstract-dialog-open {
   }
 
   .knowledge-catalog-topic li {
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .knowledge-catalog-topic li .paper-stage {
-    grid-column: 2;
+    grid-column: 1;
     justify-self: start;
   }
 

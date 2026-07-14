@@ -143,7 +143,7 @@ nodes:
     epistemic_status: research_question
     title: Research question
     summary: >-
-      Can the efficient dynamic dishonest-majority PSS of paper #52 be extended to multiplication and full circuit evaluation without returning to quartic communication?
+      Can the efficient dynamic dishonest-majority PSS of “Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities” by Karim Eldefrawy, Tancrède Lepoint, and Antonin Leroux be extended to multiplication and full circuit evaluation without returning to quartic communication?
     source_anchor_ids: [anchor-paper-61-problem]
 
   - id: paper-61-answer
@@ -321,9 +321,9 @@ nodes:
     parent_id: paper-61
     order: 10
     epistemic_status: documented
-    title: Builds full PMPC on paper #52
+    title: Builds full PMPC on Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities
     summary: >-
-      The paper reuses the dynamic bivariate PSS from paper #52, adapts its proof to multi-dealer batches, and adds the missing arithmetic-circuit multiplication and permutation layers.
+      The paper reuses the dynamic bivariate PSS from “Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities” by Karim Eldefrawy, Tancrède Lepoint, and Antonin Leroux, adapts its proof to multi-dealer batches, and adds the missing arithmetic-circuit multiplication and permutation layers.
     source_anchor_ids: [anchor-paper-61-problem, anchor-paper-61-share, anchor-paper-61-multiplication]
 
 relations:

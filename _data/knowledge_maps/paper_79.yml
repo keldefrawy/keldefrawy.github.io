@@ -64,12 +64,12 @@ curation:
 sources:
   - id: source-paper-79-curated
     type: curated_site_record
-    title: "Website publication record for Paper #79"
+    title: "Website publication record for “Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases” by Karim Eldefrawy"
     url: /publications/#paper-79
     scope_note: "Author-supplied title, authorship, under-review status, venue, and topical characterization, plus an AI editorial summary. Technical claims are grounded separately in the author-supplied abstract."
   - id: source-paper-79-author-abstract
     type: author_supplied_abstract
-    title: "Author-supplied abstract for Paper #79"
+    title: "Author-supplied abstract for “Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases” by Karim Eldefrawy"
     url: /knowledge/papers/paper-79/#paper-abstract
     scope_note: "Abstract supplied directly by the author for this website; it reports the paper's results but is not a substitute for auditing the manuscript, theorem statements, hypotheses, or proofs."
   - id: source-paper-79-venue
@@ -92,7 +92,7 @@ source_anchors:
   - id: anchor-paper-79-author-abstract
     source_id: source-paper-79-author-abstract
     label: "Author-supplied abstract"
-    locator: "Full abstract rendered on the Paper #79 knowledge-map landing page. The manuscript, formal theorem statements, hypotheses, and proofs were not inspected."
+    locator: "Full abstract rendered on the knowledge-map page for “Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases” by Karim Eldefrawy. The manuscript, formal theorem statements, hypotheses, and proofs were not inspected."
     url: /knowledge/papers/paper-79/#paper-abstract
   - id: anchor-paper-79-venue
     source_id: source-paper-79-venue

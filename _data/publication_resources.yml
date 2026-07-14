@@ -1,3 +1,5 @@
+# `id` is the stable internal catalog key from `_data/publications.yml`, not a
+# chronological display number. Chronological numbering lives only in `pubs.md`.
 ---
 - id: 79
   official:
@@ -5,7 +7,7 @@
     url: https://www.cscml.org/
   archive: []
   author: []
-- id: 77
+- id: 78
   official: []
   archive:
   - label: IACR ePrint
@@ -13,6 +15,10 @@
   author:
   - label: Local author PDF
     url: /pubs/2024/composing-timed-cryptographic-protocols-eprint2024.pdf
+- id: 77
+  official: []
+  archive: []
+  author: []
 - id: 76
   official: []
   archive: []
@@ -22,10 +28,6 @@
   archive: []
   author: []
 - id: 74
-  official: []
-  archive: []
-  author: []
-- id: 78
   official: []
   archive: []
   author:

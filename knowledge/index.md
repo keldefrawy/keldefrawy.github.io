@@ -304,9 +304,9 @@ knowledge_hub: true
                   data-topic="{{ topic.slug }}"
                   data-tags="{{ paper.tags | jsonify | escape }}"
                 >
-                  <span class="knowledge-catalog-number">#{{ paper.id }}</span>
                   <div>
                     <a href="{{ landing.url | relative_url }}">{{ paper.title | escape }}</a>
+                    <span class="knowledge-catalog-authors">{{ paper.authors | escape }}</span>
                     <span class="knowledge-catalog-meta">{% if paper.year %}{{ paper.year }} · {% endif %}{{ paper.status | escape }}</span>
                     {% if paper.contribution_types != empty %}<span class="knowledge-catalog-types">{{ paper.contribution_types | join: " · " | escape }}</span>{% endif %}
                   </div>

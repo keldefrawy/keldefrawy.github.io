@@ -16,10 +16,10 @@ layout: default
   <nav class="knowledge-breadcrumbs" aria-label="Breadcrumb">
     <a href="{{ '/knowledge/' | relative_url }}">Scientific knowledge maps</a>
     <span aria-hidden="true">/</span>
-    <a href="{{ '/publications/#' | append: record.publication_anchor | relative_url }}">Paper #{{ record.publication_id }}</a>
+    <a href="{{ '/publications/#' | append: record.publication_anchor | relative_url }}">{{ record.title | escape }}</a>
   </nav>
 
-  <p class="knowledge-eyebrow">Scientific knowledge map · Paper #{{ record.publication_id }}</p>
+  <p class="knowledge-eyebrow">Scientific knowledge map</p>
   <h1>{{ record.title | escape }}</h1>
   <p class="knowledge-authors">{% if publication.authors %}{{ publication.authors | escape }}{% else %}{{ record.authors | join: ", " | escape }}{% endif %}</p>
   <p class="knowledge-venue">{{ record.year }} · {% if publication.venue_url %}<a href="{{ publication.venue_url | escape }}">{{ record.venue | escape }}</a>{% else %}{{ record.venue | escape }}{% endif %}</p>

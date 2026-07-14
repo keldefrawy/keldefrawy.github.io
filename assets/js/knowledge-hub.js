@@ -472,9 +472,15 @@
 
       clear(detail);
       paragraph = document.createElement("p");
-      paragraph.textContent = record.data.note ?
-        (record.data.label || record.data.title) + ": " + record.data.note :
-        (record.data.label || record.data.title || record.data.id) + ".";
+      if (record.kind === "paper") {
+        paragraph.textContent = (record.data.title || record.data.label || record.data.id) +
+          (record.data.authors ? " — " + record.data.authors : "") +
+          (record.data.note ? ". " + record.data.note : ".");
+      } else {
+        paragraph.textContent = record.data.note ?
+          (record.data.label || record.data.title) + ": " + record.data.note :
+          (record.data.label || record.data.title || record.data.id) + ".";
+      }
       detail.appendChild(paragraph);
 
       if (record.data.scope === "all_work") {
@@ -630,6 +636,9 @@
       }
       element.setAttribute("data-lineage-node-id", node.id);
       addText(element, node.label || node.title || node.id, false);
+      if (kind === "paper" && node.authors) {
+        addText(element, node.authors, true);
+      }
       if (kind === "person" || kind === "collaborator") {
         relationshipBadge = document.createElement("small");
         relationshipBadge.className = "knowledge-lineage-node__relationship";

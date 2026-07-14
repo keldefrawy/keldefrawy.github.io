@@ -1,7 +1,9 @@
 {%- assign resource_matches = site.data.publication_resources | where: "id", include.publication_id -%}
 {%- assign resources = resource_matches | first -%}
+{%- assign publication_matches = site.data.publications | where: "id", include.publication_id -%}
+{%- assign publication = publication_matches | first -%}
 {%- assign rendered_resource_count = 0 -%}
-<span class="chronological-publication-resources" role="group" aria-label="Resources for publication {{ include.publication_id }}">
+<span class="chronological-publication-resources" role="group" aria-label="Resources for {{ publication.title | escape }} by {{ publication.authors | escape }}">
 {%- assign resource_types = "official,archive,author" | split: "," -%}
 {%- for resource_type in resource_types -%}
 {%- assign resource_list = resources[resource_type] -%}

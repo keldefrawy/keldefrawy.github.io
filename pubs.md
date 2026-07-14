@@ -24,20 +24,20 @@ Each entry lists its verified publisher or proceedings page, public archive or e
 # Pre-prints, Under Review, and Ongoing Work
 
 
-77- Karim Eldefrawy, Ben Terner, and Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. {% include chronological-publication-resources.html publication_id=77 %}
+79- Karim Eldefrawy, Ben Terner, and Moti Yung, "Composing Timed Cryptographic Protocols: Foundations and Applications", under review. {% include chronological-publication-resources.html publication_id=78 %}
 
-76- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. {% include chronological-publication-resources.html publication_id=76 %}
+78- Daniel Apon, Chongwon Cho, Karim Eldefrawy, Feng-Hao Liu, Rafail Ostrovsky, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation", ongoing work. {% include chronological-publication-resources.html publication_id=77 %}
 
-75- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. {% include chronological-publication-resources.html publication_id=75 %}
+77- Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, Ben Terner, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay", ongoing work. {% include chronological-publication-resources.html publication_id=76 %}
 
-74- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. {% include chronological-publication-resources.html publication_id=74 %}
+76- Kelong Cong, Karim Eldefrawy, Ben Terner, Titouan Tanguy, "Decomposable MPC with Security Against Malicious Adversaries", under review. {% include chronological-publication-resources.html publication_id=75 %}
 
 
 # 2026
 
-79- Karim Eldefrawy, "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases", under review at the 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026). {% include chronological-publication-resources.html publication_id=79 %}
+75- Karim Eldefrawy, "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases", under review at the 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026). {% include chronological-publication-resources.html publication_id=79 %}
 
-78- Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, Gene Tsudik, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)", under review at the 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026). {% include chronological-publication-resources.html publication_id=78 %}
+74- Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, Gene Tsudik, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)", under review at the 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026). {% include chronological-publication-resources.html publication_id=74 %}
 
 
 # 2025

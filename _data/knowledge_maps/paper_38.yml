@@ -114,7 +114,8 @@ source_anchors:
   - id: anchor-paper-38-lineage
     source_id: source-paper-38-full-version
     label: Full HYDRA design and evaluation
-    locator: arXiv 1703.02688; mapped separately as publication #37
+    locator: >-
+      arXiv 1703.02688; mapped separately as “HYDRA: Hybrid Design for Remote Attestation Using a Formally Verified Microkernel” by Karim Eldefrawy, Norrathep Rattanavipanon, and Gene Tsudik
     url: https://arxiv.org/abs/1703.02688
   - id: anchor-paper-38-citations
     source_id: source-paper-38-openalex

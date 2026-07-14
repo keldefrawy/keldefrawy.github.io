@@ -8,105 +8,104 @@ machine_path: /knowledge/papers/paper-76.json
 root_node_id: paper-76
 stage: mapped_draft
 contribution_type_vocabulary_version: "0.1"
-contribution_types: []
+contribution_types: [protocol]
 
-title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
-short_title: "Post-Quantum Non-Malleable Point Obfuscation"
+title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
+short_title: "PRISM Messaging Overlay"
 year: null
 venue: null
 publication_status: "Ongoing work"
-topic: algorithms-foundations
-labels: ["Theory"]
+topic: privacy-identity
+labels: ["Applied"]
 availability: "Public manuscript not found; this work is listed as ongoing."
 authors:
-  - "Daniel Apon"
-  - "Chongwon Cho"
+  - "Linda Briesemeister"
   - "Karim Eldefrawy"
-  - "Feng-Hao Liu"
-  - "Rafail Ostrovsky"
+  - "Bob Haley"
+  - "Tim McCarthy"
+  - "Ben Terner"
 keywords:
-  - "post-quantum cryptography"
-  - "obfuscation"
+  - "anonymous messaging"
+  - "intrusion resilience"
+  - "MPC"
 
 research_question: >-
-  Can a post-quantum point-function obfuscation notion resist malleation while reproducing a useful aspect of random-oracle behavior?
+  Can a messaging overlay combine privacy-preserving secure multiparty computation with continued operation or recovery despite compromised infrastructure?
 central_answer: >-
-  The title establishes this research objective, and a NIST administrative email verifies that a manuscript with this title and author list entered an internal review process in 2021. No public manuscript was located, so the construction, security notion, quantum-access model, assumptions, theorem, and proof remain unaudited.
+  The title and project record establish that PRISM targets privacy-preserving, intrusion-resilient messaging using MPC. No public manuscript was located, so the overlay architecture, protocol messages, anonymity and resilience definitions, compromise threshold, proof, implementation, and evaluation remain unverified.
 
 curation:
   drafted_at: "2026-07-11"
   drafted_by:
     - actor_type: ai
       name: OpenAI Codex
-      role: metadata verification, administrative-provenance analysis, public-source searching, and uncertainty documentation
+      role: metadata verification, project-provenance mapping, public-source searching, and uncertainty documentation
   method: >-
-    AI drafting from the author-site record, a public NIST administrative email, and exact-title, author-title, archive, index, and coauthor-profile searches. The NIST document is used only as manuscript provenance; it is not treated as full text, peer review, a citation, or evidence for any technical claim.
-  source_scope: metadata_administrative_provenance_and_documented_public_source_search
+    AI drafting from the author-site paper and project records followed by exact-title, author-title, archive, index, project, and coauthor-profile searches. Project provenance is separated from paper evidence; no public manuscript or stable paper-specific scholarly record was located.
+  source_scope: metadata_project_provenance_and_documented_public_source_search
   approval:
     status: pending
-    note: "AI-authored bounded map awaiting full author audit; technical content is intentionally not reconstructed from the title alone."
+    note: "AI-authored bounded map awaiting full author audit; project descriptions are not treated as manuscript evidence."
 
 sources:
   - id: source-paper-76-curated
     type: curated_site_record
-    title: "Website publication record for Paper #76"
+    title: "Website publication record for “PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay” by Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, and Ben Terner"
     url: /publications/#paper-76
-    scope_note: "Author-site title, authorship, ongoing-work status, and editorial summary; not a manuscript or technical source."
-  - id: source-paper-76-nist-email
-    type: administrative_provenance_record
-    title: "NIST ERB sponsor-review email mentioning the manuscript"
-    url: "https://nist.pqcrypto.org/foia/20250416/RE_%20NPS_%20REMINDER%20-%20ERB%20Sponsor%20Review%20Manuscript.pdf"
-    media_type: application/pdf
+    scope_note: "Author-site title, authorship, ongoing-work status, and editorial summary; not a manuscript or source for protocol details."
+  - id: source-paper-76-project
+    type: project_provenance_record
+    title: "Author-site PRISM project listing"
+    url: /projects.html
     scope_note: >-
-      The email names the manuscript and authors, records a 2021-03-02 submission date and ERB Control G2021-0620, and discusses administrative sponsor review before intended conference submission. It is neither the manuscript nor a scholarly citation, venue decision, review report, or technical validation.
+      Records Karim Eldefrawy's 2019–2023 role as PI of PRISM and identifies DARPA RACE funding. It establishes project lineage only, not this paper's technical claims, authorship roles, review status, or results.
   - id: source-paper-76-manuscript-search
     type: source_search_record
-    title: "Public-manuscript search for Paper #76"
-    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+    title: "Public-manuscript search for “PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay” by Linda Briesemeister, Karim Eldefrawy, Bob Haley, Tim McCarthy, and Ben Terner"
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
     accessed_at: "2026-07-11"
     scope_note: >-
-      Exact-title and author-title variants were checked across the open web, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, NIST/public-record pages, and discoverable author or coauthor pages. The NIST email was located, but no public manuscript, abstract, DOI, ePrint identifier, venue paper page, or stable scholarly index record was found.
+      Exact-title and author-title variants were checked across the open web, arXiv, IACR ePrint, DBLP, Crossref, OpenAlex, DARPA/project pages, and discoverable author or coauthor pages. Project mentions were found, but no paper-specific public manuscript, abstract, DOI, archive identifier, or stable index record was located.
   - id: source-paper-76-citation-search
     type: citation_search_snapshot
     title: "Exact-title scholarly-web citation search"
-    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
     accessed_at: "2026-07-11"
-    scope_note: "The NIST administrative email was excluded from reception because it does not cite the work as scholarship."
+    scope_note: "Project and award descriptions were excluded because they do not cite a paper with this identity."
 
 source_anchors:
   - id: anchor-paper-76-metadata
     source_id: source-paper-76-curated
     label: "Author-site paper metadata"
-    locator: "Paper #76 title, named authors, topic, Theory label, and Ongoing work status"
+    locator: "Title, authors, protocol tag, topic, and ongoing-work status for the PRISM messaging-overlay manuscript"
     url: /publications/#paper-76
-  - id: anchor-paper-76-nist-email
-    source_id: source-paper-76-nist-email
-    label: "NIST administrative manuscript provenance"
-    locator: >-
-      Public email record naming the manuscript and five authors; submitted 2021-03-02 under ERB Control G2021-0620; administrative sponsor-review correspondence, not manuscript content or scholarly review
-    url: "https://nist.pqcrypto.org/foia/20250416/RE_%20NPS_%20REMINDER%20-%20ERB%20Sponsor%20Review%20Manuscript.pdf"
+  - id: anchor-paper-76-project
+    source_id: source-paper-76-project
+    label: "PRISM project provenance"
+    locator: "Projects listing: 2019–2023 PI of PRISM, funded by DARPA RACE"
+    url: /projects.html
   - id: anchor-paper-76-search-gap
     source_id: source-paper-76-manuscript-search
     label: "Documented full-text search gap"
     locator: >-
-      Search completed 2026-07-11 across exact-title and author-title web queries, IACR ePrint, arXiv, DBLP, Crossref, OpenAlex, NIST records, and discoverable author/coauthor pages; administrative provenance found but no primary full text or stable scholarly record
-    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+      Search completed 2026-07-11 across exact-title and author-title web queries, arXiv, IACR ePrint, DBLP, Crossref, OpenAlex, project pages, and discoverable author/coauthor pages; project provenance found but no primary paper text or stable record
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
   - id: anchor-paper-76-citations
     source_id: source-paper-76-citation-search
     label: "Dated exact-title citation search"
-    locator: "No citing scholarly work verifiably located; the NIST administrative email was excluded from the count"
-    url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+    locator: "No citation to a manuscript with this exact identity verifiably located when searched 2026-07-11"
+    url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
 
 nodes:
   - id: paper-76
     kind: paper
     parent_id:
     order: 1
-    epistemic_status: metadata_and_administrative_provenance_pending_author_audit
-    title: "Post-quantum non-malleable point obfuscation"
+    epistemic_status: metadata_only_pending_author_audit
+    title: "PRISM messaging overlay"
     summary: >-
-      An ongoing theory project whose title targets a post-quantum, non-malleable point-obfuscation primitive. A NIST email verifies manuscript identity and administrative history, but no technical text is public in the located sources.
-    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-nist-email, anchor-paper-76-search-gap]
+      An ongoing applied-protocol effort whose title combines privacy-preserving messaging, intrusion resilience, and secure multiparty computation. Public project provenance exists, but no paper manuscript was located.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project, anchor-paper-76-search-gap]
 
   - id: paper-76-question
     kind: question
@@ -115,178 +114,159 @@ nodes:
     epistemic_status: title_inferred
     title: "Research direction"
     summary: >-
-      Can point-function obfuscation retain a non-malleability property against quantum-capable adversaries and thereby realize a useful random-oracle-like capability?
+      Can a messaging overlay hide sensitive communication relationships or content while continuing to provide useful service despite compromised components?
     source_anchor_ids: [anchor-paper-76-metadata]
 
-  - id: paper-76-point-obfuscation
-    kind: primitive
-    parent_id: paper-76
-    order: 2
-    epistemic_status: primitive_named_definition_unavailable
-    title: "Point obfuscation"
-    summary: >-
-      Point obfuscation is named in the title. The point-function domain, correctness condition, hiding notion, auxiliary input, reusable access, and output representation are not specified publicly.
-    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
-
-  - id: paper-76-nonmalleability
-    kind: security_property
-    parent_id: paper-76
-    order: 3
-    epistemic_status: property_named_definition_unavailable
-    title: "Non-malleability target"
-    summary: >-
-      Non-malleability is explicit in the title, but the admissible relation, challenge game, adversarial output, success event, and handling of trivial transformations are unavailable.
-    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
-
-  - id: paper-76-postquantum
-    kind: threat_model
-    parent_id: paper-76
-    order: 4
-    epistemic_status: adversary_class_named_model_unavailable
-    title: "Post-quantum adversary"
-    summary: >-
-      The title claims a post-quantum setting, but it does not disclose whether the model permits quantum advice, superposition access, quantum random-oracle queries, adaptive challenge selection, or quantum outputs.
-    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
-
-  - id: paper-76-random-oracle-goal
+  - id: paper-76-objective-privacy
     kind: objective
     parent_id: paper-76
-    order: 5
-    epistemic_status: objective_named_scope_unavailable
-    title: "Further realizing random oracles"
+    order: 2
+    epistemic_status: term_present_definition_unavailable
+    title: "Privacy-preserving messaging"
     summary: >-
-      The title situates the work in a program of realizing random-oracle behavior, but the targeted functionality, application class, and sense of realization cannot be inferred safely without the manuscript.
+      Privacy is an explicit design objective in the title. The protected objects—sender, receiver, relationship, message content, membership, metadata, or traffic patterns—and the anonymity game are not stated in the located sources.
     source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
 
-  - id: paper-76-construction
-    kind: construction
+  - id: paper-76-objective-resilience
+    kind: objective
+    parent_id: paper-76
+    order: 3
+    epistemic_status: term_present_definition_unavailable
+    title: "Intrusion resilience"
+    summary: >-
+      Intrusion resilience is explicit in the title, but compromise thresholds, proactive recovery, state refresh, availability target, detection assumptions, and recovery semantics are unavailable.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
+
+  - id: paper-76-mpc
+    kind: method
+    parent_id: paper-76
+    order: 4
+    epistemic_status: method_named_details_unavailable
+    title: "MPC-based design"
+    summary: >-
+      Secure multiparty computation is named as a design basis. The computed functionality, participating roles, corruption model, setup, chosen MPC protocol, and online costs are not publicly specified.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
+
+  - id: paper-76-protocol
+    kind: protocol
+    parent_id: paper-76
+    order: 5
+    epistemic_status: classified_but_not_publicly_specified
+    title: "Messaging-overlay protocol"
+    summary: >-
+      The curated taxonomy classifies the work as a protocol, while the title identifies a messaging overlay. No roles, message flow, state machine, cryptographic subprotocols, or failure handling can be extracted without the manuscript.
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
+
+  - id: paper-76-project-lineage
+    kind: provenance
     parent_id: paper-76
     order: 6
-    epistemic_status: not_available_for_audit
-    title: "Construction unavailable"
+    epistemic_status: documented_project_context
+    title: "DARPA RACE project lineage"
     summary: >-
-      No algorithm, compiler, parameter set, underlying primitive, or post-quantum assumption can be extracted from the located records.
-    source_anchor_ids: [anchor-paper-76-search-gap]
+      The author-site projects page records PRISM as a 2019–2023 DARPA RACE effort led by Karim Eldefrawy. This connects the work to a funded research program but does not validate paper-level claims.
+    source_anchor_ids: [anchor-paper-76-project]
 
-  - id: paper-76-theorem
-    kind: theorem_group
+  - id: paper-76-security
+    kind: security_argument
     parent_id: paper-76
     order: 7
     epistemic_status: not_available_for_audit
-    title: "Theorem and proof unavailable"
+    title: "Security argument unavailable"
     summary: >-
-      The available records do not establish existence, correctness, security, efficiency, or any reduction to a named hardness assumption.
+      No formal privacy or resilience definition, theorem, reduction, assumption set, failure probability, or composition guarantee was located.
     source_anchor_ids: [anchor-paper-76-search-gap]
-
-  - id: paper-76-nist-provenance
-    kind: provenance
-    parent_id: paper-76
-    order: 8
-    epistemic_status: administratively_documented
-    title: "NIST ERB record"
-    summary: >-
-      A NIST email records that a manuscript with this title and author list was submitted on March 2, 2021 under ERB Control G2021-0620 and discusses sponsor review before intended conference peer review.
-    source_anchor_ids: [anchor-paper-76-nist-email]
-
-  - id: paper-76-provenance-boundary
-    kind: limitation
-    parent_id: paper-76-nist-provenance
-    order: 1
-    epistemic_status: source_scope_boundary
-    title: "What the email does not establish"
-    summary: >-
-      The email does not provide the manuscript, theorem statements, proof, public release, venue submission identity, acceptance decision, reviewer judgment, or citation evidence.
-    source_anchor_ids: [anchor-paper-76-nist-email]
 
   - id: paper-76-evidence
     kind: evidence_group
     parent_id: paper-76
-    order: 9
-    epistemic_status: no_public_technical_evidence_located
+    order: 8
+    epistemic_status: no_public_evidence_located
     title: "Evidence status"
-    summary: "No public proof, formalization, implementation, experiment, or supplementary artifact attributable to this paper was located."
+    summary: >-
+      No implementation, deployment, experiment, simulation, proof, architecture specification, or supplementary artifact attributable to this paper was located.
     source_anchor_ids: [anchor-paper-76-search-gap]
 
-  - id: paper-76-unknowns
+  - id: paper-76-boundaries
     kind: limitation_group
     parent_id: paper-76
-    order: 10
+    order: 9
     epistemic_status: explicit_unknowns
-    title: "Information needed for a substantive map"
+    title: "Unresolved technical boundaries"
     summary: >-
-      Manuscript audit must establish the point-obfuscation syntax, correctness and non-malleability games, quantum oracle-access model, assumptions, construction, reduction, parameter loss, efficiency, applications, and relation to prior random-oracle realizations.
+      A substantive audit requires the system and trust boundaries, messaging and MPC roles, attacker visibility, compromise threshold, recovery mechanism, anonymity and availability definitions, network assumptions, performance model, and evaluation evidence.
     source_anchor_ids: [anchor-paper-76-search-gap]
 
   - id: paper-76-search
     kind: audit_record
     parent_id: paper-76
-    order: 11
+    order: 10
     epistemic_status: documented_search
     title: "Public-source search"
     summary: >-
-      Exact-title, author-title, archive, index, NIST-record, and public-profile searches located administrative provenance but no primary technical source; the provenance record was kept separate from evidence and reception.
-    source_anchor_ids: [anchor-paper-76-nist-email, anchor-paper-76-search-gap]
+      The audit found project-level provenance but no manuscript after exact-title, author-title, archive, index, project, and public-profile searches; project mentions were not promoted into technical claims.
+    source_anchor_ids: [anchor-paper-76-project, anchor-paper-76-search-gap]
 
   - id: paper-76-artifacts
     kind: artifact_group
     parent_id: paper-76
-    order: 12
-    epistemic_status: metadata_and_administrative_record_only
+    order: 11
+    epistemic_status: metadata_and_project_record_only
     title: "Available artifacts"
-    summary: "The represented resources are an author-site listing and a NIST administrative email; neither is the manuscript or a technical artifact."
-    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-nist-email]
+    summary: "The represented resources are the author-site paper listing and project listing; neither is a manuscript, protocol specification, or implementation."
+    source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project]
 
   - id: paper-76-scrutiny
     kind: scrutiny
     parent_id: paper-76
-    order: 13
-    epistemic_status: no_completed_scholarly_scrutiny_located
+    order: 12
+    epistemic_status: no_completed_paper_scrutiny_located
     title: "Scrutiny and reception"
     summary: >-
-      Administrative sponsor review is provenance, not completed scholarly peer review. No venue outcome, public review, reproduction, correction, cryptanalysis, or scholarly citation was located.
-    source_anchor_ids: [anchor-paper-76-nist-email, anchor-paper-76-citations]
+      The work is listed as ongoing. Program sponsorship is not peer review, and no completed venue review, independent audit, reproduction, correction, or paper citation was located.
+    source_anchor_ids: [anchor-paper-76-project, anchor-paper-76-citations]
 
 relations:
-  - id: paper-76-relation-question-point
-    type: concerns
+  - id: paper-76-relation-question-privacy
+    type: motivates
     from_id: paper-76-question
-    to_id: paper-76-point-obfuscation
-  - id: paper-76-relation-nonmalleability-qualifies-point
-    type: constrains
-    from_id: paper-76-nonmalleability
-    to_id: paper-76-point-obfuscation
-  - id: paper-76-relation-postquantum-qualifies-nonmalleability
-    type: qualifies
-    from_id: paper-76-postquantum
-    to_id: paper-76-nonmalleability
-  - id: paper-76-relation-point-targets-random-oracle-goal
-    type: intended_to_support
-    from_id: paper-76-point-obfuscation
-    to_id: paper-76-random-oracle-goal
-  - id: paper-76-relation-construction-would-realize-point
-    type: would_realize
-    from_id: paper-76-construction
-    to_id: paper-76-point-obfuscation
-  - id: paper-76-relation-theorem-would-support-construction
-    type: would_support
-    from_id: paper-76-theorem
-    to_id: paper-76-construction
-  - id: paper-76-relation-nist-contextualizes-paper
-    type: establishes_provenance_for
-    from_id: paper-76-nist-provenance
+    to_id: paper-76-objective-privacy
+  - id: paper-76-relation-question-resilience
+    type: motivates
+    from_id: paper-76-question
+    to_id: paper-76-objective-resilience
+  - id: paper-76-relation-mpc-would-realize-protocol
+    type: would_help_realize
+    from_id: paper-76-mpc
+    to_id: paper-76-protocol
+  - id: paper-76-relation-protocol-targets-privacy
+    type: targets
+    from_id: paper-76-protocol
+    to_id: paper-76-objective-privacy
+  - id: paper-76-relation-protocol-targets-resilience
+    type: targets
+    from_id: paper-76-protocol
+    to_id: paper-76-objective-resilience
+  - id: paper-76-relation-project-contextualizes-paper
+    type: contextualizes
+    from_id: paper-76-project-lineage
     to_id: paper-76
-  - id: paper-76-relation-provenance-boundary-qualifies-nist
+  - id: paper-76-relation-security-would-support-protocol
+    type: would_support
+    from_id: paper-76-security
+    to_id: paper-76-protocol
+  - id: paper-76-relation-boundaries-qualify-paper
     type: qualifies
-    from_id: paper-76-provenance-boundary
-    to_id: paper-76-nist-provenance
+    from_id: paper-76-boundaries
+    to_id: paper-76
   - id: paper-76-relation-search-limits-evidence
     type: limits_audit_of
     from_id: paper-76-search
     to_id: paper-76-evidence
-  - id: paper-76-relation-unknowns-qualify-paper
-    type: qualifies
-    from_id: paper-76-unknowns
-    to_id: paper-76
+  - id: paper-76-relation-artifacts-limit-protocol
+    type: limits_audit_of
+    from_id: paper-76-artifacts
+    to_id: paper-76-protocol
   - id: paper-76-relation-scrutiny-contextualizes-paper
     type: contextualizes
     from_id: paper-76-scrutiny
@@ -301,33 +281,33 @@ assessment:
   axes:
     - id: epistemic_evidence
       level: low
-      rationale: "The title and NIST email establish identity, objective, and administrative history, but no manuscript, definition, construction, theorem, proof, or technical artifact was located."
-      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-nist-email, anchor-paper-76-search-gap]
+      rationale: "The title and project record establish objectives and lineage, but no manuscript, security definition, proof, protocol specification, implementation, or evaluation was located."
+      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project, anchor-paper-76-search-gap]
     - id: auditability
       level: low
-      rationale: "No paper-specific public archive or author-hosted manuscript was located. The NIST email is inspectable provenance but does not expose assumptions, evidence, or version content."
-      basis_source_anchor_ids: [anchor-paper-76-nist-email, anchor-paper-76-search-gap]
+      rationale: "No paper-specific official publication record, public archive, or author-hosted copy was located; full-text assumptions, evidence, and version identity cannot be audited from this map."
+      basis_source_anchor_ids: [anchor-paper-76-search-gap]
     - id: production_provenance
       level: medium
-      rationale: "Named authorship, ongoing-work status, submission date, and ERB control number provide a concrete human and lifecycle trail. Contributor roles, revisions, AI or tool use, and manuscript/artifact lineage remain unaudited."
-      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-nist-email]
+      rationale: "Named authorship, ongoing-work status, and documented project lineage provide baseline human and lifecycle provenance. Contributor roles, manuscript revisions, AI or tool use, and artifact lineage remain unaudited."
+      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project]
     - id: external_scrutiny
       level: low
-      rationale: "The located record documents administrative sponsor review and intended later conference review, not a completed scholarly review outcome or independent technical validation."
-      basis_source_anchor_ids: [anchor-paper-76-nist-email]
+      rationale: "The item is ongoing work. DARPA program context is not a completed paper review or independent technical validation."
+      basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-project]
     - id: reception
       level: low
-      rationale: "The dated exact-title search located 0 scholarly citations. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; the NIST email is provenance, not a citation."
+      rationale: "The dated exact-title search located 0 paper citations. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; project and award pages are not citations."
       basis_source_anchor_ids: [anchor-paper-76-citations]
     - id: contribution_significance
       level: not_assessed
-      rationale: "The title describes an ambitious theoretical objective, but result strength, novelty, assumptions, and impact cannot be assessed without technical text."
+      rationale: "The objectives are potentially important, but novelty, achieved guarantees, and impact cannot be assessed from project and title metadata."
       basis_source_anchor_ids: [anchor-paper-76-metadata, anchor-paper-76-search-gap]
 
 reception_snapshot:
   as_of: "2026-07-11"
-  method: "Exact-title scholarly-web search with administrative mentions excluded"
+  method: "Exact-title scholarly-web search"
   citation_count: 0
-  source_url: "https://www.google.com/search?q=%22Towards+Further+Realizing+Random+Oracles%3A+Post-Quantum+Non-Malleable+Point+Obfuscation%22"
+  source_url: "https://www.google.com/search?q=%22PRISM%3A+PRivacy-Preserving+Intrusion-Resilient+Secure+Multiparty-Computation-Based+Messaging+Overlay%22"
   signals: []
-  limitation: "No public manuscript or stable index record was located. Zero means no scholarly citation was verifiably attributable to the exact title; the NIST email establishes manuscript provenance only."
+  limitation: "The exact manuscript may not be public or indexed. Zero excludes project and award descriptions that do not cite a paper with this identity; it does not preclude private, variant-title, or future references."

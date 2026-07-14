@@ -198,12 +198,34 @@
       papersByPublicationId[publicationId] = {
         id: generatedId,
         publication_id: publication.id,
-        label: "#" + publication.id + " · " + publication.title,
+        label: publication.title,
         title: publication.title,
+        authors: publication.authors,
+        year: publication.year,
         url: "/knowledge/papers/paper-" + publication.id + "/"
       };
       usedNodeIds[generatedId] = true;
       result.papers.push(papersByPublicationId[publicationId]);
+    });
+  }
+
+  function hydratePaperReferences(result, publications) {
+    var publicationById = {};
+
+    (publications || []).forEach(function (publication) {
+      publicationById[String(publication.id)] = publication;
+    });
+    result.papers.forEach(function (paper) {
+      var publication = publicationById[String(paper.publication_id)];
+
+      if (!publication) {
+        return;
+      }
+      paper.label = publication.title;
+      paper.title = publication.title;
+      paper.authors = publication.authors;
+      paper.year = publication.year;
+      paper.url = "/knowledge/papers/paper-" + publication.id + "/";
     });
   }
 
@@ -321,8 +343,10 @@
           paper = {
             id: generatedId,
             publication_id: publication.id,
-            label: "#" + publication.id + " · " + publication.title,
+            label: publication.title,
             title: publication.title,
+            authors: publication.authors,
+            year: publication.year,
             url: "/knowledge/papers/paper-" + publication.id + "/"
           };
           papersByPublicationId[publicationId] = paper;
@@ -341,7 +365,9 @@
     });
 
     result.papers.sort(function (left, right) {
-      return Number(right.publication_id || 0) - Number(left.publication_id || 0);
+      var yearDifference = Number(right.year || 0) - Number(left.year || 0);
+
+      return yearDifference || String(left.title || "").localeCompare(String(right.title || ""));
     });
     return result;
   }
@@ -425,6 +451,7 @@
 
     attachCatalogAliases(result.people, collaboratorDirectory(settings.collaboratorPeople));
     completeCatalogCoauthorship(result, settings.publications);
+    hydratePaperReferences(result, settings.publications);
 
     [result.people, result.ideas, result.papers, result.patents].forEach(function (nodes) {
       nodes.forEach(function (node) {

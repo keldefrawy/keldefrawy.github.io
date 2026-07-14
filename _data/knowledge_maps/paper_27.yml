@@ -51,7 +51,7 @@ sources:
     url: https://ics.uci.edu/~gtsudik/paps/attestation-ESCAR15.pdf
   - id: source-paper-27-citation-query
     type: scholarly_index_query
-    title: "OpenAlex exact-title search for paper #27"
+    title: "OpenAlex exact-title search for “Remote Attestation of Heterogeneous Cyber-Physical Systems: The Automotive Use Case” by Karim Eldefrawy, Gavin Holland, and Gene Tsudik"
     url: "https://api.openalex.org/works?search=Remote%20Attestation%20of%20Heterogeneous%20Cyber-Physical%20Systems%20The%20Automotive%20Use%20Case&per-page=5"
     accessed_at: "2026-07-11"
 

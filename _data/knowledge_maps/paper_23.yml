@@ -52,7 +52,7 @@ sources:
     url: https://doi.org/10.1109/THS.2013.6699036
   - id: source-paper-23-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #23"
+    title: "OpenAlex work record for “An Architecture for a Resilient Cloud Computing Infrastructure” by Joshua Baron, Karim Eldefrawy, Aleksey Nogin, and Rafail Ostrovsky"
     url: https://openalex.org/W2040098860
     accessed_at: "2026-07-11"
 

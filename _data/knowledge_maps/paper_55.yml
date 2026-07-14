@@ -329,7 +329,7 @@ nodes:
     epistemic_status: documented
     title: Extends two general-adversary MPC lines
     summary: >-
-      The construction proactivizes prior additive and MSP-based GAS MPC protocols and connects them through conversion, while later paper #61 follows a different dishonest-majority bivariate-PSS route for threshold-style dynamic groups.
+      The construction proactivizes prior additive and MSP-based GAS MPC protocols and connects them through conversion, while “Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities” by Karim Eldefrawy, Tancrède Lepoint, and Antonin Leroux follows a different dishonest-majority bivariate-PSS route for threshold-style dynamic groups.
     source_anchor_ids: [anchor-paper-55-overview, anchor-paper-55-convert]
 
 relations:

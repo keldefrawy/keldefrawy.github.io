@@ -61,7 +61,7 @@ sources:
     url: https://doi.org/10.3233/JCS-130481
   - id: source-paper-21-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #21"
+    title: "OpenAlex work record for “5PM: Secure Pattern Matching” by Joshua Baron, Karim Eldefrawy, Kirill Minkovich, Rafail Ostrovsky, and Eric Tressler"
     url: https://openalex.org/W1806693672
     accessed_at: "2026-07-11"
 

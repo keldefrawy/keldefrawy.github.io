@@ -24,6 +24,48 @@ unless include_ids.sort == expected_ids && include_ids.uniq.length == expected_i
   errors << "pubs.md must include one matching resource row for every publication ID 1-79"
 end
 
+display_numbers = chronological.scan(/^(\d+)-/).flatten.map(&:to_i)
+unless display_numbers == 79.downto(1).to_a
+  errors << "pubs.md display numbers must descend exactly from 79 through 1"
+end
+
+current_work_mapping = {
+  79 => [78, "Composing Timed Cryptographic Protocols: Foundations and Applications"],
+  78 => [77, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"],
+  77 => [76, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay"],
+  76 => [75, "Decomposable MPC with Security Against Malicious Adversaries"],
+  75 => [79, "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"],
+  74 => [74, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"]
+}
+current_work_mapping.each do |display_number, (catalog_id, title)|
+  line = chronological.lines.find { |candidate| candidate.start_with?("#{display_number}-") }
+  unless line&.include?(title) && line&.include?("publication_id=#{catalog_id}")
+    errors << "display entry #{display_number} is not linked to the intended stable catalog record"
+  end
+end
+
+human_facing_paths = [
+  *Dir.glob(File.join(root, "*.md")),
+  *Dir.glob(File.join(root, "_data/**/*.yml")),
+  *Dir.glob(File.join(root, "_includes/**/*.html")),
+  *Dir.glob(File.join(root, "_layouts/**/*.html")),
+  *Dir.glob(File.join(root, "assets/js/**/*.js")),
+  *Dir.glob(File.join(root, "assets/css/**/*.scss")),
+  *Dir.glob(File.join(root, "knowledge/**/*.md"))
+].uniq.reject { |path| path == chronological_path }
+forbidden_ordinal_patterns = {
+  "paper or publication ordinal" => /\b(?:papers?|publications?)\s+#\d+/i,
+  "parenthesized paper ordinal" => /\(#\d+\)/,
+  "numbered paper-label prefix" => /label:\s*[\"']?#\d+\s*·/,
+  "number-rendering hook" => /data-paper-number|publication-number|knowledge-catalog-number|#\{\{\s*paper\.id\s*\}\}/
+}
+human_facing_paths.each do |path|
+  source = File.read(path, encoding: "UTF-8")
+  forbidden_ordinal_patterns.each do |label, pattern|
+    errors << "#{path.delete_prefix("#{root}/")} contains a human-facing #{label}" if source.match?(pattern)
+  end
+end
+
 if chronological.match?(/\]\(https?:\/\/\)|\[(?:PDF|eprint|arxiv|publisher|full text)\]/i)
   errors << "pubs.md still contains a broken placeholder or legacy inline resource link"
 end

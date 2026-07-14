@@ -289,7 +289,7 @@ nodes:
     order: 14
     epistemic_status: expanded_version
     title: Relation to the CSCML paper
-    summary: This journal article expands paper #43 with reorganized design exposition, an explicit protocol-optimization contribution, and integrated implementation, evaluation, and security analysis.
+    summary: "This journal article expands “Secure Non-Interactive User Re-Enrollment in Biometrics-Based Identification and Authentication Systems” by Ivan De Oliveira Nunes, Karim Eldefrawy, and Tancrède Lepoint with reorganized design exposition, an explicit protocol-optimization contribution, and integrated implementation, evaluation, and security analysis."
     source_anchor_ids: [anchor-paper-48-problem, anchor-paper-48-mpc]
 
 relations:

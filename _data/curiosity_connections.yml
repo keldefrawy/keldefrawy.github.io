@@ -176,7 +176,7 @@ scenes:
         status: Fault tolerance under transient and Byzantine faults
     catalog_paper_idea_links:
       - idea_id: hotel-secure-communications
-        publication_ids: [4, 7, 9, 10, 11, 14, 15, 78]
+        publication_ids: [4, 7, 9, 10, 11, 14, 15, 74]
         type: direct
         label: secure and private communications
       - idea_id: hotel-distance-bounding
@@ -202,79 +202,79 @@ scenes:
     papers:
       - id: hotel-paper-51
         publication_id: 51
-        label: "#51 · Machine-checked MPC"
+        label: "Machine-checked MPC"
         title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
         url: /knowledge/papers/paper-51/
         note: "Formalizes MPC in EasyCrypt and extracts executable code from verified specifications."
       - id: hotel-paper-58
         publication_id: 58
-        label: "#58 · Machine-checked zero knowledge"
+        label: "Machine-checked zero knowledge"
         title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
         url: /knowledge/papers/paper-58/
         note: "Machine-checks a general transformation from secure computation to zero-knowledge proofs."
       - id: hotel-paper-50
         publication_id: 50
-        label: "#50 · VRASED verified attestation"
+        label: "VRASED verified attestation"
         title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
         url: /knowledge/papers/paper-50/
         note: "Formally specifies and verifies a hardware/software remote-attestation architecture for low-end embedded devices."
       - id: hotel-paper-54
         publication_id: 54
-        label: "#54 · APEX proofs of execution"
+        label: "APEX proofs of execution"
         title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
         url: /knowledge/papers/paper-54/
         note: "Extends verified embedded-device security from attesting state to proving that specified software executed and produced an authenticated result."
-      - id: hotel-paper-77
-        publication_id: 77
-        label: "#77 · Timed-protocol composition"
+      - id: hotel-paper-78
+        publication_id: 78
+        label: "Timed-protocol composition"
         title: "Composing Timed Cryptographic Protocols: Foundations and Applications"
-        url: /knowledge/papers/paper-77/
+        url: /knowledge/papers/paper-78/
         note: "Models residual complexity across adversarial depth and proves timed-protocol composition results."
       - id: hotel-paper-59
         publication_id: 59
-        label: "#59 · F1 FHE accelerator"
+        label: "F1 FHE accelerator"
         title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
         url: /knowledge/papers/paper-59/
         note: "Co-designs a programmable architecture and compiler for complete FHE programs."
       - id: hotel-paper-36
         publication_id: 36
-        label: "#36 · PODC secure self-stabilization"
+        label: "PODC secure self-stabilization"
         title: "Brief Announcement: Secure Self-Stabilizing Computation"
         url: /knowledge/papers/paper-36/
         note: "Defines distributed computation that autonomously recovers correctness, privacy, and integrity after transient compromise."
       - id: hotel-paper-25
         publication_id: 25
-        label: "#25 · PODC proactive MPC"
+        label: "PODC proactive MPC"
         title: "How to Withstand Mobile Virus Attacks, Revisited"
         url: /knowledge/papers/paper-25/
         note: "Builds proactive MPC that remains secure while corruptions move among machines over time."
       - id: hotel-paper-31
         publication_id: 31
-        label: "#31 · PODC dishonest-majority sharing"
+        label: "PODC dishonest-majority sharing"
         title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
         url: /knowledge/papers/paper-31/
         note: "Shows proactive secret sharing can retain confidentiality under mobile and dishonest-majority corruption patterns."
       - id: hotel-paper-63
         publication_id: 63
-        label: "#63 · Byzantine consensus"
+        label: "Byzantine consensus"
         title: "How Byzantine Is a Send Corruption?"
         url: /knowledge/papers/paper-63/
         note: "Studies consensus under Byzantine, send, and receive faults and compares their power and resilience thresholds."
       - id: hotel-paper-29
         publication_id: 29
-        label: "#29 · Byzantine-fault-tolerant SDN"
+        label: "Byzantine-fault-tolerant SDN"
         title: "Byzantine Fault Tolerant Software-Defined Networking (SDN) Controllers"
         url: /knowledge/papers/paper-29/
         note: "Uses replicated state-machine controllers so an SDN control plane can survive malicious components."
       - id: hotel-paper-23
         publication_id: 23
-        label: "#23 · Resilient cloud infrastructure"
+        label: "Resilient cloud infrastructure"
         title: "An Architecture for a Resilient Cloud Computing Infrastructure"
         url: /knowledge/papers/paper-23/
         note: "Designs a self-healing cloud control plane that restores compromised nodes and maintains service under continuing corruption."
       - id: hotel-paper-57
         publication_id: 57
-        label: "#57 · Distributed repair and refresh"
+        label: "Distributed repair and refresh"
         title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
         url: /knowledge/papers/paper-57/
         note: "Connects distributed-storage repair with proactive secret refresh and recovery under mobile attacks."
@@ -429,7 +429,7 @@ scenes:
         type: direct
         label: direct coauthorship on regenerating codes and secret sharing
       - from: hotel-moti-yung
-        to: hotel-paper-77
+        to: hotel-paper-78
         type: direct
         label: direct coauthorship on timed-protocol composition
       - from: hotel-juan-garay
@@ -465,7 +465,7 @@ scenes:
         type: direct
         label: verified proofs of execution
       - from: hotel-computational-security
-        to: hotel-paper-77
+        to: hotel-paper-78
         type: direct
         label: depth-indexed residual complexity
       - from: hotel-computational-security
@@ -637,7 +637,7 @@ scenes:
         label: Machine-checked secure and verifiable computation
     catalog_paper_idea_links:
       - idea_id: tour-secure-communications
-        publication_ids: [4, 7, 9, 10, 14, 15, 16, 78]
+        publication_ids: [4, 7, 9, 10, 14, 15, 16, 74]
         type: direct
         label: secure and private communications
       - idea_id: tour-capacity-coding
@@ -655,69 +655,69 @@ scenes:
     papers:
       - id: tour-paper-11
         publication_id: 11
-        label: "#11 · Encryption and channel capacity"
+        label: "Encryption and channel capacity"
         title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
         url: /knowledge/papers/paper-11/
         note: "Directly studies how encryption changes achievable multicast capacity in wireless network coding."
       - id: tour-paper-22
         publication_id: 22
-        label: "#22 · Network-coding throughput"
+        label: "Network-coding throughput"
         title: "Neighborhood Watch: On Network Coding Throughput and Key Sharing"
         url: /knowledge/papers/paper-22/
         note: "Studies how link-key group size and assignment trade compromise exposure against wireless network-coding throughput."
       - id: tour-paper-57
         publication_id: 57
-        label: "#57 · Regenerating codes and secret sharing"
+        label: "Regenerating codes and secret sharing"
         title: "On Regenerating Codes and Proactive Secret Sharing: Relationships and Implications"
         url: /knowledge/papers/paper-57/
         note: "Relates distributed-storage coding to proactive secret sharing and repair."
       - id: tour-paper-68
         publication_id: 68
-        label: "#68 · Covert authenticated key exchange"
+        label: "Covert authenticated key exchange"
         title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
         url: /knowledge/papers/paper-68/
         note: "Constructs a modern authenticated key-exchange protocol with covert, concurrent transcripts."
       - id: tour-paper-56
         publication_id: 56
-        label: "#56 · Registration-based encryption"
+        label: "Registration-based encryption"
         title: "Optimizing Registration Based Encryption"
         url: /knowledge/papers/paper-56/
         note: "Optimizes a public-key-encryption model that removes identity-based encryption's key escrow."
       - id: tour-paper-59
         publication_id: 59
-        label: "#59 · F1 encrypted-computation accelerator"
+        label: "F1 encrypted-computation accelerator"
         title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
         url: /knowledge/papers/paper-59/
         note: "Accelerates programmable computation on encrypted data."
       - id: tour-paper-64
         publication_id: 64
-        label: "#64 · CraterLake unbounded encrypted computation"
+        label: "CraterLake unbounded encrypted computation"
         title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
         url: /knowledge/papers/paper-64/
         note: "Builds hardware support for unbounded computation while data remains encrypted."
       - id: tour-paper-73
         publication_id: 73
-        label: "#73 · Multi-party time-lock puzzles"
+        label: "Multi-party time-lock puzzles"
         title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
         url: /knowledge/papers/paper-73/
         note: "Distributes control of delayed release across a quorum."
       - id: tour-paper-60
         publication_id: 60
-        label: "#60 · Quantum optimization"
+        label: "Quantum optimization"
         title: "Quantum Optimization Heuristics with an Application to Knapsack Problems"
         url: /knowledge/papers/paper-60/
         note: "Develops and simulates shallow QAOA-style heuristics for constrained optimization."
       - id: tour-paper-70
         publication_id: 70
-        label: "#70 · Quantum distance bounding"
+        label: "Quantum distance bounding"
         title: "Entanglement-Based Mutual Quantum Distance Bounding"
         url: /knowledge/papers/paper-70/
         note: "Uses entangled states in a mutual distance-bounding protocol."
-      - id: tour-paper-76
-        publication_id: 76
-        label: "#76 · Post-quantum point obfuscation"
+      - id: tour-paper-77
+        publication_id: 77
+        label: "Post-quantum point obfuscation"
         title: "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"
-        url: /knowledge/papers/paper-76/
+        url: /knowledge/papers/paper-77/
         status: Ongoing work
         note: "An ongoing post-quantum project; no public manuscript is currently linked."
     patents: []
@@ -819,7 +819,7 @@ scenes:
         type: direct
         label: direct collaboration in post-quantum obfuscation
       - from: tour-rafail-ostrovsky
-        to: tour-paper-76
+        to: tour-paper-77
         type: direct
         label: direct coauthorship on post-quantum point obfuscation
       - from: tour-capacity-coding
@@ -896,7 +896,7 @@ scenes:
         type: lineage
         label: quantum threat to classical public keys
       - from: tour-post-quantum
-        to: tour-paper-76
+        to: tour-paper-77
         type: direct
         label: post-quantum obfuscation
 
@@ -1177,7 +1177,7 @@ scenes:
         label: Secure networking, privacy, and proximity authentication
     catalog_paper_idea_links:
       - idea_id: machines-secure-systems
-        publication_ids: [4, 7, 9, 10, 13, 14, 15, 78]
+        publication_ids: [4, 7, 9, 10, 13, 14, 15, 74]
         type: direct
         label: secure networking and authentication
       - idea_id: machines-information-switching
@@ -1195,54 +1195,54 @@ scenes:
     papers:
       - id: machines-paper-79
         publication_id: 79
-        label: "#79 · Composing generative models and hallucination"
+        label: "Composing generative models and hallucination"
         title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
         url: /knowledge/papers/paper-79/
       - id: machines-paper-47
         publication_id: 47
-        label: "#47 · Formal verification and executable synthesis"
+        label: "Formal verification and executable synthesis"
         title: "Opinion: Advancing Remote Attestation via Computer-Aided Formal Verification of Designs and Synthesis of Executables"
         url: /knowledge/papers/paper-47/
       - id: machines-paper-50
         publication_id: 50
-        label: "#50 · Verified remote attestation"
+        label: "Verified remote attestation"
         title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
         url: /knowledge/papers/paper-50/
       - id: machines-paper-51
         publication_id: 51
-        label: "#51 · Machine-checked secure computation"
+        label: "Machine-checked secure computation"
         title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
         url: /knowledge/papers/paper-51/
       - id: machines-paper-53
         publication_id: 53
-        label: "#53 · Automated cryptographic executable augmentation"
+        label: "Automated cryptographic executable augmentation"
         title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
         url: /knowledge/papers/paper-53/
       - id: machines-paper-54
         publication_id: 54
-        label: "#54 · Verified proofs of execution"
+        label: "Verified proofs of execution"
         title: "APEX: A Verified Architecture for Proofs of Execution on Remote Devices Under Full Software Compromise"
         url: /knowledge/papers/paper-54/
       - id: machines-paper-58
         publication_id: 58
-        label: "#58 · Machine-checked zero knowledge"
+        label: "Machine-checked zero knowledge"
         title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
         url: /knowledge/papers/paper-58/
       - id: machines-paper-67
         publication_id: 67
-        label: "#67 · Optimized formally verified cryptography"
+        label: "Optimized formally verified cryptography"
         title: "Boosting the Performance of High-Assurance Cryptography: Parallel Execution and Optimizing Memory Access in Formally Verified Line-Point Zero-Knowledge"
         url: /knowledge/papers/paper-67/
       - id: machines-paper-40
         publication_id: 40
-        label: "#40 · Automated blockchain cyber insurance"
+        label: "Automated blockchain cyber insurance"
         title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
         url: /knowledge/papers/paper-40/
-      - id: machines-paper-75
-        publication_id: 75
-        label: "#75 · Dependable privacy-preserving messaging automation"
+      - id: machines-paper-76
+        publication_id: 76
+        label: "Dependable privacy-preserving messaging automation"
         title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-        url: /knowledge/papers/paper-75/
+        url: /knowledge/papers/paper-76/
     patents: []
     links:
       - from: machines-hilbert
@@ -1474,7 +1474,7 @@ scenes:
         type: direct
         label: automated risk sharing and blockchain-based cyber insurance
       - from: machines-trustworthy-automation
-        to: machines-paper-75
+        to: machines-paper-76
         type: direct
         label: intrusion-resilient automation for privacy-preserving distributed messaging
       - from: machines-checked-security
@@ -1757,7 +1757,7 @@ scenes:
         label: Cryptography, privacy, and resilient secure systems
     catalog_paper_idea_links:
       - idea_id: labs-cryptography-privacy
-        publication_ids: [4, 7, 9, 10, 13, 14, 15, 17, 27, 33, 41, 42, 78]
+        publication_ids: [4, 7, 9, 10, 13, 14, 15, 17, 27, 33, 41, 42, 74]
         type: direct
         label: cryptography, privacy, and secure systems
       - idea_id: labs-digital-foundations
@@ -1775,119 +1775,119 @@ scenes:
     papers:
       - id: labs-paper-19
         publication_id: 19
-        label: "#19 · Secure pattern matching"
+        label: "Secure pattern matching"
         title: "5PM: Secure Pattern Matching"
         url: /knowledge/papers/paper-19/
         note: "Representative HRL-era work on privacy-preserving search and cryptographic systems."
       - id: labs-paper-23
         publication_id: 23
-        label: "#23 · Resilient cloud infrastructure"
+        label: "Resilient cloud infrastructure"
         title: "An Architecture for a Resilient Cloud Computing Infrastructure"
         url: /knowledge/papers/paper-23/
         note: "Representative HRL-era work on self-healing, intrusion-resilient cloud systems."
       - id: labs-paper-49
         publication_id: 49
-        label: "#49 · Longitudinal Bitcoin-misuse analysis"
+        label: "Longitudinal Bitcoin-misuse analysis"
         title: "Longitudinal Analysis of Misuse of Bitcoin"
         url: /knowledge/papers/paper-49/
         note: "Direct joint work with Ashish Gehani on blockchain measurement and dark-web misuse."
       - id: labs-paper-50
         publication_id: 50
-        label: "#50 · Verified remote attestation"
+        label: "Verified remote attestation"
         title: "VRASED: A Verified Hardware/Software Co-Design for Remote Attestation"
         url: /knowledge/papers/paper-50/
         note: "Representative SRI work combining embedded security and formal verification."
       - id: labs-paper-51
         publication_id: 51
-        label: "#51 · Machine-checked MPC"
+        label: "Machine-checked MPC"
         title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
         url: /knowledge/papers/paper-51/
         note: "Representative SRI work on machine-checked cryptographic protocols and executable code."
       - id: labs-paper-53
         publication_id: 53
-        label: "#53 · Automated legacy-cryptography augmentation"
+        label: "Automated legacy-cryptography augmentation"
         title: "Towards Automated Augmentation and Instrumentation of Legacy Cryptographic Executables"
         url: /knowledge/papers/paper-53/
         note: "Direct joint work with Hassen Saïdi on finding and replacing weak cryptography in binaries."
       - id: labs-paper-59
         publication_id: 59
-        label: "#59 · F1 programmable FHE accelerator"
+        label: "F1 programmable FHE accelerator"
         title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
         url: /knowledge/papers/paper-59/
         note: "Direct joint work with Christopher Peikert on programmable FHE acceleration."
       - id: labs-paper-64
         publication_id: 64
-        label: "#64 · CraterLake unbounded FHE accelerator"
+        label: "CraterLake unbounded FHE accelerator"
         title: "CraterLake: A Hardware Accelerator for Efficient Unbounded Computation on Encrypted Data"
         url: /knowledge/papers/paper-64/
         note: "Direct joint work with Christopher Peikert on bootstrappable FHE acceleration."
       - id: labs-paper-40
         publication_id: 40
-        label: "#40 · Blockchain cyber insurance"
+        label: "Blockchain cyber insurance"
         title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
         url: /knowledge/papers/paper-40/
         note: "Joint SRI work with Tancrède Lepoint and Gabriela F. Ciocarlie."
       - id: labs-paper-43
         publication_id: 43
-        label: "#43 · Secure biometric re-enrollment"
+        label: "Secure biometric re-enrollment"
         title: "Secure Non-Interactive User Re-Enrollment in Biometrics-Based Identification and Authentication Systems"
         url: /knowledge/papers/paper-43/
         note: "Joint work with Tancrède Lepoint on secure biometric re-enrollment."
       - id: labs-paper-48
         publication_id: 48
-        label: "#48 · Large-scale secure biometric re-enrollment"
+        label: "Large-scale secure biometric re-enrollment"
         title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
         url: /knowledge/papers/paper-48/
         note: "Journal-version joint work with Tancrède Lepoint on secure biometric re-enrollment."
       - id: labs-paper-52
         publication_id: 52
-        label: "#52 · Dynamic proactive secret sharing"
+        label: "Dynamic proactive secret sharing"
         title: "Communication-Efficient Proactive Secret Sharing for Dynamic Groups with Dishonest Majorities"
         url: /knowledge/papers/paper-52/
         note: "Joint work with Tancrède Lepoint on resilient cryptographic sharing."
       - id: labs-paper-61
         publication_id: 61
-        label: "#61 · Dynamic proactive MPC"
+        label: "Dynamic proactive MPC"
         title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
         url: /knowledge/papers/paper-61/
         note: "Joint work with Tancrède Lepoint extending proactive security to computation."
       - id: labs-paper-62
         publication_id: 62
-        label: "#62 · Cryptographic access control"
+        label: "Cryptographic access control"
         title: "In-App Cryptographically-Enforced Selective Access Control for Microsoft Office and Similar Platforms"
         url: /knowledge/papers/paper-62/
         note: "Joint work with Tancrède Lepoint on deployable cryptographic access control."
-      - id: labs-paper-75
-        publication_id: 75
-        label: "#75 · Intrusion-resilient private messaging"
+      - id: labs-paper-76
+        publication_id: 76
+        label: "Intrusion-resilient private messaging"
         title: "PRISM: PRivacy-Preserving Intrusion-Resilient Secure Multiparty-Computation-Based Messaging Overlay"
-        url: /knowledge/papers/paper-75/
+        url: /knowledge/papers/paper-76/
         note: "Ongoing direct joint work with Linda Briesemeister and Tim McCarthy."
       - id: labs-paper-31
         publication_id: 31
-        label: "#31 · Proactive secret sharing with a dishonest majority"
+        label: "Proactive secret sharing with a dishonest majority"
         title: "Brief Announcement: Proactive Secret Sharing with a Dishonest Majority"
         url: /knowledge/papers/paper-31/
       - id: labs-paper-32
         publication_id: 32
-        label: "#32 · Proactive secret sharing with a dishonest majority"
+        label: "Proactive secret sharing with a dishonest majority"
         title: "Proactive Secret Sharing with a Dishonest Majority"
         url: /knowledge/papers/paper-32/
       - id: labs-paper-36
         publication_id: 36
-        label: "#36 · Secure self-stabilizing computation"
+        label: "Secure self-stabilizing computation"
         title: "Brief Announcement: Secure Self-Stabilizing Computation"
         url: /knowledge/papers/paper-36/
       - id: labs-paper-68
         publication_id: 68
-        label: "#68 · Short concurrent authenticated key exchange"
+        label: "Short concurrent authenticated key exchange"
         title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
         url: /knowledge/papers/paper-68/
-      - id: labs-paper-78
-        publication_id: 78
-        label: "#78 · Private identity-based bulletin boards"
+      - id: labs-paper-74
+        publication_id: 74
+        label: "Private identity-based bulletin boards"
         title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
-        url: /knowledge/papers/paper-78/
+        url: /knowledge/papers/paper-74/
     patents:
       - id: labs-patent-24
         patent_number: US10867053
@@ -2069,7 +2069,7 @@ scenes:
         type: direct
         label: authenticated key-exchange collaboration with Stas Jarecki
       - from: labs-ibm-crypto-collaboration
-        to: labs-paper-78
+        to: labs-paper-74
         type: direct
         label: anonymous bulletin-board collaboration with Gene Tsudik and Stas Jarecki
       - from: labs-provenance-security
@@ -2133,7 +2133,7 @@ scenes:
         type: direct
         label: deployable cryptographic access control
       - from: labs-cryptography-privacy
-        to: labs-paper-75
+        to: labs-paper-76
         type: direct
         label: privacy-preserving intrusion-resilient messaging
       - from: labs-cryptography-privacy
@@ -2189,11 +2189,11 @@ scenes:
         type: direct
         label: direct co-inventorship
       - from: labs-linda-briesemeister
-        to: labs-paper-75
+        to: labs-paper-76
         type: direct
         label: direct coauthorship
       - from: labs-tim-mccarthy
-        to: labs-paper-75
+        to: labs-paper-76
         type: direct
         label: direct coauthorship
       - from: labs-christopher-peikert
@@ -2393,7 +2393,7 @@ scenes:
         label: Roots of trust, remote attestation, and proofs of execution
     catalog_paper_idea_links:
       - idea_id: cipher-anonymity
-        publication_ids: [7, 9, 14, 15, 78]
+        publication_ids: [7, 9, 14, 15, 74]
         type: direct
         label: anonymous and private communications
       - idea_id: cipher-private-communications
@@ -2431,110 +2431,110 @@ scenes:
     papers:
       - id: cipher-paper-51
         publication_id: 51
-        label: "#51 · Machine-checked MPC"
+        label: "Machine-checked MPC"
         title: "A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation"
         url: /knowledge/papers/paper-51/
         note: "Carries formal reasoning into machine-checked cryptographic implementations."
       - id: cipher-paper-11
         publication_id: 11
-        label: "#11 · Encryption and capacity"
+        label: "Encryption and capacity"
         title: "Link-Layer Encryption Effect on Achievable Capacity in Wireless Network Coding"
         url: /knowledge/papers/paper-11/
         note: "Studies the security-throughput tradeoff created by encryption in coded wireless networks."
       - id: cipher-paper-68
         publication_id: 68
-        label: "#68 · Covert authenticated key exchange"
+        label: "Covert authenticated key exchange"
         title: "Short Concurrent Covert Authenticated Key Exchange (Short cAKE)"
         url: /knowledge/papers/paper-68/
         note: "Builds a concurrent authenticated key exchange using DDH-group and pairing-curve components."
       - id: cipher-paper-56
         publication_id: 56
-        label: "#56 · Registration-based encryption"
+        label: "Registration-based encryption"
         title: "Optimizing Registration Based Encryption"
         url: /knowledge/papers/paper-56/
         note: "A modern public-key-encryption construction focused on eliminating key escrow and reducing cost."
       - id: cipher-paper-73
         publication_id: 73
-        label: "#73 · Multi-party time-lock puzzles"
+        label: "Multi-party time-lock puzzles"
         title: "Multi-Party Time-Lock Puzzles: Quorum-Controlled Delays Without a Single Point of Failure"
         url: /knowledge/papers/paper-73/
         note: "Extends timed release from a single committer to quorum-controlled generation."
-      - id: cipher-paper-74
-        publication_id: 74
-        label: "#74 · Decomposable MPC"
+      - id: cipher-paper-75
+        publication_id: 75
+        label: "Decomposable MPC"
         title: "Decomposable MPC with Security Against Malicious Adversaries"
-        url: /knowledge/papers/paper-74/
+        url: /knowledge/papers/paper-75/
         status: Under review
         note: "Studies how secure computation can be decomposed into reusable components while retaining security against malicious participants."
       - id: cipher-paper-69
         publication_id: 69
-        label: "#69 · Concurrent group messaging"
+        label: "Concurrent group messaging"
         title: "The Key Lattice Framework for Concurrent Group Messaging"
         url: /knowledge/papers/paper-69/
         note: "Uses a key lattice to support concurrent group-key evolution with forward secrecy and post-compromise security."
       - id: cipher-paper-58
         publication_id: 58
-        label: "#58 · Machine-checked zero knowledge"
+        label: "Machine-checked zero knowledge"
         title: "Machine-Checked ZKP for NP Relations: Formally Verified Security Proofs and Implementations of MPC-in-the-Head"
         url: /knowledge/papers/paper-58/
         note: "Mechanizes a transformation from MPC to zero-knowledge proofs."
       - id: cipher-paper-44
         publication_id: 44
-        label: "#44 · Proactive MPC"
+        label: "Proactive MPC"
         title: "Proactive Secure Multiparty Computation with a Dishonest Majority"
         url: /knowledge/papers/paper-44/
         note: "Studies secure computation against a mobile adversary that may control a dishonest majority over time."
       - id: cipher-paper-59
         publication_id: 59
-        label: "#59 · F1 FHE accelerator"
+        label: "F1 FHE accelerator"
         title: "F1: A Fast and Programmable Accelerator for Fully Homomorphic Encryption (Extended Version)"
         url: /knowledge/papers/paper-59/
         note: "Accelerates complete FHE programs with specialized hardware and compiler scheduling."
       - id: cipher-paper-65
         publication_id: 65
-        label: "#65 · Hardness of FHE scheme switching"
+        label: "Hardness of FHE scheme switching"
         title: "On the Hardness of Scheme-Switching Between SIMD FHE Schemes"
         url: /knowledge/papers/paper-65/
         note: "Shows that broadly useful exact/approximate FHE switching would imply expensive bootstrapping capabilities."
       - id: cipher-paper-35
         publication_id: 35
-        label: "#35 · Reusable fuzzy extractors from LWE"
+        label: "Reusable fuzzy extractors from LWE"
         title: "Efficient, Reusable Fuzzy Extractors from LWE"
         url: /knowledge/papers/paper-35/
         note: "Constructs reusable fuzzy extractors from Learning With Errors."
       - id: cipher-paper-66
         publication_id: 66
-        label: "#66 · Traffic analysis with partial visibility"
+        label: "Traffic analysis with partial visibility"
         title: "Traffic Analysis by Adversaries with Partial Visibility"
         url: /knowledge/papers/paper-66/
         note: "Studies the limits of traffic analysis when the adversary observes only part of a mix network."
       - id: cipher-paper-63
         publication_id: 63
-        label: "#63 · Byzantine consensus"
+        label: "Byzantine consensus"
         title: "How Byzantine Is a Send Corruption?"
         url: /knowledge/papers/paper-63/
         note: "Refines Byzantine communication faults by separating send-side and receive-side corruption."
       - id: cipher-paper-40
         publication_id: 40
-        label: "#40 · Blockchain cyber insurance"
+        label: "Blockchain cyber insurance"
         title: "BlockCIS: A Blockchain-Based Cyber Insurance System"
         url: /knowledge/papers/paper-40/
         note: "Direct joint work with Tancrède Lepoint and Gabriela F. Ciocarlie."
       - id: cipher-paper-43
         publication_id: 43
-        label: "#43 · Secure biometric re-enrollment"
+        label: "Secure biometric re-enrollment"
         title: "Secure Non-Interactive User Re-Enrollment in Biometrics-Based Identification and Authentication Systems"
         url: /knowledge/papers/paper-43/
         note: "Direct joint work with Tancrède Lepoint using secure computation for biometric re-enrollment."
       - id: cipher-paper-48
         publication_id: 48
-        label: "#48 · Large-scale secure biometric re-enrollment"
+        label: "Large-scale secure biometric re-enrollment"
         title: "SNUSE: A Secure Computation Approach for Large-Scale User Re-Enrollment in Biometric Authentication Systems"
         url: /knowledge/papers/paper-48/
         note: "Journal-version direct joint work with Tancrède Lepoint."
       - id: cipher-paper-61
         publication_id: 61
-        label: "#61 · Dynamic proactive MPC"
+        label: "Dynamic proactive MPC"
         title: "Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities"
         url: /knowledge/papers/paper-61/
         note: "Direct joint work with Tancrède Lepoint on proactive secure computation."
@@ -2657,7 +2657,7 @@ scenes:
         type: direct
         label: direct collaboration on decomposable MPC
       - from: cipher-ben-terner
-        to: cipher-paper-74
+        to: cipher-paper-75
         type: direct
         label: direct coauthorship on maliciously secure decomposable MPC
       - from: cipher-ben-terner
@@ -2717,7 +2717,7 @@ scenes:
         type: direct
         label: direct collaboration on decomposable MPC
       - from: cipher-kelong-cong
-        to: cipher-paper-74
+        to: cipher-paper-75
         type: direct
         label: direct coauthorship on maliciously secure decomposable MPC
       - from: cipher-kelong-cong
@@ -2838,7 +2838,7 @@ scenes:
         type: direct
         label: proactive secure computation
       - from: cipher-mpc
-        to: cipher-paper-74
+        to: cipher-paper-75
         type: direct
         label: maliciously secure decomposable MPC
       - from: cipher-mpc

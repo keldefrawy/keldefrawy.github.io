@@ -55,7 +55,7 @@ sources:
     url: https://doi.org/10.1109/COMPSAC.2016.76
   - id: source-paper-29-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #29"
+    title: "OpenAlex work record for “Byzantine Fault Tolerant Software-Defined Networking (SDN) Controllers” by Karim Eldefrawy and Tyler Kaczmarek"
     url: https://openalex.org/W2514641934
     accessed_at: "2026-07-11"
 

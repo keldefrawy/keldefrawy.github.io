@@ -773,7 +773,11 @@
       paragraph = document.createElement("p");
 
       if (record.kind === "paper" || record.kind === "patent") {
-        paragraph.textContent = record.data.note || record.data.title || record.data.label;
+        paragraph.textContent = record.kind === "paper" ?
+          (record.data.title || record.data.label) +
+            (record.data.authors ? " — " + record.data.authors : "") +
+            (record.data.note ? ". " + record.data.note : "") :
+          (record.data.note || record.data.title || record.data.label);
         detail.appendChild(paragraph);
         if (record.data.url) {
           link = document.createElement("a");
@@ -1020,6 +1024,9 @@
       element.setAttribute("data-curiosity-node-id", node.id);
       element.setAttribute("data-curiosity-node-kind", kind);
       addText(element, "curiosity-map__node-label", node.label || node.title || node.id);
+      if (kind === "paper" && node.authors) {
+        addText(element, "curiosity-map__node-meta", node.authors);
+      }
       if (node.status) {
         addText(element, "curiosity-map__node-meta", node.status);
       }

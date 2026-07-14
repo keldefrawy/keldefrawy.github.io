@@ -215,7 +215,7 @@ nodes:
     order: 11
     epistemic_status: documented_by_later_primary_source
     title: Later machine-checked lineage
-    summary: Paper #51 machine-checks abstract proactive-sharing components and a BGW-based honest-majority MPC evaluator while citing this dishonest-majority line; it does not retroactively machine-check this paper's complete PMPC theorem.
+    summary: "“A High-Assurance Evaluator for Machine-Checked Secure Multiparty Computation” by Karim Eldefrawy and Vitor Pereira machine-checks abstract proactive-sharing components and a BGW-based honest-majority MPC evaluator while citing this dishonest-majority line; it does not retroactively machine-check this paper's complete PMPC theorem."
     source_anchor_ids: [anchor-paper-44-lineage]
 
 relations:

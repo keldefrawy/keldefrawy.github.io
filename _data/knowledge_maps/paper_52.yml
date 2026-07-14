@@ -324,7 +324,7 @@ nodes:
     epistemic_status: documented
     title: Research lineage
     summary: >-
-      The work improves the earlier dishonest-majority PSS line with batching and dynamic groups, and its bivariate sharing becomes the PSS substrate for the later proactive-MPC construction mapped as paper #61.
+      The work improves the earlier dishonest-majority PSS line with batching and dynamic groups, and its bivariate sharing becomes the PSS substrate for “Communication-Efficient Proactive MPC for Dynamic Groups with Dishonest Majorities” by Karim Eldefrawy, Tancrède Lepoint, and Antonin Leroux.
     source_anchor_ids: [anchor-paper-52-problem, anchor-paper-52-dynamic]
 
 relations:

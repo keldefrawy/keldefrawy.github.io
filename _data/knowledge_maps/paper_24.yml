@@ -39,7 +39,7 @@ curation:
 sources:
   - id: source-paper-24-site
     type: curated_record
-    title: "Curated publication record for paper #24"
+    title: "Curated publication record for “Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet via Privacy-Preserving AppCoins” by Karim Eldefrawy and Joshua Lampkins"
     url: /publications/#paper-24
     scope_note: "Editorial summary, not a substitute for full text."
   - id: source-paper-24-official
@@ -48,7 +48,7 @@ sources:
     url: https://doi.org/10.1109/ICNP.2014.100
   - id: source-paper-24-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #24"
+    title: "OpenAlex work record for “Disincentivizing/Incentivizing Malicious/Honest Behavior on the Internet via Privacy-Preserving AppCoins” by Karim Eldefrawy and Joshua Lampkins"
     url: https://openalex.org/W2066484879
     accessed_at: "2026-07-11"
 

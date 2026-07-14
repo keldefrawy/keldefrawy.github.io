@@ -56,7 +56,7 @@ sources:
     url: https://doi.org/10.1145/2611462.2611474
   - id: source-paper-25-citations
     type: scholarly_index
-    title: "OpenAlex work record for paper #25"
+    title: "OpenAlex work record for “How to Withstand Mobile Virus Attacks, Revisited” by Joshua Baron, Karim Eldefrawy, Joshua Lampkins, and Rafail Ostrovsky"
     url: https://openalex.org/W2029416521
     accessed_at: "2026-07-11"
 
@@ -317,7 +317,7 @@ nodes:
     order: 10
     epistemic_status: documented
     title: "Research lineage"
-    summary: "The construction revisits the Ostrovsky-Yung proactive model using packed-sharing and hyper-invertible-matrix techniques from later efficient MPC, and it directly precedes the dynamic-group protocol in paper #28."
+    summary: "The construction revisits the Ostrovsky-Yung proactive model using packed-sharing and hyper-invertible-matrix techniques from later efficient MPC, and it directly precedes “Communication-Optimal Proactive Secret Sharing for Dynamic Groups” by Joshua Baron, Karim Eldefrawy, Joshua Lampkins, and Rafail Ostrovsky."
     source_anchor_ids: [anchor-paper-25-problem]
 
 relations:

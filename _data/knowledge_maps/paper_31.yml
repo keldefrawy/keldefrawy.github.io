@@ -335,7 +335,7 @@ nodes:
     epistemic_status: documented
     title: Relation to the full construction
     summary: >-
-      This announcement is the compressed PODC presentation of the dishonest-majority PSS direction; the separate SCN paper contains the extended construction and proof treatment and must be mapped independently as paper #32.
+      This announcement is the compressed PODC presentation of the dishonest-majority PSS direction; “Proactive Secret Sharing with a Dishonest Majority” by Shlomi Dolev, Karim Eldefrawy, Joshua Lampkins, Rafail Ostrovsky, and Moti Yung contains the extended construction and proof treatment and must be mapped independently.
     source_anchor_ids: [anchor-paper-31-problem-results, anchor-paper-31-limitations]
 
 relations:
