@@ -30,6 +30,26 @@
   margin-top: 0.22rem;
 }
 
+.site-role {
+  line-height: 1.5;
+}
+
+.site-role__update {
+  color: var(--publication-muted);
+  display: inline-block;
+  font-size: 0.82em;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-role__update:hover,
+.site-role__update:focus {
+  color: var(--publication-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
 .sr-only {
   border: 0;
   clip: rect(0, 0, 0, 0);
