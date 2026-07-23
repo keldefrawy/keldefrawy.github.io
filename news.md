@@ -6,6 +6,7 @@ permalink: /news.html
 ---
 
 <article class="news-page">
+  {% assign news_topics_newest_first = site.data.news_topics | reverse %}
   <div class="news-header">
     <p class="news-eyebrow">Coverage timeline · 2007–2024</p>
     <h1>News Coverage</h1>
@@ -18,17 +19,17 @@ permalink: /news.html
         <p class="news-section-kicker">The conversation over time</p>
         <h2 id="news-topics-title">Coverage Themes Over Time</h2>
       </div>
-      <p class="news-topics-hint">Chronological · left to right</p>
+      <p class="news-topics-hint">Newest first · left to right</p>
     </div>
 
     <div
       class="news-topics__viewport"
       role="region"
-      aria-label="Chronological news coverage themes from 2007 through 2024"
+      aria-label="News coverage themes timeline, newest first, from 2024 back to 2007"
       tabindex="0"
     >
       <ol class="news-topics__list">
-        {% for topic in site.data.news_topics %}
+        {% for topic in news_topics_newest_first %}
           <li class="news-topics__item">
             <time datetime="{{ topic.datetime }}">{{ topic.year_label }}</time>
             <a class="news-topics__tile" href="#news-topic-{{ topic.id }}">
@@ -55,7 +56,6 @@ permalink: /news.html
     </div>
 
     <div class="news-topic-list">
-      {% assign news_topics_newest_first = site.data.news_topics | reverse %}
       {% for topic in news_topics_newest_first %}
         <article class="news-topic-detail" id="news-topic-{{ topic.id }}">
           <div class="news-topic-detail__header">

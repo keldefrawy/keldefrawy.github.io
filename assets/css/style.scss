@@ -4115,7 +4115,7 @@ body.quick-abstract-dialog-open {
 }
 
 .awards-timeline__list::before {
-  background: linear-gradient(90deg, #8bbcec 0%, #0969da 62%, #0550ae 100%);
+  background: linear-gradient(90deg, #0550ae 0%, #0969da 38%, #8bbcec 100%);
   border-radius: 999px;
   content: "";
   height: 3px;
@@ -4365,7 +4365,7 @@ body.quick-abstract-dialog-open {
 }
 
 .news-topics__list::before {
-  background: linear-gradient(90deg, #8bbcec 0%, #0969da 58%, #0550ae 100%);
+  background: linear-gradient(90deg, #0550ae 0%, #0969da 42%, #8bbcec 100%);
   border-radius: 999px;
   content: "";
   height: 3px;
@@ -5379,7 +5379,7 @@ body.quick-abstract-dialog-open {
   }
 
   .awards-timeline-hint::after {
-    content: "Swipe timeline →";
+    content: "Swipe for earlier →";
     font-size: 0.64rem;
   }
 
@@ -5413,7 +5413,7 @@ body.quick-abstract-dialog-open {
   }
 
   .news-topics-hint::after {
-    content: "Swipe topics →";
+    content: "Swipe for earlier →";
     font-size: 0.64rem;
   }
 

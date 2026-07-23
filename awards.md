@@ -6,6 +6,7 @@ permalink: /awards.html
 ---
 
 <article class="awards-page">
+  {% assign awards_newest_first = site.data.awards | reverse %}
   <div class="awards-header">
     <p class="awards-eyebrow">Recognition timeline · 2008–2026</p>
     <h1>Awards and Recognitions</h1>
@@ -18,17 +19,17 @@ permalink: /awards.html
         <p class="awards-section-kicker">From research to real-world impact</p>
         <h2 id="awards-timeline-title">Recognition Over Time</h2>
       </div>
-      <p class="awards-timeline-hint">Chronological · left to right</p>
+      <p class="awards-timeline-hint">Newest first · left to right</p>
     </div>
 
     <div
       class="awards-timeline__viewport"
       role="region"
-      aria-label="Chronological awards timeline from 2008 through 2026"
+      aria-label="Awards timeline, newest first, from 2026 back to 2008"
       tabindex="0"
     >
       <ol class="awards-timeline__list">
-        {% for award in site.data.awards %}
+        {% for award in awards_newest_first %}
           <li class="awards-timeline__item">
             <time datetime="{{ award.year }}">{{ award.year }}</time>
             <span class="awards-timeline__marker" aria-hidden="true">
@@ -51,7 +52,6 @@ permalink: /awards.html
     </div>
 
     <div class="awards-detail-list">
-      {% assign awards_newest_first = site.data.awards | reverse %}
       {% for award in awards_newest_first %}
         <article class="award-detail" id="award-{{ award.year }}">
           <time datetime="{{ award.year }}">{{ award.year }}</time>
