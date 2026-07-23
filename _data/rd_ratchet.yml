@@ -1,0 +1,439 @@
+schema_version: "1.0"
+
+series:
+  title: The R&D Ratchet
+  subtitle: How America lost the institutions that could think long—and the narrow window to build what comes next
+  description: >-
+    A firsthand, evidence-led inquiry into the incentive structures that replaced the American
+    industrial research laboratory, what those structures preserve and destroy, and how an
+    AI-native public–private successor might be designed.
+  updated: "2026-07-23"
+  article_count: 12
+  published_count: 0
+
+rd_chart:
+  title: U.S. R&D grew; its composition tilted toward development
+  unit: Billions of constant 2017 U.S. dollars
+  source_id: ncses-rd-2026
+  series:
+    - id: basic
+      label: Basic research
+      color: "#147d64"
+      values:
+        - { year: 2000, value: 57.8 }
+        - { year: 2005, value: 73.4 }
+        - { year: 2010, value: 85.3 }
+        - { year: 2015, value: 86.7 }
+        - { year: 2020, value: 105.9 }
+        - { year: 2024, value: 115.5 }
+    - id: applied
+      label: Applied research
+      color: "#0969da"
+      values:
+        - { year: 2000, value: 77.7 }
+        - { year: 2005, value: 85.5 }
+        - { year: 2010, value: 88.0 }
+        - { year: 2015, value: 99.8 }
+        - { year: 2020, value: 125.6 }
+        - { year: 2024, value: 143.9 }
+    - id: development
+      label: Experimental development
+      color: "#b25a1b"
+      values:
+        - { year: 2000, value: 233.0 }
+        - { year: 2005, value: 239.9 }
+        - { year: 2010, value: 280.3 }
+        - { year: 2015, value: 321.6 }
+        - { year: 2020, value: 448.4 }
+        - { year: 2024, value: 532.7 }
+  composition:
+    - { year: 2000, basic: 15.7, applied: 21.1, development: 63.2 }
+    - { year: 2024, basic: 14.6, applied: 18.2, development: 67.3 }
+  note: >-
+    The chart does not prove institutional decline. It establishes the paradox the series must
+    explain: high and rising activity can coexist with weaker long-lived organizational capability.
+
+timeline:
+  - year: "1996"
+    label: Bell Labs split
+    kind: document
+    source_id: nokia-bell-history
+    note: AT&T spun most of Bell Labs and its equipment business into Lucent; a smaller research organization remained with AT&T.
+  - year: "2001"
+    label: Lucent / Bell Labs
+    kind: memory
+    note: Karim’s summer internship during the telecom contraction.
+  - year: "2007"
+    label: AT&T Research
+    kind: memory
+    note: Research internship during graduate school, enabling comparison between two descendants of the Bell system.
+  - year: "2010–16"
+    label: HRL Laboratories
+    kind: memory
+    note: Mission-driven industrial R&D spanning secure systems, privacy, cloud infrastructure, biometrics, and cyber-physical systems.
+  - year: "2017–22"
+    label: SRI International
+    kind: memory
+    note: Nonprofit contract research, internal seed work, and multi-institution government programs.
+  - year: "2022–"
+    label: Confidencial
+    kind: memory
+    note: The transition from research and patents to product, procurement, customers, and company survival.
+  - year: "2023"
+    label: PARC joins SRI
+    kind: document
+    source_id: xerox-parc-sri
+    note: A documented institutional case observed as an SRI alumnus, not as an inside witness to the transaction.
+  - year: "2026"
+    label: IBM announces HRL agreement
+    kind: document
+    source_id: ibm-hrl-2026
+    note: The agreement was announced July 23 and remained subject to closing conditions at the time of this page’s update.
+
+models:
+  - id: integrated
+    short: Integrated corporate
+    name: Vertically integrated corporate laboratory
+    cases: Classical Bell Labs
+    payer: Regulated and market revenues inside an integrated operating and manufacturing system
+    horizon: Decade-scale when the parent system is stable
+    reward: Strategic capability, scientific standing, patents, and downstream system advantage
+    preserves: Cross-layer teams, apprenticeship, facilities, and patient problem selection
+    failure: The research cross-subsidy depends on an economic and regulatory settlement that may not survive restructuring
+  - id: equipment
+    short: Equipment corporate
+    name: Post-breakup equipment-company research
+    cases: Lucent-era Bell Labs
+    payer: Equipment revenues and capital markets
+    horizon: Strategic in principle; exposed to product and industry cycles in practice
+    reward: Product relevance, patents, technical differentiation, and reputation
+    preserves: Deep hardware and systems expertise near manufacturing and product groups
+    failure: Parent-company distress can compress the horizon faster than research culture can adapt
+  - id: operator
+    short: Operator research
+    name: Network-operator research laboratory
+    cases: AT&T Labs Research
+    payer: Communications-services business
+    horizon: Medium to long, with continuing pressure for operational relevance
+    reward: Network impact, technical insight, publication, and service advantage
+    preserves: Real operational problems, data, and feedback from deployed infrastructure
+    failure: Broad spillovers may escape the sponsor while corporate priorities narrow the research surface
+  - id: mission
+    short: Mission laboratory
+    name: Owner-sponsored, mission-driven industrial laboratory
+    cases: HRL Laboratories
+    payer: Strategic owners and government mission sponsors
+    horizon: Program clocks nested inside longer-lived technical capabilities
+    reward: Mission milestones, sponsor value, invention, and scientific results
+    preserves: Specialized facilities and ambitious applied science beyond consumer-market horizons
+    failure: Sponsor boundaries and contract portfolios can turn durable capability into disconnected projects
+  - id: nonprofit
+    short: Contract nonprofit
+    name: Independent nonprofit contract-research institute
+    cases: SRI International
+    payer: Government and commercial contracts, plus limited internal investment
+    horizon: Finite projects carried by an institution intended to persist across them
+    reward: Winning and executing programs, technical credibility, and transition
+    preserves: Multidisciplinary teams and networks across sponsors and performers
+    failure: Chargeability, proposal churn, and funding cliffs can become the institution’s hidden operating system
+  - id: program
+    short: Agency program
+    name: Time-bounded agency program network
+    cases: DARPA, DHS, IARPA, ARPA-H programs
+    payer: Public mission agencies
+    horizon: Finite programs led by empowered program managers
+    reward: Aggressive milestones and potentially transformative mission outcomes
+    preserves: Urgency, cross-organizational coordination, and permission to attempt high-risk work
+    failure: The program can create a temporary laboratory without funding a permanent institutional home for what it learns
+  - id: academic
+    short: Academic
+    name: University research system
+    cases: Research universities
+    payer: Public grants, tuition, philanthropy, and endowments
+    horizon: Grant, degree, and tenure clocks
+    reward: Publications, grants, novelty, training, and disciplinary standing
+    preserves: Open knowledge, intellectual diversity, and the talent pipeline
+    failure: Integration, maintenance, negative results, and long transition work are frequently under-rewarded
+  - id: venture
+    short: Venture
+    name: Venture-backed technology transition
+    cases: Research spinouts and startups
+    payer: Investors and customers
+    horizon: Runway, market adoption, and financing cycles
+    reward: Focus, product-market fit, growth, adoption, and exit value
+    preserves: Concentrated execution on one transition path
+    failure: A startup cannot rationally maintain the broad research commons from which its product emerged
+  - id: successor
+    short: Proposed successor
+    name: AI-native public–private laboratory
+    cases: Proposed design; informed by NAIRR, NSTC, FFRDCs, DARPA, and DOE laboratories
+    payer: Long-charter public capital, industry membership, mission procurement, and philanthropy
+    horizon: Rolling ten- to fifteen-year mission charters with layered review
+    reward: Capability formation, public value, validated knowledge, transition, and trained people
+    preserves: Shared infrastructure, institutional memory, apprenticeship, and complementary transition assets
+    failure: Must be designed against political capture, incumbent capture, bureaucracy, mission drift, and performative metrics
+
+argument_nodes:
+  - id: inherited
+    lane: Inherited capability
+    title: Long-lived laboratories accumulate state
+    detail: Teams, facilities, trust, problem-selection judgment, negative results, and apprenticeship compound over time.
+    evidence: [M, D, I, A]
+  - id: corporate
+    lane: Replacement incentives
+    title: Corporate horizons contract
+    detail: Research must increasingly justify itself against product cycles, capital markets, and reorganizations.
+    evidence: [D, I, A]
+  - id: projects
+    lane: Replacement incentives
+    title: Institutions become portfolios of projects
+    detail: Finite contracts fund excellent work but rarely pay for all the shared capability between awards.
+    evidence: [M, D, I, A]
+  - id: metrics
+    lane: Replacement incentives
+    title: Countable outputs substitute for durable capability
+    detail: Papers, patents, milestones, and nominal R&D expenditure are evidence, but they are lossy projections of institutional state.
+    evidence: [M, D, A]
+  - id: venture
+    lane: Replacement incentives
+    title: Venture incentives narrow the transition path
+    detail: Startups can carry one invention toward customers while rationally abandoning adjacent public goods.
+    evidence: [M, I, A]
+  - id: fragmentation
+    lane: System behavior
+    title: No actor owns the whole transition
+    detail: Discovery, engineering, procurement, manufacturing, standards, and maintenance sit in different organizations with different clocks.
+    evidence: [M, I, A]
+  - id: commons
+    lane: System behavior
+    title: Shared capability is underprovided
+    detail: Its costs are local, while its benefits spill across firms, sectors, countries, and future projects.
+    evidence: [D, A]
+  - id: memory
+    lane: Capability loss
+    title: Institutional memory becomes perishable
+    detail: When teams disperse, later funding can restart activity but cannot instantly restore tacit knowledge or trusted collaboration.
+    evidence: [M, I, A]
+  - id: paradox
+    lane: Observable outcome
+    title: High spending can coexist with low persistence
+    detail: National R&D flows may rise while the institutions capable of sustaining uncertain work become fewer or more concentrated.
+    evidence: [D, A]
+  - id: consolidation
+    lane: Observable outcome
+    title: Consolidation becomes triage
+    detail: Stronger hosts may preserve valuable teams and facilities, but preservation must be measured after the transaction, not assumed from it.
+    evidence: [D, I, A]
+  - id: window
+    lane: Design pressure
+    title: One institutional generation remains
+    detail: The scarce overlap is between veterans carrying tacit laboratory knowledge and researchers building with AI, quantum, and new experimental platforms.
+    evidence: [I, A]
+  - id: successor
+    lane: Design response
+    title: Build an incentive-compatible successor
+    detail: Combine long-charter public capital, private transition capacity, shared infrastructure, human apprenticeship, and AI-native memory.
+    evidence: [D, I, A]
+
+argument_links:
+  - { from: inherited, to: corporate, label: exposed to parent economics }
+  - { from: inherited, to: projects, label: decomposed into funded units }
+  - { from: corporate, to: fragmentation, label: narrows the internal path }
+  - { from: projects, to: fragmentation, label: ends at program boundaries }
+  - { from: metrics, to: fragmentation, label: optimizes visible outputs }
+  - { from: venture, to: fragmentation, label: selects one market path }
+  - { from: fragmentation, to: commons, label: leaves no residual claimant }
+  - { from: commons, to: memory, label: underfunds continuity }
+  - { from: memory, to: paradox, label: activity survives; state decays }
+  - { from: paradox, to: consolidation, label: concentrates remaining hosts }
+  - { from: memory, to: window, label: makes delay costly }
+  - { from: window, to: successor, label: motivates institutional design }
+  - { from: consolidation, to: successor, label: supplies cases to test }
+
+brain_nodes:
+  - id: core
+    position: core
+    title: AI-native public–private laboratory
+    detail: A durable institution whose objective function is validated knowledge, retained capability, trained people, and transition to public use.
+  - id: mission
+    position: north
+    title: Mission & governance
+    detail: A long but reviewable public charter, independent technical governance, transparent conflicts policy, and protection against incumbent capture.
+  - id: memory
+    position: northeast
+    title: Institutional memory
+    detail: Versioned hypotheses, decisions, experiments, failures, code, proofs, data provenance, and lessons—not only final publications.
+  - id: agents
+    position: southeast
+    title: Scientific agents
+    detail: AI assistance for synthesis, conjectures, software, formal proof, simulation, experimental planning, and anomaly detection under named human accountability.
+  - id: physical
+    position: south
+    title: Physical interface
+    detail: Automated laboratories, testbeds, semiconductor and fabrication access, robotics, and measurement that couple models to reality.
+  - id: apprenticeship
+    position: southwest
+    title: Human apprenticeship
+    detail: Stable technical teams in which judgment, experimental taste, ethics, and problem selection pass between generations.
+  - id: transition
+    position: northwest
+    title: Transition system
+    detail: Product engineers, standards, procurement, manufacturing, licensing, and venture pathways embedded from the beginning.
+
+articles:
+  - number: 1
+    slug: trillion-dollar-system
+    title: The Nearly Trillion-Dollar R&D System That Cannot Think Long
+    status: researching
+    case: National R&D statistics; IBM/HRL; SRI/PARC
+    claim: R&D expenditure is a flow; research capability is accumulated state.
+    visuals: [Interactive R&D trend chart, National capability balance sheet, Source-backed argument map]
+  - number: 2
+    slug: lucent-coming-apart
+    title: I Arrived at Bell Labs as Lucent Was Coming Apart
+    status: planned
+    case: Lucent / Bell Labs, 2001
+    claim: Scientific excellence and corporate fragility can coexist.
+    visuals: [Memory-versus-document timeline, Corporate horizon diagram, Annotated telecom context]
+  - number: 3
+    slug: one-heritage-two-incentives
+    title: One Heritage, Two Incentive Systems
+    status: planned
+    case: Lucent and AT&T
+    claim: Parent economics determine which parts of a research culture can survive.
+    visuals: [Split-lineage map, Side-by-side incentive table, Problem-to-operation pathways]
+  - number: 4
+    slug: hrl-mission-driven-bargain
+    title: HRL and the Bargain of Mission-Driven Research
+    status: planned
+    case: HRL Laboratories, 2010–2016
+    claim: A durable mission customer protects ambitious work while also defining its boundaries.
+    visuals: [Funding-and-mission map, Capability-versus-project layers, Patent-to-program network]
+  - number: 5
+    slug: sri-project-funded-institution
+    title: SRI and the Project-Funded Institution
+    status: planned
+    case: SRI International, 2017–2022
+    claim: An institution can persist across projects while its people remain governed by project clocks.
+    visuals: [Program portfolio map, Chargeability pressure loop, Collaboration network]
+  - number: 6
+    slug: darpa-temporary-laboratory
+    title: DARPA Can Create a Temporary Laboratory. What Happens When the Program Ends?
+    status: planned
+    case: RACE, SIEVE, DPRIVE, DHS, and IARPA programs
+    claim: The program model coordinates breakthroughs but does not automatically preserve the capability it assembles.
+    visuals: [Temporary-lab lifecycle, Program handoff map, Artifact survival ledger]
+  - number: 7
+    slug: parc-appropriability-trap
+    title: PARC and the Appropriability Trap
+    status: planned
+    case: PARC, Xerox, and SRI
+    claim: Invention, recognition, complementary assets, and value capture are four different capabilities.
+    visuals: [Four-capability matrix, IP-and-host timeline, Spillover map]
+  - number: 8
+    slug: outputs-and-vanishing-capability
+    title: Papers, Patents, Prototypes—and Vanishing Capability
+    status: planned
+    case: Karim’s publication, patent, program, and transition record
+    claim: Output metrics can rise while the ability to produce the next generation of work declines.
+    visuals: [Output-versus-capability dashboard, Test-of-time timeline, Evidence-quality matrix]
+  - number: 9
+    slug: startup-not-laboratory
+    title: The Startup Is Not a Research Laboratory
+    status: planned
+    case: Confidencial and research spinouts
+    claim: A startup can complete one transition but cannot rationally maintain the research commons.
+    visuals: [Paper-to-product work map, Incentive comparison, Missing-middle cost stack]
+  - number: 10
+    slug: consolidation-as-triage
+    title: Consolidation as Triage
+    status: planned
+    case: SRI/PARC and the announced IBM/HRL transaction
+    claim: Preservation should be measured by surviving teams and capabilities, not by the transaction announcement.
+    visuals: [Before-and-after capability ledger, Acquisition outcome tree, Five-year scorecard]
+  - number: 11
+    slug: last-transfer-window
+    title: The Last Transfer Window
+    status: planned
+    case: The remaining mentorship overlap
+    claim: Institutional memory is perishable, making delay more costly than budget statistics reveal.
+    visuals: [Mentorship-chain model, Capability decay curves, Window indicators]
+  - number: 12
+    slug: ai-native-public-good
+    title: An AI-Native Laboratory for the Public Good
+    status: planned
+    case: A proposed successor informed by NAIRR, NSTC, FFRDCs, DARPA, and DOE laboratories
+    claim: A successor must align capital, careers, infrastructure, AI, transition, and public value in one institutional design.
+    visuals: [Interactive lab brain map, Governance and IP tiers, Ten-year pilot roadmap]
+
+sources:
+  - id: ncses-rd-2026
+    title: "Indicators 2026: U.S. R&D expenditures by type, selected years 2000–2024"
+    organization: National Center for Science and Engineering Statistics
+    date: "2026"
+    kind: Federal statistical table
+    url: https://ncses.nsf.gov/pubs/nsbsep20261/assets/overview/tables/nsbsep20261-tab001.pdf
+    supports: R&D totals, constant-dollar trends, and the basic/applied/development composition
+  - id: nokia-bell-history
+    title: Bell Labs history
+    organization: Nokia Bell Labs
+    date: Current institutional history
+    kind: Institutional primary source
+    url: https://www.nokia.com/bell-labs/about/history/
+    supports: The 1996 AT&T/Lucent split and later Bell Labs institutional transitions
+  - id: ibm-hrl-2026
+    title: IBM to acquire HRL Laboratories
+    organization: IBM
+    date: "2026-07-23"
+    kind: Transaction announcement
+    url: https://newsroom.ibm.com/2026-07-23-ibm-to-acquire-hrl-laboratories-to-power-the-future-of-quantum
+    supports: The signed agreement, stated rationale, ownership at announcement, and pending closing status
+  - id: sri-history
+    title: About SRI International
+    organization: SRI International
+    date: Current institutional history
+    kind: Institutional primary source
+    url: https://www.sri.com/about-us/
+    supports: SRI’s institutional history and PARC’s 2023 integration
+  - id: xerox-parc-sri
+    title: Xerox announces donation of PARC to SRI International
+    organization: Xerox
+    date: "2023-04-24"
+    kind: Transaction announcement
+    url: https://www.news.xerox.com/news/xerox-announces-donation-of-palo-alto-research-center-parc-to-sri-international
+    supports: The form, rationale, and announced structure of the PARC transfer
+  - id: darpa-pm-model
+    title: Become a program manager
+    organization: DARPA
+    date: Current program description
+    kind: Agency primary source
+    url: https://www.darpa.mil/careers/program-manager
+    supports: Fixed program-manager tenure, portfolio authority, milestones, and performer coordination
+  - id: gao-ffrdc
+    title: Federal Research—Management and Oversight of FFRDCs
+    organization: U.S. Government Accountability Office
+    date: "2008"
+    kind: Federal oversight report
+    url: https://www.gao.gov/assets/a282703.html
+    supports: Long-term government relationships, institutional memory, objectivity, and special access in the FFRDC model
+  - id: nairr-2026
+    title: NAIRR at two years
+    organization: U.S. National Science Foundation
+    date: "2026-03-19"
+    kind: Agency progress report
+    url: https://www.nsf.gov/cise/updates/nairr-2-years-advancing-american-artificial-intelligence
+    supports: Shared AI resources, federal/private participation, research access, and the move toward durable infrastructure
+  - id: nstc
+    title: National Semiconductor Technology Center
+    organization: National Institute of Standards and Technology
+    date: Current program description
+    kind: Agency primary source
+    url: https://www.nist.gov/chips/research-development-programs/national-semiconductor-technology-center
+    supports: The public–private consortium, prototyping, investment, collaboration, and workforce model
+  - id: doe-tcf
+    title: Technology Commercialization Fund
+    organization: U.S. Department of Energy
+    date: Current program description
+    kind: Agency primary source
+    url: https://www.energy.gov/technologycommercialization/technology-commercialization-fund
+    supports: Cost-shared lab-to-market partnerships and commercialization infrastructure

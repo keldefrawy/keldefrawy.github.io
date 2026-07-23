@@ -98,6 +98,9 @@
     <link rel="alternate" type="application/json" href="{{ '/knowledge/papers/index.json' | absolute_url }}" title="Machine-readable publication and knowledge-map index">
     {% endif %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: asset_version | relative_url }}">
+    {% if page.rd_series %}
+    <link rel="stylesheet" href="{{ "/assets/css/rd-ratchet.css?v=" | append: asset_version | relative_url }}">
+    {% endif %}
     {% if page.homepage %}
     <link rel="stylesheet" href="{{ "/assets/css/adversary-game.css?v=" | append: asset_version | relative_url }}">
     {% endif %}
@@ -105,7 +108,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
   </head>
-  <body{% if page.homepage %} class="home-page"{% elsif page.publications_browser %} class="publications-page"{% elsif page.knowledge_map or page.knowledge_hub or page.paper_id %} class="knowledge-map-page"{% endif %}>
+  <body{% if page.homepage %} class="home-page"{% elsif page.rd_series %} class="rd-series-page"{% elsif page.publications_browser %} class="publications-page"{% elsif page.knowledge_map or page.knowledge_hub or page.paper_id %} class="knowledge-map-page"{% endif %}>
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
@@ -161,6 +164,9 @@
     {% endif %}
     {% if page.knowledge_hub %}
     <script src="{{ "/assets/js/knowledge-hub.js" | relative_url }}" defer></script>
+    {% endif %}
+    {% if page.rd_series %}
+    <script src="{{ "/assets/js/rd-ratchet.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% endif %}
     {% if knowledge_record %}
     <script src="{{ "/assets/js/knowledge-map.js" | relative_url }}" defer></script>

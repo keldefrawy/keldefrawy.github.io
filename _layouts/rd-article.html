@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<article class="rd-article">
+  <nav class="rd-breadcrumbs" aria-label="Breadcrumb">
+    <a href="{{ '/rd-ratchet/' | relative_url }}">The R&amp;D Ratchet</a>
+    <span aria-hidden="true">/</span>
+    <span>Article {{ page.article_number }}</span>
+  </nav>
+
+  <header class="rd-article-header">
+    <p class="rd-kicker">Article {{ page.article_number }} of {{ site.data.rd_ratchet.series.article_count }} · {{ page.article_status | default: "Published" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.dek %}<p class="rd-article-dek">{{ page.dek }}</p>{% endif %}
+    <div class="rd-article-meta">
+      {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% endif %}
+      {% if page.updated %}<span>Updated {{ page.updated | date: "%B %-d, %Y" }}</span>{% endif %}
+      {% if page.reading_time %}<span>{{ page.reading_time }} min read</span>{% endif %}
+    </div>
+  </header>
+
+  {% if page.central_claim %}
+  <aside class="rd-central-claim">
+    <p class="rd-kicker">Central claim</p>
+    <blockquote>{{ page.central_claim }}</blockquote>
+    {% if page.claim_status %}<p class="rd-central-claim__status">Claim status: {{ page.claim_status }}</p>{% endif %}
+  </aside>
+  {% endif %}
+
+  {% if page.hero_image %}
+  <figure class="rd-article-hero">
+    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | escape }}" width="1788" height="880">
+    {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+
+  <div class="rd-article-body">
+    {{ content }}
+  </div>
+
+  {% include rd-evidence-legend.html %}
+  {% include rd-source-list.html ids=page.source_ids %}
+
+  <footer class="rd-article-footer">
+    <p><a href="{{ '/rd-ratchet/' | relative_url }}">← Return to the series map</a></p>
+    <p>This essay distinguishes firsthand memory, documentary evidence, interviews, and analysis. Corrections that improve the record are welcome.</p>
+  </footer>
+</article>

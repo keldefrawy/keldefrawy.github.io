@@ -17,8 +17,6 @@ permalink: /patents.html
   <section class="research-record patent-record" aria-labelledby="patent-record-title" markdown="1">
 <h2 id="patent-record-title">Granted Patents</h2>
 
-_Patent record last updated: May 2024._
-
 31- "Augmenting executables having cryptographic primitives" United States Patent Number [US11934538](https://patents.google.com/patent/US11934538B2/en)
 
 30- "Checkpointable secure multi-party computation" United States Patent Number [US11775390](https://patents.google.com/patent/US11775390B2/en)

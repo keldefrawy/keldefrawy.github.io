@@ -39,6 +39,9 @@ collections:
   papers:
     output: true
     permalink: /knowledge/papers/:name/
+  rd_articles:
+    output: true
+    permalink: /rd-ratchet/:name/
 
 defaults:
   - scope:
@@ -46,3 +49,9 @@ defaults:
       type: papers
     values:
       layout: knowledge-map
+  - scope:
+      path: ""
+      type: rd_articles
+    values:
+      layout: rd-article
+      rd_series: true

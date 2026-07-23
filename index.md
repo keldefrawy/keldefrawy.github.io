@@ -42,6 +42,7 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 * [Publications ({{ site.data.publications | size }}) — chronological list]({{ '/pubs.html' | relative_url }})
 * [Patents (31)]({{ '/patents.html' | relative_url }})
 * [Short informal articles]({{ '/thoughts.html' | relative_url }})
+* [The R&amp;D Ratchet]({{ '/rd-ratchet/' | relative_url }})
 
 </article>
 
