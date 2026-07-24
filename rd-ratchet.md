@@ -43,7 +43,6 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
         height="880"
         fetchpriority="high"
       >
-      <figcaption>Conceptual illustration—not a depiction of a specific laboratory or historical event.</figcaption>
     </figure>
   </header>
 
@@ -53,7 +52,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       <h2 id="rd-thesis-title">The institutions are the evidence. The incentive structures are the subject.</h2>
     </div>
     <blockquote>
-      America did not simply defund research. It replaced one institutional equilibrium with several narrower ones—quarterly corporate returns, finite government programs, billable projects, publication metrics, patent accounting, and venture-scale exits. Each can be locally rational and productive while the combined system consumes inherited capability faster than it replenishes it.
+      America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — quarterly corporate-like returns, finite short-term government programs, billable projects leading to ballooning administrative and non-productive work, publication metrics, patent accounting, and venture-scale exits. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capability faster than it has replenished it.
     </blockquote>
     <p class="rd-thesis__qualification"><strong>This is a thesis to test, not a conclusion to assume.</strong> Each article will separate scientific, technical, transition, institutional, economic, and public-value outcomes—and will state the strongest evidence against its own interpretation.</p>
   </section>

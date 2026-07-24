@@ -52,7 +52,8 @@ Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www
 
 * [Browse publications by research area]({{ '/publications/' | relative_url }})
 * [Scientific knowledge maps]({{ '/knowledge/' | relative_url }})
-* [Google Scholar](https://scholar.google.com/citations?user=e9UP75IAAAAJ&hl=en) · [ResearchGate](https://www.researchgate.net/profile/Karim-Eldefrawy-2)
+* [Google Scholar](https://scholar.google.com/citations?user=e9UP75IAAAAJ&hl=en)
+* [ResearchGate](https://www.researchgate.net/profile/Karim-Eldefrawy-2)
 
 </article>
 
