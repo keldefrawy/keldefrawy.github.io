@@ -1,10 +1,16 @@
 ---
 title: Article title
 article_number: 1
+article_slug: article-slug
+permalink: /rd-ratchet/article-slug/
 article_status: Draft
+published: false
 dek: One-sentence article promise.
 date: 2026-01-01
 updated: 2026-01-01
+version: "0.1"
+version_sequence: 1
+revision_summary: Private working draft; not a public version
 reading_time: 12
 central_claim: The precise proposition this article tests.
 claim_status: Provisional; evidence collection in progress
@@ -13,6 +19,7 @@ hero_alt: Conceptual editorial illustration description.
 hero_caption: Conceptual illustration; it does not depict a specific historical laboratory or event.
 source_ids:
   - ncses-rd-2026
+corrections: []
 ---
 
 ## Scene
@@ -42,3 +49,7 @@ Evaluate scientific, technical, transition, institutional, and public-value outc
 ## Implication for the successor
 
 Identify the institutional design constraint learned from this case.
+
+## Revision note
+
+Before publication, state what changed relative to the previous public version. For version 1.0, use “Initial public version.” Accepted feedback belongs in the front-matter `corrections` ledger.

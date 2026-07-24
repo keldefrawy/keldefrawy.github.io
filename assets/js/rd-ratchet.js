@@ -291,12 +291,21 @@
         const filter = button.dataset.rdArticleFilter;
         let visible = 0;
         cards.forEach((card) => {
-          const show = filter === "all" || card.dataset.status === filter;
+          const show = filter === "all" ||
+            (filter === "available" && ["published", "revised"].includes(card.dataset.status)) ||
+            card.dataset.status === filter;
           card.hidden = !show;
           if (show) visible += 1;
         });
         buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-        const phrase = filter === "all" ? "articles" : filter === "researching" ? "articles in research" : "planned articles";
+        const phrases = {
+          all: "articles",
+          available: "published articles",
+          researching: "articles in research",
+          planned: "planned articles",
+          withdrawn: "withdrawal records"
+        };
+        const phrase = phrases[filter] || "articles";
         status.textContent = `Showing ${visible} ${phrase}.`;
       });
     });

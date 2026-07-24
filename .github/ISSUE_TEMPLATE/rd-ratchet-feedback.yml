@@ -1,0 +1,67 @@
+name: The R&D Ratchet feedback
+description: Suggest a factual correction, challenge an argument, or contribute additional public evidence.
+title: "[R&D Ratchet feedback] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the record. Do not submit confidential, proprietary, export-controlled, personally sensitive, or classified information here. Use the private contact route on the website for sensitive feedback.
+  - type: dropdown
+    id: feedback_kind
+    attributes:
+      label: Type of feedback
+      options:
+        - Factual correction
+        - Argument challenge
+        - Additional evidence
+        - Source or citation problem
+        - Accessibility or presentation problem
+    validations:
+      required: true
+  - type: input
+    id: article_url
+    attributes:
+      label: Article URL and version
+      description: Include the version number shown near the article date.
+      placeholder: https://keldefrawy.github.io/rd-ratchet/example/ — version 1.0
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim or section
+      description: Quote only the minimum necessary text and identify the relevant heading.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Proposed correction or counterargument
+      description: Explain what should change and why.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: Provide a public primary source, stable citation, or a clear path for independent verification.
+    validations:
+      required: true
+  - type: dropdown
+    id: attribution
+    attributes:
+      label: Public attribution
+      description: If the feedback is incorporated, may the public correction ledger credit your GitHub identity?
+      options:
+        - Yes
+        - No
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-information confirmation
+      options:
+        - label: I confirm that this submission contains no confidential, proprietary, export-controlled, personally sensitive, or classified information.
+          required: true

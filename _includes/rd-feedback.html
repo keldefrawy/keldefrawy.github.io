@@ -1,0 +1,15 @@
+{% assign rd_feedback_title = page.title | prepend: "[R&D Ratchet correction] " | url_encode %}
+{% assign rd_challenge_title = page.title | prepend: "[R&D Ratchet argument] " | url_encode %}
+{% assign rd_feedback_template = site.rd_ratchet.feedback_issue_template | url_encode %}
+{% assign rd_feedback_base = site.rd_ratchet.feedback_issue_url | append: "?template=" | append: rd_feedback_template | append: "&title=" %}
+<aside class="rd-feedback" aria-labelledby="rd-feedback-title">
+  <p class="rd-kicker">Improve the record</p>
+  <h2 id="rd-feedback-title">Correction, challenge, or additional evidence?</h2>
+  <p>Feedback is evaluated against the article’s evidence classes. Accepted changes appear in a new public version and in its revision record.</p>
+  <div class="rd-feedback__actions">
+    <a href="{{ rd_feedback_base | append: rd_feedback_title | escape }}">Suggest a factual correction</a>
+    <a href="{{ rd_feedback_base | append: rd_challenge_title | escape }}">Challenge or extend the argument</a>
+    <a href="{{ site.rd_ratchet.private_feedback_url | relative_url }}">Send sensitive feedback privately</a>
+  </div>
+  <p class="rd-feedback__note">Public submissions require a GitHub account. Please do not place confidential, proprietary, export-controlled, or classified information in a public submission. <a href="{{ '/rd-ratchet/method/' | relative_url }}#feedback">How feedback is handled</a>.</p>
+</aside>

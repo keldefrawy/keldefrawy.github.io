@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<article class="rd-article rd-revision" id="article-top">
+  <nav class="rd-breadcrumbs" aria-label="Breadcrumb">
+    <a href="{{ '/rd-ratchet/' | relative_url }}">The R&amp;D Ratchet</a>
+    <span aria-hidden="true">/</span>
+    <a href="{{ page.current_url | relative_url }}">Article {{ page.article_number }}</a>
+    <span aria-hidden="true">/</span>
+    <span>Version {{ page.version }}</span>
+  </nav>
+
+  <aside class="rd-archive-banner" role="note">
+    <p><strong>Archived version {{ page.version }}.</strong> This immutable snapshot is preserved for citation and comparison.</p>
+    <a href="{{ page.current_url | relative_url }}">Read the current article</a>
+  </aside>
+
+  <header class="rd-article-header">
+    <p class="rd-kicker">Article {{ page.article_number }} of {{ site.data.rd_ratchet.series.article_count }} · Historical version</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.dek %}<p class="rd-article-dek">{{ page.dek }}</p>{% endif %}
+    <div class="rd-article-meta">
+      <span>Version {{ page.version }}</span>
+      <time datetime="{{ page.revision_date | date_to_xmlschema }}">Archived {{ page.revision_date | date: "%B %-d, %Y" }}</time>
+      {% if page.archived_body_sha256 %}<span title="SHA-256 of the archived article body">Integrity {{ page.archived_body_sha256 | slice: 0, 12 }}…</span>{% endif %}
+    </div>
+  </header>
+
+  {% if page.revision_summary %}
+  <aside class="rd-central-claim">
+    <p class="rd-kicker">Revision note</p>
+    <p>{{ page.revision_summary }}</p>
+  </aside>
+  {% endif %}
+
+  {% if page.central_claim %}
+  <aside class="rd-central-claim">
+    <p class="rd-kicker">Central claim at this version</p>
+    <blockquote>{{ page.central_claim }}</blockquote>
+  </aside>
+  {% endif %}
+
+  {% if page.hero_image %}
+  <figure class="rd-article-hero">
+    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | escape }}" width="1788" height="880">
+    {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
+  </figure>
+  {% endif %}
+
+  <div class="rd-article-body">
+    {{ content }}
+  </div>
+
+  {% include rd-evidence-legend.html %}
+  {% include rd-source-list.html ids=page.source_ids sources=page.archived_sources %}
+  {% include rd-version-history.html article_slug=page.article_slug %}
+
+  <footer class="rd-article-footer">
+    <p><a href="{{ page.current_url | relative_url }}">← Return to the current article</a></p>
+    <p>This page is a historical snapshot. Submit corrections against the current article so accepted changes can create a new version.</p>
+  </footer>
+</article>

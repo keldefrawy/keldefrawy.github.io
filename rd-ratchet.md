@@ -32,6 +32,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
         <a href="#articles">Article arc</a>
         <a href="#successor">AI-native laboratory</a>
         <a href="#sources">Sources</a>
+        <a href="{{ '/rd-ratchet/method/' | relative_url }}">Method &amp; revisions</a>
       </nav>
     </div>
     <figure class="rd-series-hero__visual">
@@ -236,18 +237,23 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       </div>
       <div class="rd-article-filters" role="group" aria-label="Filter articles by status">
         <button type="button" data-rd-article-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-rd-article-filter="available" aria-pressed="false">Published</button>
         <button type="button" data-rd-article-filter="researching" aria-pressed="false">In research</button>
         <button type="button" data-rd-article-filter="planned" aria-pressed="false">Planned</button>
+        <button type="button" data-rd-article-filter="withdrawn" aria-pressed="false">Withdrawn</button>
       </div>
     </div>
 
     <ol class="rd-article-grid" data-rd-article-grid>
+      {% assign rd_visible_article_count = 0 %}
       {% for article in rd.articles %}
+      {% unless article.visible == false %}
+      {% assign rd_visible_article_count = rd_visible_article_count | plus: 1 %}
       <li data-rd-article-card data-status="{{ article.status }}">
         <article>
           <header>
             <span class="rd-article-number">{{ article.number | prepend: '0' | slice: -2, 2 }}</span>
-            <span class="rd-status" data-status="{{ article.status }}">{% if article.status == 'researching' %}In research{% else %}Planned{% endif %}</span>
+            <span class="rd-status" data-status="{{ article.status }}">{% if article.status == 'researching' %}In research{% elsif article.status == 'published' %}Published{% elsif article.status == 'revised' %}Revised{% elsif article.status == 'withdrawn' %}Withdrawn{% else %}Planned{% endif %}</span>
           </header>
           <p class="rd-article-case">{{ article.case }}</p>
           <h3>{{ article.title }}</h3>
@@ -256,12 +262,13 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
             <summary>Planned visual evidence</summary>
             <ul>{% for visual in article.visuals %}<li>{{ visual }}</li>{% endfor %}</ul>
           </details>
-          {% if article.url %}<p class="rd-article-link"><a href="{{ article.url | relative_url }}">Read article</a></p>{% endif %}
+          {% if article.url %}<p class="rd-article-link"><a href="{{ article.url | relative_url }}">{% if article.status == 'withdrawn' %}View withdrawal record{% else %}Read article{% endif %}</a></p>{% endif %}
         </article>
       </li>
+      {% endunless %}
       {% endfor %}
     </ol>
-    <p class="rd-filter-status" data-rd-filter-status aria-live="polite">Showing all {{ rd.articles | size }} articles.</p>
+    <p class="rd-filter-status" data-rd-filter-status aria-live="polite">Showing all {{ rd_visible_article_count }} articles.</p>
   </section>
 
   <section class="rd-successor" id="successor" aria-labelledby="rd-successor-title" data-rd-brain>
@@ -306,5 +313,6 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <p class="rd-kicker">Research posture</p>
     <p>The purpose of this series is not to prove that every old laboratory succeeded or every new institution failed. It is to discover which incentive structures preserve the ability to think, build, remember, and transition across a generation—and whether enough of that ability remains to construct a successor.</p>
     <p><time datetime="{{ rd.series.updated }}">Evidence map updated July 23, 2026.</time> Transaction status, statistics, and institutional descriptions will be revised when their underlying records change.</p>
+    <p><a href="{{ '/rd-ratchet/method/' | relative_url }}">Read the public policy for evidence, feedback, corrections, archived versions, and withdrawals.</a></p>
   </footer>
 </article>

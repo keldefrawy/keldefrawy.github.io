@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article class="rd-article">
+<article class="rd-article" id="article-top">
   <nav class="rd-breadcrumbs" aria-label="Breadcrumb">
     <a href="{{ '/rd-ratchet/' | relative_url }}">The R&amp;D Ratchet</a>
     <span aria-hidden="true">/</span>
@@ -16,10 +16,20 @@ layout: default
     <div class="rd-article-meta">
       {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% endif %}
       {% if page.updated %}<span>Updated {{ page.updated | date: "%B %-d, %Y" }}</span>{% endif %}
+      {% if page.version %}<a href="#version-history">Version {{ page.version }}</a>{% endif %}
       {% if page.reading_time %}<span>{{ page.reading_time }} min read</span>{% endif %}
     </div>
   </header>
 
+  {% if page.withdrawn %}
+  <aside class="rd-withdrawal" role="note" aria-labelledby="rd-withdrawal-title">
+    <p class="rd-kicker">Withdrawn {{ page.withdrawn_date | date: "%B %-d, %Y" }}</p>
+    <h2 id="rd-withdrawal-title">This article has been withdrawn</h2>
+    <p>{{ page.withdrawal_reason }}</p>
+    {% if page.last_reliable_version_url %}<p><a href="{{ page.last_reliable_version_url | relative_url }}">Read the last version retained as reliable</a></p>{% endif %}
+    <p>The permanent URL remains available so citations and the public record do not silently disappear.</p>
+  </aside>
+  {% else %}
   {% if page.central_claim %}
   <aside class="rd-central-claim">
     <p class="rd-kicker">Central claim</p>
@@ -38,12 +48,31 @@ layout: default
   <div class="rd-article-body">
     {{ content }}
   </div>
+  {% endif %}
+
+  {% if page.corrections %}
+  <section class="rd-corrections" aria-labelledby="rd-corrections-title">
+    <p class="rd-kicker">Revision ledger</p>
+    <h2 id="rd-corrections-title">Corrections and feedback incorporated</h2>
+    <ol>
+      {% for correction in page.corrections %}
+      <li>
+        <p><strong>{{ correction.disposition }}</strong> · <time>{{ correction.date }}</time>{% if correction.version %} · Version {{ correction.version }}{% endif %}</p>
+        <p>{{ correction.summary }}</p>
+        {% if correction.credit %}<p class="rd-correction-credit">Credit: {{ correction.credit }}</p>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
 
   {% include rd-evidence-legend.html %}
   {% include rd-source-list.html ids=page.source_ids %}
+  {% include rd-version-history.html article_slug=page.article_slug %}
+  {% include rd-feedback.html %}
 
   <footer class="rd-article-footer">
     <p><a href="{{ '/rd-ratchet/' | relative_url }}">← Return to the series map</a></p>
-    <p>This essay distinguishes firsthand memory, documentary evidence, interviews, and analysis. Corrections that improve the record are welcome.</p>
+    <p>This essay distinguishes firsthand memory, documentary evidence, interviews, and analysis. Published versions remain available even after revision or withdrawal.</p>
   </footer>
 </article>

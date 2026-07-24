@@ -1,0 +1,37 @@
+{% assign rd_history_slug = include.article_slug | default: page.article_slug | default: page.slug %}
+{% assign rd_history = site.rd_revisions | where: "article_slug", rd_history_slug | sort: "version_sequence" | reverse %}
+<section class="rd-version-history" id="version-history" aria-labelledby="rd-version-history-title">
+  <div class="rd-section-heading">
+    <p class="rd-kicker">Public record</p>
+    <h2 id="rd-version-history-title">Version history</h2>
+    <p>Published versions are immutable snapshots. Corrections create a new version rather than silently changing the historical record.</p>
+  </div>
+
+  {% if rd_history.size > 0 %}
+  <ol>
+    {% for revision in rd_history %}
+    <li{% if revision.version == page.version %} class="is-current"{% endif %}>
+      <div>
+        <strong>Version {{ revision.version }}</strong>
+        {% if revision.version == page.version and page.revision_archive != true %}<span class="rd-version-badge">Current</span>{% endif %}
+        {% if revision.version == page.version and page.revision_archive == true %}<span class="rd-version-badge">This version</span>{% endif %}
+      </div>
+      <p>{{ revision.revision_summary | default: "Published snapshot" }}</p>
+      <p class="rd-version-history__meta">
+        <time datetime="{{ revision.revision_date | date_to_xmlschema }}">{{ revision.revision_date | date: "%B %-d, %Y" }}</time>
+        <span>·</span>
+        {% if revision.version == page.version and page.revision_archive != true %}
+          <a href="#article-top" aria-current="page">Current article</a>
+        {% else %}
+          <a href="{{ revision.url | relative_url }}">Read this version</a>
+        {% endif %}
+      </p>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="rd-version-history__empty">No public snapshot has been archived yet. The first snapshot is created when the article is published.</p>
+  {% endif %}
+
+  <p class="rd-version-history__policy"><a href="{{ '/rd-ratchet/method/' | relative_url }}">Read the correction, withdrawal, and versioning policy</a></p>
+</section>

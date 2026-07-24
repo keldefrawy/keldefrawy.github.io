@@ -42,6 +42,8 @@ collections:
   rd_articles:
     output: true
     permalink: /rd-ratchet/:name/
+  rd_revisions:
+    output: true
 
 defaults:
   - scope:
@@ -55,3 +57,14 @@ defaults:
     values:
       layout: rd-article
       rd_series: true
+  - scope:
+      path: ""
+      type: rd_revisions
+    values:
+      layout: rd-revision
+      rd_series: true
+
+rd_ratchet:
+  feedback_issue_url: https://github.com/keldefrawy/keldefrawy.github.io/issues/new
+  feedback_issue_template: rd-ratchet-feedback.yml
+  private_feedback_url: /#contact
