@@ -81,9 +81,9 @@ timeline:
     note: The transition from research and patents to product, procurement, customers, and company survival.
   - year: "2023"
     label: PARC joins SRI
-    kind: document
+    kind: memory
     source_id: xerox-parc-sri
-    note: A documented institutional case observed as an SRI alumnus, not as an inside witness to the transaction.
+    note: A firsthand institutional case grounded in Karim's SRI experience and subsequent observation, with the transaction facts independently documented.
   - year: "2026"
     label: IBM announces HRL agreement
     kind: document
