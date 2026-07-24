@@ -56,9 +56,9 @@ brain_nodes = data.fetch("brain_nodes")
 sources = data.fetch("sources")
 chart = data.fetch("rd_chart")
 
-errors << "the editorial arc must contain thirteen articles" unless articles.length == 13
+errors << "the editorial arc must contain fifteen articles" unless articles.length == 15
 errors << "the article count in series metadata is stale" unless series.fetch("article_count") == articles.length
-errors << "article numbers must be exactly 1 through 13" unless articles.map { |item| item.fetch("number") } == (1..13).to_a
+errors << "article numbers must be exactly 1 through 15" unless articles.map { |item| item.fetch("number") } == (1..15).to_a
 errors << "article slugs must be unique" unless articles.map { |item| item.fetch("slug") }.uniq.length == articles.length
 errors << "every article needs at least three planned visuals" unless articles.all? { |item| item.fetch("visuals").length >= 3 }
 allowed_statuses = %w[planned researching published revised withdrawn]
@@ -130,8 +130,13 @@ errors << "landing page omits the source ledger" unless page.include?("rd-source
 errors << "landing page omits the public editorial policy" unless page.include?("/rd-ratchet/method/")
 errors << "landing page cannot filter published articles" unless page.include?('data-rd-article-filter="available"')
 errors << "landing page cannot retain withdrawal records" unless page.include?('data-rd-article-filter="withdrawn"')
+errors << "landing page article heading must state fifteen articles" unless page.include?("Fifteen articles")
+errors << "unpublished article previews are not linked when rendered" unless page.include?('site.rd_articles | where: "article_slug", article.slug') && page.include?("rd_article_page.url")
 if style.match?(/\.rd-brain-node[^\{]*\.is-active[^\{]*\{[^\}]*\btransform\s*:/m)
   errors << "AI-native laboratory nodes must not change position when selected"
+end
+unless style.match?(/\.rd-timeline\s*\{[^\}]*width:\s*max-content;[^\}]*min-width:\s*100%;/m)
+  errors << "horizontal timeline must size its line to the full event grid"
 end
 
 config = YAML.load_file(File.join(ROOT, "_config.yml"))
@@ -178,7 +183,7 @@ if File.file?(RENDERED_PATH)
   errors << "rendered page does not load the series stylesheet" unless rendered.include?("/assets/css/rd-ratchet.css")
   errors << "rendered page does not load the interaction script" unless rendered.include?("/assets/js/rd-ratchet.js")
   errors << "rendered chart table lost its 2000 values" unless rendered.include?("<tr><th>2000</th><td>57.8</td><td>77.7</td><td>233.0</td></tr>")
-  errors << "rendered page does not contain thirteen article cards" unless rendered.scan("data-rd-article-card").length == 13
+  errors << "rendered page does not contain fifteen article cards" unless rendered.scan("data-rd-article-card").length == 15
   source_ids.each do |source_id|
     errors << "rendered page omits source anchor #{source_id}" unless rendered.include?(%(id="source-#{source_id}"))
   end
@@ -193,4 +198,4 @@ if errors.any?
   exit 1
 end
 
-puts "R&D Ratchet audit passed (13 articles, #{models.length} models, #{nodes.length} argument nodes, #{sources.length} sources)."
+puts "R&D Ratchet audit passed (15 articles, #{models.length} models, #{nodes.length} argument nodes, #{sources.length} sources)."

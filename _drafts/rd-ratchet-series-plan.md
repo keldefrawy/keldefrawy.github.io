@@ -89,7 +89,7 @@ Each article should analyze the same questions so the cases accumulate into an a
 
 The comparison should remain qualitative until sufficiently comparable data exist. A false numerical score would create precision without validity.
 
-## The thirteen-article series
+## The fifteen-article series
 
 ### 1. The Nearly Trillion-Dollar R&D System That Cannot Think Long
 
@@ -173,7 +173,31 @@ DARPA program managers can assemble extraordinary cross-organizational teams, gi
 
 **Institutional implication:** Fund bounded projects, durable capability, and public accountability as distinct purchases. Do not ask graduate students, technology-transfer offices, or indirect-cost recovery to impersonate a permanent systems-and-transition organization.
 
-### 8. PARC and the Appropriability Trap
+### 8. The People Who Choose the Bets Must Have Made Them
+
+**Function:** Examine who is qualified to translate technical uncertainty into portfolio, continuation, and termination decisions.
+
+**Central claim:** Research judgment is practiced. People with firsthand records of original research and multi-year program stewardship must hold real authority over consequential technical portfolios, while fiduciary, legal, safety, and public-accountability authority remains independent.
+
+**Credential discipline:** Treat fifty or more serious publications and granted patents as a potentially strong signal in some fields, not a universal gate. Patents are legally examined for patentability; they are not peer-reviewed scholarly papers. Use a four-part dossier covering discovery, stewardship, transition, and correction rather than a scalar output count.
+
+**Counterargument:** Expert rule can produce prestige bias, intellectual capture, network favoritism, overconfidence, and protection of established paradigms. Require fixed terms, conflicts rules, plural expertise, protected dissent, current practitioners, and retrospective decision audits.
+
+**Institutional implication:** Couple epistemic and fiduciary authority. No major technical portfolio should be governed entirely by people who have never done serious research or carried a serious R&D program through time.
+
+### 9. A Laboratory Is an Adjacency Graph, Not an Address
+
+**Function:** Define laboratory destruction precisely enough to distinguish closure, relocation, acquisition, and capability loss.
+
+**Central claim:** A laboratory shatters when the connected system of people, complementary roles, working relationships, assets, memory, problem-selection authority, and transition paths no longer supports an important class of inquiry—even if most people find new jobs.
+
+**Cases:** Use Microsoft Research Silicon Valley's 2014 closure to distinguish node survival from edge survival. Use IBM's 2025 announced Almaden-site consolidation as a deliberately unresolved test: moving a building is not proof of shattering. Use IBM's transfer of its microelectronics business to GlobalFoundries to examine what happens when research and fabrication complements cross a new organizational boundary.
+
+**Measurement:** Build a pre- and post-reorganization capability ledger covering teams, critical roles, collaboration and mentorship edges, assets, memory, problem-initiation authority, and transition links. “Jobs saved,” “facility retained,” and “R&D spending maintained” are evidence, not verdicts.
+
+**Counterargument:** Mobility diffuses ideas, consolidation can improve adjacency, specialization can strengthen production, and obsolete laboratories should not be immortal. Ask what the prior graph could do that the successor graphs cannot, rather than presuming every closure is decline.
+
+### 10. PARC and the Appropriability Trap
 
 **Function:** Replace the cliché that Xerox “failed to see the future” with a sharper economic question.
 
@@ -183,7 +207,7 @@ Use the 2023 donation of PARC to SRI—including the disclosed allocation of pat
 
 **Broader mechanism:** Knowledge spillovers make foundational research socially valuable and privately underfunded. This is precisely where government has a legitimate role, provided public funding does not merely socialize risk while privatizing all durable capability.
 
-### 9. Papers, Patents, Prototypes—and Vanishing Capability
+### 11. Papers, Patents, Prototypes—and Vanishing Capability
 
 **Function:** Attack the output-accounting problem using your own record rather than someone else’s.
 
@@ -193,7 +217,7 @@ Your site lists 79 research works, 31 granted patents, 12 funded programs, open-
 
 **Use the 2024 Test of Time Award carefully:** It is a rare retrospective signal of enduring influence, but even long-term citation or recognition does not by itself establish deployment or institutional continuity.
 
-### 10. The Startup Is Not a Research Laboratory
+### 12. The Startup Is Not a Research Laboratory
 
 **Function:** Examine venture and market incentives from inside technology transition.
 
@@ -203,7 +227,7 @@ Use Confidencial to describe the missing work between a paper or patent and a pr
 
 **Important balance:** Do not portray commercialization as contamination. The failure is asking commercialization vehicles to fund public goods for which they cannot capture a return.
 
-### 11. Consolidation as Triage: SRI/PARC and IBM/HRL
+### 13. Consolidation as Triage: SRI/PARC and IBM/HRL
 
 **Function:** Return to the present after the incentive models are understood.
 
@@ -211,7 +235,7 @@ Use Confidencial to describe the missing work between a paper or patent and a pr
 
 Treat the two cases differently. PARC’s donation to SRI closed in 2023. As of July 23, 2026, IBM has announced and signed an agreement to acquire HRL, but the transaction remains subject to closing conditions and is expected to close later in 2026. Publish an update after closing rather than writing as though it has already occurred.
 
-### 12. The Last Transfer Window
+### 14. The Last Transfer Window
 
 **Function:** Establish urgency without theatrical countdowns.
 
@@ -228,7 +252,7 @@ Define the window as **one institutional generation**, not an unsupported calend
 
 **Global claim:** If the window closes, the cost will not be confined to U.S. competitiveness. The world loses institutions capable of producing foundational knowledge and trustworthy infrastructure whose benefits cannot be fully appropriated by their sponsors.
 
-### 13. An AI-Native Laboratory for the Public Good
+### 15. An AI-Native Laboratory for the Public Good
 
 **Function:** End with an institutional design, not nostalgia or a slogan.
 
@@ -383,10 +407,11 @@ Publish every two or three weeks over seven to nine months.
 
 - Publish Article 1 quickly enough to use the IBM–HRL announcement as the current hook.
 - Publish Articles 2–3 as a paired Lucent/AT&T comparison.
-- Publish Articles 4–8 as the institutional incentive cases, including the dedicated academic-system analysis.
-- Pause after Article 8 to conduct follow-up interviews prompted by reader responses.
-- Publish Articles 9–11 as the synthesis of metrics, transition, and consolidation.
-- Publish Articles 12–13 as the urgent and constructive conclusion.
+- Publish Articles 4–7 as the institutional incentive cases, including the dedicated academic-system analysis.
+- Publish Articles 8–9 as the governance and institutional-capability pair: who may choose the bets, and what exactly must survive a reorganization.
+- Pause after Article 9 to conduct follow-up interviews prompted by reader responses.
+- Publish Articles 10–13 as the synthesis of appropriation, metrics, transition, and consolidation.
+- Publish Articles 14–15 as the urgent and constructive conclusion.
 
 Maintain a private book file in parallel. After each article, preserve cut material, contradictory evidence, interview excerpts, data tables, and unresolved questions. Those are book assets, not waste.
 

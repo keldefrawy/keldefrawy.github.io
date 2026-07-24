@@ -12,6 +12,8 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
 {% assign first_model = rd.models | first %}
 {% assign first_argument = rd.argument_nodes | first %}
 {% assign first_brain = rd.brain_nodes | first %}
+{% assign rd_researching_articles = rd.articles | where: "status", "researching" %}
+{% assign rd_planned_articles = rd.articles | where: "status", "planned" %}
 
 <article class="rd-series" data-rd-series>
   <header class="rd-series-hero">
@@ -22,8 +24,8 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       <p class="rd-series-hero__intro">{{ rd.series.description }}</p>
       <div class="rd-series-hero__status" aria-label="Series status">
         <span><strong>{{ rd.series.published_count }}</strong> published</span>
-        <span><strong>2</strong> in research</span>
-        <span><strong>11</strong> planned</span>
+        <span><strong>{{ rd_researching_articles.size }}</strong> in research</span>
+        <span><strong>{{ rd_planned_articles.size }}</strong> planned</span>
         <span><strong>4</strong> evidence classes</span>
       </div>
       <nav class="rd-series-nav" aria-label="Explore this series">
@@ -49,10 +51,10 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
   <section class="rd-thesis" aria-labelledby="rd-thesis-title">
     <div>
       <p class="rd-kicker">The proposition</p>
-      <h2 id="rd-thesis-title">The institutions are the evidence. The incentive structures are the subject.</h2>
+      <h2 id="rd-thesis-title">The history and trajectory of institutions are the evidence. The incentive structures are the subject.</h2>
     </div>
     <blockquote>
-      America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — quarterly corporate-like returns, finite short-term government programs, billable projects leading to ballooning administrative and non-productive work, publication metrics, patent accounting, and venture-scale exits. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capability faster than it has replenished it.
+      America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — quarterly corporate-like returns, finite short-term government programs, billable projects leading to ballooning administrative and non-productive work, publication metrics, patent accounting, and venture-backed commercialization optimized for acquisition or IPO. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capabilities faster than it has replenished them.
     </blockquote>
     <p class="rd-thesis__qualification"><strong>This is a thesis to test, not a conclusion to assume.</strong> Each article will separate scientific, technical, transition, institutional, economic, and public-value outcomes—and will state the strongest evidence against its own interpretation.</p>
   </section>
@@ -170,20 +172,20 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
         <p class="rd-model-detail__cases">{{ first_model.cases }}</p>
         <h3>{{ first_model.name }}</h3>
         <dl>
-          <div><dt>Who pays</dt><dd>{{ first_model.payer }}</dd></div>
-          <div><dt>Real horizon</dt><dd>{{ first_model.horizon }}</dd></div>
-          <div><dt>What it preserves</dt><dd>{{ first_model.preserves }}</dd></div>
-          <div><dt>Characteristic failure</dt><dd>{{ first_model.failure }}</dd></div>
+          <div><dt>Who Pays</dt><dd>{{ first_model.payer }}</dd></div>
+          <div><dt>Real Horizon</dt><dd>{{ first_model.horizon }}</dd></div>
+          <div><dt>What It Preserves</dt><dd>{{ first_model.preserves }}</dd></div>
+          <div><dt>Characteristic Failure</dt><dd>{{ first_model.failure }}</dd></div>
         </dl>
       </article>
       <script type="application/json" data-rd-model-data>{{ rd.models | jsonify }}</script>
     </div>
 
     <details class="rd-comparison" open>
-      <summary>Compare all incentive structures</summary>
+      <summary>Compare Incentive Structures</summary>
       <div class="rd-table-scroll" tabindex="0">
         <table>
-          <thead><tr><th>Model</th><th>Payer</th><th>Real horizon</th><th>Preserves</th><th>Characteristic failure</th></tr></thead>
+          <thead><tr><th>Model</th><th>Payer</th><th>Real Horizon</th><th>Preserves</th><th>Characteristic Failure</th></tr></thead>
           <tbody>
             {% for model in rd.models %}
             <tr data-rd-model-row="{{ model.id }}"><th>{{ model.name }}<small>{{ model.cases }}</small></th><td>{{ model.payer }}</td><td>{{ model.horizon }}</td><td>{{ model.preserves }}</td><td>{{ model.failure }}</td></tr>
@@ -231,7 +233,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <div class="rd-section-heading rd-section-heading--with-controls">
       <div>
         <p class="rd-kicker">Publication architecture</p>
-        <h2 id="rd-articles-title">Twelve articles, added as their evidence closes</h2>
+        <h2 id="rd-articles-title">Fifteen articles, added as their evidence closes</h2>
         <p>The landing page remains the map. Each published article will become a stable, separately sourced record rather than replacing this overview.</p>
       </div>
       <div class="rd-article-filters" role="group" aria-label="Filter articles by status">
@@ -248,6 +250,8 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       {% for article in rd.articles %}
       {% unless article.visible == false %}
       {% assign rd_visible_article_count = rd_visible_article_count | plus: 1 %}
+      {% assign rd_article_pages = site.rd_articles | where: "article_slug", article.slug %}
+      {% assign rd_article_page = rd_article_pages | first %}
       <li data-rd-article-card data-status="{{ article.status }}">
         <article>
           <header>
@@ -261,7 +265,11 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
             <summary>Planned visual evidence</summary>
             <ul>{% for visual in article.visuals %}<li>{{ visual }}</li>{% endfor %}</ul>
           </details>
-          {% if article.url %}<p class="rd-article-link"><a href="{{ article.url | relative_url }}">{% if article.status == 'withdrawn' %}View withdrawal record{% else %}Read article{% endif %}</a></p>{% endif %}
+          {% if article.url %}
+          <p class="rd-article-link"><a href="{{ article.url | relative_url }}">{% if article.status == 'withdrawn' %}View withdrawal record{% else %}Read article{% endif %}</a></p>
+          {% elsif rd_article_page %}
+          <p class="rd-article-link"><a href="{{ rd_article_page.url | relative_url }}">Read article</a></p>
+          {% endif %}
         </article>
       </li>
       {% endunless %}

@@ -7,8 +7,8 @@ series:
     A firsthand, evidence-led inquiry into the incentive structures that replaced the American
     industrial research laboratory, what those structures preserve and destroy, and how an
     AI-native public–private successor might be designed.
-  updated: "2026-07-23"
-  article_count: 13
+  updated: "2026-07-24"
+  article_count: 15
   published_count: 0
 
 rd_chart:
@@ -67,11 +67,11 @@ timeline:
     label: AT&T Research
     kind: memory
     note: Research internship during graduate school, enabling comparison between two descendants of the Bell system.
-  - year: "2010–16"
+  - year: "2010–2016"
     label: HRL Laboratories
     kind: memory
     note: Mission-driven industrial R&D spanning secure systems, privacy, cloud infrastructure, biometrics, and cyber-physical systems.
-  - year: "2017–22"
+  - year: "2017–2022"
     label: SRI International
     kind: memory
     note: Nonprofit contract research, internal seed work, and multi-institution government programs.
@@ -92,8 +92,8 @@ timeline:
 
 models:
   - id: integrated
-    short: Integrated corporate
-    name: Vertically integrated corporate laboratory
+    short: Integrated Corporate
+    name: Vertically Integrated Corporate Laboratory
     cases: Classical Bell Labs
     payer: Regulated and market revenues inside an integrated operating and manufacturing system
     horizon: Decade-scale when the parent system is stable
@@ -101,17 +101,17 @@ models:
     preserves: Cross-layer teams, apprenticeship, facilities, and patient problem selection
     failure: The research cross-subsidy depends on an economic and regulatory settlement that may not survive restructuring
   - id: equipment
-    short: Equipment corporate
-    name: Post-breakup equipment-company research
-    cases: Lucent-era Bell Labs
+    short: Equipment Corporate
+    name: Post-Breakup Equipment-Company Research
+    cases: Lucent-Era Bell Labs
     payer: Equipment revenues and capital markets
     horizon: Strategic in principle; exposed to product and industry cycles in practice
     reward: Product relevance, patents, technical differentiation, and reputation
     preserves: Deep hardware and systems expertise near manufacturing and product groups
     failure: Parent-company distress can compress the horizon faster than research culture can adapt
   - id: operator
-    short: Operator research
-    name: Network-operator research laboratory
+    short: Operator Research
+    name: Network-Operator Research Laboratory
     cases: AT&T Labs Research
     payer: Communications-services business
     horizon: Medium to long, with continuing pressure for operational relevance
@@ -119,8 +119,8 @@ models:
     preserves: Real operational problems, data, and feedback from deployed infrastructure
     failure: Broad spillovers may escape the sponsor while corporate priorities narrow the research surface
   - id: mission
-    short: Mission laboratory
-    name: Owner-sponsored, mission-driven industrial laboratory
+    short: Mission Laboratory
+    name: Owner-Sponsored, Mission-Driven Industrial Laboratory
     cases: HRL Laboratories
     payer: Strategic owners and government mission sponsors
     horizon: Program clocks nested inside longer-lived technical capabilities
@@ -128,8 +128,8 @@ models:
     preserves: Specialized facilities and ambitious applied science beyond consumer-market horizons
     failure: Sponsor boundaries and contract portfolios can turn durable capability into disconnected projects
   - id: nonprofit
-    short: Contract nonprofit
-    name: Independent nonprofit contract-research institute
+    short: Contract Nonprofit
+    name: Independent Nonprofit Contract-Research Institute
     cases: SRI International
     payer: Government and commercial contracts, plus limited internal investment
     horizon: Finite projects carried by an institution intended to persist across them
@@ -137,9 +137,9 @@ models:
     preserves: Multidisciplinary teams and networks across sponsors and performers
     failure: Chargeability, proposal churn, and funding cliffs can become the institution’s hidden operating system
   - id: program
-    short: Agency program
-    name: Time-bounded agency program network
-    cases: DARPA, DHS, IARPA, ARPA-H programs
+    short: Agency Program
+    name: Time-Bounded Agency Program Network
+    cases: DARPA, DHS, IARPA, ARPA-H Programs
     payer: Public mission agencies
     horizon: Finite programs led by empowered program managers
     reward: Aggressive milestones and potentially transformative mission outcomes
@@ -147,8 +147,8 @@ models:
     failure: The program can create a temporary laboratory without funding a permanent institutional home for what it learns
   - id: academic
     short: Academic
-    name: University research system
-    cases: Research universities
+    name: University Research System
+    cases: Research Universities
     payer: Public grants, tuition, philanthropy, and endowments
     horizon: Grant, degree, and tenure clocks
     reward: Publications, grants, novelty, training, and disciplinary standing
@@ -156,17 +156,17 @@ models:
     failure: Integration, maintenance, negative results, and long transition work are frequently under-rewarded
   - id: venture
     short: Venture
-    name: Venture-backed technology transition
-    cases: Research spinouts and startups
+    name: Venture-Backed Technology Transition
+    cases: Research Spinouts and Startups
     payer: Investors and customers
     horizon: Runway, market adoption, and financing cycles
     reward: Focus, product-market fit, growth, adoption, and exit value
     preserves: Concentrated execution on one transition path
     failure: A startup cannot rationally maintain the broad research commons from which its product emerged
   - id: successor
-    short: Proposed successor
-    name: AI-native public–private laboratory
-    cases: Proposed design; informed by NAIRR, NSTC, FFRDCs, DARPA, and DOE laboratories
+    short: Proposed Successor
+    name: AI-Native Public–Private Laboratory
+    cases: Proposed Design; Informed by NAIRR, NSTC, FFRDCs, DARPA, and DOE Laboratories
     payer: Long-charter public capital, industry membership, mission procurement, and philanthropy
     horizon: Rolling ten- to fifteen-year mission charters with layered review
     reward: Capability formation, public value, validated knowledge, transition, and trained people
@@ -331,41 +331,55 @@ articles:
     claim: Universities are indispensable to discovery and training, but project grants and publication markets do not fund the complete institutional stack required for durable R&D.
     visuals: [Academic R&D role map, Grant-and-overhead feedback loop, Direct-versus-shared-cost explainer]
   - number: 8
+    slug: research-judgment-practiced-skill
+    title: The People Who Choose the Bets Must Have Made Them
+    status: researching
+    case: DARPA and ARPA-E program leadership; expert review; technical portfolio governance
+    claim: Research judgment is a practiced skill, so people with firsthand research and multi-year program experience must hold real authority over technical portfolios—without turning publication or patent counts into a credentialing machine.
+    visuals: [Research-governance authority map, Four-part experience dossier, Expertise-and-capture control matrix]
+  - number: 9
+    slug: how-a-laboratory-shatters
+    title: A Laboratory Is an Adjacency Graph, Not an Address
+    status: researching
+    case: Microsoft Research Silicon Valley; IBM Almaden; IBM Microelectronics and GlobalFoundries
+    claim: A laboratory survives only when its working relationships, complementary roles, technical assets, memory, and problem-selection authority remain connected—not merely when its building, payroll, or name persists.
+    visuals: [Capability graph before and after closure, Node-survival versus edge-survival map, Post-reorganization capability ledger]
+  - number: 10
     slug: parc-appropriability-trap
     title: PARC and the Appropriability Trap
     status: planned
     case: PARC, Xerox, and SRI
     claim: Invention, recognition, complementary assets, and value capture are four different capabilities.
     visuals: [Four-capability matrix, IP-and-host timeline, Spillover map]
-  - number: 9
+  - number: 11
     slug: outputs-and-vanishing-capability
     title: Papers, Patents, Prototypes—and Vanishing Capability
     status: planned
     case: Karim’s publication, patent, program, and transition record
     claim: Output metrics can rise while the ability to produce the next generation of work declines.
     visuals: [Output-versus-capability dashboard, Test-of-time timeline, Evidence-quality matrix]
-  - number: 10
+  - number: 12
     slug: startup-not-laboratory
     title: The Startup Is Not a Research Laboratory
     status: planned
     case: Confidencial and research spinouts
     claim: A startup can complete one transition but cannot rationally maintain the research commons.
     visuals: [Paper-to-product work map, Incentive comparison, Missing-middle cost stack]
-  - number: 11
+  - number: 13
     slug: consolidation-as-triage
     title: Consolidation as Triage
     status: planned
     case: SRI/PARC and the announced IBM/HRL transaction
     claim: Preservation should be measured by surviving teams and capabilities, not by the transaction announcement.
     visuals: [Before-and-after capability ledger, Acquisition outcome tree, Five-year scorecard]
-  - number: 12
+  - number: 14
     slug: last-transfer-window
     title: The Last Transfer Window
     status: planned
     case: The remaining mentorship overlap
     claim: Institutional memory is perishable, making delay more costly than budget statistics reveal.
     visuals: [Mentorship-chain model, Capability decay curves, Window indicators]
-  - number: 13
+  - number: 15
     slug: ai-native-public-good
     title: An AI-Native Laboratory for the Public Good
     status: planned
@@ -499,7 +513,7 @@ sources:
     date: Current archival history
     kind: Institutional archive
     url: https://www.ias.edu/electronic-computer-project
-    supports: The 1945–57 project, its mixed public and institutional support, its engineering duration, its open reports, and the replication of its architecture
+    supports: The 1945–1957 project, its mixed public and institutional support, its engineering duration, its open reports, and the replication of its architecture
   - id: von-neumann-reliable-components
     title: Probabilistic Logics and the Synthesis of Reliable Organisms from Unreliable Components
     organization: John von Neumann
@@ -576,7 +590,7 @@ sources:
     date: "2017-05-24"
     kind: Federal oversight testimony
     url: https://www.gao.gov/products/gao-17-576t
-    supports: NSF indirect costs as a share of annual award funding during FY2000–16 and weaknesses in rate-negotiation documentation
+    supports: NSF indirect costs as a share of annual award funding during FY2000–FY2016 and weaknesses in rate-negotiation documentation
   - id: nih-indirect-guidance-2025
     title: "Supplemental Guidance to the 2024 NIH Grants Policy Statement: Indirect Cost Rates"
     organization: National Institutes of Health
@@ -619,3 +633,80 @@ sources:
     kind: Consensus study report
     url: https://doi.org/10.17226/21896
     supports: The system-level relationship among research incentives, publication pressure, stewardship, and scientific integrity
+  - id: nasem-arpa-e-2017
+    title: An Assessment of ARPA-E
+    organization: National Academies of Sciences, Engineering, and Medicine
+    date: "2017"
+    kind: Consensus study report
+    url: https://doi.org/10.17226/24778
+    supports: ARPA-E's use of technically exceptional program directors with substantial authority over program design, active management, milestones, and portfolio decisions
+  - id: gallo-reviewer-expertise
+    title: The Influence of Peer Reviewer Expertise on the Evaluation of Research Funding Applications
+    organization: Stephen A. Gallo, Joanne H. Sullivan, and Scott R. Glisson
+    date: "2016"
+    kind: Peer-reviewed empirical study
+    url: https://doi.org/10.1371/journal.pone.0165147
+    supports: Evidence that reviewer expertise, seniority, and professional relationships affected proposal evaluations in one biomedical funding dataset, without establishing that expertise guarantees better selections
+  - id: nber-peer-review-risk
+    title: "Choose Your Moments: Peer Review and Scientific Risk Taking"
+    organization: Richard T. Carson, Joshua S. Graff Zivin, and Jeffrey G. Shrader
+    date: "2023"
+    kind: Economics working paper and discrete-choice experiment
+    url: https://doi.org/10.3386/w31409
+    supports: Experimental evidence that active biomedical scientists valued reviewer disagreement and that the most domain-expert respondents were more receptive to it, subject to the limits of stated choices rather than observed program outcomes
+  - id: leiden-manifesto
+    title: "Bibliometrics: The Leiden Manifesto for Research Metrics"
+    organization: Diana Hicks, Paul Wouters, Ludo Waltman, Sarah de Rijcke, and Ismael Rafols
+    date: "2015"
+    kind: Research-evaluation principles
+    url: https://doi.org/10.1038/520429a
+    supports: The principle that quantitative indicators should support, not replace, qualitative expert assessment and should reflect field differences
+  - id: uspto-patent-examination
+    title: Applying for Patents
+    organization: U.S. Patent and Trademark Office
+    date: Current agency guidance
+    kind: Agency primary source
+    url: https://www.uspto.gov/patents/basics/apply
+    supports: The statutory examination of patent applications for patentability, which is distinct from scholarly peer review of research publications
+  - id: msr-sv-open-letter-2014
+    title: Microsoft Open Letter to Academic Research Community
+    organization: Microsoft Research
+    date: "2014-10-21"
+    kind: Corporate primary source
+    url: https://www.microsoft.com/en-us/research/blog/microsoft-open-letter-to-academic-research-community/
+    supports: Microsoft's acknowledgment of the September 2014 Silicon Valley lab closure, layoffs, community concern, and the company's stated continuing commitment to fundamental research
+  - id: msr-sv-levin-profile
+    title: Roy Levin at Microsoft Research
+    organization: Microsoft Research
+    date: Current institutional profile
+    kind: Corporate primary source
+    url: https://www.microsoft.com/en-us/research/people/roylevin/
+    supports: The lab's 2001 founding, approximate scale, leadership, technical scope, and stated emphasis on work spanning theory and practice
+  - id: ieee-msr-sv-diaspora-2015
+    title: Former Microsoft Researchers Find New Homes at VMWare, Google, Apple, and Elsewhere
+    organization: IEEE Spectrum
+    date: "2015-01-23"
+    kind: Contemporaneous technology reporting
+    url: https://spectrum.ieee.org/former-microsoft-researchers-find-new-homes-at-vmware-google-apple-and-elsewhere
+    supports: A public-source follow-up of 53 former Microsoft Silicon Valley researchers showing rapid reemployment alongside dispersion across firms, universities, and other destinations
+  - id: ibm-almaden-consolidation-2025
+    title: IBM Consolidates Its Silicon Valley Footprint, Exits Almaden Lab
+    organization: Silicon Valley Business Journal
+    date: "2025-07-10"
+    kind: Contemporaneous business reporting
+    url: https://www.bizjournals.com/sanjose/news/2025/07/10/ibm-almaden-lab-san-jose.html
+    supports: IBM's confirmed plan to leave the Almaden site and move its operations to the nearby Silicon Valley Lab
+  - id: ibm-silicon-valley-lab
+    title: IBM Research—Silicon Valley
+    organization: IBM Research
+    date: Current institutional profile
+    kind: Corporate primary source
+    url: https://research.ibm.com/labs/silicon-valley
+    supports: IBM's current description of its Silicon Valley research organization and technical areas after the announced site consolidation
+  - id: gf-ibm-microelectronics-2014
+    title: GLOBALFOUNDRIES to Acquire IBM's Microelectronics Business
+    organization: GlobalFoundries
+    date: "2014-10-20"
+    kind: Transaction announcement
+    url: https://investors.gf.com/news-releases/news-release-details/globalfoundries-acquire-ibms-microelectronics-business
+    supports: The announced transfer of IBM's microelectronics business, intellectual property, technologists, and manufacturing technologies while IBM retained a stated focus on fundamental semiconductor research
