@@ -56,9 +56,9 @@ brain_nodes = data.fetch("brain_nodes")
 sources = data.fetch("sources")
 chart = data.fetch("rd_chart")
 
-errors << "the editorial arc must contain twelve articles" unless articles.length == 12
+errors << "the editorial arc must contain thirteen articles" unless articles.length == 13
 errors << "the article count in series metadata is stale" unless series.fetch("article_count") == articles.length
-errors << "article numbers must be exactly 1 through 12" unless articles.map { |item| item.fetch("number") } == (1..12).to_a
+errors << "article numbers must be exactly 1 through 13" unless articles.map { |item| item.fetch("number") } == (1..13).to_a
 errors << "article slugs must be unique" unless articles.map { |item| item.fetch("slug") }.uniq.length == articles.length
 errors << "every article needs at least three planned visuals" unless articles.all? { |item| item.fetch("visuals").length >= 3 }
 allowed_statuses = %w[planned researching published revised withdrawn]
@@ -174,7 +174,7 @@ if File.file?(RENDERED_PATH)
   errors << "rendered page does not load the series stylesheet" unless rendered.include?("/assets/css/rd-ratchet.css")
   errors << "rendered page does not load the interaction script" unless rendered.include?("/assets/js/rd-ratchet.js")
   errors << "rendered chart table lost its 2000 values" unless rendered.include?("<tr><th>2000</th><td>57.8</td><td>77.7</td><td>233.0</td></tr>")
-  errors << "rendered page does not contain twelve article cards" unless rendered.scan("data-rd-article-card").length == 12
+  errors << "rendered page does not contain thirteen article cards" unless rendered.scan("data-rd-article-card").length == 13
   source_ids.each do |source_id|
     errors << "rendered page omits source anchor #{source_id}" unless rendered.include?(%(id="source-#{source_id}"))
   end
@@ -189,4 +189,4 @@ if errors.any?
   exit 1
 end
 
-puts "R&D Ratchet audit passed (12 articles, #{models.length} models, #{nodes.length} argument nodes, #{sources.length} sources)."
+puts "R&D Ratchet audit passed (13 articles, #{models.length} models, #{nodes.length} argument nodes, #{sources.length} sources)."

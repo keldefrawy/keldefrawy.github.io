@@ -8,7 +8,7 @@ series:
     industrial research laboratory, what those structures preserve and destroy, and how an
     AI-native public–private successor might be designed.
   updated: "2026-07-23"
-  article_count: 12
+  article_count: 13
   published_count: 0
 
 rd_chart:
@@ -324,41 +324,48 @@ articles:
     claim: The program model coordinates breakthroughs but does not automatically preserve the capability it assembles.
     visuals: [Temporary-lab lifecycle, Program handoff map, Artifact survival ledger]
   - number: 7
+    slug: academia-not-missing-laboratory
+    title: The University Is Not the Missing Laboratory
+    status: researching
+    case: Academic basic research, grant cycles, publication incentives, and facilities and administrative costs
+    claim: Universities are indispensable to discovery and training, but project grants and publication markets do not fund the complete institutional stack required for durable R&D.
+    visuals: [Academic R&D role map, Grant-and-overhead feedback loop, Direct-versus-shared-cost explainer]
+  - number: 8
     slug: parc-appropriability-trap
     title: PARC and the Appropriability Trap
     status: planned
     case: PARC, Xerox, and SRI
     claim: Invention, recognition, complementary assets, and value capture are four different capabilities.
     visuals: [Four-capability matrix, IP-and-host timeline, Spillover map]
-  - number: 8
+  - number: 9
     slug: outputs-and-vanishing-capability
     title: Papers, Patents, Prototypes—and Vanishing Capability
     status: planned
     case: Karim’s publication, patent, program, and transition record
     claim: Output metrics can rise while the ability to produce the next generation of work declines.
     visuals: [Output-versus-capability dashboard, Test-of-time timeline, Evidence-quality matrix]
-  - number: 9
+  - number: 10
     slug: startup-not-laboratory
     title: The Startup Is Not a Research Laboratory
     status: planned
     case: Confidencial and research spinouts
     claim: A startup can complete one transition but cannot rationally maintain the research commons.
     visuals: [Paper-to-product work map, Incentive comparison, Missing-middle cost stack]
-  - number: 10
+  - number: 11
     slug: consolidation-as-triage
     title: Consolidation as Triage
     status: planned
     case: SRI/PARC and the announced IBM/HRL transaction
     claim: Preservation should be measured by surviving teams and capabilities, not by the transaction announcement.
     visuals: [Before-and-after capability ledger, Acquisition outcome tree, Five-year scorecard]
-  - number: 11
+  - number: 12
     slug: last-transfer-window
     title: The Last Transfer Window
     status: planned
     case: The remaining mentorship overlap
     claim: Institutional memory is perishable, making delay more costly than budget statistics reveal.
     visuals: [Mentorship-chain model, Capability decay curves, Window indicators]
-  - number: 12
+  - number: 13
     slug: ai-native-public-good
     title: An AI-Native Laboratory for the Public Good
     status: planned
@@ -437,3 +444,178 @@ sources:
     kind: Agency primary source
     url: https://www.energy.gov/technologycommercialization/technology-commercialization-fund
     supports: Cost-shared lab-to-market partnerships and commercialization infrastructure
+  - id: arora-corporate-science
+    title: The decline of science in corporate R&D
+    organization: Ashish Arora, Sharon Belenzon, and Andrea Patacconi
+    date: "2018"
+    kind: Peer-reviewed empirical study
+    url: https://doi.org/10.1002/smj.2693
+    supports: The documented decline in scientific publication by large corporate R&D performers between 1980 and 2007 and the authors' analysis of narrower firm scope
+  - id: bloom-idea-productivity
+    title: Are Ideas Getting Harder to Find?
+    organization: Nicholas Bloom, Charles I. Jones, John Van Reenen, and Michael Webb
+    date: "2020"
+    kind: Peer-reviewed empirical study
+    url: https://doi.org/10.1257/aer.20180338
+    supports: Evidence that rising research effort has accompanied declining measured research productivity in several domains, subject to the study's choice of exponential-growth benchmarks
+  - id: turing-computable-numbers
+    title: On Computable Numbers, with an Application to the Entscheidungsproblem
+    organization: Alan M. Turing
+    date: "1936"
+    kind: Primary scientific paper
+    url: https://doi.org/10.1112/plms/s2-42.1.230
+    supports: Turing's model of general computation and proof that no general mechanical decision procedure solves every instance of the stated decision problem
+  - id: turing-morphogenesis
+    title: The Chemical Basis of Morphogenesis
+    organization: Alan M. Turing
+    date: "1952"
+    kind: Primary scientific paper
+    url: https://doi.org/10.1098/rstb.1952.0012
+    supports: Turing's cross-disciplinary reaction-diffusion model showing how simple local dynamics can generate biological pattern
+  - id: shannon-communication
+    title: A Mathematical Theory of Communication
+    organization: Claude E. Shannon
+    date: "1948"
+    kind: Primary scientific paper
+    url: https://www.cs.ox.ac.uk/activities/ieg/e-library/sources/shannon1948.pdf
+    supports: The mathematical separation of source, channel, noise, coding, and receiver and the resulting limits on reliable communication
+  - id: shannon-bandwagon
+    title: The Bandwagon
+    organization: Claude E. Shannon
+    date: "1956"
+    kind: Primary scientific editorial
+    url: https://doi.org/10.1109/TIT.1956.1056774
+    supports: Shannon's warning that fashionable relabeling and weak applications could dilute information theory and his call for rigorous research
+  - id: von-neumann-edvac
+    title: First Draft of a Report on the EDVAC
+    organization: John von Neumann
+    date: "1945"
+    kind: Primary technical report
+    url: https://library.si.edu/digital-library/book/firstdraftofrepo00vonn
+    supports: An early public specification of stored-program computer organization; attribution of the underlying group contributions requires historical care
+  - id: ias-computer-project
+    title: The Electronic Computer Project
+    organization: Institute for Advanced Study
+    date: Current archival history
+    kind: Institutional archive
+    url: https://www.ias.edu/electronic-computer-project
+    supports: The 1945–57 project, its mixed public and institutional support, its engineering duration, its open reports, and the replication of its architecture
+  - id: von-neumann-reliable-components
+    title: Probabilistic Logics and the Synthesis of Reliable Organisms from Unreliable Components
+    organization: John von Neumann
+    date: "1956"
+    kind: Primary scientific paper
+    url: https://doi.org/10.1515/9781400882618-003
+    supports: The use of redundancy and restoring mechanisms to synthesize reliable computation from unreliable components
+  - id: feynman-room-bottom
+    title: There's Plenty of Room at the Bottom
+    organization: Richard P. Feynman
+    date: "1959"
+    kind: Primary scientific lecture
+    url: https://calteches.library.caltech.edu/1976/
+    supports: Feynman's technically grounded invitation to develop atom-scale manipulation, dense storage, and miniaturized machines before a mature field or roadmap existed
+  - id: feynman-cargo-cult
+    title: Cargo Cult Science
+    organization: Richard P. Feynman
+    date: "1974"
+    kind: Primary scientific address
+    url: https://calteches.library.caltech.edu/3043/
+    supports: Feynman's argument for reporting disconfirming evidence and practicing scientific integrity beyond the outward form of experimentation
+  - id: feynman-quantum-simulation
+    title: Simulating Physics with Computers
+    organization: Richard P. Feynman
+    date: "1982"
+    kind: Primary scientific paper
+    url: https://authors.library.caltech.edu/records/a1kgk-xyk45
+    supports: Feynman's argument that exact simulation of quantum physics motivates a computing machine governed by quantum mechanics
+  - id: ncses-ffrdc-2024
+    title: R&D Spending at Federally Funded R&D Centers Surpassed $31 Billion in FY 2024
+    organization: National Center for Science and Engineering Statistics
+    date: "2025-08-26"
+    kind: Federal statistical report
+    url: https://ncses.nsf.gov/pubs/nsf25351
+    supports: The number of FFRDCs, expenditure growth, funding concentration, and FY2024 R&D composition
+  - id: far-ffrdc
+    title: Federal Acquisition Regulation 35.017—Federally Funded Research and Development Centers
+    organization: U.S. General Services Administration
+    date: Current federal regulation
+    kind: Federal regulation
+    url: https://www.acquisition.gov/far/35.017
+    supports: The special long-term need, continuity, independence, access, sponsorship, and periodic-review requirements that define the FFRDC relationship
+  - id: gao-dhs-ffrdc-2025
+    title: "Federal Research Centers: DHS Actions Could Reduce the Potential for Unnecessary Overlap among Its R&D Projects"
+    organization: U.S. Government Accountability Office
+    date: "2024-10-30"
+    kind: Federal oversight report
+    url: https://www.gao.gov/products/gao-25-106394
+    supports: A bounded example of FFRDC work organized through task orders and weaknesses in tracking how sponsors used resulting deliverables
+  - id: ncses-herd-2024
+    title: Universities Report 8.1% Growth in R&D Expenditures in FY 2024, Reaching Over $117 Billion
+    organization: National Center for Science and Engineering Statistics
+    date: "2026-02-18"
+    kind: Federal statistical report
+    url: https://ncses.nsf.gov/pubs/nsf26305
+    supports: Academic R&D totals, sources, fields, concentration, and the institutional share of university research funding
+  - id: gao-grant-burden
+    title: "Federal Research Grants: Opportunities Remain for Agencies to Streamline Administrative Requirements"
+    organization: U.S. Government Accountability Office
+    date: "2016-06-23"
+    kind: Federal oversight report
+    url: https://www.gao.gov/products/gao-16-573
+    supports: The administrative workload created by federal grant requirements and opportunities to standardize, postpone, or simplify pre-award requirements
+  - id: gao-nih-indirect
+    title: "Biomedical Research: NIH Should Assess the Impact of Growth in Indirect Costs on Its Mission"
+    organization: U.S. Government Accountability Office
+    date: "2013-09-24"
+    kind: Federal oversight report
+    url: https://www.gao.gov/products/gao-13-760
+    supports: The functions and historical growth of NIH facilities and administrative reimbursements and the need to assess their effect on research capacity
+  - id: gao-nsf-indirect
+    title: "National Science Foundation: Preliminary Observations on Indirect Costs for Research"
+    organization: U.S. Government Accountability Office
+    date: "2017-05-24"
+    kind: Federal oversight testimony
+    url: https://www.gao.gov/products/gao-17-576t
+    supports: NSF indirect costs as a share of annual award funding during FY2000–16 and weaknesses in rate-negotiation documentation
+  - id: nih-indirect-guidance-2025
+    title: "Supplemental Guidance to the 2024 NIH Grants Policy Statement: Indirect Cost Rates"
+    organization: National Institutes of Health
+    date: "2025-02-07"
+    kind: Agency policy notice
+    url: https://www.grants.nih.gov/grants/guide/notice-files/NOT-OD-25-068.html
+    supports: NIH's attempted replacement of negotiated facilities and administrative rates with a standard 15 percent rate
+  - id: first-circuit-nih-2026
+    title: Commonwealth of Massachusetts v. National Institutes of Health
+    organization: U.S. Court of Appeals for the First Circuit
+    date: "2026-01-05"
+    kind: Federal appellate opinion
+    url: https://www.ca1.uscourts.gov/sites/ca1/files/opnfiles/25-1343P-01A.pdf
+    supports: The affirmance of the order permanently enjoining and vacating NIH's 2025 indirect-cost guidance
+  - id: azoulay-incentives
+    title: "Incentives and Creativity: Evidence from the Academic Life Sciences"
+    organization: Pierre Azoulay, Joshua S. Graff Zivin, and Gustavo Manso
+    date: "2011"
+    kind: Peer-reviewed empirical study
+    url: https://doi.org/10.1111/j.1756-2171.2011.00140.x
+    supports: A matched comparison associating HHMI's longer, more failure-tolerant investigator funding with more high-impact and exploratory work than conventional project funding
+  - id: wang-novelty
+    title: "Bias against Novelty in Science: A Cautionary Tale for Users of Bibliometric Indicators"
+    organization: Jian Wang, Reinhilde Veugelers, and Paula Stephan
+    date: "2017"
+    kind: Peer-reviewed empirical study
+    url: https://doi.org/10.1016/j.respol.2017.06.006
+    supports: Evidence that novel research has more variable impact, delayed recognition, broader cross-field influence, and disadvantages under short-window bibliometric evaluation
+  - id: smaldino-bad-science
+    title: The Natural Selection of Bad Science
+    organization: Paul E. Smaldino and Richard McElreath
+    date: "2016"
+    kind: Peer-reviewed theoretical study
+    url: https://doi.org/10.1098/rsos.160384
+    supports: A formal population model in which institutional selection for publication can favor poor methods without requiring individual fraud
+  - id: nasem-integrity
+    title: Fostering Integrity in Research
+    organization: National Academies of Sciences, Engineering, and Medicine
+    date: "2017"
+    kind: Consensus study report
+    url: https://doi.org/10.17226/21896
+    supports: The system-level relationship among research incentives, publication pressure, stewardship, and scientific integrity

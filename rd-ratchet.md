@@ -22,7 +22,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       <p class="rd-series-hero__intro">{{ rd.series.description }}</p>
       <div class="rd-series-hero__status" aria-label="Series status">
         <span><strong>{{ rd.series.published_count }}</strong> published</span>
-        <span><strong>1</strong> in research</span>
+        <span><strong>2</strong> in research</span>
         <span><strong>11</strong> planned</span>
         <span><strong>4</strong> evidence classes</span>
       </div>

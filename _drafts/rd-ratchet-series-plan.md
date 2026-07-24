@@ -89,7 +89,7 @@ Each article should analyze the same questions so the cases accumulate into an a
 
 The comparison should remain qualitative until sufficiently comparable data exist. A false numerical score would create precision without validity.
 
-## The twelve-article series
+## The thirteen-article series
 
 ### 1. The Nearly Trillion-Dollar R&D System That Cannot Think Long
 
@@ -161,7 +161,19 @@ DARPA program managers can assemble extraordinary cross-organizational teams, gi
 
 **Fairness:** The finite tenure of DARPA program managers and aggressive milestones are sources of urgency and strength, not defects by themselves. The failure occurs when no complementary institution is rewarded to catch and preserve what a successful program creates.
 
-### 7. PARC and the Appropriability Trap
+### 7. The University Is Not the Missing Laboratory
+
+**Function:** Give academia its own incentive analysis rather than treating it as a footnote to corporate-laboratory decline.
+
+**Central claim:** Universities are indispensable to basic research, open knowledge, and scientific training, but project grants, publication markets, degree clocks, and facilities-and-administrative reimbursement do not fund the complete institutional stack required for durable R&D.
+
+**Evidence:** Use NCSES higher-education R&D composition and concentration; empirical comparisons of project and investigator funding; work on novelty, delayed recognition, and incentive selection; GAO analyses of grant burden and indirect costs; the 2025 NIH indirect-cost notice; and the January 2026 First Circuit opinion affirming the permanent injunction against that notice.
+
+**Overhead discipline:** Reject both “all overhead is waste” and “negotiated rates prove efficient spending.” Explain modified total direct costs, the difference between facilities and administration, legitimate shared capability, administrative accretion, institutional cross-subsidy, and the feedback loop through which grant volume becomes necessary to sustain the grant system.
+
+**Institutional implication:** Fund bounded projects, durable capability, and public accountability as distinct purchases. Do not ask graduate students, technology-transfer offices, or indirect-cost recovery to impersonate a permanent systems-and-transition organization.
+
+### 8. PARC and the Appropriability Trap
 
 **Function:** Replace the cliché that Xerox “failed to see the future” with a sharper economic question.
 
@@ -171,7 +183,7 @@ Use the 2023 donation of PARC to SRI—including the disclosed allocation of pat
 
 **Broader mechanism:** Knowledge spillovers make foundational research socially valuable and privately underfunded. This is precisely where government has a legitimate role, provided public funding does not merely socialize risk while privatizing all durable capability.
 
-### 8. Papers, Patents, Prototypes—and Vanishing Capability
+### 9. Papers, Patents, Prototypes—and Vanishing Capability
 
 **Function:** Attack the output-accounting problem using your own record rather than someone else’s.
 
@@ -181,7 +193,7 @@ Your site lists 79 research works, 31 granted patents, 12 funded programs, open-
 
 **Use the 2024 Test of Time Award carefully:** It is a rare retrospective signal of enduring influence, but even long-term citation or recognition does not by itself establish deployment or institutional continuity.
 
-### 9. The Startup Is Not a Research Laboratory
+### 10. The Startup Is Not a Research Laboratory
 
 **Function:** Examine venture and market incentives from inside technology transition.
 
@@ -191,7 +203,7 @@ Use Confidencial to describe the missing work between a paper or patent and a pr
 
 **Important balance:** Do not portray commercialization as contamination. The failure is asking commercialization vehicles to fund public goods for which they cannot capture a return.
 
-### 10. Consolidation as Triage: SRI/PARC and IBM/HRL
+### 11. Consolidation as Triage: SRI/PARC and IBM/HRL
 
 **Function:** Return to the present after the incentive models are understood.
 
@@ -199,7 +211,7 @@ Use Confidencial to describe the missing work between a paper or patent and a pr
 
 Treat the two cases differently. PARC’s donation to SRI closed in 2023. As of July 23, 2026, IBM has announced and signed an agreement to acquire HRL, but the transaction remains subject to closing conditions and is expected to close later in 2026. Publish an update after closing rather than writing as though it has already occurred.
 
-### 11. The Last Transfer Window
+### 12. The Last Transfer Window
 
 **Function:** Establish urgency without theatrical countdowns.
 
@@ -216,7 +228,7 @@ Define the window as **one institutional generation**, not an unsupported calend
 
 **Global claim:** If the window closes, the cost will not be confined to U.S. competitiveness. The world loses institutions capable of producing foundational knowledge and trustworthy infrastructure whose benefits cannot be fully appropriated by their sponsors.
 
-### 12. An AI-Native Laboratory for the Public Good
+### 13. An AI-Native Laboratory for the Public Good
 
 **Function:** End with an institutional design, not nostalgia or a slogan.
 
@@ -298,7 +310,7 @@ The blog posts should be written so they can later be decomposed, not merely con
 17. The AI-native R&D institution
 18. A ten-year public–private experiment
 
-The book will need original chapters on universities, labor markets, international comparison, and the political economy of public funding. These should not be forced into the initial blog series without firsthand or documentary depth.
+The book will need additional original chapters on labor markets, international comparison, and the political economy of public funding. These should not be forced into the initial blog series without firsthand or documentary depth.
 
 ## Proof obligations for the book
 
@@ -371,10 +383,10 @@ Publish every two or three weeks over seven to nine months.
 
 - Publish Article 1 quickly enough to use the IBM–HRL announcement as the current hook.
 - Publish Articles 2–3 as a paired Lucent/AT&T comparison.
-- Publish Articles 4–7 as the institutional incentive cases.
-- Pause after Article 7 to conduct follow-up interviews prompted by reader responses.
-- Publish Articles 8–10 as the synthesis of metrics, transition, and consolidation.
-- Publish Articles 11–12 as the urgent and constructive conclusion.
+- Publish Articles 4–8 as the institutional incentive cases, including the dedicated academic-system analysis.
+- Pause after Article 8 to conduct follow-up interviews prompted by reader responses.
+- Publish Articles 9–11 as the synthesis of metrics, transition, and consolidation.
+- Publish Articles 12–13 as the urgent and constructive conclusion.
 
 Maintain a private book file in parallel. After each article, preserve cut material, contradictory evidence, interview excerpts, data tables, and unresolved questions. Those are book assets, not waste.
 
