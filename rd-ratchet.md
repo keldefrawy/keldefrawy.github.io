@@ -51,7 +51,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
   <section class="rd-thesis" aria-labelledby="rd-thesis-title">
     <div>
       <p class="rd-kicker">The proposition</p>
-      <h2 id="rd-thesis-title">The history and trajectory of institutions are the evidence. The incentive structures are the subject.</h2>
+      <h2 id="rd-thesis-title">The history and trajectory of these institutions provide the evidence. The incentive structures are the subject.</h2>
     </div>
     <blockquote>
       America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — quarterly corporate-like returns, finite short-term government programs, billable projects leading to ballooning administrative and non-productive work, publication metrics, patent accounting, and venture-backed commercialization optimized for acquisition or IPO. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capabilities faster than it has replenished them.
