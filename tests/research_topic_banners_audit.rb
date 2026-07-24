@@ -78,6 +78,7 @@ style_checks = {
   "supports six-topic ribbons" => styles.include?(".research-topic-banner__list--6"),
   "keeps the page header in normal flow" => styles.match?(/\.research-record-page > \.research-record-header\s*\{[^}]*float:\s*none;[^}]*position:\s*static;[^}]*width:\s*auto;/m),
   "keeps nested record sections full-width" => styles.match?(/\.research-record-page > \.research-record\s*\{[^}]*float:\s*none;[^}]*padding:\s*0;[^}]*width:\s*auto;/m),
+  "keeps the first patent entry typographically consistent" => !styles.include?(".patent-record > p:first-of-type") && styles.include?(".patent-record > .patent-record__note"),
   "has a visible focus state" => styles.include?(".research-topic-banner__viewport:focus-visible"),
   "has mobile topic guidance" => styles.include?(".research-topic-banner__hint-mobile"),
   "has print-safe wrapping" => styles.match?(/@media print.*?\.research-topic-banner__list--5,/m)

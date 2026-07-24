@@ -3995,7 +3995,7 @@ body.quick-abstract-dialog-open {
   padding: 0.78rem 0;
 }
 
-.patent-record > p:first-of-type {
+.patent-record > .patent-record__note {
   border-bottom: 0;
   color: var(--publication-muted);
   font-size: 0.72rem;

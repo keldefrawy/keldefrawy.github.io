@@ -293,6 +293,10 @@
   margin-top: 0;
 }
 
+#rd-argument-title {
+  max-width: 24ch;
+}
+
 .rd-section-heading > p:last-child {
   color: var(--rd-muted);
 }
