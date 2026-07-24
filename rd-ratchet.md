@@ -281,7 +281,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       <div class="rd-brain-map" data-rd-brain-map>
         <canvas class="rd-map-lines" data-rd-brain-lines aria-hidden="true"></canvas>
         {% for node in rd.brain_nodes %}
-        <button type="button" class="rd-brain-node rd-brain-node--{{ node.position }}" data-rd-brain-node="{{ node.id }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ node.title }}</button>
+        <button type="button" class="rd-brain-node rd-brain-node--{{ node.position }}" data-rd-brain-node="{{ node.id }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ node.title | upcase }}</button>
         {% endfor %}
       </div>
       <aside class="rd-brain-detail" data-rd-brain-detail aria-live="polite">

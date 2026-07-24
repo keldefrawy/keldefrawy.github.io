@@ -115,6 +115,7 @@ end
 end
 
 page = File.read(PAGE_PATH, encoding: "UTF-8")
+style = File.read(STYLE_PATH, encoding: "UTF-8")
 %w[
   data-rd-trend
   data-rd-model-explorer
@@ -129,6 +130,9 @@ errors << "landing page omits the source ledger" unless page.include?("rd-source
 errors << "landing page omits the public editorial policy" unless page.include?("/rd-ratchet/method/")
 errors << "landing page cannot filter published articles" unless page.include?('data-rd-article-filter="available"')
 errors << "landing page cannot retain withdrawal records" unless page.include?('data-rd-article-filter="withdrawn"')
+if style.match?(/\.rd-brain-node[^\{]*\.is-active[^\{]*\{[^\}]*\btransform\s*:/m)
+  errors << "AI-native laboratory nodes must not change position when selected"
+end
 
 config = YAML.load_file(File.join(ROOT, "_config.yml"))
 errors << "Jekyll does not publish revision snapshots" unless config.fetch("collections", {}).key?("rd_revisions")
