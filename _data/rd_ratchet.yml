@@ -8,7 +8,7 @@ series:
     industrial research laboratory, what those structures preserve and destroy, and how an
     AI-native public–private successor might be designed.
   updated: "2026-07-24"
-  article_count: 15
+  article_count: 17
   published_count: 0
 
 rd_chart:
@@ -388,6 +388,20 @@ articles:
     claim: Institutional memory is perishable, making delay more costly than budget statistics reveal.
     visuals: [Mentorship-chain model, Capability decay curves, Window indicators]
   - number: 15
+    slug: ai-audits-scientific-record
+    title: When AI Audits What Science Takes for Granted
+    status: planned
+    case: Mathematics; formal proof; the Microsoft-linked Majorana retraction; AI-assisted replication
+    claim: How much of the scientific record is verified, and how much is merely unchallenged? AI may expose epistemic debt, subtracting from accepted knowledge before it adds to it.
+    visuals: [Epistemic-status ledger, AI verification pipeline, Audit-shock curve]
+  - number: 16
+    slug: cargo-cult-science-machine-speed
+    title: Cargo Cult Science at Machine Speed
+    status: planned
+    case: Shannon's bandwagon; Feynman's cargo cult; Wigner's unreasonable effectiveness; data-driven AI and hallucination
+    claim: LLMs can industrialize the surface form of science—fluent prose, citations, equations, and experimental ritual—without increasing contact with truth; AI will amplify the epistemic standards of the institutions that deploy it.
+    visuals: [Historical warning-to-AI map, Mathematical-validity versus empirical-adequacy matrix, Form-to-witness verification funnel]
+  - number: 17
     slug: ai-native-public-good
     title: An AI-Native Laboratory for the Public Good
     status: planned
@@ -718,3 +732,87 @@ sources:
     kind: Transaction announcement
     url: https://investors.gf.com/news-releases/news-release-details/globalfoundries-acquire-ibms-microelectronics-business
     supports: The announced transfer of IBM's microelectronics business, intellectual property, technologists, and manufacturing technologies while IBM retained a stated focus on fundamental semiconductor research
+  - id: lamport-errors-in-proofs
+    title: Errors in Proofs
+    organization: Leslie Lamport
+    date: "2019-10-22"
+    kind: First-person methodological note with a non-random sample
+    url: https://lamport.azurewebsites.net/tla/proof-statistics.html
+    supports: Lamport's classification of errors reported by one unusually careful algebra reviewer—28 of 84 reviewed papers contained an incorrect statement in a proof or result, while 11 reported incorrect results—and his explicit warning that the sample is not an estimate for all mathematics
+  - id: greiffenhagen-math-peer-review
+    title: Checking Correctness in Mathematical Peer Review
+    organization: Christian Greiffenhagen
+    date: "2023"
+    kind: Peer-reviewed qualitative study
+    url: https://doi.org/10.1177/03063127231200274
+    supports: Evidence from 95 interviews and more than 100 referee reports that mathematical peer review adds confidence but does not certify correctness, and that publication is often only the beginning of community verification
+  - id: nature-majorana-retraction-2021
+    title: "Retraction Note: Quantized Majorana Conductance"
+    organization: Nature
+    date: "2021-03-08"
+    kind: Publisher retraction record
+    url: https://www.nature.com/articles/s41586-021-03373-x
+    supports: The retraction of the 2018 Nature paper, the accompanying data repository, and the documented Microsoft Station Q Delft affiliation of one author
+  - id: nature-majorana-microsoft-report-2021
+    title: Evidence of Elusive Majorana Particle Dies—But Computing Hope Lives On
+    organization: Nature
+    date: "2021-03-10"
+    kind: Contemporaneous science reporting
+    url: https://www.nature.com/articles/d41586-021-00612-z
+    supports: Nature's description of the retracted 2018 work as led by researchers at a Microsoft laboratory in the Netherlands and of the authors' stated concern about insufficient rigor in the original data analysis
+  - id: nature-quantum-reproducibility-2021
+    title: Quantum Computing's Reproducibility Crisis
+    organization: Sergey Frolov in Nature
+    date: "2021-04-14"
+    kind: Expert commentary with contested examples
+    url: https://doi.org/10.1038/d41586-021-00954-8
+    supports: A field expert's account of failed confirmations, alternative explanations, selective-data concerns, and the need for open data and multidisciplinary scrutiny in Majorana research; the claims are commentary and must not be presented as adjudicated findings
+  - id: formal-math-2025
+    title: "FormalMATH: Benchmarking Formal Mathematical Reasoning of Large Language Models"
+    organization: Zhouliang Yu and colleagues
+    date: "2025"
+    kind: Technical preprint and benchmark
+    url: https://arxiv.org/abs/2505.02735
+    supports: Both the promise and present limits of AI-assisted formalization—a 5,560-problem Lean 4 benchmark, a human-in-the-loop validation pipeline, and a reported best-model success rate of 16.46 percent under the authors' evaluation budget
+  - id: liquid-tensor-formalization
+    title: Completion of the Liquid Tensor Experiment
+    organization: Lean Prover Community
+    date: "2022-07-15"
+    kind: Formalization project record
+    url: https://leanprover-community.github.io/blog/posts/lte-final/
+    supports: The completed Lean verification of the Clausen–Scholze liquid-vector-space theorem and the substantial expert collaboration required to formalize frontier mathematics
+  - id: wigner-unreasonable-effectiveness
+    title: The Unreasonable Effectiveness of Mathematics in the Natural Sciences
+    organization: Eugene P. Wigner
+    date: "1960"
+    kind: Primary scientific and philosophical essay
+    url: https://doi.org/10.1002/cpa.3160130102
+    supports: Wigner's argument that mathematical concepts developed in one setting can describe physical phenomena with surprising accuracy, alongside his emphasis that such empirical validity is a remarkable and domain-bounded fact rather than a license to equate formal elegance with truth
+  - id: google-unreasonable-effectiveness-data
+    title: The Unreasonable Effectiveness of Data
+    organization: Alon Halevy, Peter Norvig, and Fernando Pereira
+    date: "2009"
+    kind: Peer-reviewed expert perspective
+    url: https://research.google/pubs/the-unreasonable-effectiveness-of-data/
+    supports: The argument that very large datasets and relatively simple learning methods can outperform smaller-data approaches built around more elaborate models in several natural-language tasks
+  - id: openai-why-language-models-hallucinate
+    title: Why Language Models Hallucinate
+    organization: Adam Tauman Kalai, Ofir Nachum, Santosh S. Vempala, and Edwin Zhang
+    date: "2025-09-05"
+    kind: Technical research paper and institutional explainer
+    url: https://openai.com/index/why-language-models-hallucinate/
+    supports: The authors' analysis that next-word prediction lacks truth labels for low-frequency facts and that accuracy-only evaluations can reward guessing over calibrated abstention
+  - id: acm-cargo-cult-ai
+    title: "Cargo Cult AI: Is the Ability to Think Scientifically the Defining Essence of Intelligence?"
+    organization: Peter J. Denning
+    date: "2023"
+    kind: Expert perspective
+    url: https://doi.org/10.1145/3595860
+    supports: A prior explicit application of Feynman's cargo-cult-science critique to language models and the distinction between generating convincing forms and conducting falsifiable scientific inquiry
+  - id: karim-composed-model-hallucinations
+    title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
+    organization: Karim Eldefrawy
+    date: "2026"
+    kind: Author-supplied abstract for work under review
+    url: https://keldefrawy.github.io/knowledge/papers/paper-79/
+    supports: The author's reported calibration-closure results for several model-composition operators, the limits of those results before independent manuscript audit, and the distinction between unsupported model confidence and a checkable witness

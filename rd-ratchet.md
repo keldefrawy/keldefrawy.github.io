@@ -233,7 +233,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <div class="rd-section-heading rd-section-heading--with-controls">
       <div>
         <p class="rd-kicker">Publication architecture</p>
-        <h2 id="rd-articles-title">Fifteen articles, added as their evidence closes</h2>
+        <h2 id="rd-articles-title">Seventeen articles, added as their evidence closes</h2>
         <p>The landing page remains the map. Each published article will become a stable, separately sourced record rather than replacing this overview.</p>
       </div>
       <div class="rd-article-filters" role="group" aria-label="Filter articles by status">

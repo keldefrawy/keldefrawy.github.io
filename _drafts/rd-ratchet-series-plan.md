@@ -91,7 +91,7 @@ Each article should analyze the same questions so the cases accumulate into an a
 
 The comparison should remain qualitative until sufficiently comparable data exist. A false numerical score would create precision without validity.
 
-## The fifteen-article series
+## The seventeen-article series
 
 ### 1. The Nearly Trillion-Dollar R&D System That Cannot Think Long
 
@@ -254,7 +254,107 @@ Define the window as **one institutional generation**, not an unsupported calend
 
 **Global claim:** If the window closes, the cost will not be confined to U.S. competitiveness. The world loses institutions capable of producing foundational knowledge and trustworthy infrastructure whose benefits cannot be fully appropriated by their sponsors.
 
-### 15. An AI-Native Laboratory for the Public Good
+### 15. When AI Audits What Science Takes for Granted
+
+**Function:** Ask whether AI's first large contribution to science will be an epistemic audit rather than a wave of new discoveries.
+
+**Central claim:** AI-assisted formalization, reanalysis, and replication may expose a large stock of **epistemic debt**: claims that entered the usable scientific record through publication and citation but were never independently verified at the level their downstream users assume. The first visible effect could therefore be a contraction in trusted knowledge before an expansion—a great subtraction that makes science look less certain while making it more reliable.
+
+**The mathematical claim must remain bounded:** Do not write that 30–40 percent of mathematical papers have false theorems. Leslie Lamport reported that, among 84 papers reviewed by one unusually careful *Mathematical Reviews* algebra reviewer, 28 reviews described an incorrect statement in a proof or result and 11 described an incorrect result. Lamport explicitly warned that this non-random, field-specific, subjectively classified sample should not be treated as an estimate for the whole mathematical literature. The defensible fact is that the often-repeated “one third” figure concerns errors in proofs **or** results in this narrow sample—not one third of all theorems being false.
+
+**What publication means:** Peer review is a filter, not a proof certificate. Greiffenhagen's study of 95 interviews and more than 100 referee reports found that mathematical peer review adds confidence but does not guarantee correctness; difficult results acquire credibility through later use, scrutiny, correction, and time. The article should distinguish at least five states that are routinely collapsed into “known”: published, checked by a specialist, formally verified or computationally reproduced, independently replicated, and robust across alternative assumptions.
+
+**Quantum case:** Use the 2021 retraction of the 2018 *Nature* paper “Quantized Majorana conductance” as a documented case, not as an accusation against a company or field. The record includes a Microsoft Station Q Delft affiliation, and *Nature* described the work as led by researchers at a Microsoft laboratory in the Netherlands. Keep three categories separate: a retracted result, a failed or contrary replication, and an actively disputed interpretation. Sergey Frolov's *Nature* commentary on Majorana research—including its discussion of papers in *Science*—is an expert argument about selective data and alternative explanations, not a publisher adjudication of every paper it cites.
+
+**AI's actual role:** A language model declaring a paper wrong is not verification. AI becomes epistemically useful when it lowers the cost of producing checkable objects: a Lean or Coq formalization whose statement has been matched to the human claim; executable code tied to immutable data and environments; exhaustive sensitivity analysis; provenance-preserving extraction of figures and transformations; or a replication protocol executed against independent measurements. The Liquid Tensor Experiment demonstrates that frontier formalization is possible, but also that it can require sustained collaboration among domain experts and formalizers. FormalMATH demonstrates both progress and current limits: the authors assembled 5,560 formally verified Lean 4 problems, yet their strongest evaluated prover solved only 16.46 percent under the reported budget.
+
+**Non-trivial institutional implication:** Verification is a public good with weak career rewards. AI can reduce its cost but cannot by itself create the incentive to perform it, publish negative findings, preserve artifacts, or accept corrections. An AI-native laboratory should therefore maintain an **epistemic balance sheet** for consequential claims: what depends on each result, what evidence is available, what has been reproduced or formally checked, what remains disputed, and what downstream systems must be re-evaluated when a claim fails.
+
+**Counterarguments to answer:**
+
+- Errors are often repairable gaps that do not invalidate the main theorem.
+- Replication failure can reflect tacit experimental knowledge, population differences, or an underspecified protocol rather than a false original claim.
+- AI systems can hallucinate errors, mistranslate a theorem during formalization, reproduce the same hidden assumption, or optimize for finding scandal.
+- A universal verification mandate could freeze exploratory research and divert scarce expert time toward low-value checking.
+- Public error scores could punish honest correction and create incentives to hide uncertainty.
+
+**Design response:** Triage by consequence, not prestige. Audit claims with high downstream dependence, safety significance, capital intensity, or unusually weak provenance first. Record uncertainty and correction without assigning motive. Reward successful verification, informative failure, and artifact repair as research outputs. Preserve both the original claim and the versioned evidentiary record so that correction strengthens institutional memory rather than becoming reputational erasure.
+
+**Planned visuals:**
+
+1. An epistemic-status ledger separating publication, specialist checking, formal verification or computational reproduction, independent replication, and robustness.
+2. An AI verification pipeline showing where model output must cross a deterministic checker, executable artifact, complete-data audit, or independent experiment.
+3. An audit-shock curve in which the trusted corpus initially contracts as hidden errors and unsupported dependencies are found, then grows on a firmer base.
+4. A dependency graph showing how one corrected theorem, dataset, or experimental interpretation propagates into downstream claims.
+
+**Open question:** How much of what we call knowledge is verified, how much is merely unchallenged, and who will pay to discover the difference?
+
+### 16. Cargo Cult Science at Machine Speed
+
+**Function:** Revisit three canonical twentieth-century reflections on scientific form, rigor, and mathematical representation after large language models made the surface of expertise almost free to reproduce.
+
+**Central claim:** AI is an **epistemic amplifier**, not automatically an epistemic improver. LLMs can industrialize scientific surface form—fluent prose, disciplinary vocabulary, citations, equations, code, diagrams, and the ritual structure of an experiment—without a proportional increase in falsifiable content or contact with reality. Institutions with strong verification norms can use the same systems to scale rigor. Institutions rewarded for volume, novelty, and confident answers can use them to scale cargo-cult science.
+
+**The three historical ideas are complementary, not interchangeable:**
+
+1. **Shannon's “The Bandwagon” diagnoses label inflation.** Once information theory became fashionable, researchers could relabel weakly connected work in its vocabulary. In the LLM era, the cost of borrowing a field's vocabulary, citation patterns, and argumentative shape approaches zero. The bandwagon no longer merely attracts marginal papers; it can generate them.
+2. **Feynman's “Cargo Cult Science” diagnoses a broken correction loop.** The outward form of inquiry can be present while the discipline of reporting contrary evidence, alternative explanations, and possible invalidation is absent. An LLM need not be dishonest to reproduce this failure: it has no personal integrity to exercise. The responsibility moves into the workflow, evaluation rule, provenance system, and accountable human institution.
+3. **Wigner's “Unreasonable Effectiveness” identifies a genuine mystery, not a warning against mathematics.** Correct mathematics can map nature with astonishing precision. But three tests remain distinct: whether a derivation is valid, whether its assumptions identify the physical system, and whether observations support the model. An LLM can produce mathematically styled text—or even a valid derivation—without satisfying the second or third test.
+
+**The data bridge:** Halevy, Norvig, and Pereira's 2009 “The Unreasonable Effectiveness of Data” anticipated a central premise of modern language models: scale and weakly structured data can outperform smaller, carefully modeled systems on important tasks. The success is real. The extrapolation “therefore the generated account is true” is not. Predictive effectiveness, mathematical validity, causal explanation, and scientific truth are different achievements.
+
+**The inversion in the age of LLMs:**
+
+- Shannon worried that researchers would borrow one successful field's language; an LLM can borrow the language of every field simultaneously.
+- Feynman worried that people would reproduce the apparatus of science without its integrity; an LLM can reproduce the apparatus without possessing intentions at all.
+- Wigner marveled that mathematics constructed for one purpose could fit nature elsewhere; an LLM can generate a mathematical fit before anyone has established that the symbols refer to the relevant part of nature.
+- Scientific publishing once made plausible form expensive enough to act as a weak signal of effort. Generative systems sharply reduce that cost, so form carries less information about epistemic substance.
+
+**A rigorous taxonomy:** Do not collapse every failure into “hallucination” or “fraud.” The article should distinguish:
+
+- a **mistake**: a corrigible false statement or invalid step;
+- a **mathematical illusion**: an argument that predictably exploits human intuition or an omitted condition while appearing valid;
+- a **model hallucination**: a plausible output unsupported by the model's available evidence;
+- **cargo-cult science**: a process that preserves scientific form while omitting a reliable error-correction mechanism;
+- a **bandwagon effect**: reward-driven expansion of a successful label beyond its evidentiary warrant;
+- **mathematical overreach**: valid formal reasoning whose assumptions or mapping to the world are unsupported;
+- **fraud**: intentional deception, which requires evidence of intent and must never be inferred merely from error, irreproducibility, or AI use.
+
+This taxonomy should develop the early notes in `notes/what-feynman-shannon-missed.md` and `notes/math-illusions-delusion.md`, while replacing personal accusation and intuition-only tests with definitions, falsifiable criteria, and documented examples.
+
+**Modern mechanism:** Kalai and colleagues argue that pretraining exposes a language model to fluent examples rather than truth labels and that accuracy-only evaluations can reward guessing instead of abstention. This is the institutional bridge: human publication and funding systems can create the same selection pressure. If confident production receives credit while uncertainty, replication, and negative evidence do not, both people and models learn to supply the shape of an answer.
+
+**Author's technical bridge:** Use Karim's work under review on composed generative models as disclosed, provisional evidence—not as an established theorem. Its author-supplied abstract reports that several natural composition operators preserve calibration and therefore do not automatically escape a hallucination floor. The constructive boundary is a **checkable witness**: an execution trace, exploit, proof certificate, test result, dataset transformation, or independently repeatable measurement changes the evidence state rather than merely adding another confident model opinion.
+
+**Non-trivial institutional implication:** The scarce resource in AI-assisted science will not be plausible hypotheses or polished manuscripts. It will be **witness-bearing claims**—claims attached to artifacts that make important parts independently checkable. The AI-native laboratory should reward the production, preservation, and adversarial testing of witnesses, not merely the production of explanations.
+
+One useful model is multiplicative rather than additive:
+
+> Epistemic value = formal validity × empirical adequacy × provenance × adversarial exposure.
+
+This is a conceptual diagnostic, not a literal numerical score. Its point is that excellence in one dimension cannot compensate for a zero in another. Beautiful mathematics does not rescue a model with no identified referent; perfect provenance does not rescue an invalid proof; repeated model agreement does not substitute for independent evidence when all models inherit the same corpus.
+
+**Counterarguments to answer:**
+
+- LLMs can also expose missing assumptions, generate tests, formalize proofs, and make replication cheaper.
+- Scientific form is not empty ornament; shared conventions make complex work inspectable.
+- Exploratory conjectures should not be held to the evidentiary standard of settled claims.
+- Much valuable mathematics has no present physical interpretation and should not be judged by empirical applicability.
+- Wigner's essay celebrates mathematics; recruiting it into a critique risks reversing its meaning.
+- “Cargo cult” can become a lazy insult unless the missing correction mechanism is identified precisely.
+
+**Design response:** Separate an exploratory channel, where speculative AI output is welcome and visibly labeled, from the evidentiary record, where consequential claims must carry provenance and domain-appropriate witnesses. Score abstention and uncertainty. Require competing explanations and disconfirming evidence. Preserve failed replications. Audit shared model and dataset dependencies so apparent agreement among agents is not mistaken for independent confirmation.
+
+**Planned visuals:**
+
+1. A historical warning-to-AI map connecting Shannon, Feynman, Wigner, the data-scaling turn, and modern hallucination mechanisms without implying that the authors made identical claims.
+2. A two-axis matrix separating mathematical validity from empirical adequacy, with examples in each quadrant.
+3. A bandwagon-amplification loop showing how fashionable labels, publication rewards, generated volume, training corpora, and model output reinforce one another.
+4. A form-to-witness funnel that asks what artifact would make each class of scientific claim independently checkable.
+
+**Open question:** When the form of expertise becomes nearly free, what evidence should still be costly enough to trust?
+
+### 17. An AI-Native Laboratory for the Public Good
 
 **Function:** End with an institutional design, not nostalgia or a slogan.
 
@@ -328,13 +428,15 @@ The blog posts should be written so they can later be decomposed, not merely con
 12. The people and apprenticeship system
 13. Consolidation as institutional triage
 14. R&D as a global public good
+15. Epistemic debt and the AI audit of the scientific record
+16. Cargo-cult science, bandwagons, and mathematical overreach at machine speed
 
 ### Part IV — The narrow path forward
 
-15. The last transfer window
-16. Design principles for an incentive-compatible laboratory
-17. The AI-native R&D institution
-18. A ten-year public–private experiment
+17. The last transfer window
+18. Design principles for an incentive-compatible laboratory
+19. The AI-native R&D institution
+20. A ten-year public–private experiment
 
 The book will need additional original chapters on labor markets, international comparison, and the political economy of public funding. These should not be forced into the initial blog series without firsthand or documentary depth.
 
@@ -413,7 +515,7 @@ Publish every two or three weeks over seven to nine months.
 - Publish Articles 8–9 as the governance and institutional-capability pair: who may choose the bets, and what exactly must survive a reorganization.
 - Pause after Article 9 to conduct follow-up interviews prompted by reader responses.
 - Publish Articles 10–13 as the synthesis of appropriation, metrics, transition, and consolidation.
-- Publish Articles 14–15 as the urgent and constructive conclusion.
+- Publish Articles 14–17 as the urgent, epistemic, and constructive conclusion.
 
 Maintain a private book file in parallel. After each article, preserve cut material, contradictory evidence, interview excerpts, data tables, and unresolved questions. Those are book assets, not waste.
 
