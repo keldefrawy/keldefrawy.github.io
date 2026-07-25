@@ -14,11 +14,11 @@ revision_summary: Cross-series review sharpened the distinction between venture 
 reading_time: 14
 central_claim: Venture-backed startups are specialized transition institutions rewarded for focus, speed, demand, and company-level value; asking them to preserve broad, weakly appropriable research capability confuses commercialization with stewardship of a commons.
 claim_status: Provisional firsthand analysis of one spinout, bounded by public transition records and broader venture-capital evidence
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A narrow product bridge carries selected research across integration, compliance, sales, procurement, and support while a wider research commons remains behind.
+hero_image: /assets/images/rd-ratchet/articles/article-12-startup-not-laboratory.webp
+hero_alt: A startup team selects one path from a broad research commons and carries a product across a clock-bound bridge of testing, integration, compliance, manufacturing, delivery, and support.
 hero_caption: Conceptual illustration; it does not disclose Confidencial.io customer, financing, or product-confidential information.
 source_ids:
-  - sri-confidencial-spinout-2022
+  - sri-confidencial-announcement-2022
   - nber-vc-decisions-2016
   - teece-appropriability-1986
   - darpa-race
@@ -40,13 +40,13 @@ argument_map:
   caption: The conclusion concerns incentive fit, not the virtue of founders, investors, customers, or researchers.
   nodes:
     - role: Documented observation
-      title: Research crossed into a company
-      text: SRI’s announcement describes Confidencial.io as a spinout rooted in DARPA Brandeis and RACE research, seed funded and launching a beta product.
-      source_ids: [sri-confidencial-spinout-2022, darpa-race]
+      title: A 2021 spinout reached seed financing in 2022
+      text: The firsthand chronology dates the Confidencial.io spinout to 2021; SRI’s June 2022 announcement documents its DARPA Brandeis and RACE roots, seed financing, and beta launch.
+      source_ids: [sri-confidencial-announcement-2022, darpa-race]
     - role: Transition obligation
       title: The technical form had to change
       text: The product path required current standards, integration into existing applications, usability, customers, and support—not merely the original research artifact.
-      source_ids: [sri-confidencial-spinout-2022]
+      source_ids: [sri-confidencial-announcement-2022]
     - role: Proposed mechanism
       title: Venture selection narrows the objective
       text: Investors evaluate teams, markets, deal structure, value creation, and exits at the company level; broad uncapturable research benefits do not pay the startup’s obligations.
@@ -54,7 +54,7 @@ argument_map:
     - role: Bounded conclusion
       title: Couple, do not conflate, the institutions
       text: Laboratories should produce options and reusable knowledge; startups should productize selected options; public or consortial funding should replenish the commons.
-      source_ids: [teece-appropriability-1986, sri-confidencial-spinout-2022]
+      source_ids: [teece-appropriability-1986, sri-confidencial-announcement-2022]
 objection_ladders:
   - claim: A startup cannot be expected to maintain a broad research commons.
     first_objection: Many frontier companies conduct excellent research and publish foundational work; firm formation can create the focus and capital a laboratory lacks.
@@ -67,11 +67,11 @@ objection_ladders:
     first_response: Yes. The relevant pressure is dependence on a small number of company-level liquidity outcomes, not the moral status of an acquisition or public offering.
     second_objection: Without financing, much research would never reach users, so criticizing exit incentives may privilege unused invention.
     conclusion: Preserve the venture transition channel while funding the precompetitive research commons separately; evaluate an exit by capability and adoption after the transaction, not by valuation alone.
-    source_ids: [nber-vc-decisions-2016, sri-confidencial-spinout-2022]
+    source_ids: [nber-vc-decisions-2016, sri-confidencial-announcement-2022]
 corrections: []
 ---
 
-In 2022 I moved from SRI International into Confidencial.io, a company formed to carry selected privacy and security research toward customers. The change was not a simple relocation of the same work. It changed the objective function.
+Confidencial.io spun out of SRI in 2021 to carry selected privacy and security research toward customers. I moved from a full-time SRI role into building the company while remaining part-time at SRI through early 2023 to finish the DARPA programs. Confidencial.io raised its seed financing in 2022. This was not a simple relocation of the same work. It changed the objective function. <span class="rd-evidence-token" data-evidence="M">M</span>
 
 At a research institute, a technically interesting property can justify a paper, a prototype, a program, or the next proposal. At a startup, the same property must survive integration with software people already use, deployment environments the researcher does not control, procurement, security review, support, pricing, and the possibility that the customer’s urgent problem is not the one the research solved. <span class="rd-evidence-token" data-evidence="M">M</span>
 
@@ -79,11 +79,11 @@ That work is sometimes dismissed as “non-research overhead.” It is not overh
 
 ## What crossed the boundary
 
-[SRI’s June 2022 announcement](#source-sri-confidencial-spinout-2022) describes Confidencial.io as a spinout providing privacy-enhancing technology for existing business applications. It says the core technologies were rooted in the DARPA Brandeis and RACE programs, that the company had seed investors, and that it was launching a private beta after twelve months of development. The announcement also describes a critical redesign: rather than require customers to adopt every research primitive, the product used current cryptographic standards in a form intended to evolve with standards. <span class="rd-evidence-token" data-evidence="D">D</span>
+[SRI’s June 2022 announcement](#source-sri-confidencial-announcement-2022) documents Confidencial.io’s SRI origins, its roots in the DARPA Brandeis and RACE programs, its seed investors, and its private-beta launch after twelve months of development. The announcement date is not the spinout date. It also describes a critical redesign: rather than require customers to adopt every research primitive, the product used current cryptographic standards in a form intended to evolve with standards. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 That is not the abandonment of research. It is selection under a new constraint. The research program could ask whether a mechanism was possible and secure under a model. The company had to ask whether it was deployable inside actual workflows, understandable to users, supportable by a small team, and valuable enough that an organization would pay for it.
 
-The public record is necessarily incomplete. It establishes the spinout, research roots, financing stage, and stated product direction. It does not disclose customer-confidential information, current finances, internal product decisions, or the success of any deployment. Firsthand discussion here remains at the level of institutional mechanism. <span class="rd-evidence-token" data-evidence="M">M</span>
+The public record is necessarily incomplete. It establishes SRI origins, research roots, the June 2022 financing and beta stage, and the stated product direction. The 2021 spinout date and the part-time SRI overlap through early 2023 are firsthand chronology. Neither category discloses customer-confidential information, current finances, internal product decisions, or the success of any deployment. Firsthand discussion here remains at the level of institutional mechanism. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
 
 ## Venture-scale exits, stated precisely
 

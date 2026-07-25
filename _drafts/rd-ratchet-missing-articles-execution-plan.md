@@ -25,7 +25,7 @@ Repository rule: Keep this work local. Do not stage, commit, or push it.
 | 2 | `lucent-coming-apart` | Bounded 2001 Bell Labs/Lucent scene; excellence coexisting with parent fragility; later Nokia custody | Bell-system chronology and contemporaneous Lucent financial history |
 | 3 | `one-heritage-two-incentives` | Lucent versus AT&T as differing post-1996 parent systems | AT&T restructuring plus bounded 2001/2007 firsthand comparison |
 | 4 | `hrl-mission-driven-bargain` | Sponsor-owned mission research and the line between a laboratory and a project portfolio | HRL institutional history, public project record, pending IBM transaction |
-| 5 | `sri-project-funded-institution` | Nonprofit contract research, chargeability, seedlings, and project cliffs | SRI history and public DARPA/project records; PARC is post-tenure documentation only |
+| 5 | `sri-project-funded-institution` | Nonprofit contract research, chargeability, seedlings, and project cliffs | SRI history and public DARPA/project records; PARC combines continuing firsthand campus observation with documented transaction facts |
 | 6 | `darpa-temporary-laboratory` | High-authority temporary networks and the unowned state left after programs | DARPA program-manager model and named public program records |
 | 10 | `parc-appropriability-trap` | Invention, recognition, complementary assets, and value capture as distinct capabilities | PARC primary history, appropriability scholarship, 2023 Xerox–SRI transfer |
 | 11 | `outputs-and-vanishing-capability` | Papers, patents, prototypes, and awards as lossy projections of capability | Site record plus research-metrics and capability-continuity evidence |
@@ -41,7 +41,7 @@ Repository rule: Keep this work local. Do not stage, commit, or push it.
 Every new v0.1 draft must:
 
 1. Remain labeled `Draft`, be locally rendered, and use the permanent article slug.
-2. Separate firsthand memory, documentation, and analysis. It must never imply firsthand access to PARC’s 2023 transfer or to IBM’s announced 2026 HRL transaction.
+2. Separate firsthand memory, documentation, and analysis. PARC’s 2023 arrival may use bounded firsthand campus observation because the author retained an SRI office and badge through 2026, but legal terms and confidential integration decisions remain documentary or outside the author’s knowledge. The IBM/HRL transaction must not be presented as firsthand.
 3. Criticize incentives, governance, and destructive behavior—not the character or private motives of named people.
 4. State a bounded central claim, its falsifier or limiting condition, and the strongest available counterargument.
 5. Include a source-linked evidence chart, a four-stage argument map, and at least two genuine two-level objection ladders.
@@ -57,7 +57,7 @@ The review must test, at minimum:
 - **Laboratory definition:** A laboratory is durable, stateful capability—not a famous name, a building, a budget, or a collection of outputs.
 - **Institutional survival:** Bell Labs, IBM Research, PARC, HRL, SRI, FFRDCs, universities, and corporate labs must be described as continuing institutions where they continue; current breadth and autonomy remain empirical questions.
 - **Transaction status:** PARC joined SRI in 2023. IBM’s HRL transaction is an announced, signed agreement subject to closing unless a later authoritative source establishes closure.
-- **Firsthand boundaries:** Ericsson 2000; Bell Labs/Lucent 2001; Cisco San Jose 2002; AT&T Research 2007; HRL 2010–2016; SRI 2017–2022; Confidencial.io 2022–present.
+- **Firsthand boundaries:** Ericsson 2000; Bell Labs/Lucent 2001; Cisco San Jose 2002; AT&T Research 2007; HRL 2010–2016; full-time SRI work 2017–2021; Confidencial.io spinout in 2021; part-time SRI work through early 2023 while finishing DARPA programs; Confidencial.io seed financing in 2022; continuing SRI office and badge through 2026, without implying participation in confidential SRI/PARC decisions.
 - **Academia:** Universities are indispensable and insufficient as the entire R&D stack. Legitimate facilities and administration must not be collapsed into “waste.”
 - **FFRDCs:** Their chartered continuity and public-purpose role must be distinguished from evidence that some work is task-order-driven or engineering-heavy. “Engineering house at best” is a hypothesis to test, not an across-the-board factual label.
 - **Startups:** Commercialization is a distinct, necessary capability. A startup’s inability to maintain a broad research commons is an incentive mismatch, not a moral failure.
@@ -100,3 +100,4 @@ Record completion evidence here as phases close. Do not mark a phase complete so
 - 2026-07-24 — Phase 6 complete: reviewed all seventeen articles against a canonical fact and terminology matrix; found no irreconcilable thesis conflict, recorded three material corrections and nine source or boundary clarifications, and preserved the detailed disposition ledger in `_drafts/rd-ratchet-cross-series-review-v0-1.md`.
 - 2026-07-24 — Phase 7 complete: revised all thirteen live drafts to v0.2, corrected the AI-amplifier claim and PARC evidence classification, replaced the non-informative transaction chart, tightened article boundaries, added the bounded Xerox commercialization source, and verified that every archived v0.1 hash remains unchanged.
 - 2026-07-24 — Phase 8 complete: Jekyll built successfully; the R&D Ratchet, revision-workflow, and research-topic audits passed; all 76 source URLs returned an HTTP response; and browser inspection at 1280 px and 390 px confirmed all thirteen v0.2 pages render their evidence charts, four-stage argument maps, two objection ladders, source ledgers, and DRAFT links without document-level overflow or console errors. The horizontally scrolled timeline line reached its far-right boundary, and selecting successor-figure nodes changed neither their dimensions nor their positions relative to one another.
+- 2026-07-24 — Post-review author clarification: corrected the chronology to a 2021 Confidencial.io spinout, 2022 seed financing, part-time SRI work through early 2023 while finishing DARPA programs, and an SRI office and badge retained through 2026; retained the 2023 PARC–SRI event as Firsthand for direct campus observation while keeping legal facts documentary and confidential decision-making outside the author’s claimed knowledge.

@@ -15,9 +15,9 @@ reading_time: 17
 central_claim: >-
   Large language models are epistemic amplifiers: they can scale verification inside institutions rewarded for correction, or scale scientific-looking output inside institutions rewarded for volume and confident novelty.
 claim_status: Provisional synthesis; historical essays are used as distinct diagnostic tools, not as predictions of modern AI
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: Scientific-looking text narrows through provenance, formal validity, empirical adequacy, and adversarial testing into a smaller set of witness-bearing claims.
-hero_caption: Conceptual verification funnel; it does not imply that all AI-assisted work or all unformalized science is unreliable.
+hero_image: /assets/images/rd-ratchet/articles/article-16-cargo-cult-machine-speed.webp
+hero_alt: Claude Shannon and his maze-solving mouse Theseus, Richard Feynman and particle-path drawings, and Eugene Wigner and symmetry forms overlook a paper-generating machine and successive evidence funnels.
+hero_caption: Editorial synthesis of ideas associated with Claude Shannon, Richard Feynman, and Eugene Wigner; it is not a historical scene and does not imply that all AI-assisted or unformalized science is unreliable.
 source_ids:
   - shannon-bandwagon
   - feynman-cargo-cult

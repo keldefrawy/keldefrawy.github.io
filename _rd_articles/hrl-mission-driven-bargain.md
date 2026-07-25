@@ -14,8 +14,8 @@ revision_summary: Cross-series review reinforced the HRL/FFRDC legal boundary an
 reading_time: 14
 central_claim: Mission-driven industrial research can preserve deep technical capability when sponsors value it across projects, but it becomes a collection of engineering contracts when reusable teams, infrastructure, and problem-initiation authority are not funded between deliverables.
 claim_status: Provisional institutional analysis grounded in a bounded 2010–2016 firsthand period and public records
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A mission laboratory connects sponsor objectives, research teams, specialized facilities, and transition routes without collapsing them into a single project box.
+hero_image: /assets/images/rd-ratchet/articles/article-04-hrl-mission-owner.webp
+hero_alt: An aircraft and automobile frame a research ecosystem of clean-room scientists, a ruby laser, optical instruments, microchips, circuit boards, and linked laboratories.
 hero_caption: Conceptual illustration; it does not depict an HRL facility, program, or restricted activity.
 source_ids:
   - hrl-about

@@ -38,9 +38,9 @@ The value is not proximity to famous names. It is movement through different inc
 - **2002 — Cisco Systems, San Jose:** an internship adding a product-company view of Silicon Valley’s technology system.
 - **2007 — AT&T Research Labs:** a research internship during graduate school, allowing comparison between two descendants of the Bell system rather than treating “Bell Labs” as one continuous abstraction.
 - **2010–2016 — HRL Laboratories:** owner-sponsored and government-funded mission R&D; the local record documents more than $3.5 million in led work, two inventor awards, publications, and a substantial patent portfolio.
-- **2017–2022 — SRI International:** independent nonprofit contract research, internal seed funding, and leadership of major DARPA programs spanning secure computation, formal verification, anonymous communication, and FHE acceleration.
-- **2022–present — Confidencial.io:** direct experience of the transition from research and patents to a company, product, customers, procurement, and survival.
-- **2023 onward — PARC at SRI:** an important institutional case observed as an SRI alumnus, but not a firsthand account of the acquisition or the combined organization.
+- **2017–2021 full-time; 2021–early 2023 part-time — SRI International:** independent nonprofit contract research, internal seed funding, and leadership of major DARPA programs spanning secure computation, formal verification, anonymous communication, and FHE acceleration; the part-time period finished the DARPA programs after the Confidencial.io spinout.
+- **2021–present — Confidencial.io:** spun out from SRI in 2021 and raised seed financing in 2022, providing direct experience of the transition from research and patents to a company, product, customers, procurement, and survival.
+- **2023 onward — PARC at SRI:** a bounded firsthand institutional case because an SRI office and badge continued through 2026; the legal transaction and confidential integration decisions were not firsthand.
 - **2026 — IBM’s announced agreement to acquire HRL:** a current occasion to ask what consolidation preserves, what it changes, and why major research capabilities increasingly need a small number of institutional hosts.
 
 This is approximately twenty-six years of firsthand participation, inside a thirty-year institutional arc from the 1996 Lucent spinout to the 2026 IBM–HRL announcement. Use that formulation instead of claiming thirty full years of personal employment.
@@ -149,7 +149,7 @@ SRI lacks a captive product division but can maintain deep intellectual communit
 
 **Personal evidence:** Internal seedlings; DARPA RACE, SIEVE, and DPRIVE; Air Force quantum work; formal methods; cryptography; and collaborations across universities, companies, and SRI groups.
 
-**Important distinction:** PARC joined SRI in 2023, after your SRI tenure. Discuss that event through documents and interviews, explicitly as an alumnus and observer rather than an inside witness.
+**Important distinction:** PARC joined SRI in 2023, shortly after your part-time SRI work finishing DARPA programs ended. Treat direct campus observation as firsthand because your SRI office and badge continued through 2026, while using documents and interviews for legal terms, confidential integration decisions, and institution-wide conclusions.
 
 ### 6. DARPA Can Create a Temporary Laboratory. What Happens When the Program Ends?
 
@@ -525,9 +525,9 @@ Maintain a private book file in parallel. After each article, preserve cut mater
 - Describe incentives and mechanisms rather than assigning motives to named individuals.
 - Give institutions and interview subjects a chance to correct factual claims when warranted.
 - Distinguish a personal view from an official institutional position.
-- Do not imply firsthand knowledge of the 2023 SRI–PARC combination.
+- Do not imply firsthand knowledge of the legal negotiation or confidential integration decisions in the 2023 SRI–PARC combination; do identify bounded firsthand campus observation through the SRI office and badge retained through 2026.
 - Until the transaction closes, write “IBM announced an agreement to acquire HRL,” not “IBM acquired HRL” or “HRL is now IBM Research.”
-- Reconcile the site’s inconsistent SRI end dates before publication.
+- Preserve the canonical overlap: SRI full-time 2017–2021, Confidencial.io spinout in 2021, SRI part-time through early 2023 while finishing DARPA programs, Confidencial.io seed financing in 2022, and an SRI office and badge retained through 2026.
 - Use “twenty-six years of firsthand experience across a thirty-year institutional transformation,” unless earlier relevant experience supports a broader personal claim.
 
 ## Public sources already identified

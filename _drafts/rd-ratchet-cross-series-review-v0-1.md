@@ -12,7 +12,7 @@ The review found three material corrections, six clarification needs, and severa
 
 1. Article 17’s central claim says AI will “only accelerate” fragmented-system failures. That is too absolute and conflicts with Article 16’s claim that AI can also scale verification. It must say that AI accelerates both productive work and the failure modes selected by existing incentives.
 2. Article 13’s v0.1 evidence chart compares counts of legal-status categories. Although qualified, its bar lengths are not an illuminating empirical relationship. Replace it with HRL’s documented pre-transaction organizational baseline: four laboratories and five centers.
-3. The landing-page timeline classifies the 2023 PARC–SRI event as firsthand memory even though Articles 1, 5, 10, and 13 correctly state that the author left SRI in 2022 and did not witness the transfer as an employee. The event should be Documentary evidence while the author’s broader SRI experience remains Firsthand evidence.
+3. The 2023 PARC–SRI evidence boundary initially rested on an incorrect compressed chronology. The author subsequently clarified that Confidencial.io spun out in 2021, received seed financing in 2022, and overlapped with part-time SRI work through early 2023 while he finished DARPA programs; he retained an SRI office and badge through 2026. The event should remain Firsthand for bounded campus observation, while the legal transaction and any confidential integration decisions remain Documentary or outside the author’s direct knowledge.
 
 ## Canonical fact and terminology matrix
 
@@ -21,8 +21,8 @@ The review found three material corrections, six clarification needs, and severa
 | U.S. R&D spending | Spending reached record scale; the thesis concerns composition and unmeasured retained state, not simple defunding | 1, 7, 11, 17 | Consistent |
 | Bell Labs lineage | AT&T spun out Lucent in 1996; most Bell Labs resources moved with Lucent; Alcatel and then Nokia became later hosts; Nokia currently owns Bell Labs | 1, 2, 3 | Consistent |
 | Bell Labs continuity | Continuing work deserves credit; a surviving name does not prove unchanged breadth, autonomy, adjacency, or horizon | 1, 2, 3, 9 | Consistent |
-| Career chronology | Ericsson 2000; Lucent/Bell Labs 2001; Cisco 2002; AT&T Research 2007; HRL 2010–2016; SRI 2017–2022; Confidencial.io 2022–present | 1–5, 10, 12–14 | Consistent within articles |
-| PARC/SRI status | Xerox donated PARC to SRI in 2023; the author is an alumnus and observer, not an inside witness to the transaction | 1, 5, 10, 13 | Articles consistent; timeline metadata requires correction |
+| Career chronology | Ericsson 2000; Lucent/Bell Labs 2001; Cisco 2002; AT&T Research 2007; HRL 2010–2016; SRI full-time 2017–2021 and part-time through early 2023; Confidencial.io spun out in 2021 and received seed financing in 2022; SRI office and badge retained through 2026 | 1–6, 10, 12–14 | Consistent after author clarification |
+| PARC/SRI status | Xerox donated PARC to SRI in 2023; after the author’s part-time SRI program work ended in early 2023, his continuing SRI office and badge through 2026 supplied bounded firsthand observation but not access to legal negotiations or confidential integration decisions | 1, 5, 10, 13 | Consistent after author clarification and evidence-boundary revision |
 | IBM/HRL status | A signed agreement was announced July 23, 2026; it remained subject to closing conditions at the drafting date | 1, 4, 9, 13 | Consistent |
 | Academia | Universities are indispensable to discovery and training but insufficient as the entire durable research, engineering, and transition stack | 1, 7, 17 | Consistent |
 | Academic overhead | Facilities and administration include legitimate shared costs; negotiated rates do not prove efficiency; blunt caps do not diagnose the system | 7, 17 | Consistent |
@@ -42,7 +42,7 @@ The review found three material corrections, six clarification needs, and severa
 |---|---|---|---|---|
 | R-01 | Material | 16, 17 | “Only accelerate their failures” contradicts the amplifier model | Revise Article 17 central claim and body to say unchanged incentives determine which effects scale |
 | R-02 | Material | 13 | The transaction-status bar chart encodes categories as magnitudes | Replace with the documented four-laboratory/five-center HRL baseline and state what it cannot prove |
-| R-03 | Material | Landing timeline; 1, 5, 10, 13 | PARC/SRI is marked Memory despite explicit post-tenure documentary treatment | Change the 2023 event to `document` and remove the firsthand implication from its note |
+| R-03 | Material | Landing timeline; 1, 5, 6, 10, 12, 13 | The initial review compressed a 2021 spinout, 2022 seed financing, and part-time SRI work through early 2023 into a false 2022 handoff; it also understated the continuing SRI office and badge through 2026 | Correct the overlapping chronology; retain `memory` for bounded firsthand campus observation; use documents for the 2022 public financing announcement and 2023 legal transaction facts; disclaim participation in confidential decision-making |
 | R-04 | Clarification | 2, 3 | Both articles discuss the 1996 split and could appear repetitive | Make Article 2 explicitly the bounded 2001 scene and Article 3 explicitly the comparative parent-incentive test |
 | R-05 | Clarification | 4, 14, 17 | “Engineering house” could still read as status hierarchy | Preserve the stronger distinction: capability formation and problem-initiation authority versus deliverable production |
 | R-06 | Clarification | 5, 6 | The same DARPA programs appear as evidence for institute and program mechanisms | State that Article 5 owns host-institution continuity while Article 6 owns temporary cross-institution coordination |

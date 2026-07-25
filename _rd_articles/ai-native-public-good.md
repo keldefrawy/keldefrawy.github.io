@@ -14,8 +14,8 @@ revision_summary: Cross-series review corrected the absolute AI claim and made t
 reading_time: 18
 central_claim: A viable successor must align patient capital, technical careers, shared infrastructure, independent correction, transition responsibility, and public-value rights in one institution; without that alignment, AI will scale productive work and the failure modes selected by today’s fragmented incentives.
 claim_status: Design proposal to be tested through a bounded ten-year pilot, not a claim that current building blocks already constitute the institution
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A public-interest laboratory connects institutional memory, scientific agents, secure resources, physical testbeds, human apprenticeship, and transition pathways around a governed mission core.
+hero_image: /assets/images/rd-ratchet/articles/article-17-ai-native-public-good.webp
+hero_alt: An open civic laboratory connects a warm governance forum with archives, human-and-AI teams, secure compute, physical laboratories, apprenticeship, field testbeds, and public transition paths.
 hero_caption: Conceptual institutional architecture; it is not an existing organization or a funding commitment.
 source_ids:
   - ncses-rd-2026

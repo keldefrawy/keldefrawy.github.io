@@ -10,12 +10,12 @@ date: 2026-07-24
 updated: 2026-07-24
 version: "0.2"
 version_sequence: 2
-revision_summary: Cross-series review replaced a categorical transaction chart with a documented institutional baseline and made the gain/loss ledger symmetric.
+revision_summary: Cross-series review replaced a categorical transaction chart, made the gain/loss ledger symmetric, and bounded the author’s continuing firsthand SRI-campus observation.
 reading_time: 14
 central_claim: Research consolidation should be evaluated as institutional triage—by the teams, assets, autonomy, mission relationships, and problem classes preserved or lost—not as success merely because a transaction closes.
 claim_status: Prospective framework; PARC joined SRI in 2023, while IBM’s HRL agreement remained subject to closing at the date of this draft
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: Two institutional transfers pass through a decision tree whose branches preserve, combine, narrow, or fragment research capability.
+hero_image: /assets/images/rd-ratchet/articles/article-13-consolidation-triage.webp
+hero_alt: Two research-capability constellations enter a shared decision table and branch toward preservation, combination, narrowing, or fragmentation.
 hero_caption: Conceptual outcome tree; it does not predict the result of either transaction.
 source_ids:
   - xerox-parc-sri
@@ -96,7 +96,7 @@ A press release cannot distinguish among them.
 
 That is plausible. SRI offers government relationships, multiple research domains, venture and licensing mechanisms, and an institutional identity not tied to one product market. It also operates through project-funded dynamics. The transfer could broaden PARC’s sponsor surface while increasing exposure to proposal clocks and chargeability.
 
-I left SRI in 2022. I did not witness the transaction or integration as an employee. My SRI experience informs the questions, not the answers. A serious assessment needs current PARC and SRI staff, clients, program records, facilities data, and evidence of internally initiated work. <span class="rd-evidence-token" data-evidence="M">M</span>
+Confidencial.io spun out in 2021, and I remained part-time at SRI through early 2023 to finish the DARPA programs. I retained an SRI office and badge through 2026, so I had firsthand exposure to PARC’s arrival and the post-transaction institutional environment, though I did not participate in the legal transaction or confidential integration decisions. That direct observation informs some questions and observations; it does not answer the institution-wide verdict. A serious assessment still needs PARC and SRI staff, clients, program records, facilities data, and evidence of internally initiated work. <span class="rd-evidence-token" data-evidence="M">M</span>
 
 ## IBM and HRL: a prospective complement map
 

@@ -7,20 +7,21 @@ article_status: Draft
 published: true
 dek: America is spending more on R&D than ever. The paradox is that expenditure measures motion, while the capacity to pursue an uncertain question across a generation is accumulated—and perishable—state.
 date: 2026-07-23
-updated: 2026-07-23
+updated: 2026-07-24
 version: "0.1"
 version_sequence: 1
 revision_summary: Private working draft; not a public version
 reading_time: 26
 central_claim: A research system thinks long only when it preserves teams, tools, memory, independent error correction, and a path to use across the gaps between projects. U.S. R&D accounts measure annual activity but do not establish that this institutional state is being replenished.
 claim_status: Provisional; the expenditure facts are established, while the system-level capability claim remains a testable interpretation
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A conceptual thread of accumulated knowledge passes from an older electronics laboratory through a fragmented project landscape toward a future human-and-AI research institution.
+hero_image: /assets/images/rd-ratchet/articles/article-01-trillion-dollar-system.webp
+hero_alt: A vast funding ledger fragments into isolated project laboratories while a luminous research thread connects the telephone, punched tape, circuitry, physics diagrams, and a future human-and-AI laboratory.
 hero_caption: Conceptual illustration. It does not depict a specific laboratory, transaction, or historical event.
 source_ids:
   - ncses-rd-2026
   - ibm-hrl-2026
   - xerox-parc-sri
+  - sri-confidencial-announcement-2022
   - nokia-bell-history
   - arora-corporate-science
   - bloom-idea-productivity
@@ -90,7 +91,7 @@ corrections: []
 
 On July 23, 2026, [IBM announced that it had signed an agreement to acquire HRL Laboratories](#source-ibm-hrl-2026) from Boeing and General Motors. The transaction had not closed when this draft was written. Three years earlier, [Xerox donated PARC to SRI International](#source-xerox-parc-sri). These are different transactions involving different institutions, and neither should be written as an obituary. But together they pose a question that national R&D statistics cannot answer: when a laboratory changes institutional containers, what exactly survives?
 
-That question is personal for me, but my vantage point is bounded. My earliest views of large technology organizations came through an internship at Ericsson's Linköping and Kista facilities in Sweden in 2000, followed by Lucent Technologies' Bell Labs in 2001, Cisco Systems in San Jose in 2002, and AT&T Research in 2007. I later worked at HRL from 2010 to 2016 and at SRI from 2017 to 2022. These experiences are observation points, not complete institutional audits, and I did not participate in either transaction. I can recognize the kinds of capability hidden behind an institutional name—people who know how to choose problems, trusted teams, specialized tools, failed approaches that are not in papers, and engineers who can make a theoretical result work—but I cannot infer from an announcement which of those things will still cohere five years later. A transaction document establishes ownership and stated intent. It does not establish institutional continuity. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
+That question is personal for me, but my vantage point is bounded. My earliest views of large technology organizations came through an internship at Ericsson's Linköping and Kista facilities in Sweden in 2000, followed by Lucent Technologies' Bell Labs in 2001, Cisco Systems in San Jose in 2002, and AT&T Research in 2007. I later worked at HRL from 2010 to 2016 and full-time at SRI from 2017 through 2021. Confidencial.io spun out in 2021 and [its seed financing was publicly announced in 2022](#source-sri-confidencial-announcement-2022). I remained part-time at SRI through early 2023 to finish the DARPA programs, and I retained an SRI office and badge through 2026. That continuity makes the 2023 PARC transition firsthand at the level of what I directly observed on campus. These experiences are observation points, not complete institutional audits, and I did not participate in either transaction or its internal decision process. I can recognize the kinds of capability hidden behind an institutional name—people who know how to choose problems, trusted teams, specialized tools, failed approaches that are not in papers, and engineers who can make a theoretical result work—but I cannot infer from an announcement which of those things will still cohere five years later. A transaction document establishes ownership and stated intent. It does not establish institutional continuity. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
 
 This is the first error to avoid. The second is larger: America did not stop spending on research and development.
 

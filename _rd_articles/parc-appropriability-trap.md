@@ -10,12 +10,12 @@ date: 2026-07-24
 updated: 2026-07-24
 version: "0.2"
 version_sequence: 2
-revision_summary: Cross-series review added a primary Xerox commercialization source and bounded laser printing as a counterexample rather than a general verdict.
+revision_summary: Cross-series review added a primary Xerox commercialization source, bounded laser printing as a counterexample, and separated documented transfer facts from continuing firsthand SRI-campus observation.
 reading_time: 14
 central_claim: Invention, recognition, complementary assets, and value capture are distinct capabilities; a laboratory can excel at the first while its parent lacks or declines to build the others.
 claim_status: Provisional synthesis of corporate records and appropriability scholarship; not a comprehensive audit of Xerox or PARC
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: An invention passes through recognition, complementary assets, and value capture, with spillovers branching toward other institutions.
+hero_image: /assets/images/rd-ratchet/articles/article-10-parc-appropriability.webp
+hero_alt: A 1970s personal workstation, graphical windows, mouse, local network, and laser printer branch into manufacturing, distribution, users, and other applications.
 hero_caption: Conceptual illustration; it does not assign ownership of a specific PARC invention.
 source_ids:
   - xerox-parc-sri
@@ -125,7 +125,7 @@ The horizon can be shorter than the scientific path even when management believe
 
 Xerox announced in April 2023 that it was donating PARC to SRI International. The announcement says PARC was founded in 1970, made an independent company in 2002, and would join SRI while Xerox focused on print, digital, and IT services. [SRI’s current history records the integration](#source-sri-history). <span class="rd-evidence-token" data-evidence="D">D</span>
 
-I had left SRI in 2022. I did not participate in the transfer and cannot describe its internal integration firsthand. The transaction nevertheless changes the appropriability question. PARC moved from a corporate parent with a narrowing set of business complements to a nonprofit institute capable of serving multiple sponsors. That may broaden the problem portfolio. It may also expose teams to the project-funding dynamics discussed in the SRI article.
+Confidencial.io spun out in 2021, and I remained part-time at SRI through early 2023 to finish the DARPA programs. I then retained an SRI office and badge through 2026. That continuity gave me a bounded firsthand view of PARC’s arrival and the post-transaction environment. I did not participate in negotiating the transfer or in confidential integration decisions. The transaction’s legal terms therefore remain documentary, while what I directly encountered on campus is firsthand. The transaction nevertheless changes the appropriability question. PARC moved from a corporate parent with a narrowing set of business complements to a nonprofit institute capable of serving multiple sponsors. That may broaden the problem portfolio. It may also expose teams to the project-funding dynamics discussed in the SRI article. <span class="rd-evidence-token" data-evidence="M">M</span>
 
 Neither “rescue” nor “decline” follows from the announcement. The test is what happens to teams, facilities, problem-initiation authority, client relationships, IP pathways, and the ability to do internally generated work over five or ten years.
 

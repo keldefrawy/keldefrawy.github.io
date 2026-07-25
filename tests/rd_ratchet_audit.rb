@@ -158,7 +158,7 @@ errors << "landing page cannot retain withdrawal records" unless page.include?('
 errors << "landing page article heading must state seventeen articles" unless page.include?("Seventeen articles")
 errors << "unpublished article previews are not linked when rendered" unless page.include?('site.rd_articles | where: "article_slug", article.slug') && page.include?("rd_article_page.url")
 errors << "AI-native laboratory nodes must expose their positions to CSS" unless page.include?('data-position="{{ node.position }}"')
-errors << "AI-native laboratory core must use a distinct non-black color" unless style.match?(/\.rd-brain-node\[data-position="core"\][^\{]*\{[^\}]*background:\s*var\(--rd-green\);/m)
+errors << "AI-native laboratory core must use the distinct future color" unless style.match?(/\.rd-brain-node\[data-position="core"\][^\{]*\{[^\}]*background:\s*var\(--rd-future\);/m)
 if style.match?(/\.rd-brain-node[^\{]*\.is-active[^\{]*\{[^\}]*\btransform\s*:/m)
   errors << "AI-native laboratory nodes must not change position when selected"
 end

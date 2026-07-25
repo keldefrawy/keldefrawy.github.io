@@ -14,8 +14,8 @@ revision_summary: Cross-series review narrowed the replaceable-equipment claim a
 reading_time: 14
 central_claim: The opportunity to build a successor is bounded by one institutional generation of apprenticeship and joint work; money can often replace commodity equipment faster than it can recreate dispersed judgment, trust, and technical memory, while unique facilities may themselves take years to rebuild.
 claim_status: Urgency hypothesis supported by workforce and R&D-team evidence, without a precise countdown or laboratory-specific retirement forecast
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: Two overlapping cohorts exchange judgment, tools, and institutional memory before the overlap narrows.
+hero_image: /assets/images/rd-ratchet/articles/article-14-last-transfer-window.webp
+hero_alt: Senior and emerging researchers jointly align instruments, diagnose prototypes, exchange notebooks and archives, and use an AI tool as responsibility passes across generations.
 hero_caption: Conceptual cohort model; it is not a demographic forecast.
 source_ids:
   - ncses-doctorate-retirement-2023

@@ -14,8 +14,8 @@ revision_summary: Private working draft; not a public version
 reading_time: 18
 central_claim: Laboratory destruction is a loss of connected capability rather than a payroll or real-estate event; preservation must be measured by the survival of critical relationships, complementary roles, assets, memory, problem-selection authority, and paths to use.
 claim_status: Provisional institutional model; the Microsoft closure and IBM transactions are documented, while graph-level capability effects require interviews and longitudinal evidence
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A conceptual research network whose people remain visible while critical connections, tools, and paths to deployment disappear.
+hero_image: /assets/images/rd-ratchet/articles/article-09-laboratory-adjacency.webp
+hero_alt: Intact laboratory rooms retain people and equipment while glowing mentorship, instrument, archive, correction, and deployment links disappear between them.
 hero_caption: Conceptual illustration. The graph model is an analytical device, not a measured reconstruction of a named laboratory.
 source_ids:
   - msr-sv-open-letter-2014

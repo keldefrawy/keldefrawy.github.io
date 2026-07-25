@@ -79,19 +79,24 @@ timeline:
     label: HRL Laboratories
     kind: memory
     note: Mission-driven industrial R&D spanning secure systems, privacy, cloud infrastructure, biometrics, and cyber-physical systems.
-  - year: "2017–2022"
+  - year: "2017–early 2023"
     label: SRI International
     kind: memory
-    note: Nonprofit contract research, internal seed work, and multi-institution government programs.
-  - year: "2022–"
+    note: Full-time from 2017 through the 2021 Confidencial.io spinout, then part-time through early 2023 while finishing DARPA programs.
+  - year: "2021–"
     label: Confidencial.io
     kind: memory
-    note: The transition from research and patents to product, procurement, customers, and company survival.
+    note: Spun out from SRI in 2021 to carry selected research into product, procurement, customers, and company survival.
+  - year: "2022"
+    label: Confidencial.io seed financing
+    kind: document
+    source_id: sri-confidencial-announcement-2022
+    note: SRI's June announcement documents seed investors and the private-beta launch; it is not the spinout date.
   - year: "2023"
     label: PARC joins SRI
-    kind: document
+    kind: memory
     source_id: xerox-parc-sri
-    note: Xerox donated PARC to SRI after Karim's SRI tenure; the transaction is treated through documents and later observation, not firsthand employment.
+    note: Firsthand observation through Karim's SRI office and badge, retained through 2026; the legal transaction facts remain independently documented.
   - year: "2026"
     label: IBM announces HRL agreement
     kind: document
@@ -321,7 +326,7 @@ articles:
     slug: sri-project-funded-institution
     title: SRI and the Project-Funded Institution
     status: researching
-    case: SRI International, 2017–2022
+    case: SRI International, full-time 2017–2021 and part-time through early 2023
     claim: An institution can persist across projects while its people remain governed by project clocks.
     visuals: [Program portfolio map, Chargeability pressure loop, Collaboration network]
   - number: 6
@@ -893,13 +898,13 @@ sources:
     kind: Large-sample venture-capital survey and working paper
     url: https://doi.org/10.3386/w22587
     supports: Survey evidence from 885 institutional venture capitalists on investment selection, value creation, portfolio practice, and exits; it describes VC decision processes rather than proving one universal startup horizon
-  - id: sri-confidencial-spinout-2022
+  - id: sri-confidencial-announcement-2022
     title: SRI Ventures announces new spin-out, Confidencial
     organization: SRI International
     date: "2022-06-07"
     kind: Institutional transition announcement
     url: https://www.sri.com/press/sri-ventures-announces-new-spin-out-confidencial-to-secure-sensitive-information-and-collaboration-for-distributed-enterprises/
-    supports: Confidencial's launch, seed financing, beta-stage product, SRI origins, and roots in the DARPA Brandeis and RACE programs
+    supports: Confidencial's June 2022 public announcement, seed financing, beta-stage product, SRI origins, and roots in the DARPA Brandeis and RACE programs; the date is not used as the spinout date
   - id: karim-publication-record
     title: Publications by Research Area
     organization: Karim Eldefrawy

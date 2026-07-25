@@ -10,12 +10,12 @@ date: 2026-07-24
 updated: 2026-07-24
 version: "0.2"
 version_sequence: 2
-revision_summary: Cross-series review fixed the performer institution as the unit of analysis and separated its continuity question from DARPA’s program-level clock.
+revision_summary: Cross-series review fixed the performer institution as the unit of analysis, separated it from DARPA’s program clock, and reconciled the 2021 spinout, 2022 seed financing, part-time SRI work through early 2023, and continuing firsthand campus access through 2026.
 reading_time: 14
 central_claim: An independent research institute creates continuity when projects accumulate into shared teams, tools, and judgment; it becomes only a contracting shell when every capability must justify itself anew at each funding cliff.
 claim_status: Provisional; public project records establish programs and roles, while chargeability effects are bounded firsthand analysis requiring broader corroboration
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: Several finite program arcs overlap within a longer institutional line, sometimes transferring tools and people and sometimes ending at funding cliffs.
+hero_image: /assets/images/rd-ratchet/articles/article-05-sri-project-funded.webp
+hero_alt: A California research campus connects early networked computers, a wooden computer mouse, a mobile robot, an AI search tree, a voice waveform, and field experiments.
 hero_caption: Conceptual illustration; it does not represent SRI financial data or confidential program structure.
 source_ids:
   - sri-history
@@ -23,7 +23,7 @@ source_ids:
   - darpa-race
   - darpa-sieve
   - darpa-dprive
-  - sri-confidencial-spinout-2022
+  - sri-confidencial-announcement-2022
   - xerox-parc-sri
 evidence_chart:
   kicker: Overlapping program clocks
@@ -40,7 +40,7 @@ argument_map:
   kicker: Source-linked argument map
   title: Projects create institutional value only when their state crosses the boundary
   summary: The public record establishes ambitious programs and outputs. Whether they accumulated into durable SRI capability is the question, not a documented conclusion.
-  caption: The author left SRI in 2022; later project outcomes and PARC’s 2023 arrival are documented, not firsthand employment observations.
+  caption: The author worked full-time at SRI through the 2021 Confidencial.io spinout, remained part-time through early 2023 to finish DARPA programs, and retained an SRI office and badge through 2026; PARC’s arrival is bounded firsthand observation while legal facts remain documented.
   nodes:
     - role: Documented observation
       title: SRI hosted overlapping mission programs
@@ -48,7 +48,7 @@ argument_map:
       source_ids: [sri-karim-project-record, darpa-race, darpa-sieve, darpa-dprive]
     - role: Bounded firsthand observation
       title: Seed work and proposals connected the arcs
-      text: During 2017–2022, internal development, proposal work, collaboration, and project execution formed a continuous local experience despite separate sponsor clocks.
+      text: During 2017–early 2023, first full-time and then part-time after the 2021 Confidencial.io spinout, internal development, proposal work, collaboration, and project execution formed a continuous local experience despite separate sponsor clocks.
       source_ids: [sri-karim-project-record]
     - role: Proposed mechanism
       title: Chargeability can select the portfolio
@@ -57,7 +57,7 @@ argument_map:
     - role: Bounded conclusion
       title: Track retained state after each project
       text: A nonprofit institute should account for reused people, code, proof assets, testbeds, and transition links—not only awards and deliverables.
-      source_ids: [sri-history, sri-confidencial-spinout-2022]
+      source_ids: [sri-history, sri-confidencial-announcement-2022]
 objection_ladders:
   - claim: Chargeability pressure can make proposal incentives the operating system of a nonprofit research institute.
     first_objection: Without internal financial data, this is an anecdote about one employee’s experience, not evidence about SRI as a whole.
@@ -70,11 +70,11 @@ objection_ladders:
     first_response: Legal continuity is only a container. It becomes technical continuity when the institute retains staff, tools, archives, and problem communities across awards.
     second_objection: Retention can also entrench outdated groups and turn public missions into a subsidy for incumbents.
     conclusion: Condition capability funding on external technical evaluation, reuse, apprenticeship, open or transferable artifacts where appropriate, and periodic competition—without forcing zero-state rebids for every project.
-    source_ids: [sri-history, darpa-race, sri-confidencial-spinout-2022]
+    source_ids: [sri-history, darpa-race, sri-confidencial-announcement-2022]
 corrections: []
 ---
 
-Between 2017 and 2022, my work at SRI International moved through internal seedlings, proposals, program formation, multi-institution teams, formal methods, cryptography, hardware architecture, and attempts at transition. The public record divides that work into named projects. My memory is less neatly segmented. One project supplied a collaborator, tool, or failed approach that changed the next. The institution existed in the overlap. <span class="rd-evidence-token" data-evidence="M">M</span>
+From 2017 through 2021, I worked full-time at SRI International. Confidencial.io spun out in 2021; I then remained part-time at SRI through early 2023 to finish the DARPA programs while building the company. [SRI’s June 2022 announcement](#source-sri-confidencial-announcement-2022) documents Confidencial.io’s seed financing and private-beta launch. Across that overlap, my SRI work moved through internal seedlings, proposals, program formation, multi-institution teams, formal methods, cryptography, hardware architecture, and attempts at transition. The public record divides that work into named projects. My memory is less neatly segmented. One project supplied a collaborator, tool, or failed approach that changed the next. The institution existed in the overlap. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
 
 That overlap is the promise of an independent nonprofit research institute. It has no single captive product line. It can join government missions, university ideas, company engineering, and internal technical traditions. But the absence of a captive product business also means there may be no automatic payer for the spaces between awards.
 
@@ -102,17 +102,17 @@ This argument rests partly on firsthand interpretation, not a published SRI-wide
 
 RACE makes the handoff visible. DARPA’s public program record states that the work sought a distributed messaging system resistant to large-scale compromise and grounded in rigorous security or realistic statistical arguments. The page also records a later event: in August 2024, DARPA released proof-of-concept code so others could experiment with the complete system or its components. [That release is evidence of afterlife beyond a final report](#source-darpa-race). It does not establish broad deployment, maintenance, or the preservation of the original team. <span class="rd-evidence-token" data-evidence="D">D</span>
 
-The same research line contributed to a different transition path. [SRI’s 2022 spinout announcement](#source-sri-confidencial-spinout-2022) says that Confidencial.io drew on technologies rooted in the DARPA Brandeis and RACE programs and was launching a beta product with seed financing. A public research program, a nonprofit institute, and a startup each performed a different function. None alone was the complete pipeline.
+The same research line contributed to a different transition path. Confidencial.io spun out in 2021. [SRI’s June 2022 public announcement](#source-sri-confidencial-announcement-2022) says that the company drew on technologies rooted in the DARPA Brandeis and RACE programs and was launching a beta product with seed financing. A public research program, a nonprofit institute, and a startup each performed a different function. None alone was the complete pipeline. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
 
 The research program could pay for new security mechanisms and system prototypes. SRI could assemble people and intellectual property across work. The startup could focus on integration with existing business applications, customers, procurement, support, and product survival. Transition required changing the technical form: the announcement describes using current cryptographic standards rather than requiring customers to adopt every original research primitive.
 
 This is not proof that every transition should become a company. It demonstrates that “technology transfer” is not a signature at the end of a project. It is a new institution accepting a different set of obligations.
 
-## PARC arrived after my SRI tenure
+## PARC arrived after my part-time SRI program work—but not outside my view
 
-[Xerox announced the donation of PARC to SRI in April 2023](#source-xerox-parc-sri), after I had left SRI. [SRI’s current history](#source-sri-history) describes PARC as part of the institution. I can analyze the transaction as an alumnus and observer; I cannot describe its internal integration firsthand. <span class="rd-evidence-token" data-evidence="D">D</span>
+[Xerox announced the donation of PARC to SRI in April 2023](#source-xerox-parc-sri), shortly after my part-time SRI work finishing the DARPA programs had ended. My connection to SRI did not end at that employment boundary: I retained an SRI office and badge through 2026. I therefore had a bounded firsthand view of PARC’s arrival and the post-transaction institutional environment. I did not participate in the legal transaction or its internal integration decisions. The legal facts remain documentary; the continuing campus observation is firsthand. <span class="rd-evidence-token" data-evidence="D">D</span> <span class="rd-evidence-token" data-evidence="M">M</span>
 
-That boundary is especially important in a series about institutional memory. Prior experience with SRI can illuminate questions to ask—how teams are funded, what shared services exist, how internal work is protected—but it cannot answer what current PARC and SRI staff actually experienced. Those answers require documents and interviews.
+That boundary is especially important in a series about institutional memory. Continuing physical access can establish what I directly encountered and can illuminate questions to ask—how teams are funded, what shared services exist, and how internal work is protected. It cannot establish every employee’s experience, confidential deliberation, funding decision, or long-run integration outcome. Those broader answers still require documents, data, and interviews.
 
 ## The strongest counterargument
 

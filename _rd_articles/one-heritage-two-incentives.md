@@ -15,8 +15,8 @@ revision_summary: Cross-series review replaced causal-experiment shorthand with 
 reading_time: 13
 central_claim: Research culture does not determine its own future; the parent organization’s customers, assets, operating problems, product cycles, and ability to capture spillovers determine which parts of that culture remain fundable.
 claim_status: Provisional comparative argument; two internships are bounded observations, not representative institutional samples
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: One research lineage branches toward an equipment company and a network operator, with different feedback paths returning to each branch.
+hero_image: /assets/images/rd-ratchet/articles/article-03-two-incentive-systems.webp
+hero_alt: A bell, telephone, transistor, and luminous research lineage branch toward an experimental fabrication laboratory above and a network operations center below.
 hero_caption: Conceptual comparison; it is not an organization chart and does not assign outcomes to particular people.
 source_ids:
   - nokia-bell-history

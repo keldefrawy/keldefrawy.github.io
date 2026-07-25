@@ -14,8 +14,8 @@ revision_summary: Private working draft; not a public version
 reading_time: 20
 central_claim: The academic research system is optimized to fund projects, publish knowledge, and train people; it underfunds the stable technical teams, shared infrastructure, negative-result memory, and transition ownership needed to function as a complete long-horizon R&D institution.
 claim_status: Provisional; national expenditure and cost rules are documented, while incentive effects vary by field and institution
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A university research network produces papers and trained people while long-lived engineering, infrastructure, and transition functions remain only partially connected.
+hero_image: /assets/images/rd-ratchet/articles/article-07-academia-not-laboratory.webp
+hero_alt: A thriving campus of students, papers, collaboration, and shared instruments sits within an incentive orbit while graduates face an incomplete bridge to maintained engineering infrastructure.
 hero_caption: Conceptual illustration. It does not represent one university or imply that all fields share the same funding model.
 source_ids:
   - ncses-herd-2024

@@ -14,8 +14,8 @@ revision_summary: Cross-series review made the author’s disclosed record expli
 reading_time: 14
 central_claim: Papers, patents, programs, prototypes, awards, and citations are lossy projections of a stateful research system; each can rise while the underlying capacity for the next generation of work declines.
 claim_status: Provisional measurement framework illustrated with the author’s disclosed record, not a claim of representative productivity
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: Countable research outputs cast a partial shadow while teams, tools, memory, correction, and transition paths remain behind the measurement plane.
+hero_image: /assets/images/rd-ratchet/articles/article-11-outputs-and-capability.webp
+hero_alt: Counted papers, patent drawings, and prototypes remain on a measurement shelf while the teams, archives, instruments, correction loops, and roots beneath them begin to fade.
 hero_caption: Conceptual illustration; output counts are evidence categories, not a performance score.
 source_ids:
   - karim-publication-record

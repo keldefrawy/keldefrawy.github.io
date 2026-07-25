@@ -14,8 +14,8 @@ revision_summary: Cross-series review clarified the program-level unit and requi
 reading_time: 14
 central_claim: DARPA’s finite, milestone-driven programs are powerful temporary laboratories, but their success creates a preservation problem that the performer, sponsor, and transition customer may each rationally leave to someone else.
 claim_status: Provisional synthesis of agency records and bounded performer experience
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A temporary network of universities, companies, and institutes converges on a mission, then separates while tools and knowledge seek a durable host.
+hero_image: /assets/images/rd-ratchet/articles/article-06-darpa-temporary-laboratory.webp
+hero_alt: A program clock links researchers, a secure chip, proofs, prototypes, and a testbed before people and preserved artifacts cross a narrow bridge toward a durable institutional host.
 hero_caption: Conceptual program network; it does not represent a specific DARPA team or contractual relationship.
 source_ids:
   - darpa-pm-model
@@ -23,7 +23,7 @@ source_ids:
   - darpa-sieve
   - darpa-dprive
   - sri-karim-project-record
-  - sri-confidencial-spinout-2022
+  - sri-confidencial-announcement-2022
   - nasem-arpa-e-2017
 evidence_chart:
   kicker: A deliberately hard target
@@ -56,7 +56,7 @@ argument_map:
     - role: Bounded conclusion
       title: Name a continuity owner at program formation
       text: Programs should assign responsibility and resources for artifact custody, team transfer, independent evaluation, and transition before the final milestone.
-      source_ids: [sri-confidencial-spinout-2022, nasem-arpa-e-2017]
+      source_ids: [sri-confidencial-announcement-2022, nasem-arpa-e-2017]
 objection_ladders:
   - claim: DARPA programs leave valuable shared state without an owner.
     first_objection: DARPA’s job is to demonstrate possibility and create options, not operate laboratories or maintain products indefinitely.
@@ -111,7 +111,7 @@ RACE pursued a distributed messaging system intended to preserve privacy and res
 
 Public code changes the afterlife of a program. It gives outsiders something more checkable than a final report. But a repository is not a maintainer, and a release is not adoption. Dependencies age. Build environments disappear. The people who understand why one design failed move to new work. The artifact may preserve explicit state while losing tacit state.
 
-A separate branch of the work moved through institution and company formation. [SRI’s Confidencial.io announcement](#source-sri-confidencial-spinout-2022) describes technology rooted partly in RACE and Brandeis research being reworked into a beta product. That transition required standard cryptography, integration into existing applications, financing, customers, and an organization responsible for support. The startup did not preserve the whole program. It selected a use path.
+A separate branch of the work moved through institution and company formation. Confidencial.io spun out in 2021, while I remained part-time at SRI through early 2023 to finish the DARPA programs. [SRI’s June 2022 public announcement](#source-sri-confidencial-announcement-2022) describes technology rooted partly in RACE and Brandeis research being reworked into a seed-financed beta product. That transition required standard cryptography, integration into existing applications, financing, customers, and an organization responsible for support. The startup did not preserve the whole program. It selected a use path. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
 
 These are complementary forms of afterlife:
 

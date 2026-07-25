@@ -14,8 +14,8 @@ revision_summary: Private working draft; not a public version
 reading_time: 18
 central_claim: People with firsthand records of original research and multi-year R&D stewardship must hold real authority over technical agendas, continuation decisions, and portfolio construction; experience should be demonstrated across several dimensions rather than reduced to a universal publication or patent threshold.
 claim_status: Provisional institutional-design claim; program-management models and reviewer effects are documented, while the proposed experience floor requires comparative testing
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A conceptual R&D portfolio in which technical judgment and fiduciary authority meet at the same decision table.
+hero_image: /assets/images/rd-ratchet/articles/article-08-research-judgment.webp
+hero_alt: Practiced researchers trace evidence from notebooks, failed parts, prototypes, and budget blocks across a decision table toward several long-horizon R&D paths.
 hero_caption: Conceptual illustration. The governance proposal is a design hypothesis, not an evaluation of any named individual or agency.
 source_ids:
   - darpa-pm-model

@@ -14,8 +14,8 @@ revision_summary: Cross-series review defined epistemic debt as a confidence-evi
 reading_time: 16
 central_claim: AI-assisted formalization, reanalysis, and replication can expose epistemic debt, but only when model output crosses into proof checking, executable artifacts, complete-data audit, or independent measurement.
 claim_status: Provisional; the documented cases establish verification gaps and tool limits, not a population-wide scientific error rate
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A scientific record passes through publication, specialist checking, formal or computational verification, independent replication, and robustness tests.
+hero_image: /assets/images/rd-ratchet/articles/article-15-ai-audits-science.webp
+hero_alt: Papers, code, data, and theorem diagrams move through linked human-and-AI inspection stations before emerging as supported, corrected, or still-uncertain claims.
 hero_caption: Conceptual verification pipeline; it does not assign an error probability to science or mathematics.
 source_ids:
   - lamport-errors-in-proofs

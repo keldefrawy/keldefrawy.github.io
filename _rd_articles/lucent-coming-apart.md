@@ -14,8 +14,8 @@ revision_summary: Cross-series review clarified this article’s bounded 2001 sc
 reading_time: 13
 central_claim: Scientific excellence and corporate fragility can coexist for years, but a laboratory’s culture cannot indefinitely outrun the economics, customers, and capital constraints of its parent institution.
 claim_status: Provisional synthesis of bounded firsthand memory and documented institutional history
-hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
-hero_alt: A bright research bench remains active while the institutional structure around it separates into new corporate paths.
+hero_image: /assets/images/rd-ratchet/articles/article-02-lucent-coming-apart.webp
+hero_alt: A brass bell, early telephone, experimental device, researcher, optical fibers, and separating laboratory wings represent Bell Labs' scientific inheritance and institutional division.
 hero_caption: Conceptual illustration; it does not depict a particular Bell Labs room, employee, or event.
 source_ids:
   - nokia-bell-history
