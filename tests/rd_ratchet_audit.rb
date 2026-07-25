@@ -90,7 +90,7 @@ errors << "the firsthand timeline omits Cisco Systems in San Jose in 2002" unles
 ai_audit_article = articles.find { |article| article.fetch("slug") == "ai-audits-scientific-record" }
 errors << "the AI scientific-audit article is missing" unless ai_audit_article
 if ai_audit_article
-  errors << "the AI scientific-audit article must remain planned" unless ai_audit_article.fetch("status") == "planned"
+  errors << "the AI scientific-audit article must be in research while its draft is public" unless ai_audit_article.fetch("status") == "researching"
   errors << "the AI scientific-audit claim must distinguish verified from unchallenged knowledge" unless ai_audit_article.fetch("claim").include?("verified") && ai_audit_article.fetch("claim").include?("merely unchallenged")
   errors << "the AI scientific-audit claim must preserve the epistemic-debt thesis" unless ai_audit_article.fetch("claim").include?("epistemic debt")
 end
@@ -98,7 +98,7 @@ end
 cargo_cult_article = articles.find { |article| article.fetch("slug") == "cargo-cult-science-machine-speed" }
 errors << "the AI cargo-cult-science article is missing" unless cargo_cult_article
 if cargo_cult_article
-  errors << "the AI cargo-cult-science article must remain planned" unless cargo_cult_article.fetch("status") == "planned"
+  errors << "the AI cargo-cult-science article must be in research while its draft is public" unless cargo_cult_article.fetch("status") == "researching"
   errors << "the AI cargo-cult-science claim must distinguish scientific form from contact with truth" unless cargo_cult_article.fetch("claim").include?("surface form") && cargo_cult_article.fetch("claim").include?("contact with truth")
   errors << "the AI cargo-cult-science article must connect institutional standards to AI outcomes" unless cargo_cult_article.fetch("claim").include?("epistemic standards")
 end

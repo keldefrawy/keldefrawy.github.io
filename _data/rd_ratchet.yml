@@ -84,14 +84,14 @@ timeline:
     kind: memory
     note: Nonprofit contract research, internal seed work, and multi-institution government programs.
   - year: "2022–"
-    label: Confidencial
+    label: Confidencial.io
     kind: memory
     note: The transition from research and patents to product, procurement, customers, and company survival.
   - year: "2023"
     label: PARC joins SRI
-    kind: memory
+    kind: document
     source_id: xerox-parc-sri
-    note: A firsthand institutional case grounded in Karim's SRI experience and subsequent observation, with the transaction facts independently documented.
+    note: Xerox donated PARC to SRI after Karim's SRI tenure; the transaction is treated through documents and later observation, not firsthand employment.
   - year: "2026"
     label: IBM announces HRL agreement
     kind: document
@@ -299,35 +299,35 @@ articles:
   - number: 2
     slug: lucent-coming-apart
     title: I Arrived at Bell Labs as Lucent Technologies Was Coming Apart—Before Bell Labs Became Part of Nokia
-    status: planned
+    status: researching
     case: Lucent / Bell Labs, 2001
     claim: Scientific excellence and corporate fragility can coexist.
     visuals: [Memory-versus-document timeline, Corporate horizon diagram, Annotated telecom context]
   - number: 3
     slug: one-heritage-two-incentives
     title: One Heritage, Two Incentive Systems
-    status: planned
+    status: researching
     case: Lucent and AT&T
     claim: Parent economics determine which parts of a research culture can survive.
     visuals: [Split-lineage map, Side-by-side incentive table, Problem-to-operation pathways]
   - number: 4
     slug: hrl-mission-driven-bargain
     title: HRL and the Bargain of Mission-Driven Research
-    status: planned
+    status: researching
     case: HRL Laboratories, 2010–2016
     claim: A durable mission customer protects ambitious work while also defining its boundaries.
     visuals: [Funding-and-mission map, Capability-versus-project layers, Patent-to-program network]
   - number: 5
     slug: sri-project-funded-institution
     title: SRI and the Project-Funded Institution
-    status: planned
+    status: researching
     case: SRI International, 2017–2022
     claim: An institution can persist across projects while its people remain governed by project clocks.
     visuals: [Program portfolio map, Chargeability pressure loop, Collaboration network]
   - number: 6
     slug: darpa-temporary-laboratory
     title: DARPA Can Create a Temporary Laboratory. What Happens When the Program Ends?
-    status: planned
+    status: researching
     case: RACE, SIEVE, DPRIVE, DHS, and IARPA programs
     claim: The program model coordinates breakthroughs but does not automatically preserve the capability it assembles.
     visuals: [Temporary-lab lifecycle, Program handoff map, Artifact survival ledger]
@@ -355,56 +355,56 @@ articles:
   - number: 10
     slug: parc-appropriability-trap
     title: PARC and the Appropriability Trap
-    status: planned
+    status: researching
     case: PARC, Xerox, and SRI
     claim: Invention, recognition, complementary assets, and value capture are four different capabilities.
     visuals: [Four-capability matrix, IP-and-host timeline, Spillover map]
   - number: 11
     slug: outputs-and-vanishing-capability
     title: Papers, Patents, Prototypes—and Vanishing Capability
-    status: planned
+    status: researching
     case: Karim’s publication, patent, program, and transition record
     claim: Output metrics can rise while the ability to produce the next generation of work declines.
     visuals: [Output-versus-capability dashboard, Test-of-time timeline, Evidence-quality matrix]
   - number: 12
     slug: startup-not-laboratory
     title: The Startup Is Not a Research Laboratory
-    status: planned
+    status: researching
     case: Confidencial and research spinouts
     claim: A startup can complete one transition but cannot rationally maintain the research commons.
     visuals: [Paper-to-product work map, Incentive comparison, Missing-middle cost stack]
   - number: 13
     slug: consolidation-as-triage
     title: Consolidation as Triage
-    status: planned
+    status: researching
     case: SRI/PARC and the announced IBM/HRL transaction
     claim: Preservation should be measured by surviving teams and capabilities, not by the transaction announcement.
     visuals: [Before-and-after capability ledger, Acquisition outcome tree, Five-year scorecard]
   - number: 14
     slug: last-transfer-window
     title: The Last Transfer Window
-    status: planned
+    status: researching
     case: The remaining mentorship overlap
     claim: Institutional memory is perishable, making delay more costly than budget statistics reveal.
     visuals: [Mentorship-chain model, Capability decay curves, Window indicators]
   - number: 15
     slug: ai-audits-scientific-record
     title: When AI Audits What Science Takes for Granted
-    status: planned
+    status: researching
     case: Mathematics; formal proof; the Microsoft-linked Majorana retraction; AI-assisted replication
     claim: How much of the scientific record is verified, and how much is merely unchallenged? AI may expose epistemic debt, subtracting from accepted knowledge before it adds to it.
     visuals: [Epistemic-status ledger, AI verification pipeline, Audit-shock curve]
   - number: 16
     slug: cargo-cult-science-machine-speed
     title: Cargo Cult Science at Machine Speed
-    status: planned
+    status: researching
     case: Shannon's bandwagon; Feynman's cargo cult; Wigner's unreasonable effectiveness; data-driven AI and hallucination
     claim: LLMs can industrialize the surface form of science—fluent prose, citations, equations, and experimental ritual—without increasing contact with truth; AI will amplify the epistemic standards of the institutions that deploy it.
     visuals: [Historical warning-to-AI map, Mathematical-validity versus empirical-adequacy matrix, Form-to-witness verification funnel]
   - number: 17
     slug: ai-native-public-good
     title: An AI-Native Laboratory for the Public Good
-    status: planned
+    status: researching
     case: A proposed successor informed by NAIRR, NSTC, FFRDCs, DARPA, and DOE laboratories
     claim: A successor must align capital, careers, infrastructure, AI, transition, and public value in one institutional design.
     visuals: [Interactive lab brain map, Governance and IP tiers, Ten-year pilot roadmap]
@@ -816,3 +816,129 @@ sources:
     kind: Author-supplied abstract for work under review
     url: https://keldefrawy.github.io/knowledge/papers/paper-79/
     supports: The author's reported calibration-closure results for several model-composition operators, the limits of those results before independent manuscript audit, and the distinction between unsupported model confidence and a checkable witness
+  - id: nasem-telecom-research-2006
+    title: Renewing U.S. Telecommunications Research
+    organization: National Research Council
+    date: "2006"
+    kind: Consensus study report
+    url: https://doi.org/10.17226/11711
+    supports: The 1996 division of Bell Labs resources between Lucent and AT&T Labs, the contraction in former Bell-family research employment from 1997 to 2001, and the broader decline in stable long-term telecommunications research support
+  - id: att-lucent-spinoff-1996
+    title: AT&T Corp. cost-basis guide—Lucent Technologies spinoff
+    organization: AT&T
+    date: "1996-09-30"
+    kind: Corporate primary record
+    url: https://investors.att.com/stockholder-services/cost-basis-guide/worksheet/att-corp
+    supports: The September 30, 1996 distribution of Lucent shares to AT&T stockholders and the legal separation of the equipment company from AT&T
+  - id: hrl-about
+    title: About HRL Laboratories
+    organization: HRL Laboratories
+    date: Current institutional profile
+    kind: Corporate primary source
+    url: https://www.hrl.com/about
+    supports: HRL's origins, joint Boeing and General Motors ownership before the announced IBM transaction, government and commercial contract channels, laboratories, facilities, and stated transition mission
+  - id: sri-karim-project-record
+    title: Karim Eldefrawy—Key Projects
+    organization: SRI International
+    date: Archived institutional profile
+    kind: Employer-authored project record
+    url: https://www.sri.com/bios/Karim-eldefrawy/
+    supports: The public dates, roles, and program affiliations of FARSIDE under DPRIVE, EMPHASIZE under SIEVE, PRISM under RACE, and the Air Force quantum project during the author's SRI tenure
+  - id: darpa-race
+    title: Resilient Anonymous Communication for Everyone
+    organization: Defense Advanced Research Projects Agency
+    date: Completed program record
+    kind: Agency primary source
+    url: https://www.darpa.mil/research/programs/resilient-anonymous-communication
+    supports: RACE's privacy and resilience objectives, rigorous security requirement, completion status, and later public release of proof-of-concept code
+  - id: darpa-sieve
+    title: Securing Information for Encrypted Verification and Evaluation
+    organization: Defense Advanced Research Projects Agency
+    date: Completed program record
+    kind: Agency primary source
+    url: https://www.darpa.mil/research/programs/securing-information-for-encrypted-verification-and-evaluation
+    supports: SIEVE's objective of expanding efficient zero-knowledge proofs for complex defense-relevant statements
+  - id: darpa-dprive
+    title: Data Protection in Virtual Environments
+    organization: Defense Advanced Research Projects Agency
+    date: Completed program record
+    kind: Agency primary source
+    url: https://www.darpa.mil/research/programs/data-protection-in-virtual-environments
+    supports: DPRIVE's completed program status and its goal of bringing fully homomorphic encryption within one order of magnitude of unencrypted computation through integrated hardware and software research
+  - id: xerox-parc-evolution-2021
+    title: The Evolution of PARC
+    organization: Xerox
+    date: "2021-07"
+    kind: Corporate historical report
+    url: https://investors.xerox.com/static-files/c029254f-5e39-4f23-95cd-4ebac5ceb8da
+    supports: Xerox's account of PARC's work on laser printing, Ethernet, the Alto, graphical interfaces, and later institutional evolution
+  - id: xerox-laser-printing-history
+    title: A Brief History of the Laser Printer
+    organization: Xerox
+    date: Corporate historical record
+    kind: Corporate primary source
+    url: https://www.xerox.com/en-an/office/insights/laser-printers
+    supports: Xerox's account of PARC's laser-printing invention and the launch of Xerox's first commercial laser printer; it supports a bounded commercialization counterexample rather than a claim about all PARC technologies
+  - id: teece-appropriability-1986
+    title: "Profiting from Technological Innovation: Implications for Integration, Collaboration, Licensing and Public Policy"
+    organization: David J. Teece
+    date: "1986"
+    kind: Peer-reviewed economics article
+    url: https://doi.org/10.1016/0048-7333%2886%2990027-2
+    supports: The distinction among invention, the appropriability regime, dominant design, and complementary assets that determine who captures returns from innovation
+  - id: nber-vc-decisions-2016
+    title: How Do Venture Capitalists Make Decisions?
+    organization: Paul Gompers, William Gornall, Steven N. Kaplan, and Ilya A. Strebulaev
+    date: "2016"
+    kind: Large-sample venture-capital survey and working paper
+    url: https://doi.org/10.3386/w22587
+    supports: Survey evidence from 885 institutional venture capitalists on investment selection, value creation, portfolio practice, and exits; it describes VC decision processes rather than proving one universal startup horizon
+  - id: sri-confidencial-spinout-2022
+    title: SRI Ventures announces new spin-out, Confidencial
+    organization: SRI International
+    date: "2022-06-07"
+    kind: Institutional transition announcement
+    url: https://www.sri.com/press/sri-ventures-announces-new-spin-out-confidencial-to-secure-sensitive-information-and-collaboration-for-distributed-enterprises/
+    supports: Confidencial's launch, seed financing, beta-stage product, SRI origins, and roots in the DARPA Brandeis and RACE programs
+  - id: karim-publication-record
+    title: Publications by Research Area
+    organization: Karim Eldefrawy
+    date: "2026-07"
+    kind: Author-maintained research record
+    url: https://keldefrawy.github.io/publications/
+    supports: The site's catalog of 79 research works; the record establishes countable outputs but does not by itself establish adoption, correctness, or retained institutional capability
+  - id: karim-patent-record
+    title: Patents
+    organization: Karim Eldefrawy
+    date: "2026-07"
+    kind: Author-maintained invention record linked to USPTO records
+    url: https://keldefrawy.github.io/patents.html
+    supports: The site's list of 31 granted U.S. patents and their linked patent records; a grant establishes patentability, not scientific peer review, product adoption, or institutional continuity
+  - id: karim-project-record
+    title: Extramurally Funded Projects
+    organization: Karim Eldefrawy
+    date: "2026-07"
+    kind: Author-maintained project record
+    url: https://keldefrawy.github.io/projects.html
+    supports: The site's record of 12 funded R&D awards across HRL, SRI, and Confidencial.io; the list records funded activity rather than long-term transition or capability survival
+  - id: ndss-test-of-time-2024
+    title: NDSS Test of Time Award
+    organization: Network and Distributed System Security Symposium
+    date: "2024"
+    kind: Awarding-organization record
+    url: https://www.ndss-symposium.org/ndss-test-of-time-award/
+    supports: The award's purpose of recognizing influential work from prior NDSS symposia and the 2024 recognition of the Internet-censorship system paper coauthored by the author
+  - id: ncses-doctorate-retirement-2023
+    title: Retirement Experiences of U.S.-Trained Doctoral Scientists and Engineers
+    organization: National Center for Science and Engineering Statistics
+    date: "2025-05-29"
+    kind: Official statistical report
+    url: https://www.ncses.nsf.gov/pubs/nsf25320
+    supports: Survey evidence that 18 percent of the covered U.S.-trained doctoral science, engineering, and health population had experienced retirement by 2023, while some continued working; it does not measure laboratory-specific tacit-knowledge loss
+  - id: rd-team-tacit-knowledge-2016
+    title: Can Knowledge-Intensive Teamwork Be Managed?
+    organization: Chih-Hsun Chuang, Susan E. Jackson, and Yuan Jiang
+    date: "2016"
+    kind: Peer-reviewed study of 162 R&D teams
+    url: https://doi.org/10.1177/0149206313478189
+    supports: Empirical evidence linking management systems, leadership, external knowledge acquisition, internal knowledge sharing, and knowledge tacitness in research-and-development teams
