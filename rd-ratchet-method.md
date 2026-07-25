@@ -46,6 +46,14 @@ The series is designed to change when better evidence arrives without erasing wh
 
 Firsthand memory is valuable but bounded. A contemporaneous document can establish what an institution announced, not necessarily what happened afterward. Interviews add participant knowledge and must be attributed or explicitly anonymized. Analysis connects the evidence and remains open to challenge. The articles mark these classes because mixing them invisibly would create false certainty.
 
+## What the criticism targets
+
+The series criticizes documented incentives, decisions, governance structures, and behaviors that damage research capability. It does not infer private motives, diagnose character, or turn a systemic argument into an attack on a named individual. People are named only when their documented role, attributed account, or work is necessary to the evidence.
+
+The same discipline applies to institutions. Bell Labs, AT&T’s Shannon Laboratory, PARC, HRL, IBM Research, and their peers helped create much of the scientific and technical substrate on which the present depends. Some continue to produce important work. A surviving name, however, is not proof that its former breadth, autonomy, team density, infrastructure, or research horizon survived unchanged. When the series calls an institution a “shadow” of an earlier form, it must identify the capability dimension and evidence; where that evidence is missing, the status remains an open question.
+
+The story should therefore carry the criticism. Credit is explicit, institutional continuity is tested rather than presumed, and individual blame is not used as a substitute for causal analysis.
+
 ## Version preservation
 
 Every public version receives its own address beneath the article’s permanent URL. A snapshot freezes the article text, its source records, its revision note, and integrity hashes. Article-specific charts and illustrations are stored in versioned asset directories and are not overwritten by later revisions.

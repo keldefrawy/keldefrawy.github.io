@@ -45,9 +45,20 @@ layout: default
   </figure>
   {% endif %}
 
+  {% if page.evidence_chart or page.argument_map %}
+  <section class="rd-article-visual-suite" aria-label="Evidence and argument overview">
+    {% if page.evidence_chart %}{% include rd-article-evidence-chart.html chart=page.evidence_chart %}{% endif %}
+    {% if page.argument_map %}{% include rd-article-argument-map.html map=page.argument_map %}{% endif %}
+  </section>
+  {% endif %}
+
   <div class="rd-article-body">
     {{ content }}
   </div>
+
+  {% if page.objection_ladders %}
+    {% include rd-objection-ladders.html ladders=page.objection_ladders %}
+  {% endif %}
   {% endif %}
 
   {% if page.corrections %}

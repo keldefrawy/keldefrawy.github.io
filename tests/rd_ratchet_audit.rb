@@ -55,6 +55,7 @@ links = data.fetch("argument_links")
 brain_nodes = data.fetch("brain_nodes")
 sources = data.fetch("sources")
 chart = data.fetch("rd_chart")
+timeline = data.fetch("timeline")
 
 errors << "the editorial arc must contain fifteen articles" unless articles.length == 15
 errors << "the article count in series metadata is stale" unless series.fetch("article_count") == articles.length
@@ -83,6 +84,8 @@ end
 errors << "the incentive comparison is missing institutional variety" unless models.length >= 8
 errors << "the successor model is missing" unless models.any? { |model| model.fetch("id") == "successor" }
 errors << "the AI-native map must have one core" unless brain_nodes.count { |node| node.fetch("position") == "core" } == 1
+errors << "the firsthand timeline omits Ericsson in Sweden in 2000" unless timeline.any? { |event| event.fetch("year") == "2000" && event.fetch("label").include?("Ericsson") && event.fetch("note").include?("Linköping") && event.fetch("note").include?("Kista") }
+errors << "the firsthand timeline omits Cisco Systems in San Jose in 2002" unless timeline.any? { |event| event.fetch("year") == "2002" && event.fetch("label").include?("Cisco") && event.fetch("note").include?("San Jose") }
 
 source_ids = sources.map { |source| source.fetch("id") }
 referenced_source_ids = [chart.fetch("source_id")] + data.fetch("timeline").filter_map { |event| event["source_id"] }
@@ -132,16 +135,28 @@ errors << "landing page cannot filter published articles" unless page.include?('
 errors << "landing page cannot retain withdrawal records" unless page.include?('data-rd-article-filter="withdrawn"')
 errors << "landing page article heading must state fifteen articles" unless page.include?("Fifteen articles")
 errors << "unpublished article previews are not linked when rendered" unless page.include?('site.rd_articles | where: "article_slug", article.slug') && page.include?("rd_article_page.url")
+errors << "AI-native laboratory nodes must expose their positions to CSS" unless page.include?('data-position="{{ node.position }}"')
+errors << "AI-native laboratory core must use a distinct non-black color" unless style.match?(/\.rd-brain-node\[data-position="core"\][^\{]*\{[^\}]*background:\s*var\(--rd-green\);/m)
 if style.match?(/\.rd-brain-node[^\{]*\.is-active[^\{]*\{[^\}]*\btransform\s*:/m)
   errors << "AI-native laboratory nodes must not change position when selected"
 end
 unless style.match?(/\.rd-timeline\s*\{[^\}]*width:\s*max-content;[^\}]*min-width:\s*100%;/m)
   errors << "horizontal timeline must size its line to the full event grid"
 end
+unless style.match?(/\.rd-timeline__evidence\s*\{[^\}]*display:\s*flex;[^\}]*gap:\s*0\.55rem;/m)
+  errors << "timeline evidence badges need explicit space before Firsthand or Documented"
+end
+errors << "objection ladders must collapse to one column on narrow screens" unless style.include?(".rd-objection-suite__grid { grid-template-columns: 1fr; }")
+errors << "evidence graphs must collapse to one column on mobile" unless style.include?(".rd-article-evidence-chart__row { grid-template-columns: 1fr; }")
+errors << "argument maps must collapse to one column on mobile" unless style.include?(".rd-article-argument-map > ol { grid-template-columns: 1fr; }")
 
 config = YAML.load_file(File.join(ROOT, "_config.yml"))
 errors << "Jekyll does not publish revision snapshots" unless config.fetch("collections", {}).key?("rd_revisions")
 errors << "feedback issue route is not configured" if config.dig("rd_ratchet", "feedback_issue_url").to_s.empty?
+
+method = File.read(METHOD_PATH, encoding: "UTF-8")
+errors << "editorial method must target destructive systems and behavior rather than individual motives" unless method.include?("does not infer private motives") && method.include?("attack on a named individual")
+errors << "editorial method must distinguish a surviving name from surviving capability" unless method.include?("A surviving name") && method.include?("former breadth, autonomy, team density")
 
 article_layout = File.read(LAYOUT_PATH, encoding: "UTF-8")
 errors << "article layout omits withdrawal tombstones" unless article_layout.include?("page.withdrawn")
@@ -149,8 +164,43 @@ errors << "article layout omits public version history" unless article_layout.in
 errors << "article layout omits structured feedback" unless article_layout.include?("rd-feedback.html")
 
 article_template = File.read(File.join(ROOT, "_drafts", "rd-ratchet-article-template.md"), encoding: "UTF-8")
-%w[article_slug permalink published version version_sequence revision_summary corrections].each do |field|
+%w[article_slug permalink published version version_sequence revision_summary evidence_chart argument_map objection_ladders corrections].each do |field|
   errors << "article template omits #{field}" unless article_template.match?(/^#{field}:/)
+end
+
+articles.select { |article| article.fetch("status") == "researching" }.each do |article|
+  path = File.join(ROOT, "_rd_articles", "#{article.fetch('slug')}.md")
+  unless File.file?(path)
+    errors << "in-research article source is missing: #{path}"
+    next
+  end
+
+  text = File.read(path, encoding: "UTF-8")
+  match = text.match(/\A---\s*\n(.*?)\n---\s*\n/m)
+  unless match
+    errors << "in-research article has invalid front matter: #{path}"
+    next
+  end
+
+  metadata = YAML.safe_load(match[1], permitted_classes: [Date, Time], aliases: true) || {}
+  evidence_chart = metadata["evidence_chart"]
+  argument_map = metadata["argument_map"]
+  objection_ladders = metadata["objection_ladders"]
+  article_sources = metadata.fetch("source_ids", [])
+
+  errors << "#{article['slug']} omits its source-linked evidence graph" unless evidence_chart.is_a?(Hash) && evidence_chart.fetch("bars", []).length >= 2
+  errors << "#{article['slug']} evidence graph lacks accessible labeling" unless evidence_chart.is_a?(Hash) && !evidence_chart["aria_label"].to_s.empty?
+  errors << "#{article['slug']} evidence graph cites an unavailable source" unless evidence_chart.is_a?(Hash) && article_sources.include?(evidence_chart["source_id"])
+  errors << "#{article['slug']} argument map must contain at least four stages" unless argument_map.is_a?(Hash) && argument_map.fetch("nodes", []).length >= 4
+  errors << "#{article['slug']} needs at least two two-level objection ladders" unless objection_ladders.is_a?(Array) && objection_ladders.length >= 2
+
+  Array(objection_ladders).each_with_index do |ladder, index|
+    %w[claim first_objection first_response second_objection conclusion].each do |field|
+      errors << "#{article['slug']} objection ladder #{index + 1} omits #{field}" if ladder[field].to_s.empty?
+    end
+    missing = Array(ladder["source_ids"]) - article_sources
+    errors << "#{article['slug']} objection ladder #{index + 1} cites sources outside its ledger: #{missing.join(', ')}" unless missing.empty?
+  end
 end
 
 issue_template = YAML.load_file(ISSUE_TEMPLATE_PATH)
@@ -189,7 +239,15 @@ if File.file?(RENDERED_PATH)
   researching_articles.each do |article|
     route = "/rd-ratchet/#{article.fetch('slug')}/"
     errors << "in-research article card does not link #{route}" unless rendered.include?(%(<h3><a href="#{route}">)) && rendered.include?(%(class="rd-article-link"><a href="#{route}">DRAFT</a>))
-    errors << "in-research article page was not rendered at #{route}" unless File.file?(File.join(ROOT, "_site", "rd-ratchet", article.fetch("slug"), "index.html"))
+    rendered_article_path = File.join(ROOT, "_site", "rd-ratchet", article.fetch("slug"), "index.html")
+    errors << "in-research article page was not rendered at #{route}" unless File.file?(rendered_article_path)
+    if File.file?(rendered_article_path)
+      rendered_article = File.read(rendered_article_path, encoding: "UTF-8")
+      errors << "#{article['slug']} did not render its evidence graph" unless rendered_article.include?('class="rd-article-evidence-chart"')
+      errors << "#{article['slug']} did not render its argument map" unless rendered_article.include?('class="rd-article-argument-map"')
+      errors << "#{article['slug']} did not render two first-level objections" unless rendered_article.scan("First-level objection").length == 2
+      errors << "#{article['slug']} did not render two second-level objections" unless rendered_article.scan("Second-level objection").length == 2
+    end
   end
   source_ids.each do |source_id|
     errors << "rendered page omits source anchor #{source_id}" unless rendered.include?(%(id="source-#{source_id}"))

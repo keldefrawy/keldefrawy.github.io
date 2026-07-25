@@ -59,10 +59,18 @@ timeline:
     kind: document
     source_id: nokia-bell-history
     note: AT&T spun most of Bell Labs and its equipment business into Lucent; a smaller research organization remained with AT&T.
+  - year: "2000"
+    label: Ericsson, Sweden
+    kind: memory
+    note: Karim’s internship across Ericsson’s Linköping and Kista facilities; Kista was Sweden’s “Silicon Valley” telecommunications cluster.
   - year: "2001"
     label: Lucent / Bell Labs
     kind: memory
     note: Karim’s summer internship during the telecom contraction.
+  - year: "2002"
+    label: Cisco Systems
+    kind: memory
+    note: Karim’s internship in San Jose, adding a product-company view of Silicon Valley’s technology system.
   - year: "2007"
     label: AT&T Research
     kind: memory
@@ -290,7 +298,7 @@ articles:
     visuals: [Interactive R&D trend chart, National capability balance sheet, Source-backed argument map]
   - number: 2
     slug: lucent-coming-apart
-    title: I Arrived at Bell Labs as Lucent Was Coming Apart
+    title: I Arrived at Bell Labs as Lucent Technologies Was Coming Apart—Before Bell Labs Became Part of Nokia
     status: planned
     case: Lucent / Bell Labs, 2001
     claim: Scientific excellence and corporate fragility can coexist.
@@ -401,7 +409,7 @@ sources:
     date: Current institutional history
     kind: Institutional primary source
     url: https://www.nokia.com/bell-labs/about/history/
-    supports: The 1996 AT&T/Lucent split and later Bell Labs institutional transitions
+    supports: The 1996 AT&T/Lucent split, later Bell Labs institutional transitions, and Nokia Bell Labs’ current count of ten Nobel Prizes and five Turing Awards
   - id: ibm-hrl-2026
     title: IBM to acquire HRL Laboratories
     organization: IBM

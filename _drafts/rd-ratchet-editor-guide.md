@@ -70,6 +70,20 @@ Classify each submission as Pending, Accepted, Partially accepted, Declined, or 
 
 ## 7. Pre-publication check
 
+Every in-research article must include three visual reasoning layers in front matter:
+
+- a source-linked `evidence_chart` with an accessible label, explicit values, and a qualification stating what the graph does not prove;
+- a four-stage `argument_map` that separates documented observation, inference or mechanism, and the bounded conclusion;
+- at least two `objection_ladders`, each containing a first-level objection, a direct response, a stronger second-level objection that engages the response, and a revised conclusion.
+
+The visuals supplement the full argument; do not delete necessary evidence or qualifications merely to make the page shorter. Do not use a decorative graph whose bar lengths imply a relationship the cited data do not support.
+
+## 8. Criticize systems and behavior, not personalities
+
+Name a person only when the documented role, attributed account, or work is necessary to the evidence. Criticize destructive incentives, decisions, governance, and behavior without imputing a private motive or character defect. Credit the continuing work of surviving institutions while testing their present breadth, autonomy, team density, infrastructure, and horizon separately from their historic name.
+
+## 9. Pre-publication check
+
 Run:
 
 ```sh

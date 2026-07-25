@@ -56,7 +56,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <blockquote>
       America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — quarterly corporate-like returns, finite short-term government programs, billable projects leading to ballooning administrative and non-productive work, publication metrics, patent accounting, and venture-backed commercialization optimized for acquisition or IPO. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capabilities faster than it has replenished them.
     </blockquote>
-    <p class="rd-thesis__qualification"><strong>This is a thesis to test, not a conclusion to assume.</strong> Each article will separate scientific, technical, transition, institutional, economic, and public-value outcomes—and will state the strongest evidence against its own interpretation.</p>
+    <p class="rd-thesis__qualification"><strong>This is a thesis to test, not a conclusion to assume.</strong> Each article will separate scientific, technical, transition, institutional, economic, and public-value outcomes—and will state the strongest evidence against its own interpretation. The criticism targets destructive incentives, decisions, and behaviors, not speculation about any individual’s motives or character.</p>
   </section>
 
   <section class="rd-paradox" id="paradox" aria-labelledby="rd-paradox-title">
@@ -131,9 +131,9 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
 
   <section class="rd-timeline-section" id="journey" aria-labelledby="rd-timeline-title">
     <div class="rd-section-heading">
-      <p class="rd-kicker">Twenty-five years inside a thirty-year transformation</p>
+      <p class="rd-kicker">Twenty-six years inside a thirty-year transformation</p>
       <h2 id="rd-timeline-title">The route through the incentive systems</h2>
-      <p>The personal record begins in 2001. The institutional arc begins with the 1996 Bell Labs split and continues through the transactions reshaping PARC and HRL.</p>
+      <p>The personal record begins in 2000. The institutional arc begins with the 1996 Bell Labs split and continues through the transactions reshaping PARC and HRL.</p>
     </div>
     <div class="rd-timeline-scroll" tabindex="0" aria-label="Horizontal timeline; scroll to inspect all events">
       <ol class="rd-timeline">
@@ -291,7 +291,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       <div class="rd-brain-map" data-rd-brain-map>
         <canvas class="rd-map-lines" data-rd-brain-lines aria-hidden="true"></canvas>
         {% for node in rd.brain_nodes %}
-        <button type="button" class="rd-brain-node rd-brain-node--{{ node.position }}" data-rd-brain-node="{{ node.id }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ node.title | upcase }}</button>
+        <button type="button" class="rd-brain-node rd-brain-node--{{ node.position }}" data-rd-brain-node="{{ node.id }}" data-position="{{ node.position }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ node.title | upcase }}</button>
         {% endfor %}
       </div>
       <aside class="rd-brain-detail" data-rd-brain-detail aria-live="polite">

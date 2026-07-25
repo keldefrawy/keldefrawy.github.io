@@ -11,7 +11,7 @@ updated: 2026-07-24
 version: "0.1"
 version_sequence: 1
 revision_summary: Private working draft; not a public version
-reading_time: 16
+reading_time: 18
 central_claim: Laboratory destruction is a loss of connected capability rather than a payroll or real-estate event; preservation must be measured by the survival of critical relationships, complementary roles, assets, memory, problem-selection authority, and paths to use.
 claim_status: Provisional institutional model; the Microsoft closure and IBM transactions are documented, while graph-level capability effects require interviews and longitudinal evidence
 hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
@@ -25,6 +25,54 @@ source_ids:
   - ibm-silicon-valley-lab
   - gf-ibm-microelectronics-2014
   - arora-corporate-science
+evidence_chart:
+  kicker: Microsoft Silicon Valley diaspora
+  title: Talent survived, but the documented destinations show dispersion—not laboratory continuity
+  summary: IEEE Spectrum followed the 53 people listed on the laboratory website shortly before it closed. The public follow-up found several destination clusters, but it did not reconstruct the old collaboration network.
+  aria_label: Of 53 former Microsoft Silicon Valley laboratory researchers followed through public sources, at least 8 went to Google, at least 6 to academic positions, at least 5 to VMware, and at least 2 to Apple.
+  source_id: ieee-msr-sv-diaspora-2015
+  note: Destination counts are reported minimums from an incomplete public-source follow-up. They do not sum to the full cohort and do not measure later collaboration.
+  bars:
+    - { label: People followed, value: "53", percent: 100, tone: navy }
+    - { label: Google, value: "≥8", percent: 15.1, tone: blue }
+    - { label: Academic positions, value: "≥6", percent: 11.3, tone: green }
+    - { label: VMware, value: "≥5", percent: 9.4, tone: amber }
+    - { label: Apple, value: "≥2", percent: 3.8, tone: blue }
+argument_map:
+  kicker: Source-linked capability graph
+  title: A laboratory can lose the edges that make its people jointly capable
+  summary: Headcount, buildings, patents, and names are observable nodes. The harder question is whether the relationships and complements that connect inquiry to use still function.
+  caption: The graph is an analytical model. Microsoft documents the closure; the public diaspora record documents dispersion; neither source alone measures every lost or newly created edge.
+  nodes:
+    - role: Documented event
+      title: A named laboratory closed
+      text: Microsoft acknowledged the Silicon Valley closure and layoffs while continuing research elsewhere.
+      source_ids: [msr-sv-open-letter-2014, msr-sv-levin-profile]
+    - role: Node outcome
+      title: Many researchers found new institutional homes
+      text: Public profiles showed rapid movement into firms, universities, startups, and other roles across the regional system.
+      source_ids: [ieee-msr-sv-diaspora-2015]
+    - role: Edge hypothesis
+      title: The former collaboration graph was not automatically preserved
+      text: New employers retained individuals, but none was obliged to reconstruct the prior team's trust, tools, memory, agenda, or transition path.
+      source_ids: [ieee-msr-sv-diaspora-2015, arora-corporate-science]
+    - role: Testable verdict
+      title: Measure capability before declaring survival or death
+      text: Compare team edges, assets, memory, question authority, and end-to-end performance for at least five years after a move or transaction.
+      source_ids: [ibm-almaden-consolidation-2025, ibm-silicon-valley-lab, gf-ibm-microelectronics-2014]
+objection_ladders:
+  - claim: Reemployment of researchers does not prove preservation of the laboratory.
+    first_objection: If nearly everyone found another productive position, the market conserved the scarce human capital and may have allocated it better.
+    first_response: It conserved many people. It did not necessarily conserve their repeated collaborations, shared tools, remembered failures, problem-selection authority, or path to deployment.
+    second_objection: New relationships may outperform the old ones. Preserving a legacy graph can protect obsolete agendas and prevent knowledge diffusion.
+    conclusion: Do not preserve organizations by default. Ask which important capability the old graph could perform, whether a successor can perform it, and whether the value of lost options exceeds the gains from recombination.
+    source_ids: [ieee-msr-sv-diaspora-2015, arora-corporate-science]
+  - claim: Laboratory survival is topological rather than a question of address, logo, or aggregate headcount.
+    first_objection: “Topology” is metaphorical and unmeasurable. Boards and sponsors must use auditable indicators such as jobs, budgets, facilities, patents, and publications.
+    first_response: Those indicators are necessary but can remain stable after the only experimentalist, transition lead, archive interpreter, or question-selection authority disappears.
+    second_objection: Relationship measures can become subjective surveillance, and a capability ledger may assign false precision to trust and tacit knowledge.
+    conclusion: Use bounded proxies—team retention by role, recurring cross-group work, practical asset access, archive reuse, researcher-initiated work, and transition outcomes—while publishing uncertainty and testing whether they predict capability better than ordinary indicators.
+    source_ids: [msr-sv-open-letter-2014, ibm-almaden-consolidation-2025, gf-ibm-microelectronics-2014]
 corrections: []
 ---
 

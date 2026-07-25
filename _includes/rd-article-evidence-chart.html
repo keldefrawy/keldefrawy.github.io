@@ -1,0 +1,23 @@
+{% assign rd_chart = include.chart %}
+<figure class="rd-article-evidence-chart" aria-labelledby="rd-article-evidence-chart-title-{{ page.article_number }}">
+  <header>
+    <p class="rd-kicker">{{ rd_chart.kicker | default: "Evidence graph" }}</p>
+    <h2 id="rd-article-evidence-chart-title-{{ page.article_number }}">{{ rd_chart.title }}</h2>
+    {% if rd_chart.summary %}<p>{{ rd_chart.summary }}</p>{% endif %}
+  </header>
+  <div class="rd-article-evidence-chart__plot" role="img" aria-label="{{ rd_chart.aria_label | escape }}">
+    {% for bar in rd_chart.bars %}
+    <div class="rd-article-evidence-chart__row">
+      <div class="rd-article-evidence-chart__label"><span>{{ bar.label }}</span><strong>{{ bar.value }}</strong></div>
+      <div class="rd-article-evidence-chart__track" aria-hidden="true">
+        <span class="rd-article-evidence-chart__bar rd-article-evidence-chart__bar--{{ bar.tone | default: 'blue' }}" style="--rd-article-bar: {{ bar.percent }}%"></span>
+      </div>
+      {% if bar.note %}<small>{{ bar.note }}</small>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <figcaption>
+    {{ rd_chart.note }}
+    {% if rd_chart.source_id %}<a href="#source-{{ rd_chart.source_id }}">Inspect the source record.</a>{% endif %}
+  </figcaption>
+</figure>

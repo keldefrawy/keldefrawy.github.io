@@ -11,7 +11,7 @@ updated: 2026-07-23
 version: "0.1"
 version_sequence: 1
 revision_summary: Private working draft; not a public version
-reading_time: 18
+reading_time: 20
 central_claim: The academic research system is optimized to fund projects, publish knowledge, and train people; it underfunds the stable technical teams, shared infrastructure, negative-result memory, and transition ownership needed to function as a complete long-horizon R&D institution.
 claim_status: Provisional; national expenditure and cost rules are documented, while incentive effects vary by field and institution
 hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
@@ -32,6 +32,52 @@ source_ids:
   - feynman-cargo-cult
   - shannon-bandwagon
   - far-ffrdc
+evidence_chart:
+  kicker: Academic R&D funding, FY2024
+  title: A $117.7 billion system with three different funding obligations
+  summary: Federal awards, university resources, and other funders jointly support academic R&D. The split shows why neither “the grant pays for everything” nor “overhead is simply money removed from science” is adequate.
+  aria_label: Of United States academic research and development funding in fiscal year 2024, the federal government supplied 55 percent, institutions supplied 26 percent, and other sources supplied 19 percent.
+  source_id: ncses-herd-2024
+  note: Shares are of reported FY2024 higher-education R&D expenditure. “Other sources” combines nonprofits, businesses, and state and local governments.
+  bars:
+    - { label: Federal government, value: "55%", percent: 55, tone: blue }
+    - { label: Institutions, value: "26%", percent: 26, tone: green }
+    - { label: Other sources, value: "19%", percent: 19, tone: amber }
+argument_map:
+  kicker: Source-linked argument map
+  title: Universities solve discovery and training better than institutional continuity
+  summary: The criticism concerns the bundle of functions assigned to universities, not the seriousness or value of academic researchers.
+  caption: The proposed reform separates projects, durable capability, and public accountability instead of loading all three into a project rate.
+  nodes:
+    - role: Documented strength
+      title: Universities dominate open basic research and training
+      text: Academic R&D reached $117.7 billion; 63 percent was basic research, and universities train the people used by every other R&D institution.
+      source_ids: [ncses-herd-2024, ncses-rd-2026]
+    - role: Incentive mechanism
+      title: Four clocks select what can survive
+      text: Grant, publication, training, and budget clocks can jointly reject work that is long-lived, infrastructural, or difficult to assign to one project.
+      source_ids: [azoulay-incentives, wang-novelty]
+    - role: Accounting consequence
+      title: Permanent capability appears as overhead
+      text: Shared facilities and compliance are real, while projectization also creates administrative work and makes cost allocation opaque.
+      source_ids: [gao-grant-burden, gao-nih-indirect, gao-nsf-indirect]
+    - role: Bounded conclusion
+      title: Fund the missing layer explicitly
+      text: Preserve university discovery while separately funding technical careers, shared infrastructure, memory, transition, and accountable interfaces.
+      source_ids: [far-ffrdc, nasem-integrity]
+objection_ladders:
+  - claim: Universities are indispensable but cannot, by themselves, replace a complete long-horizon laboratory.
+    first_objection: Universities produced Turing's computability work, modern biotechnology, major instruments, and generations of foundational science. The historical record disproves the claim.
+    first_response: It disproves only the stronger claim that universities cannot think long. The narrower claim is that discovery and training do not automatically provide stable engineering, mission ownership, manufacturing, deployment, or maintenance.
+    second_objection: A network of universities, companies, laboratories, and startups can supply those complements without recreating an integrated institution.
+    conclusion: Yes—if the interfaces, shared memory, and transition owner are explicitly funded and measured. The article argues against treating the university as the whole network, not against distributed institutional design.
+    source_ids: [ncses-herd-2024, far-ffrdc]
+  - claim: Much overhead is the accounting shadow of funding permanent capability through temporary projects.
+    first_objection: Overhead is administrative bloat that diverts money from researchers; a lower uniform rate would force universities to become efficient.
+    first_response: F&A also pays for facilities, utilities, safety, data systems, and grant administration, and the rate is applied to a modified direct-cost base rather than simply removed from the total award.
+    second_objection: Real shared costs do not prove current rates or administrative structures are efficient. Negotiated bundles can hide duplication, cross-subsidy, and growth without accountability.
+    conclusion: Neither defend every negotiated dollar nor impose a blind cap. Publish a capability ledger, separate sponsor-required accountability from infrastructure, compare like fields, and reduce duplicated requirements before cutting scientific capacity.
+    source_ids: [gao-grant-burden, gao-nih-indirect, gao-nsf-indirect, first-circuit-nih-2026]
 corrections: []
 ---
 

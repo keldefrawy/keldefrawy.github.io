@@ -11,7 +11,7 @@ updated: 2026-07-23
 version: "0.1"
 version_sequence: 1
 revision_summary: Private working draft; not a public version
-reading_time: 24
+reading_time: 26
 central_claim: A research system thinks long only when it preserves teams, tools, memory, independent error correction, and a path to use across the gaps between projects. U.S. R&D accounts measure annual activity but do not establish that this institutional state is being replenished.
 claim_status: Provisional; the expenditure facts are established, while the system-level capability claim remains a testable interpretation
 hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
@@ -40,12 +40,57 @@ source_ids:
   - gao-dhs-ffrdc-2025
   - darpa-pm-model
   - gao-ffrdc
+evidence_chart:
+  kicker: The spending paradox
+  title: Real R&D expenditure more than doubled while capability remained unmeasured
+  summary: The expenditure series establishes scale and growth. It does not report whether teams, tools, memory, or transition paths survived between projects.
+  aria_label: Inflation-adjusted United States research and development expenditure increased from 368.5 billion dollars in 2000 to 792.0 billion dollars in 2024.
+  source_id: ncses-rd-2026
+  note: Billions of constant 2017 dollars. The 2024 value is an estimate, and expenditure is not a direct measure of institutional capability.
+  bars:
+    - { label: "2000", value: "$368.5B", percent: 46.5, tone: blue }
+    - { label: "2024 estimate", value: "$792.0B", percent: 100, tone: green }
+argument_map:
+  kicker: Source-linked argument map
+  title: The claim proceeds from an observed flow to a missing stock
+  summary: Each arrow is an inferential step. The first is documented; the later steps are hypotheses that require new measurements.
+  caption: The map deliberately separates national expenditure facts from the institutional interpretation being tested.
+  nodes:
+    - role: Documented observation
+      title: R&D expenditure reached record scale
+      text: Real total and basic-research spending rose substantially between 2000 and 2024.
+      source_ids: [ncses-rd-2026]
+    - role: Measurement gap
+      title: Accounts measure activity, not retained state
+      text: The totals do not record team continuity, tacit memory, shared tools, autonomy, or reconstitution cost.
+      source_ids: [ncses-rd-2026]
+    - role: Proposed mechanism
+      title: Project boundaries can consume inherited capability
+      text: Repeated handoffs and common selection pressures can preserve visible output while degrading reusable institutional state.
+      source_ids: [arora-corporate-science, gao-dhs-ffrdc-2025]
+    - role: Testable conclusion
+      title: Add a capability balance sheet
+      text: Judge reorganizations and portfolios by continuity, memory, correction, transition, and rebuild cost—not spending alone.
+      source_ids: [ibm-hrl-2026, xerox-parc-sri]
+objection_ladders:
+  - claim: Record R&D spending can coexist with declining long-horizon capability.
+    first_objection: If real R&D spending and real basic-research spending both rose, the system is not declining; the article is redefining decline to evade the data.
+    first_response: The claim is not that research activity fell. It is that a flow measure cannot establish whether the reusable stock of teams, memory, tools, and transition relationships was replenished.
+    second_objection: But the proposed stock is latent and partly qualitative. Without a national time series, “capability debt” may be an unfalsifiable story attached to any disliked reorganization.
+    conclusion: Treat capability decline as a hypothesis, not a finding. Build longitudinal measures of team continuity, asset reuse, independent pathways, transition performance, and reconstitution cost; reject the thesis if those measures remain stable or improve.
+    source_ids: [ncses-rd-2026, arora-corporate-science]
+  - claim: Fragmentation shortens the effective horizon of otherwise long programs.
+    first_objection: Digital repositories, cloud infrastructure, open source, and labor mobility now preserve knowledge better than a single old laboratory could.
+    first_response: Those systems reduce search and transfer costs, especially for explicit knowledge, but they do not automatically preserve tacit judgment, physical facilities, trusted collaboration, or responsibility for deployment.
+    second_objection: That answer may merely privilege co-location and institutional age. Distributed teams can create better networks, and old laboratories also hoarded knowledge and fossilized.
+    conclusion: Do not presume that continuity is superior. Compare old and new arrangements on end-to-end capability, independent correction, transition probability, and rebuild cost. Fragmentation is harmful only where the distributed system fails those tests.
+    source_ids: [nokia-bell-history, gao-ffrdc, darpa-pm-model]
 corrections: []
 ---
 
 On July 23, 2026, [IBM announced that it had signed an agreement to acquire HRL Laboratories](#source-ibm-hrl-2026) from Boeing and General Motors. The transaction had not closed when this draft was written. Three years earlier, [Xerox donated PARC to SRI International](#source-xerox-parc-sri). These are different transactions involving different institutions, and neither should be written as an obituary. But together they pose a question that national R&D statistics cannot answer: when a laboratory changes institutional containers, what exactly survives?
 
-That question is personal for me, but my vantage point is bounded. I worked at HRL from 2010 to 2016 and at SRI from 2017 to 2022. I did not participate in either transaction. I can recognize the kinds of capability hidden behind an institutional name—people who know how to choose problems, trusted teams, specialized tools, failed approaches that are not in papers, and engineers who can make a theoretical result work—but I cannot infer from an announcement which of those things will still cohere five years later. A transaction document establishes ownership and stated intent. It does not establish institutional continuity. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
+That question is personal for me, but my vantage point is bounded. My earliest views of large technology organizations came through an internship at Ericsson's Linköping and Kista facilities in Sweden in 2000, followed by Lucent Technologies' Bell Labs in 2001, Cisco Systems in San Jose in 2002, and AT&T Research in 2007. I later worked at HRL from 2010 to 2016 and at SRI from 2017 to 2022. These experiences are observation points, not complete institutional audits, and I did not participate in either transaction. I can recognize the kinds of capability hidden behind an institutional name—people who know how to choose problems, trusted teams, specialized tools, failed approaches that are not in papers, and engineers who can make a theoretical result work—but I cannot infer from an announcement which of those things will still cohere five years later. A transaction document establishes ownership and stated intent. It does not establish institutional continuity. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="D">D</span>
 
 This is the first error to avoid. The second is larger: America did not stop spending on research and development.
 
@@ -163,6 +208,14 @@ This is why the unit of analysis cannot be the isolated grant or paper. A long-t
 ## Why the replacement institutions are indispensable—and insufficient alone
 
 The old corporate laboratory should not be idealized. Bell Labs was coupled to a regulated and vertically integrated communications system that no policy memo can recreate; [its own institutional history records how research, development, manufacturing, and operating needs were reorganized repeatedly](#source-nokia-bell-history). Its parent economics, manufacturing base, and market structure mattered. Nor did the old system fund every important person or distribute opportunity fairly.
+
+These laboratories are not props in a decline narrative. Bell Labs and AT&T's Shannon Laboratory, PARC, HRL, IBM Research, and related institutions helped create the technical substrate on which the present system runs. Several still operate and still produce serious work. Intellectual honesty requires holding two facts at once: current work deserves accurate credit, and survival of a name does not establish survival of the former breadth, autonomy, dense complementarity, or horizon. “A shadow of its former self” should be a measurable institutional claim, not an insult aimed at the people doing the work now.
+
+[Nokia Bell Labs credits its history with ten Nobel Prizes and five Turing Awards](#source-nokia-bell-history). I use that record to state a deliberately severe institutional warning:
+
+> **If even Bell Labs could lose its historic institutional form, no research laboratory should treat past distinction as protection. Without incentives that continually renew capability, every laboratory is vulnerable to the same downward ratchet.**
+
+That is a rule of attention, not a law of history. It directs scrutiny toward the behavior of owners, sponsors, boards, and funding systems—not toward conjectures about any one individual's motives.
 
 But the replacements divide functions that the integrated laboratory could sometimes hold together.
 

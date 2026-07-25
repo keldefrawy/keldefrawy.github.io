@@ -33,7 +33,9 @@ The global stakes matter. The old U.S. laboratories generated spillovers used th
 
 The value is not proximity to famous names. It is movement through different incentive systems while doing related technical work:
 
+- **2000 — Ericsson, Linköping and Kista, Sweden:** an internship across two Swedish facilities, including the Kista telecommunications cluster often described as Sweden’s “Silicon Valley.”
 - **2001 — Bell Labs/Lucent Technologies:** a summer internship during the telecom collapse, providing an early view of technical excellence inside a deteriorating corporate settlement.
+- **2002 — Cisco Systems, San Jose:** an internship adding a product-company view of Silicon Valley’s technology system.
 - **2007 — AT&T Research Labs:** a research internship during graduate school, allowing comparison between two descendants of the Bell system rather than treating “Bell Labs” as one continuous abstraction.
 - **2010–2016 — HRL Laboratories:** owner-sponsored and government-funded mission R&D; the local record documents more than $3.5 million in led work, two inventor awards, publications, and a substantial patent portfolio.
 - **2017–2022 — SRI International:** independent nonprofit contract research, internal seed funding, and leadership of major DARPA programs spanning secure computation, formal verification, anonymous communication, and FHE acceleration.
@@ -41,7 +43,7 @@ The value is not proximity to famous names. It is movement through different inc
 - **2023 onward — PARC at SRI:** an important institutional case observed as an SRI alumnus, but not a firsthand account of the acquisition or the combined organization.
 - **2026 — IBM’s announced agreement to acquire HRL:** a current occasion to ask what consolidation preserves, what it changes, and why major research capabilities increasingly need a small number of institutional hosts.
 
-This is approximately twenty-five years of firsthand participation, inside a thirty-year institutional arc from the 1996 Lucent spinout to the 2026 IBM–HRL announcement. Use that formulation instead of claiming thirty full years of personal employment.
+This is approximately twenty-six years of firsthand participation, inside a thirty-year institutional arc from the 1996 Lucent spinout to the 2026 IBM–HRL announcement. Use that formulation instead of claiming thirty full years of personal employment.
 
 The local website supplies an unusually rich evidence base: 79 cataloged research works, 31 granted patents, 12 funded R&D projects, open-source artifacts, awards, talks, and an existing “R&D Labyrinth” intellectual-lineage map. These should be used as evidence of how work changed under different systems, not as a list of accomplishments.
 
@@ -103,7 +105,7 @@ Open with IBM’s announced agreement to acquire HRL and the earlier transfer of
 
 **Question left open:** Are these combinations renewal, rescue, concentration, or the final consolidation of capabilities that the broader system can no longer sustain?
 
-### 2. I Arrived at Bell Labs as Lucent Was Coming Apart
+### 2. I Arrived at Bell Labs as Lucent Technologies Was Coming Apart—Before Bell Labs Became Part of Nokia
 
 **Function:** Human opening and the first incentive regime.
 
@@ -424,7 +426,7 @@ Maintain a private book file in parallel. After each article, preserve cut mater
 - Do not imply firsthand knowledge of the 2023 SRI–PARC combination.
 - Until the transaction closes, write “IBM announced an agreement to acquire HRL,” not “IBM acquired HRL” or “HRL is now IBM Research.”
 - Reconcile the site’s inconsistent SRI end dates before publication.
-- Use “twenty-five years of firsthand experience across a thirty-year institutional transformation,” unless earlier relevant experience supports a broader personal claim.
+- Use “twenty-six years of firsthand experience across a thirty-year institutional transformation,” unless earlier relevant experience supports a broader personal claim.
 
 ## Public sources already identified
 
@@ -441,7 +443,7 @@ Maintain a private book file in parallel. After each article, preserve cut mater
 
 ## The first paragraph to test
 
-> In 2001, I arrived at Lucent Technologies carrying the usual assumptions of a young engineer: that important laboratories endure because their work is important, and that technical excellence is a form of institutional security. Lucent was already teaching a harsher lesson. A research culture can remain brilliant while the economic system that makes it possible is collapsing beneath it. Twenty-five years later, the names in my own career—Bell Labs, AT&T Labs, HRL, SRI, and now PARC and IBM—look less like a résumé than a record of how America repeatedly moved its capacity to think long from one institutional container to another. We did not stop doing R&D. We changed what the people paying for it were rewarded to preserve.
+> In 2000, an internship at Ericsson in Linköping and Kista gave me an early view of a large technology institution. Lucent Technologies’ Bell Labs followed in 2001 and Cisco Systems in San Jose in 2002. I carried the usual assumption of a young engineer: that important laboratories endure because their work is important, and that technical excellence is a form of institutional security. Lucent was already teaching a harsher lesson. A research culture can remain brilliant while the economic system that makes it possible is collapsing beneath it. Twenty-six years later, the names in my own career—Ericsson, Bell Labs, Cisco, AT&T Labs, HRL, SRI, and now PARC and IBM—look less like a résumé than a record of how technical capability moves among institutional containers. We did not stop doing R&D. We changed what the people paying for it were rewarded to preserve.
 
 ## The final proposition
 

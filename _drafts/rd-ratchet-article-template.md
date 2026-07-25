@@ -19,6 +19,39 @@ hero_alt: Conceptual editorial illustration description.
 hero_caption: Conceptual illustration; it does not depict a specific historical laboratory or event.
 source_ids:
   - ncses-rd-2026
+evidence_chart:
+  kicker: Evidence graph
+  title: A precise description of the documented comparison
+  summary: State what the graph establishes and what it cannot establish.
+  aria_label: A complete prose rendering of every value and comparison in the graph.
+  source_id: ncses-rd-2026
+  note: Units, coverage, uncertainty, and interpretive limits.
+  bars:
+    - { label: First observation, value: "0", percent: 25, tone: blue }
+    - { label: Second observation, value: "0", percent: 50, tone: green }
+argument_map:
+  kicker: Source-linked argument map
+  title: The inferential path from evidence to a bounded conclusion
+  summary: Identify which steps are documented and which remain analysis.
+  caption: State the map's most important limitation.
+  nodes:
+    - { role: Documented observation, title: Evidence, text: What the source establishes., source_ids: [ncses-rd-2026] }
+    - { role: Measurement gap, title: Missing variable, text: What the source does not measure., source_ids: [ncses-rd-2026] }
+    - { role: Proposed mechanism, title: Causal hypothesis, text: The behavior or incentive to test., source_ids: [ncses-rd-2026] }
+    - { role: Bounded conclusion, title: Decision rule, text: The claim that survives the stated limits., source_ids: [ncses-rd-2026] }
+objection_ladders:
+  - claim: The first consequential claim under test.
+    first_objection: The obvious informed rejection.
+    first_response: The direct response, conceding what is true.
+    second_objection: A stronger objection that engages the response rather than repeating the first.
+    conclusion: The narrower claim that survives—or a statement that the claim fails.
+    source_ids: [ncses-rd-2026]
+  - claim: The second consequential claim under test.
+    first_objection: The obvious informed rejection.
+    first_response: The direct response, conceding what is true.
+    second_objection: A stronger objection that engages the response rather than repeating the first.
+    conclusion: The narrower claim that survives—or a statement that the claim fails.
+    source_ids: [ncses-rd-2026]
 corrections: []
 ---
 

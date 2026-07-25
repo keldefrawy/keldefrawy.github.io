@@ -1,0 +1,44 @@
+{% assign rd_ladders = include.ladders %}
+<section class="rd-objection-suite" aria-labelledby="rd-objection-suite-title-{{ page.article_number }}">
+  <header>
+    <p class="rd-kicker">Argument under pressure</p>
+    <h2 id="rd-objection-suite-title-{{ page.article_number }}">Two rounds of objection—not a ceremonial counterargument</h2>
+    <p>These are simulated steelman exchanges. The second objection responds to the first answer; the conclusion is narrowed where the objection survives.</p>
+  </header>
+  <div class="rd-objection-suite__grid" id="rd-objection-ladders-{{ page.article_number }}">
+    {% for ladder in rd_ladders %}
+    <article class="rd-objection-ladder">
+      <header>
+        <span>Claim under test</span>
+        <h3>{{ ladder.claim }}</h3>
+      </header>
+      <ol>
+        <li data-turn="objection">
+          <span>First-level objection</span>
+          <p>{{ ladder.first_objection }}</p>
+        </li>
+        <li data-turn="response">
+          <span>Response</span>
+          <p>{{ ladder.first_response }}</p>
+        </li>
+        <li data-turn="objection-stronger">
+          <span>Second-level objection</span>
+          <p>{{ ladder.second_objection }}</p>
+        </li>
+        <li data-turn="resolution">
+          <span>Bounded conclusion</span>
+          <p>{{ ladder.conclusion }}</p>
+        </li>
+      </ol>
+      {% if ladder.source_ids %}
+      <p class="rd-objection-ladder__sources">
+        {% for source_id in ladder.source_ids %}
+          {% assign rd_objection_source = site.data.rd_ratchet.sources | where: "id", source_id | first %}
+          <a href="#source-{{ source_id }}"{% if rd_objection_source %} title="{{ rd_objection_source.title | escape }}"{% endif %}>{% if rd_objection_source %}{{ rd_objection_source.organization | truncate: 24 }}{% else %}Evidence {{ forloop.index }}{% endif %}</a>
+        {% endfor %}
+      </p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

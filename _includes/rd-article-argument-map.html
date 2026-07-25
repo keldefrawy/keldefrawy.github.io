@@ -1,0 +1,26 @@
+{% assign rd_map = include.map %}
+<figure class="rd-article-argument-map" aria-labelledby="rd-article-argument-map-title-{{ page.article_number }}">
+  <header>
+    <p class="rd-kicker">{{ rd_map.kicker | default: "Argument map" }}</p>
+    <h2 id="rd-article-argument-map-title-{{ page.article_number }}">{{ rd_map.title }}</h2>
+    {% if rd_map.summary %}<p>{{ rd_map.summary }}</p>{% endif %}
+  </header>
+  <ol id="rd-argument-stages-{{ page.article_number }}">
+    {% for node in rd_map.nodes %}
+    <li>
+      <span class="rd-article-argument-map__role">{{ node.role }}</span>
+      <h3>{{ node.title }}</h3>
+      <p>{{ node.text }}</p>
+      {% if node.source_ids %}
+      <p class="rd-article-argument-map__sources">
+        {% for source_id in node.source_ids %}
+          {% assign rd_map_source = site.data.rd_ratchet.sources | where: "id", source_id | first %}
+          <a href="#source-{{ source_id }}"{% if rd_map_source %} title="{{ rd_map_source.title | escape }}"{% endif %}>{% if rd_map_source %}{{ rd_map_source.organization | truncate: 22 }}{% else %}Source {{ forloop.index }}{% endif %}</a>
+        {% endfor %}
+      </p>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% if rd_map.caption %}<figcaption>{{ rd_map.caption }}</figcaption>{% endif %}
+</figure>

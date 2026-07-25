@@ -11,7 +11,7 @@ updated: 2026-07-24
 version: "0.1"
 version_sequence: 1
 revision_summary: Private working draft; not a public version
-reading_time: 16
+reading_time: 18
 central_claim: People with firsthand records of original research and multi-year R&D stewardship must hold real authority over technical agendas, continuation decisions, and portfolio construction; experience should be demonstrated across several dimensions rather than reduced to a universal publication or patent threshold.
 claim_status: Provisional institutional-design claim; program-management models and reviewer effects are documented, while the proposed experience floor requires comparative testing
 hero_image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
@@ -24,6 +24,52 @@ source_ids:
   - nber-peer-review-risk
   - leiden-manifesto
   - uspto-patent-examination
+evidence_chart:
+  kicker: What one expertise study observed
+  title: Expertise affected evaluation inside a substantial—but bounded—review dataset
+  summary: The study shows that expertise enters funding judgment; it does not show that experts always choose better portfolios or justify unilateral control.
+  aria_label: The biomedical review study analyzed 1450 evaluations of 725 applications by 1044 reviewers. Bar lengths are scaled to 1450 evaluations.
+  source_id: gallo-reviewer-expertise
+  note: Counts describe the dataset, not effect sizes or national outcomes. Reviewer seniority and professional relationships also affected evaluation.
+  bars:
+    - { label: Evaluations, value: "1,450", percent: 100, tone: blue }
+    - { label: Reviewers, value: "1,044", percent: 72, tone: green }
+    - { label: Applications, value: "725", percent: 50, tone: amber }
+argument_map:
+  kicker: Source-linked argument map
+  title: Practiced judgment should enter the decision—but never become an expert veto
+  summary: The design joins technical interpretation to budget authority while preserving independent fiduciary, legal, safety, and public-accountability powers.
+  caption: The experience dossier is deliberately multidimensional; publications and patents are evidence, not a scalar gate.
+  nodes:
+    - role: Decision problem
+      title: The same missed milestone can mean different things
+      text: A variance may reflect learning, a false assumption, weak execution, or an absent transition path; the schedule alone cannot discriminate.
+      source_ids: [darpa-pm-model]
+    - role: Information claim
+      title: Practice supplies a fallible additional signal
+      text: Original research and multi-year stewardship can reveal structure not fully transmitted by proposals, dashboards, or scores.
+      source_ids: [gallo-reviewer-expertise, nber-peer-review-risk]
+    - role: Governance design
+      title: Couple technical and budget authority temporarily
+      text: Empower qualified program leaders to shape portfolios and revise milestones, with fixed terms and explicit accountability.
+      source_ids: [darpa-pm-model, nasem-arpa-e-2017]
+    - role: Capture control
+      title: Make authority plural, bounded, and corrigible
+      text: Require conflicts rules, protected dissent, published overrides, outcome postmortems, and no universal résumé score.
+      source_ids: [leiden-manifesto]
+objection_ladders:
+  - claim: Consequential R&D portfolios need decision-makers who have personally done serious research and stewarded programs through time.
+    first_objection: This is credentialism. Excellent executives and public servants can learn enough to manage research without being accomplished researchers themselves.
+    first_response: The proposal does not exclude them. It requires practiced technical judgment to hold binding authority at the decisions where ambiguous evidence changes a technical plan.
+    second_objection: Accomplished researchers bring paradigm loyalty, prestige bias, conflicts, and overconfidence. Giving them authority can entrench an expert aristocracy.
+    conclusion: Use dual accountability, fixed terms, plural outside expertise, recusal, protected dissent, and postmortems. Practitioners must be present and empowered, but no practitioner receives unilateral rule.
+    source_ids: [darpa-pm-model, nasem-arpa-e-2017, gallo-reviewer-expertise]
+  - claim: An experience floor is superior to a universal threshold of fifty publications or patents.
+    first_objection: A numerical threshold is transparent and resistant to favoritism; a qualitative dossier lets insiders choose their friends.
+    first_response: Counts differ by field, conflate patent examination with scholarly peer review, reward slicing and honorary credit, and say little about stewardship, transition, or correction.
+    second_objection: A multidimensional dossier is still subjective and can be gamed through heroic narratives about leadership, failure, or impact.
+    conclusion: Publish evidence separately across discovery, stewardship, transition, and correction; use external plural assessors and do not collapse the dimensions into one score. The dossier is auditable judgment, not metric-free discretion.
+    source_ids: [leiden-manifesto, uspto-patent-examination]
 corrections: []
 ---
 
