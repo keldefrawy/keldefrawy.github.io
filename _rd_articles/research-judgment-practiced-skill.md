@@ -4,7 +4,7 @@ article_number: 8
 article_slug: research-judgment-practiced-skill
 permalink: /rd-ratchet/research-judgment-practiced-skill/
 article_status: Draft
-published: false
+published: true
 dek: R&D portfolios should not be governed exclusively by people who have never produced original research, carried a technical program across years, or decided when evidence justified changing the plan. But replacing administrative rule with publication aristocracy would repeat the error in a different form.
 date: 2026-07-24
 updated: 2026-07-24

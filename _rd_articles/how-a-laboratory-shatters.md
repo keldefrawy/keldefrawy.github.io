@@ -4,7 +4,7 @@ article_number: 9
 article_slug: how-a-laboratory-shatters
 permalink: /rd-ratchet/how-a-laboratory-shatters/
 article_status: Draft
-published: false
+published: true
 dek: Laboratories do not survive merely because their researchers find new jobs, their building remains occupied, or an acquirer retains the name. What matters is whether the working graph of people, tools, memory, autonomy, and transition paths remains connected.
 date: 2026-07-24
 updated: 2026-07-24
