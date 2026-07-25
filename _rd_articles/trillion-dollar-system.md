@@ -4,7 +4,7 @@ article_number: 1
 article_slug: trillion-dollar-system
 permalink: /rd-ratchet/trillion-dollar-system/
 article_status: Draft
-published: false
+published: true
 dek: America is spending more on R&D than ever. The paradox is that expenditure measures motion, while the capacity to pursue an uncertain question across a generation is accumulated—and perishable—state.
 date: 2026-07-23
 updated: 2026-07-23

@@ -184,6 +184,13 @@ if File.file?(RENDERED_PATH)
   errors << "rendered page does not load the interaction script" unless rendered.include?("/assets/js/rd-ratchet.js")
   errors << "rendered chart table lost its 2000 values" unless rendered.include?("<tr><th>2000</th><td>57.8</td><td>77.7</td><td>233.0</td></tr>")
   errors << "rendered page does not contain fifteen article cards" unless rendered.scan("data-rd-article-card").length == 15
+  researching_articles = articles.select { |article| article.fetch("status") == "researching" }
+  errors << "every in-research article must expose a DRAFT link" unless rendered.scan(">DRAFT</a>").length == researching_articles.length
+  researching_articles.each do |article|
+    route = "/rd-ratchet/#{article.fetch('slug')}/"
+    errors << "in-research article card does not link #{route}" unless rendered.include?(%(<h3><a href="#{route}">)) && rendered.include?(%(class="rd-article-link"><a href="#{route}">DRAFT</a>))
+    errors << "in-research article page was not rendered at #{route}" unless File.file?(File.join(ROOT, "_site", "rd-ratchet", article.fetch("slug"), "index.html"))
+  end
   source_ids.each do |source_id|
     errors << "rendered page omits source anchor #{source_id}" unless rendered.include?(%(id="source-#{source_id}"))
   end

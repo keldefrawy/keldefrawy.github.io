@@ -4,7 +4,7 @@ article_number: 7
 article_slug: academia-not-missing-laboratory
 permalink: /rd-ratchet/academia-not-missing-laboratory/
 article_status: Draft
-published: false
+published: true
 dek: Universities are indispensable to basic research and scientific training. Their grant, publication, labor, and overhead systems still cannot substitute for an institution that owns durable capability from question through deployment.
 date: 2026-07-23
 updated: 2026-07-23

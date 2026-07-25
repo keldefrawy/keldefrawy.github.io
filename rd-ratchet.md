@@ -252,6 +252,10 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       {% assign rd_visible_article_count = rd_visible_article_count | plus: 1 %}
       {% assign rd_article_pages = site.rd_articles | where: "article_slug", article.slug %}
       {% assign rd_article_page = rd_article_pages | first %}
+      {% assign rd_article_href = article.url %}
+      {% unless rd_article_href %}
+      {% if rd_article_page %}{% assign rd_article_href = rd_article_page.url %}{% endif %}
+      {% endunless %}
       <li data-rd-article-card data-status="{{ article.status }}">
         <article>
           <header>
@@ -259,16 +263,14 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
             <span class="rd-status" data-status="{{ article.status }}">{% if article.status == 'researching' %}In research{% elsif article.status == 'published' %}Published{% elsif article.status == 'revised' %}Revised{% elsif article.status == 'withdrawn' %}Withdrawn{% else %}Planned{% endif %}</span>
           </header>
           <p class="rd-article-case">{{ article.case }}</p>
-          <h3>{{ article.title }}</h3>
+          <h3>{% if rd_article_href %}<a href="{{ rd_article_href | relative_url }}">{{ article.title }}</a>{% else %}{{ article.title }}{% endif %}</h3>
           <p class="rd-article-claim">{{ article.claim }}</p>
           <details>
             <summary>Planned visual evidence</summary>
             <ul>{% for visual in article.visuals %}<li>{{ visual }}</li>{% endfor %}</ul>
           </details>
-          {% if article.url %}
-          <p class="rd-article-link"><a href="{{ article.url | relative_url }}">{% if article.status == 'withdrawn' %}View withdrawal record{% else %}Read article{% endif %}</a></p>
-          {% elsif rd_article_page %}
-          <p class="rd-article-link"><a href="{{ rd_article_page.url | relative_url }}">Read article</a></p>
+          {% if rd_article_href %}
+          <p class="rd-article-link"><a href="{{ rd_article_href | relative_url }}">{% if article.status == 'withdrawn' %}VIEW WITHDRAWAL RECORD{% elsif article.status == 'researching' %}DRAFT{% else %}READ ARTICLE{% endif %}</a></p>
           {% endif %}
         </article>
       </li>
