@@ -8,11 +8,11 @@ published: true
 dek: >-
   The 1996 Bell Labs split created a structured institutional comparison: related research traditions serving an equipment maker and a network-services business.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review replaced causal-experiment shorthand with explicit comparative predictions and a sharper boundary from Article 2.
-reading_time: 13
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added a two-axis access-and-capture model, a project-level comparison protocol, and sharper counterfactual tests for the two Bell descendants.
+reading_time: 17
 central_claim: Research culture does not determine its own future; the parent organization’s customers, assets, operating problems, product cycles, and ability to capture spillovers determine which parts of that culture remain fundable.
 claim_status: Provisional comparative argument; two internships are bounded observations, not representative institutional samples
 hero_image: /assets/images/rd-ratchet/articles/article-03-two-incentive-systems.webp
@@ -76,7 +76,7 @@ corrections: []
 
 In 2001 I entered the Lucent branch of the Bell Labs inheritance. In 2007, during graduate school, I interned at AT&T Research. The temptation is to turn those experiences into a clean before-and-after comparison. They were nothing of the kind. They were two bounded views, six years apart, involving different work, different colleagues, and different stages of my own development. <span class="rd-evidence-token" data-evidence="M">M</span>
 
-Yet the pair reveals a question that organizational histories often hide. In 1996, a research institution with a shared heritage was divided between two parent businesses. Most of Bell Labs and the equipment operation went to Lucent. A smaller group stayed with AT&T and formed AT&T Laboratories. If “research culture” were self-sustaining, the two descendants should have remained broadly similar. If the parent’s economic system matters, their feasible portfolios should diverge.
+Yet the pair reveals a question that organizational histories often hide. [In 1996, a research institution with a shared heritage was divided between two parent businesses](#source-nokia-bell-history). Most of Bell Labs and the equipment operation went to Lucent. A smaller group stayed with AT&T and formed AT&T Laboratories. If “research culture” were self-sustaining, the two descendants should have remained broadly similar. If the parent’s economic system matters, their feasible portfolios should diverge. <span class="rd-evidence-token" data-evidence="D">D</span> <span class="rd-evidence-token" data-evidence="A">A</span>
 
 The comparison is not a contest over which descendant was better. It asks what each parent could see, use, pay for, and capture.
 
@@ -93,6 +93,21 @@ For an equipment company, research could return value through differentiated har
 For a network-services company, research could return value through operating efficiency, reliability, security, traffic understanding, customer experience, and new services. A live network supplied unusual data and hard operational constraints. The risk was a different kind of narrowing: work with broad scientific value might offer too little proprietary advantage to one operator, while disruptive architectures could conflict with installed infrastructure.
 
 Neither parent is naturally patient or impatient. Each is patient about the uncertainties it can justify within its own return path.
+
+## Two axes are more revealing than “close to the business”
+
+Research proximity is often treated as one scalar: near a product or far from it. The Bell split suggests two independent axes.
+
+The first is **epistemic access**: can researchers observe the real system, its users, failures, data, materials, and operational constraints? The second is **appropriation-and-transition authority**: can the parent capture enough benefit and compel or finance the complementary work required for adoption?
+
+| | Weak transition authority | Strong transition authority |
+|---|---|---|
+| **Weak epistemic access** | Detached speculation; broad freedom but expensive contact with reality | A powerful product organization may efficiently scale the wrong abstraction |
+| **Strong epistemic access** | Researchers learn from reality but accumulate prototypes no owner must adopt | The ideal local loop—provided current products do not veto disruptive questions |
+
+An operator can have exceptional epistemic access and weak authority to replace installed infrastructure. An equipment company can have strong design and manufacturing authority but weak access to heterogeneous live networks. A university can have neither for a particular system and still create a representation that later changes the field. The useful question is not which quadrant is universally best. It is which missing axis the institution must supply for the class of work at hand.
+
+This makes “alignment” less innocent. Tight alignment can improve transition for work inside the parent's model while preventing questions that threaten that model. Protected autonomy can generate new representations while losing the route to test and use them. A capable research institution must preserve a **controlled tension**: enough access and authority to learn and transition, enough independence to invalidate the parent's frame.
 
 ## A small technical window into the operator side
 
@@ -130,6 +145,28 @@ That objection prevents a causal claim, but it does not make the comparison empt
 - Work whose benefits spill beyond either parent should be the first to need public, consortial, or cross-company support.
 
 If project histories do not show these patterns, the mechanism should be narrowed or rejected. Interviews should actively seek counterexamples: foundational work protected by an operator, deployment blocked inside an equipment firm despite complementary assets, and important research that flourished after moving outside both.
+
+## A comparison that could actually discriminate
+
+A serious study should sample matched projects from both descendants and reconstruct the path rather than compare aggregate prestige. For each project, record:
+
+1. where the question originated—researcher, product group, network operation, customer, standards body, or sponsor;
+2. which unique data, facility, manufacturing, or operational asset made the work possible;
+3. who could change the problem statement after contrary evidence;
+4. the number and type of funded handoffs from result to operational use;
+5. whether negative results and abandoned approaches remained available to successors;
+6. whether benefits were captured by the parent, spilled to the industry, or remained unrealized; and
+7. what happened to the team and capability five years later.
+
+The parent-incentive mechanism predicts differences in these pathways after controlling imperfectly for field, maturity, team, and historical period. It does not predict that every equipment project looks one way and every operator project another. A large overlap would be expected. The theory becomes informative only if parent assets and revenue paths explain variation that technical field and local leadership do not.
+
+The strongest contrary result would be that access, authority, transition, and persistence are explained almost entirely by team-level practice, with little relationship to the parent business once resources are controlled. That would relocate reform from institutional form to leadership and team design. Another contrary result would be that open interorganizational standards made the old parent boundary largely irrelevant by 2007. Either finding should change the series. <span class="rd-evidence-token" data-evidence="A">A</span>
+
+The comparison should also count work the parent rationally declined but society later valued. That is the public-value residual. If both descendants underfunded the same broad-spillover class despite different businesses, the common missing institution is not better corporate management. It is a payer able to claim continuity on behalf of beneficiaries who cannot yet be named.
+
+## What would falsify the parent-incentive explanation?
+
+The explanation should be rejected as the main mechanism if matched project histories show that parent assets, customers, and revenue paths add little predictive power after field, team, leadership, and resources are considered. It should also be narrowed if cross-company standards, open-source infrastructure, or external capital routinely supply the missing epistemic access and transition authority without sacrificing long-horizon work. The claim is not that corporate boundaries determine every project; it is that they systematically change which uncertainties are fundable and which complements remain available. No detectable systematic change means the mechanism has failed its test.
 
 ## Five different verdicts
 

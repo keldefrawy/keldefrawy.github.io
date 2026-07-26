@@ -56,6 +56,7 @@ brain_nodes = data.fetch("brain_nodes")
 sources = data.fetch("sources")
 chart = data.fetch("rd_chart")
 timeline = data.fetch("timeline")
+core_concepts = data.fetch("core_concepts")
 
 errors << "the editorial arc must contain seventeen articles" unless articles.length == 17
 errors << "the article count in series metadata is stale" unless series.fetch("article_count") == articles.length
@@ -73,6 +74,13 @@ end
 
 %w[models argument_nodes brain_nodes sources].each do |key|
   errors << "#{key} contains duplicate ids" unless unique_ids(data.fetch(key))
+end
+errors << "the shared analytical vocabulary must contain ten concepts" unless core_concepts.length == 10
+errors << "core concepts contain duplicate ids" unless unique_ids(core_concepts)
+core_concepts.each do |concept|
+  %w[family title definition test].each do |field|
+    errors << "core concept #{concept['id']} omits #{field}" if concept[field].to_s.empty?
+  end
 end
 
 node_ids = nodes.map { |node| node.fetch("id") }
@@ -153,6 +161,7 @@ end
 errors << "landing page omits the evidence legend" unless page.include?("rd-evidence-legend.html")
 errors << "landing page omits the source ledger" unless page.include?("rd-source-list.html")
 errors << "landing page omits the public editorial policy" unless page.include?("/rd-ratchet/method/")
+errors << "landing page omits the shared analytical vocabulary" unless page.include?('id="concepts"') && page.include?("rd-concept-grid")
 errors << "landing page cannot filter published articles" unless page.include?('data-rd-article-filter="available"')
 errors << "landing page cannot retain withdrawal records" unless page.include?('data-rd-article-filter="withdrawn"')
 errors << "landing page article heading must state seventeen articles" unless page.include?("Seventeen articles")
@@ -161,6 +170,9 @@ errors << "AI-native laboratory nodes must expose their positions to CSS" unless
 errors << "AI-native laboratory core must use the distinct future color" unless style.match?(/\.rd-brain-node\[data-position="core"\][^\{]*\{[^\}]*background:\s*var\(--rd-future\);/m)
 if style.match?(/\.rd-brain-node[^\{]*\.is-active[^\{]*\{[^\}]*\btransform\s*:/m)
   errors << "AI-native laboratory nodes must not change position when selected"
+end
+unless File.read(SCRIPT_PATH, encoding: "UTF-8").include?('button.addEventListener("mousedown", (event) => event.preventDefault())')
+  errors << "AI-native laboratory mouse selection must not trigger focus scrolling"
 end
 unless style.match?(/\.rd-timeline\s*\{[^\}]*width:\s*max-content;[^\}]*min-width:\s*100%;/m)
   errors << "horizontal timeline must size its line to the full event grid"
@@ -171,6 +183,7 @@ end
 errors << "objection ladders must collapse to one column on narrow screens" unless style.include?(".rd-objection-suite__grid { grid-template-columns: 1fr; }")
 errors << "evidence graphs must collapse to one column on mobile" unless style.include?(".rd-article-evidence-chart__row { grid-template-columns: 1fr; }")
 errors << "argument maps must collapse to one column on mobile" unless style.include?(".rd-article-argument-map > ol { grid-template-columns: 1fr; }")
+errors << "core concepts must collapse to one column on narrow screens" unless style.include?(".rd-concept-grid { grid-template-columns: 1fr; }")
 
 config = YAML.load_file(File.join(ROOT, "_config.yml"))
 errors << "Jekyll does not publish revision snapshots" unless config.fetch("collections", {}).key?("rd_revisions")

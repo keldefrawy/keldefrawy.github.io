@@ -7,7 +7,7 @@ series:
     A firsthand, evidence-led inquiry into the incentive structures that replaced the American
     industrial research laboratory, what those structures preserve and destroy, and how an
     AI-native public–private successor might be designed.
-  updated: "2026-07-24"
+  updated: "2026-07-25"
   article_count: 17
   published_count: 0
 
@@ -52,6 +52,58 @@ rd_chart:
   note: >-
     The chart does not prove institutional decline. It establishes the paradox the series must
     explain: high and rising activity can coexist with weaker long-lived organizational capability.
+
+core_concepts:
+  - id: capability-stock
+    family: Accounting
+    title: Capability Stock
+    definition: Reusable teams, tools, memory, judgment, relationships, and transition options that persist beyond one output or project.
+    test: Measure renewal, depreciation, reuse, and reconstitution cost beside annual spending.
+  - id: effective-horizon
+    family: Reliability
+    title: Effective Horizon
+    definition: The time for which every indispensable, non-transferable complement can remain available—not the nominal length of the longest grant.
+    test: Identify the shortest-lived minimum cut between question and validated use.
+  - id: adjacency-capital
+    family: Capability
+    title: Adjacency Capital
+    definition: Accumulated reductions in the cost of routing expertise, exposing errors, coordinating unlike roles, and translating across layers.
+    test: Compare experienced and reconstituted teams on routing time, rework, correction, and transition.
+  - id: handoff-loss
+    family: Reliability
+    title: Handoff Loss
+    definition: State lost when people, artifacts, assumptions, authority, or responsibility cross an institutional boundary.
+    test: Track end-to-end continuation and reconstruction across every funded transfer.
+  - id: common-mode
+    family: Reliability
+    title: Common-Mode Exposure
+    definition: Apparently separate projects or evaluators that share the same model, data, metric, method, vendor, incentive, or transition bottleneck.
+    test: Disclose model, evidence, method, and incentive distance before claiming independent confirmation.
+  - id: epistemic-debt
+    family: Knowledge
+    title: Epistemic Debt
+    definition: The gap between downstream confidence and dependence placed on a claim and the verification that claim has actually received.
+    test: Maintain typed evidence states, dependency records, correction latency, and downstream repair.
+  - id: abundance-inversion
+    family: AI Age
+    title: Abundance Inversion
+    definition: As hypotheses, prose, code, and scientific form become cheap, independent witnesses, accountable attention, and physical evidence become scarcer.
+    test: Measure verification queues and validated state changes rather than generated output volume.
+  - id: charter-to-work
+    family: Governance
+    title: Charter-to-Work Drift
+    definition: A long-horizon institutional name or legal mandate persists while actual work, authority, or staffing narrows toward short tasks.
+    test: Compare the charter with who initiates work, what survives tasks, and which capabilities are renewed over time.
+  - id: reversible-authority
+    family: Governance
+    title: Reversible Authority
+    definition: Practiced technical leaders receive real discretion for a bounded term while dissent, verification, conflicts, appeals, and retrospective audits constrain capture.
+    test: Record decision rights, prospective forecasts, overrides, minority views, and later calibration.
+  - id: residual-owner
+    family: Transition
+    title: Residual Capability Owner
+    definition: The institution still responsible after the paper, grant, program, degree, transaction, or prototype has satisfied its local obligation.
+    test: Name the payer, custodian, transition owner, maintenance duty, review date, and termination rule.
 
 timeline:
   - year: "1996"
@@ -422,6 +474,20 @@ sources:
     kind: Federal statistical table
     url: https://ncses.nsf.gov/pubs/nsbsep20261/assets/overview/tables/nsbsep20261-tab001.pdf
     supports: R&D totals, constant-dollar trends, and the basic/applied/development composition
+  - id: ncses-business-rd-2023
+    title: Business R&D Performance in the United States Increases to $722 Billion in 2023
+    organization: National Center for Science and Engineering Statistics
+    date: "2025-09-29"
+    kind: Federal statistical report
+    url: https://ncses.nsf.gov/pubs/nsf25353
+    supports: The scale, character-of-work mix, company-size distribution, and geographic concentration of U.S. business R&D performed in 2023
+  - id: ncses-business-concentration-2026
+    title: "Indicators 2026: Discovery—R&D Activity and Research Publications"
+    organization: National Science Board and National Center for Science and Engineering Statistics
+    date: "2026"
+    kind: Federal statistical synthesis
+    url: https://ncses.nsf.gov/pubs/nsbsep20261/discovery-r-d-activity-and-research-publications-2
+    supports: The concentration of 2023 business R&D in five industries and three states, including reported R&D in software, biotechnology, artificial intelligence, and nanotechnology
   - id: nokia-bell-history
     title: Bell Labs history
     organization: Nokia Bell Labs
@@ -583,6 +649,20 @@ sources:
     kind: Federal regulation
     url: https://www.acquisition.gov/far/35.017
     supports: The special long-term need, continuity, independence, access, sponsorship, and periodic-review requirements that define the FFRDC relationship
+  - id: crs-ffrdc-2026
+    title: "Federally Funded Research and Development Centers: Background and Issues for Congress"
+    organization: Congressional Research Service
+    date: "2026-05-15"
+    kind: Congressional policy report
+    url: https://www.everycrsreport.com/reports/R44629.html
+    supports: The February 2026 count and activity classification of FFRDCs, their share of federally funded R&D, their statutory and contractual rationale, and congressional oversight questions including mission drift and infrastructure
+  - id: ncses-ffrdc-master-2026
+    title: Master Government List of Federally Funded R&D Centers
+    organization: National Center for Science and Engineering Statistics
+    date: "2026-02"
+    kind: Federal administrative list
+    url: https://www.ncses.nsf.gov/resource/master-gov-lists-ffrdc
+    supports: The current federally recognized FFRDC population and each center's sponsoring agency, administrator, location, and activity type
   - id: gao-dhs-ffrdc-2025
     title: "Federal Research Centers: DHS Actions Could Reduce the Potential for Unnecessary Overlap among Its R&D Projects"
     organization: U.S. Government Accountability Office
@@ -618,6 +698,13 @@ sources:
     kind: Federal oversight testimony
     url: https://www.gao.gov/products/gao-17-576t
     supports: NSF indirect costs as a share of annual award funding during FY2000–FY2016 and weaknesses in rate-negotiation documentation
+  - id: crs-university-indirect-2026
+    title: Universities and Indirect Costs for Federally Funded Research
+    organization: Congressional Research Service
+    date: "2026-01-29"
+    kind: Congressional policy report
+    url: https://www.congress.gov/crs-product/R48540
+    supports: The history, cost definitions, negotiated-rate framework, 2025 agency proposals, 2026 statutory constraints, policy tradeoffs, and transparency questions surrounding university indirect-cost reimbursement
   - id: nih-indirect-guidance-2025
     title: "Supplemental Guidance to the 2024 NIH Grants Policy Statement: Indirect Cost Rates"
     organization: National Institutes of Health
@@ -660,6 +747,13 @@ sources:
     kind: Consensus study report
     url: https://doi.org/10.17226/21896
     supports: The system-level relationship among research incentives, publication pressure, stewardship, and scientific integrity
+  - id: nasem-reproducibility-2019
+    title: Reproducibility and Replicability in Science
+    organization: National Academies of Sciences, Engineering, and Medicine
+    date: "2019"
+    kind: Consensus study report
+    url: https://doi.org/10.17226/25303
+    supports: Distinct definitions of computational reproducibility and empirical replicability, the limits of binary replication verdicts, and institutional recommendations for transparent artifacts and correction
   - id: nasem-arpa-e-2017
     title: An Assessment of ARPA-E
     organization: National Academies of Sciences, Engineering, and Medicine
@@ -947,3 +1041,24 @@ sources:
     kind: Peer-reviewed study of 162 R&D teams
     url: https://doi.org/10.1177/0149206313478189
     supports: Empirical evidence linking management systems, leadership, external knowledge acquisition, internal knowledge sharing, and knowledge tacitness in research-and-development teams
+  - id: lewis-transactive-memory-2005
+    title: Transactive Memory Systems, Learning, and Learning Transfer
+    organization: Kyle Lewis, Donald Lange, and Lynette Gillis
+    date: "2005"
+    kind: Peer-reviewed laboratory experiment
+    url: https://doi.org/10.1287/orsc.1050.0143
+    supports: Experimental evidence that an experienced group's shared map of who knows what can support learning transfer, with effects depending on sufficient prior joint experience
+  - id: reagans-team-experience-2005
+    title: Individual Experience and Experience Working Together—Predicting Learning Rates from Knowing Who Knows What and Knowing How to Work Together
+    organization: Ray Reagans, Linda Argote, and Daria Brooks
+    date: "2005"
+    kind: Peer-reviewed organizational study
+    url: https://doi.org/10.1287/mnsc.1050.0366
+    supports: Evidence that prior experience working together and knowledge of teammates' expertise predict team learning rates beyond individual experience alone
+  - id: rao-argote-forgetting-2006
+    title: Organizational Learning and Forgetting—The Effects of Turnover and Structure
+    organization: Raghavendra D. Rao and Linda Argote
+    date: "2006"
+    kind: Peer-reviewed laboratory experiment
+    url: https://doi.org/10.1057/palgrave.emr.1500057
+    supports: Experimental evidence that organizational structures and routines can buffer some knowledge loss after personnel turnover, subject to the limits of a controlled task setting

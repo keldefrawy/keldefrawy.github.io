@@ -30,6 +30,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       </div>
       <nav class="rd-series-nav" aria-label="Explore this series">
         <a href="#argument">Argument map</a>
+        <a href="#concepts">Core concepts</a>
         <a href="#incentives">Incentive structures</a>
         <a href="#articles">Article arc</a>
         <a href="#successor">AI-native laboratory</a>
@@ -54,7 +55,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       <h2 id="rd-thesis-title">The history and trajectory of these institutions provide the evidence. The incentive structures are the subject.</h2>
     </div>
     <blockquote>
-      America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — quarterly corporate-like returns, finite short-term government programs, billable projects leading to ballooning administrative and non-productive work, publication metrics, patent accounting, and venture-backed commercialization optimized for acquisition or IPO. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capabilities faster than it has replenished them.
+      America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — corporate returns tied to product, platform, and capital-market horizons; finite government programs; billable-project economics that can reward proposal and administrative throughput; publication metrics; patent accounting; and venture-backed commercialization optimized for acquisition or IPO. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capabilities faster than it has replenished them.
     </blockquote>
     <p class="rd-thesis__qualification"><strong>This is a thesis to test, not a conclusion to assume.</strong> Each article will separate scientific, technical, transition, institutional, economic, and public-value outcomes—and will state the strongest evidence against its own interpretation. The criticism targets destructive incentives, decisions, and behaviors, not speculation about any individual’s motives or character.</p>
   </section>
@@ -127,6 +128,26 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       </details>
       <script type="application/json" data-rd-trend-data>{{ rd.rd_chart | jsonify }}</script>
     </figure>
+  </section>
+
+  <section class="rd-concepts" id="concepts" aria-labelledby="rd-concepts-title">
+    <div class="rd-section-heading">
+      <p class="rd-kicker">Shared analytical vocabulary</p>
+      <h2 id="rd-concepts-title">Ten propositions the series must make measurable</h2>
+      <p>These terms are not conclusions disguised as definitions. Each names a proposed mechanism and the observation that could support, narrow, or defeat it.</p>
+    </div>
+    <ol class="rd-concept-grid">
+      {% for concept in rd.core_concepts %}
+      <li id="concept-{{ concept.id }}">
+        <article>
+          <p class="rd-concept-grid__family">{{ concept.family }}</p>
+          <h3>{{ concept.title }}</h3>
+          <p>{{ concept.definition }}</p>
+          <div><strong>Empirical test</strong><span>{{ concept.test }}</span></div>
+        </article>
+      </li>
+      {% endfor %}
+    </ol>
   </section>
 
   <section class="rd-timeline-section" id="journey" aria-labelledby="rd-timeline-title">
@@ -233,8 +254,8 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <div class="rd-section-heading rd-section-heading--with-controls">
       <div>
         <p class="rd-kicker">Publication architecture</p>
-        <h2 id="rd-articles-title">Seventeen articles, added as their evidence closes</h2>
-        <p>The landing page remains the map. Each published article will become a stable, separately sourced record rather than replacing this overview.</p>
+        <h2 id="rd-articles-title">Seventeen articles—public working manuscripts and the book’s evidence base</h2>
+        <p>The landing page remains the map, while every linked DRAFT is a live public manuscript with its central argument, evidence, objections, and falsifiers. The website is intended to carry roughly 60–70 percent of the eventual book’s substance; the book will add archival depth, interviews, extended cases, technical appendices, and larger-format visual analysis.</p>
       </div>
       <div class="rd-article-filters" role="group" aria-label="Filter articles by status">
         <button type="button" data-rd-article-filter="all" aria-pressed="true">All</button>
@@ -321,7 +342,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
   <footer class="rd-series-footer">
     <p class="rd-kicker">Research posture</p>
     <p>The purpose of this series is not to prove that every old laboratory succeeded or every new institution failed. It is to discover which incentive structures preserve the ability to think, build, remember, and transition across a generation—and whether enough of that ability remains to construct a successor.</p>
-    <p><time datetime="{{ rd.series.updated }}">Evidence map updated July 23, 2026.</time> Transaction status, statistics, and institutional descriptions will be revised when their underlying records change.</p>
+    <p><time datetime="{{ rd.series.updated }}">Evidence map updated July 25, 2026.</time> Transaction status, statistics, and institutional descriptions will be revised when their underlying records change.</p>
     <p><a href="{{ '/rd-ratchet/method/' | relative_url }}">Read the public policy for evidence, feedback, corrections, archived versions, and withdrawals.</a></p>
   </footer>
 </article>

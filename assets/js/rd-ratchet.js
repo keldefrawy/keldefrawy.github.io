@@ -362,7 +362,16 @@
       detail.querySelector("h3 + p").textContent = node.detail;
       draw();
     };
-    buttons.forEach((button) => button.addEventListener("click", () => show(button.dataset.rdBrainNode)));
+    buttons.forEach((button) => {
+      // A mouse/trackpad click should update the diagram without making the
+      // browser scroll the entire map to expose the newly focused button.
+      // Keyboard focus remains intact because this only suppresses pointer focus.
+      button.addEventListener("pointerdown", (event) => {
+        if (event.pointerType === "mouse") event.preventDefault();
+      });
+      button.addEventListener("mousedown", (event) => event.preventDefault());
+      button.addEventListener("click", () => show(button.dataset.rdBrainNode));
+    });
     show(selected);
     observeResize(map, draw);
   };

@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: America is spending more on R&D than ever. The paradox is that expenditure measures motion, while the capacity to pursue an uncertain question across a generation is accumulated—and perishable—state.
 date: 2026-07-23
-updated: 2026-07-24
-version: "0.1"
-version_sequence: 1
-revision_summary: Private working draft; not a public version
-reading_time: 26
+updated: 2026-07-25
+version: "0.2"
+version_sequence: 2
+revision_summary: Added the corporate-R&D reconcentration counterargument and a category-aware FFRDC charter-to-work audit.
+reading_time: 29
 central_claim: A research system thinks long only when it preserves teams, tools, memory, independent error correction, and a path to use across the gaps between projects. U.S. R&D accounts measure annual activity but do not establish that this institutional state is being replenished.
 claim_status: Provisional; the expenditure facts are established, while the system-level capability claim remains a testable interpretation
 hero_image: /assets/images/rd-ratchet/articles/article-01-trillion-dollar-system.webp
@@ -19,6 +19,8 @@ hero_alt: A vast funding ledger fragments into isolated project laboratories whi
 hero_caption: Conceptual illustration. It does not depict a specific laboratory, transaction, or historical event.
 source_ids:
   - ncses-rd-2026
+  - ncses-business-rd-2023
+  - ncses-business-concentration-2026
   - ibm-hrl-2026
   - xerox-parc-sri
   - sri-confidencial-announcement-2022
@@ -38,6 +40,8 @@ source_ids:
   - ncses-herd-2024
   - ncses-ffrdc-2024
   - far-ffrdc
+  - crs-ffrdc-2026
+  - ncses-ffrdc-master-2026
   - gao-dhs-ffrdc-2025
   - darpa-pm-model
   - gao-ffrdc
@@ -101,7 +105,7 @@ U.S. organizations performed an estimated **$993.4 billion** of R&D in 2024. In 
 
 Composition complicates the total. In 2024, 14.6 percent of expenditure was classified as basic research, 18.2 percent as applied research, and 67.3 percent as experimental development. Yet even this is not evidence of a sudden turn: the corresponding shares in 2000 were 15.7, 21.1, and 63.2 percent. NCSES explicitly warns that small historical percentage changes may not be meaningful. The expenditure series establishes a paradox, not a verdict. [The underlying federal table is inspectable below](#source-ncses-rd-2026). <span class="rd-evidence-token" data-evidence="D">D</span>
 
-The funding structure did change. Businesses funded about $743 billion—roughly three quarters—of U.S. R&D in 2024. Their share of funding for basic research rose from 19 percent in 2000 to 34 percent in 2024, while the federal share fell from 58 percent to 40 percent. This is not simply “public down, private up”: federal basic-research dollars and real total basic research both grew. It is a change in who selects problems, what complementary assets are nearby, and which benefits the payer must be able to capture.
+[The funding structure did change](#source-ncses-rd-2026). Businesses funded about $743 billion—roughly three quarters—of U.S. R&D in 2024. Their share of funding for basic research rose from 19 percent in 2000 to 34 percent in 2024, while the federal share fell from 58 percent to 40 percent. This is not simply “public down, private up”: federal basic-research dollars and real total basic research both grew. It is a change in who selects problems, what complementary assets are nearby, and which benefits the payer must be able to capture. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 The proposition of this series is therefore narrower and more consequential than “R&D was defunded”:
 
@@ -139,7 +143,7 @@ One implication is especially important:
 
 > **The effective horizon of a research effort is bounded by the shortest-lived critical complement whose state cannot be transferred faithfully.**
 
-A five-year grant does not create a five-year horizon if the key postdoc leaves in year two, the instrument technician is charged to another project in year three, or the transition partner appears only after the prototype. If success requires *n* institutional handoffs and handoff *i* preserves the necessary state with probability *p*<sub>i</sub>, then the illustrative continuation probability is *p*<sub>1</sub> × *p*<sub>2</sub> × … × *p*<sub>n</sub>. Five independent handoffs that each work 80 percent of the time leave only a 33 percent end-to-end probability. Real handoffs are not independent, and the number is not an empirical estimate. The calculation shows why fragmentation is multiplicative rather than merely additive.
+A five-year grant does not create a five-year horizon if the key postdoc leaves in year two, the instrument technician is charged to another project in year three, or the transition partner appears only after the prototype. If success requires *n* institutional handoffs and handoff *i* preserves the necessary state with probability *p*<sub>i</sub>, then the illustrative continuation probability is *p*<sub>1</sub> × *p*<sub>2</sub> × … × *p*<sub>n</sub>. Five independent handoffs that each work 80 percent of the time leave only a 33 percent end-to-end probability. Real handoffs are not independent, and the number is not an empirical estimate. The calculation shows why fragmentation is multiplicative rather than merely additive. <span class="rd-evidence-token" data-evidence="A">A</span>
 
 ## Four intellectual tools for seeing the institutional problem
 
@@ -226,6 +230,14 @@ Business performs and funds most U.S. R&D. Large technology and biotechnology co
 
 The narrower claim is about selection and persistence. [Arora, Belenzon, and Patacconi](#source-arora-corporate-science) documented a decline in scientific publication by large corporations from 1980 to 2007 and associated it with globalization and narrower firm scope. Publications are an imperfect proxy, and their period ends before the current wave of hyperscale AI research. Still, the result is consistent with an appropriability problem: a firm may rationally value the patentable “golden eggs” of science more than the broad capability whose spillovers competitors can use.
 
+The current statistics make “corporate retreat” too simple. [U.S. businesses performed $722 billion of domestic R&D in 2023](#source-ncses-business-rd-2023): $43 billion classified as basic research, $110 billion as applied research, and $568 billion as development. The largest firms—those with at least 25,000 domestic employees—performed 39 percent of the total, while firms with 250–24,999 employees performed another 52 percent. The issue is not an absence of technical ambition. It is where ambition can remain rational and who can reach its infrastructure.
+
+[Five industries performed about four-fifths of business R&D](#source-ncses-business-concentration-2026), and California, Washington, and Massachusetts accounted for about half. Businesses reported $65 billion of AI R&D in 2023, 60 percent of it in the information industry; the same dataset reports heavy concentration of biotechnology in pharmaceuticals and nanotechnology in semiconductors. These concentrations partly reflect real complementary assets: compute and data for AI, clinical and regulatory capacity for drugs, fabrication for chips. Breaking them apart by decree could destroy capability rather than democratize it.
+
+The sharper diagnosis is **reconcentration**. Deep industrial research has not disappeared; it has expanded where a firm can couple inquiry to scarce infrastructure, proprietary data, manufacturing, distribution, or a platform through which it can capture returns. That can produce extraordinary science. It can also leave fewer independent paths, make access depend on a small number of corporate constitutions, and expose whole fields to synchronized changes in those firms' priorities. The public problem is therefore not “business does too little R&D.” It is that national resilience, open spillovers, and long-lived capability are not the same objective as the sum of rational corporate portfolios.
+
+This claim has a demanding falsifier. It weakens if the new corporate laboratories sustain independent scientific agendas across business cycles, keep multiple competing technical paths alive, publish or otherwise preserve disconfirming results, provide broad access to frontier infrastructure, maintain apprenticeship and specialist careers, and carry public-value work through transitions even when no single product line can capture the return. The presence of rich companies or excellent papers alone neither proves nor disproves those institutional properties.
+
 ### Academia: the source of open knowledge, not a complete transition system
 
 [Universities performed $117.7 billion in R&D in FY2024](#source-ncses-herd-2024). Academic R&D is unusually concentrated in basic research—63 percent in 2024—and universities train the people on whom every other institution depends. The federal government funded 55 percent of academic R&D; universities themselves supplied 26 percent. The top 30 institutions accounted for 42 percent of the total. These are not the statistics of a peripheral system.
@@ -238,7 +250,9 @@ This is not an indictment of universities. It is a boundary condition. Asking ac
 
 Federally funded research and development centers are the strongest apparent counterexample to the thesis. [The Federal Acquisition Regulation](#source-far-ffrdc) defines an FFRDC as meeting a “special long-term research or development need” that existing in-house or contractor resources cannot meet as effectively. It calls for continuity, objectivity, independence, sponsor familiarity, special access, and periodic review. [GAO's cross-agency review](#source-gao-ffrdc) likewise describes their special relationships and oversight obligations. This is close to a legal specification for institutional memory.
 
-[The numbers do not support a claim of financial decline](#source-ncses-ffrdc-2024). The 42 FFRDCs spent $31.7 billion on R&D in FY2024, up from $17.7 billion in FY2014; NCSES estimates 3.3 percent average annual real growth over that decade, with a reporting change contributing to the final-year increase. In FY2024, about $6.5 billion was classified as basic research, $12.4 billion as applied research, and $12.9 billion as experimental development. FFRDCs include research laboratories, study-and-analysis centers, and systems-engineering-and-integration centers. Treating them as one kind of institution would be false.
+[The numbers do not support a claim of financial decline](#source-ncses-ffrdc-2024). The 42 FFRDCs reporting in FY2024 spent $31.7 billion on R&D, up from $17.7 billion in FY2014; NCSES estimates 3.3 percent average annual real growth over that decade, with a reporting change contributing to the final-year increase. In FY2024, about $6.5 billion was classified as basic research, $12.4 billion as applied research, and $12.9 billion as experimental development.
+
+The current administrative population is not even one institutional type. [The February 2026 master list and CRS synthesis identify 41 centers](#source-ncses-ffrdc-master-2026): 26 R&D laboratories, 10 study-and-analysis centers, and five systems-engineering-and-integration centers. The difference between 42 FY2024 reporters and 41 centers in February 2026 is a date-and-population difference, not evidence of a spending contradiction. More important, a laboratory operating a national facility, an independent analysis center, and a systems integrator have different missions. Treating all three as failed versions of Bell Labs would be a category error. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 The harder criticism is functional. Sponsor dependence can convert “long-term relationship” into a durable shell containing short task orders. [A 2024 GAO review of two DHS FFRDCs](#source-gao-dhs-ffrdc-2025) describes work initiated through task orders and found weaknesses in how the program office tracked sponsors' use of deliverables. That is one department and two centers, not a finding about all FFRDCs. It nevertheless demonstrates the mechanism.
 
@@ -246,11 +260,22 @@ Many FFRDCs are excellent engineering houses, systems integrators, operators of 
 
 The diagnostic is **who owns problem selection**. If a sponsor defines the problem, deliverable, schedule, and acceptance test through a sequence of task orders, a center may still invent and execute at an exceptional level. Its governing logic, however, is contracted engineering: it is optimized to solve the questions presented to it, not to decide which unasked question deserves a decade. The distinction is functional, not honorific. An engineering house can be excellent at what it is; it still does not replace a research institution with protected epistemic initiative.
 
-The defensible hypothesis is therefore not “FFRDCs are disappearing.” Their spending is rising. It is this:
+The defensible hypothesis is therefore not “FFRDCs are disappearing.” Their spending is rising, and [CRS estimates that their share of federally funded R&D increased from about 5 percent in FY1953 to 17 percent in FY2024](#source-crs-ffrdc-2026). It is this:
 
 > Some FFRDCs may be experiencing **role conversion**: preserving engineering, analysis, access, and sponsor memory while reducing the discretionary scientific search that the phrase “research and development center” leads outsiders to imagine.
 
-That claim needs center-level evidence: the share of researcher-initiated work, continuity of technical teams between task orders, investment in reusable tools, publication and transition patterns, and sponsor tolerance for negative results. Until those data are collected, “declining role” is a question, not a conclusion.
+That claim needs a **charter-to-work ledger** at the center level:
+
+| Test | Evidence to collect | Failure signature |
+|---|---|---|
+| Problem initiation | Share of technical effort generated by center judgment, sponsor request, or tightly specified task | Nearly all inquiry begins only after a deliverable is specified |
+| Capability renewal | Base investment in teams, facilities, reusable tools, and apprenticeships between tasks | Every reusable asset must recover itself from current charge codes |
+| Independent challenge | Documented cases in which the center changed or rejected a sponsor's framing | Advice is formally independent but practically nonadversarial |
+| Portfolio character | Basic, applied, development, analysis, integration, and operations mix by center and over time | Category or charter remains stable while actual work narrows |
+| Use and learning | Sponsor use, transition, correction, and negative-result retention | Deliverables close administratively without a recorded outcome |
+| Reconstitution | Time and cost to recover a critical capability after a funding or personnel break | The institution persists while the capability must be rebuilt |
+
+The ledger should compare each center with its own charter and activity class, not with one imagined laboratory ideal. A systems-engineering center can pass by preserving rare integrative judgment and the authority to contradict a sponsor. An R&D laboratory can fail while publishing heavily if it cannot initiate or sustain an uncertain line of work. Until these data are collected, “declining role” remains a hypothesis; the absence of the measurement is itself a governance defect, not proof of decline.
 
 ### DARPA programs: a temporary laboratory
 
@@ -321,6 +346,6 @@ The nearly trillion-dollar system is not one success or one failure.
 
 The controversial conclusion is not that the system cannot think. Individual researchers, teams, universities, companies, FFRDCs, and programs clearly can. It is that the system does not reliably **retain the state required to think longer than the contracts connecting its parts**.
 
-IBM's announced HRL agreement and SRI's integration of PARC may prove to be renewal, rescue, concentration, or some mixture. The correct test will not be the press release or the acquisition price. It will be whether the combined institutions still have the people, autonomy, tools, memory, and mandate to begin work in 2031 whose value cannot yet be made legible in 2026.
+IBM's announced HRL agreement and SRI's integration of PARC may prove to be renewal, rescue, concentration, or some mixture. The correct test will not be the press release or the acquisition price. It will be whether the combined institutions still have the people, autonomy, tools, memory, and mandate to begin work in 2031 whose value cannot yet be made legible in 2026. <span class="rd-evidence-token" data-evidence="A">A</span>
 
 That is what a nearly trillion-dollar expenditure total cannot tell us.

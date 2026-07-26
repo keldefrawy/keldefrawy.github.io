@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: A stronger host may preserve a threatened laboratory, but the transaction announcement cannot tell us whether its working capability will survive.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review replaced a categorical transaction chart, made the gain/loss ledger symmetric, and bounded the author’s continuing firsthand SRI-campus observation.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added capability due diligence, national concentration externalities, staged integration controls, and explicit falsifiers for the triage framework.
+reading_time: 20
 central_claim: Research consolidation should be evaluated as institutional triage—by the teams, assets, autonomy, mission relationships, and problem classes preserved or lost—not as success merely because a transaction closes.
 claim_status: Prospective framework; PARC joined SRI in 2023, while IBM’s HRL agreement remained subject to closing at the date of this draft
 hero_image: /assets/images/rd-ratchet/articles/article-13-consolidation-triage.webp
@@ -90,6 +90,25 @@ The possible outcomes are not binary:
 
 A press release cannot distinguish among them.
 
+## Capability due diligence is different from asset due diligence
+
+Ordinary transaction review can identify legal entities, contracts, liabilities, patents, facilities, equipment, and named employees. Research capability also depends on relations and permissions that may not survive assignment.
+
+The acquirer needs a **capability thesis** for each important technical area:
+
+1. What class of question can the target originate, test, and transition today?
+2. Which critical roles, facilities, data, sponsor trust, and decision rights make that possible?
+3. Which host complement is expected to strengthen the path?
+4. Which integration action could break it?
+5. What evidence after one, five, and ten years will distinguish renewal from pipeline harvest?
+6. What is the transfer or restoration plan if the thesis fails?
+
+This differs from retaining “key employees.” A capability may require an uncelebrated instrument specialist, program integrator, security officer, or customer relationship alongside a famous scientist. Retention bonuses aimed at individually visible stars can preserve the nodes with the highest market signal while losing the minimum cut.
+
+Due diligence should therefore map critical role combinations and working edges with consent and proportionality. It should not become surveillance of private relationships or a promise that every prior collaboration remains. The object is an operational dependency record: which combinations must be tested before integration changes them irreversibly.
+
+The acquisition thesis should include a pre-mortem. If the combination fails scientifically despite closing successfully, what likely caused it—departure, sponsor distrust, facility interruption, narrowed problem selection, IP friction, incompatible security regimes, or a host roadmap that absorbed all discretionary work? Each predicted failure receives a leading indicator and an owner.
+
 ## PARC and SRI: a completed legal transfer, an open institutional question
 
 [Xerox’s 2023 announcement](#source-xerox-parc-sri) says the donation would allow Xerox to focus on print, digital, and IT services while PARC joined a research institution expected to sustain deep-technology work. It credits PARC with Ethernet, laser printing, graphical interfaces, and ubiquitous computing. The stated logic is complementary focus: Xerox narrows around its business, and PARC gains a host whose core purpose is research. <span class="rd-evidence-token" data-evidence="D">D</span>
@@ -123,6 +142,32 @@ The baseline is not a promise to freeze the institution. It is a memory against 
 
 The ledger must be symmetric. It records new teams, facilities, adjacencies, sponsors, transition paths, and problem classes with the same specificity used for departures, closures, lost autonomy, and abandoned domains. Otherwise “preservation” becomes nostalgia and “synergy” becomes advertising.
 
+## Integration should be staged around irreversible cuts
+
+Some changes are cheap to reverse: reporting formats, shared procurement, or a temporary joint project. Others destroy options: closing a unique facility, dispersing a team, ending a sponsor relationship, merging two independent technical paths, or transferring IP in a way that prevents alternative use.
+
+The integration plan should order changes by reversibility. Run joint technical exercises before merging teams. Test facility substitution before closing the old environment. Demonstrate sponsor access under the new governance before terminating the prior channel. Preserve two independent approaches until evidence—not organizational symmetry—justifies a cut.
+
+A bounded transition reserve can fund duplication during this test period. Duplication is expensive, but immediate consolidation can be more expensive when the institution discovers too late that the “redundant” asset carried a hidden complement. The reserve ends when the new path passes a predeclared exercise or when the old path is deliberately retired with transferable state preserved.
+
+For publicly supported or nationally unique capability, the transaction can include a capability escrow: controlled access to essential archives, build environments, calibration records, IP rights, and transition plans that activates if the host discontinues the capability before a review date. Escrow should not expose restricted work or confiscate ordinary corporate assets. It protects the portion whose loss would force the public to finance reconstruction after helping create it.
+
+## Rescue can increase national common-mode risk
+
+Each consolidation can be locally capability-enhancing. A large host can provide compute, fabrication, capital, customers, and technical peers. Yet repeated consolidation can place several formerly independent research paths under one strategy, budget shock, model vendor, security policy, or executive decision.
+
+This is a portfolio externality. The transaction parties price the combined institution's value, not necessarily the national value of an independent dissenting path. Saving two laboratories inside one host can increase total capability and reduce error-correcting diversity at the same time.
+
+The public-interest test should therefore ask:
+
+- Does another institution retain a materially independent path in the critical domain?
+- Will researchers outside the host retain practical access to essential facilities, data, standards, or interfaces?
+- Are the combined portfolios exposed to the same technical assumption or market clock?
+- Can sponsors move work without rebuilding the entire capability?
+- Does the transaction create a single point at which a strategic change removes a national option?
+
+The remedy is not a presumption against scale. Some work requires scale. It is to fund plural failure modes: alternative technical approaches, interoperable infrastructure, portable artifacts, and at least one correction channel outside the dominant host.
+
 ## The strongest counterargument
 
 Research organizations cannot demand special immunity from capital allocation. Combining labs may remove duplication, improve access to compute and fabrication, and give scientists more ambitious colleagues. Public capability ledgers could expose strategy, burden integration, or become weapons for groups defending budgets.
@@ -130,6 +175,18 @@ Research organizations cannot demand special immunity from capital allocation. C
 All true. The ledger should be proportionate and protect legitimate confidential or security-sensitive information. It should also record gains. The goal is not to preserve every team but to prevent invisible destruction of capability that the host later pays to rebuild.
 
 The alternative—financial due diligence without capability due diligence—is not neutral. It values liabilities, IP, buildings, and contracts while leaving tacit knowledge and adjacency largely unpriced. That biases the transaction toward what accounting already knows how to see.
+
+## What would falsify the triage framework?
+
+The framework should weaken if ordinary transaction measures—headcount, capital expenditure, patents, contracts, and facility retention—predict post-combination research and transition capability as well as the proposed graph and decision-rights ledger. In that case, capability due diligence adds burden without information.
+
+It should also weaken if staged integration systematically protects obsolete duplication, slows productive combinations, or causes more talent loss than immediate consolidation. The comparison must include the option value preserved and the cost of delay.
+
+For PARC–SRI, the prospective test is whether sponsor breadth, internally initiated work, teams, facilities, cross-domain collaboration, and transition paths strengthen through 2028 and 2033 relative to a documented 2023 baseline. My retained SRI access can inform questions, not supply the institution-wide dataset. <span class="rd-evidence-token" data-evidence="A">A</span>
+
+For IBM–HRL, no post-transaction verdict is yet available in this draft. If the transaction closes, the complement thesis strengthens if new joint work produces capabilities neither organization could previously exercise while non-quantum HRL domains, sponsor trust, and independent problem selection remain healthy. It weakens if the public rationale becomes a narrow pipeline that consumes the broader laboratory without a transfer plan.
+
+The national concentration concern fails if consolidations repeatedly create stronger institutions while independent paths, access, and sponsor portability remain stable or improve. It strengthens only with evidence of synchronized narrowing, higher switching costs, or capabilities that disappear from every alternative host.
 
 ## Five different verdicts
 

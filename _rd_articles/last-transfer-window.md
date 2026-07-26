@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: The scarce resource is an overlap between people who carry the tacit practices of durable laboratories and people building the next scientific toolchain.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review narrowed the replaceable-equipment claim and preserved the bounded, non-countdown urgency argument.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added a category-aware FFRDC transfer audit and distinguished engineering capability from loss of protected technical initiative.
+reading_time: 17
 central_claim: The opportunity to build a successor is bounded by one institutional generation of apprenticeship and joint work; money can often replace commodity equipment faster than it can recreate dispersed judgment, trust, and technical memory, while unique facilities may themselves take years to rebuild.
 claim_status: Urgency hypothesis supported by workforce and R&D-team evidence, without a precise countdown or laboratory-specific retirement forecast
 hero_image: /assets/images/rd-ratchet/articles/article-14-last-transfer-window.webp
@@ -22,6 +22,8 @@ source_ids:
   - rd-team-tacit-knowledge-2016
   - gao-ffrdc
   - far-ffrdc
+  - crs-ffrdc-2026
+  - ncses-ffrdc-master-2026
   - nairr-2026
   - nstc
 evidence_chart:
@@ -122,6 +124,8 @@ This makes apprenticeship auditable. The test is not reverence. It is whether th
 
 [The Federal Acquisition Regulation](#source-far-ffrdc) defines FFRDCs around a special long-term government relationship, continuity, access, independence, and work integral to an agency mission. [GAO has likewise emphasized](#source-gao-ffrdc) institutional memory and trusted relationships as distinguishing purposes. Those properties make FFRDCs plausible hosts for transfer across government program cycles. <span class="rd-evidence-token" data-evidence="D">D</span>
 
+But “FFRDC” is a relationship, not a single operating model. [The February 2026 federal list and CRS synthesis classify 41 current centers](#source-crs-ffrdc-2026): 26 R&D laboratories, 10 study-and-analysis centers, and five systems-engineering-and-integration centers. The last group is supposed to do engineering. The second is supposed to provide analysis. Calling either a degraded Bell Labs because it follows its charter would erase its actual public function. <span class="rd-evidence-token" data-evidence="D">D</span>
+
 The concern that some FFRDCs have become “engineering houses at best” should be treated as a falsifiable institutional claim, not an insult or universal fact. Systems engineering, testing, integration, and acquisition support can be nationally essential. The failure occurs if task-order execution displaces the authority, talent, and protected time to originate uncertain technical work—or if the center preserves sponsor process better than technical capability.
 
 The right audit asks:
@@ -133,6 +137,16 @@ The right audit asks:
 - Are senior experts teaching successors through real work?
 
 An FFRDC that passes those tests may be closer to the needed successor than many organizations called laboratories. One that fails may retain continuity without discovery.
+
+The transfer test must therefore be conditional on activity type and charter:
+
+- An **R&D laboratory** should show that it can originate and sustain important technical questions, operate or renew distinctive facilities, and convert research into reusable capability.
+- A **study-and-analysis center** should show that long memory improves independent advice and that it can contradict a sponsor's preferred framing without becoming commercially or politically disposable.
+- A **systems-engineering-and-integration center** should show that it retains cross-system judgment, interface knowledge, and apprenticeships that ordinary contractors cannot cheaply recreate.
+
+For all three, the revealing ratio is not papers to dollars. It is **reusable capability renewed per unit of sponsor-directed work**. That is not yet an estimated metric; it is a proposed accounting boundary. The numerator includes maintained teams, tools, memory, independent challenge, and trained successors. The denominator includes task-specific delivery. A center can increase both. Role conversion becomes visible when delivery rises while renewal and problem-selection authority fall.
+
+Congress and sponsors already review FFRDC need and performance. The missing addition is a longitudinal charter-to-work record: five- and ten-year changes in who initiates questions, what technical state persists between tasks, which advice changed sponsor decisions, which capabilities could not be procured ordinarily, and how long a successor cohort needs to operate independently. Without that record, a stable budget can conceal erosion and a rising budget can purchase more deliverables without purchasing a longer horizon.
 
 ## AI can widen the window, not create the institution
 

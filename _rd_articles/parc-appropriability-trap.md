@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: “Xerox failed to see the future” is a satisfying story and an incomplete economics of invention, integration, and value capture.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review added a primary Xerox commercialization source, bounded laser printing as a counterexample, and separated documented transfer facts from continuing firsthand SRI-campus observation.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added a portfolio of capture paths, AI-era complementary-asset analysis, prospective decision records, and explicit falsifiers.
+reading_time: 20
 central_claim: Invention, recognition, complementary assets, and value capture are distinct capabilities; a laboratory can excel at the first while its parent lacks or declines to build the others.
 claim_status: Provisional synthesis of corporate records and appropriability scholarship; not a comprehensive audit of Xerox or PARC
 hero_image: /assets/images/rd-ratchet/articles/article-10-parc-appropriability.webp
@@ -121,6 +121,25 @@ This suggests an **appropriability horizon**:
 
 The horizon can be shorter than the scientific path even when management believes the science. It can also be lengthened by standards leadership, procurement commitments, consortia, licensing, or public funding.
 
+## Technology transfer is a portfolio, not a funnel
+
+The familiar pipeline—research, disclose, patent, license—assumes that a result has one natural commercial form. Platform technologies rarely do. A single research system may contain a product, a standard, a toolchain, a public benchmark, a component for an incumbent, and several future companies.
+
+The institution needs a portfolio of capture and diffusion paths:
+
+| Path | Best fit | Principal advantage | Principal failure |
+|---|---|---|---|
+| **Internal integration** | Parent already controls the required manufacturing, distribution, customer, and service assets | Captures learning and value across the stack | Installed products or internal politics can veto a discontinuity |
+| **License to an incumbent** | A capable complement owner can scale the result | Avoids rebuilding an industry around the laboratory | Licensee can warehouse, narrow, or misprice the option |
+| **Spinout** | A coherent technical-market thesis needs dedicated capital and organization | Creates a residual owner for product transition | Selects one path and cannot preserve the broader commons |
+| **Standard or shared consortium** | Value rises with interoperability and several firms must invest | Expands adoption and distributes cost | Consensus can move slowly or favor incumbents |
+| **Open commons** | Broad reuse and independent correction matter more than exclusive capture | Maximizes inspectability and recombination | Maintenance and transition remain unowned |
+| **Public procurement or mission transition** | Government is a credible early user or infrastructure buyer | Converts public value into an adoption path | Requirements and acquisition clocks can freeze a premature design |
+
+Selection should happen in stages. Early research needs freedom to change the representation. Once a plausible system emerges, the laboratory maps complementary assets and creates competing transition hypotheses. Exclusivity should attach only when a specific party commits the capital and capability needed for the next stage, not merely because it arrived first.
+
+This is also why a technology-transfer office should not be evaluated only by license revenue. Revenue is one capture result. A standard, maintained public tool, supplier capability, new company, or public mission can be the correct result under a different appropriability regime. The missing discipline is a prospective record stating which path was chosen, what complements it requires, what public return is retained, and what event reopens the choice.
+
 ## The 2023 transfer is part of the mechanism
 
 Xerox announced in April 2023 that it was donating PARC to SRI International. The announcement says PARC was founded in 1970, made an independent company in 2002, and would join SRI while Xerox focused on print, digital, and IT services. [SRI’s current history records the integration](#source-sri-history). <span class="rd-evidence-token" data-evidence="D">D</span>
@@ -143,6 +162,20 @@ That is a legitimate role for government, but public money needs more than a tec
 
 Otherwise government can either underprotect transition incentives or socialize the uncertainty while surrendering the durable capability.
 
+## AI moves scarcity from invention toward complements
+
+Generative systems can lower the cost of exploring designs, writing code, searching prior art, creating interfaces, and adapting a concept to several domains. That may increase invention and recognition. It does not make fabrication, high-quality data, compute, certification, distribution, trusted customer access, security review, or maintenance equally cheap.
+
+The appropriability trap can therefore deepen in the AI age. More actors can produce plausible variants while control of the remaining scarce complements becomes more concentrated. The laboratory that originates a method may capture less, while a platform with compute, data, users, or manufacturing captures more. Faster imitation can shorten exclusivity; faster adaptation can also expand public spillovers.
+
+The policy response is not simply stronger patents. Strong exclusion can block cumulative research while leaving the complement bottleneck untouched. The successor should identify where scarcity actually sits and negotiate access, interoperability, procurement, or time-bounded rights at that layer. In AI-assisted science, provenance and independently checkable evidence also become complements: fluent replication of form is not technical replication of a result.
+
+This yields a new institutional proposition:
+
+> As generative capability makes candidate inventions more abundant, the national research advantage shifts toward institutions that can supply scarce complements without allowing their owners to define every research question.
+
+That proposition could be wrong if AI makes complements broadly substitutable as well—through cheap simulation, portable models, standardized fabrication, automated compliance, and open distribution. The successor should measure concentration and switching cost rather than assume the bottleneck.
+
 ## The strongest counterargument
 
 Perhaps the market did exactly what it should. Xerox explored widely; other firms recombined the ideas; consumers benefited; researchers moved; and no central planner had to predict the winning product. Demanding that the originator capture every spillover could reduce diffusion and entrench incumbents.
@@ -150,6 +183,16 @@ Perhaps the market did exactly what it should. Xerox explored widely; other firm
 That is a strong defense of decentralized innovation. The article does not propose universal capture by the originating firm. It asks whether the research-producing institution is replenished enough to continue generating public spillovers. A system that diffuses knowledge while destroying every source of patient capability eventually spends inherited stock.
 
 The policy objective is therefore not maximum appropriation. It is **sufficient replenishment with broad diffusion**. Sometimes a product margin supplies it. Sometimes a license, procurement contract, consortium contribution, or public capability grant must.
+
+## What would falsify the appropriability account?
+
+The framework should lose explanatory weight if complementary-asset maps made before transition do not predict which PARC-like inventions are integrated, licensed, diffused, or abandoned better than a simpler account based on technical quality and market timing.
+
+It should also weaken if originating institutions are routinely replenished without capturing returns: talent circulation, reputation, philanthropy, government awards, or new contracts may compensate for spillovers sufficiently to sustain broad research. In that world, diffusion and institutional renewal are less opposed than this article assumes.
+
+For PARC specifically, the case needs invention-level histories that include successes such as laser printing, not only famous external capture. Evidence that Xerox possessed the relevant complements and rejected a well-supported path for reasons unrelated to timing, risk, or strategy would support a narrower management-error account. Evidence that another firm succeeded only after building complements Xerox rationally lacked would support the structural account.
+
+The 2023 SRI transition supplies a prospective test. If PARC under SRI sustains internally initiated work, retains teams and facilities, broadens sponsor and transition paths, and replenishes capability from distributed returns, then a nonprofit multi-sponsor host may solve part of the trap. If the research becomes a set of short custom projects with no durable commons, the container changed while the capture problem remained. <span class="rd-evidence-token" data-evidence="A">A</span>
 
 ## What the successor must learn
 

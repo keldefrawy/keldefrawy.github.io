@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: When the surface form of expertise becomes nearly free, institutions must decide which evidence remains expensive enough to trust.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review distinguished scientific audit from the form-versus-witness argument while preserving the amplifier and no-intent-inference boundaries.
-reading_time: 17
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added the AI abundance inversion, common-mode independence tests, and a marginal-cost account of why verification becomes the scarce scientific output.
+reading_time: 21
 central_claim: >-
   Large language models are epistemic amplifiers: they can scale verification inside institutions rewarded for correction, or scale scientific-looking output inside institutions rewarded for volume and confident novelty.
 claim_status: Provisional synthesis; historical essays are used as distinct diagnostic tools, not as predictions of modern AI
@@ -28,6 +28,7 @@ source_ids:
   - formal-math-2025
   - karim-composed-model-hallucinations
   - nasem-integrity
+  - nasem-reproducibility-2019
 evidence_chart:
   kicker: Form versus checked substance
   title: A formal benchmark makes the verification gap measurable
@@ -77,7 +78,7 @@ objection_ladders:
 corrections: []
 ---
 
-In 2022 I began two short working notes. One asked what Feynman and Shannon had missed about a scientific system connected by the Internet and pushed by hypercompetitive incentives. The other tried to separate mathematical illusions, collective hallucinations, delusions, and fraud. They were intellectual seeds, not evidence. They were fragmentary and sometimes used language too intuitive or accusatory to carry a serious argument.
+In 2022 I began two short working notes. One asked what Feynman and Shannon had missed about a scientific system connected by the Internet and pushed by hypercompetitive incentives. The other tried to separate mathematical illusions, collective hallucinations, delusions, and fraud. They were intellectual seeds, not evidence. They were fragmentary and sometimes used language too intuitive or accusatory to carry a serious argument. <span class="rd-evidence-token" data-evidence="M">M</span>
 
 This article keeps the question and replaces the shortcuts.
 
@@ -130,6 +131,29 @@ The inversion is now complete:
 - Shannon worried that people would borrow one successful field’s language; a model can borrow every field’s language.
 - Feynman worried that people would reproduce scientific form without its correction discipline; a model reproduces form without possessing intentions.
 - Wigner marveled that mathematics could map nature; a model can generate a mathematical map before anyone establishes the territory.
+
+## The abundance inversion
+
+Before generative AI, producing a plausible technical manuscript imposed meaningful costs: specialized training, literature search, notation, code, figures, and sustained writing. Those costs never certified truth, but they constrained volume. AI drives the marginal cost of many of those surfaces toward zero while the costs of calibrated instruments, independent data, formal alignment, domain-expert attention, and responsibility remain high.
+
+That creates an **abundance inversion**:
+
+> When proposals and explanations become abundant, the scarce scientific goods are independent witnesses, trusted negative evidence, and accountable attention.
+
+The inversion changes the optimal institution. A system designed to fund idea production may become saturated with proposals while leaving experiments, replication, artifact maintenance, and contradiction queues starved. More generated hypotheses can reduce discovery if they consume the fixed attention needed to discriminate among them. The binding constraint moves from *Can someone propose a candidate?* to *Can an independent process expose why this candidate fails?*
+
+Independence is itself an engineering property. Three agents using the same foundation model, retrieval corpus, benchmark, and grader are three samples from one epistemic supply chain—not three replications. The same is true of three papers inheriting one dataset or one unexamined preprocessing library. Under the [National Academies convention](#source-nasem-reproducibility-2019), rerunning the same artifacts can establish computational reproducibility; it is not empirical replicability with new data. <span class="rd-evidence-token" data-evidence="D">D</span>
+
+A claim of “independent verification” should therefore disclose at least four distances:
+
+| Independence dimension | Question |
+|---|---|
+| **Model distance** | Do the evaluators share a base model, fine-tuning lineage, or synthetic training data? |
+| **Evidence distance** | Do they rely on the same dataset, archive, benchmark, instrument, or preprocessing chain? |
+| **Method distance** | Is the claim attacked through a genuinely different proof, model, measurement, or experimental design? |
+| **Incentive distance** | Can the verifier publish a contradiction without losing the relationship, funding, or benchmark status being evaluated? |
+
+No single distance makes a verifier independent. The purpose of the disclosure is to reveal common-mode exposure. AI can then help design diverse attacks—different proof strategies, perturbations, instruments, or source corpora—while humans remain accountable for deciding whether the differences are scientifically material.
 
 ## A taxonomy that prevents accusation by metaphor
 

@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: The artifacts that remain easiest to count after a team disperses are not the same as the capability needed to produce, challenge, and transition the next result.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review made the author’s disclosed record explicitly an audit object, never a representative productivity benchmark.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added an output type system, non-composite capability accounts, AI-era proxy analysis, and explicit measurement falsifiers.
+reading_time: 21
 central_claim: Papers, patents, programs, prototypes, awards, and citations are lossy projections of a stateful research system; each can rise while the underlying capacity for the next generation of work declines.
 claim_status: Provisional measurement framework illustrated with the author’s disclosed record, not a claim of representative productivity
 hero_image: /assets/images/rd-ratchet/articles/article-11-outputs-and-capability.webp
@@ -25,6 +25,7 @@ source_ids:
   - uspto-patent-examination
   - leiden-manifesto
   - wang-novelty
+  - nasem-reproducibility-2019
 evidence_chart:
   kicker: One output, several domains
   title: Thirty-one granted patents distribute across five disclosed technical topics
@@ -95,6 +96,24 @@ The lists remain after a project ends. They remain after colleagues move. They r
 
 These are not criticisms of the outputs. They are type checks. A system becomes confused when evidence of one kind is accepted as a verdict of another.
 
+## An output type system
+
+R&D evaluation needs the equivalent of a type checker. Each artifact licenses some inferences and rejects others.
+
+| Artifact | Strongest ordinary inference | Independent check | What it does not certify |
+|---|---|---|---|
+| Peer-reviewed paper | A venue accepted a disclosed claim as worth publishing after its process | Specialist scrutiny, formal checking, computational reproduction, or new-data replication as applicable | Universal correctness, importance, or use |
+| Granted patent | A patent office allowed claims under legal patentability requirements | Claim construction, prior-art challenge, implementation, and technical evaluation | Peer-reviewed science, product performance, adoption, or freedom to operate |
+| Prototype or demonstration | A configuration worked under stated conditions | Reproduction, adversarial test, boundary analysis, and operation by another team | Generality, manufacturability, reliability, or maintainability |
+| Funded program | A sponsor selected activity under a budget and mission | Milestone evidence, independent test, transition, and post-program reuse | Technical success or public value |
+| Citation | Another work referenced the artifact | Context and purpose of the citation; delayed influence | Agreement, correctness, or causal impact |
+| Award | An awarding body made a retrospective judgment under stated criteria | Transparent criteria, field context, and later evidence | Complete comparison or institutional continuity |
+| Deployment or revenue | A user or buyer accepted a system under some conditions | Retention, reliability, safety, public impact, and lifecycle evidence | Scientific novelty or broad social benefit |
+
+[The National Academies distinction](#source-nasem-reproducibility-2019) is an example of type discipline: rerunning the original code and data is computational reproduction, while a new study with new data addresses replicability. Calling both “verified” deletes the independence boundary. <span class="rd-evidence-token" data-evidence="D">D</span>
+
+The type checker should not make output less valuable. It makes success statements more credible. “This patent was granted,” “this artifact reproduced,” “this system deployed,” and “this team still possesses the capability” are four useful claims precisely because they are not treated as synonyms.
+
 ## Outputs are projections
 
 Imagine the actual research system as a high-dimensional state:
@@ -129,6 +148,39 @@ A minimal institutional report should therefore pair flows with stocks:
 
 Without the last two, rising output may conceal capability debt.
 
+## Do not repair one proxy with a larger proxy
+
+The obvious response is a composite score: combine papers, citations, patents, funding, deployments, team retention, and public value with weights. That creates a more sophisticated target and a less interpretable failure.
+
+Unlike quantities can compensate in the arithmetic even when they cannot compensate in reality. A large publication count can cancel an irreproducible system. A profitable deployment can cancel a collapsed apprenticeship chain. An intact team can cancel a decade without a hard result. Once weights determine resources, actors optimize the exchange rate among categories.
+
+The capability balance sheet should remain a dashboard with **noncompensable constraints**. A mission may declare that some conditions are necessary—safety evidence, a reproducible build, a transition owner, or an independent successor—and report the rest as visible tradeoffs. Different fields will choose different constraints. What matters is that failure in one dimension cannot be hidden inside aggregate success without an accountable override.
+
+A useful review has three layers:
+
+1. **Typed outputs:** what artifact exists and what inference does it license?
+2. **State transitions:** what became known, usable, corrected, maintained, teachable, or accessible because of it?
+3. **Capability renewal:** which people, tools, relationships, and options now make the next important problem less costly or more possible?
+
+The third layer can be negative even after a valuable result. A team may rationally consume itself to solve an urgent mission. The account should record that trade rather than recode it as institutional success.
+
+## AI destroys the production-cost signal
+
+Before generative AI, a polished manuscript, codebase, or technical survey imposed substantial effort. That cost never guaranteed quality, but evaluators sometimes treated it as a weak signal that serious work lay behind the form. AI makes form, variants, and plausible supporting artifacts cheaper.
+
+This is good when it makes a small team more capable. It is dangerous when an institution keeps rewarding unit counts. The number of proposals, papers, experiments, code commits, or agent evaluations can grow while scarce human attention, independent data, physical tests, and accountable maintenance remain fixed.
+
+The metric response should move downstream toward harder state changes:
+
+- Can another team reproduce or operate the artifact?
+- Did a new measurement discriminate among hypotheses?
+- Did a correction propagate through dependencies?
+- Did users accept responsibility for maintenance?
+- Did an apprentice become independently capable?
+- Did the work reduce the reconstitution cost of a public capability?
+
+AI can help collect this evidence. It can also generate the evidence narrative. Consequential state transitions therefore need bound artifacts, named custodians, and independent checks rather than self-reported prose alone.
+
 ## A retrospective signal and its boundary
 
 The [NDSS Test of Time Award](#source-ndss-test-of-time-2024) is a rarer kind of evidence. It recognizes influence after a long interval rather than optimizing for immediate attention. In 2024 it recognized work I coauthored on an Internet-censorship system. That is meaningful evidence of enduring scholarly and technical influence. <span class="rd-evidence-token" data-evidence="D">D</span>
@@ -154,6 +206,16 @@ For each claimed capability, ask for observable tests:
 - Which claim was corrected because the institution’s error-detection process worked?
 
 These questions do not eliminate judgment. They make judgment contestable.
+
+## What would falsify the capability-lag account?
+
+The thesis should weaken if output vectors predict future research capacity as well as direct capability measures. If publication, patent, program, and deployment histories reliably forecast team regeneration, artifact reuse, new-problem initiation, transition, and low reconstitution cost, the additional balance sheet may not justify its burden.
+
+It should also weaken if capability measures add mostly narrative noise: reviewers cannot agree even on bounded proxies, organizations manipulate them more easily than counts, or teams classified as healthy repeatedly fail external technical tests.
+
+The opposite evidence would be a leading-indicator result. Track teams before a funding cliff, closure, merger, or leadership change. If loss of critical roles, maintenance, adjacency, or question authority predicts later output and transition decline after controlling for field and resources, capability accounting has earned explanatory value.
+
+The personal ledger offers only a pilot. For each item, the site can eventually attach an evidence state: claim status, artifact status, independent use, transition, current custodian, and whether a living team can extend the work. The exercise may reveal strong continuity or more archival remnants than expected. Either result is useful; the framework should not guarantee its own conclusion.
 
 ## Five different verdicts
 

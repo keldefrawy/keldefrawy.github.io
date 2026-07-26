@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: Universities are indispensable to basic research and scientific training. Their grant, publication, labor, and overhead systems still cannot substitute for an institution that owns durable capability from question through deployment.
 date: 2026-07-23
-updated: 2026-07-23
-version: "0.1"
-version_sequence: 1
-revision_summary: Private working draft; not a public version
-reading_time: 20
+updated: 2026-07-25
+version: "0.2"
+version_sequence: 2
+revision_summary: Added a current federal indirect-cost status, a total-cost decomposition, the residual-owner problem, AI-era incentive effects, and explicit falsifiers without removing the original draft.
+reading_time: 29
 central_claim: The academic research system is optimized to fund projects, publish knowledge, and train people; it underfunds the stable technical teams, shared infrastructure, negative-result memory, and transition ownership needed to function as a complete long-horizon R&D institution.
 claim_status: Provisional; national expenditure and cost rules are documented, while incentive effects vary by field and institution
 hero_image: /assets/images/rd-ratchet/articles/article-07-academia-not-laboratory.webp
@@ -27,10 +27,12 @@ source_ids:
   - gao-grant-burden
   - gao-nih-indirect
   - gao-nsf-indirect
+  - crs-university-indirect-2026
   - nih-indirect-guidance-2025
   - first-circuit-nih-2026
   - feynman-cargo-cult
   - shannon-bandwagon
+  - turing-computable-numbers
   - far-ffrdc
 evidence_chart:
   kicker: Academic R&D funding, FY2024
@@ -146,9 +148,9 @@ There is, however, important evidence that contract design changes exploration. 
 
 Federal research awards distinguish **direct costs** from **facilities and administrative costs**, usually abbreviated F&A. Direct costs can be assigned to a project with high accuracy: project salary, supplies, travel, and some equipment. F&A costs are shared expenses that support more than one activity and cannot be assigned project by project without disproportionate effort. They include building depreciation, operations and maintenance, utilities, libraries, information systems, financial administration, sponsored-research offices, and parts of departmental and general administration.
 
-The negotiated F&A rate is usually applied not to the entire award but to a **modified total direct cost** base. Major equipment, portions of subawards, and other categories may be excluded. This produces a common arithmetic error. If the applicable base is $100 and the negotiated rate is 60 percent, F&A is $60; it is 37.5 percent of the resulting $160 total, not 60 percent. If excluded direct costs are present, the share of the total award is lower still.
+As [the current Congressional Research Service synthesis explains](#source-crs-university-indirect-2026), the negotiated F&A rate is usually applied not to the entire award but to a **modified total direct cost** base. Major equipment, portions of subawards, and other categories may be excluded. This produces a common arithmetic error. If the applicable base is $100 and the negotiated rate is 60 percent, F&A is $60; it is 37.5 percent of the resulting $160 total, not 60 percent. If excluded direct costs are present, the share of the total award is lower still. <span class="rd-evidence-token" data-evidence="D">D</span>
 
-The rate is also a bundle. Under the federal framework described in the First Circuit's 2026 opinion, the administrative component for universities has long been capped at 26 percent of the modified direct-cost base, while the facilities component reflects institution-specific costs. A high negotiated rate is not proof that administrators receive that share of a grant. It can reflect a costly scientific plant. Conversely, a negotiated rate does not prove that every shared dollar is well spent or allocated transparently.
+The rate is also a bundle. Under [the federal framework described in the First Circuit's 2026 opinion](#source-first-circuit-nih-2026), the administrative component for universities has long been capped at 26 percent of the modified direct-cost base, while the facilities component reflects institution-specific costs. A high negotiated rate is not proof that administrators receive that share of a grant. It can reflect a costly scientific plant. Conversely, a negotiated rate does not prove that every shared dollar is well spent or allocated transparently. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 Available federal evidence rejects both simple camps:
 
@@ -160,9 +162,11 @@ Shared costs are real. Administrative accretion is also real. “All overhead is
 
 ## The 2025 NIH fight exposed the wrong binary
 
-On February 7, 2025, NIH issued guidance replacing separately negotiated university indirect-cost rates with a standard 15 percent rate for existing and new grants going forward. The notice argued that more funding should reach direct scientific work. Universities, medical associations, and states challenged the policy.
+On February 7, 2025, [NIH issued guidance](#source-nih-indirect-guidance-2025) replacing separately negotiated university indirect-cost rates with a standard 15 percent rate for existing and new grants going forward. The notice argued that more funding should reach direct scientific work. Universities, medical associations, and states challenged the policy. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 A federal district court permanently enjoined the guidance and vacated it. On January 5, 2026, the U.S. Court of Appeals for the First Circuit affirmed, concluding that the NIH action violated applicable statutory and regulatory constraints. As of this draft, the guidance is not in force. [The agency notice](#source-nih-indirect-guidance-2025) and [the appellate opinion](#source-first-circuit-nih-2026) should be read together; quoting only one side would misstate both the policy and its legal status. <span class="rd-evidence-token" data-evidence="D">D</span>
+
+NIH was not the whole 2025–2026 dispute. [A January 2026 Congressional Research Service review](#source-crs-university-indirect-2026) records proposed 15 percent policies from NIH, DOE, NSF, and DOD and explains that statutes and FY2026 appropriations constrained their implementation in different ways. It also reports that negotiated university rates commonly range from 30 to 70 percent of the applicable modified direct-cost base—not 30 to 70 percent of the total award. The legal and budget status is agency- and statute-specific; a sentence saying “the federal government capped overhead at 15 percent” would be false. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 The controversy was framed as science versus administration. That is the wrong systems question. A uniform cap does not distinguish an efficient shared facility from duplicative administration, a wet laboratory from a theoretical group, or an institution with accumulated infrastructure from one renting ordinary offices. It can force universities to cross-subsidize federal research from tuition, clinical revenue, philanthropy, or endowment—or to stop doing some research.
 
@@ -199,6 +203,70 @@ The loop can finance essential infrastructure and still consume too much scienti
 
 Bundling all three into a percentage on project expenditure makes the debate opaque.
 
+## The denominator is wrong: minimize total mission cost, not the rate
+
+The overhead rate is a price-allocation rule, not an efficiency measure. A lower rate can reduce federal reimbursement while increasing the total cost of producing a result if a university closes a shared facility, duplicates compliance inside laboratories, defers maintenance, or forces investigators to assemble infrastructure project by project. A higher rate can also coexist with avoidable layers, weak procurement, or internal cross-subsidy. Neither sign settles efficiency.
+
+The relevant accounting identity is broader:
+
+<p class="rd-equation"><strong>Total portfolio cost = direct project work + shared scientific capability + required stewardship + transaction and coordination cost + unrecovered institutional contribution.</strong></p>
+
+Negotiated F&A reimburses an allocated portion of some middle terms. It does not necessarily equal them, and it does not make the unrecovered contribution disappear. The policy objective should be to reduce **total mission cost per unit of independently validated and reusable capability**, subject to safety, fairness, and public accountability. That objective is deliberately harder than minimizing a visible percentage.
+
+The decomposition produces three ledgers that current debate often collapses:
+
+| Ledger | Examples | Correct test |
+|---|---|---|
+| **Scientific commons** | Shared instruments, research computing, data stewardship, libraries, calibration, research software, technical staff | Is the capability used, maintained, accessible, and cheaper or better than project-by-project reconstruction? |
+| **Public stewardship** | Human- and animal-subject protection, safety, financial controls, export and data rules, conflicts, cybersecurity | Is the control proportional to actual risk, standardized where possible, and effective at preventing harm or misuse? |
+| **Transaction tax** | Repeated proposals, bespoke forms, duplicative reviews, premature detailed budgets, incompatible agency systems | Does the information change a funding, safety, or oversight decision enough to justify researcher and administrator time? |
+
+Cutting the first ledger can destroy science while appearing to reduce administration. Defending the third ledger as “the cost of doing research” can protect needless work. The reform target is not a job category. It is any process whose marginal evidentiary or safety value is lower than the technical attention it consumes.
+
+The three ledgers should be published both in dollars and in time. A sponsor that simplifies a form but adds a new assurance may move cost from a central office to faculty and lab staff while claiming administrative savings. Investigator hours are a real research input even when they never appear in an F&A pool.
+
+## The missing residual owner
+
+The academic system has several legitimate principals whose objectives diverge at the end of a project:
+
+- the **investigator** needs a truthful, important contribution and a viable next program;
+- the **student or postdoc** needs learning, credit, and mobility rather than indefinite custodianship;
+- the **university** needs education, scholarly standing, lawful stewardship, and financial sustainability;
+- the **sponsor** needs knowledge or mission value within an authorized award; and
+- a future **user** needs integration, reliability, support, procurement, and maintenance.
+
+The first four can each satisfy their formal obligation while the fifth receives nothing usable. A paper is accepted, a student graduates, the grant closes, the institution passes audit, and the prototype becomes unmaintained. No bad actor is required. The system lacks a **residual owner for capability**—an organization still responsible after the countable outputs have been delivered.
+
+Technology-transfer offices, licenses, startups, and industry partnerships sometimes create that owner. They work best when a path to appropriation and a capable adopter already exist. They are weaker for shared research software, standards, negative-result archives, public-interest infrastructure, or a technical option whose user will not be identifiable until later.
+
+This is why “commercialize more” and “fund more basic science” are incomplete opposites. One pushes selected outputs toward a private residual owner; the other expands discovery. Neither automatically preserves the broad technical state between them.
+
+## What is actually declining?
+
+The expenditure evidence does not show a collapse of academia. Real research activity, publication, and many scientific capabilities remain enormous. A defensible decline claim must identify a variable and a counterfactual.
+
+The proposed deterioration is in **relative incentive coverage**: as the system demands more compliance, computation, data stewardship, integration, and transition, the marginal rewards remain concentrated on grants, novel publications, and temporary labor. Maintenance, contradiction, shared engineering, and post-award transition grow in importance faster than their durable funding and career status. This is a hypothesis about the widening gap between demanded functions and funded roles—not proof that today's professors or universities are worse than an earlier generation.
+
+Three observations make the hypothesis plausible but not conclusive. Longer, failure-tolerant investigator funding is associated with more exploratory work in one important life-science comparison. Unusually novel combinations receive delayed and more variable recognition. Selection for publishable results can degrade methods in a formal population model without individual misconduct. None establishes a national time trend in scientific quality. Together they show why counting more grants and papers cannot falsify an incentive-coverage gap.
+
+The most important counterexample is the durable university center that does maintain expert staff, shared instruments, long collaborations, and a path to use. Such centers show that academia can contain the missing layer. The question is what finances it: endowment, philanthropy, medical revenue, state support, a center grant, industry partnership, a national facility, unusual leadership, or repeated cross-subsidy. If the answer is an exceptional local settlement, it is evidence for possibility—not evidence that the ordinary project system supplies the function.
+
+## AI makes the academic incentive problem nonlinear
+
+Generative AI lowers the cost of proposals, literature summaries, preliminary code, figures, reviews, and manuscripts. That can return time to science. Under unchanged selection rules it can also increase submission volume until scarce reviewers, mentors, instruments, and validation teams become more overloaded than before.
+
+This is a Jevons-like institutional effect, not a claim about energy consumption: when the cost of producing a submission falls, total demand for evaluation may rise enough that the system spends more attention on selection. The equilibrium benefit of AI therefore depends on whether agencies and journals cap or restructure the queue, not only on how many hours one applicant saves.
+
+Academic evaluation should move away from expensive form and toward evidence-bearing state:
+
+- reusable artifacts and complete provenance rather than manuscript polish alone;
+- calibrated uncertainty and explicit abstention rather than confident coverage of every criterion;
+- contribution records that credit maintenance, replication, data, software, mentorship, and correction;
+- triaged review in which short proposals clear a high threshold before full institutional paperwork; and
+- portfolio-level limits that prevent cheap generation from turning every plausible idea into an application competing for human review.
+
+AI should also audit the burden it creates. Agencies can log which requested fields affect decisions, detect duplicative assurances, prepopulate stable institutional information, and compare predicted risks with actual findings. A requirement that never changes a decision and rarely catches a failure should face a sunset review.
+
 ## Why more grants cannot supply the missing systems layer
 
 Suppose every academic project were fully funded at its correct direct and indirect cost. Four functions would still be underprovided.
@@ -215,13 +283,27 @@ These are not arguments for turning universities into contractors. They are argu
 
 ## The strongest counterargument: the university produced the great work
 
-Turing wrote the 1936 computability paper at Cambridge. Universities gave generations of scientists unusual freedom. Tenure, endowed chairs, institutes, sabbaticals, shared facilities, and long collaborations can sustain questions far beyond a grant. Modern academic biology, physics, mathematics, and computer science supply obvious counterexamples to any claim that universities cannot think long.
+[Turing wrote the 1936 computability paper](#source-turing-computable-numbers) at Cambridge. Universities gave generations of scientists unusual freedom. Tenure, endowed chairs, institutes, sabbaticals, shared facilities, and long collaborations can sustain questions far beyond a grant. Modern academic biology, physics, mathematics, and computer science supply obvious counterexamples to any claim that universities cannot think long. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 The answer is to narrow the proposition. Universities can and do house long thought. The system does not reliably provide the complete path from question to maintained capability, and access to its long-horizon mechanisms is uneven. An endowed theorist, a medical-school laboratory, a soft-money research group, a public-university engineer, and an adjunct instructor do not inhabit the same institution in any economically meaningful sense.
 
 A second counterargument is that university turnover is a feature: students disseminate knowledge by leaving, and competition prevents stagnation. Correct. The problem is not mobility. It is mobility without a funded memory and technical core.
 
 A third is that administrative growth reflects real obligations—human-subject protections, export controls, biosafety, data security, conflicts management, and stewardship of public money. Also correct. The reform target should be duplicated, premature, low-risk, and nonstandard requirements, not accountability itself.
+
+## What would falsify this account?
+
+The argument should be weakened if longitudinal, field-normalized evidence shows that ordinary project funding—not exceptional center, endowment, or cross-subsidy arrangements—reliably produces all of the following:
+
+- stable technical careers and team continuity across award boundaries;
+- falling investigator time spent on applications and reporting for a comparable risk level;
+- transparent shared-cost categories whose growth tracks instrument, safety, data, or mission requirements rather than grant volume itself;
+- routine reuse of research software, datasets, facilities, protocols, and negative-result memory;
+- high rates of independent reproduction and correction without career penalties;
+- accountable transition owners for work that requires integration or maintenance; and
+- no systematic disadvantage for long-delay, high-variance, maintenance, replication, or cross-disciplinary contributions.
+
+The overhead diagnosis should also fail locally. If a university's shared costs are transparent, benchmarked, demonstrably used, and cheaper than reasonable alternatives—and if administrative time falls after sponsor requirements are standardized—then “bloat” is not an adequate account of that institution. Conversely, if a flat cap preserves capability and reduces total mission cost without shifting burden into hidden subsidies or technical labor, the case for negotiated allocation weakens.
 
 ## A different funding architecture
 

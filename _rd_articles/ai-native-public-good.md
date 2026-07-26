@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: The successor to the old corporate laboratory should combine durable public mission, industry transition, practiced technical judgment, and AI-enabled verification without recreating monopoly or bureaucracy.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review corrected the absolute AI claim and made the pilot’s institutional failure criteria more explicit.
-reading_time: 18
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added a decision-rights constitution, capability accounts, common-mode controls, provisional pilot thresholds, and a stronger comparative evaluation design.
+reading_time: 25
 central_claim: A viable successor must align patient capital, technical careers, shared infrastructure, independent correction, transition responsibility, and public-value rights in one institution; without that alignment, AI will scale productive work and the failure modes selected by today’s fragmented incentives.
 claim_status: Design proposal to be tested through a bounded ten-year pilot, not a claim that current building blocks already constitute the institution
 hero_image: /assets/images/rd-ratchet/articles/article-17-ai-native-public-good.webp
@@ -21,6 +21,8 @@ source_ids:
   - ncses-rd-2026
   - ncses-ffrdc-2024
   - far-ffrdc
+  - crs-ffrdc-2026
+  - ncses-ffrdc-master-2026
   - gao-ffrdc
   - gao-dhs-ffrdc-2025
   - darpa-pm-model
@@ -28,6 +30,8 @@ source_ids:
   - nstc
   - doe-tcf
   - nasem-arpa-e-2017
+  - nasem-reproducibility-2019
+  - ncses-business-concentration-2026
 evidence_chart:
   kicker: Existing institutional scale
   title: FFRDC R&D spending grew substantially over a decade
@@ -115,6 +119,8 @@ The United States already operates relevant pieces.
 
 [NCSES reports](#source-ncses-ffrdc-2024) that 42 FFRDCs performed $31.7 billion of R&D in fiscal 2024, up from $17.7 billion in 2014. Federal sources supplied 98.5 percent of the 2024 total. The 2024 increase includes a reporting-method change at one laboratory, so it should not be read as pure capability growth. The figures establish scale and durability, not whether every center thinks long. <span class="rd-evidence-token" data-evidence="D">D</span>
 
+[The February 2026 master list contains 41 current centers](#source-ncses-ffrdc-master-2026), while the expenditure survey reports 42 FY2024 performers. These are different dates and populations, not conflicting counts. The current centers also span 26 R&D laboratories, 10 study-and-analysis centers, and five systems-engineering-and-integration centers; a successor should learn from each category without pretending they have one charter. <span class="rd-evidence-token" data-evidence="D">D</span>
+
 [The Federal Acquisition Regulation](#source-far-ffrdc) defines the special sponsor relationship in terms of long-term need, continuity, independence, access, and work that cannot be met as effectively by ordinary resources. [GAO’s historical account](#source-gao-ffrdc) emphasizes institutional memory and trusted objectivity. These are essential design elements.
 
 The concern about FFRDC decline must remain specific. [GAO’s DHS review](#source-gao-dhs-ffrdc-2025) documents a bounded case in which task-order overlap and weak tracking of sponsor use created management problems. It does not prove that all FFRDCs are “engineering houses at best.” Systems engineering, test, integration, and acquisition support can be core public capabilities. The failure is allowing deliverable service to eliminate original technical judgment, independent challenge, apprenticeship, or reusable research state.
@@ -171,6 +177,24 @@ The board sets mission, risk appetite, and resource boundaries. It should not se
 
 An independent verification office reports both to technical leadership and an audit committee, with authority to publish bounded correction records. Security and legal review can block unsafe release but must record the category of restriction so secrecy does not become an unreviewable veto.
 
+## The decision-rights constitution
+
+“Good governance” is not a control surface. The charter must say which body can make which decision, what evidence it owes, and which decisions it cannot make.
+
+| Body | May decide | May not decide alone | Required trace |
+|---|---|---|---|
+| **Governing board** | Mission boundaries, capital envelope, risk appetite, executive appointment, reauthorization, and dissolution | Individual scientific conclusions or preferred technical approach | Public mission rationale, conflicts record, minority views, and five-year capability verdict |
+| **Technical council** | Portfolio hypotheses, program creation, major technical resource allocation, and program termination recommendations | Its own verification grade, security law, or member-specific commercial terms | Alternatives considered, evidence that changed the decision, and retrospective calibration |
+| **Program lead** | Team formation, staged bets, milestones, competing paths, and bounded stops within an approved program | Suppressing a correction, extending the charter, or granting exclusive institutional rights | Versioned decision log, kill criteria, uncertainty register, and transition assumptions |
+| **Verification office** | Reproduction status, replication protocol, artifact sufficiency, dependency warnings, and correction notices | Mission value, program continuation, or allegations of intent without evidence | Typed witness, provenance, common-mode analysis, appeal record, and downstream notification |
+| **Security and legal office** | Access tiers, statutory restrictions, safety holds, and release conditions | Indefinite secret veto without a review category and date | Authority, threat model, narrowest restriction, review date, and appeal route |
+| **Transition owner** | Adoption plan, operational acceptance, manufacturing or procurement path, and maintenance obligation | Scientific truth status or control of unrelated research directions | Complement map, adoption evidence, full lifecycle cost, and reasons for rejection |
+| **Public-interest trustee** | Enforcement of public-use, access, march-in, and asset-transfer terms | Technical selection or day-to-day management | Distributional impact, access terms, exercise or waiver rationale, and public-value account |
+
+The separations matter. Verification can lower a claim's evidence status without automatically killing an exploratory program. A transition partner can reject a system as unusable without declaring its science false. A security office can delay release without erasing the existence of a result. The board can dissolve an institution without rewriting its technical record.
+
+Every consequential decision receives a time-bounded appeal to a body that does not report solely to the original decision maker. Appeals should expose reasons, not create endless process. Emergency safety authority remains possible, but expires into an ordinary evidentiary review.
+
 ## The capital stack
 
 Different money buys different obligations.
@@ -183,6 +207,41 @@ Different money buys different obligations.
 - **Licensing and venture returns** recycle some captured value without becoming the laboratory’s sole survival condition.
 
 These streams must be reported separately. Otherwise project revenue can masquerade as capability investment and license revenue can quietly redefine the research agenda.
+
+## Capability accounts beside financial accounts
+
+The laboratory needs two ledgers. The financial ledger records legal stewardship of money. The capability ledger records whether the institution is renewing the state on which future work depends.
+
+<p class="rd-equation"><strong>Capability margin = verified renewal of reusable capability − observed capability depreciation.</strong></p>
+
+The expression is an accounting identity to organize evidence, not a promise that unlike capabilities can be collapsed into dollars or one score. Each major capability keeps a record across seven accounts:
+
+1. **Teams:** continuity of critical role combinations, voluntary exits, internal mobility, and independently capable successors.
+2. **Adjacency:** time to route cross-layer failures, recurring collaboration, independent challenge paths, and external weak ties.
+3. **Assets:** practical access, calibration, utilization, portability, maintainers, and replacement lead time for compute, data, instruments, and facilities.
+4. **Memory:** reuse of code, provenance, negative results, design rationales, and prior decisions—not archive volume.
+5. **Epistemic correction:** computational reproducibility, independent replication where applicable, formal alignment, red-team findings, correction latency, and downstream repair.
+6. **Transition options:** named adopters, complementary assets, procurement or manufacturing path, standards position, maintenance owner, and credible alternative users.
+7. **Reconstitution cost:** estimated time, scarce roles, dependencies, and expenditure required to rebuild after a break, with post-event estimates compared against actual recovery.
+
+Reported papers, patents, prototypes, deployments, and revenue remain essential flow measures. The capability accounts ask whether those flows left the institution better able to attempt the next uncertain problem. A paper can renew memory; a prototype can renew a testbed; a failed experiment can renew judgment. Their capability value depends on reuse and transfer, not their label.
+
+The accounts should remain plural. A single “capability score” would invite the proxy optimization this series criticizes. Each five-year review publishes the tradeoffs and uncertainty: which capability grew, which was consumed, which was deliberately allowed to end, and why.
+
+## Constitutional floors as testable pilot hypotheses
+
+A charter without numbers invites waiver; universal numbers invite gaming. The pilot should therefore predeclare provisional ranges, compare them across sites, and revise them only through a recorded hypothesis test. A credible starting design would include:
+
+- **15–25 percent of technical program resources** protected for reusable tools, shared facilities, archives, apprenticeship, and researcher-initiated sponsor-relevant uncertainty rather than current deliverables;
+- **5–10 percent of program resources** reserved for independent reproduction, replication where meaningful, formalization, red teams, artifact repair, and negative-result preservation, separate from routine quality assurance;
+- **at least two materially independent technical paths** through the first decisive test for high-consequence, high-uncertainty programs, unless the decision log explains why diversity would be performative;
+- **a named transition owner and complement map before scale-up**, while allowing early exploration to proceed without a fictional customer;
+- **no private member majority and no single essential compute, data, or tool vendor without a tested exit path**; and
+- **published technical-time and administrative-load distributions**, with mandatory redesign if burden rises for two consecutive years without a corresponding change in risk, legal obligation, or outcome quality. <span class="rd-evidence-token" data-evidence="A">A</span>
+
+These are not empirically optimized rates. They are deliberately falsifiable starting hypotheses. Too much protected base can shelter weak work; too much verification can starve exploration; forced duplication can waste scarce talent. The pilot compares alternative bands and reports the marginal capability gained or lost, rather than laundering the initial percentages into permanent doctrine.
+
+The same logic applies to AI common-mode risk. A multi-agent review does not count as independent when agents share a base model, retrieval corpus, benchmark, or grader. High-consequence claims require a dependency map across models, evidence, methods, and incentives. [The National Academies distinction between computational reproduction and new-data replication](#source-nasem-reproducibility-2019) supplies a minimum vocabulary; the laboratory must extend it to model lineage and synthetic-data dependence.
 
 ## The IP and public-value compact
 
@@ -203,6 +262,10 @@ Predeclare the tests.
 **Five-year capability review:** new technical abilities, apprentice independence, cross-program reuse, competing approaches, transitions, corrections, and capabilities deliberately ended.
 
 **Ten-year mission review:** scientific and public value, deployed systems, standards, spillovers, concentration risk, and counterfactual evidence against comparable existing programs.
+
+Comparison cannot wait until year ten. Each pilot site should be matched before launch to existing programs or organizations with similar mission, maturity, field, and resource intensity. Where the portfolio permits, sites should randomize or phase in selected governance mechanisms—protected base time, independent verification budgets, apprenticeship overlap, or transition funding—rather than changing everything at once. Some outcomes will remain nonrandom and path-dependent; the evaluation should state that limitation instead of presenting a synthetic control as an experiment.
+
+The comparison set must include successful current institutions, not only failures: frontier corporate laboratories, strong university centers, FFRDC R&D laboratories, national laboratories, DARPA- or ARPA-style programs, open-source scientific communities, and mission-driven startups. [Current business R&D concentration](#source-ncses-business-concentration-2026) makes industry indispensable to that control group. The proposal earns expansion only if it creates capability those arrangements do not, or creates comparable capability with materially greater access, resilience, correction, or public value.
 
 The pilot fails if it becomes a captive contractor, an academic grant distributor, a venture studio, a permanent procurement incumbent, or an AI-content factory. It fails if administrative labor consumes the protected technical horizon. It also fails if it protects research without producing hard external evidence or credible paths to use.
 

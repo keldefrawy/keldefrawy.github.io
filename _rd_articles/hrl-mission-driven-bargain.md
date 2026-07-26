@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: A durable mission customer can protect ambitious work from consumer-market clocks, but the mission, contract, and transition channel still bound what the laboratory can become.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review reinforced the HRL/FFRDC legal boundary and made the research-versus-engineering test functional rather than hierarchical.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added capability-option accounting, a prospective transaction baseline, and explicit falsifiers for mission-laboratory role conversion.
+reading_time: 19
 central_claim: Mission-driven industrial research can preserve deep technical capability when sponsors value it across projects, but it becomes a collection of engineering contracts when reusable teams, infrastructure, and problem-initiation authority are not funded between deliverables.
 claim_status: Provisional institutional analysis grounded in a bounded 2010–2016 firsthand period and public records
 hero_image: /assets/images/rd-ratchet/articles/article-04-hrl-mission-owner.webp
@@ -101,6 +101,24 @@ The mission model can protect four valuable things:
 
 Those are institutional assets. They lower the cost of the next project even when they do not appear as deliverables in the previous one.
 
+## A mission sponsor is buying an option it may never exercise
+
+Mission R&D is often evaluated as a stream of contracted outputs. That misses part of the purchase. A durable team, clean room, assurance method, testbed, or materials process gives a sponsor the option to respond when a future need becomes concrete. The sponsor may not know which problem will require the capability or when.
+
+That option has a carrying cost: retained people, maintained tools, calibration, security, training, and enough uncommitted time to keep the capability alive. Ordinary project accounting prefers to charge those costs to a current deliverable. If no current task can absorb them, the option disappears even when its expected mission value exceeds its cost across many future contingencies.
+
+The analogy has limits. A laboratory is not a tradable financial derivative, and the value of national readiness cannot be estimated from a liquid market. The option frame is useful because it separates three payments:
+
+| Purchase | What the sponsor receives | How it should be tested |
+|---|---|---|
+| **Current result** | A study, prototype, experiment, system, or transition milestone | Did the deliverable meet a hard technical and mission test? |
+| **Reusable capability** | A team, tool, facility, method, memory, and apprentice cohort that lowers the cost of later work | Was the capability reused, improved, independently exercised, and transferred? |
+| **Contingent readiness** | The ability to begin an important class of work before a new procurement could assemble it | Could the institution respond within a predeclared time and outperform ordinary contracting? |
+
+Readiness can become a refuge for unproductive permanence. The remedy is an exercise: periodically give the capability a novel problem, an external red team, and a time-to-response requirement. If it cannot perform without rebuilding itself, the option is nominal. If no plausible mission remains, end it deliberately and preserve transferable state.
+
+This reframes contract gaps. A gap is not automatically destructive; obsolete work should end. It becomes costly when a sponsor later repurchases, at greater expense and delay, a capability it implicitly assumed the prior portfolio had preserved.
+
 ## When the laboratory becomes the portfolio
 
 The failure mode is subtle. A laboratory can retain its building and brand while every researcher is funded as a temporary attachment to a task. When the task ends, the person must immediately find chargeable work, write the next proposal, or leave. Shared software and instruments become nobody’s line item. Negative results are difficult to carry because the next sponsor did not buy them. Research direction drifts toward solicitations that can pay this year’s staff.
@@ -129,6 +147,18 @@ IBM Research may offer powerful complements: quantum research, semiconductor exp
 
 The correct evaluation begins before integration and continues after it. Record teams, critical facilities, initiation rights, customer relationships, and technical domains. Then ask what the combined organization can do after five years that neither could do alone—and what the prior arrangement could do that the new one cannot.
 
+A credible baseline should be prospective and capability-specific:
+
+- team and critical-role continuity, including technical staff and apprentices rather than only principal investigators;
+- practical access to laboratories, fabrication, secure environments, data, and test infrastructure;
+- the share and fate of work initiated by researchers, owners, government sponsors, and commercial customers;
+- cross-laboratory projects that become possible because of IBM complements;
+- sponsor diversity and whether non-IBM mission customers retain trusted access;
+- publication, patent, prototype, transition, and negative-result records kept as separate outcomes; and
+- reconstitution time for any capability intentionally discontinued.
+
+These measures should be captured before closing or integration changes the graph. Five-year retrospective interviews alone will inherit survivor bias. The most informative result may be mixed: a quantum or semiconductor path strengthens while another sponsor relationship or independent line narrows. “Acquisition succeeded” is too coarse to describe a research institution.
+
 ## The strongest counterargument
 
 Perhaps the supposed institutional problem is simply the discipline that makes mission laboratories useful. Projects should end. Sponsors should not fund indefinite teams because they might matter later. Researchers should compete for new work. Facilities should survive only when customers value them. A protected internal portfolio can drift into comfortable irrelevance.
@@ -140,6 +170,21 @@ That objection is strong. Continuity is not an entitlement, and capability witho
 3. **institutional options**, a bounded portfolio of uncertain work evaluated by learning and hard kill criteria.
 
 Conflating the three makes every tool pretend to be a deliverable and every speculative idea pretend to have a customer. Separating them makes costs and accountability more visible.
+
+## What would falsify the role-conversion concern?
+
+The concern that a mission laboratory becomes a portfolio of engineering tasks should be rejected for any technical area in which longitudinal evidence shows that:
+
+- important questions continue to originate inside the laboratory and survive sponsor disagreement;
+- integration failures generate new research programs rather than only contract modifications;
+- teams, specialist roles, tools, and apprentices persist and improve across unrelated awards;
+- capability exercises demonstrate readiness that ordinary contracting could not supply on the same horizon;
+- negative results and abandoned approaches alter later work; and
+- transitions produce maintained mission or commercial use without consuming the exploratory base.
+
+It should also be rejected if task-ordered arrangements produce the same capability at lower total cost and reconstitute it quickly after gaps. In that world, the long-lived laboratory adds little beyond branding and facilities.
+
+The opposite evidence would strengthen the concern: stable revenue with declining researcher initiation, repeated rebuilding of common tools, senior experts used mainly as proposal credentials, or successful deliverables followed by no reusable team. The unit of analysis must be the technical capability and period, not HRL as one permanent verdict.
 
 ## Five different verdicts
 

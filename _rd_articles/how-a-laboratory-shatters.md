@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: Laboratories do not survive merely because their researchers find new jobs, their building remains occupied, or an acquirer retains the name. What matters is whether the working graph of people, tools, memory, autonomy, and transition paths remains connected.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.1"
-version_sequence: 1
-revision_summary: Private working draft; not a public version
-reading_time: 18
+updated: 2026-07-25
+version: "0.2"
+version_sequence: 2
+revision_summary: Added evidence and measurable boundaries for adjacency capital, including the danger of confusing cohesion with maximal network density.
+reading_time: 21
 central_claim: Laboratory destruction is a loss of connected capability rather than a payroll or real-estate event; preservation must be measured by the survival of critical relationships, complementary roles, assets, memory, problem-selection authority, and paths to use.
 claim_status: Provisional institutional model; the Microsoft closure and IBM transactions are documented, while graph-level capability effects require interviews and longitudinal evidence
 hero_image: /assets/images/rd-ratchet/articles/article-09-laboratory-adjacency.webp
@@ -25,6 +25,9 @@ source_ids:
   - ibm-silicon-valley-lab
   - gf-ibm-microelectronics-2014
   - arora-corporate-science
+  - lewis-transactive-memory-2005
+  - reagans-team-experience-2005
+  - rao-argote-forgetting-2006
 evidence_chart:
   kicker: Microsoft Silicon Valley diaspora
   title: Talent survived, but the documented destinations show dispersion—not laboratory continuity
@@ -76,7 +79,7 @@ objection_ladders:
 corrections: []
 ---
 
-In September 2014, Microsoft closed its Silicon Valley research laboratory in Mountain View. The decision was visible as a layoff, a line in a corporate restructuring, and an address disappearing from an institutional map. None of those descriptions captures the technically important event.
+[In September 2014, Microsoft closed its Silicon Valley research laboratory in Mountain View](#source-ieee-msr-sv-diaspora-2015). The decision was visible as a layoff, a line in a corporate restructuring, and an address disappearing from an institutional map. None of those descriptions captures the technically important event. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 The researchers did not vanish. [IEEE Spectrum followed the 53 people listed on the lab's website shortly before it went dark](#source-ieee-msr-sv-diaspora-2015). Within roughly four months, many had moved to Google, VMware, Apple, universities, startups, and other organizations; some had not publicly updated their status. From a regional labor-market perspective, much of the talent survived. From the perspective of the organizations that hired them, the closure released scarce expertise into productive new combinations.
 
@@ -110,6 +113,26 @@ The notation is not an empirical estimator, and a laboratory's quality cannot be
 A **capability cut** occurs when removal of one critical complement breaks every practical path from question to validated use. A theory group may remain excellent after losing a product partner, yet no longer be able to test a systems claim at scale. A fabrication team may retain equipment but lose the device physicists who knew which anomalies mattered. A security group may retain people and papers but lose access to the operational data that made its problems real.
 
 This is a graph-cut analogy, not a theorem about organizations. Its value is to show why headcount can be conserved while end-to-end capability falls discontinuously.
+
+## Adjacency is capital—but maximum density is not the objective
+
+Calling these edges “culture” makes them sound ornamental. A more useful term is **adjacency capital**: the accumulated reduction in the cost of finding the right expertise, exposing an error, coordinating unlike specialties, and translating a result into another layer of the system. It is capital because repeated joint work creates it, current projects draw on it, and dispersal can depreciate it faster than ordinary output accounts reveal.
+
+Organizational research supports pieces of this mechanism, but not a universal coefficient for laboratories. [Reagans, Argote, and Brooks found that knowing who knows what and knowing how to work together predicted learning rates](#source-reagans-team-experience-2005). [Lewis, Lange, and Gillis found that a group's transactive memory could support learning transfer](#source-lewis-transactive-memory-2005), with benefits depending on enough prior joint experience. [Rao and Argote found in a controlled experiment that structure and routine could buffer some knowledge loss after turnover](#source-rao-argote-forgetting-2006). These settings are not Bell Labs, Microsoft Research, or a semiconductor line. They establish plausible micro-mechanisms—shared expertise maps, coordination routines, and structural memory—not the magnitude of a historical laboratory loss. <span class="rd-evidence-token" data-evidence="D">D</span>
+
+Adjacency capital should not be confused with maximal cohesion. A fully connected group can become expensive, insular, or unable to challenge its shared assumptions. Independent paths, weak ties to outside disciplines, and real user rejection are part of an error-correcting graph. The desired network is therefore neither a collection of isolated stars nor one consensus clique. It has **dense execution neighborhoods joined by plural, partly independent correction and transition paths**.
+
+That distinction produces measurable predictions:
+
+| Property | Bounded proxy | What would count against the model |
+|---|---|---|
+| Expertise routing | Time to locate and engage the person who can resolve a cross-layer failure | A directory or AI retriever performs as well after dispersal |
+| Coordination memory | Time and rework required for a reconstituted team to complete a known class of task | Newly assembled teams match experienced teams without added cost |
+| Error exposure | Independent technical reviews that materially change a claim or design | Dense prior ties predict agreement but not earlier error discovery |
+| Translation | Latency and loss from research result to experiment, system, manufacturing, or mission use | Contracted handoffs preserve state as reliably as internal iteration |
+| Regeneration | Apprentices who can perform and extend the capability without the original experts | Outputs remain high while no successor team becomes independently capable |
+
+If explicit artifacts, modern collaboration tools, and mobile labor preserve these outcomes at low cost, adjacency capital is less scarce than this article claims. If headcount survives while routing, correction, translation, and regeneration degrade, the graph model explains something ordinary asset accounting misses.
 
 ## Microsoft Silicon Valley: node survival, edge destruction
 
@@ -217,7 +240,7 @@ Any public sponsor, board, or acquirer claiming to preserve a research instituti
 6. **Transition:** maintained paths to users, products, missions, standards, manufacturing, and operations.
 7. **Outcomes:** scientific, technical, transition, institutional, and public-value results assessed separately.
 
-The most informative statistic may be **team retention conditional on capability**, not overall retention. Keeping 90 percent of employees can still eliminate a capability if the departing 10 percent contains its only experimentalist and transition lead. Keeping a famous principal investigator can conceal the loss of the engineers who made the work reproducible.
+The most informative statistic may be **team retention conditional on capability**, not overall retention. Keeping 90 percent of employees can still eliminate a capability if the departing 10 percent contains its only experimentalist and transition lead. Keeping a famous principal investigator can conceal the loss of the engineers who made the work reproducible. The percentages are illustrative; the measurement unit is the working capability, not the payroll fraction. <span class="rd-evidence-token" data-evidence="A">A</span>
 
 Where public funds, public missions, or unique national assets are involved, transition agreements should go beyond property inventories. They can require team-level retention plans, continued archive and tool access, funding for unfinished validation, apprenticeship continuity, and a named owner for each mission-critical capability. These requirements should expire after review; they are bridges, not claims of institutional immortality.
 

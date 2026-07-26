@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: AI’s first great contribution to science may be subtraction—exposing how much published knowledge was trusted at a level its evidence never earned.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review defined epistemic debt as a confidence-evidence gap and distinguished audit capacity from checker-accepted proof production.
-reading_time: 16
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added consensus definitions, a typed evidence-state machine, and a risk-based audit scheduler that does not pretend to estimate a universal error rate.
+reading_time: 20
 central_claim: AI-assisted formalization, reanalysis, and replication can expose epistemic debt, but only when model output crosses into proof checking, executable artifacts, complete-data audit, or independent measurement.
 claim_status: Provisional; the documented cases establish verification gaps and tool limits, not a population-wide scientific error rate
 hero_image: /assets/images/rd-ratchet/articles/article-15-ai-audits-science.webp
@@ -26,6 +26,7 @@ source_ids:
   - formal-math-2025
   - liquid-tensor-formalization
   - nasem-integrity
+  - nasem-reproducibility-2019
 evidence_chart:
   kicker: A bounded mathematics sample
   title: Lamport’s often-repeated error statistic came from one non-random reviewer record
@@ -105,6 +106,8 @@ Science routinely collapses at least five epistemic states into the word *known*
 
 The states are not a universal ladder. A pure theorem does not require physical replication; an experimental claim cannot be settled by syntactic proof checking. The point is to name what kind of confidence exists.
 
+The vocabulary itself needs discipline. [The National Academies defines *reproducibility* as obtaining consistent computational results from the same data, code, methods, and conditions, and *replicability* as obtaining consistent results in a new study addressing the same question with new data](#source-nasem-reproducibility-2019). Other fields sometimes reverse or blend these terms. This series uses the National Academies convention so that an artifact rerun is not described as an independent experiment. The report also cautions that replication is not always a binary pass/fail event. Disagreement can expose a boundary condition rather than prove misconduct or render an entire field false. <span class="rd-evidence-token" data-evidence="D">D</span>
+
 ## A retraction is not a field verdict
 
 The 2018 *Nature* paper “Quantized Majorana Conductance” offers a documented experimental case. [Nature’s 2021 retraction note](#source-nature-majorana-retraction-2021) records the retraction, links underlying data, and identifies a Microsoft Station Q Delft affiliation for one author. [Nature’s contemporaneous report](#source-nature-majorana-microsoft-report-2021) described the work as led by researchers at a Microsoft laboratory in the Netherlands and reported the authors’ concern about insufficient rigor in the original analysis. <span class="rd-evidence-token" data-evidence="D">D</span>
@@ -159,6 +162,30 @@ This is where institutional incentives become decisive. Verification is a public
 
 [The National Academies’ integrity report](#source-nasem-integrity) treats research quality as a system property shaped by stewardship, publication pressure, and institutional practice. AI can reduce verification cost. It cannot create the career reward, artifact custody, or willingness to publish negative evidence. <span class="rd-evidence-token" data-evidence="D">D</span>
 
+## A typed state machine, not a truth score
+
+A consequential claim should move through explicit, reversible evidence states. The states are typed because different domains demand different witnesses:
+
+| State | Meaning | Permitted transition |
+|---|---|---|
+| **Proposed** | A conjecture, interpretation, or reported observation with visible provenance | To *published* after field-appropriate review; to *withdrawn* by its authors |
+| **Published** | Passed a venue's process; not certified as correct | To *reproduced*, *replicated*, *bounded*, *disputed*, *corrected*, or *retracted* as evidence arrives |
+| **Reproduced** | Original computation reruns from bound artifacts under stated conditions | Does not by itself become *replicated* or empirically valid |
+| **Replicated** | An independent study with new data obtains a result consistent within predeclared tolerances | May be narrowed if later boundary conditions appear |
+| **Formally checked** | A formal statement follows from explicit premises in a trusted checker | Requires a separate alignment record connecting formal and intended claims |
+| **Bounded or disputed** | The claim may hold only under narrower conditions, or credible evidence conflicts | Downstream users must see the boundary or dispute before relying on it |
+| **Corrected or retracted** | The version changed materially or the publication was withdrawn | Dependencies are notified; the old state remains auditable rather than erased |
+
+No state is “true forever.” Even replication establishes support under a domain, protocol, and time. The useful institutional change is that a citation no longer silently promotes *published* into *settled*.
+
+Audit scheduling can then be explicit without fabricating a probability that a paper is wrong. A provisional priority rule is
+
+<p class="rd-equation"><strong>Audit priority ∝ consequence × downstream dependence × unresolved uncertainty ÷ expected audit cost.</strong></p>
+
+This is a queueing heuristic, not an epistemic equation. Each term should be reported separately and reviewed by domain experts. It deliberately prioritizes a modest claim embedded in safety, standards, or expensive infrastructure over a glamorous isolated result. It also exposes the objection: easy-to-audit fields could crowd out difficult ones. The correction is to reserve portfolios by evidence type and to compare priority only within reasonably similar audit classes.
+
+The audit result must propagate. A correction that updates one paper but leaves dependent code, benchmarks, procurement requirements, and model-training corpora unchanged has repaired the record without repairing the system. The essential output is therefore not an error leaderboard. It is a versioned dependency graph with a named owner for downstream remediation.
+
 ## The strongest counterargument
 
 Science is already self-correcting. Most errors are repairable, irrelevant to later work, or discovered through ordinary use. A massive audit apparatus could freeze exploration, encourage adversarial gotcha work, and spend scarce experts on old claims instead of new ones.
@@ -168,6 +195,10 @@ That objection rules out universal verification. It supports risk-based triage.
 Exploratory work should be allowed to be exploratory and labeled accordingly. Settled or high-consequence claims should earn their status through stronger witnesses. Institutions should reward informative failed replications and corrections so researchers do not have to choose between honesty and survival.
 
 The audit system itself must be audited. Models can optimize for apparent errors. Formalizers can translate the wrong statement. Replicators can lack tacit technique. Public scores can punish the fields that report uncertainty most honestly. Every finding needs versioning, appeal, and a distinction between error and intent.
+
+## What would falsify the case for a standing audit institution?
+
+The proposal should be weakened if ordinary scientific use already corrects high-consequence claims before meaningful downstream harm, or if a matched pilot finds that a standing audit group produces no better correction speed, dependency notification, or avoided rework than field-led review at comparable cost. It should be rejected if the group predictably suppresses exploratory work, centralizes common-mode error, or rewards headline accusations more than checkable witnesses despite the proposed appeal and audit controls. The burden is not to prove that some papers are wrong. It is to show that institutionalized verification improves consequential decisions net of delay, expert time, chilling effects, and its own errors.
 
 ## Five different verdicts
 

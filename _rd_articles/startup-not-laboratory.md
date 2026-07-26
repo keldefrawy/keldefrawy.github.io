@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: A startup can carry one invention across the brutal distance to a product, but it cannot rationally maintain the broad research commons from which that invention emerged.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review sharpened the distinction between venture liquidity, transition accountability, and automatic short-termism.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added interacting venture, company, and research clocks; a spinout boundary compact; frontier-company counterexamples; and explicit falsifiers.
+reading_time: 20
 central_claim: Venture-backed startups are specialized transition institutions rewarded for focus, speed, demand, and company-level value; asking them to preserve broad, weakly appropriable research capability confuses commercialization with stewardship of a commons.
 claim_status: Provisional firsthand analysis of one spinout, bounded by public transition records and broader venture-capital evidence
 hero_image: /assets/images/rd-ratchet/articles/article-12-startup-not-laboratory.webp
@@ -97,6 +97,18 @@ The structural point is portfolio mathematics. A venture fund expects many inves
 
 A startup is therefore not a smaller Bell Labs. It is an institution optimized to make one selected technical and market thesis survive.
 
+## Three clocks, not one runway
+
+“Startups are short-term” is too crude. At least three clocks interact.
+
+The **company clock** is cash, customer evidence, hiring, product reliability, and the next financing or sustainable revenue point. The **fund clock** is the investor's portfolio life, reserves, ownership, follow-on strategy, and eventual liquidity obligations to limited partners. The **research clock** is the time required for a scientific or technical uncertainty to become legible.
+
+The clocks can align. A deep technical result may be the only route to a large market, patient investors may finance it, and milestone evidence may arrive before cash is exhausted. They can also conflict. A scientifically decisive experiment may produce no customer evidence; a product integration may create revenue while teaching little about the foundational claim; a strategically valuable research option may mature after the fund's relevant horizon.
+
+The effective horizon is not the longest clock. It is the shortest indispensable one. Twenty-year scientific ambition does not create a twenty-year institution if the company must demonstrate a financeable market in eighteen months. Conversely, a short runway does not imply shallow work if the next experiment produces hard evidence and unlocks a durable capital path.
+
+This yields a more exact criticism of venture-scale exits. The problem is not that liquidity exists. It is that a broad public research portfolio cannot rely on a small number of company-level liquidity events as its replenishment mechanism. The winning company captures one selected path; abandoned adjacent options and shared infrastructure disappear from its objective even when their social value remains high.
+
 ## The missing middle is the product
 
 The distance from a paper or patent to a supported product contains work that research accounting routinely hides:
@@ -128,6 +140,23 @@ Asking a startup to fund those goods from scarce venture capital is not noble. I
 
 This is the connection to the nearly trillion-dollar paradox. Commercialization vehicles can be excellent at transition and still be incapable of maintaining the precompetitive state on which successive transitions depend.
 
+## The spinout boundary needs a constitution
+
+A spinout should not be handled as an informal division between “what the founders take” and “what the laboratory keeps.” The boundary determines whether the company can operate and whether the research commons remains generative.
+
+| Boundary object | Company needs | Originating institution and public need | Review trigger |
+|---|---|---|---|
+| IP and know-how | Coherent freedom to build, finance, and defend the selected product field | Rights for unrelated fields, research use, public obligations, and reversion if the option is warehoused | Financing, field expansion, nonuse, acquisition, or abandonment |
+| People | A team capable of product and customer execution | A deliberate decision about which broader capabilities and apprentices remain | Critical-role departure or loss of predecessor capability |
+| Software and data | Buildable artifacts, provenance, permissions, and update rights | Preservation of reusable nonspecific tools and lawful access for continuing research | Material architecture, license, or data-source change |
+| Facilities and testbeds | Reliable access during transition | Fair scheduling, cost recovery, security, and future users | Company independence or facility saturation |
+| Research pipeline | Ability to pursue product-relevant uncertainty | Freedom for the laboratory to continue adjacent or competing research | Conflict, publication, or exclusivity dispute |
+| Public transition obligation | A credible path to users and support | Evidence that public capital did not fund a permanently closed option | Failure to meet adoption or access milestones |
+
+The compact must be staged. Early exclusivity may be necessary for financing. Permanent breadth is rarely necessary before the product field is known. Milestone-based, field-limited rights allow the company to invest while preventing a single transition vehicle from owning all future interpretations of the underlying research.
+
+The originating institution also needs to avoid the opposite error: retaining fragmented rights, approvals, or dependencies that make the company unfinanceable and incapable of serving customers. A spinout with no coherent residual authority is not a transition owner; it is another handoff queue.
+
 ## The strongest counterargument
 
 Startups have produced frontier AI, biotechnology, space systems, semiconductors, and security technology. Large firms often began as startups. Some companies invest heavily in research because the technical frontier is the product. Why deny them the name “research laboratory”?
@@ -136,7 +165,21 @@ The answer is not a naming prohibition. It is a functional test. A young company
 
 Some pass those tests for a period. The claim is not that startups cannot do research. It is that the venture institution is not rewarded to maintain broad public capability when that capability does not increase company value.
 
+Frontier companies are the strongest counterexample. In AI, biotechnology, space, and semiconductors, the research frontier can be inseparable from the product and the company may assemble infrastructure no public or academic institution currently matches. Such a company can think long when technical progress drives enterprise value and capital remains patient.
+
+But the counterexample sharpens the public question. Access to the frontier may become conditional on employment, platform terms, proprietary data, compute allocation, or one board's capital strategy. The company can be an extraordinary laboratory and still be an incomplete national research system. Scientific depth inside the firm does not guarantee plural independent paths, broad access, negative-result publication, or continuity after a strategic turn.
+
 The mirror-image error is romanticizing research organizations that never transition. A commons without product, procurement, standards, or deployment pathways can accumulate papers while failing the users who funded it. The two institutions need each other.
+
+## What would falsify the institutional distinction?
+
+The article should be weakened if venture-backed companies routinely preserve broad, weakly appropriable research capability across financing cycles: multiple product-independent lines, shared infrastructure available beyond the firm, publication of disconfirming work, durable apprenticeship, and continued support after the immediate company thesis changes.
+
+It should also weaken if separate public or nonprofit commons are unnecessary because labor mobility, open source, standards, and investor competition reliably regenerate whatever a focused startup abandons. The test is reconstitution time and lost option value, not whether former employees find good jobs.
+
+The Confidencial.io case cannot establish the general result. It can test the boundary compact: what state moved, what remained available to SRI and the public under applicable rights, which research assumptions changed under product constraints, and which capabilities survived the overlapping 2021–early 2023 period. Those questions require future evidence and appropriate confidentiality boundaries. <span class="rd-evidence-token" data-evidence="A">A</span>
+
+The mirror falsifier matters equally. If commons-funded laboratories repeatedly produce artifacts with no credible adopter while spinouts convert comparable work into maintained use, the series must give transition institutions greater weight. Preserving capability is not a public success when the capability never reduces a consequential uncertainty or reaches a user.
 
 ## Five different verdicts
 

@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: An empowered program manager can assemble an extraordinary network around a hard objective; the harder design problem is who catches the shared state when the program clock expires.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review clarified the program-level unit and required an external continuity owner to be named before completion.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added a typed continuity disposition, staged inheritance protocol, common-mode preservation test, and explicit falsifiers for the temporary-laboratory thesis.
+reading_time: 20
 central_claim: DARPA’s finite, milestone-driven programs are powerful temporary laboratories, but their success creates a preservation problem that the performer, sponsor, and transition customer may each rationally leave to someone else.
 claim_status: Provisional synthesis of agency records and bounded performer experience
 hero_image: /assets/images/rd-ratchet/articles/article-06-darpa-temporary-laboratory.webp
@@ -138,6 +138,39 @@ The unit here is the sponsor-created program network, not any one performer’s 
 
 The cost is not merely waste. Later programs may pay again to reconstruct a test environment, rediscover a negative result, or reassemble experts who already learned how the pieces fail together. The national R&D account records both rounds as new spending.
 
+## Preservation must be typed before it is funded
+
+“Preserve the program” is as unhelpful as “commercialize the result.” Different state needs different owners and clocks.
+
+| State at program end | Minimum disposition | Candidate owner | Stop test |
+|---|---|---|---|
+| Claims and evidence | Versioned papers, assumptions, complete provenance, correction path | Public repository, performer, journal, or mission archive | No consequential dependency and no legal retention need |
+| Code and reproducible environments | Buildable release or controlled escrow, tests, dependency manifest, named maintainer | Performer, open-source foundation, FFRDC, agency lab, or company | Reuse and security value fall below maintenance cost |
+| Evaluation infrastructure | Benchmarks, adversaries, calibration, hidden-test governance, and known gaming paths | Independent test organization or standards body | Test no longer discriminates relevant capability |
+| Unique facility or dataset | Access rules, calibration, stewardship, successor plan, and replacement lead time | Mission laboratory, FFRDC, university facility, or consortium | A cheaper substitute passes the same external tests |
+| Team and tacit integration | Bounded bridge, joint exercise, rotations, and apprenticeship | Host institution or receiving mission organization | Receiving cohort operates independently or capability is deliberately retired |
+| Transition obligation | Integration, procurement, manufacturing, accreditation, deployment, and maintenance plan | Mission owner, product company, prime integrator, or standard-setting ecosystem | User rejects the capability under predeclared operational criteria |
+
+The table prevents one attractive artifact from standing in for the whole afterlife. Open code may preserve inspection while the evaluation harness disappears. A retained team may preserve knowledge while no user has adoption authority. A company may productize one branch while public test infrastructure becomes inaccessible.
+
+Preservation also needs failure-mode diversity. If the performer that built a system is the only evaluator, maintainer, archivist, and transition advocate, every disposition shares one institutional failure. At least the verification or custody of high-consequence state should sit outside the originating team's survival incentives.
+
+## A staged inheritance protocol
+
+Continuity should be decided when evidence is strongest, not improvised after staff have dispersed.
+
+**At program formation:** name candidate state categories and possible owners, budget artifact hygiene, and prohibit a promise of full preservation before the work exists.
+
+**At the first integrated test:** identify which tools, datasets, facilities, and role combinations have become critical; estimate replacement time and common-mode dependencies.
+
+**Six months before completion:** require candidate custodians to demonstrate ingestion—building the artifact, running the test, accessing the facility, or reproducing the result without the originating team silently completing the task.
+
+**At completion:** choose among active maintenance, controlled escrow, open release, mission transition, time-bounded bridge, or deliberate retirement for each state category. Name the payer and acceptance test.
+
+**At 18 and 60 months:** measure actual reuse, correction, adoption, team independence, cost, and security. End custodianship that survives only because its termination was never scheduled. <span class="rd-evidence-token" data-evidence="A">A</span>
+
+The dates are design defaults, not empirical optima. Hardware, clinical, classified, and software programs need different intervals. Their purpose is to make handoff observable while transfer is still possible.
+
 ## The strongest counterargument
 
 Preservation can become a euphemism for permanent subsidy. Most prototypes should die. Teams should disperse so ideas diffuse. A program that plans its institutional afterlife too early may bias selection toward established performers and easily transitioned work—the opposite of DARPA’s purpose.
@@ -149,6 +182,14 @@ The design response is an **option, not an entitlement**. At program formation, 
 Before the final integrated review, the program must name the accountable continuity owner outside the temporary network—or record an explicit decision that no active owner is warranted. “The community” is not an owner. DARPA need not become the maintainer, but the disposition must identify the performer, mission agency, FFRDC, company, standards body, or repository that accepts each surviving obligation.
 
 [The National Academies’ assessment of ARPA-E](#source-nasem-arpa-e-2017) is useful here because it documents a related model of technically strong program directors, active management, milestones, and portfolio authority. The cross-agency comparison does not prove a universal solution. It shows that empowered temporary coordination is repeatable; continuity still requires another institution. <span class="rd-evidence-token" data-evidence="D">D</span>
+
+## What would falsify the temporary-laboratory thesis?
+
+The thesis should weaken if cross-performer state ordinarily survives without assigned custody: repositories remain buildable, evaluation infrastructure remains discriminating, teams preserve collaboration across employers, mission users adopt successful results, and later programs rarely pay to reconstruct prior capability.
+
+It should also weaken if early continuity planning systematically damages program quality by selecting incumbent performers, safer problems, or easily productized artifacts. The comparison should examine whether programs with staged inheritance take less technical risk or retain weak state longer than comparable programs without it.
+
+The policy succeeds only if total option value improves. A preserved artifact that nobody can use is a cost. A terminated artifact whose methods and failure record prevent later duplication may still yield value. A dispersed team that creates several stronger institutions may be a better outcome than one retained intact. The proposed protocol must outperform deliberate forgetting, not assume that memory is always virtuous.
 
 ## Five different verdicts
 

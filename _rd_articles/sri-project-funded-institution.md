@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: A nonprofit institute can preserve intellectual communities across sponsors, yet finite projects and chargeability can quietly become its real constitution.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.2"
-version_sequence: 2
-revision_summary: Cross-series review fixed the performer institution as the unit of analysis, separated it from DARPA’s program clock, and reconciled the 2021 spinout, 2022 seed financing, part-time SRI work through early 2023, and continuing firsthand campus access through 2026.
-reading_time: 14
+updated: 2026-07-25
+version: "0.3"
+version_sequence: 3
+revision_summary: Added a portfolio-commons model, three distinct uses of internal funding, a vector retention account, and explicit institutional falsifiers.
+reading_time: 20
 central_claim: An independent research institute creates continuity when projects accumulate into shared teams, tools, and judgment; it becomes only a contracting shell when every capability must justify itself anew at each funding cliff.
 claim_status: Provisional; public project records establish programs and roles, while chargeability effects are bounded firsthand analysis requiring broader corroboration
 hero_image: /assets/images/rd-ratchet/articles/article-05-sri-project-funded.webp
@@ -98,6 +98,33 @@ Then proposal fit becomes a survival criterion. A researcher asks not only “Wh
 
 This argument rests partly on firsthand interpretation, not a published SRI-wide chargeability dataset. It should be tested, not universalized. Relevant evidence would include the share and duration of internal funding, staff time between projects, reuse of technical infrastructure, turnover at funding cliffs, and the fate of groups whose work remained strong but temporarily lacked a matching solicitation. <span class="rd-evidence-token" data-evidence="M">M</span> <span class="rd-evidence-token" data-evidence="A">A</span>
 
+## The portfolio-commons problem
+
+A project-funded institute contains assets that no one project would rationally purchase in full: a secure build system, a proof library, a calibrated instrument, a proposal community, a senior systems engineer, a dataset, or a relationship with a transition partner. Every project benefits if the asset exists. Each sponsor is also correct to resist paying costs unrelated to its award.
+
+This is a portfolio commons. It is not necessarily open to the public; the “commons” is the shared institutional layer used across tasks. If every sponsor pays only the incremental cost of its deliverable, the layer is underfunded. If the institute allocates every shared ambition to sponsors without clear benefit, it overcharges or hides strategy inside overhead. The missing contract is explicit co-investment in reusable capability.
+
+The institute needs to distinguish three uses of internal money:
+
+| Internal use | Purpose | Evidence of success | Failure mode |
+|---|---|---|---|
+| **Exploration** | Change the representation of a problem before a solicitation or customer exists | New evidence, killed assumptions, or a technically credible program thesis | Seed funds become a polished-proposal factory |
+| **Bridge** | Keep a validated team, tool, or facility intact across a temporary funding gap | Reuse within a predeclared period at lower cost than reconstruction | Every group claims indefinite strategic status |
+| **Co-investment** | Build a shared asset that multiple current or prospective sponsors will use | Named users, practical reuse, maintenance owner, and declining marginal project cost | The institute socializes cost while projects capture no measurable benefit |
+
+Combining the three in one “internal R&D” number prevents governance. Exploration should tolerate technical failure. A bridge should have a time limit and evidence of future demand. Co-investment should require a utilization and stewardship plan. All three can support long thought; each needs a different stop rule.
+
+The portfolio account must also be a vector, not a retention percentage. For each claimed capability, record:
+
+- critical people and role combinations retained;
+- artifacts and environments actually reused, not merely archived;
+- time saved and failures avoided in later work;
+- new apprentices who can operate the capability independently;
+- changes in problem-initiation authority; and
+- transition relationships that remained active.
+
+A high aggregate reuse rate could hide the loss of the one complement that made an end-to-end system possible. Conversely, allowing most project-specific code to die can be healthy when the general method, judgment, and validated interface survive.
+
 ## A technical case: from program research to public artifact
 
 RACE makes the handoff visible. DARPA’s public program record states that the work sought a distributed messaging system resistant to large-scale compromise and grounded in rigorous security or realistic statistical arguments. The page also records a later event: in August 2024, DARPA released proof-of-concept code so others could experiment with the complete system or its components. [That release is evidence of afterlife beyond a final report](#source-darpa-race). It does not establish broad deployment, maintenance, or the preservation of the original team. <span class="rd-evidence-token" data-evidence="D">D</span>
@@ -128,6 +155,16 @@ A better compact would expose the layers:
 - Transition receives its own owner and budget rather than being implied by a final demonstration.
 
 This design preserves hard tests without forcing each new project to rebuild the institution it assumes.
+
+## What would falsify the projectization mechanism?
+
+The chargeability argument should be rejected or sharply narrowed if SRI or comparable institutes show that high project charging coexists over time with stable technical careers, substantial researcher-initiated work, routine cross-award reuse, low reconstruction cost, and strong transition—without hidden subsidy from owners, endowment, or unrelated revenue.
+
+It should also weaken if capability bridges do not improve later performance: bridged teams win work but do not start faster, avoid prior failures, produce stronger evidence, or transition more effectively than newly assembled teams. In that case, continuity may protect incumbents rather than knowledge.
+
+The strongest confirmation would not be dissatisfaction with proposal pressure. It would be a discontinuity at funding boundaries: a demonstrably reused team, tool, or relationship disappears when no active charge code can carry it, and a later sponsor pays to rebuild substantially the same state. The comparison must include technical merit and demand so that “unfunded” is not automatically recoded as “valuable but neglected.”
+
+My own chronology is not a sufficient test. It identifies programs and local mechanisms. A publishable institutional conclusion needs anonymized funding-gap histories, role-level turnover, internal investment categories, reuse records, and contrary cases where discontinuity improved the work.
 
 ## Five different verdicts
 

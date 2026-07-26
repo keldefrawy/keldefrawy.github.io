@@ -7,11 +7,11 @@ article_status: Draft
 published: true
 dek: R&D portfolios should not be governed exclusively by people who have never produced original research, carried a technical program across years, or decided when evidence justified changing the plan. But replacing administrative rule with publication aristocracy would repeat the error in a different form.
 date: 2026-07-24
-updated: 2026-07-24
-version: "0.1"
-version_sequence: 1
-revision_summary: Private working draft; not a public version
-reading_time: 18
+updated: 2026-07-25
+version: "0.2"
+version_sequence: 2
+revision_summary: Added epistemic-distance rules, a prospective calibration ledger, and the collective-experience counterexample without removing the original draft.
+reading_time: 23
 central_claim: People with firsthand records of original research and multi-year R&D stewardship must hold real authority over technical agendas, continuation decisions, and portfolio construction; experience should be demonstrated across several dimensions rather than reduced to a universal publication or patent threshold.
 claim_status: Provisional institutional-design claim; program-management models and reviewer effects are documented, while the proposed experience floor requires comparative testing
 hero_image: /assets/images/rd-ratchet/articles/article-08-research-judgment.webp
@@ -156,6 +156,49 @@ Has any result crossed into another operating context—a user, mission, product
 Can the candidate identify an important decision that proved wrong, explain how the error became visible, and show what changed afterward? A record containing only victories is not evidence of superior judgment. It may be evidence that failure was hidden or never risked. The correction record is the most difficult to game because it asks whether the candidate can preserve truth when reputation points the other way.
 
 The dossier should include quantities, but it should not add them into a single score. Fifty papers cannot compensate for no stewardship. A billion-dollar budget cannot compensate for no technical work. A successful product cannot compensate for suppressing disconfirming evidence.
+
+## Authority should follow epistemic distance
+
+Not every R&D decision needs the same kind of practitioner. The decisive variable is **epistemic distance**: how far the decision sits from directly observable technical evidence and how much interpretation is required before ordinary performance measures become meaningful.
+
+| Decision | Epistemic distance | Necessary practiced judgment | Independent co-authority |
+|---|---|---|---|
+| Routine procurement against a stable specification | Low | Technical owner can define acceptance tests | Procurement, finance, and legal control the transaction |
+| Infrastructure renewal | Medium | Practitioner distinguishes real capability from prestige equipment | Operations and finance test utilization and lifecycle cost |
+| Milestone deviation in an uncertain program | High | Active expert interprets whether failure changed the hypothesis | Program fiduciary tests budget, schedule, and mission consequence |
+| Creation of a new technical field or portfolio | Very high | Several practitioners with different priors define questions and disconfirming evidence | Public mission, conflicts, transition, and external dissent constrain capture |
+| Safety, legality, or release of a consequential result | Mixed | Domain experts characterize the technical hazard and uncertainty | Independent safety, legal, security, and public authorities retain vetoes in their domains |
+
+The rule is not “the scientist gets the final word.” It is that authority cannot move farther from the evidence without an explicit translation. A budget officer may stop a program because funds do not exist; that is a fiduciary decision. If the same officer declares that a surprising result is technically unimportant because it missed a scheduled demonstration, the institution has silently converted fiscal authority into epistemic authority.
+
+The reverse error also matters. A famous researcher cannot turn technical confidence into authority over law, safety, workforce treatment, or public priority. Dual accountability is not a compromise among status groups. It is a separation of domains in which each decision maker must expose the evidence and mandate that justify the decision.
+
+## Research leaders need a calibration ledger
+
+Research management supplies weak natural feedback. Programs take years; outcomes are path-dependent; leaders select different risks; successes receive narrative attention; and a decision maker may leave before the counterfactual becomes visible. An impressive career can therefore contain very little measured calibration.
+
+Before major portfolio decisions, the institution should record:
+
+1. the alternatives considered, including continuation, redirection, termination, or delay;
+2. the decision maker's causal model and the observations that would change it;
+3. probability ranges for near-term technical events—not a theatrical probability of eventual “success”;
+4. the expected value of information from the next experiment or milestone;
+5. the principal common-mode assumptions shared across the portfolio; and
+6. minority predictions and the date at which the decision will be reviewed.
+
+Later review separates **outcome quality** from **decision quality**. A good decision can fail under irreducible uncertainty. A bad decision can get lucky. Repeated prospective records make it harder to rewrite either history. Calibration should be assessed across comparable decisions and in ranges, not by ranking leaders on one brittle score.
+
+The ledger also creates apprenticeship. Emerging program leaders can see not only what a senior expert chose, but what that expert believed, feared, and promised would change their mind. AI can search these records for repeated blind spots and inconsistent thresholds. It cannot decide whether a technical analogy was materially correct; the retrospective still requires domain evidence.
+
+Calibration has a half-life. A leader who once did frontier work may retain deep judgment about scientific process while losing contact with a field's current instruments, costs, or failure modes. Appointment should therefore create authority for a term, not a permanent caste. Current practitioners, younger researchers, engineers, users, and independent critics must be able to update the institution's prior.
+
+## The collective-experience counterexample
+
+Some exceptional research leaders are not prolific inventors. They recognize talent, build interfaces, protect dissent, translate across fields, or make institutions possible. A universal personal publication threshold would exclude them and overselect individual stars who may be poor portfolio builders.
+
+The experience floor can therefore be satisfied **collectively at the decision table**, but not diluted into a committee in which no one is accountable. At least one named decision maker should join discovery and stewardship experience; the group should cover transition, engineering, operations, finance, safety, and public purpose. A portfolio chair without a large publication record can lead if practiced technical members hold binding concurrence over the epistemic decisions and the chair remains accountable for integration.
+
+This is a stronger rule than “we consulted experts.” Consultation transfers advice. Governance transfers defined authority and responsibility. The institution should publish which member supplied which experience dimension and who signed each consequential decision.
 
 ## The authority must be attached to particular decisions
 
