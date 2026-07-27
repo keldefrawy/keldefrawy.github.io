@@ -1968,8 +1968,17 @@
 @media (max-width: 680px) {
   .rd-series-hero__copy { padding: 2rem 1.3rem; }
   .rd-series-hero h1 { font-size: clamp(3rem, 16vw, 4.7rem); }
-  .rd-series-hero__visual,
-  .rd-series-hero__visual img { min-height: 20rem; }
+  .rd-series-hero__visual {
+    min-height: 0;
+    aspect-ratio: 828 / 1900;
+  }
+  .rd-series-hero__visual img {
+    display: block;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    object-fit: contain;
+  }
   .rd-paradox-grid,
   .rd-article-grid,
   .rd-building-blocks,

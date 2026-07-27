@@ -41,7 +41,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <figure class="rd-series-hero__visual">
       <img
         src="{{ '/assets/images/rd-ratchet/rd-ratchet-hero.webp' | relative_url }}"
-        alt="Conceptual illustration of a continuous thread of knowledge passing from an older electronics laboratory through a cleanroom into a future human-and-AI research laboratory."
+        alt="Conceptual illustration of a continuous thread of knowledge passing through a bright human-and-AI research laboratory, with faded archival marks for HRL, Bell Labs, SRI International, Lucent Technologies, IBM, and PARC integrated into the background."
         width="1788"
         height="880"
         fetchpriority="high"
