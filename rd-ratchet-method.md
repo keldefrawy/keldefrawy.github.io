@@ -24,6 +24,20 @@ The series is designed to change when better evidence arrives without erasing wh
 
 </header>
 
+## A note to colleagues and readers {#colleagues}
+
+I have worked inside, alongside, or in the intellectual inheritance of several institutions discussed in this series. Throughout that journey I met researchers, engineers, technicians, program managers, administrative and support staff, and leaders who cared deeply about the work. Many did far more than their job descriptions required to preserve scientific standards, mentor younger colleagues, maintain instruments and code, protect promising work, and find a path through constraints they did not choose. I learned from them, benefited from their judgment and generosity, and owe them a real intellectual debt.
+
+This series is therefore not an accusation that the people inside these institutions were indifferent, incompetent, or collectively responsible for what followed. It is not a verdict on everyone who worked at Bell Labs, AT&T’s Shannon Laboratory, PARC, HRL, IBM Research, SRI, an FFRDC, a university, or any other organization examined here. Nor does institutional decline imply that no excellent research continues beneath a surviving name. Institutions are heterogeneous; experiences differ across groups and periods; good work can persist inside a weakening system.
+
+The argument is both more structural and more troubling: capable, conscientious people can make locally rational decisions inside budgets, reorganizations, procurement rules, product schedules, contract structures, compliance regimes, and governance systems that no single person controls. The aggregate result can be a loss of autonomy, continuity, apprenticeship, team density, infrastructure, institutional memory, and time horizon that few participants wanted. Showing that people meant well does not rebut that mechanism; in many cases, it is part of the tragedy the series is trying to explain.
+
+Accordingly, words such as “decline,” “shadow,” “shattering,” or “capability loss” refer to specified institutional properties—not to the worth of the people who worked there. A claim must identify the capability at issue, the period being compared, and the evidence supporting the comparison. The series criticizes documented incentives, governance arrangements, decisions, and behaviors when they are destructive. It does not infer private motives, diagnose character, assign collective guilt, or assume that a visible outcome was within any particular colleague’s control.
+
+Firsthand observations are presented as bounded observations, not as omniscient accounts of an entire organization. Documentary evidence may establish what was announced without establishing how every group experienced it. Former colleagues and other readers are expressly invited to provide contrary cases, missing context, corrections, and evidence of capabilities that survived or improved. Substantive corrections will be incorporated through the versioning policy below.
+
+> Gratitude is not immunity from scrutiny, and scrutiny does not erase gratitude. This inquiry is written partly because these institutions and the people within them mattered—and because rebuilding their rare capabilities requires an honest account of what they achieved, what constrained them, and what was lost.
+
 ## The lifecycle
 
 <div class="rd-table-scroll" tabindex="0">

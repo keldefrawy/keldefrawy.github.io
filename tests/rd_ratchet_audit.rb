@@ -17,6 +17,7 @@ METHOD_PATH = File.join(ROOT, "rd-ratchet-method.md")
 REVISION_LAYOUT_PATH = File.join(ROOT, "_layouts", "rd-revision.html")
 VERSION_HISTORY_PATH = File.join(ROOT, "_includes", "rd-version-history.html")
 FEEDBACK_PATH = File.join(ROOT, "_includes", "rd-feedback.html")
+COLLEAGUE_NOTE_PATH = File.join(ROOT, "_includes", "rd-colleague-note.html")
 ISSUE_TEMPLATE_PATH = File.join(ROOT, ".github", "ISSUE_TEMPLATE", "rd-ratchet-feedback.yml")
 SNAPSHOT_SCRIPT_PATH = File.join(ROOT, "scripts", "rd_article_revision.rb")
 EDITOR_GUIDE_PATH = File.join(ROOT, "_drafts", "rd-ratchet-editor-guide.md")
@@ -140,6 +141,7 @@ end
   "revision layout" => REVISION_LAYOUT_PATH,
   "version-history component" => VERSION_HISTORY_PATH,
   "feedback component" => FEEDBACK_PATH,
+  "note to colleagues" => COLLEAGUE_NOTE_PATH,
   "structured feedback form" => ISSUE_TEMPLATE_PATH,
   "immutable snapshot tool" => SNAPSHOT_SCRIPT_PATH,
   "private editor guide" => EDITOR_GUIDE_PATH
@@ -161,6 +163,7 @@ end
 errors << "landing page omits the evidence legend" unless page.include?("rd-evidence-legend.html")
 errors << "landing page omits the source ledger" unless page.include?("rd-source-list.html")
 errors << "landing page omits the public editorial policy" unless page.include?("/rd-ratchet/method/")
+errors << "landing page omits the visible note to colleagues" unless page.include?("rd-colleague-note.html")
 errors << "landing page omits the shared analytical vocabulary" unless page.include?('id="concepts"') && page.include?("rd-concept-grid")
 errors << "landing page cannot filter published articles" unless page.include?('data-rd-article-filter="available"')
 errors << "landing page cannot retain withdrawal records" unless page.include?('data-rd-article-filter="withdrawn"')
@@ -192,11 +195,14 @@ errors << "feedback issue route is not configured" if config.dig("rd_ratchet", "
 method = File.read(METHOD_PATH, encoding: "UTF-8")
 errors << "editorial method must target destructive systems and behavior rather than individual motives" unless method.include?("does not infer private motives") && method.include?("attack on a named individual")
 errors << "editorial method must distinguish a surviving name from surviving capability" unless method.include?("A surviving name") && method.include?("former breadth, autonomy, team density")
+errors << "editorial method must reject collective blame and acknowledge colleagues' good-faith work" unless method.include?("assign collective guilt") && method.include?("cared deeply about the work")
+errors << "editorial method must define capability-loss language institutionally" unless method.include?("specified institutional properties") && method.include?("not to the worth of the people")
 
 article_layout = File.read(LAYOUT_PATH, encoding: "UTF-8")
 errors << "article layout omits withdrawal tombstones" unless article_layout.include?("page.withdrawn")
 errors << "article layout omits public version history" unless article_layout.include?("rd-version-history.html")
 errors << "article layout omits structured feedback" unless article_layout.include?("rd-feedback.html")
+errors << "article layout omits the note to colleagues" unless article_layout.include?("rd-colleague-note.html")
 
 article_template = File.read(File.join(ROOT, "_drafts", "rd-ratchet-article-template.md"), encoding: "UTF-8")
 %w[article_slug permalink published version version_sequence revision_summary evidence_chart argument_map objection_ladders corrections].each do |field|
@@ -269,6 +275,7 @@ if File.file?(RENDERED_PATH)
   errors << "rendered page does not load the interaction script" unless rendered.include?("/assets/js/rd-ratchet.js")
   errors << "rendered chart table lost its 2000 values" unless rendered.include?("<tr><th>2000</th><td>57.8</td><td>77.7</td><td>233.0</td></tr>")
   errors << "rendered page does not contain seventeen article cards" unless rendered.scan("data-rd-article-card").length == 17
+  errors << "rendered landing page omits the note to colleagues" unless rendered.include?('class="rd-colleague-note"')
   researching_articles = articles.select { |article| article.fetch("status") == "researching" }
   errors << "every in-research article must expose a DRAFT link" unless rendered.scan(">DRAFT</a>").length == researching_articles.length
   researching_articles.each do |article|
@@ -278,6 +285,7 @@ if File.file?(RENDERED_PATH)
     errors << "in-research article page was not rendered at #{route}" unless File.file?(rendered_article_path)
     if File.file?(rendered_article_path)
       rendered_article = File.read(rendered_article_path, encoding: "UTF-8")
+      errors << "#{article['slug']} did not render the note to colleagues" unless rendered_article.include?('class="rd-colleague-note"')
       errors << "#{article['slug']} did not render its evidence graph" unless rendered_article.include?('class="rd-article-evidence-chart"')
       errors << "#{article['slug']} did not render its argument map" unless rendered_article.include?('class="rd-article-argument-map"')
       errors << "#{article['slug']} did not render two first-level objections" unless rendered_article.scan("First-level objection").length == 2

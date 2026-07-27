@@ -35,6 +35,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
         <a href="#articles">Article arc</a>
         <a href="#successor">AI-native laboratory</a>
         <a href="#sources">Sources</a>
+        <a href="#colleagues">Note to colleagues</a>
         <a href="{{ '/rd-ratchet/method/' | relative_url }}">Method &amp; revisions</a>
       </nav>
     </div>
@@ -42,12 +43,14 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       <img
         src="{{ '/assets/images/rd-ratchet/rd-ratchet-hero.webp' | relative_url }}"
         alt="Conceptual illustration of a continuous thread of knowledge passing through a bright human-and-AI research laboratory, with faded archival marks for HRL, Bell Labs, SRI International, Lucent Technologies, IBM, and PARC integrated into the background."
-        width="1788"
-        height="880"
+        width="828"
+        height="1900"
         fetchpriority="high"
       >
     </figure>
   </header>
+
+  {% include rd-colleague-note.html %}
 
   <section class="rd-thesis" aria-labelledby="rd-thesis-title">
     <div>

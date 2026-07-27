@@ -326,6 +326,53 @@
   text-align: right;
 }
 
+.rd-colleague-note {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.68fr) minmax(25rem, 1.32fr);
+  gap: clamp(1.5rem, 5vw, 4.5rem);
+  max-width: var(--rd-measure, 74rem);
+  margin: 3rem auto 0;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  border: 1px solid #b9d1e0;
+  border-top: 0.35rem solid var(--rd-blue);
+  background: linear-gradient(135deg, #f4f9fc 0%, #ffffff 72%);
+  box-shadow: 0 10px 28px rgba(21, 58, 82, 0.07);
+}
+
+.rd-colleague-note h2 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.rd-colleague-note__body p {
+  margin: 0;
+  color: var(--rd-muted);
+  font-size: 0.95rem;
+  line-height: 1.62;
+}
+
+.rd-colleague-note__body p + p { margin-top: 0.85rem; }
+.rd-colleague-note__body strong { color: var(--rd-ink); }
+
+.rd-article > .rd-colleague-note {
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  margin: 2rem 0 2.5rem;
+  padding: 1.35rem 1.5rem;
+}
+
+.rd-article > .rd-colleague-note h2 {
+  max-width: 30ch;
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+}
+
+.rd-article > .rd-colleague-note .rd-colleague-note__body p {
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
 .rd-thesis {
   display: grid;
   grid-template-columns: minmax(15rem, 0.65fr) minmax(25rem, 1.35fr);
@@ -1963,6 +2010,7 @@
   .rd-objection-suite__grid { grid-template-columns: 1fr; }
   .rd-objection-ladder > header { min-height: 0; padding-bottom: 1.35rem; }
   .rd-concept-grid { grid-template-columns: 1fr; }
+  .rd-colleague-note { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 @media (max-width: 680px) {

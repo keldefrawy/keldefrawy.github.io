@@ -21,6 +21,8 @@ layout: default
     </div>
   </header>
 
+  {% include rd-colleague-note.html %}
+
   {% if page.withdrawn %}
   <aside class="rd-withdrawal" role="note" aria-labelledby="rd-withdrawal-title">
     <p class="rd-kicker">Withdrawn {{ page.withdrawn_date | date: "%B %-d, %Y" }}</p>
