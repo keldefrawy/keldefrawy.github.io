@@ -1,10 +1,22 @@
 title: Karim Eldefrawy
-description: Cryptography, Cybersecurity, Privacy
+description: Research, publications, patents, software, and essays on cryptography, cybersecurity, privacy, and secure systems.
+tagline: Cryptography, Cybersecurity, Privacy
 discipline: Computer Science
 url: https://keldefrawy.github.io
 baseurl: ""
 timezone: America/Los_Angeles
 theme: jekyll-theme-minimal
+lang: en-US
+author:
+  name: Karim Eldefrawy
+  url: https://keldefrawy.github.io/
+social:
+  name: Karim Eldefrawy
+  links:
+    - https://scholar.google.com/citations?user=e9UP75IAAAAJ&hl=en
+    - https://www.researchgate.net/profile/Karim-Eldefrawy-2
+    - https://www.linkedin.com/pub/karim-eldefrawy/3/6b5/b70
+    - https://github.com/keldefrawy
 
 # Hosted GoatCounter site code (the prefix in CODE.goatcounter.com).
 # Leave blank until the GoatCounter site exists and public visitor counts are enabled.
@@ -63,6 +75,11 @@ defaults:
     values:
       layout: rd-revision
       rd_series: true
+  - scope:
+      path: "notes"
+    values:
+      robots: "noindex, follow"
+      sitemap: false
 
 rd_ratchet:
   feedback_issue_url: https://github.com/keldefrawy/keldefrawy.github.io/issues/new

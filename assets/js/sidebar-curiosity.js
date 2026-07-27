@@ -40,6 +40,10 @@
     return Boolean(motionQuery && motionQuery.matches);
   }
 
+  function prefersReducedData() {
+    return Boolean(window.navigator.connection && window.navigator.connection.saveData);
+  }
+
   function randomUnit() {
     var values;
 
@@ -236,7 +240,7 @@
       animationFrame = window.requestAnimationFrame(function () {
         animationFrame = null;
 
-        if (destroyed || currentRequest !== requestNumber || prefersReducedMotion()) {
+        if (destroyed || currentRequest !== requestNumber || prefersReducedMotion() || prefersReducedData()) {
           return;
         }
 
@@ -278,7 +282,7 @@
       var currentRequest;
       var startDelay = Math.max(0, Number(delayMs) || 0);
 
-      if (destroyed || prefersReducedMotion()) {
+      if (destroyed || prefersReducedMotion() || prefersReducedData()) {
         return;
       }
 
@@ -287,7 +291,7 @@
       clearTimers(true);
 
       ensureFrames().then(function () {
-        if (!destroyed && currentRequest === requestNumber && !prefersReducedMotion()) {
+        if (!destroyed && currentRequest === requestNumber && !prefersReducedMotion() && !prefersReducedData()) {
           if (startDelay > 0) {
             startTimer = window.setTimeout(function () {
               startTimer = null;
@@ -369,6 +373,7 @@
       return !destroyed &&
         !hasPauseReasons() &&
         !prefersReducedMotion() &&
+        !prefersReducedData() &&
         !document.hidden &&
         wrapper.getClientRects().length > 0;
     }
@@ -591,6 +596,17 @@
       initializeScene(scene, timingProfiles[index]);
     });
     wrapper.curiosityLoop = createSidebarLoop(wrapper, scenes);
+    if (typeof window.IntersectionObserver === "function") {
+      wrapper.curiosityLoop.pause("viewport");
+      wrapper.curiosityVisibilityObserver = new window.IntersectionObserver(function (entries) {
+        if (entries[0] && entries[0].isIntersecting) {
+          wrapper.curiosityLoop.resume("viewport");
+        } else {
+          wrapper.curiosityLoop.pause("viewport");
+        }
+      }, { rootMargin: "120px 0px", threshold: 0.01 });
+      wrapper.curiosityVisibilityObserver.observe(wrapper);
+    }
 
     if (moreToggle && secondaryScenes.length > 0) {
       moreToggle.addEventListener("click", function () {
@@ -617,20 +633,6 @@
 
     wrapper.setAttribute("data-curiosity-ready", "true");
     wrapper.curiosityLoop.resume();
-  }
-
-  function parseEmbeddedData(selector, fallback) {
-    var script = document.querySelector(selector);
-
-    if (!script) {
-      return fallback;
-    }
-
-    try {
-      return JSON.parse(script.textContent || "");
-    } catch (error) {
-      return fallback;
-    }
   }
 
   function initializeCuriosityDialog() {
@@ -664,12 +666,15 @@
     var foundationNotes = dialog.querySelector("[data-curiosity-map-notes]");
     var detail = dialog.querySelector("[data-curiosity-map-detail]");
     var knowledgeLink = dialog.querySelector("[data-curiosity-knowledge-link]");
-    var connectionData = parseEmbeddedData("[data-curiosity-connections-data]", {});
-    var overlayData = parseEmbeddedData("[data-knowledge-lineage-overlay]", {});
-    var publicationCatalog = parseEmbeddedData("[data-knowledge-publication-catalog]", []);
-    var scenesData = connectionData.scenes || connectionData;
-    var overlayScenes = overlayData.scenes || {};
+    var dataUrl = dialog.getAttribute("data-curiosity-data-url") || "";
+    var connectionData = {};
+    var overlayData = {};
+    var publicationCatalog = [];
+    var scenesData = {};
+    var overlayScenes = {};
     var mergedScenes = {};
+    var connectionDataState = "idle";
+    var connectionDataPromise = null;
     var activeTrigger = null;
     var activeScene = null;
     var modalPlayer = null;
@@ -730,6 +735,54 @@
       edgeRecords = [];
       selectedNodeId = null;
       setDefaultDetail();
+    }
+
+    function setGraphLoading() {
+      clearGraph();
+      if (connectionsTitle) {
+        connectionsTitle.textContent = "Loading ideas map…";
+      }
+      if (connectionsDescription) {
+        connectionsDescription.textContent = "Retrieving the shared research-lineage data.";
+      }
+    }
+
+    function ensureConnectionData() {
+      if (connectionDataState === "loaded") {
+        return Promise.resolve(true);
+      }
+      if (connectionDataPromise) {
+        return connectionDataPromise;
+      }
+      if (!dataUrl || typeof window.fetch !== "function") {
+        connectionDataState = "error";
+        return Promise.resolve(false);
+      }
+
+      connectionDataState = "loading";
+      connectionDataPromise = window.fetch(dataUrl, { credentials: "same-origin" })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Ideas map request failed with status " + response.status);
+          }
+          return response.json();
+        })
+        .then(function (payload) {
+          connectionData = payload.connections || {};
+          overlayData = payload.overlay || {};
+          publicationCatalog = payload.publications || [];
+          scenesData = connectionData.scenes || connectionData;
+          overlayScenes = overlayData.scenes || {};
+          mergedScenes = {};
+          connectionDataState = "loaded";
+          return true;
+        })
+        .catch(function () {
+          connectionDataState = "error";
+          return false;
+        });
+
+      return connectionDataPromise;
     }
 
     function addText(parent, className, text) {
@@ -1234,6 +1287,23 @@
       }
     }
 
+    function openConnections(moveFocus) {
+      setConnectionsOpen(true, moveFocus);
+      if (connectionDataState === "loaded") {
+        renderGraph(activeScene);
+        scheduleDrawEdges();
+        return;
+      }
+
+      setGraphLoading();
+      ensureConnectionData().then(function () {
+        if (dialog.open && activeScene && connectionsPanel && !connectionsPanel.hidden) {
+          renderGraph(activeScene);
+          scheduleDrawEdges();
+        }
+      });
+    }
+
     function stopModalPlayer() {
       if (modalPlayer) {
         modalPlayer.destroy();
@@ -1283,7 +1353,11 @@
         }
       }
 
-      renderGraph(sceneName);
+      if (connectionDataState === "loaded") {
+        renderGraph(sceneName);
+      } else {
+        clearGraph();
+      }
       modalPlayer = createFramePlayer({
         root: modalScene,
         image: sourceCustomVisual ? null : modalImage,
@@ -1295,7 +1369,7 @@
     function showDialog(trigger) {
       var scene = trigger.closest("[data-curiosity-scene]");
       var sceneName = scene ? scene.getAttribute("data-curiosity-scene") : "";
-      var openConnections = trigger.getAttribute("data-curiosity-initial-panel") === "connections";
+      var startWithConnections = trigger.getAttribute("data-curiosity-initial-panel") === "connections";
 
       if (!scene || !sceneName || !modalScene || !modalImage) {
         return;
@@ -1314,8 +1388,10 @@
         dialog.setAttribute("open", "");
       }
       document.body.classList.add("curiosity-dialog-open");
-      setConnectionsOpen(openConnections, openConnections);
-      if (!openConnections && closeButton) {
+      if (startWithConnections) {
+        openConnections(true);
+      }
+      if (!startWithConnections && closeButton) {
         closeButton.focus();
       }
       if (modalPlayer) {
@@ -1367,7 +1443,11 @@
     }
     if (connectionsToggle) {
       connectionsToggle.addEventListener("click", function () {
-        setConnectionsOpen(connectionsPanel.hidden, true);
+        if (connectionsPanel.hidden) {
+          openConnections(true);
+        } else {
+          setConnectionsOpen(false, true);
+        }
       });
     }
     if (connectionsClose) {

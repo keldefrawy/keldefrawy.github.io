@@ -641,8 +641,10 @@ else
   end
 end
 
-%w[data-curiosity-connections-data data-knowledge-lineage-overlay data-knowledge-publication-catalog].each do |marker|
-  errors << "sidebar include is missing #{marker}" unless sidebar_include.include?(marker)
+errors << "sidebar include is missing the lazy data endpoint" unless sidebar_include.include?("data-curiosity-data-url")
+curiosity_endpoint = File.read(File.join(ROOT, "assets/data/sidebar-curiosity.json"))
+%w[site.data.curiosity_connections site.data.knowledge_lineage_overlay site.data.publications].each do |dataset|
+  errors << "curiosity data endpoint is missing #{dataset}" unless curiosity_endpoint.include?(dataset)
 end
 errors << "knowledge page omits the laboratory tab" unless knowledge_page.include?("cipher,hotel,tour,machines,labs,collaborators")
 errors << "sidebar omits the R&D laboratory scene" unless sidebar_include.include?('data-curiosity-scene="labs"')

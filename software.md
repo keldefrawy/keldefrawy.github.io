@@ -1,5 +1,13 @@
+---
+layout: default
+title: Research Software
+description: Open-source software and research prototypes for high-assurance cryptography and automated replacement of insecure cryptographic implementations.
+permalink: /software.html
+---
 
-# At [SRI](https://www.sri.com/) from 2017 to 2022:
+# Research Software
+
+## At [SRI](https://www.sri.com/) from 2017 to 2022:
 
 ## [High-assurance Cryptographic Protocols and Algorithms](https://github.com/SRI-CSL/high-assurance-crypto)
 This repository contains papers and software on computer-aided verification and automated synthesis of high-assurance cryptographic protocols and algorithms, e.g., secure multiparty computation (MPC), and zero-knowledge (ZK) via MPC-in-the-Head. 

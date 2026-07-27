@@ -349,6 +349,7 @@
   class="curiosity-dialog"
   id="curiosity-dialog"
   data-curiosity-dialog
+  data-curiosity-data-url="{{ '/assets/data/sidebar-curiosity.json?v=' | append: asset_version | relative_url }}"
   aria-labelledby="curiosity-dialog-title"
   aria-describedby="curiosity-dialog-caption"
   aria-modal="true"
@@ -517,13 +518,3 @@
     </div>
   </div>
 </dialog>
-
-<script type="application/json" data-curiosity-connections-data>
-  {{ site.data.curiosity_connections | jsonify }}
-</script>
-<script type="application/json" data-knowledge-lineage-overlay>
-  {{ site.data.knowledge_lineage_overlay | jsonify }}
-</script>
-<script type="application/json" data-knowledge-publication-catalog>
-  {{ site.data.publications | jsonify }}
-</script>

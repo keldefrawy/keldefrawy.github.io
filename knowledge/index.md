@@ -5,6 +5,7 @@ description: Human- and machine-readable maps of research questions, claims, evi
 permalink: /knowledge/
 knowledge_hub: true
 ---
+{% assign knowledge_asset_version = site.github.build_revision | default: "local" %}
 
 <div class="knowledge-hub">
   <p class="knowledge-eyebrow">AI-assisted scientific knowledge presentation · experimental</p>
@@ -139,7 +140,7 @@ knowledge_hub: true
     <noscript><p class="knowledge-noscript">Each research-area link opens its corresponding section in the complete catalog below.</p></noscript>
   </section>
 
-  <section class="knowledge-lineages" id="idea-lineages" aria-labelledby="idea-lineages-heading" data-knowledge-lineages>
+  <section class="knowledge-lineages" id="idea-lineages" aria-labelledby="idea-lineages-heading" data-knowledge-lineages data-knowledge-lineage-data-url="{{ '/assets/data/sidebar-curiosity.json?v=' | append: knowledge_asset_version | relative_url }}">
     <header class="knowledge-section-heading">
       <p class="knowledge-section-label">Selected intellectual lineages</p>
       <h2 id="idea-lineages-heading">Foundations → collaborators → ideas → Karim’s work</h2>

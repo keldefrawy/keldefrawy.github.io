@@ -21,6 +21,69 @@
   --knowledge-green-soft: #dafbe1;
 }
 
+.skip-link {
+  background: #ffffff;
+  border: 2px solid var(--publication-accent);
+  border-radius: 0 0 8px 0;
+  color: var(--publication-ink);
+  font-weight: 700;
+  left: 0;
+  padding: 0.65rem 0.9rem;
+  position: fixed;
+  top: 0;
+  transform: translateY(-130%);
+  transition: transform 120ms ease;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+.wrapper > main {
+  float: right;
+  padding-bottom: 50px;
+  width: 500px;
+}
+
+.wrapper > main:focus {
+  outline: 3px solid rgba(9, 105, 218, 0.45);
+  outline-offset: 8px;
+}
+
+.not-found {
+  margin: 2rem auto;
+  max-width: 42rem;
+}
+
+.not-found__code {
+  color: var(--publication-accent);
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+  margin-bottom: 1rem;
+}
+
+@media print, screen and (max-width: 960px) {
+  .wrapper > main {
+    border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    float: none;
+    margin: 0 0 20px;
+    padding: 20px 0;
+    position: static;
+    width: auto;
+  }
+}
+
 .site-description {
   margin-bottom: 1.7rem;
 }
@@ -4958,7 +5021,7 @@ body.quick-abstract-dialog-open {
     width: 100%;
   }
 
-  .wrapper > section {
+  .wrapper > main {
     max-width: none;
     width: calc(100% - 320px);
   }
@@ -5052,7 +5115,7 @@ body.quick-abstract-dialog-open {
     padding: 0.36rem 0.52rem;
   }
 
-  body.home-page .wrapper > section {
+  body.home-page .wrapper > main {
     float: none;
     max-width: none;
     min-width: 0;
@@ -5101,19 +5164,19 @@ body.quick-abstract-dialog-open {
     padding-top: 0;
   }
 
-  body.home-page .wrapper > section {
+  body.home-page .wrapper > main {
     grid-column: 1;
   }
 }
 
 @media screen and (min-width: 1240px) {
   body.home-page .wrapper,
-  body.home-page .wrapper > section,
+  body.home-page .wrapper > main,
   .home-page-content {
     min-height: calc(100vh - 56px);
   }
 
-  body.home-page .wrapper > section {
+  body.home-page .wrapper > main {
     align-self: stretch;
   }
 

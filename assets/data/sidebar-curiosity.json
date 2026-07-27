@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: /assets/data/sidebar-curiosity.json
+sitemap: false
+---
+{
+  "connections": {{ site.data.curiosity_connections | jsonify }},
+  "overlay": {{ site.data.knowledge_lineage_overlay | jsonify }},
+  "publications": {{ site.data.publications | jsonify }}
+}

@@ -384,19 +384,51 @@
 
   function initializeLineages() {
     var root = document.querySelector("[data-knowledge-lineages]");
-    var dataScript = document.querySelector("[data-curiosity-connections-data]");
-    var overlayScript = document.querySelector("[data-knowledge-lineage-overlay]");
-    var catalogScript = document.querySelector("[data-knowledge-publication-catalog]");
+    var dataUrl;
 
-    if (!root || !dataScript || root.getAttribute("data-knowledge-lineages-ready") === "true") {
+    if (!root || root.getAttribute("data-knowledge-lineages-ready") === "true" ||
+        root.getAttribute("data-knowledge-lineages-loading") === "true") {
       return;
     }
 
-    var source = parseJSON(dataScript.textContent, {});
+    dataUrl = root.getAttribute("data-knowledge-lineage-data-url") || "";
+    if (!dataUrl || typeof window.fetch !== "function") {
+      return;
+    }
+
+    root.setAttribute("data-knowledge-lineages-loading", "true");
+    window.fetch(dataUrl, { credentials: "same-origin" })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Knowledge lineage request failed with status " + response.status);
+        }
+        return response.json();
+      })
+      .then(function (payload) {
+        initializeLineagesFromData(root, payload);
+        root.removeAttribute("data-knowledge-lineages-loading");
+      })
+      .catch(function () {
+        var title = root.querySelector("[data-knowledge-lineage-title]");
+        var description = root.querySelector("[data-knowledge-lineage-description]");
+
+        if (title) {
+          title.textContent = "Ideas map unavailable";
+        }
+        if (description) {
+          description.textContent = "The shared research-lineage data could not be loaded.";
+        }
+        root.removeAttribute("data-knowledge-lineages-loading");
+        root.setAttribute("data-knowledge-lineages-error", "true");
+      });
+  }
+
+  function initializeLineagesFromData(root, payload) {
+    var source = payload.connections || {};
     var scenes = source.scenes || source;
-    var overlaySource = overlayScript ? parseJSON(overlayScript.textContent, {}) : {};
+    var overlaySource = payload.overlay || {};
     var overlayScenes = overlaySource.scenes || {};
-    var publicationCatalog = catalogScript ? parseJSON(catalogScript.textContent, []) : [];
+    var publicationCatalog = payload.publications || [];
     var sceneButtons = toArray(root.querySelectorAll("[data-knowledge-lineage-scene]"));
     var title = root.querySelector("[data-knowledge-lineage-title]");
     var description = root.querySelector("[data-knowledge-lineage-description]");

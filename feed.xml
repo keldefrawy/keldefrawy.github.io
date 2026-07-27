@@ -1,0 +1,29 @@
+---
+layout: null
+permalink: /feed.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }} — Research and writing</title>
+  <id>{{ '/feed.xml' | absolute_url }}</id>
+  <link href="{{ '/feed.xml' | absolute_url }}" rel="self" type="application/atom+xml" />
+  <link href="{{ '/' | absolute_url }}" rel="alternate" type="text/html" />
+  {% assign feed_articles = site.rd_articles | sort: "updated" | reverse %}
+  {% assign latest_article = feed_articles | first %}
+  <updated>{{ latest_article.updated | default: latest_article.date | date_to_xmlschema }}</updated>
+  <author>
+    <name>{{ site.author.name | xml_escape }}</name>
+    <uri>{{ site.author.url }}</uri>
+  </author>
+  {% for article in feed_articles limit: 20 %}
+  <entry>
+    <title>{{ article.title | xml_escape }}</title>
+    <id>{{ article.url | absolute_url }}</id>
+    <link href="{{ article.url | absolute_url }}" rel="alternate" type="text/html" />
+    <published>{{ article.date | date_to_xmlschema }}</published>
+    <updated>{{ article.updated | default: article.date | date_to_xmlschema }}</updated>
+    <summary type="text">{{ article.dek | strip_html | normalize_whitespace | xml_escape }}</summary>
+  </entry>
+  {% endfor %}
+</feed>

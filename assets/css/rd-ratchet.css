@@ -29,9 +29,9 @@
  * part of its two-column page shell. The series uses those elements inside
  * the article, so isolate nested landmarks from the legacy shell rules.
  */
-.rd-series-page .wrapper > section header,
-.rd-series-page .wrapper > section section,
-.rd-series-page .wrapper > section footer {
+.rd-series-page .wrapper > main header,
+.rd-series-page .wrapper > main section,
+.rd-series-page .wrapper > main footer {
   position: static;
   bottom: auto;
   float: none;
@@ -40,7 +40,7 @@
   border: 0;
 }
 
-.rd-series-page .wrapper > section {
+.rd-series-page .wrapper > main {
   max-width: none;
 }
 

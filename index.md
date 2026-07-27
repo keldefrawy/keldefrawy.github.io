@@ -1,7 +1,8 @@
 ---
 layout: default
 homepage: true
-title: Home
+title: Cryptography, Privacy, and Secure Systems
+description: Research, publications, patents, software, and essays by cryptographer and computer scientist Karim Eldefrawy.
 ---
 
 <div class="home-page-content" markdown="1">
@@ -18,7 +19,7 @@ title: Home
 
 <article class="home-bio" markdown="1">
 
-# Brief Bio
+## Brief Bio
 
 Karim Eldefrawy, Ph.D., is the Co-founder & CTO of [Confidencial.io](https://www.confidencial.io/). Prior to that he was a Principal Computer Scientist at the Computer Science Laboratory ([CSL](http://www.csl.sri.com/)) at [SRI (previously Stanford Research Institute)](https://www.sri.com/). His R&D interests focus on [secure and privacy-preserving computation for distributed systems]({{ '/knowledge/' | relative_url }}#knowledge-area-secure-encrypted-computation), [computer-aided formal verification of cryptographic algorithms and protocols]({{ '/knowledge/' | relative_url }}#knowledge-collection-formal-verification), and [security in cyber-physical and embedded systems]({{ '/knowledge/' | relative_url }}#knowledge-area-secure-systems-networks). His interests also include [post-quantum cryptography]({{ '/knowledge/' | relative_url }}#knowledge-collection-post-quantum-cryptography) and recent work in [quantum communication]({{ '/knowledge/papers/paper-70/' | relative_url }}) and [quantum algorithms]({{ '/knowledge/papers/paper-60/' | relative_url }}). His research has been funded by the Defense Advanced Research Project Agency ([DARPA](https://www.darpa.mil/)), the Department of Homeland Security ([DHS](https://www.dhs.gov/science-and-technology)), the Intelligence Advanced Research Projects Activity ([IARPA](https://www.iarpa.gov/)), the National Science Foundation ([NSF](https://www.nsf.gov)), the US AirForce ([AFWERX](https://www.afwerx.af.mil)), and Boeing and General Motors. His work has received the 2024 [Test of Time Award](https://www.ndss-symposium.org/ndss-test-of-time-award/) by the [Internet Society's](https://www.internetsociety.org/) [Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/). Karim authored over 100 scientific works ([75+ peer-reviewed papers and book chapters](https://keldefrawy.github.io/pubs.html), and [31 granted and 10+ pending patents](https://keldefrawy.github.io/patents.html)). His opinions and writing on cybersecurity and cryptography topics have been featured on [Forbes](https://councils.forbes.com/profile/Karim-Eldefrawy-CTO-Founder-Confidencial-io/35ea9cb7-7f3c-4fe9-a7d3-780eee7da954) and other venues. Karim served on technical program committees of top academic conferences on security and cryptography and was the information director of ACM Transactions on Privacy and Security (formerly ACM TISSEC) from 2011 to 2015. Karim taught security and cryptography courses at the University of California at Irvine ([UCI](https://www.ics.uci.edu/)) and the University of San Francisco ([USF](https://www.usfca.edu/)).
 

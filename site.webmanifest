@@ -1,0 +1,16 @@
+---
+layout: null
+permalink: /site.webmanifest
+sitemap: false
+---
+{
+  "name": "Karim Eldefrawy — Research and Writing",
+  "short_name": "Karim Eldefrawy",
+  "description": "Cryptography, cybersecurity, privacy, and secure-systems research.",
+  "lang": "en-US",
+  "start_url": "{{ '/' | relative_url }}",
+  "scope": "{{ '/' | relative_url }}",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0969da"
+}

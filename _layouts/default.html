@@ -8,7 +8,8 @@
   {% assign landing_publication_matches = site.data.publications | where: "id", page.paper_id %}
   {% assign landing_publication = landing_publication_matches | first %}
 {% endif %}
-{% assign asset_version = site.time | date: "%Y%m%d%H%M%S" %}
+{% assign asset_version = site.github.build_revision | default: "local" %}
+{% assign rd_description = page.description | default: page.dek %}
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
@@ -28,9 +29,59 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ landing_publication.title | escape }}">
     <meta name="twitter:description" content="{{ landing_publication.summary | escape }}">
+{% elsif page.article_number %}
+    <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+    <meta name="description" content="{{ rd_description | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{{ page.title | escape }}">
+    <meta property="og:description" content="{{ rd_description | escape }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <meta property="article:modified_time" content="{{ page.updated | default: page.date | date_to_xmlschema }}">
+    {% if page.hero_image %}<meta property="og:image" content="{{ page.hero_image | absolute_url }}">{% endif %}
+    {% if page.hero_alt %}<meta property="og:image:alt" content="{{ page.hero_alt | escape }}">{% endif %}
+    <meta name="twitter:card" content="{% if page.hero_image %}summary_large_image{% else %}summary{% endif %}">
+    <meta name="twitter:title" content="{{ page.title | escape }}">
+    <meta name="twitter:description" content="{{ rd_description | escape }}">
+    {% if page.hero_image %}<meta name="twitter:image" content="{{ page.hero_image | absolute_url }}">{% endif %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "@id": {{ page.url | append: "#article" | absolute_url | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "headline": {{ page.title | jsonify }},
+      "description": {{ rd_description | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "dateModified": {{ page.updated | default: page.date | date_to_xmlschema | jsonify }},
+      "author": {"@id": {{ '/#person' | absolute_url | jsonify }}},
+      "publisher": {"@id": {{ '/#person' | absolute_url | jsonify }}},
+      "isPartOf": {"@type": "CreativeWorkSeries", "name": "The R&D Ratchet", "url": {{ '/rd-ratchet/' | absolute_url | jsonify }}},
+      {% if page.hero_image %}"image": {{ page.hero_image | absolute_url | jsonify }},{% endif %}
+      "mainEntityOfPage": {{ page.url | absolute_url | jsonify }}
+    }
+    </script>
 {% else %}
 {% seo %}
 {% endif %}
+    {% if page.robots %}<meta name="robots" content="{{ page.robots | escape }}">{% endif %}
+    <meta name="theme-color" content="#0969da">
+    <link rel="alternate" type="application/atom+xml" href="{{ '/feed.xml' | absolute_url }}" title="{{ site.title | escape }} — Research and writing">
+    <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": {{ '/#person' | absolute_url | jsonify }},
+      "name": {{ site.author.name | default: site.title | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }},
+      "jobTitle": "Co-founder and CTO",
+      "worksFor": {"@type": "Organization", "name": "Confidencial.io", "url": "https://www.confidencial.io/"},
+      "sameAs": {{ site.social.links | jsonify }}
+    }
+    </script>
     {% if knowledge_record %}
     {% assign knowledge_keywords = knowledge_record.keywords | concat: knowledge_record.contribution_types %}
     <link rel="alternate" type="application/json" href="{{ knowledge_record.machine_path | absolute_url }}" title="Machine-readable scientific knowledge map">
@@ -109,16 +160,21 @@
     <![endif]-->
   </head>
   <body{% if page.homepage %} class="home-page"{% elsif page.rd_series %} class="rd-series-page"{% elsif page.publications_browser %} class="publications-page"{% elsif page.knowledge_map or page.knowledge_hub or page.paper_id %} class="knowledge-map-page"{% endif %}>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div class="wrapper">
       <header>
+        {% if page.homepage %}
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        {% else %}
+        <p class="site-title"><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></p>
+        {% endif %}
         
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
         <p class="site-description">
-          {% if site.description %}{{ site.description }}{% else %}{{ site.github.project_tagline }}{% endif %}
+          {% if site.tagline %}{{ site.tagline }}{% elsif site.description %}{{ site.description }}{% else %}{{ site.github.project_tagline }}{% endif %}
           {% if site.discipline %}<span class="site-discipline">{{ site.discipline }}</span>{% endif %}
         </p>
 
@@ -138,11 +194,11 @@
 
         {% include sidebar-curiosity.html %}
       </header>
-      <section>
+      <main id="main-content" tabindex="-1">
 
       {{ content }}
 
-      </section>
+      </main>
       <footer>
         {% if site.github.is_project_page %}
         <p>This project is  maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
@@ -150,7 +206,7 @@
         <!--<p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>-->
       </footer>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script src="{{ "/assets/js/scale.fix.js?v=" | append: asset_version | relative_url }}"></script>
     <script src="{{ "/assets/js/knowledge-scene-data.js?v=" | append: asset_version | relative_url }}" defer></script>
     <script src="{{ "/assets/js/sidebar-curiosity.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% if page.homepage %}
@@ -160,16 +216,16 @@
     {% endif %}
     {% endif %}
     {% if page.publications_browser %}
-    <script src="{{ "/assets/js/publication-abstracts.js" | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/publication-abstracts.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% endif %}
     {% if page.knowledge_hub %}
-    <script src="{{ "/assets/js/knowledge-hub.js" | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/knowledge-hub.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% endif %}
     {% if page.rd_series %}
     <script src="{{ "/assets/js/rd-ratchet.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% endif %}
     {% if knowledge_record %}
-    <script src="{{ "/assets/js/knowledge-map.js" | relative_url }}" defer></script>
+    <script src="{{ "/assets/js/knowledge-map.js?v=" | append: asset_version | relative_url }}" defer></script>
     {% endif %}
     {% if site.google_analytics %}
     <script>
