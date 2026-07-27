@@ -2,7 +2,7 @@ schema_version: "1.0"
 
 series:
   title: The R&D Ratchet
-  subtitle: How America lost the institutions that could think long—and the narrow window to build what comes next
+  subtitle: How America lost the institutions that could think long—and the narrow window to build what comes next.
   description: >-
     A firsthand, evidence-led inquiry into the incentive structures that replaced the American
     industrial research laboratory, what those structures preserve and destroy, and how an
@@ -107,7 +107,7 @@ core_concepts:
 
 timeline:
   - year: "1996"
-    label: Bell Labs split
+    label: Bell Labs Split
     kind: document
     source_id: nokia-bell-history
     note: AT&T spun most of Bell Labs and its equipment business into Lucent; a smaller research organization remained with AT&T.
@@ -140,17 +140,17 @@ timeline:
     kind: memory
     note: Spun out from SRI in 2021 to carry selected research into product, procurement, customers, and company survival.
   - year: "2022"
-    label: Confidencial.io seed financing
+    label: Confidencial.io Seed Financing
     kind: document
     source_id: sri-confidencial-announcement-2022
     note: SRI's June announcement documents seed investors and the private-beta launch; it is not the spinout date.
   - year: "2023"
-    label: PARC joins SRI
+    label: PARC Joins SRI
     kind: memory
     source_id: xerox-parc-sri
     note: Firsthand observation through Karim's SRI office and badge, retained through 2026; the legal transaction facts remain independently documented.
   - year: "2026"
-    label: IBM announces HRL agreement
+    label: IBM Announces HRL Agreement
     kind: document
     source_id: ibm-hrl-2026
     note: The agreement was announced July 23 and remained subject to closing conditions at the time of this page’s update.

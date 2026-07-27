@@ -29,14 +29,14 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
         <span><strong>4</strong> evidence classes</span>
       </div>
       <nav class="rd-series-nav" aria-label="Explore this series">
-        <a href="#argument">Argument map</a>
-        <a href="#concepts">Core concepts</a>
-        <a href="#incentives">Incentive structures</a>
-        <a href="#articles">Article arc</a>
-        <a href="#successor">AI-native laboratory</a>
+        <a href="#argument">Argument Map</a>
+        <a href="#concepts">Core Concepts</a>
+        <a href="#incentives">Incentive Structures</a>
+        <a href="#articles">Article Arc</a>
+        <a href="#successor">AI-Native Laboratory</a>
         <a href="#sources">Sources</a>
-        <a href="#colleagues">Note to colleagues</a>
-        <a href="{{ '/rd-ratchet/method/' | relative_url }}">Method &amp; revisions</a>
+        <a href="#colleagues">Note to Colleagues</a>
+        <a href="{{ '/rd-ratchet/method/' | relative_url }}">Method &amp; Revisions</a>
       </nav>
     </div>
     <figure class="rd-series-hero__visual">
@@ -60,7 +60,6 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <blockquote>
       America did not simply defund research. It replaced one institutional equilibrium with several narrower ones — corporate returns tied to product, platform, and capital-market horizons; finite government programs; billable-project economics that can reward proposal and administrative throughput; publication metrics; patent accounting; and venture-backed commercialization optimized for acquisition or IPO. While each decision may look rational and may even be productive in the short term, the end result is a combined system that has consumed inherited deep-research capabilities faster than it has replenished them.
     </blockquote>
-    <p class="rd-thesis__qualification"><strong>This is a thesis to test, not a conclusion to assume.</strong> Each article will separate scientific, technical, transition, institutional, economic, and public-value outcomes—and will state the strongest evidence against its own interpretation. The criticism targets destructive incentives, decisions, and behaviors, not speculation about any individual’s motives or character.</p>
   </section>
 
   <section class="rd-paradox" id="paradox" aria-labelledby="rd-paradox-title">
@@ -136,7 +135,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
   <section class="rd-concepts" id="concepts" aria-labelledby="rd-concepts-title">
     <div class="rd-section-heading">
       <p class="rd-kicker">Shared analytical vocabulary</p>
-      <h2 id="rd-concepts-title">Ten propositions the series must make measurable</h2>
+      <h2 id="rd-concepts-title">Ten Propositions The Series Makes Measurable</h2>
       <p>These terms are not conclusions disguised as definitions. Each names a proposed mechanism and the observation that could support, narrow, or defeat it.</p>
     </div>
     <ol class="rd-concept-grid">
@@ -155,8 +154,8 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
 
   <section class="rd-timeline-section" id="journey" aria-labelledby="rd-timeline-title">
     <div class="rd-section-heading">
-      <p class="rd-kicker">Twenty-six years inside a thirty-year transformation</p>
-      <h2 id="rd-timeline-title">The route through the incentive systems</h2>
+      <p class="rd-kicker">Twenty-Six Years Inside a Thirty-Year Transformation</p>
+      <h2 id="rd-timeline-title">My Route Through The Incentive Systems</h2>
       <p>The personal record begins in 2000. The institutional arc begins with the 1996 Bell Labs split and continues through the transactions reshaping PARC and HRL.</p>
     </div>
     <div class="rd-timeline-scroll" tabindex="0" aria-label="Horizontal timeline; scroll to inspect all events">
@@ -178,9 +177,9 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
       </ol>
     </div>
     <aside class="rd-pathway-note" aria-labelledby="rd-pathway-note-title">
-      <p class="rd-kicker">What this route implies</p>
-      <h3 id="rd-pathway-note-title">The R&amp;D ecosystem that developed someone like me no longer exists in the same form.</h3>
-      <p>This is a claim about the pathway, not an assertion that I am its ideal product or that any one person is irreplaceable. Between 2000 and early 2023, one researcher could move through Ericsson, Lucent-era Bell Labs, Cisco, doctoral research, AT&amp;T Research, HRL, SRI and DARPA programs, and a research spinout while accumulating experience across theory, systems, mission, and transition. Several of those institutional forms have since contracted, combined, or disappeared in their prior form. Losing a reproducible path of that density is a loss to the United States and the world.</p>
+      <p class="rd-kicker">What This Route Implies</p>
+      <h3 id="rd-pathway-note-title">The R&amp;D Ecosystem That Developed Someone Like Me No Longer Exists in the Same Form.</h3>
+      <p>This is a claim about the pathway, not an assertion that my profile and capabilities are its ideal product or that any one person is irreplaceable. Between 2000 and early 2023, one researcher could move through Ericsson, Lucent-era Bell Labs, Cisco, doctoral research, AT&amp;T Research, HRL, SRI and DARPA programs, and a research spinout while accumulating experience across theory, systems, mission, and transition. Several of those institutional forms have since contracted, combined, or disappeared in their prior form. Losing a reproducible path of that density is a loss to the United States and the world.</p>
       <p><span class="rd-evidence-token" data-evidence="M">M</span><span class="rd-evidence-token" data-evidence="A">A</span> The test is not biography or nostalgia. It is whether comparable paths now exist at equal or greater scale, diversity, continuity, and effectiveness.</p>
     </aside>
   </section>
@@ -188,7 +187,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
   <section class="rd-models" id="incentives" aria-labelledby="rd-models-title" data-rd-model-explorer>
     <div class="rd-section-heading">
       <p class="rd-kicker">Comparative institutional analysis</p>
-      <h2 id="rd-models-title">Nine incentive structures, nine different bargains</h2>
+      <h2 id="rd-models-title">Nine Incentive Structures, Nine Different Bargains</h2>
       <p>Select a model for a concise reading, then use the table to compare the same variables across every regime.</p>
     </div>
 

@@ -180,7 +180,7 @@ That failure is especially important when the lost object is not a patent or pap
 
 ## The ecosystem’s hidden output was a developmental path
 
-The R&D ecosystem that developed someone like me no longer exists in the same form. That is not a claim that I am its ideal product, still less that any one person is irreplaceable. It is a claim about whether the pathway is reproducible.
+The R&D ecosystem that developed someone like me no longer exists in the same form. This is a claim about the pathway, not an assertion that my profile and capabilities are its ideal product or that any one person is irreplaceable. The question is whether the pathway is reproducible.
 
 Between 2000 and early 2023, my route crossed Ericsson in Sweden, Lucent-era Bell Labs, Cisco Systems, doctoral research, AT&T Research, HRL, SRI and DARPA programs, and an SRI spinout. The sequence connected telecommunications, cryptography, systems, academic research, mission programs, hardware, and company formation. Each institution supplied a different constraint and a different kind of judgment. <span class="rd-evidence-token" data-evidence="M">M</span>
 

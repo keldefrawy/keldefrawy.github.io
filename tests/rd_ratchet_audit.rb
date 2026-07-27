@@ -184,7 +184,7 @@ errors << "landing page omits the shared analytical vocabulary" unless page.incl
 errors << "landing page cannot filter published articles" unless page.include?('data-rd-article-filter="available"')
 errors << "landing page cannot retain withdrawal records" unless page.include?('data-rd-article-filter="withdrawn"')
 errors << "landing page article heading must state nineteen articles" unless page.include?("Nineteen articles")
-errors << "landing page must state the loss of the author's developmental ecosystem without making the person the unit of value" unless page.include?("ecosystem that developed someone like me") && page.include?("claim about the pathway") && page.include?("loss to the United States and the world")
+errors << "landing page must state the loss of the author's developmental ecosystem without making the person the unit of value" unless page.downcase.include?("ecosystem that developed someone like me") && page.include?("claim about the pathway") && page.include?("loss to the United States and the world")
 errors << "unpublished article previews are not linked when rendered" unless page.include?('site.rd_articles | where: "article_slug", article.slug') && page.include?("rd_article_page.url")
 errors << "AI-native laboratory nodes must expose their positions to CSS" unless page.include?('data-position="{{ node.position }}"')
 errors << "AI-native laboratory core must use the distinct future color" unless style.match?(/\.rd-brain-node\[data-position="core"\][^\{]*\{[^\}]*background:\s*var\(--rd-future\);/m)
