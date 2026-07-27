@@ -7,8 +7,8 @@ series:
     A firsthand, evidence-led inquiry into the incentive structures that replaced the American
     industrial research laboratory, what those structures preserve and destroy, and how an
     AI-native public–private successor might be designed.
-  updated: "2026-07-25"
-  article_count: 17
+  updated: "2026-07-26"
+  article_count: 19
   published_count: 0
 
 rd_chart:
@@ -465,6 +465,20 @@ articles:
     case: A proposed successor informed by NAIRR, NSTC, FFRDCs, DARPA, and DOE laboratories
     claim: A successor must align capital, careers, infrastructure, AI, transition, and public value in one institutional design.
     visuals: [Interactive lab brain map, Governance and IP tiers, Ten-year pilot roadmap]
+  - number: 18
+    slug: system-worked-compared-with-what
+    title: The System Worked. Compared With What?
+    status: researching
+    case: The transistor, computing, the Internet, software, cryptography, smartphones, AI, quantum technology, and the institutions that produced them
+    claim: A catalogue of breakthroughs proves productive capacity, not counterfactual efficiency, acceptable delay, or the sustainability of the institutions and developmental paths that produced them.
+    visuals: [Achievement-versus-efficiency argument map, Research-productivity benchmark, Counterfactual pilot scorecard]
+  - number: 19
+    slug: do-not-restart-at-every-boundary
+    title: Do Not Restart at Every Boundary
+    status: researching
+    case: Graduate students and early-career researchers navigating academia, industrial R&D, public missions, national laboratories, and research-based company formation
+    claim: When no institution supplies the whole developmental path, young researchers need a compounding sequence organized around one durable question—but universities, funders, laboratories, and employers must pay for the bridges rather than externalizing integration risk onto the least powerful people in the system.
+    visuals: [Cross-sector doctorate destination chart, Compounding-path argument map, Boundary-contract checklist, Seven-year pathway scorecard]
 
 sources:
   - id: ncses-rd-2026
@@ -565,6 +579,62 @@ sources:
     kind: Peer-reviewed empirical study
     url: https://doi.org/10.1257/aer.20180338
     supports: Evidence that rising research effort has accompanied declining measured research productivity in several domains, subject to the study's choice of exponential-growth benchmarks
+  - id: jones-williams-social-return
+    title: Measuring the Social Return to R&D
+    organization: Charles I. Jones and John C. Williams
+    date: "1998"
+    kind: Peer-reviewed economic model and synthesis
+    url: https://doi.org/10.1162/003355398555856
+    supports: The authors' model-based conclusion that conservative estimates implied socially optimal R&D investment at least two to four times actual investment; this is an underinvestment result, not evidence of a two-to-four-times operational productivity gain
+  - id: nobel-transistor-1956
+    title: The Nobel Prize in Physics 1956
+    organization: Nobel Prize Outreach
+    date: "1956"
+    kind: Prize record and scientific history
+    url: https://www.nobelprize.org/prizes/physics/1956/summary/
+    supports: The award to John Bardeen, Walter Brattain, and William Shockley for semiconductor research and discovery of the transistor effect
+  - id: darpa-arpanet
+    title: ARPANET
+    organization: Defense Advanced Research Projects Agency
+    date: "2020"
+    kind: Agency historical record
+    url: https://www.darpa.mil/news/features/arpanet
+    supports: DARPA's role, the 1969 four-node network including SRI, the development of internetworking and TCP/IP, and the transition from ARPANET toward the Internet
+  - id: acm-turing-fact-sheet
+    title: About the ACM A.M. Turing Award—Fact Sheet
+    organization: Association for Computing Machinery
+    date: Current award history
+    kind: Professional-society award record
+    url: https://www.acm.org/binaries/content/assets/awards/about-the-acm-a.m.-turing-award-fact-sheet.pdf
+    supports: The award citations for John Backus on FORTRAN and practical high-level programming systems and for Ken Thompson and Dennis Ritchie on generic operating-systems theory and UNIX
+  - id: acm-diffie-hellman-2015
+    title: Cryptography Pioneers Receive ACM A.M. Turing Award
+    organization: Association for Computing Machinery
+    date: "2016"
+    kind: Professional-society award record
+    url: https://awards.acm.org/about/2015-turing
+    supports: The contribution of Whitfield Diffie and Martin Hellman to public-key cryptography and digital signatures and their downstream importance to Internet security
+  - id: acm-deep-learning-2018
+    title: Fathers of the Deep Learning Revolution Receive ACM A.M. Turing Award
+    organization: Association for Computing Machinery
+    date: "2019-03-27"
+    kind: Professional-society award record
+    url: https://awards.acm.org/binaries/content/assets/press-releases/2019/march/turing-award-2018.pdf
+    supports: ACM's recognition of Yoshua Bengio, Geoffrey Hinton, and Yann LeCun for conceptual and engineering breakthroughs that made deep neural networks a critical component of computing
+  - id: apple-iphone-2007
+    title: Apple Reinvents the Phone with iPhone
+    organization: Apple
+    date: "2007-01-09"
+    kind: Product announcement
+    url: https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/
+    supports: The original iPhone's integration of mobile telephony, Internet communication, software, sensors, and a multi-touch interface; the announcement establishes the product claim and configuration, not sole invention of every underlying component
+  - id: nsf-innovation-measurement-2018
+    title: Invention, Knowledge Transfer, and Innovation—Introduction
+    organization: National Science Board and National Science Foundation
+    date: "2018"
+    kind: Federal statistical framework
+    url: https://www.nsf.gov/statistics/2018/nsb20181/report/sections/invention-knowledge-transfer-and-innovation/introduction
+    supports: The distinction among discovery, invention, knowledge transfer, and innovation and the warning that available inputs and outputs provide an incomplete picture of innovation and its economic impact
   - id: turing-computable-numbers
     title: On Computable Numbers, with an Application to the Entscheidungsproblem
     organization: Alan M. Turing
@@ -1062,3 +1132,59 @@ sources:
     kind: Peer-reviewed laboratory experiment
     url: https://doi.org/10.1057/palgrave.emr.1500057
     supports: Experimental evidence that organizational structures and routines can buffer some knowledge loss after personnel turnover, subject to the limits of a controlled task setting
+  - id: ncses-doctorate-recipients-2024
+    title: "Doctorate Recipients from U.S. Universities: 2024—Postgraduation Trends"
+    organization: National Center for Science and Engineering Statistics
+    date: "2026"
+    kind: Federal statistical report
+    url: https://ncses.nsf.gov/pubs/nsf26315/report/postgraduation-trends
+    supports: The distribution of definite 2024 U.S. postgraduation commitments between postdoctoral training and employment, and the division of non-postdoc employment commitments among academia, industry, government, nonprofits, and other destinations
+  - id: nasem-graduate-stem-2018
+    title: Graduate STEM Education for the 21st Century
+    organization: National Academies of Sciences, Engineering, and Medicine
+    date: "2018"
+    kind: Consensus study report
+    url: https://doi.org/10.17226/25038
+    supports: The case for student-centered graduate education, deep specialization with broad technical literacy, project-based learning, transparent career outcomes, and funded exposure to academic and nonacademic pathways
+  - id: nasem-mentorship-2019
+    title: The Science of Effective Mentorship in STEMM
+    organization: National Academies of Sciences, Engineering, and Medicine
+    date: "2019"
+    kind: Consensus study report
+    url: https://doi.org/10.17226/25568
+    supports: Evidence-based treatment of mentorship as a learned and improvable practice requiring institutional support, multiple functions, assessment, and attention to inclusion rather than an informal relationship left to chance
+  - id: nasem-postdoc-2014
+    title: The Postdoctoral Experience Revisited
+    organization: National Academy of Sciences, National Academy of Engineering, and Institute of Medicine
+    date: "2014"
+    kind: Consensus study report
+    url: https://doi.org/10.17226/18982
+    supports: The distinction between a defined period of advanced mentored training and the use of postdoctoral researchers as inexpensive long-term labor, together with recommendations on duration, compensation, career development, and mentoring
+  - id: nsf-intern
+    title: Non-Academic Research Internships for Graduate Students (INTERN)
+    organization: U.S. National Science Foundation
+    date: Current program page
+    kind: Federal program primary source
+    url: https://www.nsf.gov/funding/opportunities/dcl-non-academic-research-internships-graduate-students-intern
+    supports: A current mechanism for adding research experience in companies, government laboratories, startups, and nonprofits to an NSF-supported graduate pathway, including mentoring, time, funding, and advance treatment of intellectual-property and publication rights
+  - id: doe-scgsr
+    title: Office of Science Graduate Student Research Program
+    organization: U.S. Department of Energy Office of Science
+    date: Current program page
+    kind: Federal program primary source
+    url: https://science.osti.gov/wdts/scgsr
+    supports: A current bridge allowing eligible doctoral students to conduct three to twelve months of thesis research with a DOE national-laboratory scientist and use facilities unavailable at their universities, subject to mission, citizenship or residency, and program constraints
+  - id: nsf-icorps-teams
+    title: NSF I-Corps Teams
+    organization: U.S. National Science Foundation
+    date: Current program page
+    kind: Federal program primary source
+    url: https://www.nsf.gov/funding/initiatives/i-corps/about-teams
+    supports: A structured transition mechanism that joins technical, entrepreneurial, and industry-mentor roles and uses customer discovery to test whether research can become a product, service, license, or better use-directed question
+  - id: nist-nrc-postdoc-2026
+    title: Postdoctoral Students—NRC Postdocs
+    organization: National Institute of Standards and Technology
+    date: "2026-02-10"
+    kind: Federal laboratory program primary source
+    url: https://www.nist.gov/iaao/academic-affairs-office/nrc-postdocs
+    supports: A current example of a defined two-year federal-laboratory postdoctoral research opportunity with facilities and staff mentorship, as well as citizenship and degree-age eligibility constraints that prevent it from being a universal bridge

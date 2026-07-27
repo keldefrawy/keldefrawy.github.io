@@ -177,6 +177,12 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
         {% endfor %}
       </ol>
     </div>
+    <aside class="rd-pathway-note" aria-labelledby="rd-pathway-note-title">
+      <p class="rd-kicker">What this route implies</p>
+      <h3 id="rd-pathway-note-title">The R&amp;D ecosystem that developed someone like me no longer exists in the same form.</h3>
+      <p>This is a claim about the pathway, not an assertion that I am its ideal product or that any one person is irreplaceable. Between 2000 and early 2023, one researcher could move through Ericsson, Lucent-era Bell Labs, Cisco, doctoral research, AT&amp;T Research, HRL, SRI and DARPA programs, and a research spinout while accumulating experience across theory, systems, mission, and transition. Several of those institutional forms have since contracted, combined, or disappeared in their prior form. Losing a reproducible path of that density is a loss to the United States and the world.</p>
+      <p><span class="rd-evidence-token" data-evidence="M">M</span><span class="rd-evidence-token" data-evidence="A">A</span> The test is not biography or nostalgia. It is whether comparable paths now exist at equal or greater scale, diversity, continuity, and effectiveness.</p>
+    </aside>
   </section>
 
   <section class="rd-models" id="incentives" aria-labelledby="rd-models-title" data-rd-model-explorer>
@@ -257,7 +263,7 @@ image: /assets/images/rd-ratchet/rd-ratchet-hero.webp
     <div class="rd-section-heading rd-section-heading--with-controls">
       <div>
         <p class="rd-kicker">Publication architecture</p>
-        <h2 id="rd-articles-title">Seventeen articles—public working manuscripts and the book’s evidence base</h2>
+        <h2 id="rd-articles-title">Nineteen articles—public working manuscripts and the book’s evidence base</h2>
         <p>The landing page remains the map, while every linked DRAFT is a live public manuscript with its central argument, evidence, objections, and falsifiers. The website is intended to carry roughly 60–70 percent of the eventual book’s substance; the book will add archival depth, interviews, extended cases, technical appendices, and larger-format visual analysis.</p>
       </div>
       <div class="rd-article-filters" role="group" aria-label="Filter articles by status">

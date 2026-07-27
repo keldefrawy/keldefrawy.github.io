@@ -1,5 +1,5 @@
 {% assign rd_map = include.map %}
-<figure class="rd-article-argument-map" aria-labelledby="rd-article-argument-map-title-{{ page.article_number }}">
+<figure class="rd-article-argument-map" data-node-count="{{ rd_map.nodes.size }}" aria-labelledby="rd-article-argument-map-title-{{ page.article_number }}">
   <header>
     <p class="rd-kicker">{{ rd_map.kicker | default: "Argument map" }}</p>
     <h2 id="rd-article-argument-map-title-{{ page.article_number }}">{{ rd_map.title }}</h2>

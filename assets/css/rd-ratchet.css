@@ -585,6 +585,35 @@
   line-height: 1.5 !important;
 }
 
+.rd-pathway-note {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.65fr) minmax(25rem, 1.35fr);
+  gap: 0.65rem clamp(1.5rem, 5vw, 4rem);
+  margin-top: 1.5rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
+  border-left: 0.35rem solid var(--rd-future);
+  background: linear-gradient(135deg, rgba(81, 69, 205, 0.09), #ffffff 72%);
+}
+
+.rd-pathway-note .rd-kicker,
+.rd-pathway-note h3 { grid-column: 1; }
+
+.rd-pathway-note h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.12;
+}
+
+.rd-pathway-note > p:not(.rd-kicker) {
+  grid-column: 2;
+  margin: 0;
+  color: var(--rd-muted);
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+
+.rd-pathway-note > p + p { margin-top: 0.65rem; }
+
 .rd-chart-shell,
 .rd-trend,
 .rd-map-shell,
@@ -1577,6 +1606,7 @@
 .rd-article-evidence-chart__bar--green { background: var(--rd-green); }
 .rd-article-evidence-chart__bar--amber { background: var(--rd-amber); }
 .rd-article-evidence-chart__bar--navy { background: var(--rd-navy); }
+.rd-article-evidence-chart__bar--violet { background: var(--rd-future); }
 
 .rd-article-evidence-chart__row > small {
   grid-column: 2;
@@ -1607,6 +1637,17 @@
   list-style: none;
 }
 
+.rd-article-argument-map[data-node-count="5"] {
+  min-width: 0;
+}
+
+.rd-article-argument-map[data-node-count="5"] > ol {
+  box-sizing: border-box;
+  width: 100%;
+  grid-template-columns: repeat(5, 11.75rem);
+  overflow-x: auto;
+}
+
 .rd-article-argument-map > ol > li {
   position: relative;
   display: flex;
@@ -1621,6 +1662,7 @@
 .rd-article-argument-map > ol > li:nth-child(2) { border-top-color: var(--rd-amber); }
 .rd-article-argument-map > ol > li:nth-child(3) { border-top-color: var(--rd-green); }
 .rd-article-argument-map > ol > li:nth-child(4) { border-top-color: var(--rd-navy); }
+.rd-article-argument-map > ol > li:nth-child(5) { border-top-color: var(--rd-future); }
 
 .rd-article-argument-map > ol > li:not(:last-child)::after {
   position: absolute;
@@ -2011,6 +2053,10 @@
   .rd-objection-ladder > header { min-height: 0; padding-bottom: 1.35rem; }
   .rd-concept-grid { grid-template-columns: 1fr; }
   .rd-colleague-note { grid-template-columns: 1fr; gap: 1rem; }
+  .rd-pathway-note { grid-template-columns: 1fr; }
+  .rd-pathway-note .rd-kicker,
+  .rd-pathway-note h3,
+  .rd-pathway-note > p:not(.rd-kicker) { grid-column: 1; }
 }
 
 @media (max-width: 680px) {

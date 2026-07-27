@@ -59,9 +59,9 @@ chart = data.fetch("rd_chart")
 timeline = data.fetch("timeline")
 core_concepts = data.fetch("core_concepts")
 
-errors << "the editorial arc must contain seventeen articles" unless articles.length == 17
+errors << "the editorial arc must contain nineteen articles" unless articles.length == 19
 errors << "the article count in series metadata is stale" unless series.fetch("article_count") == articles.length
-errors << "article numbers must be exactly 1 through 17" unless articles.map { |item| item.fetch("number") } == (1..17).to_a
+errors << "article numbers must be consecutive and match series metadata" unless articles.map { |item| item.fetch("number") } == (1..series.fetch("article_count")).to_a
 errors << "article slugs must be unique" unless articles.map { |item| item.fetch("slug") }.uniq.length == articles.length
 errors << "every article needs at least three planned visuals" unless articles.all? { |item| item.fetch("visuals").length >= 3 }
 allowed_statuses = %w[planned researching published revised withdrawn]
@@ -110,6 +110,22 @@ if cargo_cult_article
   errors << "the AI cargo-cult-science article must be in research while its draft is public" unless cargo_cult_article.fetch("status") == "researching"
   errors << "the AI cargo-cult-science claim must distinguish scientific form from contact with truth" unless cargo_cult_article.fetch("claim").include?("surface form") && cargo_cult_article.fetch("claim").include?("contact with truth")
   errors << "the AI cargo-cult-science article must connect institutional standards to AI outcomes" unless cargo_cult_article.fetch("claim").include?("epistemic standards")
+end
+
+system_worked_article = articles.find { |article| article.fetch("slug") == "system-worked-compared-with-what" }
+errors << "the achievement-versus-efficiency article is missing" unless system_worked_article
+if system_worked_article
+  errors << "the achievement-versus-efficiency article must be in research while its draft is public" unless system_worked_article.fetch("status") == "researching"
+  errors << "the achievement-versus-efficiency claim must preserve the counterfactual boundary" unless system_worked_article.fetch("claim").include?("counterfactual efficiency")
+  errors << "the achievement-versus-efficiency claim must test institutional sustainability" unless system_worked_article.fetch("claim").include?("sustainability")
+end
+
+boundary_article = articles.find { |article| article.fetch("slug") == "do-not-restart-at-every-boundary" }
+errors << "the early-career compounding-path article is missing" unless boundary_article
+if boundary_article
+  errors << "the early-career compounding-path article must be in research while its draft is public" unless boundary_article.fetch("status") == "researching"
+  errors << "the early-career article must preserve the durable-question spine" unless boundary_article.fetch("claim").include?("durable question")
+  errors << "the early-career article must assign bridge costs to institutions" unless boundary_article.fetch("claim").include?("must pay for the bridges")
 end
 
 source_ids = sources.map { |source| source.fetch("id") }
@@ -167,7 +183,8 @@ errors << "landing page omits the visible note to colleagues" unless page.includ
 errors << "landing page omits the shared analytical vocabulary" unless page.include?('id="concepts"') && page.include?("rd-concept-grid")
 errors << "landing page cannot filter published articles" unless page.include?('data-rd-article-filter="available"')
 errors << "landing page cannot retain withdrawal records" unless page.include?('data-rd-article-filter="withdrawn"')
-errors << "landing page article heading must state seventeen articles" unless page.include?("Seventeen articles")
+errors << "landing page article heading must state nineteen articles" unless page.include?("Nineteen articles")
+errors << "landing page must state the loss of the author's developmental ecosystem without making the person the unit of value" unless page.include?("ecosystem that developed someone like me") && page.include?("claim about the pathway") && page.include?("loss to the United States and the world")
 errors << "unpublished article previews are not linked when rendered" unless page.include?('site.rd_articles | where: "article_slug", article.slug') && page.include?("rd_article_page.url")
 errors << "AI-native laboratory nodes must expose their positions to CSS" unless page.include?('data-position="{{ node.position }}"')
 errors << "AI-native laboratory core must use the distinct future color" unless style.match?(/\.rd-brain-node\[data-position="core"\][^\{]*\{[^\}]*background:\s*var\(--rd-future\);/m)
@@ -274,7 +291,7 @@ if File.file?(RENDERED_PATH)
   errors << "rendered page does not load the series stylesheet" unless rendered.include?("/assets/css/rd-ratchet.css")
   errors << "rendered page does not load the interaction script" unless rendered.include?("/assets/js/rd-ratchet.js")
   errors << "rendered chart table lost its 2000 values" unless rendered.include?("<tr><th>2000</th><td>57.8</td><td>77.7</td><td>233.0</td></tr>")
-  errors << "rendered page does not contain seventeen article cards" unless rendered.scan("data-rd-article-card").length == 17
+  errors << "rendered page does not contain nineteen article cards" unless rendered.scan("data-rd-article-card").length == 19
   errors << "rendered landing page omits the note to colleagues" unless rendered.include?('class="rd-colleague-note"')
   researching_articles = articles.select { |article| article.fetch("status") == "researching" }
   errors << "every in-research article must expose a DRAFT link" unless rendered.scan(">DRAFT</a>").length == researching_articles.length
@@ -306,4 +323,4 @@ if errors.any?
   exit 1
 end
 
-puts "R&D Ratchet audit passed (17 articles, #{models.length} models, #{nodes.length} argument nodes, #{sources.length} sources)."
+puts "R&D Ratchet audit passed (#{articles.length} articles, #{models.length} models, #{nodes.length} argument nodes, #{sources.length} sources)."
