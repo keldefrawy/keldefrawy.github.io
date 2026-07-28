@@ -141,9 +141,9 @@ timeline:
     note: Spun out from SRI in 2021 to carry selected research into product, procurement, customers, and company survival.
   - year: "2022"
     label: Confidencial.io Seed Financing
-    kind: document
+    kind: memory
     source_id: sri-confidencial-announcement-2022
-    note: SRI's June announcement documents seed investors and the private-beta launch; it is not the spinout date.
+    note: Firsthand participation as Confidencial.io co-founder; SRI's June announcement independently documents the seed investors and private-beta launch, and is not the spinout date.
   - year: "2023"
     label: PARC Joins SRI
     kind: memory

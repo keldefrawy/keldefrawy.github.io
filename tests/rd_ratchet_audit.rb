@@ -95,6 +95,7 @@ errors << "the successor model is missing" unless models.any? { |model| model.fe
 errors << "the AI-native map must have one core" unless brain_nodes.count { |node| node.fetch("position") == "core" } == 1
 errors << "the firsthand timeline omits Ericsson in Sweden in 2000" unless timeline.any? { |event| event.fetch("year") == "2000" && event.fetch("label").include?("Ericsson") && event.fetch("note").include?("Linköping") && event.fetch("note").include?("Kista") }
 errors << "the firsthand timeline omits Cisco Systems in San Jose in 2002" unless timeline.any? { |event| event.fetch("year") == "2002" && event.fetch("label").include?("Cisco") && event.fetch("note").include?("San Jose") }
+errors << "the Confidencial.io seed financing must be firsthand and document-corroborated" unless timeline.any? { |event| event.fetch("year") == "2022" && event.fetch("label") == "Confidencial.io Seed Financing" && event.fetch("kind") == "memory" && event.fetch("source_id") == "sri-confidencial-announcement-2022" && event.fetch("note").include?("co-founder") }
 
 ai_audit_article = articles.find { |article| article.fetch("slug") == "ai-audits-scientific-record" }
 errors << "the AI scientific-audit article is missing" unless ai_audit_article
