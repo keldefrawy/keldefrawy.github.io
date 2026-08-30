@@ -35,9 +35,9 @@ Each entry lists its verified publisher or proceedings page, public archive or e
 
 ## 2026
 
-75- Karim Eldefrawy, "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)", under review at the 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026). {% include chronological-publication-resources.html publication_id=79 %}
+75- Karim Eldefrawy, "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)", accepted at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning. {% include chronological-publication-resources.html publication_id=79 %}
 
-74- Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, Gene Tsudik, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)", accepted for the Regular Academic Track at the 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026). {% include chronological-publication-resources.html publication_id=74 %}
+74- Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, Gene Tsudik, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services", accepted at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning. {% include chronological-publication-resources.html publication_id=74 %}
 
 
 ## 2025

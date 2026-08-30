@@ -982,7 +982,7 @@ sources:
     title: "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)"
     organization: Karim Eldefrawy
     date: "2026"
-    kind: Author-supplied abstract for work under review
+    kind: Author-supplied abstract for accepted paper
     url: https://keldefrawy.github.io/knowledge/papers/paper-79/
     supports: The author's reported calibration-closure results for several model-composition operators, the limits of those results before independent manuscript audit, and the distinction between unsupported model confidence and a checkable witness
   - id: nasem-telecom-research-2006

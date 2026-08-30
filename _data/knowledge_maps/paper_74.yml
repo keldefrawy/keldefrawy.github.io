@@ -10,15 +10,15 @@ stage: mapped_draft
 contribution_type_vocabulary_version: "0.1"
 contribution_types: [protocol, scheme]
 
-title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
+title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
 short_title: "Private Identity-Based Bulletin Boards"
 year: 2026
-venue: "10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026)"
+venue: "10th International Symposium on Cybersecurity, Cryptography, and Machine Learning"
 venue_url: "https://www.cscml.org/"
 publication_status: "Accepted"
 topic: privacy-identity
 labels: [Theory, Applied, System, Implementation]
-availability: "Accepted for the Regular Academic Track at CSCML 2026; the public manuscript is available as IACR ePrint 2026/1611 and as an author-hosted PDF."
+availability: "Accepted at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning; the public manuscript is available as IACR ePrint 2026/1611 and as an author-hosted PDF."
 abstract_kind: Full paper abstract
 abstract_review_status: extracted_from_checked_in_pdf
 abstract_added_at: "2026-07-11"
@@ -61,7 +61,7 @@ curation:
 sources:
   - id: source-paper-74-author-pdf
     type: author_hosted_copy
-    title: "Author-hosted manuscript for “Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)” by Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, and Gene Tsudik"
+    title: "Author-hosted manuscript for “Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services” by Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, and Gene Tsudik"
     url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf
     media_type: application/pdf
     sha256: 05579c33303df2bbbab58bcb627c8a7ee717fd22a2a802755e1199ab69f4a265
@@ -69,7 +69,7 @@ sources:
     provenance_category: author
   - id: source-paper-74-curated
     type: curated_site_record
-    title: "Website publication record for “Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)” by Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, and Gene Tsudik"
+    title: "Website publication record for “Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services” by Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, and Gene Tsudik"
     url: /publications/#paper-74
     scope_note: Author-supplied acceptance status and local editorial record.
   - id: source-paper-74-eprint
@@ -459,7 +459,7 @@ nodes:
     epistemic_status: accepted_peer_reviewed
     title: External scrutiny
     summary: >-
-      The author confirms acceptance to the CSCML 2026 Regular Academic Track, and IACR ePrint 2026/1611 provides a stable public manuscript record. Public review reports, rebuttal, independent cryptographic audit, reproduction, correction, and adversarial follow-up are not represented.
+      The author confirms acceptance at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning, and IACR ePrint 2026/1611 provides a stable public manuscript record. Public review reports, rebuttal, independent cryptographic audit, reproduction, correction, and adversarial follow-up are not represented.
     source_anchor_ids: [anchor-paper-74-status, anchor-paper-74-eprint]
 
 relations:
@@ -557,7 +557,7 @@ assessment:
     - id: external_scrutiny
       level: medium
       rationale: >-
-        Acceptance to the CSCML 2026 Regular Academic Track establishes a completed venue-level review outcome. Public review reports, rebuttal, independent cryptographic audit, reproduction, and correction history were not located.
+        Acceptance at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning establishes a completed venue-level review outcome. Public review reports, rebuttal, independent cryptographic audit, reproduction, and correction history were not located.
       basis_source_anchor_ids: [anchor-paper-74-status]
     - id: reception
       level: low

@@ -249,7 +249,7 @@ scenes:
       - id: science-cipher-paper-74
         publication_id: 74
         label: "Private identity-based bulletin boards"
-        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
+        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
         url: /knowledge/papers/paper-74/
         note: Uses searchable hierarchical identity-based encryption, bilinear maps, and private information retrieval.
       - id: science-cipher-paper-62
@@ -992,7 +992,7 @@ scenes:
       - id: collaborators-paper-74
         publication_id: 74
         label: "Private identity-based bulletin boards"
-        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"
+        title: "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"
         url: /knowledge/papers/paper-74/
       - id: collaborators-paper-77
         publication_id: 77

@@ -187,7 +187,7 @@ Witnesses are domain-specific:
 
 Here the benchmark is not a census of mathematical reliability or an audit of published literature. It isolates the form/checker boundary: fluent mathematical text and a checker-accepted proof object are different evidence states.
 
-My own work under review on composed generative models belongs in the weakest evidence class here. [The author-supplied record](#source-karim-composed-model-hallucinations) reports calibration-closure results for several composition operators, suggesting that combining models in natural ways does not automatically escape a hallucination floor. Until the manuscript and proof are independently audited, it is provisional evidence, not an established theorem. Its useful boundary is constructive: a checkable witness changes the evidence state; another confident model opinion may not. <span class="rd-evidence-token" data-evidence="D">D</span>
+My own accepted short paper on composed AI workflows belongs in the weakest evidence class here. [The author-supplied record](#source-karim-composed-model-hallucinations) reports calibration-closure results for several composition operators, suggesting that combining models in natural ways does not automatically escape a hallucination floor. Until the manuscript and proof are independently audited, it is provisional evidence, not an established theorem. Its useful boundary is constructive: a checkable witness changes the evidence state; another confident model opinion may not. <span class="rd-evidence-token" data-evidence="D">D</span>
 
 ## A multiplicative diagnostic
 

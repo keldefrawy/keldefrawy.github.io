@@ -35,7 +35,7 @@ current_work_mapping = {
   77 => [76, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay"],
   76 => [75, "Decomposable MPC with Security Against Malicious Adversaries"],
   75 => [79, "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)"],
-  74 => [74, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"]
+  74 => [74, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services"]
 }
 current_work_mapping.each do |display_number, (catalog_id, title)|
   line = chronological.lines.find { |candidate| candidate.start_with?("#{display_number}-") }

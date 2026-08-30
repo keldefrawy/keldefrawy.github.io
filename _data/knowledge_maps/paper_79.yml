@@ -13,16 +13,16 @@ contribution_types: []
 title: "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)"
 short_title: "Calibration and False-Claim Accounting"
 year: 2026
-venue: "10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026)"
+venue: "10th International Symposium on Cybersecurity, Cryptography, and Machine Learning"
 venue_url: "https://www.cscml.org/"
-publication_status: "Under review"
+publication_status: "Accepted"
 topic: ai-machine-learning
 labels:
   - "Theory"
 ai_ml_labels:
   - "Foundations"
   - "AI for security"
-availability: "Public manuscript not yet linked; an author-supplied abstract and the CSCML 2026 venue website are represented."
+availability: "Accepted at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning; a public manuscript is not yet linked."
 abstract_kind: "Author-supplied abstract"
 abstract_review_status: author_supplied_not_manuscript_audited
 abstract_added_at: "2026-07-11"
@@ -66,7 +66,7 @@ sources:
     type: curated_site_record
     title: "Website publication record for “Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)” by Karim Eldefrawy"
     url: /publications/#paper-79
-    scope_note: "Author-supplied title, authorship, under-review status, venue, and topical characterization, plus an AI editorial summary. Technical claims are grounded separately in the author-supplied abstract."
+    scope_note: "Author-supplied title, authorship, acceptance status, venue, and topical characterization, plus an AI editorial summary. Technical claims are grounded separately in the author-supplied abstract."
   - id: source-paper-79-author-abstract
     type: author_supplied_abstract
     title: "Author-supplied abstract for “Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)” by Karim Eldefrawy"
@@ -102,7 +102,7 @@ source_anchors:
   - id: anchor-paper-79-citations
     source_id: source-paper-79-citation-search
     label: Dated exact-title citation search
-    locator: No citing work was verifiably located for the renamed under-review manuscript when searched 2026-08-30
+    locator: No citing work was verifiably located for the renamed accepted paper when searched 2026-08-30
     url: "https://www.google.com/search?q=%22Calibration+and+False-Claim+Accounting+in+Composed+AI+Workflows%22"
 
 nodes:
@@ -302,9 +302,9 @@ nodes:
     kind: scrutiny
     parent_id: paper-79
     order: 8
-    epistemic_status: publication_status_reported_not_independently_audited
+    epistemic_status: accepted_peer_reviewed
     title: "Scrutiny and status"
-    summary: "The work is described as under review. That records a pending process, not acceptance, a completed review outcome, or validation; no review report, reproduction, correction, or adversarial analysis is represented."
+    summary: "The author confirms acceptance at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning. Public review reports, independent reproduction, correction, and adversarial analysis are not represented."
     source_anchor_ids: [anchor-paper-79-curated, anchor-paper-79-venue]
 
 relations:
@@ -414,15 +414,15 @@ assessment:
       basis_source_anchor_ids: [anchor-paper-79-author-abstract, anchor-paper-79-venue]
     - id: production_provenance
       level: medium
-      rationale: "The record documents named authorship and the publication or review status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
+      rationale: "The record documents named authorship and the accepted status of the paper, establishing a baseline human and lifecycle provenance trail. Contributor roles, revision and effort history, AI or tool use, artifact-version lineage, and explicit final approval have not yet been audited, so this provisional medium rating should not be read as complete production provenance."
       basis_source_anchor_ids: [anchor-paper-79-curated, anchor-paper-79-author-abstract]
     - id: external_scrutiny
-      level: low
-      rationale: "Under-review status records a pending process. No acceptance, completed review outcome, public review report, independent reproduction, correction, or adversarial analysis is represented."
+      level: medium
+      rationale: "Acceptance at the 10th International Symposium on Cybersecurity, Cryptography, and Machine Learning establishes a completed venue-level review outcome. Public review reports, independent reproduction, correction, and adversarial analysis are not represented."
       basis_source_anchor_ids: [anchor-paper-79-curated]
     - id: reception
       level: low
-      rationale: "A dated exact-title scholarly-web search located 0 citations for the renamed under-review manuscript. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; this may change after dissemination."
+      rationale: "A dated exact-title scholarly-web search located 0 citations for the renamed accepted paper. Under the author-defined rule, 0–8 located citations is Low, 9–10 is Medium, and 11 or more is High; this may change after dissemination."
       basis_source_anchor_ids: [anchor-paper-79-citations]
     - id: contribution_significance
       level: medium
@@ -435,4 +435,4 @@ reception_snapshot:
   citation_count: 0
   source_url: "https://www.google.com/search?q=%22Calibration+and+False-Claim+Accounting+in+Composed+AI+Workflows%22"
   signals: []
-  limitation: "The work is under review and no manuscript or index record is public. Zero means no verifiable citation was located in this dated exact-title search, not that future or unindexed references are impossible."
+  limitation: "The paper is accepted, but no manuscript or index record is public. Zero means no verifiable citation was located in this dated exact-title search, not that future or unindexed references are impossible."
