@@ -15,10 +15,10 @@ short_title: "Private Identity-Based Bulletin Boards"
 year: 2026
 venue: "10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026)"
 venue_url: "https://www.cscml.org/"
-publication_status: "Under review"
+publication_status: "Accepted"
 topic: privacy-identity
 labels: [Theory, Applied, System, Implementation]
-availability: "An author-hosted manuscript PDF is available on this site; the work remains under review at CSCML 2026."
+availability: "Accepted for the Regular Academic Track at CSCML 2026; the public manuscript is available as IACR ePrint 2026/1611 and as an author-hosted PDF."
 abstract_kind: Full paper abstract
 abstract_review_status: extracted_from_checked_in_pdf
 abstract_added_at: "2026-07-11"
@@ -71,7 +71,13 @@ sources:
     type: curated_site_record
     title: "Website publication record for “Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)” by Karim Eldefrawy, Stanislaw Jarecki, Benjamin Terner, and Gene Tsudik"
     url: /publications/#paper-74
-    scope_note: Author-supplied bibliographic status and local editorial record.
+    scope_note: Author-supplied acceptance status and local editorial record.
+  - id: source-paper-74-eprint
+    type: public_preprint_archive
+    title: "IACR Cryptology ePrint Archive 2026/1611: Private Identity-based Bulletin Boards for Anonymous Messaging and Other Online Services"
+    url: https://eprint.iacr.org/2026/1611
+    accessed_at: "2026-08-30"
+    scope_note: Stable public manuscript record with title, authorship, abstract, and revision metadata.
   - id: source-paper-74-citation-search
     type: citation_search_snapshot
     title: Exact-title scholarly-web search
@@ -151,9 +157,14 @@ source_anchors:
     url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=42
   - id: anchor-paper-74-status
     source_id: source-paper-74-curated
-    label: Under-review status
-    locator: Website publication record accessed 2026-07-11
+    label: Accepted status
+    locator: Author-confirmed CSCML 2026 acceptance recorded on the website 2026-08-30
     url: /publications/#paper-74
+  - id: anchor-paper-74-eprint
+    source_id: source-paper-74-eprint
+    label: Public ePrint manuscript and bibliographic record
+    locator: IACR Cryptology ePrint Archive report 2026/1611
+    url: https://eprint.iacr.org/2026/1611
   - id: anchor-paper-74-citations
     source_id: source-paper-74-citation-search
     label: Dated exact-title citation search
@@ -165,7 +176,7 @@ nodes:
     kind: paper
     parent_id: null
     order: 1
-    epistemic_status: under_review_manuscript
+    epistemic_status: accepted_manuscript
     title: Private Identity-Based Bulletin Boards
     summary: >-
       A theory-and-systems paper defining metadata-private identity-based bulletin boards, constructing the required searchable-encryption and retrieval protocols, proving privacy under explicit leakage and non-collusion assumptions, and evaluating a functional prototype.
@@ -445,11 +456,11 @@ nodes:
     kind: scrutiny
     parent_id: paper-74
     order: 12
-    epistemic_status: under_review
+    epistemic_status: accepted_peer_reviewed
     title: External scrutiny
     summary: >-
-      The site records the manuscript as under review. No acceptance, public review report, rebuttal, independent cryptographic audit, reproduction, correction, or adversarial follow-up is represented.
-    source_anchor_ids: [anchor-paper-74-status]
+      The author confirms acceptance to the CSCML 2026 Regular Academic Track, and IACR ePrint 2026/1611 provides a stable public manuscript record. Public review reports, rebuttal, independent cryptographic audit, reproduction, correction, and adversarial follow-up are not represented.
+    source_anchor_ids: [anchor-paper-74-status, anchor-paper-74-eprint]
 
 relations:
   - id: paper-74-relation-answer-question
@@ -522,42 +533,42 @@ relations:
     to_id: paper-74-evidence-pir
 
 assessment:
-  id: paper-74-assessment-2026-07-11
+  id: paper-74-assessment-2026-08-30
   rubric_version: "0.2"
-  assessed_at: "2026-07-11"
+  assessed_at: "2026-08-30"
   status: ai_draft_author_review_pending
   note: These dimensions describe documented support and process, not truth, correctness, or a universal ranking. No composite score is calculated.
   axes:
     - id: epistemic_evidence
       level: high
       rationale: >-
-        The full manuscript defines the primitive and leakage model, gives concrete constructions, states and proves component and composed privacy results, exhibits a motivating attack, analyzes asymptotic cost, and reports repeated prototype measurements. The work is under review, code and raw data are not yet linked, and no independent proof audit or reproduction was located.
-      basis_source_anchor_ids: [anchor-paper-74-hibesc-definition, anchor-paper-74-security, anchor-paper-74-pib-proof, anchor-paper-74-experiments]
+        The full manuscript defines the primitive and leakage model, gives concrete constructions, states and proves component and composed privacy results, exhibits a motivating attack, analyzes asymptotic cost, and reports repeated prototype measurements. The paper is accepted and publicly archived as IACR ePrint 2026/1611; code and raw data are not yet linked, and no independent proof audit or reproduction was located.
+      basis_source_anchor_ids: [anchor-paper-74-hibesc-definition, anchor-paper-74-security, anchor-paper-74-pib-proof, anchor-paper-74-experiments, anchor-paper-74-eprint]
     - id: auditability
       level: high
       rationale: >-
-        A complete checked-in author manuscript with recorded SHA-256 and page count, precise source anchors, full definitions and proofs, and detailed experiment tables makes the represented claims directly inspectable. Code, scripts, and raw measurements remain unavailable.
-      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-security, anchor-paper-74-experiments]
+        A complete checked-in author manuscript with recorded SHA-256 and page count, a stable IACR ePrint record, precise source anchors, full definitions and proofs, and detailed experiment tables makes the represented claims directly inspectable. Code, scripts, and raw measurements remain unavailable.
+      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-security, anchor-paper-74-experiments, anchor-paper-74-eprint]
     - id: production_provenance
       level: medium
       rationale: >-
-        Named authorship, affiliations, checked-in manuscript identity, and under-review lifecycle status establish baseline provenance. Contributor roles, revision history, tool use, code-version lineage, and final publication approval are not documented.
-      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-status]
+        Named authorship, affiliations, checked-in manuscript identity, IACR archive identity, and accepted lifecycle status establish baseline provenance. Contributor roles, revision history, tool use, code-version lineage, and final proceedings publication are not documented.
+      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-status, anchor-paper-74-eprint]
     - id: external_scrutiny
-      level: low
+      level: medium
       rationale: >-
-        The manuscript is under review and no completed independent review outcome is represented. Public review reports, rebuttal, cryptographic audit, reproduction, and correction history were not located.
+        Acceptance to the CSCML 2026 Regular Academic Track establishes a completed venue-level review outcome. Public review reports, rebuttal, independent cryptographic audit, reproduction, and correction history were not located.
       basis_source_anchor_ids: [anchor-paper-74-status]
     - id: reception
       level: low
       rationale: >-
-        A dated exact-title scholarly-web search located 0 citations for this under-review manuscript. Under the author-defined corpus rule, 0 through 8 located citations is Low; this may change after stable publication and indexing.
+        A dated exact-title scholarly-web search located 0 citations on 2026-07-11. That snapshot predates the CSCML 2026 acceptance and IACR ePrint 2026/1611 posting; under the author-defined corpus rule, 0 through 8 located citations is Low.
       basis_source_anchor_ids: [anchor-paper-74-citations]
     - id: contribution_significance
       level: medium
       rationale: >-
-        The work combines a new identity-discovery primitive, a formally analyzed distributed bulletin-board construction, a single-server impossibility-motivating attack, and a functioning prototype for a difficult communication setting. Priority, adoption, peer-review outcome, and broader field impact remain unverified.
-      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-single-server, anchor-paper-74-experiments]
+        The work combines a new identity-discovery primitive, a formally analyzed distributed bulletin-board construction, a single-server impossibility-motivating attack, and a functioning prototype for a difficult communication setting. Priority, adoption, and broader field impact remain unverified.
+      basis_source_anchor_ids: [anchor-paper-74-abstract, anchor-paper-74-single-server, anchor-paper-74-experiments, anchor-paper-74-status]
 
 reception_snapshot:
   as_of: "2026-07-11"
@@ -565,4 +576,4 @@ reception_snapshot:
   citation_count: 0
   source_url: "https://www.google.com/search?q=%22Private+Identity-Based+Bulletin+Boards+for+Anonymous+Messaging+and+Other+Online+Services%22"
   signals: []
-  limitation: "The paper is under review and may not yet have a stable public scholarly identity; zero means no verifiable citation was located in this dated search, not that future or unindexed citations are impossible."
+  limitation: "This snapshot predates the CSCML 2026 acceptance and IACR ePrint 2026/1611 record added in August 2026; zero means no verifiable citation was located in the dated search, not that later or unindexed citations are impossible."

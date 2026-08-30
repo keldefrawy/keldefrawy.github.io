@@ -9,7 +9,7 @@
   labels: [Theory]
   contribution_types: []
   ai_ml_labels: [Foundations, AI for security]
-  title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
+  title: "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)"
   authors: "Karim Eldefrawy"
   tags: ["generative models", "model composition", "hallucinations", "cybersecurity AI"]
   availability: Public manuscript not yet linked; an author-supplied abstract and the CSCML 2026 venue website are represented.
@@ -88,7 +88,7 @@
 
 - id: 74
   year: 2026
-  status: Under review
+  status: Accepted
   venue: 10th International Symposium on Cyber Security, Cryptology and Machine Learning (CSCML 2026)
   venue_url: https://www.cscml.org/
   topic: privacy-identity
@@ -101,7 +101,7 @@
   abstract_added_at: "2026-07-11"
   abstract_note: "Transcribed from the checked-in author manuscript; mathematical notation was normalized to plain Unicode, and only typography, discretionary hyphenation, and line-break artifacts were otherwise normalized. The source typo 'independet' is retained."
   abstract_source_url: "/pubs/2026/private-identity-bulletin-boards-cscml2026.pdf#page=1"
-  availability: "An author-hosted manuscript PDF is available on this site; the work remains under review at CSCML 2026."
+  availability: "Accepted for the Regular Academic Track at CSCML 2026; the public manuscript is available as IACR ePrint 2026/1611 and as an author-hosted PDF."
   abstract: >-
     Secure and anonymous messaging has many compelling use-cases and is becoming increasingly popular. In this paper, we consider it in the context of delay-and-disruption-prone networks, which are characterized by handicapped network access, disrupted operation, censorship, and intermittent network outages. With such settings in mind, we define and design a Private Identity-Based Bulletin Board (PIB³) scheme, which allows users to anonymously post and retrieve messages to and from a distributed database, and supports communication between users without pre-established setup or pre-exchanged keys. Anyone can encrypt a message for an identity and public epoch, such that only the party with the decryption key for that identity can identify, retrieve, and decrypt the message. Against one corrupted non-colluding PIB³ server, the server learns neither the recipient identity nor the retrieved record indices beyond the leakage explicitly modeled by the scheme: the public epoch, the database size, and the number of retrievals made by the receiver. If retrieval-count privacy is required, retrievals can be padded to a fixed bound. The multi-server construction extends this guarantee to larger server sets, and gives coalition privacy whenever the underlying multi-server PIR scheme is private against the corresponding coalition. Contributions of this work are: (1) formally defining functionality and security requirements for PIB³-s, (2) defining and constructing a Hierarchical Identity-Based Encryption (HIBE) scheme with searchable ciphertexts, which serves as a building block for the proposed PIB³ scheme and may be of independet interest, (3) designing an efficient PIB³ scheme that can be realized with n ≥ 2 servers based on the HIBE scheme with searchable ciphertexts combined with additional primitives, and (4) implementing a functional PIB³ prototype which demonstrates practicality of the entire concept and allows us to assess its performance empirically.
   tags: ["anonymous messaging", "delay-and-disruption-prone networks", "identity-based encryption", "private information retrieval", "searchable ciphertexts"]

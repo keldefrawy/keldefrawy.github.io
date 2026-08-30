@@ -29,7 +29,9 @@
   author: []
 - id: 74
   official: []
-  archive: []
+  archive:
+  - label: IACR ePrint
+    url: https://eprint.iacr.org/2026/1611
   author:
   - label: Local author PDF
     url: /pubs/2026/private-identity-bulletin-boards-cscml2026.pdf

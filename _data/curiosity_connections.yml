@@ -1195,8 +1195,8 @@ scenes:
     papers:
       - id: machines-paper-79
         publication_id: 79
-        label: "Composing generative models and hallucination"
-        title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
+        label: "Calibration and false-claim accounting"
+        title: "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)"
         url: /knowledge/papers/paper-79/
       - id: machines-paper-47
         publication_id: 47

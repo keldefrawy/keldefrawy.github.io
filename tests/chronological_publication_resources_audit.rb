@@ -34,7 +34,7 @@ current_work_mapping = {
   78 => [77, "Towards Further Realizing Random Oracles: Post-Quantum Non-Malleable Point Obfuscation"],
   77 => [76, "PRISM: PRivacy-preserving Intrusion-resilient Secure Multiparty-computation-based Messaging-overlay"],
   76 => [75, "Decomposable MPC with Security Against Malicious Adversaries"],
-  75 => [79, "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"],
+  75 => [79, "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)"],
   74 => [74, "Private Identity-Based Bulletin Boards for Anonymous Messaging and Other Online Services (Regular Academic Track Paper)"]
 }
 current_work_mapping.each do |display_number, (catalog_id, title)|

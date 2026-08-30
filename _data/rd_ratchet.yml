@@ -979,7 +979,7 @@ sources:
     url: https://doi.org/10.1145/3595860
     supports: A prior explicit application of Feynman's cargo-cult-science critique to language models and the distinction between generating convincing forms and conducting falsifiable scientific inquiry
   - id: karim-composed-model-hallucinations
-    title: "Can Composing Generative Models Avoid Hallucinations? Implications for Cybersecurity Use Cases"
+    title: "Calibration and False-Claim Accounting in Composed AI Workflows (Short Paper)"
     organization: Karim Eldefrawy
     date: "2026"
     kind: Author-supplied abstract for work under review
