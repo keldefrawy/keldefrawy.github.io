@@ -12,7 +12,7 @@ checks = {
     homepage.include?(%(<a href="{{ '/pubs.html' | relative_url }}"><strong>{{ site.data.publications | size }}</strong>)),
   "puts the chronological list first in the publications card" =>
     homepage.include?(chronological_link) &&
-      homepage.index(chronological_link) < homepage.index("[Patents (31)]"),
+      homepage.index(chronological_link) < homepage.index("[Patents (32)]"),
   "separates direct lists from publication exploration" =>
     homepage.include?('class="home-card home-card--publication-exploration"') &&
       homepage.include?("## Explore Publications") &&

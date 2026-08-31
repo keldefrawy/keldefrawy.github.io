@@ -17,7 +17,7 @@ expected_patents = [
   ["Cryptographic Software", 3],
   ["Proactive Cryptography", 11],
   ["Private Search & Data", 6],
-  ["Secure Identity & Biometrics", 4],
+  ["Secure Identity & Biometrics", 5],
   ["Network & Cloud Defense", 7]
 ]
 
@@ -34,12 +34,12 @@ actual_patents = patent_topics.map { |topic| [topic.fetch("title"), topic.fetch(
 actual_projects = project_topics.map { |topic| [topic.fetch("title"), topic.fetch("count")] }
 errors << "patent topics or order changed" unless actual_patents == expected_patents
 errors << "project topics or order changed" unless actual_projects == expected_projects
-errors << "patent primary-topic counts must total 31" unless patent_topics.sum { |topic| topic.fetch("count") } == 31
+errors << "patent primary-topic counts must total 32" unless patent_topics.sum { |topic| topic.fetch("count") } == 32
 errors << "project primary-topic counts must total 12" unless project_topics.sum { |topic| topic.fetch("count") } == 12
 errors << "Private Ledgers must remain folded into the selected patent topics" if patent_topics.any? { |topic| topic.fetch("title") == "Private Ledgers" }
 
 {
-  "patents.md" => [patents_page, "/patents.html", "site.data.patent_topics", 31],
+  "patents.md" => [patents_page, "/patents.html", "site.data.patent_topics", 32],
   "projects.md" => [projects_page, "/projects.html", "site.data.project_topics", 12]
 }.each do |name, (source, permalink, data_reference, expected_entries)|
   errors << "#{name} lacks default-layout front matter" unless source.match?(/\A---\s*\n.*?layout:\s*default.*?\n---/m)
@@ -91,4 +91,4 @@ unless errors.empty?
   exit 1
 end
 
-puts "Research topic banner audit passed: 31 patents across 5 topics and 12 project awards across 6 topics."
+puts "Research topic banner audit passed: 32 patents across 5 topics and 12 project awards across 6 topics."

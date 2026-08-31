@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Patents
-description: Thirty-one granted U.S. patents spanning cryptographic software, proactive cryptography, private data, secure identity, biometrics, and network and cloud defense.
+description: Thirty-two granted U.S. patents spanning cryptographic software, proactive cryptography, private data, secure identity, biometrics, and network and cloud defense.
 permalink: /patents.html
 ---
 
 <article class="research-record-page research-record-page--patents">
   <header class="research-record-header">
-    <p class="research-record-header__eyebrow">Invention portfolio · 31 granted U.S. patents</p>
+    <p class="research-record-header__eyebrow">Invention portfolio · 32 granted U.S. patents</p>
     <h1>Patents</h1>
     <p>Granted inventions spanning cryptographic software, resilient computation, private data, identity, biometrics, and secure infrastructure.</p>
   </header>
@@ -16,6 +16,8 @@ permalink: /patents.html
 
   <section class="research-record patent-record" aria-labelledby="patent-record-title" markdown="1">
 <h2 id="patent-record-title">Granted Patents</h2>
+
+32- "Certificate-based encryption implemented with multiple encryption schemes" United States Patent Number [US12634130](https://patents.google.com/patent/US12634130B2/en)
 
 31- "Augmenting executables having cryptographic primitives" United States Patent Number [US11934538](https://patents.google.com/patent/US11934538B2/en)
 
