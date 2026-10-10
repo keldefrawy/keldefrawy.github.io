@@ -4169,10 +4169,10 @@ body.quick-abstract-dialog-open {
 
 .awards-timeline__list {
   display: grid;
-  grid-template-columns: repeat(7, minmax(8rem, 1fr));
+  grid-template-columns: repeat(var(--award-count, 7), minmax(8rem, 1fr));
   list-style: none;
   margin: 0;
-  min-width: 58rem;
+  min-width: calc(var(--award-count, 7) * 58rem / 7);
   padding: 0.3rem 0 0.2rem;
   position: relative;
 }
@@ -4182,9 +4182,9 @@ body.quick-abstract-dialog-open {
   border-radius: 999px;
   content: "";
   height: 3px;
-  left: calc(100% / 14);
+  left: calc(100% / (var(--award-count, 7) * 2));
   position: absolute;
-  right: calc(100% / 14);
+  right: calc(100% / (var(--award-count, 7) * 2));
   top: 3.5rem;
 }
 

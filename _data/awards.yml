@@ -52,4 +52,31 @@
   organization: Data Breakthrough Awards
   icon: file-check
   description: >-
-    [Data Solution of the Year for Legal](https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards) in the [7th Annual Data Breakthrough Awards](https://databreakthroughawards.com/2026-winners/) by the [CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/about-us/).
+    [Data Solution of the Year for Legal](https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards) in the [7th Annual Data Breakthrough Awards](https://databreakthroughawards.com/2026-winners/).
+
+- year: 2026
+  id: 2026-sinet16
+  short_title: SINET16 Honoree
+  title: SINET16 Honoree
+  organization: SINET
+  icon: lightbulb
+  description: >-
+    [SINET16 Honoree](https://www.prnewswire.com/news-releases/sinet-announces-the-2026-innovator-award-finalists-and-sinet16-honorees-innovator-to-be-named-october-8-302881918.html) by the [Security Innovation Network (SINET)](https://www.security-innovation.org/about-sinet/), a global community connecting emerging cybersecurity companies with industry and government security leaders and investors. The 16 honorees were selected from 158 applications across 10 countries.
+
+- year: 2026
+  id: 2026-momentum-ai
+  short_title: Momentum AI Winner
+  title: Thomson Reuters Momentum AI Startup Competition
+  organization: Thomson Reuters
+  icon: trophy
+  description: >-
+    Winner of the [Thomson Reuters Momentum AI Startup Competition](https://www.einpresswire.com/article/947489392/confidencial-wins-thomson-reuters-momentum-ai-pitch-competition). Confidencial was one of five companies invited to pitch live, selected from nearly 1,400 venture-backed enterprise AI startups.
+
+- year: 2026
+  id: 2026-overall-encryption
+  short_title: Overall Encryption Solution
+  title: Overall Encryption Solution of the Year
+  organization: CyberSecurity Breakthrough
+  icon: lock-keyhole
+  description: >-
+    [Overall Encryption Solution of the Year](https://www.confidencial.io/news/confidencial-named-overall-encryption-solution-of-the-year-2026) in the [2026 CyberSecurity Breakthrough Awards](https://cybersecuritybreakthrough.com/2026-winners/).

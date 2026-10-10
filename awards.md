@@ -28,14 +28,14 @@ permalink: /awards.html
       aria-label="Awards timeline, newest first, from 2026 back to 2008"
       tabindex="0"
     >
-      <ol class="awards-timeline__list">
+      <ol class="awards-timeline__list" style="--award-count: {{ awards_newest_first.size }};">
         {% for award in awards_newest_first %}
           <li class="awards-timeline__item">
             <time datetime="{{ award.year }}">{{ award.year }}</time>
             <span class="awards-timeline__marker" aria-hidden="true">
               {% include award-icon.html name=award.icon %}
             </span>
-            <a href="#award-{{ award.year }}">{{ award.short_title | escape }}</a>
+            <a href="#award-{{ award.id | default: award.year | escape }}">{{ award.short_title | escape }}</a>
             <span class="awards-timeline__organization">{{ award.organization | escape }}</span>
           </li>
         {% endfor %}
@@ -53,7 +53,7 @@ permalink: /awards.html
 
     <div class="awards-detail-list">
       {% for award in awards_newest_first %}
-        <article class="award-detail" id="award-{{ award.year }}">
+        <article class="award-detail" id="award-{{ award.id | default: award.year | escape }}">
           <time datetime="{{ award.year }}">{{ award.year }}</time>
           <div>
             <h3>{{ award.title | escape }}</h3>
