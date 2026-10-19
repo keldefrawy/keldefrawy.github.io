@@ -101,3 +101,15 @@
       title: Gene Tsudik, Karim Eldefrawy and collaborators win the NDSS 2024 Test of Time Award
       source: UC Irvine
       url: https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/
+
+- id: ai-governance-data-protection
+  year_label: "2026"
+  datetime: "2026"
+  title: AI Governance & Data Protection
+  icon: shield-check
+  summary: AI incident readiness and encryption-based protection of sensitive data used by autonomous agents.
+  coverage:
+    - year: "2026"
+      title: US agencies release updated guidance for responding to AI training incidents
+      source: Cyber Daily
+      url: https://www.cyberdaily.au/security/14321-us-agencies-release-updated-guidance-for-responding-to-ai-training-incidents

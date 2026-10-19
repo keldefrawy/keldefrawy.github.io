@@ -1,16 +1,16 @@
 ---
 layout: default
 title: News Coverage
-description: Selected coverage of Karim Eldefrawy's work across cybersecurity, encrypted computing, secure communications, technology transition, and research impact.
+description: Selected coverage of Karim Eldefrawy's work across cybersecurity, encrypted computing, secure communications, technology transition, research impact, and AI data protection.
 permalink: /news.html
 ---
 
 <article class="news-page">
   {% assign news_topics_newest_first = site.data.news_topics | reverse %}
   <div class="news-header">
-    <p class="news-eyebrow">Coverage timeline · 2007–2024</p>
+    <p class="news-eyebrow">Coverage timeline · 2007–2026</p>
     <h1>News Coverage</h1>
-    <p>Selected reporting on how the work moved from network defense and secure systems toward encrypted computing, private collaboration, and real-world impact.</p>
+    <p>Selected reporting on how the work moved from network defense and secure systems toward encrypted computing, private collaboration, and AI data protection.</p>
   </div>
 
   <figure class="news-topics" aria-labelledby="news-topics-title">
@@ -25,10 +25,10 @@ permalink: /news.html
     <div
       class="news-topics__viewport"
       role="region"
-      aria-label="News coverage themes timeline, newest first, from 2024 back to 2007"
+      aria-label="News coverage themes timeline, newest first, from 2026 back to 2007"
       tabindex="0"
     >
-      <ol class="news-topics__list">
+      <ol class="news-topics__list" style="--news-topic-count: {{ news_topics_newest_first.size }};">
         {% for topic in news_topics_newest_first %}
           <li class="news-topics__item">
             <time datetime="{{ topic.datetime }}">{{ topic.year_label }}</time>

@@ -4419,10 +4419,10 @@ body.quick-abstract-dialog-open {
 
 .news-topics__list {
   display: grid;
-  grid-template-columns: repeat(6, minmax(8.5rem, 1fr));
+  grid-template-columns: repeat(var(--news-topic-count, 6), minmax(8.5rem, 1fr));
   list-style: none;
   margin: 0;
-  min-width: 54rem;
+  min-width: calc(var(--news-topic-count, 6) * 9rem);
   padding: 0.3rem 0 0.2rem;
   position: relative;
 }
@@ -4432,9 +4432,9 @@ body.quick-abstract-dialog-open {
   border-radius: 999px;
   content: "";
   height: 3px;
-  left: calc(100% / 12);
+  left: calc(100% / (var(--news-topic-count, 6) * 2));
   position: absolute;
-  right: calc(100% / 12);
+  right: calc(100% / (var(--news-topic-count, 6) * 2));
   top: 3.5rem;
 }
 
@@ -4445,11 +4445,11 @@ body.quick-abstract-dialog-open {
   background-size: 1.25rem 0.55rem;
   content: "";
   height: 0.55rem;
-  left: calc(100% / 12);
+  left: calc(100% / (var(--news-topic-count, 6) * 2));
   opacity: 0.28;
   pointer-events: none;
   position: absolute;
-  right: calc(100% / 12);
+  right: calc(100% / (var(--news-topic-count, 6) * 2));
   top: 3.25rem;
 }
 
