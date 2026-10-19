@@ -103,12 +103,18 @@
       url: https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/
 
 - id: confidencial-awards-recognition
-  year_label: "2025–26"
+  aliases:
+    - ai-governance-data-protection
+  year_label: "2025–2026"
   datetime: "2025"
-  title: Confidencial Awards & Recognition
+  title: "Confidencial: AI Security & Recognition"
   icon: shield-check
-  summary: Industry recognition for encryption, legal data protection, cybersecurity innovation, and enterprise AI.
+  summary: AI data protection and incident readiness, alongside industry recognition for encryption and enterprise security.
   coverage:
+    - year: "2026"
+      title: US agencies release updated guidance for responding to AI training incidents
+      source: Cyber Daily
+      url: https://www.cyberdaily.au/security/14321-us-agencies-release-updated-guidance-for-responding-to-ai-training-incidents
     - year: "2026"
       title: Confidencial named Overall Encryption Solution of the Year
       source: Confidencial (press release)
@@ -129,15 +135,3 @@
       title: Confidencial wins Encryption Innovation Award
       source: GlobeNewswire (CyberSecurity Breakthrough press release)
       url: https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html
-
-- id: ai-governance-data-protection
-  year_label: "2026"
-  datetime: "2026"
-  title: AI Governance & Data Protection
-  icon: shield-check
-  summary: AI incident readiness and encryption-based protection of sensitive data used by autonomous agents.
-  coverage:
-    - year: "2026"
-      title: US agencies release updated guidance for responding to AI training incidents
-      source: Cyber Daily
-      url: https://www.cyberdaily.au/security/14321-us-agencies-release-updated-guidance-for-responding-to-ai-training-incidents

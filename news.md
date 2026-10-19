@@ -58,6 +58,9 @@ permalink: /news.html
     <div class="news-topic-list">
       {% for topic in news_topics_newest_first %}
         <article class="news-topic-detail" id="news-topic-{{ topic.id }}">
+          {% for alias in topic.aliases %}
+            <span id="news-topic-{{ alias | escape }}" aria-hidden="true"></span>
+          {% endfor %}
           <div class="news-topic-detail__header">
             <time datetime="{{ topic.datetime }}">{{ topic.year_label }}</time>
             <div>
