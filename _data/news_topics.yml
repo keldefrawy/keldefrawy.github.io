@@ -23,16 +23,12 @@
       url: https://www.silicon.co.uk/networks/m2m/m2m-the-future-of-cybersecurity-347076
 
 - id: encrypted-computing-at-scale
-  year_label: "2021–22"
+  year_label: "2021"
   datetime: "2021"
   title: Encrypted Computing at Scale
   icon: cpu
-  summary: DARPA-backed hardware and system designs for accelerating fully homomorphic encryption.
+  summary: DARPA funding for hardware acceleration of fully homomorphic encryption.
   coverage:
-    - year: "2022"
-      title: SRI DPRIVE teams’ FHE accelerator design strengthens security of outsourced data processing
-      source: SRI International
-      url: https://www.sri.com/story/sri-dprive-teams-fhe-accelerator-design-strengthens-security-of-outsourced-data-processing/
     - year: "2021"
       title: ASIC accelerators get DARPA funding
       source: EE Times India
@@ -49,10 +45,14 @@
 - id: secure-communications-collaboration
   year_label: "2022"
   datetime: "2022"
-  title: Secure 5G & Private Collaboration
+  title: Secure Computing & Collaboration
   icon: radio-tower
-  summary: Secure 5G overlays and the transition of privacy-preserving collaboration into practice.
+  summary: FHE accelerator designs, secure 5G overlays, and the transition of privacy-preserving collaboration into practice.
   coverage:
+    - year: "2022"
+      title: SRI DPRIVE teams’ FHE accelerator design strengthens security of outsourced data processing
+      source: SRI International
+      url: https://www.sri.com/story/sri-dprive-teams-fhe-accelerator-design-strengthens-security-of-outsourced-data-processing/
     - year: "2022"
       title: PICO protected communication overlay funded through the NSF 5G Security Convergence Accelerator
       source: SRI International
@@ -102,11 +102,39 @@
       source: UC Irvine
       url: https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/
 
+- id: confidencial-data-security-innovation
+  year_label: "2025"
+  datetime: "2025"
+  title: "Confidencial: Data Security Innovation"
+  icon: shield-check
+  summary: Data protection product launches, AI governance, encryption recognition, and eligibility for defense procurement.
+  coverage:
+    - year: "2025"
+      title: Confidencial wins Encryption Innovation Award
+      source: GlobeNewswire (CyberSecurity Breakthrough press release)
+      url: https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html
+    - year: "2025"
+      title: Confidencial launches legal-grade data protection ahead of ILTACON
+      source: Confidencial (press release)
+      url: https://www.confidencial.io/news/confidencial-launches-legal-grade-data-protection-platform-ahead-of-iltacon-2025
+    - year: "2025"
+      title: Confidencial previews AI data governance for RSAC
+      source: Solutions Review (news roundup)
+      url: https://solutionsreview.com/backup-disaster-recovery/storage-and-data-protection-news-for-the-week-of-april-25-updates-from-hycu-infinidat-scality-more/
+    - year: "2025"
+      title: Confidencial launches Cloud Protector for sensitive unstructured data
+      source: PR Newswire (Confidencial press release)
+      url: https://www.prnewswire.com/news-releases/beyond-discovery-confidencials-cloud-protector-sets-a-new-standard-for-identifying-managing-and-protecting-sensitive-unstructured-data-302400185.html
+    - year: "2025"
+      title: Confidencial achieves “Awardable” status in the CDAO Tradewinds Solutions Marketplace
+      source: Confidencial (press release)
+      url: https://www.confidencial.io/news/confidencial-assessed--e2-80-9cawardable-e2-80-9d-for-department-of-defense-work-in-the-cdao-e2-80-99s-tradewinds-solutions-marketplace
+
 - id: confidencial-awards-recognition
   aliases:
     - ai-governance-data-protection
-  year_label: "2025–2026"
-  datetime: "2025"
+  year_label: "2026"
+  datetime: "2026"
   title: "Confidencial: AI Security & Recognition"
   icon: shield-check
   summary: AI data protection and incident readiness, alongside industry recognition for encryption and enterprise security.
@@ -131,7 +159,3 @@
       title: Confidencial wins Data Solution of the Year for Legal
       source: Confidencial (press release)
       url: https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards
-    - year: "2025"
-      title: Confidencial wins Encryption Innovation Award
-      source: GlobeNewswire (CyberSecurity Breakthrough press release)
-      url: https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html
