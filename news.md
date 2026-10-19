@@ -10,7 +10,7 @@ permalink: /news.html
   <div class="news-header">
     <p class="news-eyebrow">Coverage timeline · 2007–2026</p>
     <h1>News Coverage</h1>
-    <p>Selected reporting on how the work moved from network defense and secure systems toward encrypted computing, private collaboration, and AI data protection.</p>
+    <p>Selected reporting and announcements on how the work moved from network defense and secure systems toward encrypted computing, private collaboration, and AI data protection.</p>
   </div>
 
   <figure class="news-topics" aria-labelledby="news-topics-title">
@@ -50,7 +50,7 @@ permalink: /news.html
   <section class="news-coverage" aria-labelledby="news-coverage-title">
     <div class="news-section-heading">
       <div>
-        <p class="news-section-kicker">Selected reporting</p>
+        <p class="news-section-kicker">Reporting &amp; announcements</p>
         <h2 id="news-coverage-title">Coverage by Topic</h2>
       </div>
     </div>

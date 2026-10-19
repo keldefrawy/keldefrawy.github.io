@@ -102,6 +102,34 @@
       source: UC Irvine
       url: https://ics.uci.edu/2024/02/29/gene-tsudik-karim-eldefrawy-and-collaborators-win-the-ndss-2024-test-of-time-award/
 
+- id: confidencial-awards-recognition
+  year_label: "2025–26"
+  datetime: "2025"
+  title: Confidencial Awards & Recognition
+  icon: shield-check
+  summary: Industry recognition for encryption, legal data protection, cybersecurity innovation, and enterprise AI.
+  coverage:
+    - year: "2026"
+      title: Confidencial named Overall Encryption Solution of the Year
+      source: Confidencial (press release)
+      url: https://www.confidencial.io/news/confidencial-named-overall-encryption-solution-of-the-year-2026
+    - year: "2026"
+      title: Confidencial wins Thomson Reuters Momentum AI Startup Competition
+      source: EIN Presswire (Confidencial press release)
+      url: https://www.einpresswire.com/article/947489392/confidencial-wins-thomson-reuters-momentum-ai-pitch-competition
+    - year: "2026"
+      title: Confidencial named a 2026 SINET16 honoree
+      source: PR Newswire (SINET press release)
+      url: https://www.prnewswire.com/news-releases/sinet-announces-the-2026-innovator-award-finalists-and-sinet16-honorees-innovator-to-be-named-october-8-302881918.html
+    - year: "2026"
+      title: Confidencial wins Data Solution of the Year for Legal
+      source: Confidencial (press release)
+      url: https://www.confidencial.io/news/confidencial-wins-data-solution-of-the-year-for-legal-2026-data-breakthrough-awards
+    - year: "2025"
+      title: Confidencial wins Encryption Innovation Award
+      source: GlobeNewswire (CyberSecurity Breakthrough press release)
+      url: https://www.globenewswire.com/news-release/2025/10/09/3164287/0/en/Confidencial-Wins-Encryption-Innovation-Award-in-9th-Annual-CyberSecurity-Breakthrough-Awards-Program.html
+
 - id: ai-governance-data-protection
   year_label: "2026"
   datetime: "2026"
