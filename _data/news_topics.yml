@@ -140,6 +140,18 @@
   summary: AI data protection and incident readiness, alongside industry recognition for encryption and enterprise security.
   coverage:
     - year: "2026"
+      title: "When the perimeter fails: Why cybersecurity must now protect the data itself"
+      source: Digital Journal
+      url: https://www.digitaljournal.com/article/when-the-perimeter-fails-why-cybersecurity-must-now-protect-the-data-itself/
+    - year: "2026"
+      title: Federal AI security guidance misses real-world enterprise threats
+      source: TechTarget
+      url: https://www.techtarget.com/news/federal-ai-security-guidance-misses-real-world-enterprise-threats/872976/
+    - year: "2026"
+      title: NIST Issues New Guidance for AI Incident Response
+      source: CPO Magazine
+      url: https://www.cpomagazine.com/cyber-security/nist-issues-new-guidance-for-ai-incident-response/
+    - year: "2026"
       title: US agencies release updated guidance for responding to AI training incidents
       source: Cyber Daily
       url: https://www.cyberdaily.au/security/14321-us-agencies-release-updated-guidance-for-responding-to-ai-training-incidents
